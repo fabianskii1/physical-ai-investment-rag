@@ -1,0 +1,9 @@
+-r PDF/requirements.txt
+openai>=3.22,<4
+python-dotenv>=1.2,<2
+langchain-openai>=1,<2
+langgraph>=1,<2
+numpy>=2,<3
+sentence-transformers>=6.1,<7
+pytest>=8,<10
+reportlab>=4,<5
