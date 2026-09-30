@@ -72,11 +72,16 @@ def _catalog_row(file_path: str, **overrides: object) -> dict[str, object]:
     row: dict[str, object] = {
         "doc_id": "fixture-001",
         "company": "figure_ai",
+        "category": "technology",
         "title": "Humanoid loader fixture",
         "publisher": "Project team",
-        "publication_date": "2026-09-29",
+        "published_at": "2026-09-29",
+        "source_url": "https://example.com/fixture",
         "file_path": file_path,
         "page_count": 3,
+        "key_pages": "1-3",
+        "related_scorecard_items": "핵심 작업 성능",
+        "notes": "검색기 테스트 fixture",
     }
     row.update(overrides)
     return row
@@ -119,6 +124,10 @@ def test_pdf_to_search_returns_original_page_and_relative_path(tmp_path: Path) -
     assert results[0].metadata["company"] == "figure_ai"
     assert results[0].metadata["page"] == 3
     assert results[0].metadata["file_path"] == file_path
+    assert results[0].metadata["category"] == "technology"
+    assert results[0].metadata["published_at"] == "2026-09-29"
+    assert results[0].metadata["publication_date"] == "2026-09-29"
+    assert results[0].metadata["source_url"] == "https://example.com/fixture"
     assert not Path(results[0].metadata["file_path"]).is_absolute()
 
 
@@ -174,6 +183,74 @@ def test_company_filter_is_applied_before_ranking(
     assert retriever.search("missing-company", "contract") == []
 
 
+# 기업별 검색 범위를 유지하면서 COMMON도 독립 검색할 수 있는지 확인한다.
+def test_company_and_common_search_scopes_are_separate(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    company_path = tmp_path / "data/raw/acme/company.pdf"
+    other_path = tmp_path / "data/raw/beta/other.pdf"
+    common_path = tmp_path / "data/raw/common/market.pdf"
+    company_path.parent.mkdir(parents=True)
+    other_path.parent.mkdir(parents=True)
+    common_path.parent.mkdir(parents=True)
+    company_path.write_bytes(b"%PDF-test")
+    other_path.write_bytes(b"%PDF-test")
+    common_path.write_bytes(b"%PDF-test")
+    catalog = _write_catalog(
+        tmp_path,
+        [
+            _catalog_row(
+                company_path.relative_to(tmp_path).as_posix(),
+                doc_id="acme-001",
+                company="acme",
+                page_count=1,
+            ),
+            _catalog_row(
+                other_path.relative_to(tmp_path).as_posix(),
+                doc_id="beta-001",
+                company="beta",
+                page_count=1,
+            ),
+            _catalog_row(
+                common_path.relative_to(tmp_path).as_posix(),
+                doc_id="common-001",
+                company="COMMON",
+                category="common",
+                page_count=1,
+            ),
+        ],
+    )
+
+    def fake_load_pdf(path: Path, doc_id: str, company: str) -> list[Document]:
+        """기업·공통·타사 청크의 후보 포함 여부를 구분한다."""
+
+        content_by_company = {
+            "acme": "factory overview",
+            "beta": "contract contract contract",
+            "COMMON": "contract contract",
+        }
+        return [
+            Document(
+                page_content=content_by_company[company],
+                metadata={
+                    "doc_id": doc_id,
+                    "company": company,
+                    "file_path": str(path),
+                    "page": 1,
+                },
+            )
+        ]
+
+    monkeypatch.setattr(retrieval, "load_pdf", fake_load_pdf)
+    retriever = build_index(catalog, embedding_model=KeywordEmbeddingModel())
+
+    results = retriever.search("acme", "contract", k=4)
+    assert [result.metadata["doc_id"] for result in results] == ["acme-001"]
+    assert all(result.metadata["company"] != "beta" for result in results)
+    common_results = retriever.search("COMMON", "contract")
+    assert [result.metadata["doc_id"] for result in common_results] == ["common-001"]
+
+
 # 이어지는 테스트는 잘못된 catalog가 모델 임베딩 전에 차단되는지 확인한다.
 def test_catalog_rejects_duplicate_doc_ids(tmp_path: Path) -> None:
     file_path = _copy_fixture(tmp_path)
@@ -210,7 +287,7 @@ def test_catalog_rejects_rows_with_extra_values(tmp_path: Path) -> None:
     file_path = _copy_fixture(tmp_path)
     catalog = _write_catalog(tmp_path, [_catalog_row(file_path)])
     with catalog.open("a", encoding="utf-8") as stream:
-        stream.write("extra,value,beyond,the,fixed,catalog,schema,unexpected\n")
+        stream.write(",".join(["extra"] * (len(retrieval.CATALOG_FIELDS) + 1)) + "\n")
 
     with pytest.raises(CatalogError, match="more values than fields"):
         load_catalog(catalog)

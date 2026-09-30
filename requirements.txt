@@ -7,6 +7,10 @@ pdfminer.six==20251230
 numpy>=2.0,<3
 sentence-transformers>=6.1,<7
 
+# Development B: structured analysis and shared OpenAI configuration
+python-dotenv>=1.0,<2
+langchain-openai>=1.0,<2
+
 # Shared test runner
 pytest>=8,<10
 reportlab>=4,<5

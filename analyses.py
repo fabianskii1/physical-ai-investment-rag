@@ -11,6 +11,7 @@ load_dotenv()
 
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
 DEFAULT_SEARCH_K = 4
+COMMON_COMPANY = "COMMON"
 
 
 def openai_llm(prompt: str) -> str:
@@ -131,12 +132,33 @@ def _build_evidence(docs: list[Document]) -> tuple[str, set[tuple[str, int]]]:
         if page < 1:
             continue
 
+        source_company = str(doc.metadata.get("company", "")).strip()
+        company_label = f" company={source_company}" if source_company else ""
         evidence_parts.append(
-            f"[DOC doc_id={doc_id} page={page}]\n{doc.page_content}"
+            f"[DOC doc_id={doc_id} page={page}{company_label}]\n{doc.page_content}"
         )
         allowed_refs.add((doc_id, page))
 
     return "\n\n".join(evidence_parts), allowed_refs
+
+
+def _merge_unique_documents(*groups: list[Document]) -> list[Document]:
+    """여러 검색 범위의 결과를 같은 청크의 중복 없이 합친다."""
+
+    merged: list[Document] = []
+    seen_chunks: set[tuple[str, str, str]] = set()
+    for group in groups:
+        for doc in group:
+            key = (
+                str(doc.metadata.get("doc_id", "")).strip(),
+                str(doc.metadata.get("page", "")).strip(),
+                str(doc.metadata.get("chunk_index", doc.page_content)),
+            )
+            if key in seen_chunks:
+                continue
+            seen_chunks.add(key)
+            merged.append(doc)
+    return merged
 
 
 def _parse_json_array(raw_result: str) -> list[dict] | None:
@@ -506,6 +528,7 @@ def analyze_market(
 
     접근 가능한 시장, 고객 문제/구매 필요성, 성장 동력, 시장 확장성,
     경쟁 대비 고객 가치, 모방하기 어려운 자산, 전환 장벽을 다룬다.
+    기업 자료와 COMMON 공통 시장 자료를 함께 사용한다.
     기업 간 투자 순위나 점수는 만들지 않는다.
     """
     query = (
@@ -514,7 +537,21 @@ def analyze_market(
         "고객 가치, 차별화 자산, 고객 유지 및 전환 장벽 관련 근거"
     )
 
-    docs = search_fn(company, query, DEFAULT_SEARCH_K)
+    company_docs = search_fn(company, query, DEFAULT_SEARCH_K)
+    if not company_docs:
+        return [
+            _unverified_claim(
+                "시장성·경쟁 관련 기업 근거를 확인하지 못했다.",
+                "market_relation",
+            )
+        ]
+
+    common_docs = (
+        []
+        if company.strip().casefold() == COMMON_COMPANY.casefold()
+        else search_fn(COMMON_COMPANY, query, DEFAULT_SEARCH_K)
+    )
+    docs = _merge_unique_documents(company_docs, common_docs)
     if not docs:
         return [
             _unverified_claim(
@@ -563,6 +600,7 @@ def analyze_market(
 근거에 없는 사실은 절대 추정하지 않는다.
 전체 시장 규모를 이 기업이 실제 접근 가능한 시장으로 그대로 간주하지 않는다.
 기업이 주장한 고객 수요를 실제 구매나 계약으로 바꾸어 쓰지 않는다.
+company=COMMON인 근거는 산업 공통 정보이며 특정 기업의 실적처럼 표현하지 않는다.
 
 기업이 특정 산업이나 고객군을 "적용 대상", "목표 시장", "진출 대상"으로
 제시한 것만으로 실제 접근 가능한 시장이라고 단정하지 않는다.

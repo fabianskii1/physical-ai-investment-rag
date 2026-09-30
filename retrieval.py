@@ -22,11 +22,16 @@ from PDF.pdf_loader import load_pdf
 CATALOG_FIELDS = (
     "doc_id",
     "company",
+    "category",
     "title",
     "publisher",
-    "publication_date",
+    "published_at",
+    "source_url",
     "file_path",
     "page_count",
+    "key_pages",
+    "related_scorecard_items",
+    "notes",
 )
 DEFAULT_CATALOG_PATH = Path(__file__).resolve().parent / "data" / "catalog.csv"
 DEFAULT_MODEL_NAME = "BAAI/bge-m3"
@@ -74,12 +79,17 @@ class CatalogRecord:
 
     doc_id: str
     company: str
+    category: str
     title: str
     publisher: str
-    publication_date: str
-    file_path: str # 검색 결과에 남길 저장소 상대경로
+    published_at: str
+    source_url: str
+    file_path: str  # 검색 결과에 남길 저장소 상대경로
     page_count: int
-    source_path: Path # pdf_loader.py에 전달할 실제 PDF 절대경로
+    key_pages: str
+    related_scorecard_items: str
+    notes: str
+    source_path: Path  # pdf_loader.py에 전달할 실제 PDF 절대경로
 
 
 class BgeM3DenseEncoder:
@@ -251,11 +261,18 @@ def load_catalog(
                     CatalogRecord(
                         doc_id=doc_id,
                         company=company,
+                        category=(row["category"] or "").strip(),
                         title=(row["title"] or "").strip(),
                         publisher=(row["publisher"] or "").strip(),
-                        publication_date=(row["publication_date"] or "").strip(),
+                        published_at=(row["published_at"] or "").strip(),
+                        source_url=(row["source_url"] or "").strip(),
                         file_path=normalized_path,
                         page_count=page_count,
+                        key_pages=(row["key_pages"] or "").strip(),
+                        related_scorecard_items=(
+                            row["related_scorecard_items"] or ""
+                        ).strip(),
+                        notes=(row["notes"] or "").strip(),
                         source_path=source_path,
                     )
                 )
@@ -491,10 +508,19 @@ def build_index(
                         metadata={
                             "doc_id": record.doc_id,
                             "company": record.company,
+                            "category": record.category,
                             "title": record.title,
                             "publisher": record.publisher,
-                            "publication_date": record.publication_date,
+                            "published_at": record.published_at,
+                            # 기존 소비자를 위한 metadata 호환 별칭이다.
+                            "publication_date": record.published_at,
+                            "source_url": record.source_url,
                             "file_path": record.file_path,
+                            "key_pages": record.key_pages,
+                            "related_scorecard_items": (
+                                record.related_scorecard_items
+                            ),
+                            "notes": record.notes,
                             "page": page,
                             "chunk_index": chunk_index,
                             "char_start": start,

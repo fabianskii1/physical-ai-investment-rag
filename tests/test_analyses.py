@@ -38,6 +38,21 @@ def mock_technology_search(company: str, query: str, k: int = 4):
 
 
 def mock_market_search(company: str, query: str, k: int = 4):
+    if company == "COMMON":
+        return [
+            Document(
+                page_content=(
+                    "국제로봇연맹은 산업용 로봇 설치 증가와 인력 부족을 "
+                    "로봇 시장의 공통 성장 요인으로 제시했다."
+                ),
+                metadata={
+                    "doc_id": "common_market_001",
+                    "company": "COMMON",
+                    "page": 2,
+                    "file_path": "data/raw/common/market.pdf",
+                },
+            )
+        ]
     return [
         Document(
             page_content=(
@@ -162,6 +177,21 @@ def mock_market_fake_source_llm(prompt: str) -> str:
 """.strip()
 
 
+def mock_market_common_llm(prompt: str) -> str:
+    assert "common_market_001" in prompt
+    assert "company=COMMON" in prompt
+    return """
+[
+  {
+    "analysis_type": "market_growth_drivers",
+    "claim": "산업용 로봇 설치 증가와 인력 부족이 공통 시장 성장 요인이다.",
+    "source_refs": [{"doc_id": "common_market_001", "page": 2}],
+    "status": "confirmed"
+  }
+]
+""".strip()
+
+
 def test_analyze_bigtech():
     result = analyze_bigtech("ROBROS", mock_bigtech_search, mock_bigtech_llm)
 
@@ -275,6 +305,16 @@ def test_analyze_market():
     print("✅ analyze_market 구조화 분석 테스트 통과")
 
 
+def test_analyze_market_unverified_without_company_evidence():
+    result = analyze_market("ROBROS", mock_empty_search, mock_market_llm)
+
+    assert len(result) == 1
+    assert result[0]["status"] == "unverified"
+    assert result[0]["source_refs"] == []
+
+    print("✅ analyze_market 기업 근거 없음 테스트 통과")
+
+
 def test_analyze_market_fake_source():
     result = analyze_market(
         "ROBROS",
@@ -289,6 +329,19 @@ def test_analyze_market_fake_source():
     print("✅ analyze_market 가짜 출처 차단 테스트 통과")
 
 
+def test_analyze_market_uses_common_market_evidence():
+    result = analyze_market("ROBROS", mock_market_search, mock_market_common_llm)
+
+    assert len(result) == 1
+    assert result[0]["criterion_id"] == "market_growth_drivers"
+    assert result[0]["status"] == "confirmed"
+    assert result[0]["source_refs"] == [
+        {"doc_id": "common_market_001", "page": 2}
+    ]
+
+    print("✅ analyze_market COMMON 시장 근거 사용 테스트 통과")
+
+
 if __name__ == "__main__":
     test_analyze_bigtech()
     test_analyze_bigtech_unverified()
@@ -298,4 +351,6 @@ if __name__ == "__main__":
     test_analyze_technology()
     test_analyze_technology_fake_source()
     test_analyze_market()
+    test_analyze_market_unverified_without_company_evidence()
     test_analyze_market_fake_source()
+    test_analyze_market_uses_common_market_evidence()
