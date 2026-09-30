@@ -219,6 +219,20 @@ def test_supported_verdict_requires_quote_present_on_original_page():
     assert result["evidence_gaps"][0]["reason"] == "invalid_quote"
 
 
+def test_one_page_cannot_prove_no_customer_evidence_exists():
+    state = sample_state()
+    state["market_competition_analysis"]["claims"] = [{
+        "claim": "실제 고객이나 계약을 보여주는 근거는 없다",
+        "status": "confirmed",
+        "source": {"doc_id": "bmw_announcement", "page": 3},
+    }]
+
+    result = check_evidence(state, judge=fixture_judge)
+
+    assert len(result["source_checked_claims"]) == 2
+    assert result["evidence_gaps"][-1]["reason"] == "absence_not_proven"
+
+
 def test_missing_original_pdf_is_not_treated_as_valid_evidence():
     state = sample_state()
     state["document_catalog"]["product_brief"]["file_path"] = "tests/fixtures/missing.pdf"

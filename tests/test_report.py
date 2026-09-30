@@ -92,6 +92,15 @@ def test_report_uses_exact_checked_claim_not_llm_paraphrase():
     assert "사용되고 있다" not in result
 
 
+def test_report_discloses_temporary_decision_threshold():
+    state = sample_state()
+    state["decision_policy"] = {"minimum_score": 70, "required_items": ["핵심 작업 성능"]}
+
+    result = report(state, writer=lambda _: sample_draft())["final_report"]
+
+    assert "테스트용 판단 기준: 70점, 필수 항목: 핵심 작업 성능" in result
+
+
 def test_malformed_section_entries_are_skipped_without_losing_valid_evidence():
     draft = sample_draft()
     draft["overview"] = [{"id": "E1"}, "E1", "E1"]

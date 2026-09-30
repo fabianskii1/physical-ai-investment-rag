@@ -44,16 +44,16 @@ def test_verified_evidence_is_graded_and_score_is_not_rescaled():
     assert result["investment_decision"] == "우선 검토"
 
 
-def test_uncertain_score_range_is_insufficient_not_zero():
+def test_automatic_zero_becomes_unknown_when_no_failure_is_proven():
     result = investment_judgement(state_with_evidence(threshold=50), grader=lambda _: graded_product(0))
 
     assert result["total_score"] == 0
-    assert PRODUCT not in result["unknown_items"]
+    assert PRODUCT in result["unknown_items"]
     assert result["investment_decision"] == "근거 부족"
 
 
 def test_even_best_unknown_scores_cannot_reach_threshold_so_hold():
-    result = investment_judgement(state_with_evidence(threshold=95), grader=lambda _: graded_product(0))
+    result = investment_judgement(state_with_evidence(threshold=99), grader=lambda _: graded_product(1))
 
     assert result["investment_decision"] == "보류"
 
@@ -115,6 +115,40 @@ def test_zero_grade_without_reference_becomes_unknown():
     assert PRODUCT in result["unknown_items"]
     assert result["score_details"][PRODUCT]["grade"] is None
     assert result["investment_decision"] == "근거 부족"
+
+
+def test_missing_evidence_is_unknown_not_zero():
+    grades = graded_product(4)
+    market = "실제 접근 가능한 시장"
+    grades[CRITERIA.index(market)] = {
+        "criterion": market,
+        "grade": 0,
+        "reason": "실제 고객이나 계약에 대한 근거가 전혀 없음",
+        "evidence_ids": ["E1"],
+    }
+
+    result = investment_judgement(state_with_evidence(), grader=lambda _: grades)
+
+    assert result["score_details"][market]["grade"] is None
+    assert market in result["unknown_items"]
+
+
+def test_automatic_zero_without_explicit_negative_proof_is_unknown():
+    state = state_with_evidence()
+    state["source_checked_claims"][0]["analysis"] = "bigtech_analysis"
+    grades = graded_product(4)
+    equity = "대기업 실제 지분·CVC 투자"
+    grades[CRITERIA.index(equity)] = {
+        "criterion": equity,
+        "grade": 0,
+        "reason": "공유 투자자이지만 직접 투자는 확인되지 않아 0점",
+        "evidence_ids": ["E1"],
+    }
+
+    result = investment_judgement(state, grader=lambda _: grades)
+
+    assert result["score_details"][equity]["grade"] is None
+    assert equity in result["unknown_items"]
 
 
 def test_technical_pilot_cannot_score_bigtech_contract():

@@ -1,5 +1,6 @@
 """투자 검토 그래프에서 사용할 근거 검사 노드."""
 
+import re
 from collections.abc import Mapping
 from pathlib import Path
 from typing import Literal
@@ -15,6 +16,16 @@ ANALYSIS_KEYS = (
     "technology_analysis",
     "market_competition_analysis",
 )
+
+
+def _claims_missing_evidence(text: str) -> bool:
+    """검색에서 못 찾은 사실을 실제 부재의 증거로 바꾸지 않는다."""
+    return bool(re.search(
+        r"(?:근거|증거|증빙|자료).{0,25}(?:없|부재|미확인|확인되지|찾지 못)|"
+        r"(?:no|lack of|without)\s+(?:evidence|proof|support)",
+        text,
+        flags=re.IGNORECASE,
+    ))
 
 
 class EvidenceVerdict(BaseModel):
@@ -94,6 +105,9 @@ def check_evidence(state: Mapping, judge=None) -> dict:
                 continue
             if status not in {"verified", "company_claim", "confirmed"}:
                 evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": "unconfirmed_claim"})
+                continue
+            if _claims_missing_evidence(claim):
+                evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": "absence_not_proven"})
                 continue
 
             refs = item.get("source_refs")
@@ -306,6 +320,10 @@ def investment_judgement(state: Mapping, grader=None) -> dict:
             continue
         if not isinstance(ids, list) or any(not isinstance(ref, str) or ref not in evidence for ref in ids):
             by_name[name] = {"grade": None, "reason": "검증되지 않은 근거여서 U로 처리했습니다.", "evidence_ids": []}
+            continue
+        if grade == 0:
+            # ponytail: 자동 0점은 자료 부재와 실제 실패를 혼동한다. 명시적 반증을 수동 검증할 때만 0점 허용.
+            by_name[name] = {"grade": None, "reason": "자동 0점은 명시적 반증 확인 전까지 U로 처리했습니다.", "evidence_ids": []}
             continue
         if grade is not None and not ids:
             item = {**item, "grade": None, "reason": "인용된 검증 근거가 없어 U로 처리했습니다."}

@@ -141,6 +141,12 @@ def report(state: Mapping, writer=None) -> dict:
     )
     decision = state.get("investment_decision", "근거 부족")
     decision_reason = state.get("decision_reason", "판단 근거가 부족합니다.")
+    policy = state.get("decision_policy", {})
+    policy_line = ""
+    if isinstance(policy, Mapping) and isinstance(policy.get("minimum_score"), (int, float)):
+        required = policy.get("required_items", [])
+        required_text = ", ".join(required) if required else "없음"
+        policy_line = f"\n- 테스트용 판단 기준: {policy['minimum_score']:g}점, 필수 항목: {required_text}"
     gaps = state.get("evidence_gaps", [])
     gap_count = len(gaps) if isinstance(gaps, list) else 0
     unknown = scored["unknown_items"]
@@ -184,7 +190,7 @@ def report(state: Mapping, writer=None) -> dict:
         f"### 사업 아이디어 / 핵심 제품\n{overview}",
         f"### 핵심 투자 포인트\n{investment_points}",
         f"### 핵심 리스크\n{risks}",
-        f"### 평가 결과 요약\n- 판단: {decision}\n- 확인된 점수: {total}\n- 미확인 배점: {scored['unknown_weight']}점",
+        f"### 평가 결과 요약\n- 판단: {decision}\n- 확인된 점수: {total}\n- 미확인 배점: {scored['unknown_weight']}점{policy_line}",
         "## 2p — 시장·팀 분석",
         f"### 시장 규모·성장성 / 접근 가능한 시장 / 구매 필요성\n{market}",
         f"### 창업자·핵심팀 전문성 / 제품화·사업 실행력\n{team}",
