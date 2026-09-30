@@ -88,38 +88,47 @@ def check_evidence(state: Mapping, judge=None) -> dict:
 
         for item in claims:
             claim = item.get("claim", "") if isinstance(item, Mapping) else ""
-            source = item.get("source") if isinstance(item, Mapping) else None
             status = item.get("status") if isinstance(item, Mapping) else None
-            reason = None
             if not isinstance(claim, str) or not claim.strip():
-                reason = "missing_claim"
-            elif status not in {"verified", "company_claim"}:
-                reason = "unconfirmed_claim"
-            elif not isinstance(source, Mapping):
-                reason = "missing_source"
-            else:
-                doc_id = source.get("doc_id")
-                document = catalog.get(doc_id) if isinstance(doc_id, str) else None
-                if not isinstance(document, Mapping):
-                    reason = "unknown_doc_id"
-                elif not isinstance(document.get("file_path"), str) or not document["file_path"].strip():
-                    reason = "missing_file_path"
-                else:
-                    page = source.get("page")
-                    page_count = document.get("page_count")
-                    if (
-                        isinstance(page, bool)
-                        or not isinstance(page, int)
-                        or isinstance(page_count, bool)
-                        or not isinstance(page_count, int)
-                        or not 1 <= page <= page_count
-                    ):
-                        reason = "invalid_page"
+                evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": "missing_claim"})
+                continue
+            if status not in {"verified", "company_claim", "confirmed"}:
+                evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": "unconfirmed_claim"})
+                continue
 
-            if reason:
-                evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": reason})
-            else:
-                pdf_path = Path(document["file_path"])
+            refs = item.get("source_refs")
+            sources = refs if isinstance(refs, list) and refs else [item.get("source")]
+            rejected = []
+            for source in sources:
+                reason = None
+                if not isinstance(source, Mapping):
+                    reason = "missing_source"
+                else:
+                    doc_id = source.get("doc_id")
+                    document = catalog.get(doc_id) if isinstance(doc_id, str) else None
+                    if not isinstance(document, Mapping):
+                        reason = "unknown_doc_id"
+                    else:
+                        location = document.get("source_path") or document.get("file_path")
+                        if not isinstance(location, str) or not location.strip():
+                            reason = "missing_file_path"
+                        else:
+                            page = source.get("page")
+                            page_count = document.get("page_count")
+                            if (
+                                isinstance(page, bool)
+                                or not isinstance(page, int)
+                                or isinstance(page_count, bool)
+                                or not isinstance(page_count, int)
+                                or not 1 <= page <= page_count
+                            ):
+                                reason = "invalid_page"
+
+                if reason:
+                    rejected.append({"analysis": analysis_key, "claim": claim, "reason": reason})
+                    continue
+
+                pdf_path = Path(location)
                 if not pdf_path.is_absolute():
                     pdf_path = Path(__file__).resolve().parent / pdf_path
                 try:
@@ -127,10 +136,10 @@ def check_evidence(state: Mapping, judge=None) -> dict:
                         parsed_pdfs[pdf_path] = load_pdf(pdf_path, doc_id=doc_id, company=company_name)
                     page_text = parsed_pdfs[pdf_path][page - 1].page_content
                 except (PDFLoaderError, IndexError):
-                    evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": "source_unreadable"})
+                    rejected.append({"analysis": analysis_key, "claim": claim, "reason": "source_unreadable"})
                     continue
                 if not page_text.strip():
-                    evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": "source_unreadable"})
+                    rejected.append({"analysis": analysis_key, "claim": claim, "reason": "source_unreadable"})
                     continue
 
                 verdict = judge(claim, page_text)
@@ -142,16 +151,18 @@ def check_evidence(state: Mapping, judge=None) -> dict:
                 if verdict["verdict"] == "supported":
                     normalized_quote = " ".join(quote.split()) if isinstance(quote, str) else ""
                     if not normalized_quote or normalized_quote not in " ".join(page_text.split()):
-                        evidence_gaps.append({"analysis": analysis_key, "claim": claim, "reason": "invalid_quote"})
+                        rejected.append({"analysis": analysis_key, "claim": claim, "reason": "invalid_quote"})
                     else:
                         source_checked_claims.append({
                             **item,
+                            "source": source,
                             "analysis": analysis_key,
                             "evidence_quote": quote,
                             "evidence_reason": verdict.get("reason", ""),
                         })
+                        break
                 else:
-                    evidence_gaps.append({
+                    rejected.append({
                         "analysis": analysis_key,
                         "claim": claim,
                         "reason": {
@@ -161,6 +172,16 @@ def check_evidence(state: Mapping, judge=None) -> dict:
                         }[verdict["verdict"]],
                         "detail": verdict.get("reason", ""),
                     })
+            else:
+                if len(rejected) > 1:
+                    evidence_gaps.append({
+                        "analysis": analysis_key,
+                        "claim": claim,
+                        "reason": "all_sources_rejected",
+                        "source_attempts": rejected,
+                    })
+                else:
+                    evidence_gaps.extend(rejected)
 
     has_product_evidence = any(
         item["analysis"] == "technology_analysis" for item in source_checked_claims

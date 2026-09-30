@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from workflow import check_evidence
 
 
@@ -45,6 +47,67 @@ def test_valid_citations_allow_scoring_without_market_evidence():
     ]
     assert result["evidence_gaps"] == []
     assert result["source_checked_claims"][0]["evidence_quote"] == "BMW Group"
+
+
+def test_analysis_confirmed_claim_is_rechecked_against_original_pdf():
+    state = sample_state()
+    state["technology_analysis"]["claims"][0]["status"] = "confirmed"
+
+    result = check_evidence(state, judge=fixture_judge)
+
+    assert result["evidence_status"] == "scorable"
+    assert len(result["source_checked_claims"]) == 2
+
+
+def test_later_cited_page_can_support_claim_when_first_source_is_invalid():
+    state = sample_state()
+    state["technology_analysis"]["claims"][0] = {
+        "claim": "물품을 집어 이동하는 작업을 수행한다",
+        "status": "confirmed",
+        "source": {"doc_id": "missing", "page": 1},
+        "source_refs": [
+            {"doc_id": "missing", "page": 1},
+            {"doc_id": "product_brief", "page": 3},
+        ],
+    }
+
+    result = check_evidence(state, judge=fixture_judge)
+
+    assert result["evidence_status"] == "scorable"
+    assert result["source_checked_claims"][1]["source"] == {"doc_id": "product_brief", "page": 3}
+    assert result["evidence_gaps"] == []
+
+
+def test_resolved_source_path_is_used_for_pdf_check():
+    state = sample_state()
+    state["document_catalog"]["product_brief"]["file_path"] = "PDF/input/not-here.pdf"
+    state["document_catalog"]["product_brief"]["source_path"] = str(
+        Path(__file__).parent / "fixtures/humanoid_pdf_loader_sample.pdf"
+    )
+
+    result = check_evidence(state, judge=fixture_judge)
+
+    assert result["evidence_status"] == "scorable"
+    assert result["evidence_gaps"] == []
+
+
+def test_multiple_failed_sources_count_as_one_excluded_claim():
+    state = sample_state()
+    state["technology_analysis"]["claims"][0] = {
+        "claim": "물품을 집어 이동하는 작업을 수행한다",
+        "status": "confirmed",
+        "source_refs": [
+            {"doc_id": "missing", "page": 1},
+            {"doc_id": "product_brief", "page": 4},
+        ],
+    }
+
+    result = check_evidence(state, judge=fixture_judge)
+
+    assert result["evidence_status"] == "insufficient"
+    assert len(result["evidence_gaps"]) == 1
+    assert result["evidence_gaps"][0]["reason"] == "all_sources_rejected"
+    assert len(result["evidence_gaps"][0]["source_attempts"]) == 2
 
 
 def test_missing_bigtech_source_is_gap_not_zero_or_total_failure():
