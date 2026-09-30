@@ -1,0 +1,12 @@
+# Existing PDF loader dependencies
+langchain-core==1.6.5
+pdfplumber==0.11.9
+pdfminer.six==20251230
+
+# Development A: BGE-M3 dense retrieval
+numpy>=2.0,<3
+sentence-transformers>=6.1,<7
+
+# Shared test runner
+pytest>=8,<10
+reportlab>=4,<5
