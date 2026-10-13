@@ -1,0 +1,608 @@
+{
+  "company": "ROBROS",
+  "mode": "live",
+  "status": "partial",
+  "total_score": 14.5,
+  "score_scale": 100,
+  "scorable_weight": 17,
+  "unknown_weight": 83,
+  "coverage": {
+    "research_criteria": 18,
+    "attempted_criteria": 18,
+    "supported_criteria": 3
+  },
+  "investment_decision": "보류",
+  "decision_reason": "로브로스는 50명 이상의 자체 기술 기반 팀 운영 역량과 산업 현장의 로봇 수요라는 긍정적 시장 배경을 갖추고 있으나, 실제 고객 계약, 매출, 납품 실적, 대기업 투자 지분, 시장 진입 성과 및 재구매/확대 실적 등 주요 핵심 실적과 투자조건에 관한 확인 가능한 객관적 근거가 부족하다. 또한 기술성 측면에서 일부 AI 및 제어 기술 개발 사실이 있으나, 현장 실증 성능, 양산 및 유지보수 체계, 경쟁우위에 대한 비교우위 근거도 미흡하다. 따라서 현재 공개된 자료만으로는 투자 실행을 정당화하기 어려우며, 추가적인 원문 계약, 재무, 실증 데이터와 투자조건 검증이 필요한 상황이다.",
+  "investment_case": {
+    "action": "투자 보류",
+    "rationale": "확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.",
+    "model_opinion": "보류",
+    "supporting_facts": [
+      {
+        "criterion": "팀 구성·운영 역량",
+        "grade": 2,
+        "fact": "로브로스는 50명 이상의 팀 규모를 갖추고 있으며, 하드웨어 설계부터 AI 지능까지 휴머노이드 개발 전 과정을 자체 기술로 수행하는 팀 운영 역량을 보유하고 있다.",
+        "evidence_ids": [
+          "E1"
+        ]
+      },
+      {
+        "criterion": "문제의 심각성과 구매 필요성",
+        "grade": 4,
+        "fact": "제조업 등 산업 현장에서는 고강도·고위험 작업 대체와 인력난 해소를 위해 로봇 활용 확산이 필요하며, 이는 로봇공정모델 실증사업 등에서 지원되고 있다.",
+        "evidence_ids": [
+          "E3"
+        ]
+      },
+      {
+        "criterion": "시장 성장 동력",
+        "grade": 4,
+        "fact": "제조업의 공급망 회복력 강화와 고임금 국가 및 인력 부족 국가에서 제조 역량 구축이 자동화 기술 수요를 촉진하는 주요 요인이다.",
+        "evidence_ids": [
+          "E5"
+        ]
+      }
+    ],
+    "key_risks": [
+      {
+        "criterion": "핵심 작업 성능",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "동일 작업 조건의 성공률·처리량·지연과 독립 성능 검증"
+      },
+      {
+        "criterion": "현장 안정성·안전성",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "장시간 운전 기록, 장애·안전 사고와 인증·시험 자료"
+      },
+      {
+        "criterion": "유상 매출·납품",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "유상 계약·인도·매출 인식 자료와 실제 고객 확인"
+      }
+    ],
+    "required_conditions": [
+      {
+        "criterion": "현재 투자조건",
+        "required": "현재 거래의 기업가치·지분/권리·자금 사용 계획 확인",
+        "items": [
+          "기업가치의 합리성",
+          "지분·권리 조건",
+          "투자금 사용·다음 목표"
+        ]
+      },
+      {
+        "criterion": "핵심 작업 성능",
+        "required": "동일 작업 조건의 성공률·처리량·지연과 독립 성능 검증",
+        "items": [
+          "핵심 작업 성능"
+        ]
+      },
+      {
+        "criterion": "현장 안정성·안전성",
+        "required": "장시간 운전 기록, 장애·안전 사고와 인증·시험 자료",
+        "items": [
+          "현장 안정성·안전성"
+        ]
+      },
+      {
+        "criterion": "유상 매출·납품",
+        "required": "유상 계약·인도·매출 인식 자료와 실제 고객 확인",
+        "items": [
+          "유상 매출·납품"
+        ]
+      }
+    ],
+    "decision_policy": {
+      "score_threshold": null,
+      "critical_criteria": [
+        "핵심 작업 성능",
+        "현장 안정성·안전성",
+        "유상 매출·납품",
+        "고객 재구매·확대"
+      ],
+      "current_terms_required": true,
+      "confirmed_critical_zero_requires_hold": true
+    },
+    "full_opinion_reason": "로브로스는 50명 이상의 자체 기술 기반 팀 운영 역량과 산업 현장의 로봇 수요라는 긍정적 시장 배경을 갖추고 있으나, 실제 고객 계약, 매출, 납품 실적, 대기업 투자 지분, 시장 진입 성과 및 재구매/확대 실적 등 주요 핵심 실적과 투자조건에 관한 확인 가능한 객관적 근거가 부족하다. 또한 기술성 측면에서 일부 AI 및 제어 기술 개발 사실이 있으나, 현장 실증 성능, 양산 및 유지보수 체계, 경쟁우위에 대한 비교우위 근거도 미흡하다. 따라서 현재 공개된 자료만으로는 투자 실행을 정당화하기 어려우며, 추가적인 원문 계약, 재무, 실증 데이터와 투자조건 검증이 필요한 상황이다."
+  },
+  "decision_policy": {
+    "method": "fixed_scorecard",
+    "required_items": [
+      "핵심 작업 성능"
+    ],
+    "decision_basis": "검증 사실·미확인 항목·위험의 종합 검토",
+    "require_criteria_coverage": true,
+    "resume_report_only": true
+  },
+  "configured_models": {
+    "openai_model": "gpt-4.1-mini",
+    "judge_model": "gpt-4.1",
+    "evidence_model": "gpt-4.1",
+    "grader_model": "gpt-4.1"
+  },
+  "category_scores": {
+    "창업자·핵심팀": {
+      "weight": 20,
+      "earned_score": 2.5,
+      "scorable_weight": 5,
+      "unknown_items": [
+        "관련 전문성",
+        "제품화·사업 실행력",
+        "소통의 명확성과 신뢰성"
+      ]
+    },
+    "시장성": {
+      "weight": 25,
+      "earned_score": 12.0,
+      "scorable_weight": 12,
+      "unknown_items": [
+        "실제 접근 가능한 시장",
+        "시장 진입·확장 가능성"
+      ]
+    },
+    "제품·기술력": {
+      "weight": 15,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "핵심 작업 성능",
+        "현장 안정성·안전성",
+        "양산·유지보수 가능성"
+      ]
+    },
+    "경쟁우위": {
+      "weight": 10,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "경쟁 제품 대비 고객 가치",
+        "모방하기 어려운 자산",
+        "고객 유지·전환 장벽"
+      ]
+    },
+    "실적": {
+      "weight": 20,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "대기업 실제 지분·CVC 투자",
+        "유상 매출·납품",
+        "대기업 계약·납품 단계",
+        "고객 재구매·확대"
+      ]
+    },
+    "투자조건": {
+      "weight": 10,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "기업가치의 합리성",
+        "지분·권리 조건",
+        "투자금 사용·다음 목표"
+      ]
+    }
+  },
+  "score_details": {
+    "관련 전문성": {
+      "category": "창업자·핵심팀",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "창업자 및 핵심 인력의 구체적인 직무 경력, 실제 수행 역할에 대한 확인된 근거가 제시되어 있지 않음.",
+      "evidence": []
+    },
+    "제품화·사업 실행력": {
+      "category": "창업자·핵심팀",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "개발 결과를 실제로 제품화하여 현장에 도입하거나 사업적으로 실행한 구체적 이력, 달성 이정표 등에 대한 확인된 근거가 없음.",
+      "evidence": []
+    },
+    "팀 구성·운영 역량": {
+      "category": "창업자·핵심팀",
+      "weight": 5,
+      "grade": 2,
+      "score": 2.5,
+      "reason": "회사 발표에 따르면 50명 이상의 규모와, 하드웨어 설계부터 AI 지능까지 전 과정을 자체 기술로 운영한다고 명시됨. 실제 구성과 팀 역량이 확인되지만, 외부 실적이나 독립 검증자료 없이 자체 설명 범위에 한함. 실제 다분야 전문가 역할 분장과 운영 이력에 대한 구체성은 불충분함.",
+      "evidence": [
+        {
+          "claim": "로브로스는 50명 이상의 팀 규모를 갖추고 있으며, 하드웨어 설계부터 AI 지능까지 휴머노이드 개발 전 과정을 자체 기술로 수행하는 팀 운영 역량을 보유하고 있다.",
+          "criterion_id": "team_operations",
+          "source_refs": [
+            {
+              "doc_id": "RB-01",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "RB-01",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "50+ 팀 규모 우리는 로봇 하드웨어 설계부터 이동·조작을 위한 제어 기술, 스스로 판단하고 행동하는 VLA 기반 지능까지 휴머노이드 개발 전 과정을 자체 기술로 구축합니다.",
+          "evidence_reason": "원본 페이지는 로브로스가 50명 이상의 팀 규모임을 '50+ 팀 규모'로 명시적으로 표기하고, 하드웨어 설계부터 AI 지능까지 휴머노이드 개발 전 과정을 '자체 기술로 구축'한다고 밝히고 있다. 따라서 모든 핵심 원자 사실이 직접적으로 명시되어 있다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "로브로스는 50명 이상의 팀 규모를 갖추고 있으며, 로봇 하드웨어 설계부터 AI 지능 개발까지 휴머노이드 개발 전 과정을 자체 기술로 수행한다.",
+          "criterion_id": "team_operations",
+          "source_refs": [
+            {
+              "doc_id": "RB-01",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "RB-01",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "50+ 팀 규모 우리는 로봇 하드웨어 설계부터 이동·조작을 위한 제어 기술, 스스로 판단하고 행동하는 VLA 기반 지능까지 휴머노이드 개발 전 과정을 자체 기술로 구축합니다.",
+          "evidence_reason": "원본 페이지에는 '50+ 팀 규모'라는 표현과 함께, 로봇 하드웨어 설계부터 AI 기반 지능까지 휴머노이드 개발 전 과정을 '자체 기술로 구축합니다'라는 직접적 문구가 명시되어 있다. 주장에 포함된 주요 세부 사실(50명 이상의 팀, 하드웨어·소프트웨어 전 과정 자체 기술 수행)이 모두 직접적으로 언급되어 있으므로 supported로 판정된다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "소통의 명확성과 신뢰성": {
+      "category": "창업자·핵심팀",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "공식 설명의 명확성, 목표와 실제 결과 구분에 대한 구체적 근거가 확인되지 않음.",
+      "evidence": []
+    },
+    "실제 접근 가능한 시장": {
+      "category": "시장성",
+      "weight": 8,
+      "grade": null,
+      "score": null,
+      "reason": "실제 고객·계약·실증 등 접근 가능한 시장 범위를 명시적으로 뒷받침하는 자료가 제시되지 않음.",
+      "evidence": []
+    },
+    "문제의 심각성과 구매 필요성": {
+      "category": "시장성",
+      "weight": 7,
+      "grade": 4,
+      "score": 7.0,
+      "reason": "제조업 등 현장에서 고강도·고위험 작업 대체, 인력난 해소 등 로봇 수요의 필요성을 KIRIA와 IFR 공식 보고자료에서 구체적으로 기술하였고, 실증 사업 등에서 이를 지원하고 있음을 명확히 언급함. 각종 산업 현장의 구매 필요성이 산업계 전반적으로 확인됨.",
+      "evidence": [
+        {
+          "claim": "제조업 등 산업 현장에서는 고강도·고위험 작업 대체와 인력난 해소를 위해 로봇 활용 확산이 필요하며, 이는 로봇공정모델 실증사업 등에서 지원되고 있다.",
+          "criterion_id": "customer_pain_purchase_need",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든 로봇공정모델(167개)실증",
+          "evidence_reason": "원문에는 제조업 등 산업 현장에서 고강도·고위험 작업 대체와 인력난 해소를 위해 로봇 활용 확산이 필요하다고 명시되어 있으며, 실제로 '로봇공정모델 실증사업' 등에서 이를 지원하고 실증하고 있는 내용이 구체적으로 언급되어 있다. 주장의 모든 핵심 내용이 원문에 명시적으로 뒷받침된다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "로봇 도입은 노동력 부족 문제 해결, 반복 작업 경감, 젊은 인력 유치 등 산업 현장의 심각한 문제를 완화하는 수단으로 인식되고 있다.",
+          "criterion_id": "customer_pain_purchase_need",
+          "source_refs": [
+            {
+              "doc_id": "CM-02",
+              "page": 2
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "CM-02",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "The benefits that robots deliver, such as tackling labor shortages, taking away routine tasks or opening up new career opportunities, mean that they will be accepted as allies in the workplace. At the same time, robots are a way to make a workplace much more attractive to young people.",
+          "evidence_reason": "원본 페이지는 로봇 도입이 'labor shortages'(노동력 부족) 해소, 'taking away routine tasks'(반복 작업 경감), 'make a workplace much more attractive to young people'(젊은 인력 유치) 등 산업 현장의 주요 문제를 완화하는 수단으로 인식된다고 명시적으로 서술했다. 주장의 모든 핵심 사실이 직접적으로 뒷받침된다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "시장 성장 동력": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": 4,
+      "score": 5.0,
+      "reason": "제조업 공급망, 고임금/인력난 국가의 자동화 수요가 시장 성장의 주요 동력임을 IFR 등 공식 산업 보고서에서 뒷받침. 산업 정책 변화와 공급망 회복력 강화 등 계량적 수요 지표도 포함되어 있다.",
+      "evidence": [
+        {
+          "claim": "제조업의 공급망 회복력 강화와 고임금 국가 및 인력 부족 국가에서 제조 역량 구축이 자동화 기술 수요를 촉진하는 주요 요인이다.",
+          "criterion_id": "market_growth_drivers",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 3
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "The need for more resilient supply chains and recent developments of trade and industrial policy in several major economies are resulting in increasing relocation activity in the manufacturing industries. Building manufacturing capacity in high-wage economies and countries facing labor shortages will drive the demand for automation technology.",
+          "evidence_reason": "원문은 제조업의 공급망 회복력에 대한 필요와 고임금 국가 및 인력 부족 국가에서 제조 역량 구축이 자동화 기술(즉, 로봇 수요)을 촉진하는 주요 요인임을 명시적으로 언급하고 있다. 이는 주장의 모든 핵심 원자 사실이 직접적으로 뒷받침됨을 의미한다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "시장 진입·확장 가능성": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "실제 시장 진입 경로, 구체적 고객 확보나 산업·지역 확장 실적을 확인할 구체적 근거가 없음.",
+      "evidence": []
+    },
+    "핵심 작업 성능": {
+      "category": "제품·기술력",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "파지, 이동, 삽입 등 핵심 작업의 실측 성공률, 속도, 환경 조건 등 반복 검증된 성능 근거가 존재하지 않음.",
+      "evidence": []
+    },
+    "현장 안정성·안전성": {
+      "category": "제품·기술력",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "반복 작업 신뢰성, 가동시간, 장애/안전 검증 등 실제 현장 조건에서 실측된 자료가 없으므로 평가할 근거가 없음.",
+      "evidence": []
+    },
+    "양산·유지보수 가능성": {
+      "category": "제품·기술력",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "실제 양산 이력, 제조 비용 기준, 정비·유지보수 체계가 실제 운영/납품 수준에서 증명된 근거가 없음.",
+      "evidence": []
+    },
+    "경쟁 제품 대비 고객 가치": {
+      "category": "경쟁우위",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "기존 방식이나 경쟁 제품 대비 효과, 비용, 성능에 관한 비교 실적 자료가 없음.",
+      "evidence": []
+    },
+    "모방하기 어려운 자산": {
+      "category": "경쟁우위",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "보호되는 독자 기술, 특허, 노하우 등 모방 장벽을 입증할 수 있는 구체적 근거가 제시되지 않음.",
+      "evidence": []
+    },
+    "고객 유지·전환 장벽": {
+      "category": "경쟁우위",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "고객 유지, 시스템 통합, 전환 비용 등 고객 전환 장벽에 대한 실증 근거가 없음.",
+      "evidence": []
+    },
+    "대기업 실제 지분·CVC 투자": {
+      "category": "실적",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "대기업 또는 CVC의 실제 지분 투자가 이루어졌음을 확인할 객관적 거래 근거가 없음.",
+      "evidence": []
+    },
+    "유상 매출·납품": {
+      "category": "실적",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "유상 매출 실적, 상용 납품의 실제 거래 및 고객 지급 확인 근거가 없음.",
+      "evidence": []
+    },
+    "대기업 계약·납품 단계": {
+      "category": "실적",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "대기업과의 MOU, 현장 실증, 유상 납품 등 납품 단계 구분을 명확히 할 수 있는 원문 근거가 없음.",
+      "evidence": []
+    },
+    "고객 재구매·확대": {
+      "category": "실적",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "기존 고객의 유상 재구매, 계약 갱신, 확대 실적이 원문으로 확인되지 않음.",
+      "evidence": []
+    },
+    "기업가치의 합리성": {
+      "category": "투자조건",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    },
+    "지분·권리 조건": {
+      "category": "투자조건",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    },
+    "투자금 사용·다음 목표": {
+      "category": "투자조건",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    }
+  },
+  "report_evaluation": {
+    "passed": true,
+    "issues": [],
+    "data_gaps": [
+      "창업자 및 핵심 인력의 구체적 경력과 실제 수행 역할",
+      "제품화·사업 실행에 관한 구체적 사례 및 매출 실적",
+      "핵심 작업(파지/이동/삽입 등)의 실측 성공률 및 반복 검증된 성능 자료",
+      "현장 안정성·신뢰성(장시간 테스트, 장애·안전 인증·운전 자료)",
+      "양산 이력·유지보수 체계·정비 비용 등 양산성 및 운영 자료",
+      "대기업 투자·지분 구조와 실제 지분 거래 자료",
+      "대기업 계약 및 유상 납품 단계 명기 자료",
+      "고객 재구매·유상 갱신·도입 확대 실적 원문",
+      "경쟁 제품 대비 비용·성능 비교 자료 및 핵심 특허·노하우·데이터 보유 근거",
+      "투자조건: 기업가치·지분/권리·자금 사용 계획"
+    ],
+    "rubric": {
+      "groundedness": true,
+      "neutrality": true,
+      "bias_control": true,
+      "groundedness_reason": "모든 확인된 사실(예: 팀 규모, 자체 기술 수행, 산업 현장의 로봇 활용 필요성, 시장 성장 동력 등)이 실제 검증된 원문 근거(회사 공식 소개자료, KIRIA/IFR 등 산업 공식 보고서)에 명시적으로 근거한 것으로 확인된다. 투자 유보 사유, U(자료 미확인) 표기, 각 항목별 한계 및 추가 자료 요청 등도 부실 근거의 우회적 대체나 허위 사실로 언급하지 않고 명확히 자료 미확인 또는 확인 불가 상태로 구분하여 기재했다. 등급 산정과 배점 집계, 제안 의견도 자료에서 유도한 사실에 기반해 이루어졌다.",
+      "neutrality_reason": "보고서는 로브로스의 장점(팀 역량, 시장 니즈 등)뿐 아니라, 미확인된 핵심 실적·투자조건·경쟁 우위·현장 성능 등 한계사항을 반복 강조하고 등급을 U로 표시하며, 긍정적 설명을 '투자 추천' 결론으로 확대하지 않았다. 회사의 발표 내용과 산업 공식 통계, 보고서에 명시된 한계점을 명확히 분리해 기술하여 홍보적 표현을 극복 사실로 취급하지 않고, 제3자 검증 및 객관적 근거 부족은 반드시 후속 확인 사실로 구분한다. 장점과 한계, 확인·미확인 영역을 균형있게 서술했다.",
+      "bias_control_reason": "자체 설명, 회사 발표와 객관적 산업 데이터(KIRIA/IFR 등), 외부 실적 부재, 독립적 검증의 한계 및 향후 요구 자료 등 모두 분리하여 객관적으로 기술하였다. 회사 자료에만 근거한 경우에는 그 자체 제한성을 반복 명기하였으며, 자료 미확인을 곧 성과 부재로 판단하지도 않으며 그 미확인은 실제 실패가 아님을 여러 차례 명시했다. 반증 자료, 비판적 검증 기준(예: 유상 매출, 재구매, 대기업 납품, 실증 데이터 등)이 결여된 점을 숨기지 않고 전면적으로 공개했다.",
+      "action": "rewrite",
+      "issues": [],
+      "data_gaps": [
+        "창업자 및 핵심 인력의 구체적 경력과 실제 수행 역할",
+        "제품화·사업 실행에 관한 구체적 사례 및 매출 실적",
+        "핵심 작업(파지/이동/삽입 등)의 실측 성공률 및 반복 검증된 성능 자료",
+        "현장 안정성·신뢰성(장시간 테스트, 장애·안전 인증·운전 자료)",
+        "양산 이력·유지보수 체계·정비 비용 등 양산성 및 운영 자료",
+        "대기업 투자·지분 구조와 실제 지분 거래 자료",
+        "대기업 계약 및 유상 납품 단계 명기 자료",
+        "고객 재구매·유상 갱신·도입 확대 실적 원문",
+        "경쟁 제품 대비 비용·성능 비교 자료 및 핵심 특허·노하우·데이터 보유 근거",
+        "투자조건: 기업가치·지분/권리·자금 사용 계획"
+      ]
+    },
+    "action": "rewrite",
+    "method": "hybrid"
+  },
+  "trace_id": "8a8412a2-846a-4bdc-97cf-564cc585edd4",
+  "recheck_count": 3,
+  "input_paths": {
+    "data_dir": "./rag/data",
+    "com_data_dir": "./com_data",
+    "index_dir": "./.cache/rag_index"
+  },
+  "index_info": {
+    "cache_hit": true,
+    "cache_status": "loaded",
+    "cache_path": "./.cache/rag_index/983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
+    "fingerprint": "983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
+    "model": "BAAI/bge-m3",
+    "documents": 22,
+    "pages": 106,
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "chunks": 154,
+    "dimensions": 1024
+  },
+  "report_path": "./output/submission-live/robros.pdf",
+  "evaluation_criteria": {
+    "name": "Physical AI·Robotics 투자 검토 평가표",
+    "source_pdf": "evaluation/physical_ai_investment_design.pdf",
+    "source_pages": [
+      2,
+      3
+    ],
+    "source_sha256": "a0fdaedcd06951da8a816c253c6712cd2da05172dc652ab997ca900dff0c045d",
+    "categories": {
+      "창업자·핵심팀": {
+        "관련 전문성": 6,
+        "제품화·사업 실행력": 6,
+        "팀 구성·운영 역량": 5,
+        "소통의 명확성과 신뢰성": 3
+      },
+      "시장성": {
+        "실제 접근 가능한 시장": 8,
+        "문제의 심각성과 구매 필요성": 7,
+        "시장 성장 동력": 5,
+        "시장 진입·확장 가능성": 5
+      },
+      "제품·기술력": {
+        "핵심 작업 성능": 6,
+        "현장 안정성·안전성": 5,
+        "양산·유지보수 가능성": 4
+      },
+      "경쟁우위": {
+        "경쟁 제품 대비 고객 가치": 4,
+        "모방하기 어려운 자산": 3,
+        "고객 유지·전환 장벽": 3
+      },
+      "실적": {
+        "대기업 실제 지분·CVC 투자": 4,
+        "유상 매출·납품": 5,
+        "대기업 계약·납품 단계": 6,
+        "고객 재구매·확대": 5
+      },
+      "투자조건": {
+        "기업가치의 합리성": 4,
+        "지분·권리 조건": 3,
+        "투자금 사용·다음 목표": 3
+      }
+    },
+    "category_count": 6,
+    "criterion_count": 21,
+    "total_weight": 100,
+    "grade_scale": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "unknown_grade": "U",
+    "formula": "항목 배점 × 등급 ÷ 4",
+    "unknown_policy": "U는 0점으로 채우거나 제외 후 100점으로 재환산하지 않음",
+    "verified_against_pdf": true
+  },
+  "selection_note": "원 배점 점수와 U·근거 비중을 함께 검토; 자동 순위·투자 선택 아님",
+  "resume": {
+    "snapshot_path": "./output/submission-live/robros.state.json",
+    "resumed_from_trace_id": "36404e6c-02c0-494f-8bb9-b14c798a0d91"
+  },
+  "tracing": {
+    "requested": true,
+    "key_present": true,
+    "enabled": true,
+    "project": "physical-ai-minimal-orchestration",
+    "root_run_id": "a058c052-ca40-4cc0-9857-fc6a9ed95843",
+    "upload_verified": false
+  },
+  "metrics": {
+    "graph_elapsed_seconds": 32.353427,
+    "nodes": [
+      {
+        "node": "writer",
+        "run_id": "01a13473-e615-7cd1-b18f-17ed7eb2d240",
+        "round": 3,
+        "elapsed_seconds": 19.610768,
+        "status": "completed"
+      },
+      {
+        "node": "report_evaluator",
+        "run_id": "01a13474-32b5-7672-9be5-449d1c01cf1d",
+        "round": 3,
+        "elapsed_seconds": 12.732224,
+        "status": "completed"
+      }
+    ],
+    "observed_model_usage": {},
+    "token_usage_scope": "LangChain AIMessage usage callbacks only; direct OpenAI Responses calls are excluded",
+    "total_token_usage": null,
+    "total_cost": null
+  }
+}

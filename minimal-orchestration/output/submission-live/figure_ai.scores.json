@@ -1,0 +1,597 @@
+{
+  "company": "Figure AI",
+  "mode": "live",
+  "status": "partial",
+  "total_score": 13.75,
+  "score_scale": 100,
+  "scorable_weight": 15,
+  "unknown_weight": 85,
+  "coverage": {
+    "research_criteria": 18,
+    "attempted_criteria": 18,
+    "supported_criteria": 5
+  },
+  "investment_decision": "보류",
+  "decision_reason": "Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다. 또한 Helix 2.5 AI의 가정 내 제로샷 작업 수행 능력과 Figure 02의 1,250시간 이상 현장 가동에 따른 신뢰성 검증 등 핵심 제품 기술도 확인됩니다. 그러나 2024~2026년 매출 및 손익, 고객별 매출 구성, 계약 수주액·구체적 계약 조건, 제조원가 및 단위당 생산 비용, 반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아 투자 판단을 위한 충분한 근거가 부족합니다. 또한 휴머노이드 로봇 안전성 관련 소송 진행과 같은 법률적 위험 요인과, 시장 규모 및 성장 동력, 경쟁우위 비교 자료 등도 미확인 상태입니다. 따라서 추가 실사로 위 핵심 재무·사업 지표 및 리스크 해소가 필요하므로 현 시점에서 투자를 즉시 실행하기에는 근거가 불충분합니다.",
+  "investment_case": {
+    "action": "투자 보류",
+    "rationale": "확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.",
+    "model_opinion": "보류",
+    "supporting_facts": [
+      {
+        "criterion": "대기업 실제 지분·CVC 투자",
+        "grade": 4,
+        "fact": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+        "evidence_ids": [
+          "E1"
+        ]
+      },
+      {
+        "criterion": "핵심 작업 성능",
+        "grade": 4,
+        "fact": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+        "evidence_ids": [
+          "E6"
+        ]
+      },
+      {
+        "criterion": "현장 안정성·안전성",
+        "grade": 3,
+        "fact": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+        "evidence_ids": [
+          "E8"
+        ]
+      }
+    ],
+    "key_risks": [
+      {
+        "criterion": "유상 매출·납품",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "유상 계약·인도·매출 인식 자료와 실제 고객 확인"
+      },
+      {
+        "criterion": "고객 재구매·확대",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료"
+      },
+      {
+        "criterion": "관련 전문성",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "창업자·핵심 인력의 직무 이력과 관련 제품 개발 실적"
+      }
+    ],
+    "required_conditions": [
+      {
+        "criterion": "현재 투자조건",
+        "required": "현재 거래의 기업가치·지분/권리·자금 사용 계획 확인",
+        "items": [
+          "기업가치의 합리성",
+          "지분·권리 조건",
+          "투자금 사용·다음 목표"
+        ]
+      },
+      {
+        "criterion": "유상 매출·납품",
+        "required": "유상 계약·인도·매출 인식 자료와 실제 고객 확인",
+        "items": [
+          "유상 매출·납품"
+        ]
+      },
+      {
+        "criterion": "고객 재구매·확대",
+        "required": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료",
+        "items": [
+          "고객 재구매·확대"
+        ]
+      }
+    ],
+    "decision_policy": {
+      "score_threshold": null,
+      "critical_criteria": [
+        "핵심 작업 성능",
+        "현장 안정성·안전성",
+        "유상 매출·납품",
+        "고객 재구매·확대"
+      ],
+      "current_terms_required": true,
+      "confirmed_critical_zero_requires_hold": true
+    },
+    "full_opinion_reason": "Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다. 또한 Helix 2.5 AI의 가정 내 제로샷 작업 수행 능력과 Figure 02의 1,250시간 이상 현장 가동에 따른 신뢰성 검증 등 핵심 제품 기술도 확인됩니다. 그러나 2024~2026년 매출 및 손익, 고객별 매출 구성, 계약 수주액·구체적 계약 조건, 제조원가 및 단위당 생산 비용, 반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아 투자 판단을 위한 충분한 근거가 부족합니다. 또한 휴머노이드 로봇 안전성 관련 소송 진행과 같은 법률적 위험 요인과, 시장 규모 및 성장 동력, 경쟁우위 비교 자료 등도 미확인 상태입니다. 따라서 추가 실사로 위 핵심 재무·사업 지표 및 리스크 해소가 필요하므로 현 시점에서 투자를 즉시 실행하기에는 근거가 불충분합니다."
+  },
+  "decision_policy": {
+    "method": "fixed_scorecard",
+    "required_items": [
+      "핵심 작업 성능"
+    ],
+    "decision_basis": "검증 사실·미확인 항목·위험의 종합 검토",
+    "require_criteria_coverage": true,
+    "resume_report_only": true
+  },
+  "configured_models": {
+    "openai_model": "gpt-4.1-mini",
+    "judge_model": "gpt-4.1",
+    "evidence_model": "gpt-4.1",
+    "grader_model": "gpt-4.1"
+  },
+  "category_scores": {
+    "창업자·핵심팀": {
+      "weight": 20,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "관련 전문성",
+        "제품화·사업 실행력",
+        "팀 구성·운영 역량",
+        "소통의 명확성과 신뢰성"
+      ]
+    },
+    "시장성": {
+      "weight": 25,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "실제 접근 가능한 시장",
+        "문제의 심각성과 구매 필요성",
+        "시장 성장 동력",
+        "시장 진입·확장 가능성"
+      ]
+    },
+    "제품·기술력": {
+      "weight": 15,
+      "earned_score": 9.75,
+      "scorable_weight": 11,
+      "unknown_items": [
+        "양산·유지보수 가능성"
+      ]
+    },
+    "경쟁우위": {
+      "weight": 10,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "경쟁 제품 대비 고객 가치",
+        "모방하기 어려운 자산",
+        "고객 유지·전환 장벽"
+      ]
+    },
+    "실적": {
+      "weight": 20,
+      "earned_score": 4.0,
+      "scorable_weight": 4,
+      "unknown_items": [
+        "유상 매출·납품",
+        "대기업 계약·납품 단계",
+        "고객 재구매·확대"
+      ]
+    },
+    "투자조건": {
+      "weight": 10,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "기업가치의 합리성",
+        "지분·권리 조건",
+        "투자금 사용·다음 목표"
+      ]
+    }
+  },
+  "score_details": {
+    "관련 전문성": {
+      "category": "창업자·핵심팀",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "창업자와 핵심 인력의 경력, 전문성, 실제 수행 역할에 대해 확인 가능한 근거가 제공되지 않았다.",
+      "evidence": []
+    },
+    "제품화·사업 실행력": {
+      "category": "창업자·핵심팀",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "개발 결과를 제품이나 현장 도입으로 전환한 주요 이정표와 실제 사례에 대한 뚜렷한 근거가 없다. 상용계약 등은 일부 확인되나, 팀의 명확한 실행 이력 확인은 불가하다.",
+      "evidence": []
+    },
+    "팀 구성·운영 역량": {
+      "category": "창업자·핵심팀",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "핵심 인력 구성, 제조·소프트웨어·사업 담당 역량 및 팀의 실제 운영 이력에 대한 근거는 찾을 수 없다.",
+      "evidence": []
+    },
+    "소통의 명확성과 신뢰성": {
+      "category": "창업자·핵심팀",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "공식 설명의 명확성, 목표와 결과 구분에 대한 평가를 위한 객관적 근거 자료가 없다.",
+      "evidence": []
+    },
+    "실제 접근 가능한 시장": {
+      "category": "시장성",
+      "weight": 8,
+      "grade": null,
+      "score": null,
+      "reason": "접근 가능한 실제 고객군, 계약, 실증 시장 범위에 대한 수량적·구체적 근거는 미확인. 일부 상용 계약이 있지만 시장 전체 규모 등 단계적 정보 불충분.",
+      "evidence": []
+    },
+    "문제의 심각성과 구매 필요성": {
+      "category": "시장성",
+      "weight": 7,
+      "grade": null,
+      "score": null,
+      "reason": "고객의 비용/인력/생산 문제 및 유상 구매 필요성에 대한 구체적 데이터나 사례는 현재 근거에 포함되어 있지 않다.",
+      "evidence": []
+    },
+    "시장 성장 동력": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "산업 수요, 인력 부족, 기술 변화, 검증 가능한 시장 성장 지표 등은 명시되지 않았다.",
+      "evidence": []
+    },
+    "시장 진입·확장 가능성": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "실제 시장 진입 경로나 고객 확보 및 산업/지역 확장에 대한 구체적인 근거는 제시되지 않았다.",
+      "evidence": []
+    },
+    "핵심 작업 성능": {
+      "category": "제품·기술력",
+      "weight": 6,
+      "grade": 4,
+      "score": 6.0,
+      "reason": "Helix 2.5가 30곳 새로운 가정에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 사전 데이터 수집, 파인튜닝 없이 성공적으로 수행함이 직접 확인된다. Figure 03의 핸드 센서는 3g 압력 감지, 섬세하고 안정적인 파지를 자체 개발해 파지 신뢰성 및 제어 정밀성이 확인된다. 여러 환경에서 정량적 실측 성능 입증도 확인됨. 다만, 제조업 등 기타 산업군에 대한 반복 실측 수치는 확인 불가.",
+      "evidence": [
+        {
+          "claim": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+          "criterion_id": "core_task_performance",
+          "source_refs": [
+            {
+              "doc_id": "WEB-d12ee081a0882850",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "WEB-d12ee081a0882850",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Helix 2.5 performs three long-horizon behaviors across 30 unseen homes, with no data collection, fine-tuning, or adaptation in those environments or manipulated objects.",
+          "evidence_reason": "원본 페이지에서는 Helix 2.5가 사전 데이터 수집, 파인튜닝, 적응 없이 30곳의 새로운 집에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 수행했다는 것이 명확하게 언급되고 있다. 이는 주장에 포함된 '30개의 미지의 가정 환경', '세 가지 장기 작업', '사전 데이터 수집 없이', '제로샷'이라는 각 요소를 모두 직접적으로 뒷받침한다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure 03 로봇의 손은 내구성, 신뢰성, 고해상도 촉각 센서를 자체 개발하여 3그램의 미세 압력까지 감지하며, 이를 통해 섬세하고 안정적인 물체 파지가 가능하다.",
+          "criterion_id": "core_task_performance",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "This led to the internal development of our first-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and high-fidelity sensing. Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to register the weight of a paperclip resting on your finger. This precision enables Helix to distinguish between a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control over fragile, irregular, or moving objects.",
+          "evidence_reason": "원문은 Figure 03의 손(핀거팁) 센서가 내구성, 신뢰성, 고해상도 촉각(high-fidelity sensing), 3그램의 미세 압력 감지 능력을 Figure사 자체 개발로 달성했음을 명시하고 있다. 또한 이 촉각 정밀도가 섬세하고 안정적인 물체 파지(파지 안정성, 미끄러짐 직전 감지 및 정밀한 제어)를 가능하게 한다는 설명이 있다. 모든 핵심 세부 사실이 직접 뒷받침된다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "현장 안정성·안전성": {
+      "category": "제품·기술력",
+      "weight": 5,
+      "grade": 3,
+      "score": 3.75,
+      "reason": "Figure 02가 1,250+ 시간 현장 가동, 최소한의 하드웨어 고장, 축적된 신뢰성 데이터 및 설계 개선에 대한 근거가 명시되어 있다. 실제 현장 조건에서 반복 작업의 신뢰성, 장애 검증 근거는 있으나 다양한 환경 및 장기 안전성 데이터는 제한적이다.",
+      "evidence": [
+        {
+          "claim": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+          "criterion_id": "field_reliability_safety",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 4
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures while generating critical data that informed the build procedures, component architecture, and mechanical design of Figure 03.",
+          "evidence_reason": "원문에는 Figure 02가 1,250시간 이상의 현장 가동(operational hours) 동안 최소한의 하드웨어 고장만을 기록했고, 그 데이터를 Figure 03의 설계에 반영했다는 점이 명시되어 있다. 주장의 모든 핵심 사실이 직접적으로 확인된다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "양산·유지보수 가능성": {
+      "category": "제품·기술력",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "실제 생산 이력, 제조 확장, 비용 및 유지보수 체계에 대한 구체적 사례나 명확한 근거는 확인되지 않았다. 미래 계획·목표, 설계 등은 별개.",
+      "evidence": []
+    },
+    "경쟁 제품 대비 고객 가치": {
+      "category": "경쟁우위",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "기존 방식이나 경쟁 제품과 비교한 고객 비용, 성능, 도입 효과 등 정량적 비교 근거가 확인되지 않는다.",
+      "evidence": []
+    },
+    "모방하기 어려운 자산": {
+      "category": "경쟁우위",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "특허, 독자 기술, 데이터, 노하우 등 실제 모방 장벽을 뒷받침하는 자료는 확인되지 않았다. 자체 센서 개발 등은 별개이나, 모방불가성을 입증할 독점 사례 근거 부족.",
+      "evidence": []
+    },
+    "고객 유지·전환 장벽": {
+      "category": "경쟁우위",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "고객의 유지, 시스템 통합, 전환 비용, 지속 사용을 보여주는 사례나 수치는 확인되지 않았다.",
+      "evidence": []
+    },
+    "대기업 실제 지분·CVC 투자": {
+      "category": "실적",
+      "weight": 4,
+      "grade": 4,
+      "score": 4.0,
+      "reason": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management 등 복수 대기업·CVC의 실제 지분투자(Series C)가 확인됐다. Nscale의 전략적 투자도 근거로 명시되어 있다.",
+      "evidence": [
+        {
+          "claim": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+          "criterion_id": "bigtech_equity_investment",
+          "source_refs": [
+            {
+              "doc_id": "FG-01",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "relation_type": "equity_investment",
+          "source": {
+            "doc_id": "FG-01",
+            "page": 1
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield Asset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+          "evidence_reason": "원문은 NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management가 Figure의 Series C 펀딩 라운드에 significant investment를 했음을 명시하고 있다. 이는 실제로 이 회사들이 투자자로 참여했음을 의미한다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Nscale made a strategic investment in Figure AI as part of their partnership agreement.",
+          "criterion_id": "bigtech_equity_investment",
+          "source_refs": [
+            {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "relation_type": "equity_investment",
+          "source": {
+            "doc_id": "WEB-68ba598f5ceb484c",
+            "page": 1
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "As part of the agreement, Nscale is also making a strategic investment in Figure",
+          "evidence_reason": "The page explicitly states that, as part of the partnership agreement, Nscale is making a strategic investment in Figure. This directly supports the claim.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "유상 매출·납품": {
+      "category": "실적",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
+      "evidence": []
+    },
+    "대기업 계약·납품 단계": {
+      "category": "실적",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
+      "evidence": []
+    },
+    "고객 재구매·확대": {
+      "category": "실적",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "동일 고객의 유상 재구매, 계약 갱신, 납품 확대를 직접적으로 확인하는 자료는 없다.",
+      "evidence": []
+    },
+    "기업가치의 합리성": {
+      "category": "투자조건",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    },
+    "지분·권리 조건": {
+      "category": "투자조건",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    },
+    "투자금 사용·다음 목표": {
+      "category": "투자조건",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    }
+  },
+  "report_evaluation": {
+    "passed": true,
+    "issues": [],
+    "data_gaps": [
+      "2024~2026년 고객별 매출, 계약 조건, 반복 구매 현황 및 생산/판매 실적 자료",
+      "각 투자자의 의결권, 지분율, 투자 조건 등 세부 투자 구조",
+      "초기 고객 획득 경로, 조달/인증, 확장 제약, 양산 수율/원가/공급망 등",
+      "반복적 유상 매출, 동일 고객의 유상 갱신/재구매/확대 확인 자료",
+      "핵심 인력 이력과 실제 제품화·사업 실행 이력 및 팀 운영 구조",
+      "목표 고객군별 구매 필요성, 경쟁 제품·비교 성능 자료",
+      "투자조건: 기업가치·지분/권리·자금 사용 계획"
+    ],
+    "rubric": {
+      "groundedness": true,
+      "neutrality": true,
+      "bias_control": true,
+      "groundedness_reason": "보고서의 사실 주장, 점수 산정, 등급 근거, 최종 투자 제안 등은 모두 원문에서 실제로 확인된 증거만을 기반으로 했으며, 자료 부족(U)과 등급 기입 사유도 투명하게 구분표기했다. 핵심 성과(핵심 작업 성능, 현장 신뢰성, 대기업 지분투자 등)는 원문에서 직접 검증됐고, 미확인 항목은 '미확인=실패 아니다'는 점을 명시했다.",
+      "neutrality_reason": "Figure AI와 관련된 평가, 등급, 최종 의견에서 우월성·독점성·경쟁우위 등에 대한 주관적 확장이나 일방적 홍보 표현은 사용하지 않고, 객관적 사실 검증 결과와 자료 부족을 명확히 구분했다. 내부 혁신성·세계 최고 주장은 별도 증거 없이는 평가 점수·종합 의견에 반영하지 않았다.",
+      "bias_control_reason": "회사의 모든 주요 성과·계약·실행력에 대해 자체 발표만을 투자·매출·유상납품으로 확대 해석하지 않고, 자료 출처와 단계적 증거를 명확히 구분했다. 투자·계약·재구매 등 거래 단계는 독립 사실 근거와 일치 여부에 따라 U등급, partial 등을 부여하며, 확인된 사실만을 점수에 반영했다.",
+      "action": "rewrite",
+      "issues": [],
+      "data_gaps": [
+        "2024~2026년 고객별 매출, 계약 조건, 반복 구매 현황 및 생산/판매 실적 자료",
+        "각 투자자의 의결권, 지분율, 투자 조건 등 세부 투자 구조",
+        "초기 고객 획득 경로, 조달/인증, 확장 제약, 양산 수율/원가/공급망 등",
+        "반복적 유상 매출, 동일 고객의 유상 갱신/재구매/확대 확인 자료",
+        "핵심 인력 이력과 실제 제품화·사업 실행 이력 및 팀 운영 구조",
+        "목표 고객군별 구매 필요성, 경쟁 제품·비교 성능 자료",
+        "투자조건: 기업가치·지분/권리·자금 사용 계획"
+      ]
+    },
+    "action": "rewrite",
+    "method": "hybrid"
+  },
+  "trace_id": "608c0606-f750-4557-b590-d444f651cb8f",
+  "recheck_count": 3,
+  "input_paths": {
+    "data_dir": "./rag/data",
+    "com_data_dir": "./com_data",
+    "index_dir": "./.cache/rag_index"
+  },
+  "index_info": {
+    "cache_hit": true,
+    "cache_status": "loaded",
+    "cache_path": "./.cache/rag_index/983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
+    "fingerprint": "983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
+    "model": "BAAI/bge-m3",
+    "documents": 22,
+    "pages": 106,
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "chunks": 154,
+    "dimensions": 1024
+  },
+  "report_path": "./output/submission-live/figure_ai.pdf",
+  "evaluation_criteria": {
+    "name": "Physical AI·Robotics 투자 검토 평가표",
+    "source_pdf": "evaluation/physical_ai_investment_design.pdf",
+    "source_pages": [
+      2,
+      3
+    ],
+    "source_sha256": "a0fdaedcd06951da8a816c253c6712cd2da05172dc652ab997ca900dff0c045d",
+    "categories": {
+      "창업자·핵심팀": {
+        "관련 전문성": 6,
+        "제품화·사업 실행력": 6,
+        "팀 구성·운영 역량": 5,
+        "소통의 명확성과 신뢰성": 3
+      },
+      "시장성": {
+        "실제 접근 가능한 시장": 8,
+        "문제의 심각성과 구매 필요성": 7,
+        "시장 성장 동력": 5,
+        "시장 진입·확장 가능성": 5
+      },
+      "제품·기술력": {
+        "핵심 작업 성능": 6,
+        "현장 안정성·안전성": 5,
+        "양산·유지보수 가능성": 4
+      },
+      "경쟁우위": {
+        "경쟁 제품 대비 고객 가치": 4,
+        "모방하기 어려운 자산": 3,
+        "고객 유지·전환 장벽": 3
+      },
+      "실적": {
+        "대기업 실제 지분·CVC 투자": 4,
+        "유상 매출·납품": 5,
+        "대기업 계약·납품 단계": 6,
+        "고객 재구매·확대": 5
+      },
+      "투자조건": {
+        "기업가치의 합리성": 4,
+        "지분·권리 조건": 3,
+        "투자금 사용·다음 목표": 3
+      }
+    },
+    "category_count": 6,
+    "criterion_count": 21,
+    "total_weight": 100,
+    "grade_scale": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "unknown_grade": "U",
+    "formula": "항목 배점 × 등급 ÷ 4",
+    "unknown_policy": "U는 0점으로 채우거나 제외 후 100점으로 재환산하지 않음",
+    "verified_against_pdf": true
+  },
+  "selection_note": "원 배점 점수와 U·근거 비중을 함께 검토; 자동 순위·투자 선택 아님",
+  "resume": {
+    "snapshot_path": "./output/submission-live/figure_ai.failed_state.json",
+    "resumed_from_trace_id": "d49f329e-eb6a-40ba-b829-58b2b9268eff"
+  },
+  "tracing": {
+    "requested": true,
+    "key_present": true,
+    "enabled": true,
+    "project": "physical-ai-minimal-orchestration",
+    "root_run_id": "06039a36-524d-456f-8801-bbc3f2fd79d2",
+    "upload_verified": false
+  },
+  "metrics": {
+    "graph_elapsed_seconds": 20.403898,
+    "nodes": [
+      {
+        "node": "writer",
+        "run_id": "01a13476-a914-7710-9942-8a58a088bc66",
+        "round": 3,
+        "elapsed_seconds": 12.684275,
+        "status": "completed"
+      },
+      {
+        "node": "report_evaluator",
+        "run_id": "01a13476-daa1-7611-9195-c61d1311dc6e",
+        "round": 3,
+        "elapsed_seconds": 7.715126,
+        "status": "completed"
+      }
+    ],
+    "observed_model_usage": {},
+    "token_usage_scope": "LangChain AIMessage usage callbacks only; direct OpenAI Responses calls are excluded",
+    "total_token_usage": null,
+    "total_cost": null
+  }
+}

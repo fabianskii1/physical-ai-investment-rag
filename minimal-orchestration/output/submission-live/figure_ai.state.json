@@ -1,0 +1,3661 @@
+{
+  "state": {
+    "company_info": {
+      "name": "Figure AI",
+      "domain": "제조·물류",
+      "research_input": {
+        "source_pdf": "com_data/Figure_AI.pdf",
+        "total_pages": 9,
+        "context": "[자료집 p.1 — 검증 전 조사 단서]\nFigure AI 기업 종합 실사 리서치\n조사 기준일: 2026년 10월 13일 | 미국 비상장 휴머노이드 로봇 기업 | 투자 검토용\n기존에 정리하신 EDGAR, Delaware, Figure 공식 홈페이지, Crunchbase, PitchBook, CB Insights, Google Patents 외\n에도 고객사 공식 발표, 글로벌 언론, 제조·공급망 자료, AI 연구 성과, 채용·인력 자료, 경쟁사 실적, 규제·법률 자료를 조사\n범위에 포함했습니다.\n특히 Figure AI는 단순히 로봇 개발에 성공했는지보다, 기술력을 실제 고객 매출과 대량생산으로 전환할 수 있는지가 투자\n판단의 핵심입니다.\n1. 핵심 기업 정보\nFigure AI — 범용 휴머노이드 로봇 및 Physical AI 개발 기업\n국가/상장 여부/설립: 미국 · 비상장 · 2022년 설립\n주력 제품: Figure 03\nAI 플랫폼: Helix 2.5\n자체 제조시설: BotQ\n공개된 Series C 기업가치: $39B (2025년 9월, 투자 후 가치)\nSeries C 발표 규모: $1B+ (약정 자본 기준)\nFigure 03 생산 실적: 350대+ (2026년 4월 29일 발표 기준)\nBMW 현장 기여 생산량: 30,000대+ (Figure 02 투입 자동차 수)\n출처: Figure의 공식 투자유치·제조·BMW 실증 발표. 기업가치와 투자유치액은 2025년 발표 수치이며, 2026년 현재 가치\n로 확정할 수 없습니다.\nhttps://www.figure.ai/news/series-c\nhttps://www.figure.ai/news/ramping-figure-03-production\nhttps://www.press.bmwgroup.com/global/article/detail/T0458778EN\n2. 투자 실사에서 확인되는 핵심 성과\n평가 항목 확인된 내용 해석\n투자유치 2025년 Series C, 10억 달러 초과 약정자금 조달 경쟁력\n전략적 투자자 NVIDIA, Brookfield, LG Technology\nVentures 등\n산업 생태계 접근\n실제 제조현장 BMW 미국 공장 투입 현장 실증 이력\n제조 역량 BotQ 자체 생산라인 구축 수직계열화 전략\n상용화 확장 Catalyst Brands 물류 협약 신규 산업 진입\nAI 성능 Helix 2.5, 미지의 30개 가정 테스트범용화 가능성\n인프라 Nscale과 최대 10만 GPU 협력 계획대규모 AI 학습 투자\n수익성 공개 매출·손익 확인 필요 중요한 실사 공백\n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n1\n\n[자료집 p.2 — 검증 전 조사 단서]\nFigure는 연구용 로봇 시제품 단계에만 머무르는 회사는 아닙니다. BMW에서 Figure 02를 실제 생산라인에 투입했고,\nFigure 03 생산시설을 가동하고 있습니다. 다만 기술 시연·현장 실증·유상 상용계약·반복 매출은 서로 다른 성과이므로 각\n각 독립적으로 평가해야 합니다.\n출처 URL:\nhttps://www.press.bmwgroup.com/global/article/detail/T0458778EN\nhttps://www.figure.ai/news/ramping-figure-03-production\nhttps://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands\nhttps://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization\n3. 투자유치 내역과 주요 투자자\n투자 라운드\n시기 라운드 금액 기업가치\n2024년 3월 Series B 약 $675M 약 $2.6B로 보도\n2025년 9월 Series C $1B+ 약정 $39B (Post-money)\n2026년 9월 Nscale 전략적 투자 금액 미공개 미공개\n2024년 Series B는 SEC Form D 원문에서 $674,981,967의 증권 판매액을 확인할 수 있습니다. Series C는 Figure의 공\n식 발표에서 10억 달러 초과의 약정 자본으로 명시되어 있습니다. 두 금액은 공시 기준과 자금 확정 기준이 달라 단순히 합\n산한 금액을 실제 보유 현금으로 간주해서는 안 됩니다.\n출처 URL:\nhttps://www.sec.gov/Archives/edgar/data/2014185/000149315224009735/xslFormDX08/\nprimary_doc.xml\nhttps://www.figure.ai/news/series-c\nhttps://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership\n2025년 Series C 주요 투자기관\nParkway Venture Capital — 리드 투자자\nBrookfield Asset Management — 전략적 투자 및 데이터 수집·상용화 협력\nNVIDIA — AI 연산 생태계와 연결되는 투자자\nMacquarie Capital, Intel Capital — 금융·반도체 투자기관\nLG Technology Ventures, Salesforce, Qualcomm Ventures, T-Mobile Ventures — 전략적 벤처 투자자\nAlign Ventures, Tamarack Global — 벤처 투자기관\n출처 URL: https://www.figure.ai/news/series-c\n실사 해석: 주목할 부분은 투자자 이름의 개수보다 Figure가 전략적 투자자의 인프라·고객 네트워크·데이터 자원을 실제로\n활용하는지입니다. 특히 Brookfield는 단순한 재무적 투자자를 넘어 사업 협력까지 발표했습니다.\n4. 제품 및 기술 경쟁력\nFigure 03 — 3세대 휴머노이드\n2025년 10월 공개. 손바닥 카메라, 시각 센서, 무선충전, 안전성, 양산 적합성을 강화했습니다.\n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n2\n\n[자료집 p.3 — 검증 전 조사 단서]\n투자 포인트: 산업용 실증에서 가정용·범용 시장으로의 확장 플랫폼\n공식 기술 설명 URL: https://www.figure.ai/news/introducing-figure-03\nHelix 2.5 — 로봇 행동 AI\n2026년 9월 공개. 사전 데이터 수집이 없던 30개 가정에서 정리·수건 접기·침대 정리 행동을 평가했습니다.\n동일한 평가 조건에서 Index 사전학습 적용 시 성공률이 9%에서 56%로 개선됐다고 회사가 발표했습니다.\n투자 포인트: 새 환경에서의 일반화 능력\n성능 및 실험 결과 URL: https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization\nBotQ — 대량생산 체계\n2026년 4월 기준 Figure 03을 350대 이상 생산했다고 발표했습니다. 생산 주기는 하루 1대에서 시간당 1대 수준으로 단\n축됐다고 설명했습니다.\n투자 포인트: 제조 원가, 생산성, 품질 안정화\n제조시설 및 생산 실적 URL: https://www.figure.ai/news/ramping-figure-03-production\n기술별 핵심 실사 포인트\n기술 강점 추가 검증할 내용\nVLA 기반 Helix 시각·언어·행동 통합 비시연 환경의 독립 평가\n로봇 손·센서 정밀 파지, 조작 반복 작업 불량률\n보행·전신 제어 이동과 물체 조작의 결합 넘어짐, 충돌 위험\n배터리 Figure 03 발표 기준 2.3kWh, 최대 5시간\n운용 설명\n작업별 실제 가동시간\nBotQ 자체 생산 및 핵심 부품 내재화 제조원가, 수율, 불량률\nIndex 데이터 대규모 사람 행동 데이터 데이터 품질·동의·비용\n배터리 관련 수치는 회사의 설계·성능 발표이며, 실제 가동시간은 작업 부하에 따라 달라집니다.\n출처 URL:\nhttps://www.figure.ai/news/introducing-figure-03\nhttps://www.figure.ai/news/introducing-index\n5. 실제 고객사와 상용화\nBMW Group — 제조업 실증\n2025년 미국 Spartanburg 공장에서 Figure 02를 생산공정에 투입했습니다.\n부품 90,000개 이상 처리\n약 1,250시간 운영\nBMW X3 30,000대 이상 생산에 기여\n2026년 Figure 03으로 물류 순서화 작업 확대\nBMW 공식 보도자료 URL: https://www.press.bmwgroup.com/global/article/detail/T0458778EN\n• \n• \n• \n• \n• \n• \n3\n\n[자료집 p.4 — 검증 전 조사 단서]\nCatalyst Brands — 물류·유통\n2026년 5월, 네바다주 Reno 물류센터를 시작으로 휴머노이드 로봇을 도입하는 상업적 협약을 발표했습니다.\n대상 기업은 JCPenney, Aéropostale, Brooks Brothers 등 여러 브랜드를 운영합니다.\n단, 계약 금액·투입 대수·유상 매출 인식 여부는 발표에서 확인되지 않습니다.\n협약 발표 URL: https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands\nBrookfield — 데이터·인프라·상용화\n2025년 9월 전략적 협력을 발표했습니다. Brookfield의 주거·오피스·물류 자산을 활용한 데이터 수집과 향후 로봇 배치 기\n회를 모색합니다.\n상용화 가능 시장에 접근할 수 있다는 점은 강점이지만, 발표된 자산 규모가 확정된 로봇 주문량을 의미하지는 않습니다.\n전략적 협력 발표 URL: https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield\nBMW의 자체 보도자료까지 확인된 점은 Figure에 중요한 긍정 요소입니다. 다만 BMW가 2026년 독일 공장에서는 다른\n업체의 AEON 로봇을 시험하고 있다는 사실도 확인됩니다. BMW의 파트너라는 사실이 독점 공급업체라는 뜻은 아닙니다.\nBMW 출처 URL: https://www.press.bmwgroup.com/\n6. 추가로 발견한 중요한 자료\n6-1. SEC 원문에서 확인된 법인과 투자유치 정보\n실제 Figure AI Inc.의 SEC Form D를 찾았습니다.\nSEC Form D — Figure AI Inc. (1차 공시 확인)\n항목 기록\n법인명 Figure AI Inc.\nSEC CIK 0002014185\n법인 소재지 Delaware\n공시상 설립연도 2023년\nCEO / Director Brett Adcock\n공시상 임원 Dana Berlin, Lee Randaccio\nSeries B 판매액 $674,981,967\n투자자 수 45명\n공시 서명일 2024년 3월 12일\nSEC Form D 원문 URL: https://www.sec.gov/Archives/edgar/data/2014185/000149315224009735/\nxslFormDX08/primary_doc.xml\n이 자료에서 특히 주의할 점은 회사의 사업 개시연도와 법적 설립연도는 다를 수 있다는 것입니다. Figure는 일반적으로\n2022년 창업 기업으로 소개되지만 해당 공시에는 2023년 법인 설립으로 기록되어 있습니다.\n또한 EDGAR 검색에는 Figure AI에 투자하는 별도 펀드나 투자목적 법인도 나타납니다. 예를 들어 Figure ai Feb\n2024 a Series of CGF2021 LLC는 Figure AI Inc. 자체가 아닙니다. 이들의 조달액을 Figure의 직접 투자유치액에\n더해서는 안 됩니다.\n4\n\n[자료집 p.5 — 검증 전 조사 단서]\n6-2. 로봇 안전성 관련 소송\n중요한 법적 실사 항목도 발견했습니다.\n2025년 제기된 Gruendel v. Figure AI, Inc. 사건에서는 전직 로봇 안전 담당 엔지니어 Robert Gruendel의 주장과\nFigure의 반소가 다뤄지고 있습니다.\n2026년 7월 6일 법원 결정문에서 확인되는 사항은 다음과 같습니다.\n원고는 2024년 Figure에 로봇 안전 담당자로 입사했습니다.\n원고는 자체 테스트 등을 토대로 로봇이 사람에게 위험할 수 있다는 견해를 제기했습니다.\n당사자들은 원고가 보유한 회사 문서의 증거개시 처리와 관련해 다투었습니다.\n법원은 해당 문서의 검토·제출 절차에 관한 결정을 내렸습니다.\n이는 안전성 문제가 법적으로 확정됐다는 의미가 아닙니다. 원고의 주장과 법원의 확정 판단을 구분해야 합니다. 다만 산업\n용·가정용 로봇 개발사라는 점에서 안전성, 제품책임보험, 배포 제한 가능성은 투자 실사상 중요한 위험입니다.\n2026년 7월 6일 법원 결정문 URL: https://docs.justia.com/cases/federal/district-courts/california/candce/\n5%3A2025cv10094/460223/46\n6-3. 2026년 데이터·GPU 투자 확대\nFigure의 장기 경쟁력을 파악하려면 로봇 하드웨어뿐 아니라 AI 학습비용을 분석해야 합니다.\nIndex 업로드 영상: 1,600만+ (2026년 8월 발표 기준)\n데이터 기여자 지급액: $15M (Index 발표 기준 누적)\nNscale GPU 협력 상한: 100,000 (목표 규모, 실제 배치 아님)\n발표된 초기 컴퓨팅 약정: $3.5B (2026년 9월 발표)\n회사 발표 기준. 장기 지출 약정과 현재까지 집행된 금액은 구별해야 합니다.\n출처 URL:\nhttps://www.figure.ai/news/introducing-index\nhttps://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership\n컴퓨팅 투자가 확대된다는 것은 기술 개발 의지의 근거이지만, 동시에 막대한 자본 지출 부담을 뜻합니다. 실제 계약 조건,\n지급 일정, 해지 조항, 자금 조달 방식은 별도 확인이 필요합니다.\n7. 특허와 지식재산권\nGoogle Patents에서 Figure AI Inc.가 권리자로 표시된 미국 등록특허를 확인했습니다.\nUS12605824B2 — Humanoid Robot\n항목 내용\n특허권자 Figure AI Inc.\n우선일 2024년 2월 26일\n출원일 2025년 2월 26일\n등록일 2026년 4월 21일\n상태 Active (표시 기준)\n기술 영역 휴머노이드 몸체·팔·손목 구조\n• \n• \n• \n• \n• \n• \n• \n• \n• \n• \n5\n\n[자료집 p.6 — 검증 전 조사 단서]\nGoogle Patents 특허 원문 URL: https://patents.google.com/patent/US12605824B2/en\n이 특허 하나만으로 Figure의 전체 특허 포트폴리오나 기술적 독점력을 평가할 수는 없습니다. 추가로 특허 패밀리, 청구항\n범위, 공동 권리자, 계속출원, 해외 출원 여부와 특허 분쟁을 확인해야 합니다.\n9. 기업 조사에 활용할 추가 사이트 18곳\n기존에 말씀하신 6개 채널과 겹치지 않도록, 추가 조사처를 우선순위별로 정리했습니다.\n조사처 얻을 수 있는 정보 전체 URL\nBMW PressClub 실증 성과, 적용 공정, 고객 관점 https://www.press.bmwgroup.com/\nReuters 투자, 기술, 논란, 제3자 보도 https://www.reuters.com/\nFinancial Times Physical AI 산업, 자본 흐름 https://www.ft.com/\nTechCrunch 스타트업 투자·기업 성장 https://techcrunch.com/\nThe Robot Report 로봇 기술, 실증, 경쟁사 https://www.therobotreport.com/\nIEEE Spectrum 로봇 공학·기술 검증 https://spectrum.ieee.org/\narXiv VLA, 제어·강화학습 연구 https://arxiv.org/\nGoogle Scholar 논문 인용·연구기관 https://scholar.google.com/\nHugging Face 공개 모델, 연구 구현 https://huggingface.co/\nGitHub 공개 코드·개발 활동 https://github.com/\nLinkedIn 임직원, 경력, 채용 동향 https://www.linkedin.com/\n6\n\n[자료집 p.7 — 검증 전 조사 단서]\n조사처 얻을 수 있는 정보 전체 URL\nJustia 특허·법원 기록 https://www.justia.com/\nPACER 미국 연방법원 사건 원문 https://pacer.uscourts.gov/\nWIPO PATENTSCOPE 국제 특허 출원 https://patentscope.wipo.int/\nEPO Espacenet 국제 특허 패밀리 https://worldwide.espacenet.com/\nNIST 로봇·AI 평가 및 안전 표준 https://www.nist.gov/\nOSHA 산업안전 규정·사업장 자료 https://www.osha.gov/\nImportYeti 공개 미국 수입기록 기반 공급망 단서https://www.importyeti.com/\n각 사이트가 Figure의 자료를 실제로 보유한다는 의미는 아닙니다. 공개된 기록의 존재 여부와 접근권한은 추가 확인이 필\n요합니다.\n10. 바로 활용할 수 있는 1차 자료 모음\n법인·투자·지식재산\nSEC Form D: 2024 Series Bhttps://www.sec.gov/Archives/edgar/data/2014185/000149315224009735/\nxslFormDX08/primary_doc.xml\nSeries C 투자유치 발표https://www.figure.ai/news/series-c\n미국 등록특허 US12605824B2https://patents.google.com/patent/US12605824B2/en\n제품·실증·제조\nFigure 03 제품 발표https://www.figure.ai/news/introducing-figure-03\nBotQ 생산량 및 생산성https://www.figure.ai/news/ramping-figure-03-production\nBMW의 2026년 Figure 03 발표https://www.press.bmwgroup.com/global/article/detail/T0458778EN\nAI·데이터·인프라\nHelix 2.5 실험 및 결과https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization\nIndex 데이터 수집 플랫폼https://www.figure.ai/news/introducing-index\nNscale GPU 전략적 협력https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership\n리스크\nGruendel v. Figure AI 법원 결정문https://docs.justia.com/cases/federal/district-courts/california/candce/\n5%3A2025cv10094/460223/46\n11. 아직 확보해야 할 핵심 정보\n현재 공개자료 조사에서 특히 부족한 것은 다음 7가지입니다.\n실제 매출액 — 2024~2026년 매출과 고객별 매출 구성\n계약 수주액 — BMW, Catalyst 등 계약금액·최소 구매약정\n제조원가 — Figure 03 한 대당 BOM, 조립비, 판매가격\n1. \n2. \n3. \n7\n\n[자료집 p.8 — 검증 전 조사 단서]\n손익과 현금소진율 — 영업손실, 보유 현금, 자금 소진기간\n상용화 성능 — 가동률, MTBF(평균고장간격), 개입률, 작업 성공률\n지분구조 — 창업자 지분, 우선주 조건, 후속 투자 희석 가능성\n법률·안전성 — 소송 진행상황, 보험, 독립 안전성 인증\n이 자료들은 현재 검토한 공개 출처에서 신뢰성 있게 확정되지 않았으며, 일부는 비공개 자료실이나 기업 측 직접 확인이 필\n요합니다.\n부록 A. 추가 요청에 따라 정리했던 RAG 원문 URL 목록\n[SEC Form D - Series B] https://www.sec.gov/Archives/edgar/data/2014185/000149315224009735/\nxslFormDX08/primary_doc.xml\n[Series C 투자유치 발표] https://www.figure.ai/news/series-c\n[Figure 03 제품 발표] https://www.figure.ai/news/introducing-figure-03\n[BotQ 생산시설 및 생산 실적] https://www.figure.ai/news/ramping-figure-03-production\n[BMW 공식 실증 발표] https://www.press.bmwgroup.com/global/article/detail/T0458778EN\n[Helix 2.5 AI 성능 및 실험 결과] https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization\n[Index 데이터 수집 플랫폼] https://www.figure.ai/news/introducing-index\n[Nscale GPU 협력] https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership\n[Brookfield 전략적 파트너십] https://www.figure.ai/news/figure-announces-strategic-partnership-with-\nbrookfield\n[Catalyst Brands 상업적 협약] https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands\n[Figure AI 등록 특허] https://patents.google.com/patent/US12605824B2/en\n[Figure AI 관련 법원 결정문] https://docs.justia.com/cases/federal/district-courts/california/candce/\n5%3A2025cv10094/460223/46\n4. \n5. \n6. \n7. \n8\n\n[자료집 p.9 — 검증 전 조사 단서]\n부록 B. 추가 DB 조사 시작 주소\nFigure 홈페이지: https://www.figure.ai/\nFigure News: https://www.figure.ai/news\nSEC EDGAR: https://www.sec.gov/edgar/search/\nDelaware 기업 검색: https://icis.corp.delaware.gov/eCorp/EntitySearch/NameSearch.aspx\nCrunchbase: https://www.crunchbase.com/\nPitchBook: https://pitchbook.com/\nCB Insights: https://www.cbinsights.com/\nGoogle Patents: https://patents.google.com/\nUSPTO: https://www.uspto.gov/\n• \n• \n• \n• \n• \n• \n• \n• \n• \n9",
+        "context_truncated": false,
+        "usage": "기획·검색 단서; 원문 재검증 없이 점수 근거로 채택하지 않음"
+      }
+    },
+    "document_catalog": {
+      "MM-01": {
+        "title": "MOTOMIND 회사 소개 (About)",
+        "file_path": "rag/data/raw/motomind/motomind_about.pdf",
+        "source_path": "rag/data/raw/motomind/motomind_about.pdf",
+        "page_count": 6,
+        "company": "MOTOMIND",
+        "category": "team_business",
+        "publisher": "MOTOMIND (주식회사 모토마인드)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.motomind.co.kr/ko/about"
+      },
+      "MM-02": {
+        "title": "풀스택 로보틱스 역량 (Technology)",
+        "file_path": "rag/data/raw/motomind/motomind_technology.pdf",
+        "source_path": "rag/data/raw/motomind/motomind_technology.pdf",
+        "page_count": 8,
+        "company": "MOTOMIND",
+        "category": "technology",
+        "publisher": "MOTOMIND (주식회사 모토마인드)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.motomind.co.kr/ko/technology"
+      },
+      "MM-03": {
+        "title": "BELLO — Industrial AI Humanoid (제품 상세)",
+        "file_path": "rag/data/raw/motomind/motomind_bello.pdf",
+        "source_path": "rag/data/raw/motomind/motomind_bello.pdf",
+        "page_count": 8,
+        "company": "MOTOMIND",
+        "category": "technology",
+        "publisher": "MOTOMIND (주식회사 모토마인드)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.motomind.co.kr/ko/products/bello"
+      },
+      "MM-04": {
+        "title": "프로젝트 & 협업 사례 (Projects)",
+        "file_path": "rag/data/raw/motomind/motomind_projects.pdf",
+        "source_path": "rag/data/raw/motomind/motomind_projects.pdf",
+        "page_count": 5,
+        "company": "MOTOMIND",
+        "category": "team_business",
+        "publisher": "MOTOMIND (주식회사 모토마인드)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.motomind.co.kr/ko/projects"
+      },
+      "MM-05": {
+        "title": "LG '슈퍼스타트 데이 2026' 개최…대학가 '슈퍼루키' 육성",
+        "file_path": "rag/data/raw/motomind/yna_lg_superstart_day2026.pdf",
+        "source_path": "rag/data/raw/motomind/yna_lg_superstart_day2026.pdf",
+        "page_count": 5,
+        "company": "MOTOMIND",
+        "category": "bigtech",
+        "publisher": "연합뉴스(Yonhap News)",
+        "published_at": "2026-04-23 (열람 2026-09-30)",
+        "publication_date": "2026-04-23 (열람 2026-09-30)",
+        "source_url": "https://www.yna.co.kr/view/AKR20260423034100003"
+      },
+      "MM-06": {
+        "title": "LG, '슈퍼스타트 데이 2026' 통해 미래 기술 스타트업 및 청년 창업가 육성",
+        "file_path": "rag/data/raw/motomind/labincube_lg_superstart.pdf",
+        "source_path": "rag/data/raw/motomind/labincube_lg_superstart.pdf",
+        "page_count": 3,
+        "company": "MOTOMIND",
+        "category": "bigtech",
+        "publisher": "랩인큐브(프레스나인 전재)",
+        "published_at": "2026-07-24 (열람 2026-09-30)",
+        "publication_date": "2026-07-24 (열람 2026-09-30)",
+        "source_url": "https://labincube.com/en/community/news/?mod=document&uid=71"
+      },
+      "RB-01": {
+        "title": "ROBROS 회사소개 (About Us)",
+        "file_path": "rag/data/raw/robros/robros_about.pdf",
+        "source_path": "rag/data/raw/robros/robros_about.pdf",
+        "page_count": 2,
+        "company": "ROBROS",
+        "category": "team_business",
+        "publisher": "로브로스(Robros)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.robros.co.kr/ko/about-us"
+      },
+      "RB-02": {
+        "title": "ROBROS 연혁 (History)",
+        "file_path": "rag/data/raw/robros/robros_history.pdf",
+        "source_path": "rag/data/raw/robros/robros_history.pdf",
+        "page_count": 2,
+        "company": "ROBROS",
+        "category": "team_business",
+        "publisher": "로브로스(Robros)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.robros.co.kr/ko/history"
+      },
+      "RB-03": {
+        "title": "IGRIS-C 휴머노이드 (제품/스펙)",
+        "file_path": "rag/data/raw/robros/robros_igrisc.pdf",
+        "source_path": "rag/data/raw/robros/robros_igrisc.pdf",
+        "page_count": 4,
+        "company": "ROBROS",
+        "category": "technology",
+        "publisher": "로브로스(Robros)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.robros.co.kr/ko/igrisc"
+      },
+      "RB-04": {
+        "title": "ROBROS AI 솔루션 (Physical AI)",
+        "file_path": "rag/data/raw/robros/robros_ai_solution.pdf",
+        "source_path": "rag/data/raw/robros/robros_ai_solution.pdf",
+        "page_count": 2,
+        "company": "ROBROS",
+        "category": "technology",
+        "publisher": "로브로스(Robros)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.robros.co.kr/ko/ai-solution"
+      },
+      "RB-05": {
+        "title": "Humanoid Robot Firm Robros Wins Innovation Award at NextRise 2026",
+        "file_path": "rag/data/raw/robros/infomax_robros_nextrise2026.pdf",
+        "source_path": "rag/data/raw/robros/infomax_robros_nextrise2026.pdf",
+        "page_count": 2,
+        "company": "ROBROS",
+        "category": "bigtech",
+        "publisher": "Yonhap Infomax",
+        "published_at": "2026-06-22 (열람 2026-09-30)",
+        "publication_date": "2026-06-22 (열람 2026-09-30)",
+        "source_url": "https://en.infomaxai.com/news/articleView.html?idxno=126520"
+      },
+      "RB-06": {
+        "title": "Korea's First Full-Stack Humanoid Clears Backflip: IGRIS-C Is Already on Factory Floors",
+        "file_path": "rag/data/raw/robros/techtimes_robros_igrisc.pdf",
+        "source_path": "rag/data/raw/robros/techtimes_robros_igrisc.pdf",
+        "page_count": 10,
+        "company": "ROBROS",
+        "category": "market_competition",
+        "publisher": "Tech Times",
+        "published_at": "2026-07-31 (열람 2026-09-30)",
+        "publication_date": "2026-07-31 (열람 2026-09-30)",
+        "source_url": "https://www.techtimes.com/articles/322561/20260731/koreas-first-full-stack-humanoid-clears-backflip-igris-c-already-factory-floors.htm"
+      },
+      "FG-01": {
+        "title": "Figure Exceeds $1B in Series C Funding at $39B Post-Money Valuation",
+        "file_path": "rag/data/raw/figure_ai/figure_series_c.pdf",
+        "source_path": "rag/data/raw/figure_ai/figure_series_c.pdf",
+        "page_count": 4,
+        "company": "Figure AI",
+        "category": "bigtech",
+        "publisher": "Figure AI",
+        "published_at": "2025-09-16 (열람 2026-09-30)",
+        "publication_date": "2025-09-16 (열람 2026-09-30)",
+        "source_url": "https://www.figure.ai/news/series-c"
+      },
+      "FG-02": {
+        "title": "F.02 Contributed to the Production of 30,000 Cars at BMW",
+        "file_path": "rag/data/raw/figure_ai/figure_bmw_30000_cars.pdf",
+        "source_path": "rag/data/raw/figure_ai/figure_bmw_30000_cars.pdf",
+        "page_count": 7,
+        "company": "Figure AI",
+        "category": "bigtech",
+        "publisher": "Figure AI",
+        "published_at": "2025-11-19 (열람 2026-09-30)",
+        "publication_date": "2025-11-19 (열람 2026-09-30)",
+        "source_url": "https://www.figure.ai/news/production-at-bmw"
+      },
+      "FG-03": {
+        "title": "F.03 Arrives at BMW",
+        "file_path": "rag/data/raw/figure_ai/figure_f03_at_bmw.pdf",
+        "source_path": "rag/data/raw/figure_ai/figure_f03_at_bmw.pdf",
+        "page_count": 4,
+        "company": "Figure AI",
+        "category": "bigtech",
+        "publisher": "Figure AI",
+        "published_at": "2026-06-30 (열람 2026-09-30)",
+        "publication_date": "2026-06-30 (열람 2026-09-30)",
+        "source_url": "https://www.figure.ai/news/f-03-at-bmw"
+      },
+      "FG-04": {
+        "title": "Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations",
+        "file_path": "rag/data/raw/figure_ai/figure_catalyst_brands.pdf",
+        "source_path": "rag/data/raw/figure_ai/figure_catalyst_brands.pdf",
+        "page_count": 3,
+        "company": "Figure AI",
+        "category": "market_competition",
+        "publisher": "Figure AI",
+        "published_at": "2026-05-26 (열람 2026-09-30)",
+        "publication_date": "2026-05-26 (열람 2026-09-30)",
+        "source_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands"
+      },
+      "FG-05": {
+        "title": "Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform",
+        "file_path": "rag/data/raw/figure_ai/figure_nscale.pdf",
+        "source_path": "rag/data/raw/figure_ai/figure_nscale.pdf",
+        "page_count": 4,
+        "company": "Figure AI",
+        "category": "bigtech",
+        "publisher": "Figure AI",
+        "published_at": "2026-09-03 (열람 2026-09-30)",
+        "publication_date": "2026-09-03 (열람 2026-09-30)",
+        "source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership"
+      },
+      "FG-06": {
+        "title": "Helix — AI for general-purpose humanoid",
+        "file_path": "rag/data/raw/figure_ai/figure_helix.pdf",
+        "source_path": "rag/data/raw/figure_ai/figure_helix.pdf",
+        "page_count": 7,
+        "company": "Figure AI",
+        "category": "technology",
+        "publisher": "Figure AI",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.figure.ai/helix"
+      },
+      "CM-01": {
+        "title": "Five Million Robots now Operate in Factories Globally (World Robotics 2026)",
+        "file_path": "rag/data/raw/common/ifr_world_robotics_2026.pdf",
+        "source_path": "rag/data/raw/common/ifr_world_robotics_2026.pdf",
+        "page_count": 6,
+        "company": "COMMON",
+        "category": "common",
+        "publisher": "International Federation of Robotics (IFR)",
+        "published_at": "2026-09-24 (열람 2026-09-30)",
+        "publication_date": "2026-09-24 (열람 2026-09-30)",
+        "source_url": "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally"
+      },
+      "CM-02": {
+        "title": "Top 5 Global Robotics Trends 2026",
+        "file_path": "rag/data/raw/common/ifr_top5_trends_2026.pdf",
+        "source_path": "rag/data/raw/common/ifr_top5_trends_2026.pdf",
+        "page_count": 5,
+        "company": "COMMON",
+        "category": "common",
+        "publisher": "International Federation of Robotics (IFR)",
+        "published_at": "2026-01-08 (열람 2026-09-30)",
+        "publication_date": "2026-01-08 (열람 2026-09-30)",
+        "source_url": "https://ifr.org/ifr-press-releases/news/top-5-global-robotics-trends-2026"
+      },
+      "CM-03": {
+        "title": "Harnessing AI for the Real Economy (Physical AI)",
+        "file_path": "rag/data/raw/common/goldman_harnessing_ai_real_economy.pdf",
+        "source_path": "rag/data/raw/common/goldman_harnessing_ai_real_economy.pdf",
+        "page_count": 5,
+        "company": "COMMON",
+        "category": "common",
+        "publisher": "Goldman Sachs Investment Banking",
+        "published_at": "2026(열람 2026-09-30)",
+        "publication_date": "2026(열람 2026-09-30)",
+        "source_url": "https://www.goldmansachs.com/what-we-do/investment-banking/insights/articles/harnessing-ai-for-the-real-economy"
+      },
+      "CM-04": {
+        "title": "첨단제조로봇 실증사업 (KIRIA)",
+        "file_path": "rag/data/raw/common/kiria_manufacturing_robot_demo.pdf",
+        "source_path": "rag/data/raw/common/kiria_manufacturing_robot_demo.pdf",
+        "page_count": 4,
+        "company": "COMMON",
+        "category": "common",
+        "publisher": "한국로봇산업진흥원 (KIRIA)",
+        "published_at": "n.d.(열람 2026-09-30)",
+        "publication_date": "n.d.(열람 2026-09-30)",
+        "source_url": "https://www.kiria.org/portal/bizsupt/portalBsuptRoCreProduct.do"
+      },
+      "WEB-364bccad851a980c": {
+        "doc_id": "WEB-364bccad851a980c",
+        "company": "Figure AI",
+        "url": "https://www.figure.ai/news/series-c",
+        "origin_pdf": "./com_data/Figure_AI.pdf",
+        "origin_pages": [
+          1,
+          2,
+          7,
+          8
+        ],
+        "title": "Figure Exceeds $1B in Series C Funding at $39B Post-Money Valuation",
+        "file_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+        "source_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+        "page_count": 1,
+        "source_kind": "web",
+        "web_format": "html_snapshot",
+        "publisher": "www.figure.ai",
+        "source_url": "https://www.figure.ai/news/series-c",
+        "resolved_url": "https://www.figure.ai/news/series-c",
+        "accessed_at": "2026-10-13T08:18:43.882011+00:00",
+        "published_at": "2025-09-16T00:00:00.000Z",
+        "category": "web"
+      },
+      "WEB-68ba598f5ceb484c": {
+        "doc_id": "WEB-68ba598f5ceb484c",
+        "company": "Figure AI",
+        "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+        "origin_pdf": "./com_data/Figure_AI.pdf",
+        "origin_pages": [
+          2,
+          5,
+          7,
+          8
+        ],
+        "title": "Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform",
+        "file_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+        "source_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+        "page_count": 1,
+        "source_kind": "web",
+        "web_format": "html_snapshot",
+        "publisher": "www.figure.ai",
+        "source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+        "resolved_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+        "accessed_at": "2026-10-13T08:18:45.017336+00:00",
+        "published_at": "2026-09-03T06:03:00.000Z",
+        "category": "web"
+      },
+      "WEB-524187fe83b05d5f": {
+        "doc_id": "WEB-524187fe83b05d5f",
+        "company": "Figure AI",
+        "url": "https://www.figure.ai/news/introducing-figure-03",
+        "origin_pdf": "./com_data/Figure_AI.pdf",
+        "origin_pages": [
+          3,
+          7,
+          8
+        ],
+        "title": "Introducing Figure 03",
+        "file_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+        "source_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+        "page_count": 3,
+        "source_kind": "web",
+        "web_format": "html_snapshot",
+        "publisher": "www.figure.ai",
+        "source_url": "https://www.figure.ai/news/introducing-figure-03",
+        "resolved_url": "https://www.figure.ai/news/introducing-figure-03",
+        "accessed_at": "2026-10-13T08:18:44.336373+00:00",
+        "published_at": "2025-10-09T00:00:00.000Z",
+        "category": "web"
+      },
+      "WEB-d12ee081a0882850": {
+        "doc_id": "WEB-d12ee081a0882850",
+        "company": "Figure AI",
+        "url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+        "origin_pdf": "./com_data/Figure_AI.pdf",
+        "origin_pages": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "title": "Helix 2.5: Zero-Shot 30-Home Generalization",
+        "file_path": "output/submission-live/web_sources/WEB-d12ee081a0882850.pdf",
+        "source_path": "output/submission-live/web_sources/WEB-d12ee081a0882850.pdf",
+        "page_count": 5,
+        "source_kind": "web",
+        "web_format": "html_snapshot",
+        "publisher": "www.figure.ai",
+        "source_url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+        "resolved_url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+        "accessed_at": "2026-10-13T08:18:45.395768+00:00",
+        "published_at": "2026-09-17T13:00:00.000Z",
+        "category": "web"
+      },
+      "WEB-0708b7e94d92fdac": {
+        "doc_id": "WEB-0708b7e94d92fdac",
+        "company": "Figure AI",
+        "url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+        "origin_pdf": "./com_data/Figure_AI.pdf",
+        "origin_pages": [
+          2,
+          4,
+          8
+        ],
+        "title": "Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations",
+        "file_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+        "source_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+        "page_count": 1,
+        "source_kind": "web",
+        "web_format": "html_snapshot",
+        "publisher": "www.figure.ai",
+        "source_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+        "resolved_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+        "accessed_at": "2026-10-13T08:18:44.710639+00:00",
+        "published_at": "2026-05-26T00:00:00.000Z",
+        "category": "web"
+      },
+      "WEB-ecd182e4a53160b8": {
+        "doc_id": "WEB-ecd182e4a53160b8",
+        "company": "Figure AI",
+        "url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+        "origin_pdf": "./com_data/Figure_AI.pdf",
+        "origin_pages": [
+          4,
+          8
+        ],
+        "title": "Figure Announces Strategic Partnership with Brookfield",
+        "file_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+        "source_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+        "page_count": 2,
+        "source_kind": "web",
+        "web_format": "html_snapshot",
+        "publisher": "www.figure.ai",
+        "source_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+        "resolved_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+        "accessed_at": "2026-10-13T08:18:45.817253+00:00",
+        "published_at": "2025-09-17T00:00:00.000Z",
+        "category": "web"
+      }
+    },
+    "decision_policy": {
+      "method": "fixed_scorecard",
+      "required_items": [
+        "핵심 작업 성능"
+      ],
+      "decision_basis": "검증 사실·미확인 항목·위험의 종합 검토",
+      "require_criteria_coverage": true,
+      "resume_report_only": true
+    },
+    "investment_terms": null,
+    "tasks": [],
+    "worker_results": {
+      "0:task_bigtech_001": {
+        "task": {
+          "id": "task_bigtech_001",
+          "worker": "bigtech",
+          "query": "Figure AI의 대기업 실제 지분 투자, CVC 투자 현황과 구체적인 투자 주체 및 관련 거래 근거 조사",
+          "urls": [
+            "https://www.figure.ai/news/series-c",
+            "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership"
+          ],
+          "criteria": [
+            "bigtech_equity_investment",
+            "bigtech_contract_delivery_stage",
+            "paid_sales_delivery",
+            "customer_repurchase_expansion"
+          ]
+        },
+        "worker": "bigtech",
+        "recheck_count": 0,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+              "criterion_id": "bigtech_equity_investment",
+              "source_refs": [
+                {
+                  "doc_id": "FG-01",
+                  "page": 1
+                },
+                {
+                  "doc_id": "WEB-364bccad851a980c",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "equity_investment"
+            },
+            {
+              "claim": "Nscale made a strategic investment in Figure AI as part of their partnership agreement.",
+              "criterion_id": "bigtech_equity_investment",
+              "source_refs": [
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                },
+                {
+                  "doc_id": "WEB-68ba598f5ceb484c",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "equity_investment"
+            },
+            {
+              "claim": "Figure AI is deploying humanoid robots at Catalyst's distribution facility for workforce modernization and automation of routine tasks.",
+              "criterion_id": "bigtech_contract_delivery_stage",
+              "source_refs": [
+                {
+                  "doc_id": "FG-04",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "field_demo"
+            },
+            {
+              "claim": "Figure AI demonstrated the use of its humanoid robot Figure 03 enabled by Helix 02 at BMW Group Plant Spartanburg to master cognitive and dexterous manufacturing logistics tasks.",
+              "criterion_id": "bigtech_contract_delivery_stage",
+              "source_refs": [
+                {
+                  "doc_id": "FG-03",
+                  "page": 3
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "field_demo"
+            },
+            {
+              "claim": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment.",
+              "criterion_id": "paid_sales_delivery",
+              "source_refs": [
+                {
+                  "doc_id": "FG-04",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "paid_contract_delivery"
+            },
+            {
+              "claim": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment.",
+              "criterion_id": "bigtech_contract_delivery_stage",
+              "source_refs": [
+                {
+                  "doc_id": "FG-04",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "paid_contract_delivery"
+            },
+            {
+              "claim": "Figure AI and Nscale signed a strategic partnership involving a $3.5 billion initial commitment for GPU compute infrastructure deployment, indicating a paid contract for delivery of compute resources.",
+              "criterion_id": "paid_sales_delivery",
+              "source_refs": [
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                },
+                {
+                  "doc_id": "WEB-68ba598f5ceb484c",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "paid_contract_delivery"
+            },
+            {
+              "claim": "Figure AI and Nscale signed a strategic partnership involving a $3.5 billion initial commitment for GPU compute infrastructure deployment, indicating a paid contract for delivery of compute resources.",
+              "criterion_id": "bigtech_contract_delivery_stage",
+              "source_refs": [
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                },
+                {
+                  "doc_id": "WEB-68ba598f5ceb484c",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "paid_contract_delivery"
+            },
+            {
+              "claim": "Brookfield Asset Management is described as a continued backer and existing investor in Figure AI, implying ongoing investment support and potential contract expansion.",
+              "criterion_id": "customer_repurchase_expansion",
+              "source_refs": [
+                {
+                  "doc_id": "FG-01",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "repurchase_expansion"
+            }
+          ],
+          "source_documents": {
+            "WEB-364bccad851a980c": {
+              "doc_id": "WEB-364bccad851a980c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/series-c",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                1,
+                2,
+                7,
+                8
+              ],
+              "title": "Figure Exceeds $1B in Series C Funding at $39B Post-Money Valuation",
+              "file_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/series-c",
+              "resolved_url": "https://www.figure.ai/news/series-c",
+              "accessed_at": "2026-10-13T08:18:43.882011+00:00",
+              "published_at": "2025-09-16T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-68ba598f5ceb484c": {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                5,
+                7,
+                8
+              ],
+              "title": "Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform",
+              "file_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "resolved_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "accessed_at": "2026-10-13T08:18:45.017336+00:00",
+              "published_at": "2026-09-03T06:03:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "bigtech_equity_investment",
+            "bigtech_contract_delivery_stage",
+            "paid_sales_delivery",
+            "customer_repurchase_expansion"
+          ]
+        }
+      },
+      "0:task_technology_001": {
+        "task": {
+          "id": "task_technology_001",
+          "worker": "technology",
+          "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증",
+          "urls": [
+            "https://www.figure.ai/news/introducing-figure-03",
+            "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+            "https://docs.justia.com/cases/federal/district-courts/california/candce/5%3A2025cv10094/460223/46"
+          ],
+          "criteria": [
+            "founder_expertise",
+            "productization_execution",
+            "team_operations",
+            "communication_reliability",
+            "core_task_performance",
+            "field_reliability_safety",
+            "mass_production_maintenance",
+            "hard_to_copy_assets"
+          ]
+        },
+        "worker": "technology",
+        "recheck_count": 0,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI의 팀은 100년 이상의 AI 및 휴머노이드 로봇 경험을 가진 세계 최고 수준의 로봇공학 전문가들로 구성되어 있다.",
+              "criterion_id": "founder_expertise",
+              "source_refs": [
+                {
+                  "doc_id": "FG-06",
+                  "page": 5
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI의 창업자 겸 CEO인 Brett Adcock는 AI 모델 Helix 개발과 이를 통한 휴머노이드 로봇 구현에 핵심적인 역할을 수행하고 있다.",
+              "criterion_id": "founder_expertise",
+              "source_refs": [
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Helix AI 플랫폼과 BotQ 제조 시설을 통해 휴머노이드 로봇의 생산과 현장 배치를 확장하고 있다.",
+              "criterion_id": "productization_execution",
+              "source_refs": [
+                {
+                  "doc_id": "FG-01",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure 03 휴머노이드 로봇은 Helix AI 시스템을 탑재하여 가정과 상업 현장에 적용 가능한 제품으로 개발되었으며, 완전한 하드웨어 및 소프트웨어 재설계를 통해 상용화 준비가 이루어졌다.",
+              "criterion_id": "productization_execution",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 제조, 전자, 센서, 액추에이터 등 주요 모듈을 자체 설계하고, 공급망을 새로 구축하여 수천~수백만 부품의 생산 목표를 달성하기 위한 글로벌 파트너 네트워크를 운영하고 있다.",
+              "criterion_id": "team_operations",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 2
+                },
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 3
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 BotQ라는 자체 제조 시설을 운영하며, 제조 실행 시스템(MES)을 통해 품질, 반복성, 지속적 개선을 관리하고 있다.",
+              "criterion_id": "team_operations",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 3
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하며, 실험실 결과와 현장 적용을 구분하여 일관성 있고 신뢰성 있는 정보를 제공하고 있다.",
+              "criterion_id": "communication_reliability",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-d12ee081a0882850",
+                  "page": 1
+                },
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+              "criterion_id": "core_task_performance",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-d12ee081a0882850",
+                  "page": 1
+                },
+                {
+                  "doc_id": "WEB-d12ee081a0882850",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure 03 로봇의 손은 내구성, 신뢰성, 고해상도 촉각 센서를 자체 개발하여 3그램의 미세 압력까지 감지하며, 이를 통해 섬세하고 안정적인 물체 파지가 가능하다.",
+              "criterion_id": "core_task_performance",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+              "criterion_id": "field_reliability_safety",
+              "source_refs": [
+                {
+                  "doc_id": "FG-02",
+                  "page": 4
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure 03는 가정 환경에서 안전하게 작동하도록 다중 밀도 폼과 부드러운 직물 커버를 적용하고, 배터리는 UN38.3 안전 인증을 획득한 다중 보호층을 갖추고 있다.",
+              "criterion_id": "field_reliability_safety",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure 03는 고부가가치 CNC 가공에서 다이캐스팅, 사출성형, 스탬핑 등 대량 생산에 적합한 공정으로 전환하여 부품 수와 조립 단계를 대폭 줄였으며, 이를 통해 단위당 제조 비용을 크게 절감했다.",
+              "criterion_id": "mass_production_maintenance",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "BotQ 제조 시설은 연간 최대 12,000대의 휴머노이드 로봇 생산 능력을 갖추고 있으며, 4년 내 100,000대 생산 목표를 위해 자체 생산과 품질 관리를 수행하고 있다.",
+              "criterion_id": "mass_production_maintenance",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 3
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Helix AI 플랫폼과 Index라는 대규모 인간 행동 데이터셋을 기반으로 한 독자적인 사전학습 기술을 보유하여, 제로샷 환경 일반화와 인간 경험 기반 로봇 행동 전이에서 경쟁우위를 확보하고 있다.",
+              "criterion_id": "hard_to_copy_assets",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-d12ee081a0882850",
+                  "page": 1
+                },
+                {
+                  "doc_id": "WEB-d12ee081a0882850",
+                  "page": 4
+                }
+              ],
+              "status": "confirmed"
+            }
+          ],
+          "source_documents": {
+            "WEB-524187fe83b05d5f": {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/introducing-figure-03",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                3,
+                7,
+                8
+              ],
+              "title": "Introducing Figure 03",
+              "file_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+              "page_count": 3,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/introducing-figure-03",
+              "resolved_url": "https://www.figure.ai/news/introducing-figure-03",
+              "accessed_at": "2026-10-13T08:18:44.336373+00:00",
+              "published_at": "2025-10-09T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-d12ee081a0882850": {
+              "doc_id": "WEB-d12ee081a0882850",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                3,
+                7,
+                8
+              ],
+              "title": "Helix 2.5: Zero-Shot 30-Home Generalization",
+              "file_path": "output/submission-live/web_sources/WEB-d12ee081a0882850.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-d12ee081a0882850.pdf",
+              "page_count": 5,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+              "resolved_url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+              "accessed_at": "2026-10-13T08:18:45.395768+00:00",
+              "published_at": "2026-09-17T13:00:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [
+            "https://docs.justia.com/cases/federal/district-courts/california/candce/5%3A2025cv10094/460223/46: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+          ],
+          "attempted_criteria": [
+            "founder_expertise",
+            "productization_execution",
+            "team_operations",
+            "communication_reliability",
+            "core_task_performance",
+            "field_reliability_safety",
+            "mass_production_maintenance",
+            "hard_to_copy_assets"
+          ]
+        }
+      },
+      "0:task_market_001": {
+        "task": {
+          "id": "task_market_001",
+          "worker": "market",
+          "query": "Figure AI가 실제 접근 가능한 시장, 고객 문제와 구매 필요성, 시장 성장 동력 및 진입·확장 가능성 조사",
+          "urls": [
+            "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+            "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield"
+          ],
+          "criteria": [
+            "accessible_market",
+            "customer_pain_purchase_need",
+            "market_growth_drivers",
+            "market_entry_expansion",
+            "customer_value_vs_competitors",
+            "customer_retention_switching_barrier"
+          ]
+        },
+        "worker": "market",
+        "recheck_count": 0,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI는 Catalyst Brands의 네바다 리노 물류센터에 휴머노이드 로봇을 상용 배치하여 실제 고객과 시장에 접근하고 있다.",
+              "criterion_id": "accessible_market",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-0708b7e94d92fdac",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Brookfield와 전략적 파트너십을 통해 10만 개 이상의 주거 단위와 광범위한 상업·물류 공간에서 휴머노이드 로봇의 데이터 수집과 상용 배치를 추진하고 있다.",
+              "criterion_id": "accessible_market",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-ecd182e4a53160b8",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Catalyst Brands는 물류 및 공급망 내 육체적으로 힘든 작업을 자동화하여 직원들이 더 높은 부가가치 업무에 집중할 수 있도록 하는 문제를 해결하기 위해 Figure AI의 휴머노이드 로봇을 도입했다.",
+              "criterion_id": "customer_pain_purchase_need",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-0708b7e94d92fdac",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "산업 전반에서 숙련 인력 부족과 노동력 문제를 해결하기 위한 전략으로 로봇과 자동화 도입이 증가하고 있다.",
+              "criterion_id": "customer_pain_purchase_need",
+              "source_refs": [
+                {
+                  "doc_id": "CM-02",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "AI 기반 물리적 지능(Physical AI)의 발전과 산업 전반의 노동력 부족이 휴머노이드 로봇 시장 성장을 견인하는 주요 요인이다.",
+              "criterion_id": "market_growth_drivers",
+              "source_refs": [
+                {
+                  "doc_id": "CM-03",
+                  "page": 3
+                },
+                {
+                  "doc_id": "CM-02",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Nscale과의 파트너십을 통해 대규모 GPU 인프라를 확보하여 AI 모델 Helix의 학습과 시뮬레이션을 가속화하고 있다.",
+              "criterion_id": "market_growth_drivers",
+              "source_refs": [
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Catalyst Brands와의 상용 계약을 통해 유통 및 물류 산업에 진입했으며, Brookfield와의 파트너십을 통해 주거 및 상업용 부동산 등 다양한 산업과 환경으로 확장 가능성을 모색하고 있다.",
+              "criterion_id": "market_entry_expansion",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-0708b7e94d92fdac",
+                  "page": 1
+                },
+                {
+                  "doc_id": "WEB-ecd182e4a53160b8",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "근거에 경쟁 제품 대비 Figure AI 휴머노이드 로봇의 우수성이나 차별화된 고객 가치에 관한 직접적인 비교 정보는 없다.",
+              "criterion_id": "customer_value_vs_competitors",
+              "source_refs": [],
+              "status": "unverified"
+            },
+            {
+              "claim": "Figure AI는 Brookfield와의 협력을 통해 세계 최대 규모의 실제 환경 휴머노이드 사전학습 데이터셋을 구축하고 있으며, Nscale과의 협력으로 고성능 GPU 인프라를 확보하는 등 모방하기 어려운 데이터와 인프라 자산을 보유하고 있다.",
+              "criterion_id": "hard_to_copy_assets",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-ecd182e4a53160b8",
+                  "page": 1
+                },
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "근거에 고객 유지 요인이나 경쟁 제품으로의 전환 장벽에 관한 구체적 정보는 없다.",
+              "criterion_id": "customer_retention_switching_barrier",
+              "source_refs": [],
+              "status": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-0708b7e94d92fdac": {
+              "doc_id": "WEB-0708b7e94d92fdac",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                4,
+                8
+              ],
+              "title": "Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations",
+              "file_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "resolved_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "accessed_at": "2026-10-13T08:18:44.710639+00:00",
+              "published_at": "2026-05-26T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-ecd182e4a53160b8": {
+              "doc_id": "WEB-ecd182e4a53160b8",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                4,
+                8
+              ],
+              "title": "Figure Announces Strategic Partnership with Brookfield",
+              "file_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "page_count": 2,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "resolved_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "accessed_at": "2026-10-13T08:18:45.817253+00:00",
+              "published_at": "2025-09-17T00:00:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "accessible_market",
+            "customer_pain_purchase_need",
+            "market_growth_drivers",
+            "market_entry_expansion",
+            "customer_value_vs_competitors",
+            "customer_retention_switching_barrier"
+          ]
+        }
+      },
+      "1:task_market_002": {
+        "task": {
+          "id": "task_market_002",
+          "worker": "market",
+          "query": "Figure AI의 고객 문제의 심각성과 구매 필요성, 경쟁 제품 대비 고객 가치, 고객 유지 및 전환 장벽에 대해 구체적인 공개 근거 조사",
+          "urls": [
+            "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+            "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield"
+          ],
+          "criteria": [
+            "customer_pain_purchase_need",
+            "customer_value_vs_competitors",
+            "customer_retention_switching_barrier"
+          ]
+        },
+        "worker": "market",
+        "recheck_count": 1,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Catalyst Brands는 물류 및 공급망 내 육체적으로 힘든 작업을 자동화하여 직원들이 더 높은 부가가치 업무에 집중할 수 있도록 하기 위해 Figure AI의 휴머노이드 로봇을 도입했다.",
+              "criterion_id": "customer_pain_purchase_need",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-0708b7e94d92fdac",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Catalyst Brands와의 상업적 계약을 통해 물류센터 내 반복적이고 육체적으로 힘든 작업을 자동화하는 실제 배치를 진행하고 있다.",
+              "criterion_id": "customer_pain_purchase_need",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-0708b7e94d92fdac",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "근거에 경쟁 제품 대비 Figure AI 휴머노이드 로봇의 우수성이나 차별화된 고객 가치에 관한 직접적인 비교 정보는 없다.",
+              "criterion_id": "customer_value_vs_competitors",
+              "source_refs": [],
+              "status": "unverified"
+            },
+            {
+              "claim": "근거에 고객 유지 요인이나 경쟁 제품으로의 전환 장벽에 관한 구체적 정보는 없다.",
+              "criterion_id": "customer_retention_switching_barrier",
+              "source_refs": [],
+              "status": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-0708b7e94d92fdac": {
+              "doc_id": "WEB-0708b7e94d92fdac",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                4,
+                8
+              ],
+              "title": "Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations",
+              "file_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "resolved_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "accessed_at": "2026-10-13T08:18:44.710639+00:00",
+              "published_at": "2026-05-26T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-ecd182e4a53160b8": {
+              "doc_id": "WEB-ecd182e4a53160b8",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                4,
+                8
+              ],
+              "title": "Figure Announces Strategic Partnership with Brookfield",
+              "file_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "page_count": 2,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "resolved_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "accessed_at": "2026-10-13T08:18:45.817253+00:00",
+              "published_at": "2025-09-17T00:00:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "customer_pain_purchase_need",
+            "customer_value_vs_competitors",
+            "customer_retention_switching_barrier"
+          ]
+        }
+      },
+      "1:task_technology_002": {
+        "task": {
+          "id": "task_technology_002",
+          "worker": "technology",
+          "query": "Figure AI의 공식 설명에서 소통의 명확성과 신뢰성, 그리고 독자 기술과 특허 등 모방하기 어려운 자산 관련 근거 확보",
+          "urls": [
+            "https://www.figure.ai/news/introducing-figure-03",
+            "https://patents.google.com/patent/US12605824B2/en"
+          ],
+          "criteria": [
+            "communication_reliability",
+            "hard_to_copy_assets"
+          ]
+        },
+        "worker": "technology",
+        "recheck_count": 1,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하여 설명하고 있으며, 실험실 결과와 현장 적용을 구분하는 등 일관성 있고 신뢰성 있는 정보를 제공하고 있다.",
+              "criterion_id": "communication_reliability",
+              "source_refs": [],
+              "status": "unverified"
+            },
+            {
+              "claim": "Figure AI는 Helix AI 플랫폼과 BotQ 제조 시설, 자체 개발한 고성능 센서 및 촉각 기술, 그리고 대규모 데이터 수집 인프라를 보유하고 있다.",
+              "criterion_id": "hard_to_copy_assets",
+              "source_refs": [],
+              "status": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-524187fe83b05d5f": {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/introducing-figure-03",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                3,
+                7,
+                8
+              ],
+              "title": "Introducing Figure 03",
+              "file_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+              "page_count": 3,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/introducing-figure-03",
+              "resolved_url": "https://www.figure.ai/news/introducing-figure-03",
+              "accessed_at": "2026-10-13T08:18:44.336373+00:00",
+              "published_at": "2025-10-09T00:00:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [
+            "https://patents.google.com/patent/US12605824B2/en: ValueError: 원문 텍스트가 60,000자 상한을 넘습니다. 임의로 자르지 않습니다."
+          ],
+          "attempted_criteria": [
+            "communication_reliability",
+            "hard_to_copy_assets"
+          ]
+        }
+      },
+      "1:task_bigtech_002": {
+        "task": {
+          "id": "task_bigtech_002",
+          "worker": "bigtech",
+          "query": "Figure AI의 기존 고객 재구매와 계약 갱신 또는 납품 확대 관련 공개된 실제 사례와 근거 조사",
+          "urls": [
+            "https://www.figure.ai/news/series-c",
+            "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership"
+          ],
+          "criteria": [
+            "customer_repurchase_expansion"
+          ]
+        },
+        "worker": "bigtech",
+        "recheck_count": 1,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI의 기존 고객 재구매, 계약 갱신 또는 납품 확대와 관련된 공개된 실제 사례는 근거에 존재하지 않는다.",
+              "criterion_id": "bigtech_relation",
+              "source_refs": [],
+              "status": "unverified",
+              "relation_type": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-364bccad851a980c": {
+              "doc_id": "WEB-364bccad851a980c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/series-c",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                1,
+                2,
+                7,
+                8
+              ],
+              "title": "Figure Exceeds $1B in Series C Funding at $39B Post-Money Valuation",
+              "file_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/series-c",
+              "resolved_url": "https://www.figure.ai/news/series-c",
+              "accessed_at": "2026-10-13T08:18:43.882011+00:00",
+              "published_at": "2025-09-16T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-68ba598f5ceb484c": {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                5,
+                7,
+                8
+              ],
+              "title": "Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform",
+              "file_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "resolved_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "accessed_at": "2026-10-13T08:18:45.017336+00:00",
+              "published_at": "2026-09-03T06:03:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "customer_repurchase_expansion"
+          ]
+        }
+      },
+      "2:task_market_003": {
+        "task": {
+          "id": "task_market_003",
+          "worker": "market",
+          "query": "Figure AI 휴머노이드 로봇의 경쟁 제품 대비 고객 가치 평가에 필요한 공개된 구체적 비교 정보와 근거 조사",
+          "urls": [
+            "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+            "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield"
+          ],
+          "criteria": [
+            "customer_value_vs_competitors"
+          ]
+        },
+        "worker": "market",
+        "recheck_count": 2,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "근거에 Figure AI 휴머노이드 로봇이 경쟁 제품 대비 우수하거나 차별화된 고객 가치를 제공한다는 직접적인 비교 정보는 없다.",
+              "criterion_id": "customer_value_vs_competitors",
+              "source_refs": [],
+              "status": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-0708b7e94d92fdac": {
+              "doc_id": "WEB-0708b7e94d92fdac",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                4,
+                8
+              ],
+              "title": "Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations",
+              "file_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "resolved_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "accessed_at": "2026-10-13T08:18:44.710639+00:00",
+              "published_at": "2026-05-26T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-ecd182e4a53160b8": {
+              "doc_id": "WEB-ecd182e4a53160b8",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                4,
+                8
+              ],
+              "title": "Figure Announces Strategic Partnership with Brookfield",
+              "file_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "page_count": 2,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "resolved_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "accessed_at": "2026-10-13T08:18:45.817253+00:00",
+              "published_at": "2025-09-17T00:00:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "customer_value_vs_competitors"
+          ]
+        }
+      },
+      "2:task_technology_003": {
+        "task": {
+          "id": "task_technology_003",
+          "worker": "technology",
+          "query": "Figure AI의 공식 자료 내 소통의 명확성 및 신뢰성, 그리고 독자 기술·특허·데이터·노하우 등 모방하기 어려운 자산 관련 명확 근거 확보",
+          "urls": [
+            "https://www.figure.ai/news/introducing-figure-03",
+            "https://patents.google.com/patent/US12605824B2/en"
+          ],
+          "criteria": [
+            "communication_reliability",
+            "hard_to_copy_assets"
+          ]
+        },
+        "worker": "technology",
+        "recheck_count": 2,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하여 설명하고 있으며, 실험실 결과와 현장 적용을 구분하는 등 일관성 있고 신뢰성 있는 정보를 제공하고 있다는 직접적인 근거는 확보되지 않았다.",
+              "criterion_id": "communication_reliability",
+              "source_refs": [],
+              "status": "unverified"
+            },
+            {
+              "claim": "Figure AI는 독자적인 AI 플랫폼 Helix와 BotQ 제조 시설, 자체 개발한 고성능 센서 및 촉각 기술, 대규모 데이터 수집 인프라를 보유하고 있으나, 이들 자산이 특허, 독자 기술, 데이터, 노하우 등 모방하기 어려운 자산임을 직접적으로 뒷받침하는 공식 근거는 확보되지 않았다.",
+              "criterion_id": "hard_to_copy_assets",
+              "source_refs": [],
+              "status": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-524187fe83b05d5f": {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/introducing-figure-03",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                3,
+                7,
+                8
+              ],
+              "title": "Introducing Figure 03",
+              "file_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-524187fe83b05d5f.pdf",
+              "page_count": 3,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/introducing-figure-03",
+              "resolved_url": "https://www.figure.ai/news/introducing-figure-03",
+              "accessed_at": "2026-10-13T08:18:44.336373+00:00",
+              "published_at": "2025-10-09T00:00:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [
+            "https://patents.google.com/patent/US12605824B2/en: ValueError: 원문 텍스트가 60,000자 상한을 넘습니다. 임의로 자르지 않습니다."
+          ],
+          "attempted_criteria": [
+            "communication_reliability",
+            "hard_to_copy_assets"
+          ]
+        }
+      },
+      "2:task_bigtech_003": {
+        "task": {
+          "id": "task_bigtech_003",
+          "worker": "bigtech",
+          "query": "Figure AI의 기존 고객 재구매, 계약 갱신, 납품 확대 관련 공개된 실제 사례 및 관련 근거 명확화 조사",
+          "urls": [
+            "https://www.figure.ai/news/series-c",
+            "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership"
+          ],
+          "criteria": [
+            "customer_repurchase_expansion"
+          ]
+        },
+        "worker": "bigtech",
+        "recheck_count": 2,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI의 기존 고객 재구매, 계약 갱신 또는 납품 확대와 관련된 공개된 실제 사례는 근거에 존재하지 않는다.",
+              "criterion_id": "bigtech_relation",
+              "source_refs": [],
+              "status": "unverified",
+              "relation_type": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-364bccad851a980c": {
+              "doc_id": "WEB-364bccad851a980c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/series-c",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                1,
+                2,
+                7,
+                8
+              ],
+              "title": "Figure Exceeds $1B in Series C Funding at $39B Post-Money Valuation",
+              "file_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/series-c",
+              "resolved_url": "https://www.figure.ai/news/series-c",
+              "accessed_at": "2026-10-13T08:18:43.882011+00:00",
+              "published_at": "2025-09-16T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-68ba598f5ceb484c": {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                5,
+                7,
+                8
+              ],
+              "title": "Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform",
+              "file_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "resolved_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "accessed_at": "2026-10-13T08:18:45.017336+00:00",
+              "published_at": "2026-09-03T06:03:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "customer_repurchase_expansion"
+          ]
+        }
+      },
+      "3:task_bigtech_004": {
+        "task": {
+          "id": "task_bigtech_004",
+          "worker": "bigtech",
+          "query": "Figure AI의 고객 재구매, 계약 갱신, 납품 확대와 관련된 공개된 실제 사례 및 근거를 명확히 확인하기",
+          "urls": [
+            "https://www.figure.ai/news/series-c",
+            "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership"
+          ],
+          "criteria": [
+            "customer_repurchase_expansion"
+          ]
+        },
+        "worker": "bigtech",
+        "recheck_count": 3,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI의 기존 고객 재구매, 계약 갱신 또는 납품 확대와 관련된 공개된 실제 사례는 근거에 존재하지 않는다.",
+              "criterion_id": "bigtech_relation",
+              "source_refs": [],
+              "status": "unverified",
+              "relation_type": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-364bccad851a980c": {
+              "doc_id": "WEB-364bccad851a980c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/series-c",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                1,
+                2,
+                7,
+                8
+              ],
+              "title": "Figure Exceeds $1B in Series C Funding at $39B Post-Money Valuation",
+              "file_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-364bccad851a980c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/series-c",
+              "resolved_url": "https://www.figure.ai/news/series-c",
+              "accessed_at": "2026-10-13T08:18:43.882011+00:00",
+              "published_at": "2025-09-16T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-68ba598f5ceb484c": {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                5,
+                7,
+                8
+              ],
+              "title": "Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform",
+              "file_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-68ba598f5ceb484c.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "resolved_url": "https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership",
+              "accessed_at": "2026-10-13T08:18:45.017336+00:00",
+              "published_at": "2026-09-03T06:03:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "customer_repurchase_expansion"
+          ]
+        }
+      },
+      "3:task_market_004": {
+        "task": {
+          "id": "task_market_004",
+          "worker": "market",
+          "query": "Figure AI 휴머노이드 로봇이 경쟁 제품 대비 우수하거나 차별화된 고객 가치를 직접적으로 입증하는 구체적인 공개 근거 조사",
+          "urls": [
+            "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+            "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield"
+          ],
+          "criteria": [
+            "customer_value_vs_competitors"
+          ]
+        },
+        "worker": "market",
+        "recheck_count": 3,
+        "analysis": {
+          "claims": [
+            {
+              "claim": "Figure AI는 Catalyst Brands와의 상업적 계약을 통해 실제 물류 및 유통 현장에 휴머노이드 로봇을 배치하여 현장 업무 자동화를 진행하고 있다.",
+              "criterion_id": "accessible_market",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-0708b7e94d92fdac",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Brookfield와 전략적 파트너십을 맺고 100,000개 이상의 주거 단위와 광범위한 상업·물류 공간에서 휴머노이드 로봇의 데이터 수집과 상용 배치를 추진하고 있다.",
+              "criterion_id": "accessible_market",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-ecd182e4a53160b8",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 AI 기반 물리적 지능(Physical AI)의 발전과 산업 전반의 노동력 부족 문제를 배경으로 휴머노이드 로봇 시장의 성장을 추진하고 있다.",
+              "criterion_id": "market_growth_drivers",
+              "source_refs": [
+                {
+                  "doc_id": "CM-02",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Nscale과의 협력을 통해 고성능 GPU 인프라를 확보하여 AI 모델 Helix의 학습과 시뮬레이션을 가속화하고, 이를 통해 휴머노이드 로봇의 성능 향상과 상용화를 지원하고 있다.",
+              "criterion_id": "market_growth_drivers",
+              "source_refs": [
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 가정과 상업 현장 모두에 휴머노이드 로봇을 확장 적용하기 위해 BotQ 제조 시설을 확장하고 실제 배치를 늘리고 있다.",
+              "criterion_id": "market_entry_expansion",
+              "source_refs": [
+                {
+                  "doc_id": "FG-01",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Brookfield의 광범위한 부동산 포트폴리오를 활용하여 다양한 상업 환경에서 휴머노이드 로봇의 데이터 수집과 상용 배치를 확대할 계획이다.",
+              "criterion_id": "market_entry_expansion",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-ecd182e4a53160b8",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Brookfield와의 협력을 통해 세계 최대 규모의 실제 환경 휴머노이드 사전학습 데이터셋을 구축하고 있다.",
+              "criterion_id": "hard_to_copy_assets",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-ecd182e4a53160b8",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "Figure AI는 Nscale과의 파트너십을 통해 대규모 GPU 컴퓨팅 인프라를 확보하여 AI 모델 학습과 시뮬레이션을 가속화하는 기술적 자산을 보유하고 있다.",
+              "criterion_id": "hard_to_copy_assets",
+              "source_refs": [
+                {
+                  "doc_id": "FG-05",
+                  "page": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            {
+              "claim": "근거에 Figure AI 휴머노이드 로봇이 경쟁 제품 대비 우수하거나 차별화된 고객 가치를 제공한다는 직접적인 비교 정보는 없다.",
+              "criterion_id": "customer_value_vs_competitors",
+              "source_refs": [],
+              "status": "unverified"
+            },
+            {
+              "claim": "근거에 고객 유지 요인이나 경쟁 제품으로의 전환 장벽에 관한 구체적 정보는 없다.",
+              "criterion_id": "customer_retention_switching_barrier",
+              "source_refs": [],
+              "status": "unverified"
+            }
+          ],
+          "source_documents": {
+            "WEB-0708b7e94d92fdac": {
+              "doc_id": "WEB-0708b7e94d92fdac",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                2,
+                4,
+                8
+              ],
+              "title": "Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations",
+              "file_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-0708b7e94d92fdac.pdf",
+              "page_count": 1,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "resolved_url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands",
+              "accessed_at": "2026-10-13T08:18:44.710639+00:00",
+              "published_at": "2026-05-26T00:00:00.000Z",
+              "category": "web"
+            },
+            "WEB-ecd182e4a53160b8": {
+              "doc_id": "WEB-ecd182e4a53160b8",
+              "company": "Figure AI",
+              "url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "origin_pdf": "./com_data/Figure_AI.pdf",
+              "origin_pages": [
+                4,
+                8
+              ],
+              "title": "Figure Announces Strategic Partnership with Brookfield",
+              "file_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "source_path": "output/submission-live/web_sources/WEB-ecd182e4a53160b8.pdf",
+              "page_count": 2,
+              "source_kind": "web",
+              "web_format": "html_snapshot",
+              "publisher": "www.figure.ai",
+              "source_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "resolved_url": "https://www.figure.ai/news/figure-announces-strategic-partnership-with-brookfield",
+              "accessed_at": "2026-10-13T08:18:45.817253+00:00",
+              "published_at": "2025-09-17T00:00:00.000Z",
+              "category": "web"
+            }
+          },
+          "link_errors": [],
+          "attempted_criteria": [
+            "customer_value_vs_competitors"
+          ]
+        }
+      }
+    },
+    "research_result": {
+      "bigtech_analysis": {
+        "claims": [
+          {
+            "claim": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+            "criterion_id": "bigtech_equity_investment",
+            "source_refs": [
+              {
+                "doc_id": "FG-01",
+                "page": 1
+              }
+            ],
+            "status": "confirmed",
+            "relation_type": "equity_investment",
+            "source": {
+              "doc_id": "FG-01",
+              "page": 1
+            },
+            "analysis": "bigtech_analysis",
+            "evidence_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield Asset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+            "evidence_reason": "The source explicitly states that the Series C funding round had significant investment from NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management, which directly supports the claim that these entities participated as investors, indicating actual equity or CVC investment.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Nscale made a strategic investment in Figure AI as part of their partnership agreement.",
+            "criterion_id": "bigtech_equity_investment",
+            "source_refs": [
+              {
+                "doc_id": "WEB-68ba598f5ceb484c",
+                "page": 1
+              }
+            ],
+            "status": "confirmed",
+            "relation_type": "equity_investment",
+            "source": {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "page": 1
+            },
+            "analysis": "bigtech_analysis",
+            "evidence_quote": "As part of the agreement, Nscale is also making a strategic investment in Figure",
+            "evidence_reason": "The original page explicitly states that 'As part of the agreement, Nscale is also making a strategic investment in Figure,' directly supporting the claim that Nscale made a strategic investment in Figure AI as part of their partnership agreement.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI demonstrated the use of its humanoid robot Figure 03 enabled by Helix 02 at BMW Group Plant Spartanburg to master cognitive and dexterous manufacturing logistics tasks.",
+            "criterion_id": "bigtech_contract_delivery_stage",
+            "source_refs": [
+              {
+                "doc_id": "FG-03",
+                "page": 3
+              }
+            ],
+            "status": "confirmed",
+            "relation_type": "field_demo",
+            "source": {
+              "doc_id": "FG-03",
+              "page": 3
+            },
+            "analysis": "bigtech_analysis",
+            "evidence_quote": "With Figure 03 enabled by Helix 02 at BMW Group Plant Spartanburg, we are demonstrating that general-purpose physical AI can master the cognitive and dexterous tasks that have bottlenecked manufacturing logistics for generations.",
+            "evidence_reason": "The original page explicitly states that Figure 03, enabled by Helix 02 at BMW Group Plant Spartanburg, is demonstrated to master cognitive and dexterous tasks in manufacturing logistics, directly supporting the claim.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment.",
+            "criterion_id": "paid_sales_delivery",
+            "source_refs": [
+              {
+                "doc_id": "FG-04",
+                "page": 2
+              }
+            ],
+            "status": "confirmed",
+            "relation_type": "paid_contract_delivery",
+            "source": {
+              "doc_id": "FG-04",
+              "page": 2
+            },
+            "analysis": "bigtech_analysis",
+            "evidence_quote": "Strategic Ecosystem Alignment: This agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield. As a shared investor in both companies, Brookfield’s support reflects a unified vision for the future of industrial automation.",
+            "evidence_reason": "The text explicitly states that the agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield, reflecting strategic ecosystem alignment.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment.",
+            "criterion_id": "bigtech_contract_delivery_stage",
+            "source_refs": [
+              {
+                "doc_id": "FG-04",
+                "page": 2
+              }
+            ],
+            "status": "confirmed",
+            "relation_type": "paid_contract_delivery",
+            "source": {
+              "doc_id": "FG-04",
+              "page": 2
+            },
+            "analysis": "bigtech_analysis",
+            "evidence_quote": "Strategic Ecosystem Alignment: This agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield. As a shared investor in both companies, Brookfield’s support reflects a unified vision for the future of industrial automation.",
+            "evidence_reason": "The text explicitly states that the agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield, reflecting strategic ecosystem alignment.",
+            "all_core_facts_supported": true
+          }
+        ]
+      },
+      "criterion_attempts": {
+        "bigtech_equity_investment": [
+          {
+            "round": 0,
+            "task_id": "task_bigtech_001",
+            "worker": "bigtech",
+            "query": "Figure AI의 대기업 실제 지분 투자, CVC 투자 현황과 구체적인 투자 주체 및 관련 거래 근거 조사"
+          }
+        ],
+        "bigtech_contract_delivery_stage": [
+          {
+            "round": 0,
+            "task_id": "task_bigtech_001",
+            "worker": "bigtech",
+            "query": "Figure AI의 대기업 실제 지분 투자, CVC 투자 현황과 구체적인 투자 주체 및 관련 거래 근거 조사"
+          }
+        ],
+        "paid_sales_delivery": [
+          {
+            "round": 0,
+            "task_id": "task_bigtech_001",
+            "worker": "bigtech",
+            "query": "Figure AI의 대기업 실제 지분 투자, CVC 투자 현황과 구체적인 투자 주체 및 관련 거래 근거 조사"
+          }
+        ],
+        "customer_repurchase_expansion": [
+          {
+            "round": 0,
+            "task_id": "task_bigtech_001",
+            "worker": "bigtech",
+            "query": "Figure AI의 대기업 실제 지분 투자, CVC 투자 현황과 구체적인 투자 주체 및 관련 거래 근거 조사"
+          },
+          {
+            "round": 1,
+            "task_id": "task_bigtech_002",
+            "worker": "bigtech",
+            "query": "Figure AI의 기존 고객 재구매와 계약 갱신 또는 납품 확대 관련 공개된 실제 사례와 근거 조사"
+          },
+          {
+            "round": 2,
+            "task_id": "task_bigtech_003",
+            "worker": "bigtech",
+            "query": "Figure AI의 기존 고객 재구매, 계약 갱신, 납품 확대 관련 공개된 실제 사례 및 관련 근거 명확화 조사"
+          },
+          {
+            "round": 3,
+            "task_id": "task_bigtech_004",
+            "worker": "bigtech",
+            "query": "Figure AI의 고객 재구매, 계약 갱신, 납품 확대와 관련된 공개된 실제 사례 및 근거를 명확히 확인하기"
+          }
+        ],
+        "founder_expertise": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          }
+        ],
+        "productization_execution": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          }
+        ],
+        "team_operations": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          }
+        ],
+        "communication_reliability": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          },
+          {
+            "round": 1,
+            "task_id": "task_technology_002",
+            "worker": "technology",
+            "query": "Figure AI의 공식 설명에서 소통의 명확성과 신뢰성, 그리고 독자 기술과 특허 등 모방하기 어려운 자산 관련 근거 확보"
+          },
+          {
+            "round": 2,
+            "task_id": "task_technology_003",
+            "worker": "technology",
+            "query": "Figure AI의 공식 자료 내 소통의 명확성 및 신뢰성, 그리고 독자 기술·특허·데이터·노하우 등 모방하기 어려운 자산 관련 명확 근거 확보"
+          }
+        ],
+        "core_task_performance": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          }
+        ],
+        "field_reliability_safety": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          }
+        ],
+        "mass_production_maintenance": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          }
+        ],
+        "hard_to_copy_assets": [
+          {
+            "round": 0,
+            "task_id": "task_technology_001",
+            "worker": "technology",
+            "query": "Figure AI의 팀 구성 및 운영 역량, 창업자·핵심 인력의 전문성 및 제품화 실행력, 그리고 핵심 작업 성능과 현장 안전성 검증"
+          },
+          {
+            "round": 1,
+            "task_id": "task_technology_002",
+            "worker": "technology",
+            "query": "Figure AI의 공식 설명에서 소통의 명확성과 신뢰성, 그리고 독자 기술과 특허 등 모방하기 어려운 자산 관련 근거 확보"
+          },
+          {
+            "round": 2,
+            "task_id": "task_technology_003",
+            "worker": "technology",
+            "query": "Figure AI의 공식 자료 내 소통의 명확성 및 신뢰성, 그리고 독자 기술·특허·데이터·노하우 등 모방하기 어려운 자산 관련 명확 근거 확보"
+          }
+        ],
+        "accessible_market": [
+          {
+            "round": 0,
+            "task_id": "task_market_001",
+            "worker": "market",
+            "query": "Figure AI가 실제 접근 가능한 시장, 고객 문제와 구매 필요성, 시장 성장 동력 및 진입·확장 가능성 조사"
+          }
+        ],
+        "customer_pain_purchase_need": [
+          {
+            "round": 0,
+            "task_id": "task_market_001",
+            "worker": "market",
+            "query": "Figure AI가 실제 접근 가능한 시장, 고객 문제와 구매 필요성, 시장 성장 동력 및 진입·확장 가능성 조사"
+          },
+          {
+            "round": 1,
+            "task_id": "task_market_002",
+            "worker": "market",
+            "query": "Figure AI의 고객 문제의 심각성과 구매 필요성, 경쟁 제품 대비 고객 가치, 고객 유지 및 전환 장벽에 대해 구체적인 공개 근거 조사"
+          }
+        ],
+        "market_growth_drivers": [
+          {
+            "round": 0,
+            "task_id": "task_market_001",
+            "worker": "market",
+            "query": "Figure AI가 실제 접근 가능한 시장, 고객 문제와 구매 필요성, 시장 성장 동력 및 진입·확장 가능성 조사"
+          }
+        ],
+        "market_entry_expansion": [
+          {
+            "round": 0,
+            "task_id": "task_market_001",
+            "worker": "market",
+            "query": "Figure AI가 실제 접근 가능한 시장, 고객 문제와 구매 필요성, 시장 성장 동력 및 진입·확장 가능성 조사"
+          }
+        ],
+        "customer_value_vs_competitors": [
+          {
+            "round": 0,
+            "task_id": "task_market_001",
+            "worker": "market",
+            "query": "Figure AI가 실제 접근 가능한 시장, 고객 문제와 구매 필요성, 시장 성장 동력 및 진입·확장 가능성 조사"
+          },
+          {
+            "round": 1,
+            "task_id": "task_market_002",
+            "worker": "market",
+            "query": "Figure AI의 고객 문제의 심각성과 구매 필요성, 경쟁 제품 대비 고객 가치, 고객 유지 및 전환 장벽에 대해 구체적인 공개 근거 조사"
+          },
+          {
+            "round": 2,
+            "task_id": "task_market_003",
+            "worker": "market",
+            "query": "Figure AI 휴머노이드 로봇의 경쟁 제품 대비 고객 가치 평가에 필요한 공개된 구체적 비교 정보와 근거 조사"
+          },
+          {
+            "round": 3,
+            "task_id": "task_market_004",
+            "worker": "market",
+            "query": "Figure AI 휴머노이드 로봇이 경쟁 제품 대비 우수하거나 차별화된 고객 가치를 직접적으로 입증하는 구체적인 공개 근거 조사"
+          }
+        ],
+        "customer_retention_switching_barrier": [
+          {
+            "round": 0,
+            "task_id": "task_market_001",
+            "worker": "market",
+            "query": "Figure AI가 실제 접근 가능한 시장, 고객 문제와 구매 필요성, 시장 성장 동력 및 진입·확장 가능성 조사"
+          },
+          {
+            "round": 1,
+            "task_id": "task_market_002",
+            "worker": "market",
+            "query": "Figure AI의 고객 문제의 심각성과 구매 필요성, 경쟁 제품 대비 고객 가치, 고객 유지 및 전환 장벽에 대해 구체적인 공개 근거 조사"
+          }
+        ]
+      },
+      "technology_analysis": {
+        "claims": [
+          {
+            "claim": "Figure AI의 팀은 100년 이상의 AI 및 휴머노이드 로봇 경험을 가진 세계 최고 수준의 로봇공학 전문가들로 구성되어 있다.",
+            "criterion_id": "founder_expertise",
+            "source_refs": [
+              {
+                "doc_id": "FG-06",
+                "page": 5
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "FG-06",
+              "page": 5
+            },
+            "analysis": "technology_analysis",
+            "evidence_quote": "Figure has attracted the world’s leading robotics team with over 100 years of combined AI & humanoid experience.",
+            "evidence_reason": "The original page explicitly states that Figure has attracted the world's leading robotics team with over 100 years of combined AI and humanoid experience, directly supporting the claim that the Figure AI team consists of top-level robotics experts with 100+ years of AI and humanoid robot experience.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI는 Helix AI 플랫폼과 BotQ 제조 시설을 통해 휴머노이드 로봇의 생산과 현장 배치를 확장하고 있다.",
+            "criterion_id": "productization_execution",
+            "source_refs": [
+              {
+                "doc_id": "FG-01",
+                "page": 2
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "FG-01",
+              "page": 2
+            },
+            "analysis": "technology_analysis",
+            "evidence_quote": "Scaling humanoid robots into homes and commercial operations. We are expanding production manufacturing at BotQ and real-world deployments, enabling robots to assist with household and commercial workforce tasks.",
+            "evidence_reason": "The text explicitly mentions expanding production manufacturing at BotQ and scaling out the Helix AI platform, directly supporting the claim that Figure AI is scaling humanoid robot production and deployment through Helix and BotQ.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI는 제조, 전자, 센서, 액추에이터 등 주요 모듈을 자체 설계하고, 공급망을 새로 구축하여 수천~수백만 부품의 생산 목표를 달성하기 위한 글로벌 파트너 네트워크를 운영하고 있다.",
+            "criterion_id": "team_operations",
+            "source_refs": [
+              {
+                "doc_id": "WEB-524187fe83b05d5f",
+                "page": 2
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 2
+            },
+            "analysis": "technology_analysis",
+            "evidence_quote": "To scale Figure 03, Figure had to build an entirely new supply chain for an industry where one does not currently exist. Figure chose to vertically integrate across many critical module builds including actuators, batteries, sensors, structures, and electronics, all of which were designed completely in-house.",
+            "evidence_reason": "The passage explicitly states that Figure built an entirely new supply chain and vertically integrated critical module builds (including actuators, sensors, electronics) that were designed completely in-house, matching the claim about Figure AI designing major modules themselves and building a new supply chain with a global partner network to achieve production goals.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+            "criterion_id": "core_task_performance",
+            "source_refs": [
+              {
+                "doc_id": "WEB-d12ee081a0882850",
+                "page": 1
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "WEB-d12ee081a0882850",
+              "page": 1
+            },
+            "analysis": "technology_analysis",
+            "evidence_quote": "Helix 2.5 performs three long-horizon behaviors across 30 unseen homes, with no data collection, fine-tuning, or adaptation in those environments or manipulated objects.",
+            "evidence_reason": "The source states that Helix 2.5 successfully performed three whole-body tasks (tidying living rooms, folding towels, and making beds) across 30 unseen homes without any data collection or adaptation in those environments, which directly supports the claim that it did zero-shot execution of these long-horizon tasks in 30 unknown homes.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure 03 로봇의 손은 내구성, 신뢰성, 고해상도 촉각 센서를 자체 개발하여 3그램의 미세 압력까지 감지하며, 이를 통해 섬세하고 안정적인 물체 파지가 가능하다.",
+            "criterion_id": "core_task_performance",
+            "source_refs": [
+              {
+                "doc_id": "WEB-524187fe83b05d5f",
+                "page": 1
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 1
+            },
+            "analysis": "technology_analysis",
+            "evidence_quote": "The Figure 03 hands represent a major leap in compliant and tactile design. Softer, more adaptive fingertips increase surface contact area, enabling more stable grasps across objects of varied shapes and sizes. After surveying existing market options, Figure found that current tactile sensors had inherent limitations that could not withstand real-world use. This led to the internal development of our first-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and high-fidelity sensing. Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to register the weight of a paperclip resting on your finger. This precision enables Helix to distinguish between a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control over fragile, irregular, or moving objects.",
+            "evidence_reason": "The original text states that Figure 03 hands are designed with internally developed tactile sensors based on principles including extreme durability, long-term reliability, and high-fidelity sensing. The sensors can detect forces as small as three grams, enabling fine and stable grasping of objects. This directly supports the claim that the robot's hand includes durable, reliable, high-resolution tactile sensors capable of detecting 3 grams of pressure and enabling delicate and stable object grasping.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+            "criterion_id": "field_reliability_safety",
+            "source_refs": [
+              {
+                "doc_id": "FG-02",
+                "page": 4
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "FG-02",
+              "page": 4
+            },
+            "analysis": "technology_analysis",
+            "evidence_quote": "Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures while generating critical data that informed the build procedures, component architecture, and mechanical design of Figure 03.",
+            "evidence_reason": "The text explicitly states that Figure 02 robot had over 1,250 hours of operation with minimal hardware failures and that this experience generated critical data informing the mechanical design improvements for Figure 03.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "BotQ 제조 시설은 연간 최대 12,000대의 휴머노이드 로봇 생산 능력을 갖추고 있으며, 4년 내 100,000대 생산 목표를 위해 자체 생산과 품질 관리를 수행하고 있다.",
+            "criterion_id": "mass_production_maintenance",
+            "source_refs": [
+              {
+                "doc_id": "WEB-524187fe83b05d5f",
+                "page": 3
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 3
+            },
+            "analysis": "technology_analysis",
+            "evidence_quote": "BotQ is Figure’s dedicated manufacturing facility designed to scale robot production. BotQ’s first-generation manufacturing line will initially be capable of producing up to 12,000 humanoid robots per year, with the goal of producing a total of 100,000 robots over the next four years. Instead of relying on contract manufacturers, Figure brought production of its most critical systems in-house to maintain tight control over quality, iteration, and speed.",
+            "evidence_reason": "The text explicitly states that BotQ is a dedicated manufacturing facility with an initial capacity of 12,000 humanoid robots per year and a goal of producing 100,000 robots in four years. It also states that production and quality control are managed in-house rather than outsourced, ensuring tight control over quality and iteration.",
+            "all_core_facts_supported": true
+          }
+        ]
+      },
+      "market_competition_analysis": {
+        "claims": [
+          {
+            "claim": "Figure AI는 Catalyst Brands의 네바다 리노 물류센터에 휴머노이드 로봇을 상용 배치하여 실제 고객과 시장에 접근하고 있다.",
+            "criterion_id": "accessible_market",
+            "source_refs": [
+              {
+                "doc_id": "WEB-0708b7e94d92fdac",
+                "page": 1
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "WEB-0708b7e94d92fdac",
+              "page": 1
+            },
+            "analysis": "market_competition_analysis",
+            "evidence_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure humanoids into their distribution and logistics network. The collaboration starts at Catalyst’s Reno, Nevada Distribution Logistics Center",
+            "evidence_reason": "The source explicitly states that Figure has a commercial agreement to deploy their humanoid robots at Catalyst Brands' distribution and logistics network starting at the Reno, Nevada facility, indicating an active commercial deployment reaching the customer and market.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI는 Nscale과의 파트너십을 통해 대규모 GPU 인프라를 확보하여 AI 모델 Helix의 학습과 시뮬레이션을 가속화하고 있다.",
+            "criterion_id": "market_growth_drivers",
+            "source_refs": [
+              {
+                "doc_id": "FG-05",
+                "page": 2
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "FG-05",
+              "page": 2
+            },
+            "analysis": "market_competition_analysis",
+            "evidence_quote": "This partnership with Nscale provides the compute runway needed to train the next generation of AI models to solve general robotics.\n“Our AI model, Helix, becomes more capable the same way every learned system does: with more data and compute.",
+            "evidence_reason": "The text explicitly states that the partnership with Nscale provides the compute resources (large-scale GPU infrastructure) needed to train AI models such as Helix, thereby accelerating its learning and simulation capabilities.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI는 Catalyst Brands와의 상업적 계약을 통해 실제 물류 및 유통 현장에 휴머노이드 로봇을 배치하여 현장 업무 자동화를 진행하고 있다.",
+            "criterion_id": "accessible_market",
+            "source_refs": [
+              {
+                "doc_id": "WEB-0708b7e94d92fdac",
+                "page": 1
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "WEB-0708b7e94d92fdac",
+              "page": 1
+            },
+            "analysis": "market_competition_analysis",
+            "evidence_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure humanoids into their distribution and logistics network.",
+            "evidence_reason": "The text explicitly states a commercial agreement with Catalyst Brands to deploy Figure humanoid robots into distribution and logistics networks, focusing on automating physically demanding tasks, indicating actual deployment in logistics and distribution for automation.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI는 가정과 상업 현장 모두에 휴머노이드 로봇을 확장 적용하기 위해 BotQ 제조 시설을 확장하고 실제 배치를 늘리고 있다.",
+            "criterion_id": "market_entry_expansion",
+            "source_refs": [
+              {
+                "doc_id": "FG-01",
+                "page": 2
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "FG-01",
+              "page": 2
+            },
+            "analysis": "market_competition_analysis",
+            "evidence_quote": "Scaling humanoid robots into homes and commercial operations. We are expanding production manufacturing at BotQ and real-world deployments, enabling robots to assist with household and commercial workforce tasks.",
+            "evidence_reason": "The statement in the original page explicitly mentions that Figure is \"expanding production manufacturing at BotQ and real-world deployments\" to scale humanoid robots into homes and commercial operations, which directly supports the claim about expanding BotQ manufacturing facilities and increasing actual deployments for both home and commercial use.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI는 Brookfield와의 협력을 통해 세계 최대 규모의 실제 환경 휴머노이드 사전학습 데이터셋을 구축하고 있다.",
+            "criterion_id": "hard_to_copy_assets",
+            "source_refs": [
+              {
+                "doc_id": "WEB-ecd182e4a53160b8",
+                "page": 1
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "WEB-ecd182e4a53160b8",
+              "page": 1
+            },
+            "analysis": "market_competition_analysis",
+            "evidence_quote": "Brookfield will help Figure develop the world’s largest and most diverse real-world humanoid pretraining dataset",
+            "evidence_reason": "The original page explicitly states that Brookfield is assisting Figure AI to develop the world's largest and most diverse real-world humanoid pretraining dataset as part of their strategic partnership. This directly supports the claim that Figure AI, through cooperation with Brookfield, is building the world's largest real-world humanoid pretraining dataset.",
+            "all_core_facts_supported": true
+          },
+          {
+            "claim": "Figure AI는 Nscale과의 파트너십을 통해 대규모 GPU 컴퓨팅 인프라를 확보하여 AI 모델 학습과 시뮬레이션을 가속화하는 기술적 자산을 보유하고 있다.",
+            "criterion_id": "hard_to_copy_assets",
+            "source_refs": [
+              {
+                "doc_id": "FG-05",
+                "page": 2
+              }
+            ],
+            "status": "confirmed",
+            "source": {
+              "doc_id": "FG-05",
+              "page": 2
+            },
+            "analysis": "market_competition_analysis",
+            "evidence_quote": "This partnership with Nscale provides the compute runway needed to train the next generation of AI models to solve general robotics.",
+            "evidence_reason": "The text explicitly states that the partnership with Nscale provides the compute resources required to train AI models, which implies that Figure AI secured large-scale GPU computing infrastructure through this partnership to accelerate AI model training and simulation.",
+            "all_core_facts_supported": true
+          }
+        ]
+      },
+      "source_access_errors": [
+        "technology: source link access failed https://docs.justia.com/cases/federal/district-courts/california/candce/5%3A2025cv10094/460223/46: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+        "technology: source link access failed https://patents.google.com/patent/US12605824B2/en: ValueError: 원문 텍스트가 60,000자 상한을 넘습니다. 임의로 자르지 않습니다."
+      ],
+      "source_checked_claims": [
+        {
+          "claim": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+          "criterion_id": "bigtech_equity_investment",
+          "source_refs": [
+            {
+              "doc_id": "FG-01",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "relation_type": "equity_investment",
+          "source": {
+            "doc_id": "FG-01",
+            "page": 1
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield Asset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+          "evidence_reason": "원문은 NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management가 Figure의 Series C 펀딩 라운드에 significant investment를 했음을 명시하고 있다. 이는 실제로 이 회사들이 투자자로 참여했음을 의미한다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Nscale made a strategic investment in Figure AI as part of their partnership agreement.",
+          "criterion_id": "bigtech_equity_investment",
+          "source_refs": [
+            {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "relation_type": "equity_investment",
+          "source": {
+            "doc_id": "WEB-68ba598f5ceb484c",
+            "page": 1
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "As part of the agreement, Nscale is also making a strategic investment in Figure",
+          "evidence_reason": "The page explicitly states that, as part of the partnership agreement, Nscale is making a strategic investment in Figure. This directly supports the claim.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI demonstrated the use of its humanoid robot Figure 03 enabled by Helix 02 at BMW Group Plant Spartanburg to master cognitive and dexterous manufacturing logistics tasks.",
+          "criterion_id": "bigtech_contract_delivery_stage",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 3
+            }
+          ],
+          "status": "confirmed",
+          "relation_type": "field_demo",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 3
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "With Figure 03 enabled by Helix 02 at BMW Group Plant Spartanburg, we are demonstrating that general-purpose physical AI can master the cognitive and dexterous tasks that have bottlenecked manufacturing logistics for generations.",
+          "evidence_reason": "The source page directly states that Figure 03 enabled by Helix 02 was demonstrated at BMW Group Plant Spartanburg to master cognitive and dexterous manufacturing logistics tasks, matching every core fact of the claim.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment.",
+          "criterion_id": "paid_sales_delivery",
+          "source_refs": [
+            {
+              "doc_id": "FG-04",
+              "page": 2
+            }
+          ],
+          "status": "confirmed",
+          "relation_type": "paid_contract_delivery",
+          "source": {
+            "doc_id": "FG-04",
+            "page": 2
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "This agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield. As a shared investor in both companies, Brookfield’s support reflects a unified vision for the future of industrial automation.",
+          "evidence_reason": "The page explicitly states that 'this agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield' and refers to strategic ecosystem alignment, directly supporting all the core facts of the claim.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment.",
+          "criterion_id": "bigtech_contract_delivery_stage",
+          "source_refs": [
+            {
+              "doc_id": "FG-04",
+              "page": 2
+            }
+          ],
+          "status": "confirmed",
+          "relation_type": "paid_contract_delivery",
+          "source": {
+            "doc_id": "FG-04",
+            "page": 2
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "This agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield. As a shared investor in both companies, Brookfield’s support reflects a unified vision for the future of industrial automation.",
+          "evidence_reason": "The page explicitly states that 'this agreement marks the first commercial bridge between Figure and a portfolio company of Brookfield' and refers to strategic ecosystem alignment, directly supporting all the core facts of the claim.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+          "criterion_id": "core_task_performance",
+          "source_refs": [
+            {
+              "doc_id": "WEB-d12ee081a0882850",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "WEB-d12ee081a0882850",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Helix 2.5 performs three long-horizon behaviors across 30 unseen homes, with no data collection, fine-tuning, or adaptation in those environments or manipulated objects.",
+          "evidence_reason": "원본 페이지에서는 Helix 2.5가 사전 데이터 수집, 파인튜닝, 적응 없이 30곳의 새로운 집에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 수행했다는 것이 명확하게 언급되고 있다. 이는 주장에 포함된 '30개의 미지의 가정 환경', '세 가지 장기 작업', '사전 데이터 수집 없이', '제로샷'이라는 각 요소를 모두 직접적으로 뒷받침한다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure 03 로봇의 손은 내구성, 신뢰성, 고해상도 촉각 센서를 자체 개발하여 3그램의 미세 압력까지 감지하며, 이를 통해 섬세하고 안정적인 물체 파지가 가능하다.",
+          "criterion_id": "core_task_performance",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "This led to the internal development of our first-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and high-fidelity sensing. Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to register the weight of a paperclip resting on your finger. This precision enables Helix to distinguish between a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control over fragile, irregular, or moving objects.",
+          "evidence_reason": "원문은 Figure 03의 손(핀거팁) 센서가 내구성, 신뢰성, 고해상도 촉각(high-fidelity sensing), 3그램의 미세 압력 감지 능력을 Figure사 자체 개발로 달성했음을 명시하고 있다. 또한 이 촉각 정밀도가 섬세하고 안정적인 물체 파지(파지 안정성, 미끄러짐 직전 감지 및 정밀한 제어)를 가능하게 한다는 설명이 있다. 모든 핵심 세부 사실이 직접 뒷받침된다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+          "criterion_id": "field_reliability_safety",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 4
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures while generating critical data that informed the build procedures, component architecture, and mechanical design of Figure 03.",
+          "evidence_reason": "원문에는 Figure 02가 1,250시간 이상의 현장 가동(operational hours) 동안 최소한의 하드웨어 고장만을 기록했고, 그 데이터를 Figure 03의 설계에 반영했다는 점이 명시되어 있다. 주장의 모든 핵심 사실이 직접적으로 확인된다.",
+          "all_core_facts_supported": true
+        }
+      ],
+      "evidence_gaps": [
+        {
+          "analysis": "bigtech_analysis",
+          "claim": "Figure AI is deploying humanoid robots at Catalyst's distribution facility for workforce modernization and automation of routine tasks.",
+          "reason": "invalid_quote",
+          "criterion_id": "bigtech_contract_delivery_stage"
+        },
+        {
+          "analysis": "bigtech_analysis",
+          "claim": "Figure AI and Nscale signed a strategic partnership involving a $3.5 billion initial commitment for GPU compute infrastructure deployment, indicating a paid contract for delivery of compute resources.",
+          "reason": "all_sources_rejected",
+          "source_attempts": [
+            {
+              "analysis": "bigtech_analysis",
+              "claim": "Figure AI and Nscale signed a strategic partnership involving a $3.5 billion initial commitment for GPU compute infrastructure deployment, indicating a paid contract for delivery of compute resources.",
+              "reason": "unsupported_claim",
+              "detail": "The page states that Figure and Nscale have a partnership to provide compute resources for AI training but does not mention a $3.5 billion initial commitment, a strategic partnership agreement, or that this involves a paid contract for delivery of compute resources."
+            },
+            {
+              "analysis": "bigtech_analysis",
+              "claim": "Figure AI and Nscale signed a strategic partnership involving a $3.5 billion initial commitment for GPU compute infrastructure deployment, indicating a paid contract for delivery of compute resources.",
+              "reason": "partial_support",
+              "detail": "The page explicitly confirms a $3.5 billion initial commitment for GPU compute infrastructure deployment as part of a strategic partnership between Figure AI and Nscale. However, while it mentions the partnership and the financial commitment, it does not explicitly confirm that this constitutes a paid contract for delivery of compute resources. Therefore, the claim that it indicates a paid contract for delivery is not fully supported by the text."
+            }
+          ],
+          "criterion_id": "bigtech_contract_delivery_stage"
+        },
+        {
+          "analysis": "bigtech_analysis",
+          "claim": "Brookfield Asset Management is described as a continued backer and existing investor in Figure AI, implying ongoing investment support and potential contract expansion.",
+          "reason": "unsupported_claim",
+          "detail": "The text states that there is continued backing from existing investors but does not specifically name Brookfield Asset Management or describe it as a continued backer or provide evidence of ongoing investment support or contract expansion.",
+          "criterion_id": "customer_repurchase_expansion"
+        },
+        {
+          "analysis": "bigtech_analysis",
+          "claim": "Figure AI의 기존 고객 재구매, 계약 갱신 또는 납품 확대와 관련된 공개된 실제 사례는 근거에 존재하지 않는다.",
+          "reason": "unconfirmed_claim"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI의 창업자 겸 CEO인 Brett Adcock는 AI 모델 Helix 개발과 이를 통한 휴머노이드 로봇 구현에 핵심적인 역할을 수행하고 있다.",
+          "reason": "partial_support",
+          "detail": "The page confirms Brett Adcock is the founder and CEO of Figure and mentions the AI model Helix, indicating involvement in its development via computing resources. However, it does not explicitly state that Brett Adcock personally plays a core role in Helix's development or that this specifically enables humanoid robot implementation. Therefore, the claim is only partially supported.",
+          "criterion_id": "founder_expertise"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure 03 휴머노이드 로봇은 Helix AI 시스템을 탑재하여 가정과 상업 현장에 적용 가능한 제품으로 개발되었으며, 완전한 하드웨어 및 소프트웨어 재설계를 통해 상용화 준비가 이루어졌다.",
+          "reason": "invalid_quote",
+          "criterion_id": "productization_execution"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI는 BotQ라는 자체 제조 시설을 운영하며, 제조 실행 시스템(MES)을 통해 품질, 반복성, 지속적 개선을 관리하고 있다.",
+          "reason": "invalid_quote",
+          "criterion_id": "team_operations"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하며, 실험실 결과와 현장 적용을 구분하여 일관성 있고 신뢰성 있는 정보를 제공하고 있다.",
+          "reason": "all_sources_rejected",
+          "source_attempts": [
+            {
+              "analysis": "technology_analysis",
+              "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하며, 실험실 결과와 현장 적용을 구분하여 일관성 있고 신뢰성 있는 정보를 제공하고 있다.",
+              "reason": "partial_support",
+              "detail": "The page clearly distinguishes between the development of the Helix 2.5 model, its pretraining on a large dataset (Index), and the zero-shot application of learned behaviors in 30 unseen real homes, which reflects a clear differentiation between experimental (pretraining in lab/data environments) and real-world application (deployment in homes without adaptation). This supports part of the claim regarding distinction between product goals and actual performance, as well as between lab results and field application, indicating consistency and reliability in the information shared. However, explicit statements about the company’s policy or approach to clearly separating goals from performance or about providing consistent and reliable information are not directly stated, so the full claim that Figure AI officially distinguishes these aspects and offers consistent information is only partially supported."
+            },
+            {
+              "analysis": "technology_analysis",
+              "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하며, 실험실 결과와 현장 적용을 구분하여 일관성 있고 신뢰성 있는 정보를 제공하고 있다.",
+              "reason": "unsupported_claim",
+              "detail": "The page describes the features and design goals of Figure 03 and the Helix AI system but does not explicitly distinguish or clarify the difference between product goals and actual performance, nor does it explicitly separate laboratory experimental results from real-world application data or state that it provides clear, consistent, and reliable information along these lines. Therefore, the claim that Figure AI explicitly distinguishes product goals from actual performance and separates lab results from field application in official materials with consistency and trustworthiness is not supported by the given text."
+            }
+          ],
+          "criterion_id": "communication_reliability"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure 03는 가정 환경에서 안전하게 작동하도록 다중 밀도 폼과 부드러운 직물 커버를 적용하고, 배터리는 UN38.3 안전 인증을 획득한 다중 보호층을 갖추고 있다.",
+          "reason": "invalid_quote",
+          "criterion_id": "field_reliability_safety"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure 03는 고부가가치 CNC 가공에서 다이캐스팅, 사출성형, 스탬핑 등 대량 생산에 적합한 공정으로 전환하여 부품 수와 조립 단계를 대폭 줄였으며, 이를 통해 단위당 제조 비용을 크게 절감했다.",
+          "reason": "invalid_quote",
+          "criterion_id": "mass_production_maintenance"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI는 Helix AI 플랫폼과 Index라는 대규모 인간 행동 데이터셋을 기반으로 한 독자적인 사전학습 기술을 보유하여, 제로샷 환경 일반화와 인간 경험 기반 로봇 행동 전이에서 경쟁우위를 확보하고 있다.",
+          "reason": "all_sources_rejected",
+          "source_attempts": [
+            {
+              "analysis": "technology_analysis",
+              "claim": "Figure AI는 Helix AI 플랫폼과 Index라는 대규모 인간 행동 데이터셋을 기반으로 한 독자적인 사전학습 기술을 보유하여, 제로샷 환경 일반화와 인간 경험 기반 로봇 행동 전이에서 경쟁우위를 확보하고 있다.",
+              "reason": "invalid_quote"
+            },
+            {
+              "analysis": "technology_analysis",
+              "claim": "Figure AI는 Helix AI 플랫폼과 Index라는 대규모 인간 행동 데이터셋을 기반으로 한 독자적인 사전학습 기술을 보유하여, 제로샷 환경 일반화와 인간 경험 기반 로봇 행동 전이에서 경쟁우위를 확보하고 있다.",
+              "reason": "partial_support",
+              "detail": "The page confirms that Figure AI uses the Helix AI platform and the Index dataset for pretraining, enabling generalization in zero-shot environments and transfer of human experience-based robot behavior. However, the page does not explicitly state that Figure AI has '독자적인' (proprietary) pretraining technology nor that it has '경쟁우위' (competitive advantage) explicitly. Therefore, the claim is only partially supported. Also, '제로샷 환경 일반화' (zero-shot generalization) and human experience-based transfer are implied by 'policies pretrained on Index generalized to new layouts and objects without environment-specific fine-tuning.'"
+            }
+          ],
+          "criterion_id": "hard_to_copy_assets"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하여 설명하고 있으며, 실험실 결과와 현장 적용을 구분하는 등 일관성 있고 신뢰성 있는 정보를 제공하고 있다.",
+          "reason": "unconfirmed_claim",
+          "criterion_id": "communication_reliability"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI는 공식 자료에서 제품의 목표와 실제 성능을 명확히 구분하여 설명하고 있으며, 실험실 결과와 현장 적용을 구분하는 등 일관성 있고 신뢰성 있는 정보를 제공하고 있다는 직접적인 근거는 확보되지 않았다.",
+          "reason": "unconfirmed_claim",
+          "criterion_id": "communication_reliability"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Brookfield와 전략적 파트너십을 통해 10만 개 이상의 주거 단위와 광범위한 상업·물류 공간에서 휴머노이드 로봇의 데이터 수집과 상용 배치를 추진하고 있다.",
+          "reason": "invalid_quote",
+          "criterion_id": "accessible_market"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Catalyst Brands는 물류 및 공급망 내 육체적으로 힘든 작업을 자동화하여 직원들이 더 높은 부가가치 업무에 집중할 수 있도록 하는 문제를 해결하기 위해 Figure AI의 휴머노이드 로봇을 도입했다.",
+          "reason": "invalid_quote",
+          "criterion_id": "customer_pain_purchase_need"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "산업 전반에서 숙련 인력 부족과 노동력 문제를 해결하기 위한 전략으로 로봇과 자동화 도입이 증가하고 있다.",
+          "reason": "invalid_quote",
+          "criterion_id": "customer_pain_purchase_need"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "AI 기반 물리적 지능(Physical AI)의 발전과 산업 전반의 노동력 부족이 휴머노이드 로봇 시장 성장을 견인하는 주요 요인이다.",
+          "reason": "all_sources_rejected",
+          "source_attempts": [
+            {
+              "analysis": "market_competition_analysis",
+              "claim": "AI 기반 물리적 지능(Physical AI)의 발전과 산업 전반의 노동력 부족이 휴머노이드 로봇 시장 성장을 견인하는 주요 요인이다.",
+              "reason": "unsupported_claim",
+              "detail": "The page mentions that Physical AI is emerging as the next frontier of value creation and transformation in enterprises, but it does not mention the development of Physical AI or labor shortages in the industry as driving factors for the growth of the humanoid robot market."
+            },
+            {
+              "analysis": "market_competition_analysis",
+              "claim": "AI 기반 물리적 지능(Physical AI)의 발전과 산업 전반의 노동력 부족이 휴머노이드 로봇 시장 성장을 견인하는 주요 요인이다.",
+              "reason": "partial_support",
+              "detail": "The text states that robots are a key strategy to address labor shortages, indicating that labor shortages drive robot adoption. However, the text does not explicitly link AI-based physical intelligence (Physical AI) development to driving humanoid robot market growth, nor does it fully explicitly connect both factors as 'major drivers' of humanoid robot market growth."
+            }
+          ],
+          "criterion_id": "market_growth_drivers"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "근거에 경쟁 제품 대비 Figure AI 휴머노이드 로봇의 우수성이나 차별화된 고객 가치에 관한 직접적인 비교 정보는 없다.",
+          "reason": "unconfirmed_claim",
+          "criterion_id": "customer_value_vs_competitors"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Brookfield와의 협력을 통해 세계 최대 규모의 실제 환경 휴머노이드 사전학습 데이터셋을 구축하고 있으며, Nscale과의 협력으로 고성능 GPU 인프라를 확보하는 등 모방하기 어려운 데이터와 인프라 자산을 보유하고 있다.",
+          "reason": "all_sources_rejected",
+          "source_attempts": [
+            {
+              "analysis": "market_competition_analysis",
+              "claim": "Figure AI는 Brookfield와의 협력을 통해 세계 최대 규모의 실제 환경 휴머노이드 사전학습 데이터셋을 구축하고 있으며, Nscale과의 협력으로 고성능 GPU 인프라를 확보하는 등 모방하기 어려운 데이터와 인프라 자산을 보유하고 있다.",
+              "reason": "partial_support",
+              "detail": "The page explicitly states that Figure and Brookfield are partnering to build the world’s largest real-world humanoid pretraining dataset, supporting that part of the claim. It also mentions building AI infrastructure including next-generation GPU data centers, but does not explicitly specify Nscale or that Figure secured high-performance GPU infrastructure through Nscale. The claim that the data and infrastructure are 'moimakhiryeo-un' (hard to imitate) assets is a broad interpretation not directly stated in the text, so this part is not supported. Therefore, the world largest dataset and infrastructure collaboration are supported, but specific mention of Nscale collaboration and imitation difficulty are not supported."
+            },
+            {
+              "analysis": "market_competition_analysis",
+              "claim": "Figure AI는 Brookfield와의 협력을 통해 세계 최대 규모의 실제 환경 휴머노이드 사전학습 데이터셋을 구축하고 있으며, Nscale과의 협력으로 고성능 GPU 인프라를 확보하는 등 모방하기 어려운 데이터와 인프라 자산을 보유하고 있다.",
+              "reason": "partial_support",
+              "detail": "The page explicitly states that Figure AI partners with Nscale to secure computing resources (high-performance GPU infrastructure) for training AI models, supporting that part of the claim. However, there is no mention or evidence in the text about a partnership with Brookfield, or about building the world's largest real-world humanoid pretraining dataset. Therefore, the claim about Brookfield and dataset scale is unsupported."
+            }
+          ],
+          "criterion_id": "hard_to_copy_assets"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "근거에 고객 유지 요인이나 경쟁 제품으로의 전환 장벽에 관한 구체적 정보는 없다.",
+          "reason": "unconfirmed_claim",
+          "criterion_id": "customer_retention_switching_barrier"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Catalyst Brands는 물류 및 공급망 내 육체적으로 힘든 작업을 자동화하여 직원들이 더 높은 부가가치 업무에 집중할 수 있도록 하기 위해 Figure AI의 휴머노이드 로봇을 도입했다.",
+          "reason": "invalid_quote",
+          "criterion_id": "customer_pain_purchase_need"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "근거에 Figure AI 휴머노이드 로봇이 경쟁 제품 대비 우수하거나 차별화된 고객 가치를 제공한다는 직접적인 비교 정보는 없다.",
+          "reason": "unconfirmed_claim",
+          "criterion_id": "customer_value_vs_competitors"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Brookfield와 전략적 파트너십을 맺고 100,000개 이상의 주거 단위와 광범위한 상업·물류 공간에서 휴머노이드 로봇의 데이터 수집과 상용 배치를 추진하고 있다.",
+          "reason": "invalid_quote",
+          "criterion_id": "accessible_market"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 AI 기반 물리적 지능(Physical AI)의 발전과 산업 전반의 노동력 부족 문제를 배경으로 휴머노이드 로봇 시장의 성장을 추진하고 있다.",
+          "reason": "unsupported_claim",
+          "detail": "The original page discusses global robotics trends and the rise of AI and autonomous robots in general industrial and logistics contexts but does not mention Figure AI, Physical AI, humanoid robots, or labor shortages. Therefore, the specific claim about Figure AI driving growth in the humanoid robot market due to Physical AI and labor shortages is not supported by the provided text.",
+          "criterion_id": "market_growth_drivers"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Brookfield의 광범위한 부동산 포트폴리오를 활용하여 다양한 상업 환경에서 휴머노이드 로봇의 데이터 수집과 상용 배치를 확대할 계획이다.",
+          "reason": "invalid_quote",
+          "criterion_id": "market_entry_expansion"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Catalyst Brands와의 상용 계약을 통해 유통 및 물류 산업에 진입했으며, Brookfield와의 파트너십을 통해 주거 및 상업용 부동산 등 다양한 산업과 환경으로 확장 가능성을 모색하고 있다.",
+          "reason": "invalid_quote",
+          "criterion_id": "market_entry_expansion"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Catalyst Brands와의 상업적 계약을 통해 물류센터 내 반복적이고 육체적으로 힘든 작업을 자동화하는 실제 배치를 진행하고 있다.",
+          "reason": "partial_support",
+          "detail": "The page states there is a commercial agreement for deploying Figure humanoids at Catalyst Brands' distribution center to automate physically demanding tasks. However, it announces the agreement and the start of deployment, without confirming that the deployment is currently completed or fully operational (actual deployment in use). Therefore, the claim that Figure AI is conducting an actual deployment is only partially supported, as the current operational status of deployment is not explicitly confirmed.",
+          "criterion_id": "customer_pain_purchase_need"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Nscale과의 협력을 통해 고성능 GPU 인프라를 확보하여 AI 모델 Helix의 학습과 시뮬레이션을 가속화하고, 이를 통해 휴머노이드 로봇의 성능 향상과 상용화를 지원하고 있다.",
+          "reason": "invalid_quote",
+          "criterion_id": "market_growth_drivers"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI의 팀은 100년 이상의 AI 및 휴머노이드 로봇 경험을 가진 세계 최고 수준의 로봇공학 전문가들로 구성되어 있다.",
+          "reason": "unattributed_company_superlative",
+          "detail": "자사 세계 우열 홍보는 독립 비교 사실로 인정하지 않음",
+          "criterion_id": "founder_expertise"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI는 Helix AI 플랫폼과 BotQ 제조 시설을 통해 휴머노이드 로봇의 생산과 현장 배치를 확장하고 있다.",
+          "reason": "partial_support",
+          "detail": "원문은 Figure AI가 BotQ에서 생산 제조(production manufacturing)를 확장하고 실제 현장 배치(real-world deployments)를 넓힌다고 명시합니다. 또한 Helix가 AI 시스템(platform)임을 밝혔으나, 'Helix 플랫폼을 통해 생산과 배치를 확장한다'는 표현은 Helix가 생산·배치 확장의 수단이라는 점을 명확히 입증하지 못합니다. 즉, BotQ 시설을 통한 생산 확장과 현장 배치 확장은 명시되어 있으나, Helix 플랫폼이 생산 및 배치 확장의 직접적 수단으로 활용된다는 사실은 불명확하고, 헬릭스는 주로 embodied intelligence(AI capability)의 측면에서 기술됨을 감안할 때, 주장 전체가 원문에 명시적으로 입증되지는 않습니다.",
+          "criterion_id": "productization_execution"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "Figure AI는 제조, 전자, 센서, 액추에이터 등 주요 모듈을 자체 설계하고, 공급망을 새로 구축하여 수천~수백만 부품의 생산 목표를 달성하기 위한 글로벌 파트너 네트워크를 운영하고 있다.",
+          "reason": "partial_support",
+          "detail": "원본 페이지는 Figure가 액추에이터, 배터리, 센서, 구조체, 전자 등 주요 모듈을 자체 설계하고(vertical integration and in-house design), 새로운 공급망을 구축했음을 명시한다('entirely new supply chain', 'designed completely in-house'). 또한, 대량생산 목표와 파트너 공급업체 네트워크에 대한 언급도 있다. 그러나 해당 내용에서는 '수천~수백만 부품의 생산 목표', '글로벌 파트너 네트워크 운영'과 관련해 구체적으로 실제 부품 수량, 글로벌 네트워크의 구체적인 범위 또는 실제 운영 현황, 그리고 '제조' 와 '전자'에 대한 별도의 강조가 모두 명시적으로 상세하게 언급되어 있지 않다. 따라서 모든 핵심 내용(수천~수백만 부품 목표·글로벌 네트워크 운영)이 직접 입증되지는 않아 partial이다.",
+          "criterion_id": "team_operations"
+        },
+        {
+          "analysis": "technology_analysis",
+          "claim": "BotQ 제조 시설은 연간 최대 12,000대의 휴머노이드 로봇 생산 능력을 갖추고 있으며, 4년 내 100,000대 생산 목표를 위해 자체 생산과 품질 관리를 수행하고 있다.",
+          "reason": "partial_support",
+          "detail": "원문은 BotQ 시설이 연간 최대 12,000대 생산이 '초기'에 가능할 것('will initially be capable')이라고 하며, 4년 동안 100,000대 생산은 목표(goal)임을 명시한다. 그리고 핵심 시스템에 대한 자체 생산과 품질 관리(‘in-house to maintain tight control over quality’)를 시행한다고 설명한다. 그러나 'will initially be capable', 'with the goal of'는 모두 현재 실제 생산 능력이나 4년 내 생산 달성, 현재 자체 생산 및 품질 관리의 완료를 명시적으로 보장하지 않고 계획·설계·목표임을 밝혔으므로 주장 전체가 명시적으로 입증되지는 않는다.",
+          "criterion_id": "mass_production_maintenance"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Catalyst Brands의 네바다 리노 물류센터에 휴머노이드 로봇을 상용 배치하여 실제 고객과 시장에 접근하고 있다.",
+          "reason": "partial_support",
+          "detail": "원문에서는 Figure AI가 Catalyst Brands와 상업적 계약을 체결하여 네바다 리노 물류센터에 휴머노이드 로봇을 배치(deploy)할 계획임을 명확하게 밝히고 있다. 즉, 실제 상용 배치(commercial deployment)에 대한 상업적 합의와 네바다 리노 시작 지점 언급은 확인된다. 하지만 실제로 로봇이 이미 상용으로 배치되어 공급이 완료됐다는 내용(즉, 이미 가동 중·납품 완료된 상태라는 사실)이나 Figure AI가 시장·실제 고객에게 이미 도달했다는 명시적 언급은 없다. 상업 계약 및 초기 배치 계획 발표일 뿐, 완료 또는 현재 운영 상태에 대한 명확한 증거는 부족하다. 따라서 일부 핵심 사실(상용 계약 및 배치 계획 등)만 명시되어 있으므로 partial이다.",
+          "criterion_id": "accessible_market"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Nscale과의 파트너십을 통해 대규모 GPU 인프라를 확보하여 AI 모델 Helix의 학습과 시뮬레이션을 가속화하고 있다.",
+          "reason": "partial_support",
+          "detail": "원문에는 Figure AI가 Nscale과의 파트너십을 통해 대규모 컴퓨팅 인프라를 확보하고 있다고 명시하고 있다. 이 인프라는 차세대 AI 모델의 학습에 필요하다고 언급된다. 그러나, 'Helix' 모델의 학습과 시뮬레이션에 실제로 GPU 인프라가 사용되어 가속화되고 있다는 사실(현재 진행형)이 직접적으로 명시되어 있지 않으며, 실제 적용 단계나 가속화 결과도 구체적으로 언급되지 않는다. Helix의 능력이 데이터와 컴퓨트로 강화된다는 점도 기술돼 있지만, 바로 이 파트너십을 통해 Helix가 실시간으로 가속화되고 있다는 문장은 없다.",
+          "criterion_id": "market_growth_drivers"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Catalyst Brands와의 상업적 계약을 통해 실제 물류 및 유통 현장에 휴머노이드 로봇을 배치하여 현장 업무 자동화를 진행하고 있다.",
+          "reason": "partial_support",
+          "detail": "원문에서 Figure AI와 Catalyst Brands가 상업적 계약(commercial agreement)을 맺고 실제 Catalyst의 분배 및 물류 네트워크에 휴머노이드 로봇을 배치할 계획임을 명시하고 있으며, 가장 먼저 Reno, Nevada 물류센터에서 자동화 업무를 시작한다는 내용을 포함한다. 하지만, 이 내용은 구체적인 '실제 현장 배치와 자동화가 이미 진행되고 있다'의 '진행' 상태를 확인하기에는 불충분하다. 명확한 상업 계약(commercial agreement)과 실제 현장에 'deploy Figure humanoids'의 계획/의도가 존재하지만, 이미 배치 완료 및 운영 중임을 뒷받침하는 근거는 없다. 즉, 계약과 배치 의도는 확인되나, 현장 업무 자동화가 이미 이루어지고 있다는 점(진행형)은 명시되지 않았다.",
+          "criterion_id": "accessible_market"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 가정과 상업 현장 모두에 휴머노이드 로봇을 확장 적용하기 위해 BotQ 제조 시설을 확장하고 실제 배치를 늘리고 있다.",
+          "reason": "partial_support",
+          "detail": "원문은 BotQ 제조 시설 및 실제 배치(real-world deployments)의 확장(expanding) 사실을 밝히고 있으나, 이는 확장 적용 시도 및 역량 강화를 의미하지 '늘리고 있다(increasing actual deployments)'의 현황까지 구체적으로 언급하지는 않음. 또한 'homes and commercial operations'에 대한 'expanding production manufacturing at BotQ and real-world deployments'는 계획 및 실행중인 확대를 넓은 의미로 서술한 것일 뿐, 실제 확대된 배치 실적을 구체적으로 데이터로 뒷받침하거나 완료된 적용 결과를 보여주지 않는다. 따라서 명확한 실적 기반의 '현실적 확대' 내용까지 모두 supported라고 볼 수 없으며, 핵심 원자 사실 일부만 명시되어 partial임. all_core_facts_supported=false.",
+          "criterion_id": "market_entry_expansion"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Brookfield와의 협력을 통해 세계 최대 규모의 실제 환경 휴머노이드 사전학습 데이터셋을 구축하고 있다.",
+          "reason": "unattributed_company_superlative",
+          "detail": "자사 세계 우열 홍보는 독립 비교 사실로 인정하지 않음",
+          "criterion_id": "hard_to_copy_assets"
+        },
+        {
+          "analysis": "market_competition_analysis",
+          "claim": "Figure AI는 Nscale과의 파트너십을 통해 대규모 GPU 컴퓨팅 인프라를 확보하여 AI 모델 학습과 시뮬레이션을 가속화하는 기술적 자산을 보유하고 있다.",
+          "reason": "partial_support",
+          "detail": "The original text states that Figure is partnering with Nscale to 'bring the compute required,' indicating a partnership aimed at providing compute resources. However, it does not explicitly confirm that Figure has already secured or currently possesses large-scale GPU compute infrastructure as a realized, available technological asset. The existence of a partnership and intended resource provision is clear, but the factual possession or operational use of the large-scale infrastructure is not directly stated. Additionally, it is not a direct and explicit statement that Figure now '보유하고 있다' (currently owns or possesses) the technical assets; intent and activation are described, but actual current possession is not.",
+          "criterion_id": "hard_to_copy_assets"
+        }
+      ],
+      "evidence_status": "scorable",
+      "coverage_by_criterion": {
+        "founder_expertise": {
+          "id": "founder_expertise",
+          "label": "관련 전문성",
+          "worker": "technology",
+          "question": "창업자와 핵심 인력의 경력·전문성·실제 수행 역할",
+          "category": "창업자·핵심팀",
+          "weight": 6,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "productization_execution": {
+          "id": "productization_execution",
+          "label": "제품화·사업 실행력",
+          "worker": "technology",
+          "question": "개발 결과를 제품·현장 도입으로 전환한 이력과 달성한 이정표",
+          "category": "창업자·핵심팀",
+          "weight": 6,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "team_operations": {
+          "id": "team_operations",
+          "label": "팀 구성·운영 역량",
+          "worker": "technology",
+          "question": "핵심 인력 구성, 제조·소프트웨어·사업 담당 역량과 운영 이력",
+          "category": "창업자·핵심팀",
+          "weight": 5,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "communication_reliability": {
+          "id": "communication_reliability",
+          "label": "소통의 명확성과 신뢰성",
+          "worker": "technology",
+          "question": "공식 설명의 명확성·일관성 및 목표와 실제 결과의 구분",
+          "category": "창업자·핵심팀",
+          "weight": 3,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 3,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "accessible_market": {
+          "id": "accessible_market",
+          "label": "실제 접근 가능한 시장",
+          "worker": "market",
+          "question": "실제 고객·계약·실증으로 접근 가능한 고객군과 시장 범위",
+          "category": "시장성",
+          "weight": 8,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "customer_pain_purchase_need": {
+          "id": "customer_pain_purchase_need",
+          "label": "문제의 심각성과 구매 필요성",
+          "worker": "market",
+          "question": "고객의 비용·인력·생산 문제와 유상 구매 필요성",
+          "category": "시장성",
+          "weight": 7,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 2,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "market_growth_drivers": {
+          "id": "market_growth_drivers",
+          "label": "시장 성장 동력",
+          "worker": "market",
+          "question": "산업 수요, 인력 부족, 기술 변화와 검증 가능한 시장 성장 지표",
+          "category": "시장성",
+          "weight": 5,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "market_entry_expansion": {
+          "id": "market_entry_expansion",
+          "label": "시장 진입·확장 가능성",
+          "worker": "market",
+          "question": "실제 시장 진입 경로, 고객 확보 및 산업·지역 확장 근거",
+          "category": "시장성",
+          "weight": 5,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "core_task_performance": {
+          "id": "core_task_performance",
+          "label": "핵심 작업 성능",
+          "worker": "technology",
+          "question": "파지·이동·삽입 등 핵심 작업의 측정된 성공률·속도·환경 조건",
+          "category": "제품·기술력",
+          "weight": 6,
+          "researchable": true,
+          "status": "supported",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [
+            "E6",
+            "E7"
+          ],
+          "reason": "원문 검증을 통과한 근거가 있습니다. 등급 충족 여부는 별도 판단합니다."
+        },
+        "field_reliability_safety": {
+          "id": "field_reliability_safety",
+          "label": "현장 안정성·안전성",
+          "worker": "technology",
+          "question": "반복 작업 신뢰성, 가동 시간, 장애·안전 검증과 실제 현장 조건",
+          "category": "제품·기술력",
+          "weight": 5,
+          "researchable": true,
+          "status": "supported",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [
+            "E8"
+          ],
+          "reason": "원문 검증을 통과한 근거가 있습니다. 등급 충족 여부는 별도 판단합니다."
+        },
+        "mass_production_maintenance": {
+          "id": "mass_production_maintenance",
+          "label": "양산·유지보수 가능성",
+          "worker": "technology",
+          "question": "실제 생산 이력, 제조 확장, 비용·정비·유지보수 체계",
+          "category": "제품·기술력",
+          "weight": 4,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "customer_value_vs_competitors": {
+          "id": "customer_value_vs_competitors",
+          "label": "경쟁 제품 대비 고객 가치",
+          "worker": "market",
+          "question": "기존 방식·경쟁 제품과 비교한 고객 비용·성능·도입 효과",
+          "category": "경쟁우위",
+          "weight": 4,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 4,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "hard_to_copy_assets": {
+          "id": "hard_to_copy_assets",
+          "label": "모방하기 어려운 자산",
+          "worker": "technology",
+          "question": "독자 기술·특허·데이터·노하우 및 모방 장벽을 뒷받침하는 사실",
+          "category": "경쟁우위",
+          "weight": 3,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 3,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "customer_retention_switching_barrier": {
+          "id": "customer_retention_switching_barrier",
+          "label": "고객 유지·전환 장벽",
+          "worker": "market",
+          "question": "고객 유지, 시스템 통합, 전환 비용과 지속 사용 근거",
+          "category": "경쟁우위",
+          "weight": 3,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 2,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "bigtech_equity_investment": {
+          "id": "bigtech_equity_investment",
+          "label": "대기업 실제 지분·CVC 투자",
+          "worker": "bigtech",
+          "question": "대기업·CVC의 실제 지분 투자 여부와 투자 주체·거래 근거",
+          "category": "실적",
+          "weight": 4,
+          "researchable": true,
+          "status": "supported",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [
+            "E1",
+            "E2"
+          ],
+          "reason": "원문 검증을 통과한 근거가 있습니다. 등급 충족 여부는 별도 판단합니다."
+        },
+        "paid_sales_delivery": {
+          "id": "paid_sales_delivery",
+          "label": "유상 매출·납품",
+          "worker": "bigtech",
+          "question": "유상 매출, 고객 지급, 상용 계약·납품의 실제 실적",
+          "category": "실적",
+          "weight": 5,
+          "researchable": true,
+          "status": "supported",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [
+            "E4"
+          ],
+          "reason": "원문 검증을 통과한 근거가 있습니다. 등급 충족 여부는 별도 판단합니다."
+        },
+        "bigtech_contract_delivery_stage": {
+          "id": "bigtech_contract_delivery_stage",
+          "label": "대기업 계약·납품 단계",
+          "worker": "bigtech",
+          "question": "MOU·실증·유상 납품·유상 확대를 구분할 원문 근거",
+          "category": "실적",
+          "weight": 6,
+          "researchable": true,
+          "status": "supported",
+          "attempted": true,
+          "attempt_count": 1,
+          "evidence_ids": [
+            "E3",
+            "E5"
+          ],
+          "reason": "원문 검증을 통과한 근거가 있습니다. 등급 충족 여부는 별도 판단합니다."
+        },
+        "customer_repurchase_expansion": {
+          "id": "customer_repurchase_expansion",
+          "label": "고객 재구매·확대",
+          "worker": "bigtech",
+          "question": "기존 고객의 유상 재구매·계약 갱신·납품 확대",
+          "category": "실적",
+          "weight": 5,
+          "researchable": true,
+          "status": "searched_unverified",
+          "attempted": true,
+          "attempt_count": 4,
+          "evidence_ids": [],
+          "reason": "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
+        },
+        "valuation_reasonableness": {
+          "id": "valuation_reasonableness",
+          "label": "기업가치의 합리성",
+          "worker": null,
+          "question": "사람이 입력한 이번 거래의 기업가치와 산정 근거",
+          "category": "투자조건",
+          "weight": 4,
+          "researchable": false,
+          "status": "manual_missing",
+          "attempted": false,
+          "attempt_count": 0,
+          "evidence_ids": [],
+          "reason": "이번 거래의 투자조건을 사람이 입력하지 않아 U로 남깁니다."
+        },
+        "equity_rights": {
+          "id": "equity_rights",
+          "label": "지분·권리 조건",
+          "worker": null,
+          "question": "사람이 입력한 이번 거래의 지분·주주 권리·계약 조건",
+          "category": "투자조건",
+          "weight": 3,
+          "researchable": false,
+          "status": "manual_missing",
+          "attempted": false,
+          "attempt_count": 0,
+          "evidence_ids": [],
+          "reason": "이번 거래의 투자조건을 사람이 입력하지 않아 U로 남깁니다."
+        },
+        "funds_use_milestones": {
+          "id": "funds_use_milestones",
+          "label": "투자금 사용·다음 목표",
+          "worker": null,
+          "question": "사람이 입력한 이번 투자금 사용 계획과 다음 달성 목표",
+          "category": "투자조건",
+          "weight": 3,
+          "researchable": false,
+          "status": "manual_missing",
+          "attempted": false,
+          "attempt_count": 0,
+          "evidence_ids": [],
+          "reason": "이번 거래의 투자조건을 사람이 입력하지 않아 U로 남깁니다."
+        }
+      },
+      "missing_criteria": [
+        "founder_expertise",
+        "productization_execution",
+        "team_operations",
+        "communication_reliability",
+        "accessible_market",
+        "customer_pain_purchase_need",
+        "market_growth_drivers",
+        "market_entry_expansion",
+        "mass_production_maintenance",
+        "customer_value_vs_competitors",
+        "hard_to_copy_assets",
+        "customer_retention_switching_barrier",
+        "customer_repurchase_expansion"
+      ],
+      "research_criteria_count": 18,
+      "attempted_criteria_count": 18,
+      "supported_criteria_count": 5,
+      "report_revision_feedback": [
+        "소통의 명확성과 신뢰성에 대한 직접적 근거 미흡",
+        "경쟁 제품 대비 고객 가치, 고객 유지·전환 장벽 근거 부족",
+        "유상 매출·납품, 대기업 계약·납품 단계, 고객 재구매·확대 등 중요 실적 관련 자료 미확인",
+        "투자 조건(기업가치, 지분/권리, 투자금 사용 계획) 미입력으로 평가 보류 상태"
+      ],
+      "saved_source_revalidation": {
+        "input_claim_count": 18,
+        "output_claim_count": 8,
+        "worker_or_retrieval_executed": false,
+        "new_web_collection_executed": false,
+        "original_trace_id": "a6204fe3-5ccd-4d33-a30b-515f89b04c87",
+        "investment_regrading_required": true,
+        "report_regeneration_required": true
+      },
+      "last_verified_signature": "408a110741ac6c608a0b8807bebc9be481cedc6e7d03e87d42f66f847628bd55"
+    },
+    "investment_result": {
+      "score_details": {
+        "관련 전문성": {
+          "category": "창업자·핵심팀",
+          "weight": 6,
+          "grade": null,
+          "score": null,
+          "reason": "창업자와 핵심 인력의 경력, 전문성, 실제 수행 역할에 대해 확인 가능한 근거가 제공되지 않았다.",
+          "evidence": []
+        },
+        "제품화·사업 실행력": {
+          "category": "창업자·핵심팀",
+          "weight": 6,
+          "grade": null,
+          "score": null,
+          "reason": "개발 결과를 제품이나 현장 도입으로 전환한 주요 이정표와 실제 사례에 대한 뚜렷한 근거가 없다. 상용계약 등은 일부 확인되나, 팀의 명확한 실행 이력 확인은 불가하다.",
+          "evidence": []
+        },
+        "팀 구성·운영 역량": {
+          "category": "창업자·핵심팀",
+          "weight": 5,
+          "grade": null,
+          "score": null,
+          "reason": "핵심 인력 구성, 제조·소프트웨어·사업 담당 역량 및 팀의 실제 운영 이력에 대한 근거는 찾을 수 없다.",
+          "evidence": []
+        },
+        "소통의 명확성과 신뢰성": {
+          "category": "창업자·핵심팀",
+          "weight": 3,
+          "grade": null,
+          "score": null,
+          "reason": "공식 설명의 명확성, 목표와 결과 구분에 대한 평가를 위한 객관적 근거 자료가 없다.",
+          "evidence": []
+        },
+        "실제 접근 가능한 시장": {
+          "category": "시장성",
+          "weight": 8,
+          "grade": null,
+          "score": null,
+          "reason": "접근 가능한 실제 고객군, 계약, 실증 시장 범위에 대한 수량적·구체적 근거는 미확인. 일부 상용 계약이 있지만 시장 전체 규모 등 단계적 정보 불충분.",
+          "evidence": []
+        },
+        "문제의 심각성과 구매 필요성": {
+          "category": "시장성",
+          "weight": 7,
+          "grade": null,
+          "score": null,
+          "reason": "고객의 비용/인력/생산 문제 및 유상 구매 필요성에 대한 구체적 데이터나 사례는 현재 근거에 포함되어 있지 않다.",
+          "evidence": []
+        },
+        "시장 성장 동력": {
+          "category": "시장성",
+          "weight": 5,
+          "grade": null,
+          "score": null,
+          "reason": "산업 수요, 인력 부족, 기술 변화, 검증 가능한 시장 성장 지표 등은 명시되지 않았다.",
+          "evidence": []
+        },
+        "시장 진입·확장 가능성": {
+          "category": "시장성",
+          "weight": 5,
+          "grade": null,
+          "score": null,
+          "reason": "실제 시장 진입 경로나 고객 확보 및 산업/지역 확장에 대한 구체적인 근거는 제시되지 않았다.",
+          "evidence": []
+        },
+        "핵심 작업 성능": {
+          "category": "제품·기술력",
+          "weight": 6,
+          "grade": 4,
+          "score": 6.0,
+          "reason": "Helix 2.5가 30곳 새로운 가정에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 사전 데이터 수집, 파인튜닝 없이 성공적으로 수행함이 직접 확인된다. Figure 03의 핸드 센서는 3g 압력 감지, 섬세하고 안정적인 파지를 자체 개발해 파지 신뢰성 및 제어 정밀성이 확인된다. 여러 환경에서 정량적 실측 성능 입증도 확인됨. 다만, 제조업 등 기타 산업군에 대한 반복 실측 수치는 확인 불가.",
+          "evidence": [
+            {
+              "claim": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+              "criterion_id": "core_task_performance",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-d12ee081a0882850",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "source": {
+                "doc_id": "WEB-d12ee081a0882850",
+                "page": 1
+              },
+              "analysis": "technology_analysis",
+              "evidence_quote": "Helix 2.5 performs three long-horizon behaviors across 30 unseen homes, with no data collection, fine-tuning, or adaptation in those environments or manipulated objects.",
+              "evidence_reason": "원본 페이지에서는 Helix 2.5가 사전 데이터 수집, 파인튜닝, 적응 없이 30곳의 새로운 집에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 수행했다는 것이 명확하게 언급되고 있다. 이는 주장에 포함된 '30개의 미지의 가정 환경', '세 가지 장기 작업', '사전 데이터 수집 없이', '제로샷'이라는 각 요소를 모두 직접적으로 뒷받침한다.",
+              "all_core_facts_supported": true
+            },
+            {
+              "claim": "Figure 03 로봇의 손은 내구성, 신뢰성, 고해상도 촉각 센서를 자체 개발하여 3그램의 미세 압력까지 감지하며, 이를 통해 섬세하고 안정적인 물체 파지가 가능하다.",
+              "criterion_id": "core_task_performance",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-524187fe83b05d5f",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "source": {
+                "doc_id": "WEB-524187fe83b05d5f",
+                "page": 1
+              },
+              "analysis": "technology_analysis",
+              "evidence_quote": "This led to the internal development of our first-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and high-fidelity sensing. Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to register the weight of a paperclip resting on your finger. This precision enables Helix to distinguish between a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control over fragile, irregular, or moving objects.",
+              "evidence_reason": "원문은 Figure 03의 손(핀거팁) 센서가 내구성, 신뢰성, 고해상도 촉각(high-fidelity sensing), 3그램의 미세 압력 감지 능력을 Figure사 자체 개발로 달성했음을 명시하고 있다. 또한 이 촉각 정밀도가 섬세하고 안정적인 물체 파지(파지 안정성, 미끄러짐 직전 감지 및 정밀한 제어)를 가능하게 한다는 설명이 있다. 모든 핵심 세부 사실이 직접 뒷받침된다.",
+              "all_core_facts_supported": true
+            }
+          ]
+        },
+        "현장 안정성·안전성": {
+          "category": "제품·기술력",
+          "weight": 5,
+          "grade": 3,
+          "score": 3.75,
+          "reason": "Figure 02가 1,250+ 시간 현장 가동, 최소한의 하드웨어 고장, 축적된 신뢰성 데이터 및 설계 개선에 대한 근거가 명시되어 있다. 실제 현장 조건에서 반복 작업의 신뢰성, 장애 검증 근거는 있으나 다양한 환경 및 장기 안전성 데이터는 제한적이다.",
+          "evidence": [
+            {
+              "claim": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+              "criterion_id": "field_reliability_safety",
+              "source_refs": [
+                {
+                  "doc_id": "FG-02",
+                  "page": 4
+                }
+              ],
+              "status": "confirmed",
+              "source": {
+                "doc_id": "FG-02",
+                "page": 4
+              },
+              "analysis": "technology_analysis",
+              "evidence_quote": "Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures while generating critical data that informed the build procedures, component architecture, and mechanical design of Figure 03.",
+              "evidence_reason": "원문에는 Figure 02가 1,250시간 이상의 현장 가동(operational hours) 동안 최소한의 하드웨어 고장만을 기록했고, 그 데이터를 Figure 03의 설계에 반영했다는 점이 명시되어 있다. 주장의 모든 핵심 사실이 직접적으로 확인된다.",
+              "all_core_facts_supported": true
+            }
+          ]
+        },
+        "양산·유지보수 가능성": {
+          "category": "제품·기술력",
+          "weight": 4,
+          "grade": null,
+          "score": null,
+          "reason": "실제 생산 이력, 제조 확장, 비용 및 유지보수 체계에 대한 구체적 사례나 명확한 근거는 확인되지 않았다. 미래 계획·목표, 설계 등은 별개.",
+          "evidence": []
+        },
+        "경쟁 제품 대비 고객 가치": {
+          "category": "경쟁우위",
+          "weight": 4,
+          "grade": null,
+          "score": null,
+          "reason": "기존 방식이나 경쟁 제품과 비교한 고객 비용, 성능, 도입 효과 등 정량적 비교 근거가 확인되지 않는다.",
+          "evidence": []
+        },
+        "모방하기 어려운 자산": {
+          "category": "경쟁우위",
+          "weight": 3,
+          "grade": null,
+          "score": null,
+          "reason": "특허, 독자 기술, 데이터, 노하우 등 실제 모방 장벽을 뒷받침하는 자료는 확인되지 않았다. 자체 센서 개발 등은 별개이나, 모방불가성을 입증할 독점 사례 근거 부족.",
+          "evidence": []
+        },
+        "고객 유지·전환 장벽": {
+          "category": "경쟁우위",
+          "weight": 3,
+          "grade": null,
+          "score": null,
+          "reason": "고객의 유지, 시스템 통합, 전환 비용, 지속 사용을 보여주는 사례나 수치는 확인되지 않았다.",
+          "evidence": []
+        },
+        "대기업 실제 지분·CVC 투자": {
+          "category": "실적",
+          "weight": 4,
+          "grade": 4,
+          "score": 4.0,
+          "reason": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management 등 복수 대기업·CVC의 실제 지분투자(Series C)가 확인됐다. Nscale의 전략적 투자도 근거로 명시되어 있다.",
+          "evidence": [
+            {
+              "claim": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+              "criterion_id": "bigtech_equity_investment",
+              "source_refs": [
+                {
+                  "doc_id": "FG-01",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "equity_investment",
+              "source": {
+                "doc_id": "FG-01",
+                "page": 1
+              },
+              "analysis": "bigtech_analysis",
+              "evidence_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield Asset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+              "evidence_reason": "원문은 NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management가 Figure의 Series C 펀딩 라운드에 significant investment를 했음을 명시하고 있다. 이는 실제로 이 회사들이 투자자로 참여했음을 의미한다.",
+              "all_core_facts_supported": true
+            },
+            {
+              "claim": "Nscale made a strategic investment in Figure AI as part of their partnership agreement.",
+              "criterion_id": "bigtech_equity_investment",
+              "source_refs": [
+                {
+                  "doc_id": "WEB-68ba598f5ceb484c",
+                  "page": 1
+                }
+              ],
+              "status": "confirmed",
+              "relation_type": "equity_investment",
+              "source": {
+                "doc_id": "WEB-68ba598f5ceb484c",
+                "page": 1
+              },
+              "analysis": "bigtech_analysis",
+              "evidence_quote": "As part of the agreement, Nscale is also making a strategic investment in Figure",
+              "evidence_reason": "The page explicitly states that, as part of the partnership agreement, Nscale is making a strategic investment in Figure. This directly supports the claim.",
+              "all_core_facts_supported": true
+            }
+          ]
+        },
+        "유상 매출·납품": {
+          "category": "실적",
+          "weight": 5,
+          "grade": null,
+          "score": null,
+          "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
+          "evidence": []
+        },
+        "대기업 계약·납품 단계": {
+          "category": "실적",
+          "weight": 6,
+          "grade": null,
+          "score": null,
+          "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
+          "evidence": []
+        },
+        "고객 재구매·확대": {
+          "category": "실적",
+          "weight": 5,
+          "grade": null,
+          "score": null,
+          "reason": "동일 고객의 유상 재구매, 계약 갱신, 납품 확대를 직접적으로 확인하는 자료는 없다.",
+          "evidence": []
+        },
+        "기업가치의 합리성": {
+          "category": "투자조건",
+          "weight": 4,
+          "grade": null,
+          "score": null,
+          "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+          "evidence": []
+        },
+        "지분·권리 조건": {
+          "category": "투자조건",
+          "weight": 3,
+          "grade": null,
+          "score": null,
+          "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+          "evidence": []
+        },
+        "투자금 사용·다음 목표": {
+          "category": "투자조건",
+          "weight": 3,
+          "grade": null,
+          "score": null,
+          "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+          "evidence": []
+        }
+      },
+      "total_score": 13.75,
+      "scorable_weight": 15,
+      "unknown_weight": 85,
+      "unknown_items": [
+        "관련 전문성",
+        "제품화·사업 실행력",
+        "팀 구성·운영 역량",
+        "소통의 명확성과 신뢰성",
+        "실제 접근 가능한 시장",
+        "문제의 심각성과 구매 필요성",
+        "시장 성장 동력",
+        "시장 진입·확장 가능성",
+        "양산·유지보수 가능성",
+        "경쟁 제품 대비 고객 가치",
+        "모방하기 어려운 자산",
+        "고객 유지·전환 장벽",
+        "유상 매출·납품",
+        "대기업 계약·납품 단계",
+        "고객 재구매·확대",
+        "기업가치의 합리성",
+        "지분·권리 조건",
+        "투자금 사용·다음 목표"
+      ],
+      "investment_decision": "보류",
+      "decision_reason": "Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다. 또한 Helix 2.5 AI의 가정 내 제로샷 작업 수행 능력과 Figure 02의 1,250시간 이상 현장 가동에 따른 신뢰성 검증 등 핵심 제품 기술도 확인됩니다. 그러나 2024~2026년 매출 및 손익, 고객별 매출 구성, 계약 수주액·구체적 계약 조건, 제조원가 및 단위당 생산 비용, 반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아 투자 판단을 위한 충분한 근거가 부족합니다. 또한 휴머노이드 로봇 안전성 관련 소송 진행과 같은 법률적 위험 요인과, 시장 규모 및 성장 동력, 경쟁우위 비교 자료 등도 미확인 상태입니다. 따라서 추가 실사로 위 핵심 재무·사업 지표 및 리스크 해소가 필요하므로 현 시점에서 투자를 즉시 실행하기에는 근거가 불충분합니다.",
+      "investment_case": {
+        "action": "투자 보류",
+        "rationale": "확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.",
+        "model_opinion": "보류",
+        "supporting_facts": [
+          {
+            "criterion": "대기업 실제 지분·CVC 투자",
+            "grade": 4,
+            "fact": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+            "evidence_ids": [
+              "E1"
+            ]
+          },
+          {
+            "criterion": "핵심 작업 성능",
+            "grade": 4,
+            "fact": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+            "evidence_ids": [
+              "E6"
+            ]
+          },
+          {
+            "criterion": "현장 안정성·안전성",
+            "grade": 3,
+            "fact": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+            "evidence_ids": [
+              "E8"
+            ]
+          }
+        ],
+        "key_risks": [
+          {
+            "criterion": "유상 매출·납품",
+            "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+            "next_check": "유상 계약·인도·매출 인식 자료와 실제 고객 확인"
+          },
+          {
+            "criterion": "고객 재구매·확대",
+            "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+            "next_check": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료"
+          },
+          {
+            "criterion": "관련 전문성",
+            "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+            "next_check": "창업자·핵심 인력의 직무 이력과 관련 제품 개발 실적"
+          }
+        ],
+        "required_conditions": [
+          {
+            "criterion": "현재 투자조건",
+            "required": "현재 거래의 기업가치·지분/권리·자금 사용 계획 확인",
+            "items": [
+              "기업가치의 합리성",
+              "지분·권리 조건",
+              "투자금 사용·다음 목표"
+            ]
+          },
+          {
+            "criterion": "유상 매출·납품",
+            "required": "유상 계약·인도·매출 인식 자료와 실제 고객 확인",
+            "items": [
+              "유상 매출·납품"
+            ]
+          },
+          {
+            "criterion": "고객 재구매·확대",
+            "required": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료",
+            "items": [
+              "고객 재구매·확대"
+            ]
+          }
+        ],
+        "decision_policy": {
+          "score_threshold": null,
+          "critical_criteria": [
+            "핵심 작업 성능",
+            "현장 안정성·안전성",
+            "유상 매출·납품",
+            "고객 재구매·확대"
+          ],
+          "current_terms_required": true,
+          "confirmed_critical_zero_requires_hold": true
+        },
+        "full_opinion_reason": "Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다. 또한 Helix 2.5 AI의 가정 내 제로샷 작업 수행 능력과 Figure 02의 1,250시간 이상 현장 가동에 따른 신뢰성 검증 등 핵심 제품 기술도 확인됩니다. 그러나 2024~2026년 매출 및 손익, 고객별 매출 구성, 계약 수주액·구체적 계약 조건, 제조원가 및 단위당 생산 비용, 반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아 투자 판단을 위한 충분한 근거가 부족합니다. 또한 휴머노이드 로봇 안전성 관련 소송 진행과 같은 법률적 위험 요인과, 시장 규모 및 성장 동력, 경쟁우위 비교 자료 등도 미확인 상태입니다. 따라서 추가 실사로 위 핵심 재무·사업 지표 및 리스크 해소가 필요하므로 현 시점에서 투자를 즉시 실행하기에는 근거가 불충분합니다."
+      }
+    },
+    "feedback": [
+      "기존 검증 사실을 원문 재검증·재채점했습니다. 미래 계획·자사 홍보·구매 거래를 실제 완료 성과로 확대하지 마세요."
+    ],
+    "recheck_count": 3,
+    "max_rechecks": 3,
+    "report_rewrite_count": 0,
+    "max_report_rewrites": 2,
+    "no_progress_rounds": 0,
+    "last_progress_round": 3,
+    "research_stop_reason": "research_budget_exhausted",
+    "final_report": "# Figure AI 투자 검토 보고서\n\n## 1 — SUMMARY + 기업 개요\n\n### 기업 평가 결과\n- 대상 기업: Figure AI\n- 확인된 획득점수: 13.75점 / 원래 100점 배점 중 확인된 획득점수\n- 평가 가능 배점: 15/100점; 미확인 배점: 85/100점\n- 근거 커버리지: 15% (배점 기준); 평가 완료 항목: 3/21개\n- 투자 검토 의견: 보류 — Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다.\n- 평가 기준: 설계 PDF 2~3쪽의 6영역·21항목·100점 고정 평가표; 항목 배점 × 등급 ÷ 4.\n- U는 자료의 미확인이며 0등급과 다르다. 미확인 배점을 0점으로 채우거나 확인 항목을 100점으로 재환산하지 않는다.\n\n### 사업 아이디어 / 핵심 제품\n확인 사실: Figure AI는 헬릭스 AI 플랫폼 기반의 범용 휴머노이드 로봇을 개발하며, 복수 글로벌 대기업 및 전략적 벤처캐피탈의 Series C 투자 유치, 제조 및 상업 현장 실증, 핵심 제품의 기술 성능 입증 사례를 바탕으로 사업을 전개 중입니다. BMW 제조 공장 내 실제 현장 시연, 포트폴리오 고객사와의 상업적 계약 등으로 시장 접근을 실현하고 있습니다. [E1] [E2] [E3] [E4] [E5]\n\n분석·해석 (추론): 이러한 대기업 투자 유치와 현장 실증 사례는 Figure AI의 사업성 및 기술 신뢰도를 국제적으로 일부 입증하며, 산업 전환기에서 고객 가치를 구현할 잠재력을 보여줍니다. [E1] [E2] [E3] [E4] [E5]\n\n근거의 한계: 직접적인 매출 실적, 다양한 고객군에 대한 반복 계약, 가격 및 대량 판매 데이터는 미확인 상태입니다.\n\n후속 확인: 2024~2026년 고객별 매출, 계약 조건, 반복 구매 현황 및 생산/판매 실적 자료 확보가 필요합니다.\n\n### 핵심 투자 검토 포인트\n확인 사실: NVIDIA, Intel Capital, LG Technology Ventures 등 복수 글로벌 대기업 및 전략 벤처가 Series C 펀딩 라운드에 실질적인 지분(CVC) 투자를 단행하였고, Nscale의 전략투자도 확인됩니다. [E1] [E2]\n\n분석·해석 (추론): 투자자 중심의 신뢰도 향상과 대형 기업과의 생태계 연계를 통한 전략적 성장 잠재력을 시사합니다. [E1] [E2]\n\n근거의 한계: 각 투자자의 의결권, 지분율, 투자 조건 등 세부 투자 구조는 확인되지 않습니다.\n\n후속 확인: 세부 투자 조건과 각 투자자의 사업 협업 내역, 향후 Exit(회수) 전략 관련 자료가 필요합니다.\n\n## 2 — 시장·팀 분석\n\n### 시장 규모·성장성 / 접근 가능한 시장 / 구매 필요성\n확인 사실: BMW Group Plant Spartanburg 등에서 Figure 03가 제조 현장 물류 업무의 인지·조작 작업을 시연하였고, Brookfield 포트폴리오 회사와 상업적 계약을 맺었습니다. [E3] [E4] [E5]\n\n분석·해석 (추론): 주요 산업 현장 진출 및 상용 계약 체결은 시장 검증 및 진입의 구체적 신호로 해석됩니다. [E3] [E4] [E5]\n\n근거의 한계: 고객군의 확대 여부, 반복 도입, 시장 성장 수요 및 다양한 산업군 확장성에 대한 정량적 정보는 미확인입니다.\n\n후속 확인: 계약 수량, 납품 실적, 시장별 도입 현황과 기존 고객의 재계약/확대 도입 사례 확인이 필요합니다.\n\n### 창업자·핵심팀 전문성 / 제품화·사업 실행력\n팀의 경력·제품화 실행력을 판정할 검증 자료가 부족합니다.\n\n### 시장성 관점\n평가 한계: 현재 검증자료로는 실제 접근 가능한 시장, 고객 재구매·확대 항목을 확인할 수 없어 U로 표시한다. 자료 미확인은 실제 부재·성능 실패·안전 사고의 증거가 아니다. (근거: 항목별 기업 점수의 U 판정)\n\n- 추가 자료 — 실제 접근 가능한 시장: 목표 고객군·작업별 수요와 접근 가능한 고객 수 산출 근거\n\n- 추가 자료 — 고객 재구매·확대: 동일 고객의 유상 갱신·재구매·도입 확대 확인 자료\n\n### 이해관계자 관점\n평가 한계: 현재 검증자료로는 팀 구성·운영 역량, 지분·권리 조건 항목을 확인할 수 없어 U로 표시한다. 자료 미확인은 실제 부재·성능 실패·안전 사고의 증거가 아니다. (근거: 항목별 기업 점수의 U 판정)\n\n- 추가 자료 — 팀 구성·운영 역량: 핵심 직무 구성, 채용·이탈과 조직 운영 자료\n\n- 추가 자료 — 지분·권리 조건: 사람이 확인한 현재 거래의 지분·우선권·희석·보호 조항\n\n## 3 — 기술·경쟁력·실적\n\n### 핵심 기술·제품 성능 / 안정성·양산 가능성\n확인 사실: Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 수행했고, Figure 03의 손은 3그램 압력 감지 촉각 센서를 자체 개발하여 섬세한 파지 조작을 구현했습니다. [E6] [E7]\n\n분석·해석 (추론): 실환경에서의 다작업 제로샷 수행력과 미세 조작 역량이 독립적으로 입증되어, 범용 물리 AI 및 로봇 신뢰성에 강점이 있음을 시사합니다. [E6] [E7]\n\n근거의 한계: 일부 생활환경에서의 반복 성능은 입증됐으나, 제조·물류 등 각 산업별 검증 데이터는 제한적입니다.\n\n후속 확인: 다양한 산업군·환경에서의 장기 연속 실측 및 타사 대비 정량적 성능 지표 확보가 필요합니다.\n\n### 경쟁 제품 대비 차별성 / 특허·데이터·노하우\n동일 고객 작업에서의 비교 성능과 보호 자산 자료가 부족합니다.\n\n### 매출·납품·대기업 계약·재구매\n확인 사실: Figure 02는 1,250시간 이상의 현장 가동에서 최소한의 하드웨어 고장만 기록했고, 해당 경험이 Figure 03의 기계적 설계 개선 및 신뢰성 향상에 반영되었습니다. [E8]\n\n분석·해석 (추론): 현장 장시간 운용 테스트를 통한 초기 하드웨어 신뢰성이 검증되어 미래 상용화, 유지보수 체계 구축에 기반이 될 수 있습니다. [E8]\n\n근거의 한계: 장기/대량 환경에서의 실질적인 장애·고장률, 유지관리 비용 등은 아직 부족한 정보입니다.\n\n후속 확인: 대규모 납품 및 현장 운영 시의 장애·수리 이력 및 장기 유지보수 데이터 확보가 필요합니다.\n\n### 기술 성숙도 관점\n평가 한계: 현재 검증자료로는 제품화·사업 실행력, 양산·유지보수 가능성 항목을 확인할 수 없어 U로 표시한다. 자료 미확인은 실제 부재·성능 실패·안전 사고의 증거가 아니다. (근거: 항목별 기업 점수의 U 판정)\n\n- 추가 자료 — 제품화·사업 실행력: 개발·납품 이력, 고객 도입 일정과 실행 결과\n\n- 추가 자료 — 양산·유지보수 가능성: 양산 수율·원가, 공급망과 유지보수 시간·비용 자료\n\n### 제조·물류 도메인 적용 관점\n평가 한계: 현재 검증자료로는 경쟁 제품 대비 고객 가치, 고객 유지·전환 장벽 항목을 확인할 수 없어 U로 표시한다. 자료 미확인은 실제 부재·성능 실패·안전 사고의 증거가 아니다. (근거: 항목별 기업 점수의 U 판정)\n\n- 추가 자료 — 경쟁 제품 대비 고객 가치: 동일 고객 작업에서 경쟁 제품과 비교한 비용·성능 자료\n\n- 추가 자료 — 고객 유지·전환 장벽: 연동·학습 비용, 고객 유지율과 전환 비용 자료\n\n## 4 — 리스크 + 기업 투자평가\n\n### 시장·기술·경쟁·규제·사업화 리스크\n평가 한계: 현재 검증자료로는 제품화·사업 실행력, 유상 매출·납품, 시장 진입·확장 가능성 항목을 확인할 수 없어 U로 표시한다. 자료 미확인은 실제 부재·성능 실패·안전 사고의 증거가 아니다. (근거: 항목별 기업 점수의 U 판정)\n\n- 추가 자료 — 제품화·사업 실행력: 개발·납품 이력, 고객 도입 일정과 실행 결과\n\n- 추가 자료 — 유상 매출·납품: 유상 계약·인도·매출 인식 자료와 실제 고객 확인\n\n- 추가 자료 — 시장 진입·확장 가능성: 초기 고객 획득 경로, 조달·인증 및 확장 제약 자료\n\n- 근거 검증에서 제외된 주장: 38건; 미확인 18개 항목, 85점 배점. 미확인은 실제 부재나 실패의 증거가 아니다.\n\n### 영역별 실제 기업 점수\n| 평가 영역 | 획득/원래 배점 | 평가 가능 배점 | U 배점 |\n|---|---:|---:|---:|\n| 창업자·핵심팀 | 산정 보류/20 | 0 | 20 |\n| 시장성 | 산정 보류/25 | 0 | 25 |\n| 제품·기술력 | 9.75/15 | 11 | 4 |\n| 경쟁우위 | 산정 보류/10 | 0 | 10 |\n| 실적 | 4/20 | 4 | 16 |\n| 투자조건 | 산정 보류/10 | 0 | 10 |\n\n### 21개 항목별 기업 점수\n등급은 0~4 또는 U이며 획득점수 = 원래 배점 × 등급 ÷ 4이다.\n\n| 평가 항목 | 등급 | 배점 | 획득점수 | 검증 근거 |\n|---|---:|---:|---:|---|\n| 관련 전문성 | U | 6 | U | 미확인 |\n| 제품화·사업 실행력 | U | 6 | U | 미확인 |\n| 팀 구성·운영 역량 | U | 5 | U | 미확인 |\n| 소통의 명확성과 신뢰성 | U | 3 | U | 미확인 |\n| 실제 접근 가능한 시장 | U | 8 | U | 미확인 |\n| 문제의 심각성과 구매 필요성 | U | 7 | U | 미확인 |\n| 시장 성장 동력 | U | 5 | U | 미확인 |\n| 시장 진입·확장 가능성 | U | 5 | U | 미확인 |\n| 핵심 작업 성능 | 4 | 6 | 6 | [E6] [E7] |\n| 현장 안정성·안전성 | 3 | 5 | 3.75 | [E8] |\n| 양산·유지보수 가능성 | U | 4 | U | 미확인 |\n| 경쟁 제품 대비 고객 가치 | U | 4 | U | 미확인 |\n| 모방하기 어려운 자산 | U | 3 | U | 미확인 |\n| 고객 유지·전환 장벽 | U | 3 | U | 미확인 |\n| 대기업 실제 지분·CVC 투자 | 4 | 4 | 4 | [E1] [E2] |\n| 유상 매출·납품 | U | 5 | U | 미확인 |\n| 대기업 계약·납품 단계 | U | 6 | U | 미확인 |\n| 고객 재구매·확대 | U | 5 | U | 미확인 |\n| 기업가치의 합리성 | U | 4 | U | 미확인 |\n| 지분·권리 조건 | U | 3 | U | 미확인 |\n| 투자금 사용·다음 목표 | U | 3 | U | 미확인 |\n\n### 모든 항목의 판정 이유 및 추가 자료\n- 관련 전문성 (U; U/6점): 창업자와 핵심 인력의 경력, 전문성, 실제 수행 역할에 대해 확인 가능한 근거가 제공되지 않았다. 추가 자료: 창업자·핵심 인력의 직무 이력과 관련 제품 개발 실적.\n- 제품화·사업 실행력 (U; U/6점): 개발 결과를 제품이나 현장 도입으로 전환한 주요 이정표와 실제 사례에 대한 뚜렷한 근거가 없다. 상용계약 등은 일부 확인되나, 팀의 명확한 실행 이력 확인은 불가하다. 추가 자료: 개발·납품 이력, 고객 도입 일정과 실행 결과.\n- 팀 구성·운영 역량 (U; U/5점): 핵심 인력 구성, 제조·소프트웨어·사업 담당 역량 및 팀의 실제 운영 이력에 대한 근거는 찾을 수 없다. 추가 자료: 핵심 직무 구성, 채용·이탈과 조직 운영 자료.\n- 소통의 명확성과 신뢰성 (U; U/3점): 공식 설명의 명확성, 목표와 결과 구분에 대한 평가를 위한 객관적 근거 자료가 없다. 추가 자료: 공시·발표 간 일치 여부와 기존 목표의 실제 달성 자료.\n- 실제 접근 가능한 시장 (U; U/8점): 접근 가능한 실제 고객군, 계약, 실증 시장 범위에 대한 수량적·구체적 근거는 미확인. 일부 상용 계약이 있지만 시장 전체 규모 등 단계적 정보 불충분. 추가 자료: 목표 고객군·작업별 수요와 접근 가능한 고객 수 산출 근거.\n- 문제의 심각성과 구매 필요성 (U; U/7점): 고객의 비용/인력/생산 문제 및 유상 구매 필요성에 대한 구체적 데이터나 사례는 현재 근거에 포함되어 있지 않다. 추가 자료: 고객의 작업 비용·불편, 구매 의사와 투자회수 자료.\n- 시장 성장 동력 (U; U/5점): 산업 수요, 인력 부족, 기술 변화, 검증 가능한 시장 성장 지표 등은 명시되지 않았다. 추가 자료: 대상 작업 시장의 수요 변화와 성장 가정의 원문.\n- 시장 진입·확장 가능성 (U; U/5점): 실제 시장 진입 경로나 고객 확보 및 산업/지역 확장에 대한 구체적인 근거는 제시되지 않았다. 추가 자료: 초기 고객 획득 경로, 조달·인증 및 확장 제약 자료.\n- 핵심 작업 성능 (4; 6/6점): Helix 2.5가 30곳 새로운 가정에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 사전 데이터 수집, 파인튜닝 없이 성공적으로 수행함이 직접 확인된다. Figure 03의 핸드 센서는 3g 압력 감지, 섬세하고 안정적인 파지를 자체 개발해 파지 신뢰성 및 제어 정밀성이 확인된다. 여러 환경에서 정량적 실측 성능 입증도 확인됨. 다만, 제조업 등 기타 산업군에 대한 반복 실측 수치는 확인 불가. [E6] [E7]\n- 현장 안정성·안전성 (3; 3.75/5점): Figure 02가 1,250+ 시간 현장 가동, 최소한의 하드웨어 고장, 축적된 신뢰성 데이터 및 설계 개선에 대한 근거가 명시되어 있다. 실제 현장 조건에서 반복 작업의 신뢰성, 장애 검증 근거는 있으나 다양한 환경 및 장기 안전성 데이터는 제한적이다. [E8]\n- 양산·유지보수 가능성 (U; U/4점): 실제 생산 이력, 제조 확장, 비용 및 유지보수 체계에 대한 구체적 사례나 명확한 근거는 확인되지 않았다. 미래 계획·목표, 설계 등은 별개. 추가 자료: 양산 수율·원가, 공급망과 유지보수 시간·비용 자료.\n- 경쟁 제품 대비 고객 가치 (U; U/4점): 기존 방식이나 경쟁 제품과 비교한 고객 비용, 성능, 도입 효과 등 정량적 비교 근거가 확인되지 않는다. 추가 자료: 동일 고객 작업에서 경쟁 제품과 비교한 비용·성능 자료.\n- 모방하기 어려운 자산 (U; U/3점): 특허, 독자 기술, 데이터, 노하우 등 실제 모방 장벽을 뒷받침하는 자료는 확인되지 않았다. 자체 센서 개발 등은 별개이나, 모방불가성을 입증할 독점 사례 근거 부족. 추가 자료: 핵심 특허·독점 데이터·노하우의 소유와 실제 보호 범위.\n- 고객 유지·전환 장벽 (U; U/3점): 고객의 유지, 시스템 통합, 전환 비용, 지속 사용을 보여주는 사례나 수치는 확인되지 않았다. 추가 자료: 연동·학습 비용, 고객 유지율과 전환 비용 자료.\n- 대기업 실제 지분·CVC 투자 (4; 4/4점): NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management 등 복수 대기업·CVC의 실제 지분투자(Series C)가 확인됐다. Nscale의 전략적 투자도 근거로 명시되어 있다. [E1] [E2]\n- 유상 매출·납품 (U; U/5점): 원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다. 추가 자료: 유상 계약·인도·매출 인식 자료와 실제 고객 확인.\n- 대기업 계약·납품 단계 (U; U/6점): 원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다. 추가 자료: MOU·실증·유상 납품·확대 단계가 명시된 계약·고객 원문.\n- 고객 재구매·확대 (U; U/5점): 동일 고객의 유상 재구매, 계약 갱신, 납품 확대를 직접적으로 확인하는 자료는 없다. 추가 자료: 동일 고객의 유상 갱신·재구매·도입 확대 확인 자료.\n- 기업가치의 합리성 (U; U/4점): 현재 거래의 투자조건을 사람이 입력하지 않아 U입니다. 추가 자료: 사람이 확인한 현재 거래의 기업가치와 산정 근거.\n- 지분·권리 조건 (U; U/3점): 현재 거래의 투자조건을 사람이 입력하지 않아 U입니다. 추가 자료: 사람이 확인한 현재 거래의 지분·우선권·희석·보호 조항.\n- 투자금 사용·다음 목표 (U; U/3점): 현재 거래의 투자조건을 사람이 입력하지 않아 U입니다. 추가 자료: 사람이 확인한 현재 거래의 자금 사용 계획과 후속 목표.\n\n### 최종 투자 제안\n**투자 보류** — 확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.\n\n종합 의견의 이유: Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다. 또한 Helix 2.5 AI의 가정 내 제로샷 작업 수행 능력과 Figure 02의 1,250시간 이상 현장 가동에 따른 신뢰성 검증 등 핵심 제품 기술도 확인됩니다. 그러나 2024~2026년 매출 및 손익, 고객별 매출 구성, 계약 수주액·구체적 계약 조건, 제조원가 및 단위당 생산 비용, 반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아 투자 판단을 위한 충분한 근거가 부족합니다. 또한 휴머노이드 로봇 안전성 관련 소송 진행과 같은 법률적 위험 요인과, 시장 규모 및 성장 동력, 경쟁우위 비교 자료 등도 미확인 상태입니다. 따라서 추가 실사로 위 핵심 재무·사업 지표 및 리스크 해소가 필요하므로 현 시점에서 투자를 즉시 실행하기에는 근거가 불충분합니다.\n\n### 왜 이 기업을 검토하는가\n\n- 대기업 실제 지분·CVC 투자: NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment. [E1]\n\n- 핵심 작업 성능: Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다. [E6]\n\n- 현장 안정성·안전성: Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다. [E8]\n\n### 주요 판단 제약\n\n- 유상 매출·납품: U로 판단을 유보한다. 실제 실패·부재의 증거는 아니다.\n\n- 고객 재구매·확대: U로 판단을 유보한다. 실제 실패·부재의 증거는 아니다.\n\n- 관련 전문성: U로 판단을 유보한다. 실제 실패·부재의 증거는 아니다.\n\n### 투자 전 필수 조건\n\n- 현재 투자조건: 현재 거래의 기업가치·지분/권리·자금 사용 계획 확인\n\n- 유상 매출·납품: 유상 계약·인도·매출 인식 자료와 실제 고객 확인\n\n- 고객 재구매·확대: 동일 고객의 유상 갱신·재구매·도입 확대 확인 자료\n\n확인된 획득점수는 13.75점 / 원래 100점 배점 중 확인된 획득점수. 평가 가능 배점 15점과 미확인 배점 85점을 함께 검토한다. 보고서의 제안은 투자 심사 자료이며 최종 실행은 확인된 거래조건을 검토해 결정한다.\n\n### 비교 검토 시 해석\n점수와 함께 근거 커버리지·미확인 항목·검토 의견을 읽어야 한다. 이 보고서는 Figure AI 한 기업의 동일 평가표에 따른 결과이며 다른 기업 점수나 순위를 추정하지 않는다.\n\n## 5 — REFERENCE\n\n- [E1] Figure Exceeds $1B in Series C Funding at $39B Post-Money Valuation — data/raw/figure_ai/figure_series_c.pdf, p.1; 발행: Figure AI; 발행일: 2025-09-16 (열람 2026-09-30); 원문: https://www.figure.ai/news/series-c\n- [E2] Figure and Nscale Sign Strategic Partnership For Up to 100,000 GPUs on the NVIDIA Vera Rubin Platform — 웹 원문 보관 PDF p.1; 발행: www.figure.ai; 발행일: 2026-09-03T06:03:00.000Z; 원문: https://www.figure.ai/news/figure-and-nscale-sign-strategic-partnership; 열람: 2026-10-13T08:18:45.017336+00:00\n- [E3] F.03 Arrives at BMW — data/raw/figure_ai/figure_f03_at_bmw.pdf, p.3; 발행: Figure AI; 발행일: 2026-06-30 (열람 2026-09-30); 원문: https://www.figure.ai/news/f-03-at-bmw\n- [E4] [E5] Figure Signs Agreement with Catalyst Brands to Scale Humanoid Operations — data/raw/figure_ai/figure_catalyst_brands.pdf, p.2; 발행: Figure AI; 발행일: 2026-05-26 (열람 2026-09-30); 원문: https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands\n- [E6] Helix 2.5: Zero-Shot 30-Home Generalization — 웹 원문 보관 PDF p.1; 발행: www.figure.ai; 발행일: 2026-09-17T13:00:00.000Z; 원문: https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization; 열람: 2026-10-13T08:18:45.395768+00:00\n- [E7] Introducing Figure 03 — 웹 원문 보관 PDF p.1; 발행: www.figure.ai; 발행일: 2025-10-09T00:00:00.000Z; 원문: https://www.figure.ai/news/introducing-figure-03; 열람: 2026-10-13T08:18:44.336373+00:00\n- [E8] F.02 Contributed to the Production of 30,000 Cars at BMW — data/raw/figure_ai/figure_bmw_30000_cars.pdf, p.4; 발행: Figure AI; 발행일: 2025-11-19 (열람 2026-09-30); 원문: https://www.figure.ai/news/production-at-bmw\n",
+    "report_evaluation": {
+      "passed": true,
+      "issues": [],
+      "data_gaps": [
+        "2024~2026년 고객별 매출, 계약 조건, 반복 구매 현황 및 생산/판매 실적 자료",
+        "각 투자자의 의결권, 지분율, 투자 조건 등 세부 투자 구조",
+        "초기 고객 획득 경로, 조달/인증, 확장 제약, 양산 수율/원가/공급망 등",
+        "반복적 유상 매출, 동일 고객의 유상 갱신/재구매/확대 확인 자료",
+        "핵심 인력 이력과 실제 제품화·사업 실행 이력 및 팀 운영 구조",
+        "목표 고객군별 구매 필요성, 경쟁 제품·비교 성능 자료",
+        "투자조건: 기업가치·지분/권리·자금 사용 계획"
+      ],
+      "rubric": {
+        "groundedness": true,
+        "neutrality": true,
+        "bias_control": true,
+        "groundedness_reason": "보고서의 사실 주장, 점수 산정, 등급 근거, 최종 투자 제안 등은 모두 원문에서 실제로 확인된 증거만을 기반으로 했으며, 자료 부족(U)과 등급 기입 사유도 투명하게 구분표기했다. 핵심 성과(핵심 작업 성능, 현장 신뢰성, 대기업 지분투자 등)는 원문에서 직접 검증됐고, 미확인 항목은 '미확인=실패 아니다'는 점을 명시했다.",
+        "neutrality_reason": "Figure AI와 관련된 평가, 등급, 최종 의견에서 우월성·독점성·경쟁우위 등에 대한 주관적 확장이나 일방적 홍보 표현은 사용하지 않고, 객관적 사실 검증 결과와 자료 부족을 명확히 구분했다. 내부 혁신성·세계 최고 주장은 별도 증거 없이는 평가 점수·종합 의견에 반영하지 않았다.",
+        "bias_control_reason": "회사의 모든 주요 성과·계약·실행력에 대해 자체 발표만을 투자·매출·유상납품으로 확대 해석하지 않고, 자료 출처와 단계적 증거를 명확히 구분했다. 투자·계약·재구매 등 거래 단계는 독립 사실 근거와 일치 여부에 따라 U등급, partial 등을 부여하며, 확인된 사실만을 점수에 반영했다.",
+        "action": "rewrite",
+        "issues": [],
+        "data_gaps": [
+          "2024~2026년 고객별 매출, 계약 조건, 반복 구매 현황 및 생산/판매 실적 자료",
+          "각 투자자의 의결권, 지분율, 투자 조건 등 세부 투자 구조",
+          "초기 고객 획득 경로, 조달/인증, 확장 제약, 양산 수율/원가/공급망 등",
+          "반복적 유상 매출, 동일 고객의 유상 갱신/재구매/확대 확인 자료",
+          "핵심 인력 이력과 실제 제품화·사업 실행 이력 및 팀 운영 구조",
+          "목표 고객군별 구매 필요성, 경쟁 제품·비교 성능 자료",
+          "투자조건: 기업가치·지분/권리·자금 사용 계획"
+        ]
+      },
+      "action": "rewrite",
+      "method": "hybrid"
+    },
+    "trace_id": "608c0606-f750-4557-b590-d444f651cb8f",
+    "step_count": 29,
+    "status": "partial",
+    "route": "write"
+  },
+  "mode": "live",
+  "scores_path": "./output/submission-live/figure_ai.scores.json",
+  "report_path": "./output/submission-live/figure_ai.pdf",
+  "tracing": {
+    "requested": true,
+    "key_present": true,
+    "enabled": true,
+    "project": "physical-ai-minimal-orchestration",
+    "root_run_id": "06039a36-524d-456f-8801-bbc3f2fd79d2",
+    "upload_verified": false
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "company": "MOTOMIND",
+  "mode": "live",
+  "status": "partial",
+  "total_score": 7.0,
+  "score_scale": 100,
+  "scorable_weight": 17,
+  "unknown_weight": 83,
+  "coverage": {
+    "research_criteria": 18,
+    "attempted_criteria": 15,
+    "supported_criteria": 4
+  },
+  "investment_decision": "보류",
+  "decision_reason": "모토마인드는 2026년 설립된 신생기업으로, 자체 설계한 양팔 휴머노이드 로봇 BELLO와 AI 기반 텔레오퍼레이션 시스템을 개발 중이며, LG사이언스파크와의 MOU 체결 등 협력관계가 확인된다. 또한 소규모이지만 핵심 팀 운영과 기술 개발 계획에 대한 공식 자료가 존재한다. 그러나 현재까지 실질적인 매출 실적, 유상 판매, 대기업 투자 지분, 고객 재구매, 현장 실증 및 안정성 시험 결과 등 주요 사업 실행력과 시장 반응을 확인할 수 있는 자료가 부족하다. 이에 따라 제품 개발 단계와 기술 역량은 일부 확인되나, 상용화 및 시장 확대 가능성에 대한 검증 자료가 미흡하여 투자를 즉시 추진하기에는 불확실성이 크다. 추가적인 매출 실적, 고객 계약, 투자 조건 등 핵심 검증 자료 확보 후 재검토가 권장된다.",
+  "investment_case": {
+    "action": "투자 보류",
+    "rationale": "확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.",
+    "model_opinion": "보류",
+    "supporting_facts": [
+      {
+        "criterion": "관련 전문성",
+        "grade": 2,
+        "fact": "MOTOMIND는 2026년 2월 설립되었으며, 본사와 연구소를 운영하며 휴머노이드 로봇 BELLO와 텔레오퍼레이션 보조 시스템 TAS를 개발 중이다.",
+        "evidence_ids": [
+          "E4"
+        ]
+      },
+      {
+        "criterion": "팀 구성·운영 역량",
+        "grade": 2,
+        "fact": "2026년 기준 MOTOMIND는 6명의 직원으로 구성되어 있으며, 포항 본사와 광명 연구소를 거점으로 운영 중이다.",
+        "evidence_ids": [
+          "E2"
+        ]
+      },
+      {
+        "criterion": "핵심 작업 성능",
+        "grade": 1,
+        "fact": "BELLO는 제조 현장 투입을 목표로 설계된 양팔 14-DoF 휴머노이드로, 저감속 기어비 기반 고반응성 팔과 내부 골격 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일 플랫폼에 통합하여 핵심 작업 수행을 지원한다.",
+        "evidence_ids": [
+          "E3"
+        ]
+      }
+    ],
+    "key_risks": [
+      {
+        "criterion": "현장 안정성·안전성",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "장시간 운전 기록, 장애·안전 사고와 인증·시험 자료"
+      },
+      {
+        "criterion": "유상 매출·납품",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "유상 계약·인도·매출 인식 자료와 실제 고객 확인"
+      },
+      {
+        "criterion": "고객 재구매·확대",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료"
+      }
+    ],
+    "required_conditions": [
+      {
+        "criterion": "현재 투자조건",
+        "required": "현재 거래의 기업가치·지분/권리·자금 사용 계획 확인",
+        "items": [
+          "기업가치의 합리성",
+          "지분·권리 조건",
+          "투자금 사용·다음 목표"
+        ]
+      },
+      {
+        "criterion": "현장 안정성·안전성",
+        "required": "장시간 운전 기록, 장애·안전 사고와 인증·시험 자료",
+        "items": [
+          "현장 안정성·안전성"
+        ]
+      },
+      {
+        "criterion": "유상 매출·납품",
+        "required": "유상 계약·인도·매출 인식 자료와 실제 고객 확인",
+        "items": [
+          "유상 매출·납품"
+        ]
+      },
+      {
+        "criterion": "고객 재구매·확대",
+        "required": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료",
+        "items": [
+          "고객 재구매·확대"
+        ]
+      }
+    ],
+    "decision_policy": {
+      "score_threshold": null,
+      "critical_criteria": [
+        "핵심 작업 성능",
+        "현장 안정성·안전성",
+        "유상 매출·납품",
+        "고객 재구매·확대"
+      ],
+      "current_terms_required": true,
+      "confirmed_critical_zero_requires_hold": true
+    },
+    "full_opinion_reason": "모토마인드는 2026년 설립된 신생기업으로, 자체 설계한 양팔 휴머노이드 로봇 BELLO와 AI 기반 텔레오퍼레이션 시스템을 개발 중이며, LG사이언스파크와의 MOU 체결 등 협력관계가 확인된다. 또한 소규모이지만 핵심 팀 운영과 기술 개발 계획에 대한 공식 자료가 존재한다. 그러나 현재까지 실질적인 매출 실적, 유상 판매, 대기업 투자 지분, 고객 재구매, 현장 실증 및 안정성 시험 결과 등 주요 사업 실행력과 시장 반응을 확인할 수 있는 자료가 부족하다. 이에 따라 제품 개발 단계와 기술 역량은 일부 확인되나, 상용화 및 시장 확대 가능성에 대한 검증 자료가 미흡하여 투자를 즉시 추진하기에는 불확실성이 크다. 추가적인 매출 실적, 고객 계약, 투자 조건 등 핵심 검증 자료 확보 후 재검토가 권장된다."
+  },
+  "decision_policy": {
+    "method": "fixed_scorecard",
+    "required_items": [
+      "핵심 작업 성능"
+    ],
+    "decision_basis": "검증 사실·미확인 항목·위험의 종합 검토",
+    "require_criteria_coverage": true,
+    "resume_report_only": true
+  },
+  "configured_models": {
+    "openai_model": "gpt-4.1-mini",
+    "judge_model": "gpt-4.1",
+    "evidence_model": "gpt-4.1",
+    "grader_model": "gpt-4.1"
+  },
+  "category_scores": {
+    "창업자·핵심팀": {
+      "weight": 20,
+      "earned_score": 5.5,
+      "scorable_weight": 11,
+      "unknown_items": [
+        "제품화·사업 실행력",
+        "소통의 명확성과 신뢰성"
+      ]
+    },
+    "시장성": {
+      "weight": 25,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "실제 접근 가능한 시장",
+        "문제의 심각성과 구매 필요성",
+        "시장 성장 동력",
+        "시장 진입·확장 가능성"
+      ]
+    },
+    "제품·기술력": {
+      "weight": 15,
+      "earned_score": 1.5,
+      "scorable_weight": 6,
+      "unknown_items": [
+        "현장 안정성·안전성",
+        "양산·유지보수 가능성"
+      ]
+    },
+    "경쟁우위": {
+      "weight": 10,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "경쟁 제품 대비 고객 가치",
+        "모방하기 어려운 자산",
+        "고객 유지·전환 장벽"
+      ]
+    },
+    "실적": {
+      "weight": 20,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "대기업 실제 지분·CVC 투자",
+        "유상 매출·납품",
+        "대기업 계약·납품 단계",
+        "고객 재구매·확대"
+      ]
+    },
+    "투자조건": {
+      "weight": 10,
+      "earned_score": null,
+      "scorable_weight": 0,
+      "unknown_items": [
+        "기업가치의 합리성",
+        "지분·권리 조건",
+        "투자금 사용·다음 목표"
+      ]
+    }
+  },
+  "score_details": {
+    "관련 전문성": {
+      "category": "창업자·핵심팀",
+      "weight": 6,
+      "grade": 2,
+      "score": 3.0,
+      "reason": "회사 자체 소개서에 따르면 창업자는 2026년 2월 설립 이력이 있고 BELLO, TAS 개발을 담당한다고 명시되어 전문성 일부는 확인된다. 다만 핵심 인력의 구체적 경력, 수행 역할, 이전 업계/연구 경력에 대한 독립적 검증은 확인되지 않아 등급 2에 한정한다.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND는 2026년 2월 설립되었으며, 본사와 연구소를 운영하며 휴머노이드 로봇 BELLO와 텔레오퍼레이션 보조 시스템 TAS를 개발 중이다.",
+          "criterion_id": "founder_expertise",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "2026년 2월 법인을 설립했고, 양팔 휴머노이드 BELLO와 텔레오퍼레이션 보조 시스템 TAS를 개발하고 있습니다.\n포항 체인지업그라운드 본사와 광명 GIDC 연구소를 거점으로",
+          "evidence_reason": "원문에 MOTOMIND의 2026년 2월 설립, 본사(포항)와 연구소(광명) 운영, BELLO와 TAS 개발 중임이 모두 명확히 언급되어 주장의 모든 핵심 사실이 명시되어 있습니다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "제품화·사업 실행력": {
+      "category": "창업자·핵심팀",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
+      "evidence": []
+    },
+    "팀 구성·운영 역량": {
+      "category": "창업자·핵심팀",
+      "weight": 5,
+      "grade": 2,
+      "score": 2.5,
+      "reason": "6명의 직원을 바탕으로 본사와 연구소 운용 사실은 명시돼 있으나, 각각의 인력이 맡은 역할이나 제조·소프트웨어·사업 등의 포괄적 역량 및 운영 이력은 상세히 확인되지 않는다. 규모, 사업 운영의 실제력은 확인되나, 종합 운용 역량 점수는 2에 그침.",
+      "evidence": [
+        {
+          "claim": "2026년 기준 MOTOMIND는 6명의 직원으로 구성되어 있으며, 포항 본사와 광명 연구소를 거점으로 운영 중이다.",
+          "criterion_id": "team_operations",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 2
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "직원 6명 (2026 기준)\n본사 포항시 남구 청암로 87 체인지업그라운드 513호\n연구소 광명시 일직로 43 GIDC B동 512호",
+          "evidence_reason": "2026년 기준 직원 수, 포항 본사, 광명 연구소의 존재와 운영 거점이 명확히 명시되어 있다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND는 2026년 기준 직원 6명으로 구성되어 있으며, 본사와 연구소를 운영하고 있다.",
+          "criterion_id": "team_operations",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 2
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "직원 6명 (2026 기준)\n본사 포항시 남구 청암로 87 체인지업그라운드 513호\n연구소 광명시 일직로 43 GIDC B동 512호",
+          "evidence_reason": "원본 페이지에 MOTOMIND가 2026년 기준 직원 6명, 본사와 연구소의 위치가 명시되어 있다. 주장에 포함된 핵심 원자 사실이 모두 직접적으로 표현되어 있다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "소통의 명확성과 신뢰성": {
+      "category": "창업자·핵심팀",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
+      "evidence": []
+    },
+    "실제 접근 가능한 시장": {
+      "category": "시장성",
+      "weight": 8,
+      "grade": null,
+      "score": null,
+      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
+      "evidence": []
+    },
+    "문제의 심각성과 구매 필요성": {
+      "category": "시장성",
+      "weight": 7,
+      "grade": null,
+      "score": null,
+      "reason": "고객의 생산 문제, 인건비 절감, 실제 유상 구매 필요성에 대한 고객·시장 인터뷰, 주문 등 수요 지표가 단일 문서 내에는 부재하다.",
+      "evidence": []
+    },
+    "시장 성장 동력": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "로봇·휴머노이드 도입을 뒷받침하는 산업 수요, 인력 부족, 시장 성장 데이터를 보여주는 외부 근거 등 MOTOMIND의 시장 성장 동력이 실제로 기술된 자료가 현 검증 목록에 없다.",
+      "evidence": []
+    },
+    "시장 진입·확장 가능성": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
+      "evidence": []
+    },
+    "핵심 작업 성능": {
+      "category": "제품·기술력",
+      "weight": 6,
+      "grade": 1,
+      "score": 1.5,
+      "reason": "BELLO의 설계 사양(양팔 14-DoF, 고반응성 팔, AI 플랫폼 등)과 데이터 기반 학습 개발 목표는 확인된다. 하지만 실제로 산업 현장 작업의 실측 성공률·속도·신뢰성 지표, 반복 테스트 실증 자료는 없다. 시제품 개발 목표 수준이다.",
+      "evidence": [
+        {
+          "claim": "BELLO는 제조 현장 투입을 목표로 설계된 양팔 14-DoF 휴머노이드로, 저감속 기어비 기반 고반응성 팔과 내부 골격 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일 플랫폼에 통합하여 핵심 작업 수행을 지원한다.",
+          "criterion_id": "core_task_performance",
+          "source_refs": [
+            {
+              "doc_id": "MM-03",
+              "page": 1
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "MM-03",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "제조 현장 투입을 목표로 설계된 양팔 14-DoF(자유도) 휴머노이드. 저감속 기어비 기반 고반응성 팔, 내부 골격(Endoskeleton) 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일 플랫폼에 통합합니다.",
+          "evidence_reason": "원본 페이지에 주장의 모든 핵심 세부 사항(제조 현장 투입 목표, 양팔 14-DoF, 저감속 기어비 기반 고반응성 팔, 내부 골격 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅의 통합)이 명시되어 있습니다.",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND는 데이터 기반 휴머노이드 학습을 목표로 하며, 균일한 양질의 학습 데이터를 확보하고 이를 모델 성능 향상에 환류하는 폐쇄 루프 구조로 개발을 진행 중이다.",
+          "criterion_id": "core_task_performance",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 2
+            }
+          ],
+          "status": "confirmed",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "MOTOMIND는 균일한 양질의 학습 데이터를 확보하고, 이를 모델 성능 향상에 환류하는 폐쇄 루프 구조로 개발을 진행합니다.",
+          "evidence_reason": "원본 페이지는 MOTOMIND가 데이터 기반 휴머노이드 학습을 목표로 하며, 균일한 양질의 데이터를 확보하고 이를 폐쇄 루프 구조로 모델 성능에 환류하는 개발을 진행한다고 명시하고 있다. 모든 핵심 사실이 명확히 기술되어 있다.",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "현장 안정성·안전성": {
+      "category": "제품·기술력",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "현장 반복성, 장애·안전 실증, 실제 가동 시간에 대한 구체 실험 결과, 고객 현장 자료 등은 근거에 없다.",
+      "evidence": []
+    },
+    "양산·유지보수 가능성": {
+      "category": "제품·기술력",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "실제 생산, 제조 확장, 유지보수 체계를 보여주는 실적 근거(양산 라인 가동, 품질 검증, 유지관리 조직·계획 등)는 확인되지 않는다.",
+      "evidence": []
+    },
+    "경쟁 제품 대비 고객 가치": {
+      "category": "경쟁우위",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "경쟁사 또는 기존 방식과 BELLO의 도입 효과(비용/성능/효율 등) 비교, 고객 가치와 도입 편익의 객관적 입증 자료는 없다.",
+      "evidence": []
+    },
+    "모방하기 어려운 자산": {
+      "category": "경쟁우위",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
+      "evidence": []
+    },
+    "고객 유지·전환 장벽": {
+      "category": "경쟁우위",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "고객의 도입 후 지속 사용, 시스템 통합, 전환 비용 또는 락인(lock-in) 등의 실증 근거나 구체 확인 내용이 부재하다.",
+      "evidence": []
+    },
+    "대기업 실제 지분·CVC 투자": {
+      "category": "실적",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "MOU 체결 외에 대기업 또는 CVC의 실제 지분 투자, 투자의 주체·금액 등 거래 증거는 없다.",
+      "evidence": []
+    },
+    "유상 매출·납품": {
+      "category": "실적",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "유상 매출 실적, 고객 금액 지급, 상용 납품 등 확인 가능한 근거는 없다.",
+      "evidence": []
+    },
+    "대기업 계약·납품 단계": {
+      "category": "실적",
+      "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
+      "evidence": []
+    },
+    "고객 재구매·확대": {
+      "category": "실적",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "기존 고객의 유상 재구매, 공급 확대, 갱신 등의 근거와 검증은 없다.",
+      "evidence": []
+    },
+    "기업가치의 합리성": {
+      "category": "투자조건",
+      "weight": 4,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    },
+    "지분·권리 조건": {
+      "category": "투자조건",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    },
+    "투자금 사용·다음 목표": {
+      "category": "투자조건",
+      "weight": 3,
+      "grade": null,
+      "score": null,
+      "reason": "현재 거래의 투자조건을 사람이 입력하지 않아 U입니다.",
+      "evidence": []
+    }
+  },
+  "report_evaluation": {
+    "passed": true,
+    "issues": [],
+    "data_gaps": [
+      "작업별 현장 성공률, 반복성, 장애이력 등 실제 공정 도입 실증 자료",
+      "유상 매출 실적 및 납품 내역, 실제 고객 계약",
+      "동일 고객의 유상 갱신/재구매/납품 확대 기록",
+      "핵심 팀원의 세부 경력·사업화·운영 이력",
+      "양산 수율, 제조·서비스 확장성, 유지보수 비용 자료",
+      "시장 수요, 고객군 규모, 구매 필요성에 대한 근거 자료",
+      "실제 투자 조건(기업가치, 지분·권리 조건, 자금 사용 등의 최근 거래 정보)"
+    ],
+    "rubric": {
+      "groundedness": true,
+      "neutrality": true,
+      "bias_control": true,
+      "groundedness_reason": "보고서는 각 평가 항목별로 원문에서 명시된 사실과 일치하는 근거(E2, E3, E4, E5, E6 등)를 적시하여 해당되는 사실만 확정적으로 판정한다. 반면 실제 매출, 유상 납품, 시장 지표 등 미확인·미공개 항목은 'U' 등급과 함께 구체적으로 어떤 정보가 필요한지 명시하고 있다. 등급·점수 부여, 미확인(U) 구분, 투자조건 불입력 등은 모두 원문 자료의 범위 내에서 이루어져, 원문 내용 및 부재 자체를 정확하게 반영한다.",
+      "neutrality_reason": "회사의 기술·협력·운영 역량 등은 원문에서 확인 가능한 범위만을 정확히 기재했다. 시장성, 제품 성능, 실적 등은 미확인 사실을 '가능성 언급'이나 '강점 홍보'로 해석하지 않고, 확인된 사실·정보만 명확하게 구분하였다. 회사의 홍보 문구나 우수성 주장을 검증 사실로 확대하지 않고, '미확정(U)'으로 투자 판단을 유보하여 과장이나 일방적 해석 없이 중립성을 유지했다.",
+      "bias_control_reason": "대기업 지분, 매출, 재구매 등 핵심 실적과 투자조건이 부재할 경우 이를 곧바로 부정·부실로 단정하지 않고, 원문에 근거해 미확인(U) 처리를 하며, 의심이나 반증·불확실성 설명으로 논리를 전개했다. 회사측 주장에는 독립 검증의 부재, 공개 자료의 한계를 분명히 표기했다. 실적 부족과 미확정의 구분, 후속 확인 필요 항목 제시는 독립적 시각이 반영된 증거다.",
+      "action": "rewrite",
+      "issues": [],
+      "data_gaps": [
+        "작업별 현장 성공률, 반복성, 장애이력 등 실제 공정 도입 실증 자료",
+        "유상 매출 실적 및 납품 내역, 실제 고객 계약",
+        "동일 고객의 유상 갱신/재구매/납품 확대 기록",
+        "핵심 팀원의 세부 경력·사업화·운영 이력",
+        "양산 수율, 제조·서비스 확장성, 유지보수 비용 자료",
+        "시장 수요, 고객군 규모, 구매 필요성에 대한 근거 자료",
+        "실제 투자 조건(기업가치, 지분·권리 조건, 자금 사용 등의 최근 거래 정보)"
+      ]
+    },
+    "action": "rewrite",
+    "method": "hybrid"
+  },
+  "trace_id": "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
+  "recheck_count": 3,
+  "input_paths": {
+    "data_dir": "./rag/data",
+    "com_data_dir": "./com_data",
+    "index_dir": "./.cache/rag_index"
+  },
+  "index_info": {
+    "cache_hit": true,
+    "cache_status": "loaded",
+    "cache_path": "./.cache/rag_index/983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
+    "fingerprint": "983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
+    "model": "BAAI/bge-m3",
+    "documents": 22,
+    "pages": 106,
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "chunks": 154,
+    "dimensions": 1024
+  },
+  "report_path": "./output/submission-live/motomind.pdf",
+  "evaluation_criteria": {
+    "name": "Physical AI·Robotics 투자 검토 평가표",
+    "source_pdf": "evaluation/physical_ai_investment_design.pdf",
+    "source_pages": [
+      2,
+      3
+    ],
+    "source_sha256": "a0fdaedcd06951da8a816c253c6712cd2da05172dc652ab997ca900dff0c045d",
+    "categories": {
+      "창업자·핵심팀": {
+        "관련 전문성": 6,
+        "제품화·사업 실행력": 6,
+        "팀 구성·운영 역량": 5,
+        "소통의 명확성과 신뢰성": 3
+      },
+      "시장성": {
+        "실제 접근 가능한 시장": 8,
+        "문제의 심각성과 구매 필요성": 7,
+        "시장 성장 동력": 5,
+        "시장 진입·확장 가능성": 5
+      },
+      "제품·기술력": {
+        "핵심 작업 성능": 6,
+        "현장 안정성·안전성": 5,
+        "양산·유지보수 가능성": 4
+      },
+      "경쟁우위": {
+        "경쟁 제품 대비 고객 가치": 4,
+        "모방하기 어려운 자산": 3,
+        "고객 유지·전환 장벽": 3
+      },
+      "실적": {
+        "대기업 실제 지분·CVC 투자": 4,
+        "유상 매출·납품": 5,
+        "대기업 계약·납품 단계": 6,
+        "고객 재구매·확대": 5
+      },
+      "투자조건": {
+        "기업가치의 합리성": 4,
+        "지분·권리 조건": 3,
+        "투자금 사용·다음 목표": 3
+      }
+    },
+    "category_count": 6,
+    "criterion_count": 21,
+    "total_weight": 100,
+    "grade_scale": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "unknown_grade": "U",
+    "formula": "항목 배점 × 등급 ÷ 4",
+    "unknown_policy": "U는 0점으로 채우거나 제외 후 100점으로 재환산하지 않음",
+    "verified_against_pdf": true
+  },
+  "selection_note": "원 배점 점수와 U·근거 비중을 함께 검토; 자동 순위·투자 선택 아님",
+  "resume": {
+    "snapshot_path": "./output/submission-live/motomind.failed_state.json",
+    "resumed_from_trace_id": "38b1b545-4d50-45f1-b3d2-19dd555060de"
+  },
+  "tracing": {
+    "requested": true,
+    "key_present": true,
+    "enabled": true,
+    "project": "physical-ai-minimal-orchestration",
+    "root_run_id": "4aa3b6c8-1040-4b0f-85b5-ecca107f781a",
+    "upload_verified": false
+  },
+  "metrics": {
+    "graph_elapsed_seconds": 19.013442,
+    "nodes": [
+      {
+        "node": "writer",
+        "run_id": "01a13476-9d2b-72a1-b106-11dab2e16a2f",
+        "round": 3,
+        "elapsed_seconds": 10.699438,
+        "status": "completed"
+      },
+      {
+        "node": "report_evaluator",
+        "run_id": "01a13476-c6f7-7621-81e2-48fe08543e2f",
+        "round": 3,
+        "elapsed_seconds": 8.30876,
+        "status": "completed"
+      }
+    ],
+    "observed_model_usage": {},
+    "token_usage_scope": "LangChain AIMessage usage callbacks only; direct OpenAI Responses calls are excluded",
+    "total_token_usage": null,
+    "total_cost": null
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "file": "04_feedback_loop.png",
+    "phase": "intermediate quality rewrite, not final approval",
+    "root_run_id": "01a134d1-1f8c-7d11-8e37-5cfd9072e416",
+    "run_id": "01a134d3-3804-72c1-b1f5-dd44ee80d68a",
+    "url": "https://smith.langchain.com/o/c01772ab-a5d3-4d57-b4bf-cd70e6172036/projects/p/4372ac10-81d3-4df7-a361-99ae41aeff48/trace/01a134d1-1f8c-7d11-8e37-5cfd9072e416/run/01a134d3-3804-72c1-b1f5-dd44ee80d68a?scroll_to=output&start_time=2026-10-13T10%3A33%3A40.100154Z",
+    "captured_at_utc": "2026-10-13T10:39:04.533124+00:00",
+    "capture_method": "cua_repl browser screenshot; JPEG converted to PNG without content edits"
+  },
+  {
+    "file": "05_current_final_quality.png",
+    "phase": "current completed report quality review; core 3 pass and issues empty",
+    "root_run_id": "01a134e2-45e8-75d3-b50c-b2246ae727ad",
+    "run_id": "01a134e2-546f-7362-819a-16dfdac31441",
+    "url": "https://smith.langchain.com/o/c01772ab-a5d3-4d57-b4bf-cd70e6172036/a/physical-ai-minimal-orchestration/projects/p/4372ac10-81d3-4df7-a361-99ae41aeff48/trace/01a134e2-45e8-75d3-b50c-b2246ae727ad/run/01a134e2-546f-7362-819a-16dfdac31441?scroll_to=output&start_time=2026-10-13T10%3A50%3A10.415894Z",
+    "captured_at_utc": "2026-10-13T10:58:55.214378+00:00",
+    "capture_method": "cua_repl browser screenshot; JPEG converted to PNG without content edits"
+  }
+]

@@ -1,189 +1,180 @@
-# Physical AI Startup Investment Evaluation Agent
+# Subject
 
-**한 기업의 휴머노이드 사업화 근거를 문서·페이지 단위로 확인하고 투자 검토 보고서를 생성하는 LangGraph 기반 RAG 프로젝트**
+실행 코드와 자료는 [`minimal-orchestration/`](minimal-orchestration/)에 있다. [제출 ZIP](submission/physical_ai_orchestration_submission.zip) · [최종 PDF](minimal-orchestration/output/submission-live/final_investment_report.pdf) · [최신 LangSmith 캡처](minimal-orchestration/docs/traces/05_current_final_quality.png).
 
-평가 대상은 **MOTOMIND, ROBROS, Figure AI**입니다. 그래프는 한 번에 한 기업을 평가하며, `run_reports.py`는 세 기업을 차례로 실행합니다. 기업 간 투자 순위는 만들지 않습니다.
+MOTOMIND·ROBROS·Figure AI의 제조·물류용 휴머노이드 사업화 가능성을 **Orchestrator-Workers**로 조사하고, **세 기업을 종합한 하나의 최종 투자 보고서**를 코드로 생성한다. 기존 RAG의 PDF 검색·원문 검증·21항목 평가표를 재사용한다.
 
-**빠른 실행:** 저장소 루트에서 의존성을 설치하고 `.env`에 `OPENAI_API_KEY`를 설정한 뒤 `python run_reports.py`를 실행합니다. 자세한 절차는 [Usage](#usage)를 참고하세요.
+## Overview
 
-## Overview — 문제 정의
+- **Objective:** 세 기업의 기술·고객·사업화 근거를 공통 기준으로 비교하고, 최종 선택 또는 보류의 이유와 투자 전 조건을 설명한다.
+- **Pattern:** Orchestrator-Workers — 부족한 질문을 계획하고 필요한 전문 워커에 병렬 배분하기에 적합하다.
+- **동적 처리:** 최초에도 필요한 0~3개 워커만 선택한다. Synthesizer가 누적 결과를 확인해 미달 항목만 재조사하며, 동일 작업 반복과 무진전 조사를 중단한다.
+- **출력:** 기본 실행은 기업별 전체 보고서와 검증 State를 종합해 `final_investment_report.md/.pdf/.json`을 생성한다. **최종 제출 PDF 한 파일 전체가 최대 10쪽**이며, 기업별 한 쪽 요약·점수·trace는 중간 산출물이다.
 
-휴머노이드의 시연 성능이나 유명 기업과의 접점만으로 사업화 가능성을 판단하기는 어렵습니다. 연구실 성능과 실제 현장 운영은 다르고, 투자·공동개발·시험·구매는 서로 다른 단계입니다. 본 프로젝트는 공개 자료에서 **확인된 관계의 종류와 단계**를 구분하고, 근거가 부족한 항목은 낮은 점수 대신 `U(미확인)`로 남깁니다.
+선정 기준은 **최종 보고서의 근거 연결·평가 누락 통제와 피드백 비용**이다. Supervisor도 병렬 워커와 품질 평가 루프를 구현할 수 있다. 본 과제는 18개 자동 조사 항목별 질문·역할을 구조화 계획으로 먼저 기록하고, `Send` 결과가 합류한 뒤 근거를 검증하는 Orchestrator-Workers가 적합하다고 판단했다. 표현 결함은 같은 근거로 수정하고 부족한 항목만 재조사하는 루프로 보고서 품질을 유지하면서 불필요한 워커 호출을 줄이도록 설계했다.
 
-- **입력:** 평가할 기업명 한 곳과 문서 카탈로그
-- **처리:** PDF 검색 → 빅테크·기술·시장 분석 → 원본 근거 검사 → 투자 판단 → 보고서
-- **출력:** 해당 기업의 근거 문서·페이지, 항목별 점수와 미확인 항목을 포함한 보고서
+## Selected Technologies
 
-## Differentiation — 빅테크 연관성의 단계별 검증
+- **SW:** 로봇 인지·제어 AI와 VLA 행동 모델 — 작업 성능, 일반화, 학습·데이터 자산을 검토한다.
+- **HW:** 휴머노이드 플랫폼 — 제조·물류의 안정성, 양산·정비, 설비 연동을 검토한다.
 
-우리 조의 핵심 차별점은 **“어느 빅테크와 관련 있는가?”보다 “무슨 관계가 어디까지 확인됐는가?”**를 묻는 것입니다. 빅테크 이름이 등장했다는 이유만으로 가점을 주지 않습니다.
-
-| 확인된 관계 | 평가할 때 구분하는 내용 |
-|---|---|
-| 지분·CVC 투자 | 실제 지분투자인지, 단순 행사·지원·협력인지 |
-| MOU·공동개발 | 협력 의사인지, 제품의 실제 사용인지 |
-| 현장 실증 | 고객 현장 시험인지, 유상 계약·매출인지 |
-| 유상 계약·납품 | 구매·상용 사용이 확인됐는지 |
-| 재구매·계약 확대 | 최초 계약 이후 반복 수요가 확인됐는지 |
-
-100점 Scorecard 중 **실적 영역은 20점**입니다. 이 안에서 `대기업 실제 지분·CVC 투자`에 **4점**, `대기업 계약·납품 단계`에 **6점**을 배정했습니다. 계약·납품 단계는 관계 없음이 확인된 경우 0등급, MOU 1등급, 현장 실증 2등급, 유상 계약·상용 납품 3등급, 유상 확대·갱신 검증 4등급으로 구분합니다. 등급의 환산점수는 `항목 배점 × 등급 ÷ 4`입니다. **확인 불가(`U`)는 0등급과 다릅니다.**
+기술명과 성능은 해당 기업의 검증된 원문을 보고서에 연결하며, 회사 발표와 독립 검증을 구분한다.
 
 ## Features
 
-- PDF를 원본 페이지별 `Document`로 파싱하고 문서 ID·기업·페이지를 보존합니다.
-- 세 RAG 분석 노드가 빅테크 관계, 기술·현장 적용, 시장성·경쟁을 각각 조사합니다.
-- `check_evidence`가 주장에 연결된 PDF 페이지와 원문 인용을 대조합니다.
-- LLM은 21개 평가 항목의 등급과 이유를 제안하고, 코드는 근거 ID와 배점을 검사·계산합니다.
-- 보고서는 검증된 주장을 배치하고 Scorecard와 실제 인용한 자료의 위치를 표시합니다.
+- **PDF RAG:** 등록된 [원천 PDF](minimal-orchestration/rag/data/catalog.csv) 풀은 22개·106쪽이다. 기업 필터와 원본 페이지를 보존해 검색하며, `com_data/`는 조사 단서로 사용하고 등록 원문 URL만 추가로 읽는다.
+- **고정 평가표:** [설계 PDF](minimal-orchestration/evaluation/physical_ai_investment_design.pdf) 2~3쪽의 6영역·21항목·100점을 코드와 대조한다. 등급은 0~4 또는 U, 점수는 `배점 × 등급 ÷ 4`다. U를 0점으로 채우거나 100점으로 재환산하지 않는다.
+- **확증 편향 통제:** 출처 없는 주장·부분 입증을 제외하고 반증·U를 보존한다. 구매 계약을 매출로, 첫 협력을 재구매로 채점하지 않도록 거래 방향·단계·같은 고객을 검증한다.
+- **기업 보고서 합성:** 전체 본문·SHA256·문단 ID와 검증 State·원문을 `CompanyReportSynthesis`에 입력한다. 회사별 5필드와 비교 2문단을 작성하며, 분석을 가져온 문단과 실제 원문 인용이 등장한 문단을 `report_paragraph_ids`·`evidence_report_paragraph_ids`로 구분해 반영 맵에 보존한다.
+- **품질 평가:** 형식·점수·인용 검사와 원본 페이지를 읽는 LLM Judge를 결합한 **Hybrid** 방식. Groundedness·중립성·편향 통제 세 축만 평가하며 관점 커버리지는 제외한다. 표현 결함은 재작성, 근거·채점 결함은 재조사한다. 실행에서 품질 오분류와 작성 형식 실패를 확인해 작성·선정·검증 모델을 별도 설정했으며, 개선 효과는 미측정이다.
+- **최종 대상 선정:** `PortfolioDecision`이 같은 합성 분석과 원래 기업 보고서를 읽어 대상·비교 이유·필수 조건을 선정한다. 코드가 근거 연결·핵심 부정 사실·거래조건을 검사하며, 최고 총점 기업을 자동 선택하지 않는다.
+- **통합 보고서:** 점수표·U·REFERENCE는 코드가 고정하고 기업별 해석·한계·현재 의견을 합성 본문으로 반영한다. 길이·문장 완결성 검사와 `report_language.py`가 명백한 절단·자료 부재 단정·독립 입증 과장을 거절한다. 실제 문단의 인용↔원문 페이지를 대조하는 검사로 RL·MOU 목적·IFR 수요·공공 실증의 알려진 범위 오류를 차단하며, 원문·검증 State를 우선해 교정한다.
 
-## Agents & Architecture
+Judge의 `findings`는 `{criterion, basis, paragraph_id, defect, action}`으로 실제 보고서 문단에 결함을 연결한다. 같은 축의 결함이 있으면 코드가 그 축을 실패로 판정하고, 통과 여부와 `issues`를 이 목록에서 계산해 중복 판정의 모순을 방지한다. 단순 자료 부재·U는 `data_gaps`이며 품질 실패 사유가 아니다.
 
-| 노드 | RAG | 역할과 주요 출력 |
-|---|:---:|---|
-| `bigtech` | O | 투자·MOU·현장 실증·유상 계약·재구매 관계와 문서·페이지 |
-| `technology` | O | 팀·제품·핵심 작업 성능·안전성·양산 관련 주장 |
-| `market` | O | 수요·시장 진입·경쟁력 관련 주장. 기업 자료와 공통 시장 자료 검색 |
-| `check_evidence` | — | 원본 페이지와 주장을 대조해 검증된 주장과 근거 부족 주장을 분리 |
-| `investment_judgement` | X | 검증된 근거로 등급을 제안받고 고정 Scorecard로 점수·판정 계산 |
-| `report` | X | 검증된 주장 ID를 섹션에 배치하고 보고서·점수표·참고문헌 작성 |
+통합 Judge는 같은 호출에서 핵심 3축과 별도로 세 기업의 분석·한계·개별 의견 반영 여부를 검사한다. 이는 관점 커버리지가 아니라 입력 보고서의 실제 종합 여부를 확인하는 검사다.
 
-```mermaid
-flowchart TD
-    S([START]) --> B[bigtech]
-    S --> T[technology]
-    S --> M[market]
-    B --> E[check_evidence]
-    T --> E
-    M --> E
-    E -->|scorable| J[investment_judgement]
-    E -->|insufficient| R[report]
-    J --> R
-    R --> F([END])
-```
-
-세 분석 노드는 병렬로 실행됩니다. 검증 가능한 기술 근거가 없으면 투자 점수 산정을 건너뛰지만, **부족한 근거를 표시한 보고서**는 생성합니다.
-
-## Data, Retrieval & Embedding
-
-`data/catalog.csv`에 등록된 자료는 **22건·106페이지**로, 과제의 총 200페이지 상한 이내입니다.
-
-| 기업·자료군 | 문서 수 |
-|---|---:|
-| MOTOMIND | 6 |
-| ROBROS | 6 |
-| Figure AI | 6 |
-| 공통 시장 자료 | 4 |
-
-페이지 경계를 넘지 않도록 기본 **1,000자 청크·150자 중첩**으로 분할합니다. 오픈소스 다국어 임베딩 모델 **`BAAI/bge-m3`**로 문서와 질의를 벡터화한 뒤, NumPy 메모리 인덱스에서 정규화 벡터의 유사도를 비교합니다. 기본 검색 개수는 `k=4`입니다. 한국어·영어가 혼합된 자료를 한 모델로 검색하기 위한 선택이며, 별도 VectorDB를 사용하지 않습니다.
-
-> Hit Rate@K·MRR 등의 검색 성능 수치는 이 저장소에서 측정 결과가 확인되기 전까지 기재하지 않습니다. 회사 자체 발표와 고객사·투자사 확인 자료도 동일한 수준의 독립 근거로 취급하지 않습니다.
-
-## Evidence-to-Decision — 실제 실행 결과
-
-`run_reports.py`로 세 기업을 각각 실행해 생성한 **초안 결과**입니다. 숫자는 확인된 항목만 합산한 값이며, 미확인 배점을 0점으로 취급하거나 100점으로 환산하지 않습니다. `output/figure_ai_test_report.md`는 별도의 테스트 입력 예시입니다.
-
-| 기업 | 확인된 점수 / 평가 가능 배점 | 미확인 배점 | 출력 판정 |
-|---|---:|---:|---|
-| MOTOMIND | 17.5 / 22 | 78 | 근거 부족 |
-| ROBROS | 19.5 / 26 | 74 | 근거 부족 |
-| Figure AI | 24 / 33 | 67 | 근거 부족 |
-
-Figure AI에서 빅테크·대기업 연관성 검증 흐름은 다음과 같습니다.
-
-| 단계 | 생성된 결과와 근거 |
-|---|---|
-| 원본 문서 | BMW 공장 내 Figure 03 시연: `figure_f03_at_bmw.pdf` p.3 [E1]; Catalyst 현장 통합: `figure_catalyst_brands.pdf` p.2 [E2]; Brookfield 투자 언급: 같은 문서 p.2 [E3] |
-| 관계 유형 | BMW·Catalyst **현장 실증**, Brookfield **투자**. 현장 실증만으로 유상 매출이나 재구매를 인정하지 않음 |
-| Scorecard 반영 | `대기업 실제 지분·CVC 투자` 4/4점, `대기업 계약·납품 단계` 3/6점 |
-| 최종 출력 | 확인된 점수 24/33점, 미확인 배점 67점 → **근거 부족** |
-
-**검수 메모:** `figure_catalyst_brands.pdf` p.1에는 Catalyst Brands와의 **상업 계약 발표**가 있지만, 공개 자료만으로 유상 매출·납품·재구매를 확인할 수는 없습니다. 생성 보고서는 이 항목들을 `U`로 남겼습니다. 회사 발표에 의존한 주장과 미확인 항목이 많으므로 현재 점수는 **최종 투자 결론이 아닌 공개 자료 기반 초안**입니다.
-
-## Investment Report Highlights
-
-보고서는 입력한 **한 기업**을 대상으로 다음 다섯 구역을 만듭니다.
-
-1. SUMMARY + 기업 개요
-2. 시장·팀 분석
-3. 기술·경쟁력·실적
-4. 리스크 + 투자평가
-5. 실제 인용한 자료의 문서 위치·페이지
-
-- **핵심 투자 포인트:** Figure AI는 BMW·Catalyst 현장 실증과 Brookfield 투자 관계를 문서·페이지로 추적할 수 있습니다.
-- **핵심 리스크:** 세 기업 모두 미확인 배점이 크고, 현장 실증에서 유상 매출·재구매로 이어졌는지는 추가 확인이 필요합니다.
-- **최종 의견:** 현재 세 보고서 모두 `근거 부족`입니다. 기업 간 순위나 투자 확정 결론으로 해석하지 않습니다.
-
-점수의 분모를 임의로 100점으로 재환산하지 않습니다. `U` 항목이 많으면 확인된 점수와 함께 **미확인 배점**을 반드시 제시합니다.
-
-## Lessons Learned & Limitations
-
-- **자료 없음 ≠ 0점:** 공개 자료로 확인할 수 없는 관계나 실적은 `U`로 남겨 부재가 입증된 경우와 구분했습니다.
-- **인용 위치 ≠ 주장 입증:** LLM이 제시한 문서 ID·페이지가 존재해도, 원본 페이지가 실제 주장을 뒷받침하는지 다시 확인해야 했습니다.
-- **LLM 등급 ≠ 최종 점수:** 잘못된 평가 항목명이나 근거 없는 등급은 점수에 반영하지 않고 `U`로 처리하도록 했습니다.
-- **공개 자료의 한계:** 비공개 계약금액, 투자조건, 재구매 여부와 회사 자체 발표의 독립 검증 여부는 추가 확인이 필요합니다.
-
----
+거래조건 미확인은 조건부 투자로 제한하고, 핵심 근거가 부족하면 선정을 보류한다. 선정 시 최종 보고서에 “필수조건을 충족하면 선정 기업에 투자한다”는 결론과 조건을 연결한다. 보고서는 코드가 생성하는 투자 심사 자료이며 실제 거래 실행을 자동 결정하지 않는다.
 
 ## Tech Stack
 
-| 영역 | 구현 |
+| 구분 | 구현 |
 |---|---|
-| Workflow | LangGraph |
-| LLM | OpenAI (`OPENAI_MODEL`, 기본값 `gpt-4.1-mini`) |
-| PDF parsing | pdfplumber, LangChain `Document` |
-| Embedding | `BAAI/bge-m3` (`sentence-transformers`) |
-| Retrieval | NumPy 기반 메모리 dense 유사도 검색 |
-| Report | 검증 근거 ID 분류, Markdown 생성, PDF 변환 |
+| Framework | LangGraph `StateGraph`, `Send`, 조건 분기 |
+| LLM / 계획·워커 | 현재 설정: `gpt-4.1-mini`(`OPENAI_MODEL`) |
+| LLM / 기업별 작성·검증 | `gpt-4.1`: `OPENAI_WRITER_MODEL`·`OPENAI_EVIDENCE_MODEL`·`OPENAI_GRADER_MODEL`·`OPENAI_JUDGE_MODEL` |
+| LLM / 최종 합성·선정·반영 Judge | `gpt-5.4`: `OPENAI_SYNTHESIS_MODEL`·`OPENAI_PORTFOLIO_MODEL`·`OPENAI_COMBINED_JUDGE_MODEL`; 현재 `.env.example` 설정이며 모델 변경의 품질 개선 효과는 미측정 |
+| Retrieval | NumPy dense 검색, 기업·COMMON 필터, 디스크 인덱스; Hit Rate@K·MRR **미측정** |
+| Embedding | 오픈소스 `BAAI/bge-m3` / sentence-transformers |
+| PDF | pypdf·pdfplumber·ReportLab, 한글 폰트 임베딩 |
+| Observability | LangSmith + 로컬 trace JSON, 노드 시간·관측 사용량 |
+| Checkpoint | `InMemorySaver`; 프로세스 재시작 후 일반 조사 재개는 미지원 |
+
+역할별 설정은 변경 가능하다. 합성·통합 수정은 `OPENAI_SYNTHESIS_MODEL`→`OPENAI_WRITER_MODEL`→`OPENAI_MODEL`, 통합 Judge는 `OPENAI_COMBINED_JUDGE_MODEL`→`OPENAI_JUDGE_MODEL`→`OPENAI_MODEL` 순으로 대체하며 다른 역할도 미지정 시 기본 모델을 사용한다.
+
+## Agents
+
+| 구성 | 책임 |
+|---|---|
+| Orchestrator | 카탈로그·항목별 부족 사유로 `{id, worker, query, criteria, urls}` 계획 작성 |
+| Bigtech Worker | 지분 투자, 고객 계약·납품, 유상 매출·재구매 조사 |
+| Technology Worker | 팀, 작업 성능·안전·양산, 모방하기 어려운 자산 조사 |
+| Market Worker | 고객·시장·경쟁 가치·전환 장벽 조사 |
+| Synthesizer | 병렬 결과 병합, 원문 검증, 미달·무진전 판정 |
+| Investment Judge / Case | 21항목 등급 검증·점수 계산, 근거에 연결된 최종 투자 제안 |
+| Writer / Evaluator | 보고서 작성 후 세 품질 기준 검사; 재작성·재조사·종료 분기 |
+| CompanyReportSynthesis | 실제 기업 보고서 전체·문단·원문을 읽어 5필드 분석·비교 2문단 합성 |
+| PortfolioDecision | 3기업 검증 결과로 최종 대상·투자/조건부 투자/보류 선정; 총점 자동선택 금지 |
+| Combined Report / Quality | 고정 점수표·합성 본문·선정 결론 통합, 원문 품질·기업 분석 반영 검사 |
+
+워커는 결과만 반환하며 공용 계획·예산을 변경하거나 서로 직접 통신하지 않는다.
+
+## State Schema
+
+| 설계 항목 | 반영 방식 |
+|---|---|
+| 제어 vs 페이로드 | 계획·route·feedback·예산과 research·investment·report 분리 |
+| 관측성 위치 | State에 현재 부족 사유·시도·종료 사유, 외부 JSON/LangSmith에 노드 기록 |
+| 지속성 비용 | PDF·벡터는 파일/캐시, 유한 라운드 결과만 누적; 전체 State 바이트 상한은 없음 |
+| 상관 | `trace_id` ↔ checkpoint `thread_id`; 실제 graph run UUID도 기록 |
+| 재개/복구 | 조사 종료 후 Writer→Evaluator 복구; 품질 통과 후 PDF만 실패하면 모델 없이 재렌더링 |
+| 동시 처리 | `라운드:작업ID` reducer 병합·충돌 검출; 카탈로그 병합은 Synthesizer만 수행 |
+| 종료 보장 | 추가 조사 3~5회(기본 4), 무진전 2회 중단, 보고서 재작성 최대 2회, recursion 100 |
+
+`completed`는 조사·품질 통과, `partial`은 U/조사 한계가 남은 품질 통과 보고서, `quality_failed`는 품질 미달 초안이다. U와 보고서 품질 실패는 별개다. 전체 실행 시간·비용 상한과 DB 기반 지속 복구는 추가 구현 대상이다.
+
+## Architecture
+
+![기업별 조사와 최종 투자 대상 선정·통합 보고서 구조](minimal-orchestration/docs/architecture.png)
+
+[SVG 원본](minimal-orchestration/docs/architecture.svg) · 재생성: `.venv/bin/python scripts/render_architecture.py --require-integrated-batch`
+
+상단은 실제 기업별 StateGraph, 하단은 `app.py`의 3기업 배치·최종 대상 선정·통합 보고서 처리다. 하단 함수를 추가 LangGraph 노드로 표시하지 않으며, 이 구조 이미지는 실제 LangSmith 실행 화면과 별개다.
+
+표현·중립성 문제는 근거와 점수를 유지하는 재작성 루프에서 처리하고, 새 근거가 필요한 문제만 조사 루프로 돌린다. 성공 결과와 같은 원문의 검증을 재사용하고, 완전 반복 작업·무진전 재조사를 중단해 피드백 과정의 불필요한 호출을 줄이도록 설계했다. 실제 Supervisor 구현과의 비교 실험 및 비용 절감률은 측정하지 않았다.
+
+통합 품질 평가도 `rewrite`이면 원문·점수·인용·선정 조건을 보존하는 `quality_reviser`로 최대 두 번 재작성·재평가하고, `research` 또는 예산 소진이면 미달 초안을 보존한다.
+
+새 통합 경로는 검색·임베딩·재채점 없이 합성 LLM 기본 1회를 추가하며, 연결 형식 오류 시 1회만 교정한다. 같은 품질 Judge 호출에 반영 검사를 포함한다. 합성·품질 미달·재작성과 동일 입력 분석 재사용을 실제 실행에서 확인했다. 비용·품질 개선률은 미측정이다.
 
 ## Directory Structure
 
+아래 경로는 `minimal-orchestration/` 기준이다. 기존 RAG 구현은 [main 브랜치](https://github.com/fabianskii1/physical-ai-investment-rag/tree/main)에 보존한다.
+
 ```text
-data/raw/          기업·공통 자료 PDF
-data/catalog.csv   문서 ID, 출처, 파일 경로, 페이지 정보
-PDF/pdf_loader.py  페이지별 PDF 파싱
-retrieval.py       청킹·임베딩·검색
-analyses.py        빅테크·기술·시장 분석
-workflow.py        근거 검사·투자 판단
-scorecard.py       21개 평가 항목과 점수 계산
-report.py          단일 기업 Markdown 보고서
-pdf_export.py      Markdown → PDF 변환
-graph.py           LangGraph 연결과 State
-run_reports.py     세 기업을 차례로 실행하는 스크립트
-tests/             구성 요소·Graph 테스트
-output/reports/    생성된 기업별 Markdown·PDF 보고서
+app.py                    실행·배치·복구·LangSmith 설정·산출물 저장
+agent_pipeline.py         계획·배분·합류·품질 루프
+state_schema.py           공유 State·병렬 reducer
+legacy_adapter.py         기존 RAG 연결·계획/보고서 Judge
+criteria_registry.py      평가항목·담당 워커 매핑
+criteria_coverage.py       항목별 조사 상태·결과 병합
+investment_evaluation.py  등급·거래 단계 보호·점수 계산
+investment_case.py        최종 투자 제안·지지 사실·필수 조건
+portfolio_decision.py     검증 근거 기반 최종 투자 대상 선정·코드 보호 조건
+company_report_inputs.py  기업 보고서 전체·SHA256·문단 ID·원문 인용 입력
+report_synthesis.py       원보고서 5필드 분석·비교 합성·문단/근거 반영 맵
+report_language.py        명백한 부재 단정·범위 과장 표현 검사
+combined_report.py        3기업 종합·통합 품질 검사·최종 제출 보고서
+combined_quality.py       통합 보고서의 원문 기반 세 품질 기준 Judge
+company_brief.py          검증된 기업 결과를 각 A4 한 쪽 중간 요약으로 출력
+saved_revalidation.py     저장된 사실 원문 재검증·재채점·보고서 교정 (새 검색 없음)
+scripts/render_architecture.py  소스 구조 확인·SVG/PNG 아키텍처 생성
+docs/architecture.*       제출용 구조 이미지 (실행 trace와 별개)
+report_renderer.py        A4 양식·점수 강조·규격 검사
+llm_client.py             요청 제한·LangSmith 모델 호출 추적
+evaluation/               평가 기준 PDF (RAG 입력에서 제외)
+rag/data/                 원천 PDF·catalog.csv; 원본 data 폴더 우선
+com_data/                 기업별 조사 단서 PDF; 원본 폴더 우선
+output/                   기업 보고서·점수·trace·비교표·웹 원문 캐시
+tests/                    오프라인 회귀·원문/점수·그래프·PDF 검사
 ```
 
 ## Usage
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
+cd minimal-orchestration
+python3 -m venv .venv                        # 가상환경이 없을 때
+.venv/bin/python -m pip install -r requirements-rag.txt
+cp .env.example .env                         # .env가 없을 때만
+# .env에 OPENAI_API_KEY, LANGSMITH_API_KEY 입력
+.venv/bin/python app.py                      # 기본: 3기업 조사 → 최종 선정 → 통합 보고서
 ```
 
-`.env`에 `OPENAI_API_KEY`를 설정한 뒤 저장소 루트에서 실행합니다. 첫 실행 시 BGE-M3 모델 로드와 PDF 인덱스 구축에 시간이 걸릴 수 있습니다.
+`--company`를 생략하면 세 기업 전체를 실행한다. 한 기업은 `--company MOTOMIND`, `--company ROBROS`, `--company "Figure AI"`로 조사하며, API 없는 `--demo`는 Figure AI를 자동 선택한다. 입력 위치는 `--data-dir`, `--com-data-dir`, `--index-dir`로 지정하며 원본 프로젝트가 없으면 이 폴더의 복사본을 쓴다. 첫 실행은 BGE 모델 다운로드·임베딩이 필요하며 이후 인덱스를 재사용한다.
 
 ```bash
-python run_reports.py
+.venv/bin/python app.py --combine-reports output  # 저장된 3기업 결과로 최종 선정·통합만 실행
+.venv/bin/python app.py --combine-reports output --reuse-analysis output/combined_analysis.json
 ```
 
-스크립트는 그래프를 기업별로 한 번씩 호출하고 `output/reports/`에 Markdown과 PDF를 저장합니다. 현재 `run_reports.py`에는 **테스트용 판정 기준**(최소 70점, 필수 항목 `핵심 작업 성능`)이 설정돼 있습니다. 발표·최종 평가에는 팀이 합의한 기준인지 확인한 뒤 사용해야 합니다. 한글 PDF 폰트를 자동으로 찾지 못하면 `RAG_PDF_FONT`에 사용 가능한 TTF 경로를 지정합니다.
+`--reuse-analysis`는 원보고서 SHA·기업 trace/상태·21항목 점수/사유·검증 주장·원문 페이지/출처가 같은 저장 합성·선정만 재사용하며 품질은 항상 새로 평가한다. `combined_analysis.json`은 품질·PDF 출력 전에 저장해 실패 복구 시 두 분석 모델을 다시 호출하지 않는다. 조건과 이전 형식의 제한은 [제출 재현 안내](minimal-orchestration/SUBMISSION.md)를 따른다.
 
-## Tests
+기본 실행의 최종 제출물은 `output/final_investment_report.pdf` 한 파일이다. A4·20mm 여백·전체 최대 10쪽 안에 3기업의 21항목 비교, 기업별 근거·위험, 최종 선택/보류·필요 조건과 출처를 담는다. 같은 이름의 Markdown·JSON은 검토용이며, 품질·규격 미달 PDF는 최종본으로 발행하지 않는다.
 
-```bash
-PYTHONPATH=.:PDF python -m pytest -q
-```
+최신 실제 v10은 **하나의 A4 8쪽 보고서·Figure AI 조건부 투자**를 출력했다. 원문 검토를 마친 교정 본문과 동일하며, 검증된 합성·선정 재사용 후 새 Hybrid 평가에서 핵심 3축과 세 기업 분석·한계·개별 의견 반영이 모두 통과했다. 해당 실행의 수정은 0회이며, 최신 회귀 검사는 **428개 + 하위 테스트 22개 통과**다.
 
-테스트는 PDF 로딩·카탈로그 검증·기업별 검색·분석 결과 형식·근거 검사·Scorecard·Graph 분기·보고서 생성을 다룹니다. README의 실제 투자 결과는 테스트 픽스처와 구분합니다.
+현재 검증 파일: [최종 PDF](minimal-orchestration/output/submission-live/final_investment_report.pdf) · [본문](minimal-orchestration/output/submission-live/final_investment_report.md) · [점수·반영 맵·품질 JSON](minimal-orchestration/output/submission-live/final_investment_report.json).
+
+기존 PNG 1~3은 **보고서 합성 단계 추가 전**의 실행 기록이며 최신 결과와 구분한다. 공식 파일·실행 캡처와 패키지 정보는 [제출 재현 안내](minimal-orchestration/SUBMISSION.md)에서 확인한다.
+
+기업별 `<company>_brief.md/.pdf`는 각 한 쪽 검토용 중간 요약이다. 최종 합성·선정은 `.state.json`의 **완성 보고서 전체**와 검증 원문·21항목 점수·판단을 자동 입력받는다. `--combine-reports DIR`은 워커 검색·임베딩·등급 판정 없이 합성→선정→통합 품질 평가를 실행한다.
+
+`--revalidate-report STATE`는 저장된 검증 사실만 원문 재검증·재채점하고 보고서를 작성·평가하며, 필요한 재작성은 최대 두 번이다. 새 워커 검색은 없으며, 미래 계획을 현재 성과로 오인한 기존 출력을 교정하는 데 사용한다. 복구·테스트·패키지 생성은 [제출 재현 안내](minimal-orchestration/SUBMISSION.md)를 따른다.
+
+**LangSmith:** `.env`의 `LANGSMITH_TRACING=true`, `LANGSMITH_API_KEY`, `LANGSMITH_PROJECT`로 연결한다. 키가 없으면 로컬 JSON만 저장한다. 제출용 PNG는 실제 LangSmith 실행 화면에서 캡처하며 로컬 trace로 대체하지 않는다.
+
+![실제 ROBROS 실행: 세 워커와 Synthesizer 합류 후 재계획](minimal-orchestration/docs/traces/01_orchestrator_plan.png)
+
+![실제 최종 선정: Figure AI 조건부 투자와 원문 근거·코드 보호 조건](minimal-orchestration/docs/traces/02_final_investment_decision.png)
+
+[실제 실행·캡처 기록](minimal-orchestration/docs/traces/README.md): 01은 기업별 계획·재조사, 02~[03](minimal-orchestration/docs/traces/03_final_quality.png)은 합성 전 결과다. [04 — 미달·재작성 루프](minimal-orchestration/docs/traces/04_feedback_loop.png)는 중간 품질 실패·재작성 2회 진입, [05 — 최신 품질 통과](minimal-orchestration/docs/traces/05_current_final_quality.png)는 검증된 분석 재사용 후 새 Judge의 3축 통과를 보여 준다.
 
 ## Contributors
 
-| 팀원 | 담당 |
-|---|---|
-| [이상수] | 원문 자료 조사·카탈로그 |
-| [우강산] | PDF 파싱 |
-| [정지영] | 임베딩·검색 |
-| [박소정] | 빅테크·기술·시장 분석 |
-| [김재혁] | 근거 검사·투자 판단·보고서·Graph 연결 |
+- 이상수 : Source Research, Document Catalog — 기업 자료 조사·원문 수집·문서 카탈로그 관리
+- 우강산 : PDF Parsing, Source Management — PDF 파싱·텍스트 추출·원본 페이지 및 출처 연결
+- 정지영 : Embedding, Retrieval Agent — 임베딩·기업별 검색·검색 인덱스 및 캐시 관리
+- 박소정 : Prompt Engineering, Analysis Agent Design — 빅테크·기술·시장 분석 워커 설계·분석 프롬프트 작성
+- 김재혁 : Agent Orchestration, Investment Judge, Report Synthesis — LangGraph 제어·근거 검증·투자 판단·보고서 종합 및 품질 평가
+
+제출 브랜치는 [`codex/physical-ai-agent`](https://github.com/fabianskii1/physical-ai-investment-rag/tree/codex/physical-ai-agent)이며 구현·최종 PDF·실제 LangSmith PNG·제출 ZIP을 함께 제공한다. ZIP 파일명 `Agent_{캠퍼스}_{X반}_{이름1+이름2+...}.zip`에 필요한 캠퍼스·분반만 미등록이므로 현재는 중립 파일명을 사용한다. 최종 제출 PDF는 **3기업 통합 한 파일, 전체 최대 10쪽**이다. [제출 재현 안내](minimal-orchestration/SUBMISSION.md)에 패키지·복구 방법을 기록한다. 기업 운영 전에는 Judge 정답 사례 검증·평가 기준일·지속 복구·비용 상한을 보완해야 한다.

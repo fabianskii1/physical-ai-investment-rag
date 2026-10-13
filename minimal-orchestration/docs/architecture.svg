@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2390" viewBox="0 0 2500 2390" role="img">
+<title>Physical AI investment orchestration architecture</title>
+<desc>Source architecture: company StateGraph followed by full company-report inputs, report synthesis, shared-analysis portfolio selection, fixed-score rendering and core quality plus report-reflection evaluation. This is not an execution trace.</desc>
+<rect width="2500" height="2390" fill="white"/>
+<text x="90" y="65" fill="#14243A" font-family="Arial, sans-serif" font-size="57" font-weight="700" text-anchor="start" dominant-baseline="central">Physical AI Investment Orchestration</text>
+<text x="90" y="123" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="32" font-weight="400" text-anchor="start" dominant-baseline="central">기업별 근거 조사 → 최종 투자 대상 선정 → 하나의 통합 보고서</text>
+<rect x="60" y="180" width="2380" height="1160" rx="18" fill="white" stroke="#CAD5E4" stroke-width="3"/>
+<text x="100" y="220" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="start" dominant-baseline="central">01  SINGLE COMPANY GRAPH</text>
+<text x="100" y="267" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="26" font-weight="400" text-anchor="start" dominant-baseline="central">agent_pipeline.py · 기업마다 독립 StateGraph / source architecture, not an execution trace</text>
+<rect x="130" y="310" width="650" height="83" rx="18" fill="#F3F7FD" stroke="#CAD5E4" stroke-width="3"/>
+<text x="455.0" y="346" fill="#14243A" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="central">Company PDFs + Scorecard</text>
+<polyline points="345,393 345,430" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="345,430 354.0,412.0 336.0,412.0" fill="#14243A"/>
+<rect x="130" y="430" width="430" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
+<text x="345.0" y="466" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Orchestrator</text>
+<text x="345.0" y="510" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Structured task plan</text>
+<text x="345.0" y="542" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">질문·역할·항목·원문 URL</text>
+<rect x="680" y="430" width="810" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
+<text x="1085.0" y="466" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Selected RAG Workers</text>
+<text x="1085.0" y="510" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Bigtech   |   Technology   |   Market</text>
+<text x="1085.0" y="542" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">Send fan-out: 0–3 selected task instances</text>
+<polyline points="560,505 680,505" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="680,505 662.0,496.0 662.0,514.0" fill="#14243A"/>
+<rect x="579.5" y="455" width="81" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="620" y="475" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">tasks</text>
+<polyline points="1490,505 1630,505" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1630,505 1612.0,496.0 1612.0,514.0" fill="#14243A"/>
+<rect x="1528.5" y="455" width="63" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1560" y="475" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">join</text>
+<rect x="1630" y="430" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
+<text x="1940.0" y="466" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Synthesizer</text>
+<text x="1940.0" y="510" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Merge + verify original pages</text>
+<text x="1940.0" y="542" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">근거·항목 누락·재조사 판단</text>
+<polyline points="500,430 500,409 1940,409 1940,430" fill="none" stroke="#52627A" stroke-width="3" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="1940,430 1949.0,412.0 1931.0,412.0" fill="#52627A"/>
+<rect x="984.5" y="389" width="291" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1130" y="409" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">empty plan → Synthesizer</text>
+<polyline points="1940,580 1940,770" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1940,770 1949.0,752.0 1931.0,752.0" fill="#14243A"/>
+<rect x="1985.5" y="680" width="229" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="2100" y="700" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="middle" dominant-baseline="central">ready / U retained</text>
+<rect x="1630" y="770" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#CAD5E4" stroke-width="3"/>
+<text x="1940.0" y="806" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Investment Judge</text>
+<text x="1940.0" y="850" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">21 grades → deterministic scores</text>
+<text x="1940.0" y="882" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">기업별 투자 근거·제약·필요 조건</text>
+<polyline points="1630,845 1460,845" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1460,845 1478.0,854.0 1478.0,836.0" fill="#14243A"/>
+<rect x="1070" y="770" width="390" height="150" rx="18" fill="#F3F7FD" stroke="#CAD5E4" stroke-width="3"/>
+<text x="1265.0" y="806" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">Score Review</text>
+<text x="1265.0" y="850" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">등급·U 사유 확인</text>
+<text x="1265.0" y="882" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">근거 보완은 S로 반환</text>
+<polyline points="1070,845 960,845" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="960,845 978.0,854.0 978.0,836.0" fill="#14243A"/>
+<rect x="570" y="770" width="390" height="150" rx="18" fill="#F3F7FD" stroke="#CAD5E4" stroke-width="3"/>
+<text x="765.0" y="806" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">Report Writer</text>
+<text x="765.0" y="850" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Evidence-linked analysis</text>
+<text x="765.0" y="882" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">점수·근거를 유지해 작성</text>
+<polyline points="690,920 690,1050" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="690,1050 699.0,1032.0 681.0,1032.0" fill="#14243A"/>
+<rect x="570" y="1050" width="650" height="150" rx="18" fill="#EAF7F3" stroke="#0F766E" stroke-width="3"/>
+<text x="895.0" y="1086" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Report Evaluator</text>
+<text x="895.0" y="1130" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">Groundedness · Neutrality · Bias control</text>
+<text x="895.0" y="1162" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">관점 커버리지는 통과 조건에서 제외</text>
+<polyline points="1220,1095 1630,1095" fill="none" stroke="#0F766E" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1630,1095 1612.0,1086.0 1612.0,1104.0" fill="#0F766E"/>
+<rect x="1347.0" y="1045" width="76" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1385" y="1065" fill="#0F766E" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">pass</text>
+<rect x="1630" y="1050" width="620" height="150" rx="18" fill="#EAF7F3" stroke="#0F766E" stroke-width="3"/>
+<text x="1940.0" y="1086" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Company Results</text>
+<text x="1940.0" y="1130" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Company report + verified State</text>
+<text x="1940.0" y="1162" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">원보고서 전체·점수·품질 / 한쪽 요약 보조</text>
+<polyline points="1720,580 1720,665 345,665 345,580" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="345,580 336.0,598.0 354.0,598.0" fill="#B45309"/>
+<rect x="689.5" y="645" width="501" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="940" y="665" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">replan: missing criteria only / 부족 항목만</text>
+<polyline points="1265,770 1265,715 1530,715 1530,560 1630,560" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="1630,560 1612.0,551.0 1612.0,569.0" fill="#B45309"/>
+<polyline points="1220,1145 1530,1145 1530,560 1630,560" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="1630,560 1612.0,551.0 1612.0,569.0" fill="#B45309"/>
+<rect x="1295.5" y="972" width="319" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1455" y="992" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">research / 근거·채점 보완</text>
+<polyline points="840,1050 840,972 840,920" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="840,920 831.0,938.0 849.0,938.0" fill="#B45309"/>
+<rect x="699.5" y="953" width="351" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="875" y="973" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">rewrite ≤2 / 근거·점수 유지</text>
+<rect x="105" y="1265" width="2240" height="44" rx="10" fill="#F3F7FD" stroke="#F3F7FD" stroke-width="1"/>
+<text x="1225" y="1287" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="26" font-weight="400" text-anchor="middle" dominant-baseline="central">Research: 3–5 rechecks  |  Stop: 2 no-progress rounds*  |  Rewrite: ≤2  |  Unknown stays U</text>
+<text x="110" y="1320" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">* 초기 미선택 역할의 조사 기회 보존 · 품질 실패는 초안으로 종료</text>
+<rect x="60" y="1410" width="2380" height="870" rx="18" fill="white" stroke="#CAD5E4" stroke-width="3"/>
+<text x="100" y="1450" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="start" dominant-baseline="central">02  REPORT SYNTHESIS / FINAL SELECTION</text>
+<text x="1430" y="1450" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="start" dominant-baseline="central">app.py batch code · not extra LangGraph nodes</text>
+<polyline points="1940,1200 1940,1235 2415,1235 2415,1490 410,1490 410,1530" fill="none" stroke="#0F766E" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="410,1530 419.0,1512.0 401.0,1512.0" fill="#0F766E"/>
+<rect x="2219.5" y="1355" width="161" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="2300" y="1375" fill="#0F766E" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="middle" dominant-baseline="central">all: 3 states</text>
+<rect x="130" y="1530" width="560" height="150" rx="18" fill="#EAF7F3" stroke="#0F766E" stroke-width="3"/>
+<text x="410.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">3 Reports + State</text>
+<text x="410.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Full text + SHA256 + paragraph IDs</text>
+<text x="410.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">문단·원문 E-ID·21항목 점수·U</text>
+<polyline points="690,1605 840,1605" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="840,1605 822.0,1596.0 822.0,1614.0" fill="#14243A"/>
+<rect x="710.5" y="1555" width="109" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="765" y="1575" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">+1 LLM</text>
+<rect x="840" y="1530" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
+<text x="1150.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">ReportSynthesis Agent</text>
+<text x="1150.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">5 fields/company + 2 comparison paragraphs</text>
+<text x="1150.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">문단↔분석↔원문 맵 · 원문 우선</text>
+<polyline points="1460,1605 1630,1605" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1630,1605 1612.0,1596.0 1612.0,1614.0" fill="#14243A"/>
+<rect x="1630" y="1530" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
+<text x="1940.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">PortfolioDecision Agent</text>
+<text x="1940.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Original reports + shared synthesis</text>
+<text x="1940.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">선정기업·비교 이유·투자조건 / 코드 검사</text>
+<polyline points="1940,1680 1940,1810" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1940,1810 1949.0,1792.0 1931.0,1792.0" fill="#14243A"/>
+<rect x="2022.5" y="1725" width="175" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="2110" y="1745" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">same analysis</text>
+<rect x="1630" y="1810" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
+<text x="1940.0" y="1846" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Combined Report</text>
+<text x="1940.0" y="1890" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Fixed scores / U / references</text>
+<text x="1940.0" y="1922" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">합성 본문·선정 결론 / revise callback</text>
+<polyline points="1630,1885 1460,1885" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1460,1885 1478.0,1894.0 1478.0,1876.0" fill="#14243A"/>
+<rect x="840" y="1810" width="620" height="150" rx="18" fill="#EAF7F3" stroke="#0F766E" stroke-width="3"/>
+<text x="1150.0" y="1846" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Combined Quality</text>
+<text x="1150.0" y="1890" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Core 3 + company-report reflection</text>
+<text x="1150.0" y="1922" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">같은 Judge: 분석·한계·현재 의견 반영</text>
+<polyline points="840,1885 690,1885" fill="none" stroke="#0F766E" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="690,1885 708.0,1894.0 708.0,1876.0" fill="#0F766E"/>
+<rect x="727.0" y="1835" width="76" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="765" y="1855" fill="#0F766E" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">pass</text>
+<rect x="130" y="1810" width="560" height="150" rx="18" fill="#14243A" stroke="#14243A" stroke-width="3"/>
+<text x="410" y="1846" fill="white" font-family="Arial, sans-serif" font-size="36" font-weight="700" text-anchor="middle" dominant-baseline="central">One Final PDF</text>
+<text x="410" y="1890" fill="white" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">A4 · 20 mm · ≤10 pages TOTAL</text>
+<text x="410" y="1922" fill="#C8D8ED" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">final_investment_report.pdf</text>
+<polyline points="1320,1960 1320,2020 2350,2020 2350,1885 2250,1885" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="2250,1885 2268.0,1894.0 2268.0,1876.0" fill="#B45309"/>
+<rect x="1698.0" y="2000" width="324" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1860" y="2020" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">rewrite ≤2 / same inputs</text>
+<text x="1850" y="2058" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">quality_reviser → Combined Report</text>
+<polyline points="1150,1960 1150,2080" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="1150,2080 1159.0,2062.0 1141.0,2062.0" fill="#B45309"/>
+<rect x="854.0" y="2000" width="252" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="980" y="2020" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">research / exhausted</text>
+<rect x="840" y="2080" width="620" height="130" rx="18" fill="#FFF7ED" stroke="#B45309" stroke-width="3"/>
+<text x="1150.0" y="2116" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">Quality Failed Draft</text>
+<text x="1150.0" y="2160" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">새 근거 필요·한도 소진 시 미달 내용 보존</text>
+<text x="1150.0" y="2192" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">최종 제출본으로 발행하지 않음</text>
+<text x="110" y="2245" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="26" font-weight="400" text-anchor="start" dominant-baseline="central">Normal path: +1 synthesis LLM  |  No new RAG / regrading  |  View coverage excluded</text>
+<text x="95" y="2330" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="start" dominant-baseline="central">Source code: 4cc0d4b57c0c  ·  scripts/render_architecture.py  ·  implementation architecture, not a LangSmith trace</text>
+</svg>
