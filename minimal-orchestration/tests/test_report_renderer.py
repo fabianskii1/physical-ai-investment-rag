@@ -60,10 +60,19 @@ class ReportRendererTest(unittest.TestCase):
             path = Path(temp) / "report.pdf"
             render_report("# 이전 보고서\n검증 완료", path)
             previous = path.read_bytes()
-            long_report = "\n".join(f"## 구역 {i}\n근거를 그대로 유지합니다." for i in range(11))
+            long_report = "\n".join(f"근거 {i}: 실제 본문 내용이 페이지 상한보다 긴 경우 이전 결과를 보존합니다." for i in range(1100))
             with self.assertRaises(ReportLayoutError):
                 render_report(long_report, path)
             self.assertEqual(path.read_bytes(), previous)
+
+    def test_section_breaks_are_removed_before_content_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            markdown='\n'.join(f'## 구역 {i}\n원문 사실 {i}을 보존합니다.' for i in range(11))
+            path=render_report(markdown,Path(temp)/'compact.pdf')
+            self.assertLessEqual(len(PdfReader(path).pages),10)
+            text=''.join(page.extract_text() for page in PdfReader(path).pages)
+            for i in range(11):
+                self.assertIn(f'원문 사실 {i}을 보존합니다.',text)
             self.assertEqual(list(Path(temp).glob("*.pdf")), [path])
 
     def test_limit_cannot_exceed_assignment(self):

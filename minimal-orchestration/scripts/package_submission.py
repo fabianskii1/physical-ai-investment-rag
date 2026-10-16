@@ -34,7 +34,10 @@ ROOT_FILES = (
     'app.py', 'agent_pipeline.py', 'final_report_pipeline.py', 'state_schema.py', 'legacy_adapter.py', 'criteria_registry.py',
     'criteria_coverage.py', 'investment_evaluation.py', 'investment_case.py', 'combined_report.py', 'combined_quality.py',
     'company_brief.py', 'portfolio_decision.py', 'company_report_inputs.py', 'report_synthesis.py', 'report_language.py',
-    'saved_revalidation.py',
+    'saved_revalidation.py', 'task_evidence.py', 'evidence_text.py', 'worker_policy.py',
+    'source_worker.py', 'report_assertions.py',
+    'fact_preservation.py',
+    'prompts/workers/bigtech.md', 'prompts/workers/technology.md', 'prompts/workers/market.md',
     'evaluation_reference.py', 'research_inputs.py', 'link_sources.py', 'report_renderer.py', 'llm_client.py',
 )
 RAG_FILES = ('analyses.py', 'retrieval.py', 'report.py', 'scorecard.py', 'workflow.py')
@@ -77,19 +80,26 @@ def candidate_files(root: Path) -> list[str]:
     """과거 output이나 환경/모델 캐시는 확장자만으로 수집하지 않는다."""
     files = set(ROOT_FILES) | {f'rag/{name}' for name in RAG_FILES}
     files.update({'rag/data/catalog.csv', 'evaluation/physical_ai_investment_design.pdf',
-                  'scripts/package_submission.py', 'scripts/render_architecture.py'})
+                  'evaluation/retrieval_cases.json', 'scripts/package_submission.py', 'scripts/render_architecture.py',
+                  'scripts/check_company_evidence.py', 'scripts/recover_worker_reports.py', 'scripts/audit_evidence_flow.py'})
     for pattern in ('rag/PDF/*.py', 'rag/data/raw/**/*.pdf', 'com_data/*.pdf', 'tests/test_*.py',
                     'tests/conftest.py', 'docs/**/*.md', 'docs/architecture.png', 'docs/architecture.svg',
                     'docs/traces/*.png', 'docs/traces/*.json'):
         files.update(path.relative_to(root).as_posix() for path in root.glob(pattern) if path.is_file())
     files.update(FINAL_FILES)
     files.update(COMPANY_FILES)
+    for stem in COMPANY_STEMS:
+        files.update(f'output/submission-live/{stem}.{suffix}' for suffix in ('md', 'pdf')
+                     if (root / f'output/submission-live/{stem}.{suffix}').is_file())
     # 최신 공식 실행 폴더의 명시된 보조 결과만 함께 보존한다.
     for pattern in ('output/submission-live/final_report.trace.json',
                     'output/submission-live/final_report.graph.json',
                     'output/submission-live/final_report.execution_audit.json',
+                    'output/submission-live/evidence_flow_audit.json',
+                    'output/submission-live/final_report.recovery_provenance.json',
                     'output/submission-live/combined_report_inputs.json',
                     'output/submission-live/combined_analysis.json',
+                    'output/submission-live/combined_analysis.md',
                     'output/submission-live/company_comparison.*', 'output/submission-live/web_sources/*.pdf',
                     'output/submission-live/web_sources/manifest.json'):
         files.update(path.relative_to(root).as_posix() for path in root.glob(pattern) if path.is_file())
@@ -273,6 +283,9 @@ def _validate_official_outputs(root: Path) -> list[str]:
                 problems.append(f'실제 기업별 보고서 본문 없음: {stem}.state.json')
             else:
                 active_report_hashes[company] = sha256(report.encode('utf-8')).hexdigest()
+                detailed = root / f'output/submission-live/{stem}.md'
+                if detailed.is_file() and detailed.read_text(encoding='utf-8') != report:
+                    problems.append(f'기업 상세 Markdown과 검증 State 본문 불일치: {stem}')
             if scores_path.is_file():
                 scores = json.loads(scores_path.read_text(encoding='utf-8'))
                 if not isinstance(scores, dict) or scores.get('company') != company or scores.get('trace_id') != state.get('trace_id'):
@@ -465,8 +478,11 @@ def build_submission(root=ROOT, *, output_dir=None, preflight_only=False, github
             'final_report': FINAL_FILES[0],
             'one_page_briefs': {company: f'output/submission-live/{stem}_brief.pdf' for stem, company in COMPANY_STEMS.items()},
             'saved_states': {company: f'output/submission-live/{stem}.state.json' for stem, company in COMPANY_STEMS.items()},
-            'unbundled_detailed_reports': [f'output/submission-live/{stem}.{suffix}' for stem in COMPANY_STEMS for suffix in ('pdf', 'md')],
-            'detailed_report_note': '상세 보고서 경로는 원래 실행 metadata로 보존한다. 상세 PDF/MD는 full app 실행으로 재생성하며 최종 제출 보고서는 위 final_report 한 파일이다.',
+            'detailed_reports': [f'output/submission-live/{stem}.{suffix}' for stem in COMPANY_STEMS
+                for suffix in ('pdf', 'md') if f'output/submission-live/{stem}.{suffix}' in payloads],
+            'unbundled_detailed_reports': [f'output/submission-live/{stem}.{suffix}' for stem in COMPANY_STEMS
+                for suffix in ('pdf', 'md') if f'output/submission-live/{stem}.{suffix}' not in payloads],
+            'detailed_report_note': '현재 공식 폴더에 있는 기업별 상세 PDF/MD도 검토용으로 포함한다. 최종 제출 보고서는 위 final_report 한 파일이다.',
             'combine_from_states': 'app.py --combine-reports output/submission-live'},
         'files': [{'path': name, 'bytes': len(data), 'sha256': sha256(data).hexdigest()} for name, data in sorted(payloads.items())],
         'manifest_self_hash': 'excluded to avoid a circular hash'}

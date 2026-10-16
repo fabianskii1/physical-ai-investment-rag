@@ -1,0 +1,618 @@
+{
+  "scope": "15개 원문 구절 표본의 회수·인용 전달 검사. 전체 의미 회수율/내용 반영 보장이 아님",
+  "companies": {
+    "MOTOMIND": {
+      "trace_id": "d8719241-110f-4807-ac1e-64e636a86d80",
+      "quality_passed": true,
+      "verified_claims": 83,
+      "invalid_current_source_quotes": [],
+      "worker_calls": {
+        "technology": 3,
+        "market": 3,
+        "bigtech": 1
+      },
+      "recheck_count": 3,
+      "report_rewrites": 0,
+      "completed_criteria_recalled": [],
+      "scope_issues": []
+    },
+    "ROBROS": {
+      "trace_id": "2a281139-daf2-4d0c-85ba-5475bdf94985",
+      "quality_passed": true,
+      "verified_claims": 149,
+      "invalid_current_source_quotes": [],
+      "worker_calls": {
+        "technology": 4,
+        "market": 2,
+        "bigtech": 1
+      },
+      "recheck_count": 3,
+      "report_rewrites": 0,
+      "completed_criteria_recalled": [],
+      "scope_issues": []
+    },
+    "Figure AI": {
+      "trace_id": "221d2827-b743-4443-90fa-b96d34300831",
+      "quality_passed": true,
+      "verified_claims": 138,
+      "invalid_current_source_quotes": [],
+      "worker_calls": {
+        "market": 2,
+        "bigtech": 1,
+        "technology": 4
+      },
+      "recheck_count": 3,
+      "report_rewrites": 0,
+      "completed_criteria_recalled": [],
+      "scope_issues": []
+    }
+  },
+  "cases": [
+    {
+      "id": "MM-A",
+      "company": "MOTOMIND",
+      "criterion_id": "productization_execution",
+      "doc_id": "MM-04",
+      "page": 2,
+      "anchor": "프레스 공정 차량 내장재 부착 자동화 데모",
+      "expected_scope": "회사 자료의 프레스 공정 PoC 시연과 MOU. 독립 검증·유상 계약으로 확대하지 않는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E3",
+        "E24",
+        "E54",
+        "E57",
+        "E75"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "MM-B",
+      "company": "MOTOMIND",
+      "criterion_id": "paid_sales_delivery",
+      "doc_id": "MM-04",
+      "page": 3,
+      "anchor": "VLA 연구 기관 양팔로봇 납품",
+      "expected_scope": "회사 자료의 연구기관 양팔로봇 납품 사례. 대금 수취·매출 금액이 확인됐다는 뜻은 아니다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E4",
+        "E25",
+        "E55",
+        "E58",
+        "E76"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "MM-C",
+      "company": "MOTOMIND",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "MM-04",
+      "page": 4,
+      "anchor": "ETRI와 협업하여",
+      "expected_scope": "ETRI와 다중 AMR 관제 시스템 구축·통합 사례. BELLO 현장 성능으로 전이하지 않는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E26",
+        "E56",
+        "E59",
+        "E77",
+        "E81"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "MM-D",
+      "company": "MOTOMIND",
+      "criterion_id": "mass_production_maintenance",
+      "doc_id": "MM-02",
+      "page": 6,
+      "anchor": "Jetson Nano 소켓 보드 양산, AGX 소켓 보드 개발 중",
+      "expected_scope": "회사 발표의 Nano 소켓 보드 양산 및 AGX 개발 구분. BELLO 양산으로 확대하지 않는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E20",
+        "E42",
+        "E43"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "MM-E",
+      "company": "MOTOMIND",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "MM-03",
+      "page": 5,
+      "anchor": "Teleoperation Assist System",
+      "expected_scope": "TAS를 통한 양팔 작업 데이터 수집 수단. 독립적 모방 장벽 입증과 구분한다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": false,
+      "evidence_ids": [],
+      "verified_context_covers_anchor": true,
+      "context_evidence_ids": [
+        "E50"
+      ],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "RB-A",
+      "company": "ROBROS",
+      "criterion_id": "bigtech_equity_investment",
+      "doc_id": "RB-05",
+      "page": 1,
+      "anchor": "Stick Ventures, HB Investment, and Lotte Ventures",
+      "expected_scope": "기사에 명시된 투자자, 특히 Lotte Ventures 투자. 원문 줄바꿈만 복원해 읽는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E3",
+        "E18"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "RB-B",
+      "company": "ROBROS",
+      "criterion_id": "productization_execution",
+      "doc_id": "RB-02",
+      "page": 1,
+      "anchor": "빕스 누들셰프 운영",
+      "expected_scope": "과거 로봇카페와 빕스 누들셰프 운영 이력. 현재 휴머노이드 실증과 구분한다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E2",
+        "E12",
+        "E106"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "RB-C",
+      "company": "ROBROS",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "RB-04",
+      "page": 1,
+      "anchor": "강화학습 기반 운동지능",
+      "expected_scope": "회사 발표의 강화학습 기반 Motor Intelligence. About 페이지만으로 확대하지 않는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E39"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "RB-D",
+      "company": "ROBROS",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "RB-03",
+      "page": 2,
+      "anchor": "데이터 라벨링 플랫폼",
+      "expected_scope": "Master Arm 또는 자체 에피소드 검수·데이터 라벨링 플랫폼의 구체적 수단.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E92",
+        "E135"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": false,
+      "alternative_registered_source_evidence_ids": [
+        "E77"
+      ],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": false,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "RB-E",
+      "company": "ROBROS",
+      "criterion_id": "accessible_market",
+      "doc_id": "RB-06",
+      "page": 5,
+      "anchor": "Lotte Global Logistics",
+      "expected_scope": "기사의 Lotte Global Logistics·조선소 PoC 및 대학 공급 사례. 완료된 유상 확대와 구분한다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E6",
+        "E20",
+        "E52",
+        "E100",
+        "E115",
+        "E149"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [
+        "E55",
+        "E56",
+        "E57",
+        "E142"
+      ],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "FG-A",
+      "company": "Figure AI",
+      "criterion_id": "bigtech_equity_investment",
+      "doc_id": "FG-01",
+      "page": 1,
+      "anchor": "Brookfield Asset Management, NVIDIA",
+      "expected_scope": "공식 발표에 명시된 NVIDIA 등 투자자와 Series C 투자 유치. 매출로 바꾸지 않는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E1"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [
+        "E9"
+      ],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "FG-B",
+      "company": "Figure AI",
+      "criterion_id": "productization_execution",
+      "doc_id": "FG-02",
+      "page": 1,
+      "anchor": "90,000+ parts loaded",
+      "expected_scope": "회사 발표의 F.02 BMW 11개월 배치·9만개 부품/3만대 생산 기여. F.03 성과로 바꾸지 않는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E2",
+        "E13",
+        "E40"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "FG-C",
+      "company": "Figure AI",
+      "criterion_id": "core_task_performance",
+      "doc_id": "FG-02",
+      "page": 3,
+      "anchor": "The requirement was 84 seconds total, 37 seconds load time.",
+      "expected_scope": "84초/37초, 99% 등은 목표·요구조건이며 달성 수치로 바꾸지 않는다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E3",
+        "E15",
+        "E42",
+        "E69",
+        "E89",
+        "E119"
+      ],
+      "verified_context_covers_anchor": true,
+      "context_evidence_ids": [
+        "E15"
+      ],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "FG-D",
+      "company": "Figure AI",
+      "criterion_id": "field_reliability_safety",
+      "doc_id": "FG-02",
+      "page": 5,
+      "anchor": "forearm, our top hardware failure point",
+      "expected_scope": "BMW 현장에서 전완이 주요 하드웨어 고장 지점이었다는 불리한 정보와 개선 맥락.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E4",
+        "E17",
+        "E44",
+        "E71",
+        "E121"
+      ],
+      "verified_context_covers_anchor": true,
+      "context_evidence_ids": [
+        "E71"
+      ],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    },
+    {
+      "id": "FG-E",
+      "company": "Figure AI",
+      "criterion_id": "accessible_market",
+      "doc_id": "FG-04",
+      "page": 1,
+      "anchor": "commercial agreement with Catalyst Brands",
+      "expected_scope": "Catalyst Brands의 Reno 물류센터에서 시작하는 상업 계약 발표. 매출 인식·재구매와 구분한다.",
+      "anchor_exists_in_current_source": true,
+      "verified_quote_covers_anchor": true,
+      "evidence_ids": [
+        "E6",
+        "E19",
+        "E75",
+        "E95"
+      ],
+      "verified_context_covers_anchor": false,
+      "context_evidence_ids": [],
+      "verified_source_scope_covers_anchor": true,
+      "company_body_cites_verified_anchor": true,
+      "alternative_registered_source_evidence_ids": [
+        "E11",
+        "E77",
+        "E100"
+      ],
+      "company_body_cites_registered_anchor": true,
+      "final_body_cites_verified_anchor": true,
+      "final_body_cites_registered_anchor": true
+    }
+  ],
+  "final": {
+    "status": "completed",
+    "quality_passed": true,
+    "company_report_hashes_match": true,
+    "markdown_hash_matches": true,
+    "selected_company": "Figure AI",
+    "action": "조건부 투자",
+    "pdf_checks": {
+      "pages": 9,
+      "all_a4": true,
+      "within_page_limit": true,
+      "text_within_margins": true,
+      "margins_mm": 20,
+      "body_font_pt": 10,
+      "table_font_pt": 9,
+      "visual_review_required": true
+    },
+    "reflection": [
+      {
+        "company": "MOTOMIND",
+        "analysis_preserved": true,
+        "limitations_preserved": true,
+        "individual_opinion_preserved": true,
+        "reason": "최종 보고서는 MOTOMIND를 초기 제조·물류 휴머노이드 기업으로 요약하면서 연구기관 납품·제조 데모의 의미를 인정하되, 이를 반복 유상매출이나 본격 상용화로 확대하지 않았다. 원보고서의 핵심 해석인 '초기 사업화 신호는 있으나 외부 검증·반복 매출·고객 확대가 부족해 보류'가 그대로 유지됐다.",
+        "missing_or_distorted": [],
+        "preservation_evidence": [
+          {
+            "aspect": "analysis",
+            "source_paragraph_id": "MM-P037",
+            "source_excerpt": "최초 납품 및 실증은 시장 검증 도입단계의 실적이지만 반복 매출, 대형 End User 상용화 등 본격 사업화 근거로 보기에는 제한적입니다.",
+            "final_paragraph_id": "P61",
+            "final_excerpt": "다만 이는 데모·초기 납품 중심이라 반복 고객 문제 해결로 일반화하긴 이르며, 유상 계약과 실가동 데이터 실사가 판단 전제다."
+          },
+          {
+            "aspect": "limitations",
+            "source_paragraph_id": "MM-P010",
+            "source_excerpt": "외부의 독립적 성능 검증, 고객 확대·반복매출, 공식 계약수주·투자조건 등 구체적 실적 증거는 부족합니다.",
+            "final_paragraph_id": "P67",
+            "final_excerpt": "현재 판단을 막는 핵심은 반복 납품·재구매와 외부 성능검증의 공백이다."
+          },
+          {
+            "aspect": "individual_opinion",
+            "source_paragraph_id": "MM-P071",
+            "source_excerpt": "이러한 현 단계에서는 향후 사업 진행 및 실증 확대, 매출 발생 및 반복성 확보 여부를 독립적으로 확인할 필요가 있어 즉시 투자보다는 추가 정보가 확보될 때까지 투자 보류를 권고합니다.",
+            "final_paragraph_id": "P69",
+            "final_excerpt": "현재 의견은 투자 보류다. 자체 개발 범위와 제한적 납품, 민관 과제, LG 프로그램 성과는 확인되지만, 양산 체계와 반복 매출, 대규모 고객 확보, 안전성 검증이 부족해 제조·물류 휴머노이드 투자로 바로 넘기기 어렵다."
+          }
+        ],
+        "required_fact_reflection": [
+          {
+            "topic": "teleoperation",
+            "source_evidence_id": "MM-E50",
+            "final_paragraph_id": "P65",
+            "final_excerpt": "기술은 14DoF 양팔, 자율주행·관제, 공장 연동, TAS 데이터 수집까지 전 레이어를 자체 설계하려는 구성이 확인된다.",
+            "preserved": true,
+            "reason": "원보고서의 TAS 기반 학습 데이터 수집 수단이 최종 보고서에서도 'TAS 데이터 수집'으로 명시돼 의미가 유지됐다."
+          }
+        ]
+      },
+      {
+        "company": "ROBROS",
+        "analysis_preserved": true,
+        "limitations_preserved": true,
+        "individual_opinion_preserved": true,
+        "reason": "최종 보고서는 ROBROS의 다업종 PoC·대학 공급·풀스택 내재화 분석을 반영하면서도, 원보고서가 강조한 핵심 한계인 성능·안전·유상 반복매출 미확인을 그대로 유지했다. 원 개별 의견인 투자 보류 역시 즉시 투자 승인으로 바뀌지 않았다.",
+        "missing_or_distorted": [],
+        "preservation_evidence": [
+          {
+            "aspect": "analysis",
+            "source_paragraph_id": "RB-P041",
+            "source_excerpt": "단발성 실물 납품/운영 및 산업별 PoC 프로젝트까지는 일정 실적이 있으나, 반복적 대량 유상 판매와 장기 고객 재계약 확대 증거는 부재합니다.",
+            "final_paragraph_id": "P73",
+            "final_excerpt": "다만 실적의 다수는 실증과 공급 초기 단계라 대량 상용화로 보긴 어렵고, 실제 유상 반복 납품과 현장 성과 데이터 확인이 선행돼야 한다."
+          },
+          {
+            "aspect": "limitations",
+            "source_paragraph_id": "RB-P044",
+            "source_excerpt": "현재 검증자료로는 핵심 작업 성능, 현장 안정성·안전성, 양산·유지보수 가능성 항목을 확인할 수 없어 U로 표시한다.",
+            "final_paragraph_id": "P79",
+            "final_excerpt": "판단 제약은 핵심 작업 성능, 안전성, 유상 매출, 재구매가 모두 미확인이라는 점이다."
+          },
+          {
+            "aspect": "individual_opinion",
+            "source_paragraph_id": "RB-P078",
+            "source_excerpt": "반복적 대량 상용화 실적, 구체적인 매출 성장 및 현장 안정성에 대한 독립 검증된 데이터가 부족합니다.",
+            "final_paragraph_id": "P81",
+            "final_excerpt": "현재 의견은 투자 보류다. 자체 하드웨어·AI 내재화, 다수 현장 실증, CVC 포함 투자 유치는 의미 있으나, 반복적 대량 상용화와 매출 성장, 현장 안정성의 독립 검증이 부족하다."
+          }
+        ],
+        "required_fact_reflection": [
+          {
+            "topic": "teleoperation",
+            "source_evidence_id": "RB-E35",
+            "final_paragraph_id": "P77",
+            "final_excerpt": "기술적으로는 이동·조작 제어, VLA, 마스터암 텔레오퍼레이션, 데이터 라벨링 플랫폼까지 학습 파이프라인을 갖추려는 점이 보인다.",
+            "preserved": true,
+            "reason": "Master Arm 기반 텔레오퍼레이션/모방학습 데이터 수집 수단이 최종 보고서에 직접 반영됐다."
+          },
+          {
+            "topic": "data_platform",
+            "source_evidence_id": "RB-E77",
+            "final_paragraph_id": "P77",
+            "final_excerpt": "기술적으로는 이동·조작 제어, VLA, 마스터암 텔레오퍼레이션, 데이터 라벨링 플랫폼까지 학습 파이프라인을 갖추려는 점이 보인다.",
+            "preserved": true,
+            "reason": "에피소드 검수·데이터 라벨링 플랫폼이 '데이터 라벨링 플랫폼'으로 요약돼 데이터 파이프라인 자산 의미가 유지됐다."
+          }
+        ]
+      },
+      {
+        "company": "Figure AI",
+        "analysis_preserved": true,
+        "limitations_preserved": true,
+        "individual_opinion_preserved": true,
+        "reason": "최종 보고서는 Figure AI의 BMW 현장 운영, BotQ 생산 전환, Catalyst 상업계약 발표를 긍정 사실로 유지하면서도, 원보고서가 구분한 계약 발표 vs 유상 납품, F.02 운영 vs F.03 현재 검증 범위, 반복 매출·재구매 미확인이라는 한계를 그대로 반영했다. 원 개별 의견인 투자 보류도 유지됐다.",
+        "missing_or_distorted": [],
+        "preservation_evidence": [
+          {
+            "aspect": "analysis",
+            "source_paragraph_id": "FG-P039",
+            "source_excerpt": "단일 대형 현장·생산 체계 도입은 유의미하나, 복수 거래·재구매 등 반복 매출 확대 실적은 부재하다.",
+            "final_paragraph_id": "P85",
+            "final_excerpt": "다만 BMW 운영과 Catalyst 계약 발표를 곧바로 복수 고객 반복 매출이나 유상 납품 실적으로 해석할 수는 없어 별도 거래 확인이 필요하다."
+          },
+          {
+            "aspect": "limitations",
+            "source_paragraph_id": "FG-P010",
+            "source_excerpt": "유상 매출, 반복 재계약, 다양한 산업과 고객에 대한 실제 증거는 확인되지 않았다.",
+            "final_paragraph_id": "P91",
+            "final_excerpt": "가장 큰 리스크는 유상 거래 세부와 고객 확대 자료의 부재다."
+          },
+          {
+            "aspect": "individual_opinion",
+            "source_paragraph_id": "FG-P072",
+            "source_excerpt": "실질적 유상 매출, 반복 납품, 다수 고객에서의 실증, 장기 안전성 데이터, 법률적 위험 등은 미확인 상태입니다.",
+            "final_paragraph_id": "P93",
+            "final_excerpt": "현재 의견은 투자 보류다. BMW 현장 운영, BotQ 생산 전환, 글로벌 CVC 투자 유치까지는 강한 신호지만, 공개 근거는 주로 회사 발표와 일부 고객 측 보도자료에 기초하고 유상 매출·반복 납품·재구매를 확인할 자료와 투자조건이 비어 있다."
+          }
+        ],
+        "required_fact_reflection": [
+          {
+            "topic": "teleoperation",
+            "source_evidence_id": "FG-E21",
+            "final_paragraph_id": "P89",
+            "final_excerpt": "회사 발표 범위에서 BMW 1,250시간, 9만 부품 핸들링과 84초·37초 목표, 교대당 99% 목표가 제시됐고, Index 데이터 수집과 전완부 고장 학습도 공개됐다.",
+            "preserved": true,
+            "reason": "원보고서의 Index 기반 학습 데이터 수집 사실이 최종 보고서에서 'Index 데이터 수집'으로 유지됐다."
+          },
+          {
+            "topic": "performance_requirement",
+            "source_evidence_id": "FG-E15",
+            "final_paragraph_id": "P89",
+            "final_excerpt": "회사 발표 범위에서 BMW 1,250시간, 9만 부품 핸들링과 84초·37초 목표, 교대당 99% 목표가 제시됐고, Index 데이터 수집과 전완부 고장 학습도 공개됐다.",
+            "preserved": true,
+            "reason": "84초/37초 및 99%가 달성값이 아니라 목표·요구조건이라는 범위로 그대로 반영됐다."
+          },
+          {
+            "topic": "failure_information",
+            "source_evidence_id": "FG-E71",
+            "final_paragraph_id": "P89",
+            "final_excerpt": "회사 발표 범위에서 BMW 1,250시간, 9만 부품 핸들링과 84초·37초 목표, 교대당 99% 목표가 제시됐고, Index 데이터 수집과 전완부 고장 학습도 공개됐다.",
+            "preserved": true,
+            "reason": "BMW 현장의 전완부 고장 학습이라는 불리한 정보가 최종 보고서에서도 숨겨지지 않고 유지됐다."
+          }
+        ]
+      }
+    ],
+    "graph_execution": {
+      "engine": "langgraph",
+      "trace_id": "4c8db476-49a4-4697-9cd7-086a71d757e2",
+      "analysis_mode": "reuse",
+      "step_count": 6,
+      "max_steps": 32,
+      "node_history": [
+        "prepare_final_inputs",
+        "reuse_final_analysis",
+        "compose_final_report",
+        "final_quality",
+        "final_orchestrator",
+        "publish_final_report"
+      ]
+    }
+  }
+}

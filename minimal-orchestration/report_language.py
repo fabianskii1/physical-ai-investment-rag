@@ -2,6 +2,24 @@
 import re
 
 
+def explicit_limit(tail):
+    """같은 절의 부정·미확인을 인식하고 앞선 실제 달성 단정과 구분한다."""
+    clause=re.split(r'[!?;。]|(?<!\d)\.|\.(?!\d)|하지만|그러나|다만',tail,maxsplit=1)[0]
+    negative=re.search(r'미확인|확인(?:되지|할\s*수\s*없|하지\s*못)|입증(?:되지|하지\s*못)|'
+        r'확인(?:이|은|가)?\s*필요|여부|필요\s*자료|추가\s*(?:검증|확인)|'
+        r'단정(?:할\s*수\s*없|하지)|언급\s*(?:안\s*됨|되지)|미제시|미제공|'
+        r'(?:근거|자료).{0,12}(?:부족|제한|없)|한계|미달|'
+        r'(?:입증|검증|확인).{0,8}(?:부족|불가|없|어려|미흡)|'
+        r'미흡|부족|불충분|제한|부재|비어\s*있|제시되지|보고되지|공개되지|판단\s*유보|불확실|'
+        r'확보해야|추가\s*확보|필요|요구된다|'
+        r'확인\s*(?:어려|곤란)|전환\s*가능|목표|요구조건|실사|아니|아닌|아님',clause[:150])
+    if not negative:
+        return False
+    before=clause[:negative.start()]
+    return not re.search(r'(?:확보|확인|달성|완료|도입|체결|발생|운영|실현)(?:했|됐|하였|되었|되어|한|된)|'
+                         r'실적(?:이|은)?\s*있',before)
+
+
 def report_evidence_links(text: str, source_contexts: list[dict]) -> list[dict]:
     """본문 문단의 실제 인용을 원문 페이지에 연결한다. 참고문헌은 제외한다."""
     sources = {ref: context for context in source_contexts for ref in context.get('evidence_ids', [])}
@@ -13,7 +31,7 @@ def report_evidence_links(text: str, source_contexts: list[dict]) -> list[dict]:
         number = buffer[0][0]
         line = ' '.join(value.strip() for _, value in buffer)
         buffer.clear()
-        refs = list(dict.fromkeys(re.findall(r'\[((?:MM|RB|FG)-E\d+)\]', line)))
+        refs = list(dict.fromkeys(re.findall(r'\[((?:(?:MM|RB|FG)-)?E\d+)\]', line)))
         linked = [sources[ref] for ref in refs if ref in sources]
         pages = {(s.get('company'), s.get('doc_id'), s.get('page')): s for s in linked}
         links.append({'paragraph_id': f'P{number}', 'text': line, 'evidence_ids': refs,
@@ -97,6 +115,13 @@ def report_language_issues(text: str) -> list[str]:
                 # 해당 표현 바로 뒤의 부정/실사 문맥만 인정한다. 다른 문장의
                 # '자료 부족'을 이유로 앞의 입증·우위 단정을 면제하지 않는다.
                 tail = compact[match.end():]
+                if label=='회사 발표를 독립 입증으로 단정' and explicit_limit(tail):
+                    continue
+                if label=='회사 발표를 독립 입증으로 단정' and '검증' in match.group():
+                    # '독립 검증'이라는 조사 대상/자료 범주와 검증 완료의 실제
+                    # 단정을 구분한다. 완료·실적·결과의 단정은 계속 차단한다.
+                    if not re.match(r'(?:은|는|이|가|을|를|의)?(?:되었|됐|했|하였|완료|실적|결과|된)',tail):
+                        continue
                 if re.match(r'(?:은|는|이|가|의)?(?:현재)?(?:확인되지|확인불가|확인이필요|여부|미확인|부재|필요|확인해야|아니|'
                             r'자료(?:가|는)?(?:부족|없|제한)|자료를확보)|(?:라고|다고)?단정(?:하지|할수없)', tail):
                     continue

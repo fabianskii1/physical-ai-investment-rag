@@ -2,13 +2,13 @@
 
 최종 제출 보고서는 [final_investment_report.pdf](output/submission-live/final_investment_report.pdf) 한 파일입니다. 세 기업의 공통 21항목 비교, 근거·위험, 최종 투자 검토 의견과 필요한 조건을 담으며 전체가 A4 최대 10쪽이어야 합니다. 같은 이름의 [Markdown](output/submission-live/final_investment_report.md)·[JSON](output/submission-live/final_investment_report.json)과 기업별 점수·실행 trace는 검토용 보조 자료입니다.
 
-기업별 `motomind_brief`, `robros_brief`, `figure_ai_brief` PDF는 각 A4 한 쪽의 검토용 중간 산출물입니다. 최종 코드는 `.state.json`에 보존된 **기업별 완성 보고서 전체**·검증 State·점수를 실제로 읽습니다. `company_report_inputs.py`가 전체 본문·SHA256·문단 ID를 만들고, `report_synthesis.py`가 기업별 5필드 분석과 비교 2문단을 합성합니다. 같은 합성과 원보고서를 최종 선정 노드에 전달한 뒤 고정 점수표·출처와 합성 본문을 결합합니다. 이 과정과 품질 평가·수정·PDF 출력은 모두 `final_report_pipeline.py`의 실제 StateGraph 노드입니다. 원래 상세 PDF 경로는 metadata로 남기며 ZIP에서는 제외합니다. `MANIFEST.json`에 최종 보고서·한 쪽 요약·State와 제외된 상세 보고서의 경로 맵이 있습니다.
+기업별 `motomind_brief`, `robros_brief`, `figure_ai_brief` PDF는 각 A4 한 쪽의 검토용 중간 산출물입니다. 최종 코드는 `.state.json`에 보존된 **기업별 완성 보고서 전체**·검증 State·점수를 실제로 읽습니다. `company_report_inputs.py`가 전체 본문·SHA256·문단 ID를 만들고, `report_synthesis.py`가 기업별 5필드 분석과 비교 2문단을 합성합니다. 같은 합성과 원보고서를 최종 선정 노드에 전달한 뒤 고정 점수표·출처와 합성 본문을 결합합니다. 이 과정과 품질 평가·수정·PDF 출력은 모두 `final_report_pipeline.py`의 실제 StateGraph 노드입니다. 현재 공식 폴더의 기업별 상세 PDF·Markdown도 검토용으로 ZIP에 포함합니다. `MANIFEST.json`에 최종 보고서·한 쪽 요약·State·상세 보고서의 경로 맵이 있습니다.
 
 원보고서 문단 ID↔합성 본문↔원문 E-ID의 반영 맵을 기록합니다. 분석 출처 `report_paragraph_ids`와 실제 원문 인용 위치 `evidence_report_paragraph_ids`는 별도로 대조합니다. 원보고서의 과장은 검증 State·원문을 우선해 교정하며, 같은 품질 Judge 호출에서 핵심 3축과 별도로 분석·한계·현재 기업 의견의 반영 여부를 검사합니다. 길이·문장 완결성 검사와 `report_language.py`가 명백한 절단·자료 부재 단정·독립 입증 과장을 거절합니다. 실제 본문 문단의 인용↔원문 페이지를 대조해 RL·MOU 목적·IFR 수요·공공 실증의 알려진 범위 오류를 검사합니다. 이 검사는 제한된 오류 유형을 다루며 LLM Judge와 독립 원문 검토를 함께 사용합니다. 관점 커버리지는 평가에서 제외합니다.
 
-**2026-10-16 실제 StateGraph 실행을 완료했습니다.** 첫 실행은 보고서 전문 3개·검증 원문 15쪽으로 새 합성·선정을 각 1회 수행했고, 요약·비교의 계약 인용 누락을 품질 노드가 찾아 본문을 1회 수정했습니다. 재평가에서 내용 3축은 통과했으나 Judge가 ROBROS limitations 증거로 kind=analysis 문단을 선택해 코드가 초안으로 종료했습니다. 잘못된 proof를 통과시키지 않았습니다.
+**최신 실제 검증(2026-10-16):** 기업별 원문 회수·과장 통제를 수정하고 세 기업을 다시 실행했습니다. 기업별 품질 3/3 통과, 완료된 평가항목 재조사 0건이며 최종 결과는 **Figure AI 조건부 투자·A4 9쪽·상하좌우 20mm**입니다. 기업 보고서 전문·본문 SHA256·21항목 점수/사유 보존과 분석·한계·의견 반영 증거 9개, 핵심 사실 반영 6개를 검증했습니다. [원문 전달 감사](output/submission-live/evidence_flow_audit.json)와 [수정·검증 상세](docs/evidence_flow_fix.md)를 함께 확인합니다.
 
-회사·검사 항목별 허용 문단 후보를 Judge 입력에 추가한 뒤, 같은 합성·선정·수정 본문을 검증해 재사용했습니다. 최신 root `01a1428a-1fc3-70a2-9cd4-b3c284078368`은 **A4 8쪽·동일 20mm 여백·Figure AI 조건부 투자·핵심 3축 및 기업 반영 통과**입니다. `issues=[]`, 반영 증거 9개, 최종 재검증 실행은 `analysis_reused=true`, `rewrite_count=0`이며 두 실행을 합쳐 본문 수정은 1회입니다. 처음부터 새로 합성한 것처럼 표시하지 않습니다. 두 root의 완료·오류 없음·실제 노드 순서를 SDK로 대조한 [실행 감사 기록](output/submission-live/final_report.execution_audit.json)을 보존합니다. 최신 회귀 검사는 **477개 + 하위 테스트 22개 통과**입니다. 기존 PNG 01~05는 과거 실행이며 이번 그래프 실행 캡처로 사용하지 않습니다.
+최신 LangSmith root는 `01a14365-dc0e-7511-b69d-986555bf9f3c`입니다. 새 종합·선정 실행의 품질 시간 초과, 본문 수정, 한계 표현에 대한 구 규칙 오탐을 보존한 뒤 현재 규칙으로 같은 본문을 재평가했습니다. 마지막 실행은 `analysis_reused=true`, `rewrite_count=0`이지만 앞선 복구 실행들의 수정 3회를 숨기지 않습니다. 세 root의 실제 노드 순서와 종료를 SDK로 대조한 [실행 감사](output/submission-live/final_report.execution_audit.json)를 보존합니다. 회귀 검사는 **531개 + 하위 테스트 22개 통과**입니다. 기존 PNG 01~05는 과거 실행으로 구분합니다.
 
 `docs/architecture.png` 또는 `.svg`에는 구현 구조도를, `docs/traces/*.png`에는 실제 LangSmith 실행 화면을 보관합니다. 예시 화면과 로컬 trace JSON을 실제 LangSmith PNG 대신 사용하지 않습니다. 패키지 검사는 파일·품질 통과 기록·규격·해시를 확인하며 PNG의 실행 진위는 자동 판별하지 않습니다.
 
@@ -49,7 +49,7 @@ env LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false .venv/bin/python -m pytes
 
 첫 실제 실행에는 공개 BGE-M3 모델 다운로드와 OpenAI 호출이 필요합니다. 계정 키와 모델 가중치는 ZIP에 포함하지 않습니다. 회사 자료집은 조사 단서이고, 등급은 `rag/data/catalog.csv`의 원문 PDF·등록 원문 및 평가 기준 PDF를 통해 검증합니다. 원문 회사 발표와 독립 확인, 미확인 U와 0등급을 구분합니다. `--demo`는 API 없는 구조 시연이며 제출용 실제 분석을 대체하지 않습니다.
 
-현재 `.env.example`은 계획·워커 `OPENAI_MODEL=gpt-4.1-mini`, 기업별 Writer·원문·채점·품질 평가 `gpt-4.1`, 최종 합성·선정·통합 반영 Judge `gpt-5.4`로 분리합니다. 최종 역할은 `OPENAI_SYNTHESIS_MODEL`·`OPENAI_PORTFOLIO_MODEL`·`OPENAI_COMBINED_JUDGE_MODEL`로 변경합니다. 합성·통합 수정의 미지정 설정은 Writer→기본 모델, 통합 Judge는 기업별 Judge→기본 모델로 대체합니다. 모델 변경의 품질·비용 개선 효과는 미측정이며 API 계정에서 사용할 모델과 키를 설정해야 합니다.
+현재 `.env.example`은 계획 `OPENAI_MODEL=gpt-4.1-mini`, 원문 워커·기업별 Writer·채점·품질 평가 `gpt-4.1`, 최종 합성·선정·통합 반영 Judge `gpt-5.4`로 분리합니다. 최종 역할은 `OPENAI_SYNTHESIS_MODEL`·`OPENAI_PORTFOLIO_MODEL`·`OPENAI_COMBINED_JUDGE_MODEL`로 변경합니다. 합성·통합 수정의 미지정 설정은 Writer→기본 모델, 통합 Judge는 기업별 Judge→기본 모델로 대체합니다. 모델 변경의 품질·비용 개선 효과는 미측정이며 API 계정에서 사용할 모델과 키를 설정해야 합니다.
 
 `--combine-reports`는 저장된 실제 기업 보고서·State·점수를 사용하므로 검색·임베딩·등급 판정을 다시 하지 않습니다. 합성 LLM 기본 1회가 추가되고 연결 형식 오류는 1회만 교정합니다. 합성·최종 선정·통합 품질 평가에는 본인의 OpenAI 키가 필요합니다. 비용·품질 개선률은 아직 측정하지 않았습니다.
 

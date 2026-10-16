@@ -201,13 +201,14 @@ def test_same_source_page_is_listed_once_and_preserves_each_claim_id():
     assert "확인 사실: 핵심 인력이 관련 제품을 개발한 이력이 확인됩니다. [E2]" in markdown
 
 
-def test_different_pages_of_same_document_are_not_merged():
+def test_different_pages_keep_explicit_id_to_page_mapping_under_one_document():
     state = with_grades()
     state["source_checked_claims"][1]["source"] = {"doc_id": "DOC-1", "page": 2}
     markdown = report(state, writer=lambda payload: {"overview": ["E1"], "team": ["E2"]})["final_report"]
     references = markdown.split("## 5 — REFERENCE", 1)[1]
     assert "- [E1] 제품 원문 — data/product.pdf, p.1" in references
-    assert "- [E2] 제품 원문 — data/product.pdf, p.2" in references
+    assert "; p.2: [E2]" in references
+    assert references.count('제품 원문')==1
 
 
 def test_reference_consolidation_preserves_written_analysis_and_scores_without_model():

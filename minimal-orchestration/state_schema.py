@@ -66,6 +66,7 @@ class ResearchTask(TypedDict):
     # com_data에서 등록된 원문 링크 중 선택한 최대 3개. 생략하면 기존 PDF만 검색한다.
     # 워커가 읽은 본문은 PDF로 보관되어 doc_id와 스냅샷 PDF 페이지로 인용한다.
     urls: NotRequired[list[str]]
+    rejected_urls: NotRequired[list[str]]
 
 
 def merge_worker_results(left: dict, right: dict) -> dict:
@@ -130,6 +131,7 @@ class AgentState(TypedDict):
     # 재조사와 별개의 보고서 재작성 예산. 표현·중립성 오류는 같은 근거와 점수로
     # Writer를 다시 실행하며, 기본 두 번까지만 수정한다. 이전 저장 State는 기본값 적용.
     report_rewrite_count: NotRequired[int]
+    report_regrade_count: NotRequired[int]
     max_report_rewrites: NotRequired[int]
     # 서로 다른 조사 라운드에서 연속으로 새 검증 근거·지원 항목·조사 항목이
     # 늘지 않은 횟수. 같은 라운드의 Score Review 콜백은 중복 집계하지 않는다.
@@ -141,6 +143,9 @@ class AgentState(TypedDict):
 
     # 최종 또는 현재 보고서 Markdown. A4 PDF 렌더러는 이 문자열을 입력으로 받는다.
     final_report: str
+    report_draft: NotRequired[dict[str, Any]]
+    report_section_lines: NotRequired[dict[str, list[int]]]
+    report_fact_contract: NotRequired[list[dict[str, Any]]]
     # 보고서 생성 '후' 수행한 근거성·중립성·편향 통제 평가 결과.
     # action=rewrite이면 근거·점수를 보존하고 Writer로, research이면 S로 반환한다.
     # action 미지정/알 수 없는 값은 안전하게 research로 취급한다.

@@ -19,14 +19,17 @@ def test_orchestrated_query_reaches_existing_company_and_common_search():
     with patch.dict("os.environ", {"OPENAI_API_KEY": "offline-test"}), \
             patch.object(legacy_adapter, "initialize"), \
             patch.object(legacy_adapter, "search", return_value=[doc]) as search, \
-            patch.object(legacy_adapter, "openai_llm", return_value="[]") as llm:
+            patch.object(legacy_adapter, "_structured_request") as llm:
+        from source_worker import WorkerSourceReview
+        llm.return_value=WorkerSourceReview(pages=[{'doc_id':'CM-02','page':2,'facts':[], 'exclusion_reason':'관련 기업 사실 없음'}])
         deps = legacy_adapter.real_dependencies()
         deps.worker({"id": "market-2", "worker": "market", "query": query},
                     {"company_info": {"name": "Figure AI"}, "feedback": ["구매 필요성 미달"]})
-    assert [call.args[:2] for call in search.call_args_list] == [
-        ("Figure AI", query), ("COMMON", query)]
-    assert query in llm.call_args.args[0]
-    assert "구매 필요성 미달" in llm.call_args.args[0]
+    calls=[call.args[:2] for call in search.call_args_list]
+    assert ('Figure AI', query) in calls and ('COMMON', query) in calls
+    assert any('실제 접근 가능한 시장' in question for scope,question in calls)
+    assert query==llm.call_args.args[2]['query']
+    assert "구매 필요성 미달" in llm.call_args.args[2]['feedback']
 
 
 def test_manual_current_terms_use_same_original_page_verification():
@@ -69,7 +72,14 @@ def test_link_body_flows_through_existing_worker_source_check_and_report():
             patch.object(legacy_adapter, "initialize"), \
             patch.object(legacy_adapter, "search", return_value=[]), \
             patch.object(WebSourceReader, "_fetch", return_value=(html, "text/html; charset=utf-8", url)), \
-            patch.object(legacy_adapter, "openai_llm", return_value=llm_output):
+            patch.object(legacy_adapter, "_structured_request") as extraction:
+        from source_worker import WorkerSourceReview
+        def select_lines(schema,instruction,payload):
+            p=next(p for p in payload['pages'] if p['doc_id']==doc_id)
+            n=next(line['line'] for line in p['lines'] if claim in line['text'])
+            return WorkerSourceReview(pages=[{'doc_id':doc_id,'page':1,'facts':[{
+                'criterion_id':'core_task_performance','start_line':n,'end_line':n,'scope':'reported_fact'}], 'exclusion_reason':''}])
+        extraction.side_effect=select_lines
         deps = legacy_adapter.real_dependencies(cache_dir=Path(directory) / "sources")
         analysis = deps.worker({"id": "technology", "worker": "technology", "query": "기술 원문 검토", "urls": [url]},
                                {"company_info": {"name": "Figure AI"}, "feedback": []})

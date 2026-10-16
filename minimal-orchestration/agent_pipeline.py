@@ -181,6 +181,20 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
                     if key not in {"planning_error", "score_review_issues", "repeated_plan_tasks"}}
         try:
             tasks = _validate_plan(deps.planner(state))
+            if state['recheck_count'] > 0:
+                coverage = research.get('coverage_by_criterion', {})
+                repair = {normalize_criterion(g.get('criterion_id')) for g in research.get('evidence_gaps', [])
+                          if g.get('reason') not in {'unconfirmed_claim', 'absence_not_proven'}}
+                filtered = []
+                for task in tasks:
+                    if not task.get('criteria'):
+                        filtered.append(task)
+                        continue
+                    pending = [c for c in task['criteria'] if c in repair or
+                               coverage.get(c, {}).get('source_review_complete') is not True]
+                    if pending:
+                        filtered.append({**task, 'criteria': pending})
+                tasks = filtered
             previous = {_task_signature(value["task"]) for value in state["worker_results"].values()
                         if "analysis" in value and "error" not in value}
             repeated = [task for task in tasks if _task_signature(task) in previous]
@@ -300,8 +314,17 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
                                                 checked["evidence_gaps"])
         research.update({key: checked[key] for key in RESEARCH_FIELDS if key in checked
                          and key not in ANALYSIS_KEYS.values()})
+        if research.get('worker_source_recovery'):
+            research['worker_source_recovery'] = {**research['worker_source_recovery'],
+                'output_verified_claims': len(checked['source_checked_claims']),
+                'validation_node': 'synthesizer'}
         coverage = build_coverage(research, checked["source_checked_claims"], state["investment_terms"])
         research.update(coverage)
+        for role in ANALYSIS_KEYS:
+            relevant = [item for item in coverage['coverage_by_criterion'].values() if item['worker'] == role]
+            if relevant and all(item.get('source_review_complete') is True and
+                    item['status'] in {'supported', 'reviewed_unavailable'} for item in relevant):
+                issues = [issue for issue in issues if not issue.startswith(f'{role}: source link access failed ')]
         progress_count = state.get("no_progress_rounds", 0)
         progress_update = {}
         if state["recheck_count"] != state.get("last_progress_round", -1):
@@ -322,6 +345,10 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
         if checked.get("evidence_status") != "scorable":
             issues.append("투자 검토에 필요한 핵심 제품·기술 근거가 부족함")
         for gap in checked.get("evidence_gaps", []):
+            covered = coverage['coverage_by_criterion'].get(normalize_criterion(gap.get('criterion_id')), {})
+            if (covered.get('status') == 'reviewed_unavailable'
+                    and gap.get('reason') in {'unconfirmed_claim', 'absence_not_proven'}):
+                continue
             issues.append(f"{gap.get('analysis', '근거')}: {gap.get('claim', '')} "
                           f"({gap.get('reason', '근거 부족')})")
         report_failed = state["report_evaluation"].get("passed") is False
@@ -358,7 +385,9 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
         return {**update, "route": "judge", "status": "partial" if issues else "researching"}
 
     def judgement(state: AgentState) -> dict:
-        return {"investment_result": deps.judge(flat_payload(state)), "step_count": 1}
+        return {"investment_result": deps.judge(flat_payload(state)), "step_count": 1,
+                **({'report_evaluation':{},'report_draft':{},'report_section_lines':{}}
+                   if state['report_evaluation'].get('action')=='regrade' else {})}
 
     def score_review(state: AgentState) -> dict:
         """원문이 있어도 등급 판단에 부족하면 S를 거쳐 항목별로 다시 조사한다."""
@@ -370,6 +399,10 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
             item = CRITERIA_REGISTRY[criterion_id]
             assessment = details.get(item["label"], {}) if isinstance(details, dict) else {}
             if not isinstance(assessment, dict) or assessment.get("grade") is None:
+                if state['research_result'].get('coverage_by_criterion', {}).get(criterion_id, {}).get('source_review_complete') is True:
+                    # 배점 기준을 충족하지 못하는 것과 검색·추출 실패는 다르다.
+                    # 읽을 수 있는 원문을 검토한 U를 강제로 양수로 만들지 않는다.
+                    continue
                 reason = assessment.get("reason", "투자 판정이 누락되었습니다.") if isinstance(assessment, dict) else "투자 판정 형식 오류"
                 issues.append(f"[{item['worker']}/{criterion_id}] {item['label']} 등급 U: {reason} "
                               f"보완 조사: {item['question']}")
@@ -377,7 +410,9 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
                 "step_count": 1}
 
     def writer(state: AgentState) -> dict:
-        return {"final_report": deps.writer(flat_payload(state))["final_report"], "step_count": 1}
+        result=deps.writer(flat_payload(state))
+        return {**{k:result[k] for k in ('final_report','report_draft','report_section_lines','report_fact_contract') if k in result},
+                'step_count':1}
 
     def report_evaluator(state: AgentState) -> dict:
         try:
@@ -393,10 +428,19 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
                 evaluation["passed"] = False
         except Exception as exc:
             evaluation = {"passed": False, "issues": [f"보고서 평가 실패: {type(exc).__name__}: {exc}"]}
-        evaluation["action"] = (evaluation.get("action") if evaluation.get("action") in {"rewrite", "research"}
+        evaluation["action"] = (evaluation.get("action") if evaluation.get("action") in {"rewrite", "research", "regrade"}
                                 else "research")
         status = state["status"]
         update = {}
+        if not evaluation['passed'] and evaluation['action'] == 'regrade':
+            count=state.get('report_regrade_count',0)
+            if count >= 1:
+                status='quality_failed'
+                evaluation['regrade_budget_exhausted']=True
+            else:
+                update={'report_regrade_count':count+1,
+                        'feedback':evaluation['issues'],
+                        'research_result':{**state['research_result'], 'score_review_issues':[]}}
         if not evaluation["passed"] and evaluation["action"] == "rewrite":
             count, maximum = state.get("report_rewrite_count", 0), state.get("max_report_rewrites", 2)
             if count >= maximum:
@@ -414,7 +458,7 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
     def after_report(state: AgentState):
         if state["report_evaluation"]["passed"] or state["status"] == "quality_failed":
             return "end"
-        return "rewrite" if state["report_evaluation"]["action"] == "rewrite" else "research"
+        return state['report_evaluation']['action'] if state['report_evaluation']['action'] in {'rewrite','regrade'} else 'research'
 
     graph = StateGraph(AgentState)
     for name, node in (("orchestrator", orchestrator), ("worker", worker),
@@ -432,5 +476,5 @@ def build_graph(deps: PipelineDependencies, checkpointer=None):
                                 {True: "synthesizer", False: "writer"})
     graph.add_edge("writer", "report_evaluator")
     graph.add_conditional_edges("report_evaluator", after_report,
-                                {"end": END, "rewrite": "writer", "research": "synthesizer"})
+                                {"end": END, "rewrite": "writer", "regrade": "judgement", "research": "synthesizer"})
     return graph.compile(checkpointer=checkpointer)

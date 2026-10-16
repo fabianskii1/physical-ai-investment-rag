@@ -35,7 +35,8 @@ def test_report_api_bounds_requests_and_preserves_structured_output(report_api):
     assert request["text_format"] is ReportAnalysisDraft
     assert request["input"][0]["role"] == "system"
     assert request["input"][1]["role"] == "user"
-    assert json.loads(request["input"][1]["content"]) == payload
+    assert json.loads(request["input"][1]["content"]) == {**payload, 'assessment_limit_eligible_criteria': []}
+    assert payload == {"company_name": "검토 기업", "verified_evidence": []}
     assert result == draft.model_dump()
 
 
@@ -47,4 +48,50 @@ def test_report_api_rejects_response_without_parsed_report(report_api):
         _openai_write({"company_name": "검토 기업"})
 
     constructor.assert_called_once_with(timeout=60, max_retries=1)
+
+
+def test_writer_gets_explicit_unknown_only_names_without_changing_original_scores(report_api):
+    _, parse = report_api
+    parse.return_value=SimpleNamespace(output_parsed=ReportAnalysisDraft(**{name:[] for name in ReportAnalysisDraft.model_fields}))
+    scores={'시장 성장 동력':{'grade':4},'유상 매출·납품':{'grade':None}}
+    _openai_write({'score_details':scores})
+    actual=json.loads(parse.call_args.kwargs['input'][1]['content'])
+    assert actual['assessment_limit_eligible_criteria']==['유상 매출·납품']
+    assert scores['시장 성장 동력']['grade']==4
     parse.assert_called_once()
+
+
+def test_feedback_rewrite_preserves_sections_outside_actual_defect(report_api):
+    _,parse=report_api
+    from rag.report import AnalysisParagraph
+    empty={name:[] for name in ReportAnalysisDraft.model_fields}
+    old=AnalysisParagraph(text='기존에 검증된 사업 사실이다.',evidence_ids=['E1'],interpretation='',limitation='',next_check='')
+    changed=AnalysisParagraph(text='관련 없는 새 사업 사실이다.',evidence_ids=['E2'],interpretation='',limitation='',next_check='')
+    repair=AnalysisParagraph(text='원문 범위로 교정한 기술 사실이다.',evidence_ids=['E3'],interpretation='',limitation='',next_check='')
+    current=ReportAnalysisDraft(**{**empty,'overview':[old]}).model_dump()
+    parse.return_value=SimpleNamespace(output_parsed=ReportAnalysisDraft(**{**empty,'overview':[changed],'technology':[repair]}))
+    result=_openai_write({'current_draft':current,'section_line_ranges':{'overview':[1,5],'technology':[10,15]},
+                         'review_feedback':['groundedness: 문단 P11의 기술 표현 오류']})
+    assert result['overview']==current['overview']
+    assert result['technology'][0]['text']==repair.text
+
+
+def test_empty_assessment_limit_is_omitted_without_inventing_unknown_criteria(report_api):
+    _,parse=report_api
+    from rag.report import AnalysisParagraph
+    empty={name:[] for name in ReportAnalysisDraft.model_fields}
+    limit=AnalysisParagraph(text='',evidence_ids=[],interpretation='',limitation='',next_check='',
+                            basis='assessment_limit',assessment_criteria=[])
+    parse.return_value=SimpleNamespace(output_parsed=ReportAnalysisDraft(**{**empty,'technical_maturity':[limit]}))
+    assert _openai_write({})['technical_maturity']==[]
+
+
+def test_generator_never_turns_scored_items_or_domain_names_into_unknown_limits(report_api):
+    _,parse=report_api
+    from rag.report import AnalysisParagraph
+    empty={name:[] for name in ReportAnalysisDraft.model_fields}
+    limit=AnalysisParagraph(text='',evidence_ids=[],interpretation='',limitation='',next_check='',
+        basis='assessment_limit',assessment_criteria=['시장성','시장 성장 동력','유상 매출·납품'])
+    parse.return_value=SimpleNamespace(output_parsed=ReportAnalysisDraft(**{**empty,'market_feasibility':[limit]}))
+    result=_openai_write({'score_details':{'시장 성장 동력':{'grade':2},'유상 매출·납품':{'grade':None}}})
+    assert result['market_feasibility'][0]['assessment_criteria']==['유상 매출·납품']

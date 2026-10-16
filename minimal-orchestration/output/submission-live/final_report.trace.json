@@ -1,16 +1,16 @@
 {
-  "root_run_id": "01a1428a-1fc3-70a2-9cd4-b3c284078368",
-  "graph_run_id": "6db67dfa-c6d0-4491-b2ae-d4bdebb2312c",
+  "root_run_id": "01a14365-dc0e-7511-b69d-986555bf9f3c",
+  "graph_run_id": "4c8db476-49a4-4697-9cd7-086a71d757e2",
   "engine": "langgraph",
   "company_trace_ids": [
-    "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
-    "8a8412a2-846a-4bdc-97cf-564cc585edd4",
-    "608c0606-f750-4557-b590-d444f651cb8f"
+    "d8719241-110f-4807-ac1e-64e636a86d80",
+    "2a281139-daf2-4d0c-85ba-5475bdf94985",
+    "221d2827-b743-4443-90fa-b96d34300831"
   ],
   "project": "physical-ai-minimal-orchestration",
   "status": "completed",
   "analysis_reused": true,
-  "reused_analysis_source": "final_investment_report_draft.json",
+  "reused_analysis_source": "quality_recovery_v2.json",
   "stages": [
     "prepare_final_inputs",
     "reuse_final_analysis",
@@ -50,80 +50,80 @@
   ],
   "input_manifest": {
     "path": "output/submission-live/combined_report_inputs.json",
-    "sha256": "b0f331117ceeea5bd0477a364b24e3d53d8ade07513775a93cb6e028e0022563",
+    "sha256": "667b41a265b298e6468e859780cf1a4ba0a01fa51d72fa4fd556100f1f70c55b",
     "report_body_key": "company_reports[].report_markdown",
     "companies": [
       {
         "company": "MOTOMIND",
-        "trace_id": "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
-        "report_sha256": "dd1405dca420e30e1aae475571169e8d9d7a3b232591429ba14c91181d2f60a7",
-        "body_characters": 9076,
-        "paragraph_count": 76,
-        "source_page_count": 4
+        "trace_id": "d8719241-110f-4807-ac1e-64e636a86d80",
+        "report_sha256": "b7f99d64b2f89df75b5d2ae4cd47818997ab7d5d2c9adbf90298c8b6e17c4a9a",
+        "body_characters": 13984,
+        "paragraph_count": 82,
+        "source_page_count": 34
       },
       {
         "company": "ROBROS",
-        "trace_id": "8a8412a2-846a-4bdc-97cf-564cc585edd4",
-        "report_sha256": "25e4f372eeacbfde2e56a5c016e78ab354c6992de17f1e88122a63d4cdc5ed45",
-        "body_characters": 9900,
-        "paragraph_count": 86,
-        "source_page_count": 4
+        "trace_id": "2a281139-daf2-4d0c-85ba-5475bdf94985",
+        "report_sha256": "9896c398a5ac1e29f0d51bf7333e761b4a71b73a9b9aa5db8616ca48e3662ddf",
+        "body_characters": 15306,
+        "paragraph_count": 90,
+        "source_page_count": 40
       },
       {
         "company": "Figure AI",
-        "trace_id": "608c0606-f750-4557-b590-d444f651cb8f",
-        "report_sha256": "3e1653e4e478cfc079e410f211eee431d9010dc6c162e02756702ed0f3cddfad",
-        "body_characters": 11429,
-        "paragraph_count": 81,
-        "source_page_count": 7
+        "trace_id": "221d2827-b743-4443-90fa-b96d34300831",
+        "report_sha256": "4b4f9a36a66050bbdbbeadd31d74bda632c219abb37afbe9eaa9f9251274817e",
+        "body_characters": 16703,
+        "paragraph_count": 83,
+        "source_page_count": 34
       }
     ],
-    "original_sha256": "0b8d2333e6cecfc7b05701204c45bf916af3ed95be44972d3ba701359b062783",
+    "original_sha256": "df26fa4524eb2f7e975f606ffecba3a5b37c09eec5d0474588ce0ea010d5edfa",
     "normalization_note": "제출 경로 정규화 후 실제 입력 파일 바이트로 SHA256 재계산"
   },
   "metrics": {
-    "graph_elapsed_seconds": 94.351014,
+    "graph_elapsed_seconds": 123.898841,
     "nodes": [
       {
         "node": "prepare_final_inputs",
-        "run_id": "01a1428a-1ff0-7082-b649-cc1943cbbdfd",
+        "run_id": "01a14365-dc48-7df0-a199-33234cec00a0",
         "round": null,
-        "elapsed_seconds": 2.0648,
+        "elapsed_seconds": 4.655324,
         "status": "completed"
       },
       {
         "node": "reuse_final_analysis",
-        "run_id": "01a1428a-2803-7b83-a6a0-36cbe5b49eaa",
+        "run_id": "01a14365-ee83-7a92-b017-148dafe9cac3",
         "round": null,
-        "elapsed_seconds": 0.010263,
+        "elapsed_seconds": 0.027349,
         "status": "completed"
       },
       {
         "node": "compose_final_report",
-        "run_id": "01a1428a-280f-7341-8c76-787e3b46e222",
+        "run_id": "01a14365-eea5-7581-a9de-8fce04527978",
         "round": null,
-        "elapsed_seconds": 1.964448,
+        "elapsed_seconds": 4.122835,
         "status": "completed"
       },
       {
         "node": "final_quality",
-        "run_id": "01a1428a-2fbe-7b72-b63f-6ebd66aa8568",
+        "run_id": "01a14365-fed2-7f00-ac80-2eee6e20d3a2",
         "round": null,
-        "elapsed_seconds": 89.886682,
+        "elapsed_seconds": 114.23089,
         "status": "completed"
       },
       {
         "node": "final_orchestrator",
-        "run_id": "01a1428b-8ee5-7e10-ac9f-ac76931df70b",
+        "run_id": "01a14367-bd19-7d02-8f2d-b2327be0aa2a",
         "round": null,
-        "elapsed_seconds": 0.015707,
+        "elapsed_seconds": 0.040641,
         "status": "completed"
       },
       {
         "node": "publish_final_report",
-        "run_id": "01a1428b-8efa-79a0-872c-0796dab065fb",
+        "run_id": "01a14367-bd4f-7a81-a3c6-81c41b4ea21a",
         "round": null,
-        "elapsed_seconds": 0.366685,
+        "elapsed_seconds": 0.688909,
         "status": "completed"
       }
     ],

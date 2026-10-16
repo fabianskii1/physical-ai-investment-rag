@@ -45,6 +45,7 @@ def merge_analysis(previous: dict, current: dict) -> dict:
     merged["claims"] = claims
     merged["attempted_criteria"] = list(dict.fromkeys(
         [*previous.get("attempted_criteria", []), *current.get("attempted_criteria", [])]))
+    merged['reviewed_criteria'] = {**previous.get('reviewed_criteria', {}), **current.get('reviewed_criteria', {})}
     # 카탈로그의 실제 충돌 검사는 Synthesizer가 수행하므로 여기서는 기존 값 우선.
     current_docs, previous_docs = current.get("source_documents", {}), previous.get("source_documents", {})
     merged["source_documents"] = {**(current_docs if isinstance(current_docs, dict) else {}),
@@ -92,12 +93,17 @@ def build_coverage(research: dict, checked_claims: list[dict], investment_terms=
     for criterion_id, item in CRITERIA_REGISTRY.items():
         entries = attempts.get(criterion_id, [])
         ids = evidence[criterion_id]
+        role_result = research.get(ANALYSIS_KEYS.get(item['worker'], ''), {})
+        review = role_result.get('reviewed_criteria', {}).get(criterion_id, {})
+        review_complete = review.get('source_review_complete') is True
         if not item["researchable"] and investment_terms is None:
             status, reason = "manual_missing", "이번 거래의 투자조건을 사람이 입력하지 않아 U로 남깁니다."
         elif ids:
             status, reason = "supported", "원문 검증을 통과한 근거가 있습니다. 등급 충족 여부는 별도 판단합니다."
         elif not item["researchable"]:
             status, reason = "manual_unverified", "입력한 투자조건에 검증 가능한 원문 근거가 부족합니다."
+        elif entries and review_complete and review.get('only_unverified') is True:
+            status, reason = 'reviewed_unavailable', '등록된 원문 핵심 페이지를 검토하고 미확인 사유를 반환했습니다. U를 보존하며 자동 반복하지 않습니다.'
         elif entries:
             status, reason = "searched_unverified", "검색·분석했지만 항목을 직접 지지하는 원문 근거를 확보하지 못했습니다."
             missing.append(criterion_id)
@@ -106,6 +112,7 @@ def build_coverage(research: dict, checked_claims: list[dict], investment_terms=
             missing.append(criterion_id)
         coverage[criterion_id] = {**item, "status": status, "attempted": bool(entries),
                                   "attempt_count": len(entries), "evidence_ids": ids,
+                                  'source_review_complete': review_complete,
                                   "reason": reason}
     return {"coverage_by_criterion": coverage, "missing_criteria": missing,
             "research_criteria_count": sum(item["researchable"] for item in CRITERIA_REGISTRY.values()),
@@ -118,7 +125,7 @@ def coverage_feedback(coverage: dict) -> list[str]:
     return [f"[{item['worker']}/{key}] {item['label']}: {item['reason']} "
             f"보완 조사: {item['question']} (검색 시도 {item['attempt_count']}회)"
             for key, item in coverage.items()
-            if item["researchable"] and item["status"] != "supported"]
+            if item["researchable"] and item["status"] not in {"supported", 'reviewed_unavailable'}]
 
 
 def resolved_gaps(research: dict, checked_claims: list[dict], gaps: list[dict]) -> list[dict]:

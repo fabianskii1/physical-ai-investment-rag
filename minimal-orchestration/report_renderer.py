@@ -57,7 +57,7 @@ def validate_pdf(path: str | Path, max_pages: int = 10) -> dict:
             "body_font_pt": BODY_SIZE, "table_font_pt": TABLE_SIZE, "visual_review_required": True}
 
 
-def render_report(markdown: str, target: str | Path, max_pages: int = 10) -> Path:
+def render_report(markdown: str, target: str | Path, max_pages: int = 10, *, section_page_breaks=True, compact_spacing=False) -> Path:
     """A4·상하좌우 20mm·최대 10쪽을 적용하고, 검사 통과한 PDF만 최종 경로에 저장한다."""
     if not isinstance(markdown, str) or not markdown.strip():
         raise ValueError("변환할 보고서 내용이 없습니다.")
@@ -73,7 +73,7 @@ def render_report(markdown: str, target: str | Path, max_pages: int = 10) -> Pat
             # CJK의 금칙처리는 ':'·괄호를 오른쪽 여백에 내어 걸 수 있다.
             # 한국어의 띄어쓰기를 우선하고 긴 URL·붙은 단어는 폭 안에서 나눈다.
             # 실제 글자 경계도 20mm 안에 두기 위해 여백 밖 문장부호 걸기를 쓰지 않는다.
-            wordWrap="LTR", splitLongWords=1, spaceAfter=5 if key == "body" else 9,
+            wordWrap="LTR", splitLongWords=1, spaceAfter=(4 if compact_spacing else 5) if key == "body" else (7 if compact_spacing else 9),
             textColor=navy if key in ("title", "section", "subheading") else colors.HexColor("#263442"),
             alignment=TA_CENTER if key == "title" else 0,
             keepWithNext=key in ("section", "subheading"))
@@ -138,7 +138,7 @@ def render_report(markdown: str, target: str | Path, max_pages: int = 10) -> Pat
             ("GRID", (0, 0), (-1, -1), .3, colors.HexColor("#BCC7D2")),
             ("VALIGN", (0, 0), (-1, -1), "TOP"),
             ("LEFTPADDING", (0, 0), (-1, -1), 6), ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-            ("TOPPADDING", (0, 0), (-1, -1), 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+            ("TOPPADDING", (0, 0), (-1, -1), 4 if compact_spacing else 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 4 if compact_spacing else 5),
         ]))
         story.extend([table, Spacer(1, 3 * mm)])
         table_rows.clear()
@@ -154,7 +154,7 @@ def render_report(markdown: str, target: str | Path, max_pages: int = 10) -> Pat
         if not line:
             continue
         if line.startswith("## "):
-            if sections:
+            if sections and section_page_breaks:
                 story.append(PageBreak())
             sections += 1
             story.append(paragraph(line[3:], "section"))
@@ -187,6 +187,12 @@ def render_report(markdown: str, target: str | Path, max_pages: int = 10) -> Pat
         doc.addPageTemplates(PageTemplate(id="report", frames=[frame], onPage=footer))
         doc.build(story)
         check = validate_pdf(candidate, max_pages)
+        if (check['all_a4'] and check['text_within_margins'] and not check['within_page_limit']
+                and section_page_breaks and sections > 1):
+            # 내용·글자 크기·여백은 보존하고 강제 섹션 쪽나눔만 해제한다.
+            return render_report(markdown, target, max_pages, section_page_breaks=False,compact_spacing=compact_spacing)
+        if check['all_a4'] and check['text_within_margins'] and not check['within_page_limit'] and not compact_spacing:
+            return render_report(markdown,target,max_pages,section_page_breaks=False,compact_spacing=True)
         if not all(check[k] for k in ("all_a4", "within_page_limit", "text_within_margins")):
             raise ReportLayoutError(f"PDF 형식 미달: {check['pages']}쪽 (상한 {max_pages}), 검사 {check}")
         os.replace(candidate, target)

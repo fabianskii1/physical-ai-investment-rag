@@ -113,6 +113,23 @@ def test_missing_official_artifacts_leave_clear_preflight_without_zip(tmp_path):
     assert not list((tmp_path / 'output/submission').glob('*.zip'))
 
 
+def test_existing_detailed_reports_are_bundled_and_must_match_verified_state(tmp_path):
+    source_tree(tmp_path)
+    state = json.loads((tmp_path / 'output/submission-live/motomind.state.json').read_text())['state']
+    name = 'output/submission-live/motomind.md'
+    write(tmp_path, name, state['final_report'])
+    result = build_submission(tmp_path, secrets=())
+    assert result['archive'] is not None
+    with zipfile.ZipFile(result['archive']) as archive:
+        manifest = json.loads(archive.read(f'{ARCHIVE_ROOT}/MANIFEST.json'))
+        assert name in manifest['artifact_link_map']['detailed_reports']
+        assert archive.read(f'{ARCHIVE_ROOT}/{name}').decode() == state['final_report']
+    write(tmp_path, name, state['final_report'] + '\n검증되지 않은 추가 본문')
+    rejected = build_submission(tmp_path, secrets=())
+    assert rejected['archive'] is None
+    assert any('기업 상세 Markdown과 검증 State' in p for p in rejected['preflight']['problems'])
+
+
 def test_allowlist_hashes_and_path_normalization_do_not_modify_source(tmp_path):
     source_tree(tmp_path)
     write(tmp_path, '.env', 'OPENAI_API_KEY=private-test-secret\n')

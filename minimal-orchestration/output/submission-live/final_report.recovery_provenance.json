@@ -1,0 +1,12 @@
+{
+  "final_root_run_id": "01a14365-dc0e-7511-b69d-986555bf9f3c",
+  "first_graph_run_id": "8b78fcf4-d8d2-4e67-951d-35e57838c9a0",
+  "first_run_accepted_rewrites": 1,
+  "previous_root_run_id": "01a1435d-fb1f-7aa3-99c6-b19ede2cc2a4",
+  "previous_run_accepted_rewrites": 2,
+  "current_run_accepted_rewrites": 0,
+  "total_accepted_rewrites_across_recovery_runs": 3,
+  "analysis_reused": true,
+  "body_source": "quality_recovery_v2.md",
+  "note": "실제 내용 교정 후 구 규칙의 한계 표현 오탐으로 초안 종료. 현재 규칙의 동일 본문 재평가가 통과했으며 과거 실패·수정 이력은 history에 보존함."
+}

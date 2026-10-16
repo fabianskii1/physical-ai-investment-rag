@@ -1,162 +1,246 @@
 {
   "engine": "langgraph",
-  "runs": [
-    {
-      "root_run_id": "01a14284-4c1f-7013-a4dd-08bda5cb25ba",
-      "graph_run_id": "003e89b1-0220-4098-a0d6-1436dd8bc52f",
-      "root_name": "physical-ai-final-investment-report",
-      "uploaded_verified": true,
-      "end_time": "2026-10-16 02:27:10.823558+00:00",
-      "error": null,
-      "report_status": "quality_failed",
-      "analysis_reused": false,
-      "elapsed_seconds": 301.853512,
-      "node_runs": [
-        {
-          "node": "prepare_final_inputs",
-          "run_id": "01a14284-4c4b-77a3-9498-8d130f4cf2f6",
-          "error": null
-        },
-        {
-          "node": "report_synthesis",
-          "run_id": "01a14284-545a-7533-9d4e-f888872ddb14",
-          "error": null
-        },
-        {
-          "node": "portfolio_decision",
-          "run_id": "01a14284-dfd2-7081-acd5-615a72b00da8",
-          "error": null
-        },
-        {
-          "node": "compose_final_report",
-          "run_id": "01a14285-33dc-7771-9f0a-477032b46cde",
-          "error": null
-        },
-        {
-          "node": "final_quality",
-          "run_id": "01a14285-3b70-7a31-bf05-4e69cc3840f2",
-          "error": null
-        },
-        {
-          "node": "final_orchestrator",
-          "run_id": "01a14286-f0d7-7ff0-b0c6-1986d47fea34",
-          "error": null
-        },
-        {
-          "node": "final_rewrite",
-          "run_id": "01a14286-f0ee-7571-8e72-b9d734cd2837",
-          "error": null
-        },
-        {
-          "node": "final_quality",
-          "run_id": "01a14287-9f90-78b3-8b0f-731c0fc17549",
-          "error": null
-        },
-        {
-          "node": "final_orchestrator",
-          "run_id": "01a14288-e5a8-75c1-ad47-fa83f29e49b0",
-          "error": null
-        },
-        {
-          "node": "publish_final_report",
-          "run_id": "01a14288-e5c6-75f0-bec1-c0d2fcf7d301",
-          "error": null
-        }
-      ],
-      "quality_evaluations": [
-        {
-          "passed": false,
-          "action": "rewrite",
-          "issues": [
-            "groundedness: 요약문이 Figure AI가 '투자·현장 시연·상업 계약까지' 가장 앞서 있다고 서술하지만, P7의 report_evidence_links에는 상업 계약을 지지하는 FG-E4/FG-E5가 직접 연결되어 있지 않다. 사실 문단의 '상업 계약' 요소는 해당 문단에 링크된 원본 페이지로 바로 대조 가능해야 하므로, 계약 근거를 추가하거나 표현을 줄여야 한다. (문단 P7: 세 기업 모두 투자 의견은 보류다. Figure AI는 투자·현장 시연·상업 계약까지 가장 앞서 있으나 유상 매출과 재구매 확인이 부족하고, ROBROS와 MOTOMIND는 팀·설계 신호는 있으나 핵심 작업 실측과 사업화 자료가 더 크게 비어 있다. [MM-E1] [MM-E3] [RB-E1] [RB-E3] [FG-E1] [FG-E3])",
-            "groundedness: 비교문이 Figure AI를 '시연·계약·운용 데이터 단계'에 더 가깝다고 요약하지만, P103의 연결 근거에는 '계약' 단계를 지지하는 FG-E4/FG-E5가 빠져 있다. 현재 링크된 FG-E6/FG-E7/FG-E8만으로는 계약 단계까지 뒷받침되지 않으므로, 계약 근거를 명시적으로 연결하거나 '계약' 표현을 삭제해 재작성해야 한다. (문단 P103: 사업화 성숙도도 갈린다. MOTOMIND는 설계·개발 단계, ROBROS는 내재화된 팀과 기술 설명 단계, Figure AI는 시연·계약·운용 데이터 단계에 더 가깝다. 그러나 세 회사 모두 유상 매출, 재구매, 장기 운영비와 투자조건의 공백 때문에 현재 결론은 공통적으로 보류에 머문다. [MM-E3] [MM-E5] [RB-E1] [RB-E2] [FG-E6] [FG-E7] [FG-E8])"
-          ],
-          "judge_evidence_issues": []
-        },
-        {
-          "passed": false,
-          "action": "review",
-          "issues": [
-            "기업보고서 반영 — ROBROS: limitations의 원문↔최종 본문 반영 증거가 일치하지 않습니다",
-            "기업보고서 반영 — ROBROS: limitations 통과 판정에 실제 원문↔최종 문단·발췌가 필요합니다"
-          ],
-          "judge_evidence_issues": [
-            "기업보고서 반영 — ROBROS: limitations의 원문↔최종 본문 반영 증거가 일치하지 않습니다",
-            "기업보고서 반영 — ROBROS: limitations 통과 판정에 실제 원문↔최종 문단·발췌가 필요합니다"
-          ]
-        }
-      ]
-    },
-    {
-      "root_run_id": "01a1428a-1fc3-70a2-9cd4-b3c284078368",
-      "graph_run_id": "6db67dfa-c6d0-4491-b2ae-d4bdebb2312c",
-      "root_name": "physical-ai-final-investment-report",
-      "uploaded_verified": true,
-      "end_time": "2026-10-16 02:30:05.182807+00:00",
-      "error": null,
-      "report_status": "completed",
-      "analysis_reused": true,
-      "elapsed_seconds": 94.351014,
-      "node_runs": [
-        {
-          "node": "prepare_final_inputs",
-          "run_id": "01a1428a-1ff0-7082-b649-cc1943cbbdfd",
-          "error": null
-        },
-        {
-          "node": "reuse_final_analysis",
-          "run_id": "01a1428a-2803-7b83-a6a0-36cbe5b49eaa",
-          "error": null
-        },
-        {
-          "node": "compose_final_report",
-          "run_id": "01a1428a-280f-7341-8c76-787e3b46e222",
-          "error": null
-        },
-        {
-          "node": "final_quality",
-          "run_id": "01a1428a-2fbe-7b72-b63f-6ebd66aa8568",
-          "error": null
-        },
-        {
-          "node": "final_orchestrator",
-          "run_id": "01a1428b-8ee5-7e10-ac9f-ac76931df70b",
-          "error": null
-        },
-        {
-          "node": "publish_final_report",
-          "run_id": "01a1428b-8efa-79a0-872c-0796dab065fb",
-          "error": null
-        }
-      ],
-      "quality_evaluations": [
-        {
-          "passed": true,
-          "action": "rewrite",
-          "issues": [],
-          "judge_evidence_issues": []
-        }
-      ]
-    }
-  ],
   "local_verification": {
-    "company_report_bodies_unchanged": true,
-    "original_21_item_scores_unchanged": true,
-    "synthesis_and_portfolio_equal_to_first_graph_run": true,
-    "final_markdown_equal_to_graph_rewrite_output": true,
+    "company_report_hashes_match": true,
+    "source_21_item_scores_and_reasons_unchanged": true,
     "input_file_sha256_matches_manifest": true,
+    "final_body_equals_previously_reviewed_body": true,
     "reflection_evidence_count": 9,
-    "reflection_evidence_issues": [],
+    "material_fact_reflection_count": 6,
+    "reflection_proof_issues": [],
+    "material_fact_proof_issues": [
+      [],
+      []
+    ],
     "pdf_visual_review": {
-      "rendered_page_count": 8,
-      "all_pages_contact_sheet_checked": true,
+      "rendered_page_count": 9,
+      "all_pages_checked": true,
       "detail_pages_checked": [
-        4,
         5,
         6
       ],
-      "clipping_or_overlap_found": false
+      "clipping_or_overlap_found": false,
+      "same_raster_as_previously_reviewed_body": true
     },
-    "final_markdown_sha256": "42a7a9c317cb867cc38ca74330dd7e04c61a70b3bbee7f977792e66c3bcff3d4"
-  }
+    "company_pdf_visual_review": {
+      "MOTOMIND": 9,
+      "ROBROS": 10,
+      "Figure AI": 10
+    },
+    "final_markdown_sha256": "2364532d60878e05723b0db160ee79ab0280018efb14041a5d942ae23742e872",
+    "regression_tests": {
+      "passed": 531,
+      "subtests_passed": 22,
+      "warnings": 1
+    }
+  },
+  "recovery": {
+    "final_root_run_id": "01a14365-dc0e-7511-b69d-986555bf9f3c",
+    "first_graph_run_id": "8b78fcf4-d8d2-4e67-951d-35e57838c9a0",
+    "first_run_accepted_rewrites": 1,
+    "previous_root_run_id": "01a1435d-fb1f-7aa3-99c6-b19ede2cc2a4",
+    "previous_run_accepted_rewrites": 2,
+    "current_run_accepted_rewrites": 0,
+    "total_accepted_rewrites_across_recovery_runs": 3,
+    "analysis_reused": true,
+    "body_source": "quality_recovery_v2.md",
+    "note": "실제 내용 교정 후 구 규칙의 한계 표현 오탐으로 초안 종료. 현재 규칙의 동일 본문 재평가가 통과했으며 과거 실패·수정 이력은 history에 보존함."
+  },
+  "runs": [
+    {
+      "root_run_id": "01a14351-dfd1-78f2-af8a-d55398041b41",
+      "graph_run_id": "8b78fcf4-d8d2-4e67-951d-35e57838c9a0",
+      "expected_stages": [
+        "prepare_final_inputs",
+        "report_synthesis",
+        "portfolio_decision",
+        "compose_final_report",
+        "final_quality",
+        "final_orchestrator",
+        "final_rewrite",
+        "final_quality"
+      ],
+      "purpose": "fresh_synthesis_selection_then_quality_timeout",
+      "root_name": "physical-ai-final-investment-report",
+      "uploaded_verified": true,
+      "root_error_recorded": true,
+      "node_order_matches": true,
+      "node_runs": [
+        {
+          "node": "prepare_final_inputs",
+          "run_id": "01a14351-e006-7dd0-9ad2-c8fa8e111a39",
+          "error_recorded": false
+        },
+        {
+          "node": "report_synthesis",
+          "run_id": "01a14351-f142-7632-a26d-231cef75c176",
+          "error_recorded": false
+        },
+        {
+          "node": "portfolio_decision",
+          "run_id": "01a14353-2a9c-7fb2-8152-5d663eff503b",
+          "error_recorded": false
+        },
+        {
+          "node": "compose_final_report",
+          "run_id": "01a14353-6579-7881-af24-7b804f1177dd",
+          "error_recorded": false
+        },
+        {
+          "node": "final_quality",
+          "run_id": "01a14353-7696-7be0-913d-9c14c14d65b5",
+          "error_recorded": false
+        },
+        {
+          "node": "final_orchestrator",
+          "run_id": "01a14354-fa11-72d3-800a-6a4ebf7b21b1",
+          "error_recorded": false
+        },
+        {
+          "node": "final_rewrite",
+          "run_id": "01a14354-fa4f-7070-bec8-ad099eafb6b5",
+          "error_recorded": false
+        },
+        {
+          "node": "final_quality",
+          "run_id": "01a14356-39ab-7fa1-a0a2-64deabc23391",
+          "error_recorded": true
+        }
+      ]
+    },
+    {
+      "root_run_id": "01a1435d-fb1f-7aa3-99c6-b19ede2cc2a4",
+      "graph_run_id": "c873f6e0-74c0-489f-8f14-110483016e9b",
+      "expected_stages": [
+        "prepare_final_inputs",
+        "reuse_final_analysis",
+        "compose_final_report",
+        "final_quality",
+        "final_orchestrator",
+        "final_rewrite",
+        "final_quality",
+        "final_orchestrator",
+        "final_rewrite",
+        "final_quality",
+        "final_orchestrator",
+        "publish_final_report"
+      ],
+      "purpose": "body_correction_then_old_rule_false_positive",
+      "root_name": "physical-ai-final-investment-report",
+      "uploaded_verified": true,
+      "root_error_recorded": false,
+      "node_order_matches": true,
+      "node_runs": [
+        {
+          "node": "prepare_final_inputs",
+          "run_id": "01a1435d-fb60-78b3-9640-766954b9861d",
+          "error_recorded": false
+        },
+        {
+          "node": "reuse_final_analysis",
+          "run_id": "01a1435e-0ef1-7c23-a6c4-bc14da82cfb7",
+          "error_recorded": false
+        },
+        {
+          "node": "compose_final_report",
+          "run_id": "01a1435e-0f1b-7880-802d-ccd0f4059259",
+          "error_recorded": false
+        },
+        {
+          "node": "final_quality",
+          "run_id": "01a1435e-2361-7002-9718-42ca8f5f1ed3",
+          "error_recorded": false
+        },
+        {
+          "node": "final_orchestrator",
+          "run_id": "01a1435f-9e46-7b72-b2e6-938245934008",
+          "error_recorded": false
+        },
+        {
+          "node": "final_rewrite",
+          "run_id": "01a1435f-9e8d-7562-b9e4-9f92ac6eadb6",
+          "error_recorded": false
+        },
+        {
+          "node": "final_quality",
+          "run_id": "01a14360-caa5-7982-9b51-cfdb8360001c",
+          "error_recorded": false
+        },
+        {
+          "node": "final_orchestrator",
+          "run_id": "01a14362-248c-7160-b1e4-b960cd640595",
+          "error_recorded": false
+        },
+        {
+          "node": "final_rewrite",
+          "run_id": "01a14362-24d2-7782-9a0b-bacb2b0cb7fc",
+          "error_recorded": false
+        },
+        {
+          "node": "final_quality",
+          "run_id": "01a14363-4c36-70a0-bfb8-929b63fe2c73",
+          "error_recorded": false
+        },
+        {
+          "node": "final_orchestrator",
+          "run_id": "01a14365-1f62-7a42-a66e-a1ee87b6a818",
+          "error_recorded": false
+        },
+        {
+          "node": "publish_final_report",
+          "run_id": "01a14365-1fac-7412-823a-66866a60a909",
+          "error_recorded": false
+        }
+      ]
+    },
+    {
+      "root_run_id": "01a14365-dc0e-7511-b69d-986555bf9f3c",
+      "graph_run_id": "4c8db476-49a4-4697-9cd7-086a71d757e2",
+      "expected_stages": [
+        "prepare_final_inputs",
+        "reuse_final_analysis",
+        "compose_final_report",
+        "final_quality",
+        "final_orchestrator",
+        "publish_final_report"
+      ],
+      "purpose": "current_rules_quality_pass_and_publish",
+      "root_name": "physical-ai-final-investment-report",
+      "uploaded_verified": true,
+      "root_error_recorded": false,
+      "node_order_matches": true,
+      "node_runs": [
+        {
+          "node": "prepare_final_inputs",
+          "run_id": "01a14365-dc48-7df0-a199-33234cec00a0",
+          "error_recorded": false
+        },
+        {
+          "node": "reuse_final_analysis",
+          "run_id": "01a14365-ee83-7a92-b017-148dafe9cac3",
+          "error_recorded": false
+        },
+        {
+          "node": "compose_final_report",
+          "run_id": "01a14365-eea5-7581-a9de-8fce04527978",
+          "error_recorded": false
+        },
+        {
+          "node": "final_quality",
+          "run_id": "01a14365-fed2-7f00-ac80-2eee6e20d3a2",
+          "error_recorded": false
+        },
+        {
+          "node": "final_orchestrator",
+          "run_id": "01a14367-bd19-7d02-8f2d-b2327be0aa2a",
+          "error_recorded": false
+        },
+        {
+          "node": "publish_final_report",
+          "run_id": "01a14367-bd4f-7a81-a3c6-81c41b4ea21a",
+          "error_recorded": false
+        }
+      ]
+    }
+  ]
 }

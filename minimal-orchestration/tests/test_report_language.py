@@ -36,6 +36,21 @@ def test_spaces_and_newlines_cannot_hide_an_unsupported_claim():
     assert issues == ['자료 부족을 인력 역량·경험 부족으로 단정', '회사 발표를 독립 입증으로 단정']
 
 
+@pytest.mark.parametrize('text',[
+    '독립 검증·비교 수치는 현재 미확인이다.',
+    '독립 검증과 여러 고객 재현을 확인할 자료가 부족하다.',
+    '독립 검증이 미흡하여 추가 확인이 필요하다.',
+    '판단을 바꿀 자료는 현장 성능의 독립 검증, 안전·고장 기록, 투자조건이다.',
+    '회사 발표는 구체적이지만 독립 검증 범위가 제한적이다.',
+])
+def test_explicit_independent_validation_limits_are_not_positive_assertions(text):
+    assert not report_language_issues(text)
+
+
+def test_completed_independent_validation_is_still_blocked():
+    assert report_language_issues('회사 발표로 기술이 독립적으로 검증되었다.')
+
+
 @pytest.mark.parametrize(('text', 'issue'), [
     ('유상 매출 자료가 부족하다. 회사 발표로 기술이 독립적으로 입증되었다.', '회사 발표를 독립 입증으로 단정'),
     ('독립 검증 자료가 부족하다. 경쟁사 대비 우위에 있다.', '비교 실험 없이 경쟁사에 대한 기술 우열 단정'),

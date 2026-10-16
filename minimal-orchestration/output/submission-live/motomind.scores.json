@@ -2,53 +2,48 @@
   "company": "MOTOMIND",
   "mode": "live",
   "status": "partial",
-  "total_score": 7.0,
+  "total_score": 23.0,
   "score_scale": 100,
-  "scorable_weight": 17,
-  "unknown_weight": 83,
+  "scorable_weight": 61,
+  "unknown_weight": 39,
   "coverage": {
     "research_criteria": 18,
-    "attempted_criteria": 15,
-    "supported_criteria": 4
+    "attempted_criteria": 18,
+    "supported_criteria": 15
   },
   "investment_decision": "보류",
-  "decision_reason": "모토마인드는 2026년 설립된 신생기업으로, 자체 설계한 양팔 휴머노이드 로봇 BELLO와 AI 기반 텔레오퍼레이션 시스템을 개발 중이며, LG사이언스파크와의 MOU 체결 등 협력관계가 확인된다. 또한 소규모이지만 핵심 팀 운영과 기술 개발 계획에 대한 공식 자료가 존재한다. 그러나 현재까지 실질적인 매출 실적, 유상 판매, 대기업 투자 지분, 고객 재구매, 현장 실증 및 안정성 시험 결과 등 주요 사업 실행력과 시장 반응을 확인할 수 있는 자료가 부족하다. 이에 따라 제품 개발 단계와 기술 역량은 일부 확인되나, 상용화 및 시장 확대 가능성에 대한 검증 자료가 미흡하여 투자를 즉시 추진하기에는 불확실성이 크다. 추가적인 매출 실적, 고객 계약, 투자 조건 등 핵심 검증 자료 확보 후 재검토가 권장된다.",
+  "decision_reason": "MOTOMIND는 2026년 설립된 초기 로봇 제조·물류 분야 스타트업으로, 자체 설계한 양팔 휴머노이드 로봇과 자율주행 로봇 등 다양한 제품 라인업을 보유하며 제한적 연구기관 납품 및 민관 협력, 대기업 MOU 체결 사례가 확인됩니다. 또한 LG 슈퍼스타트 루키 트랙 2위 선정 및 Seed 투자 유치 등 긍정적 초기 성과도 있으나, 실제 반복적 유상 매출, 양산 체계, 대규모 고객 확보, 장기 계약 및 재구매 실적은 확인되지 않아 사업 확장 및 수익성 확보의 가시성이 부족합니다. 핵심 기술·제품 성능은 일부 공개되었으나, 안전성, 내구성, 현장 가동 안정성 검증 및 성과 데이터는 미흡합니다. 경영진과 핵심 인력의 구체적 역량과 외부 신뢰도 검증도 제한적입니다. 이러한 현 단계에서는 향후 사업 진행 및 실증 확대, 매출 발생 및 반복성 확보 여부를 독립적으로 확인할 필요가 있어 즉시 투자보다는 추가 정보가 확보될 때까지 투자 보류를 권고합니다.",
   "investment_case": {
     "action": "투자 보류",
     "rationale": "확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.",
     "model_opinion": "보류",
     "supporting_facts": [
       {
-        "criterion": "관련 전문성",
+        "criterion": "제품화·사업 실행력",
         "grade": 2,
-        "fact": "MOTOMIND는 2026년 2월 설립되었으며, 본사와 연구소를 운영하며 휴머노이드 로봇 BELLO와 텔레오퍼레이션 보조 시스템 TAS를 개발 중이다.",
+        "fact": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「2026년 2월 법인을 설립했고, 양팔 휴머노이드 BELLO와 텔레오퍼레이션 보조 시스템 TAS를\n개발하고 있습니다.」",
         "evidence_ids": [
-          "E4"
+          "E8"
         ]
       },
       {
         "criterion": "팀 구성·운영 역량",
-        "grade": 2,
-        "fact": "2026년 기준 MOTOMIND는 6명의 직원으로 구성되어 있으며, 포항 본사와 광명 연구소를 거점으로 운영 중이다.",
+        "grade": 1,
+        "fact": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「주식회사 모토마인드는 로봇 하드웨어, 임베디드, 상위 소프트웨어 등 로보틱스 개발의 전주기 역량을\n갖춘 풀스택 팀입니다.」",
         "evidence_ids": [
-          "E2"
+          "E7"
         ]
       },
       {
-        "criterion": "핵심 작업 성능",
-        "grade": 1,
-        "fact": "BELLO는 제조 현장 투입을 목표로 설계된 양팔 14-DoF 휴머노이드로, 저감속 기어비 기반 고반응성 팔과 내부 골격 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일 플랫폼에 통합하여 핵심 작업 수행을 지원한다.",
+        "criterion": "실제 접근 가능한 시장",
+        "grade": 2,
+        "fact": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「POC 2025.12\n프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모」",
         "evidence_ids": [
-          "E3"
+          "E57"
         ]
       }
     ],
     "key_risks": [
-      {
-        "criterion": "현장 안정성·안전성",
-        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
-        "next_check": "장시간 운전 기록, 장애·안전 사고와 인증·시험 자료"
-      },
       {
         "criterion": "유상 매출·납품",
         "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
@@ -58,6 +53,11 @@
         "criterion": "고객 재구매·확대",
         "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
         "next_check": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료"
+      },
+      {
+        "criterion": "관련 전문성",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "창업자·핵심 인력의 직무 이력과 관련 제품 개발 실적"
       }
     ],
     "required_conditions": [
@@ -68,13 +68,6 @@
           "기업가치의 합리성",
           "지분·권리 조건",
           "투자금 사용·다음 목표"
-        ]
-      },
-      {
-        "criterion": "현장 안정성·안전성",
-        "required": "장시간 운전 기록, 장애·안전 사고와 인증·시험 자료",
-        "items": [
-          "현장 안정성·안전성"
         ]
       },
       {
@@ -103,7 +96,7 @@
       "current_terms_required": true,
       "confirmed_critical_zero_requires_hold": true
     },
-    "full_opinion_reason": "모토마인드는 2026년 설립된 신생기업으로, 자체 설계한 양팔 휴머노이드 로봇 BELLO와 AI 기반 텔레오퍼레이션 시스템을 개발 중이며, LG사이언스파크와의 MOU 체결 등 협력관계가 확인된다. 또한 소규모이지만 핵심 팀 운영과 기술 개발 계획에 대한 공식 자료가 존재한다. 그러나 현재까지 실질적인 매출 실적, 유상 판매, 대기업 투자 지분, 고객 재구매, 현장 실증 및 안정성 시험 결과 등 주요 사업 실행력과 시장 반응을 확인할 수 있는 자료가 부족하다. 이에 따라 제품 개발 단계와 기술 역량은 일부 확인되나, 상용화 및 시장 확대 가능성에 대한 검증 자료가 미흡하여 투자를 즉시 추진하기에는 불확실성이 크다. 추가적인 매출 실적, 고객 계약, 투자 조건 등 핵심 검증 자료 확보 후 재검토가 권장된다."
+    "full_opinion_reason": "MOTOMIND는 2026년 설립된 초기 로봇 제조·물류 분야 스타트업으로, 자체 설계한 양팔 휴머노이드 로봇과 자율주행 로봇 등 다양한 제품 라인업을 보유하며 제한적 연구기관 납품 및 민관 협력, 대기업 MOU 체결 사례가 확인됩니다. 또한 LG 슈퍼스타트 루키 트랙 2위 선정 및 Seed 투자 유치 등 긍정적 초기 성과도 있으나, 실제 반복적 유상 매출, 양산 체계, 대규모 고객 확보, 장기 계약 및 재구매 실적은 확인되지 않아 사업 확장 및 수익성 확보의 가시성이 부족합니다. 핵심 기술·제품 성능은 일부 공개되었으나, 안전성, 내구성, 현장 가동 안정성 검증 및 성과 데이터는 미흡합니다. 경영진과 핵심 인력의 구체적 역량과 외부 신뢰도 검증도 제한적입니다. 이러한 현 단계에서는 향후 사업 진행 및 실증 확대, 매출 발생 및 반복성 확보 여부를 독립적으로 확인할 필요가 있어 즉시 투자보다는 추가 정보가 확보될 때까지 투자 보류를 권고합니다."
   },
   "decision_policy": {
     "method": "fixed_scorecard",
@@ -118,47 +111,37 @@
     "openai_model": "gpt-4.1-mini",
     "judge_model": "gpt-4.1",
     "evidence_model": "gpt-4.1",
-    "grader_model": "gpt-4.1"
+    "grader_model": "gpt-4.1",
+    "writer_model": "gpt-4.1",
+    "portfolio_model": "gpt-5.4"
   },
   "category_scores": {
     "창업자·핵심팀": {
       "weight": 20,
-      "earned_score": 5.5,
+      "earned_score": 4.25,
       "scorable_weight": 11,
       "unknown_items": [
-        "제품화·사업 실행력",
+        "관련 전문성",
         "소통의 명확성과 신뢰성"
       ]
     },
     "시장성": {
       "weight": 25,
-      "earned_score": null,
-      "scorable_weight": 0,
-      "unknown_items": [
-        "실제 접근 가능한 시장",
-        "문제의 심각성과 구매 필요성",
-        "시장 성장 동력",
-        "시장 진입·확장 가능성"
-      ]
+      "earned_score": 12.5,
+      "scorable_weight": 25,
+      "unknown_items": []
     },
     "제품·기술력": {
       "weight": 15,
-      "earned_score": 1.5,
-      "scorable_weight": 6,
-      "unknown_items": [
-        "현장 안정성·안전성",
-        "양산·유지보수 가능성"
-      ]
+      "earned_score": 3.75,
+      "scorable_weight": 15,
+      "unknown_items": []
     },
     "경쟁우위": {
       "weight": 10,
-      "earned_score": null,
-      "scorable_weight": 0,
-      "unknown_items": [
-        "경쟁 제품 대비 고객 가치",
-        "모방하기 어려운 자산",
-        "고객 유지·전환 장벽"
-      ]
+      "earned_score": 2.5,
+      "scorable_weight": 10,
+      "unknown_items": []
     },
     "실적": {
       "weight": 20,
@@ -186,82 +169,256 @@
     "관련 전문성": {
       "category": "창업자·핵심팀",
       "weight": 6,
+      "grade": null,
+      "score": null,
+      "reason": "창업자와 핵심 인력의 구체적 경력, 직무, 담당 역할에 대한 독립적 근거가 없고, 자사 '풀스택 팀'이라는 설명 외에 외부 검증이나 이력 명시 자료가 없다.",
+      "evidence": []
+    },
+    "제품화·사업 실행력": {
+      "category": "창업자·핵심팀",
+      "weight": 6,
       "grade": 2,
       "score": 3.0,
-      "reason": "회사 자체 소개서에 따르면 창업자는 2026년 2월 설립 이력이 있고 BELLO, TAS 개발을 담당한다고 명시되어 전문성 일부는 확인된다. 다만 핵심 인력의 구체적 경력, 수행 역할, 이전 업계/연구 경력에 대한 독립적 검증은 확인되지 않아 등급 2에 한정한다.",
+      "reason": "시제품 개발, 시설/설비 확보, 각종 데모 환경 구축 및 연구기관 납품 등 제품 개발 및 일부 실제 고객/기관에의 납품 및 시험 실적은 확인되나, 반복적 제품 상용화 및 대규모 현장 도입의 정량적 마일스톤 등 구체적 사업 실행 이력은 제한적으로 확인됨. 핵심 성능/납품의 반복적 실증은 아직 부족하다.",
       "evidence": [
         {
-          "claim": "MOTOMIND는 2026년 2월 설립되었으며, 본사와 연구소를 운영하며 휴머노이드 로봇 BELLO와 텔레오퍼레이션 보조 시스템 TAS를 개발 중이다.",
-          "criterion_id": "founder_expertise",
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「2026년 2월 법인을 설립했고, 양팔 휴머노이드 BELLO와 텔레오퍼레이션 보조 시스템 TAS를\n개발하고 있습니다.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "MM-01",
               "page": 1
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "2026년 2월 법인을 설립했고, 양팔 휴머노이드 BELLO와 텔레오퍼레이션 보조 시스템 TAS를\n개발하고 있습니다.",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "MM-01",
             "page": 1
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "2026년 2월 법인을 설립했고, 양팔 휴머노이드 BELLO와 텔레오퍼레이션 보조 시스템 TAS를 개발하고 있습니다.\n포항 체인지업그라운드 본사와 광명 GIDC 연구소를 거점으로",
-          "evidence_reason": "원문에 MOTOMIND의 2026년 2월 설립, 본사(포항)와 연구소(광명) 운영, BELLO와 TAS 개발 중임이 모두 명확히 언급되어 주장의 모든 핵심 사실이 명시되어 있습니다.",
+          "evidence_quote": "2026년 2월 법인을 설립했고, 양팔 휴머노이드 BELLO와 텔레오퍼레이션 보조 시스템 TAS를\n개발하고 있습니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「3개 시설에서 시제품 제작과 시양산 검증, 통합 테스트를 수행합니다.\n총 38평\n포항 체인지업그라운드 본사\n3D 프린터 2기, 오실로스코프, DC 서플라이 등 시제품 제작 설비를 갖춘 본사입니다.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "3개 시설에서 시제품 제작과 시양산 검증, 통합 테스트를 수행합니다.\n총 38평\n포항 체인지업그라운드 본사\n3D 프린터 2기, 오실로스코프, DC 서플라이 등 시제품 제작 설비를 갖춘 본사입니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "3개 시설에서 시제품 제작과 시양산 검증, 통합 테스트를 수행합니다.\n총 38평\n포항 체인지업그라운드 본사\n3D 프린터 2기, 오실로스코프, DC 서플라이 등 시제품 제작 설비를 갖춘 본사입니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「양산 검증 테스트베드\n양산 직전 제품의 검증, 통합 테스트, 데모 환경 구축에 사용됩니다.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "양산 검증 테스트베드\n양산 직전 제품의 검증, 통합 테스트, 데모 환경 구축에 사용됩니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "양산 검증 테스트베드\n양산 직전 제품의 검증, 통합 테스트, 데모 환경 구축에 사용됩니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「05 민관협력 오픈이노베이션 전략과제 선정\n05 민관공동기술사업화R&D 지원과제 선정\n04 Seed 투자 유치\n04 LG 슈퍼스타트데이 루키 트랙 2위」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "05 민관협력 오픈이노베이션 전략과제 선정\n05 민관공동기술사업화R&D 지원과제 선정\n04 Seed 투자 유치\n04 LG 슈퍼스타트데이 루키 트랙 2위",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "05 민관협력 오픈이노베이션 전략과제 선정\n05 민관공동기술사업화R&D 지원과제 선정\n04 Seed 투자 유치\n04 LG 슈퍼스타트데이 루키 트랙 2위",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「제조, 가사, 물류·다중 로봇 운영, 민관 협력 영역의 실증 및 협업 사례입니다.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "제조, 가사, 물류·다중 로봇 운영, 민관 협력 영역의 실증 및 협업 사례입니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "제조, 가사, 물류·다중 로봇 운영, 민관 협력 영역의 실증 및 협업 사례입니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
     },
-    "제품화·사업 실행력": {
-      "category": "창업자·핵심팀",
-      "weight": 6,
-      "grade": null,
-      "score": null,
-      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
-      "evidence": []
-    },
     "팀 구성·운영 역량": {
       "category": "창업자·핵심팀",
       "weight": 5,
-      "grade": 2,
-      "score": 2.5,
-      "reason": "6명의 직원을 바탕으로 본사와 연구소 운용 사실은 명시돼 있으나, 각각의 인력이 맡은 역할이나 제조·소프트웨어·사업 등의 포괄적 역량 및 운영 이력은 상세히 확인되지 않는다. 규모, 사업 운영의 실제력은 확인되나, 종합 운용 역량 점수는 2에 그침.",
+      "grade": 1,
+      "score": 1.25,
+      "reason": "직원수(6명), 하드웨어·임베디드·소프트웨어 개발의 내역 등 팀 구성·직군 다변화는 자사 설명으로 명시됐으나, 각 직무별 구체적 전문성과 운영 이력에 대한 외부 실적 검증은 없음.",
       "evidence": [
         {
-          "claim": "2026년 기준 MOTOMIND는 6명의 직원으로 구성되어 있으며, 포항 본사와 광명 연구소를 거점으로 운영 중이다.",
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「주식회사 모토마인드는 로봇 하드웨어, 임베디드, 상위 소프트웨어 등 로보틱스 개발의 전주기 역량을\n갖춘 풀스택 팀입니다.」",
           "criterion_id": "team_operations",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "MM-01",
-              "page": 2
+              "page": 1
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "주식회사 모토마인드는 로봇 하드웨어, 임베디드, 상위 소프트웨어 등 로보틱스 개발의 전주기 역량을\n갖춘 풀스택 팀입니다.",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "MM-01",
-            "page": 2
+            "page": 1
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "직원 6명 (2026 기준)\n본사 포항시 남구 청암로 87 체인지업그라운드 513호\n연구소 광명시 일직로 43 GIDC B동 512호",
-          "evidence_reason": "2026년 기준 직원 수, 포항 본사, 광명 연구소의 존재와 운영 거점이 명확히 명시되어 있다.",
+          "evidence_quote": "주식회사 모토마인드는 로봇 하드웨어, 임베디드, 상위 소프트웨어 등 로보틱스 개발의 전주기 역량을\n갖춘 풀스택 팀입니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         },
         {
-          "claim": "MOTOMIND는 2026년 기준 직원 6명으로 구성되어 있으며, 본사와 연구소를 운영하고 있다.",
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「포항 체인지업그라운드 본사와 광명 GIDC 연구소를 거점으로, 제조 현장에 투입 가능한 휴머노이드 로보틱스\n솔루션을 제공합니다.」",
           "criterion_id": "team_operations",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "포항 체인지업그라운드 본사와 광명 GIDC 연구소를 거점으로, 제조 현장에 투입 가능한 휴머노이드 로보틱스\n솔루션을 제공합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "포항 체인지업그라운드 본사와 광명 GIDC 연구소를 거점으로, 제조 현장에 투입 가능한 휴머노이드 로보틱스\n솔루션을 제공합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「직원 6명 (2026 기준)」",
+          "criterion_id": "team_operations",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "MM-01",
               "page": 2
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "직원 6명 (2026 기준)",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "MM-01",
             "page": 2
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "직원 6명 (2026 기준)\n본사 포항시 남구 청암로 87 체인지업그라운드 513호\n연구소 광명시 일직로 43 GIDC B동 512호",
-          "evidence_reason": "원본 페이지에 MOTOMIND가 2026년 기준 직원 6명, 본사와 연구소의 위치가 명시되어 있다. 주장에 포함된 핵심 원자 사실이 모두 직접적으로 표현되어 있다.",
+          "evidence_quote": "직원 6명 (2026 기준)",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.」",
+          "criterion_id": "team_operations",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「맵 작성 UI\n터치스크린 조이스틱만으로 신규 맵을 생성하고 노드·엣지 경로를 직접 편집해, 전문 인력 없이도 누구나 로봇\n자율주행을 시작할 수 있는 도구입니다.\n터치 조이스틱 기반 직관적 맵 작성·경로 편집\n기존 맵 로드 + SLAM으로 손쉬운 맵 업데이트\n실시간 맵 조회로 빠르고 안정적인 로봇 설치」",
+          "criterion_id": "team_operations",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 6
+            }
+          ],
+          "source_bound_quote": "맵 작성 UI\n터치스크린 조이스틱만으로 신규 맵을 생성하고 노드·엣지 경로를 직접 편집해, 전문 인력 없이도 누구나 로봇\n자율주행을 시작할 수 있는 도구입니다.\n터치 조이스틱 기반 직관적 맵 작성·경로 편집\n기존 맵 로드 + SLAM으로 손쉬운 맵 업데이트\n실시간 맵 조회로 빠르고 안정적인 로봇 설치",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 6
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "맵 작성 UI\n터치스크린 조이스틱만으로 신규 맵을 생성하고 노드·엣지 경로를 직접 편집해, 전문 인력 없이도 누구나 로봇\n자율주행을 시작할 수 있는 도구입니다.\n터치 조이스틱 기반 직관적 맵 작성·경로 편집\n기존 맵 로드 + SLAM으로 손쉬운 맵 업데이트\n실시간 맵 조회로 빠르고 안정적인 로봇 설치",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
@@ -277,78 +434,527 @@
     "실제 접근 가능한 시장": {
       "category": "시장성",
       "weight": 8,
-      "grade": null,
-      "score": null,
-      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
-      "evidence": []
+      "grade": 2,
+      "score": 4.0,
+      "reason": "연구기관 납품 실적과 대기업(ETRI, 민관협력, MOU), 상금, 적용 사례 등으로 한정된 실제 접근 고객군 형성은 확인되나 반복적 대량 납품, 유상 시장 확대 등은 뚜렷하게 다수 확인되지 않음. 단일 고객, 한정적 실적에 머무름.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「POC 2025.12\n프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "POC 2025.12\n프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "POC 2025.12\n프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「ETRI와 협업하여 다중 AMR(자율이동로봇)이 공장 내 MES(제조 실행 시스템)·IoT와 연동해 태스크를 자율 분배·\n실행하는 관제 시스템을 구축하고, 서로 다른 제조사의 AMR을 단일 관제 흐름으로 통합했습니다.\n— MES 태스크 발행 → 할당 → 주행 → 작업 → 완료 업로드 자동화\n— MAPF 알고리즘 기반 복수 로봇 동시 운용\n— 공장 자동문·버튼 Modbus TCP 연동\n— S/I/L사 등 다종 AMR 단일 관제 통합 및 현장별 UI 커스터마이즈」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "ETRI와 협업하여 다중 AMR(자율이동로봇)이 공장 내 MES(제조 실행 시스템)·IoT와 연동해 태스크를 자율 분배·\n실행하는 관제 시스템을 구축하고, 서로 다른 제조사의 AMR을 단일 관제 흐름으로 통합했습니다.\n— MES 태스크 발행 → 할당 → 주행 → 작업 → 완료 업로드 자동화\n— MAPF 알고리즘 기반 복수 로봇 동시 운용\n— 공장 자동문·버튼 Modbus TCP 연동\n— S/I/L사 등 다종 AMR 단일 관제 통합 및 현장별 UI 커스터마이즈",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 4
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "ETRI와 협업하여 다중 AMR(자율이동로봇)이 공장 내 MES(제조 실행 시스템)·IoT와 연동해 태스크를 자율 분배·\n실행하는 관제 시스템을 구축하고, 서로 다른 제조사의 AMR을 단일 관제 흐름으로 통합했습니다.\n— MES 태스크 발행 → 할당 → 주행 → 작업 → 완료 업로드 자동화\n— MAPF 알고리즘 기반 복수 로봇 동시 운용\n— 공장 자동문·버튼 Modbus TCP 연동\n— S/I/L사 등 다종 AMR 단일 관제 통합 및 현장별 UI 커스터마이즈",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "한국로봇산업진흥원 (KIRIA) 자료의 원문 인용(발표 내용): 「수요기업\n제 관 역 내 업 요기관\n기 수요기\n관 업 등\n참\n여 로봇SI기업\n기 (지역무관)\n관\n지원내용\n(지원규모)\n총괄주관기관 신청과제당 N개 수요-공급기업 컨소시엄 구성\n* 세부주관기관(기업) 최대5억, 컨소시엄당 최대 지원 가능 금액 제한 없음」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "수요기업\n제 관 역 내 업 요기관\n기 수요기\n관 업 등\n참\n여 로봇SI기업\n기 (지역무관)\n관\n지원내용\n(지원규모)\n총괄주관기관 신청과제당 N개 수요-공급기업 컨소시엄 구성\n* 세부주관기관(기업) 최대5억, 컨소시엄당 최대 지원 가능 금액 제한 없음",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "수요기업\n제 관 역 내 업 요기관\n기 수요기\n관 업 등\n참\n여 로봇SI기업\n기 (지역무관)\n관\n지원내용\n(지원규모)\n총괄주관기관 신청과제당 N개 수요-공급기업 컨소시엄 구성\n* 세부주관기관(기업) 최대5억, 컨소시엄당 최대 지원 가능 금액 제한 없음",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Goldman Sachs Investment Banking 자료의 원문 인용(발표 내용): 「The AI era is driving an industrial transformation unlike any in modern history—faster, broader, and\nmore capital-intensive, creating new infrastructure and industry simultaneously.\nAI is reshaping every sector —from software and cybersecurity to robotics, defense, and industrial\nmanufacturing—and the companies that align technological vision with decisive capital strategy will\ndefine the next era of growth. AI-native startups are scaling faster than any company in history,\nincumbents are refounding their businesses around AI, and new capital structures are being\ndeveloped to fund these growing digital and physical demands.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-03",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "The AI era is driving an industrial transformation unlike any in modern history—faster, broader, and\nmore capital-intensive, creating new infrastructure and industry simultaneously.\nAI is reshaping every sector —from software and cybersecurity to robotics, defense, and industrial\nmanufacturing—and the companies that align technological vision with decisive capital strategy will\ndefine the next era of growth. AI-native startups are scaling faster than any company in history,\nincumbents are refounding their businesses around AI, and new capital structures are being\ndeveloped to fund these growing digital and physical demands.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-03",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "The AI era is driving an industrial transformation unlike any in modern history—faster, broader, and\nmore capital-intensive, creating new infrastructure and industry simultaneously.\nAI is reshaping every sector —from software and cybersecurity to robotics, defense, and industrial\nmanufacturing—and the companies that align technological vision with decisive capital strategy will\ndefine the next era of growth. AI-native startups are scaling faster than any company in history,\nincumbents are refounding their businesses around AI, and new capital structures are being\ndeveloped to fund these growing digital and physical demands.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "한국로봇산업진흥원 (KIRIA) 자료의 원문 인용(발표 내용): 「고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증\n지원분야\n뿌리(기계, 금속·플라스틱, 자동차, 전기·전자), 조선·항공, 섬유, 식·음료, 바이오·화학, 로봇-장비 업종의 로\n봇공정모델 대상공정\n* ‘로봇공정모델실증기준안내서(다운로드)’ 참조\n지원대상\n로봇공정모델 실증기준에 적합하며, 실증과제에 대한 안정적 수행이 가능한 수요-공급 컨소시엄 구성\n(총괄주관기관)\n·\n비영리기관으로 컨소시엄 수요발굴, 사업관리, 사업비 분배 및 집행, 공정 컨설팅 등 사업수행 관리 지원\n(세부주관기관)\n로봇공정모델 실증 기반 제조현장 內 대상공정에 로봇시스템 도입을 희망하는 수요기업\n(참여기관)\n수요기업 대상공정에 로봇공정모델 실증 기반 로봇시스템 설치를 위한 로봇SI 관련 기술지원 및 유지보수 등\n이 가능한 공급기업」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증\n지원분야\n뿌리(기계, 금속·플라스틱, 자동차, 전기·전자), 조선·항공, 섬유, 식·음료, 바이오·화학, 로봇-장비 업종의 로\n봇공정모델 대상공정\n* ‘로봇공정모델실증기준안내서(다운로드)’ 참조\n지원대상\n로봇공정모델 실증기준에 적합하며, 실증과제에 대한 안정적 수행이 가능한 수요-공급 컨소시엄 구성\n(총괄주관기관)\n·\n비영리기관으로 컨소시엄 수요발굴, 사업관리, 사업비 분배 및 집행, 공정 컨설팅 등 사업수행 관리 지원\n(세부주관기관)\n로봇공정모델 실증 기반 제조현장 內 대상공정에 로봇시스템 도입을 희망하는 수요기업\n(참여기관)\n수요기업 대상공정에 로봇공정모델 실증 기반 로봇시스템 설치를 위한 로봇SI 관련 기술지원 및 유지보수 등\n이 가능한 공급기업",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증\n지원분야\n뿌리(기계, 금속·플라스틱, 자동차, 전기·전자), 조선·항공, 섬유, 식·음료, 바이오·화학, 로봇-장비 업종의 로\n봇공정모델 대상공정\n* ‘로봇공정모델실증기준안내서(다운로드)’ 참조\n지원대상\n로봇공정모델 실증기준에 적합하며, 실증과제에 대한 안정적 수행이 가능한 수요-공급 컨소시엄 구성\n(총괄주관기관)\n·\n비영리기관으로 컨소시엄 수요발굴, 사업관리, 사업비 분배 및 집행, 공정 컨설팅 등 사업수행 관리 지원\n(세부주관기관)\n로봇공정모델 실증 기반 제조현장 內 대상공정에 로봇시스템 도입을 희망하는 수요기업\n(참여기관)\n수요기업 대상공정에 로봇공정모델 실증 기반 로봇시스템 설치를 위한 로봇SI 관련 기술지원 및 유지보수 등\n이 가능한 공급기업",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "문제의 심각성과 구매 필요성": {
       "category": "시장성",
       "weight": 7,
-      "grade": null,
-      "score": null,
-      "reason": "고객의 생산 문제, 인건비 절감, 실제 유상 구매 필요성에 대한 고객·시장 인터뷰, 주문 등 수요 지표가 단일 문서 내에는 부재하다.",
-      "evidence": []
+      "grade": 2,
+      "score": 3.5,
+      "reason": "기존 작업대·공정과의 호환성 등 현장 수요, 일부 납품/도입(연구기관, MOU)을 통해 고객의 실제 문제 및 유상 니즈 일부 확인되지만, 반복적 대규모 고객군의 확인 및 높은 구매 긴박성까지 독립적으로 뒷받침되는 증거는 제한적.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「BELLO는 기존 작업대·공정 환경의 큰 변경 없이 투입 가능한 사람 크기 폼팩터를 채택했습니다.」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "BELLO는 기존 작업대·공정 환경의 큰 변경 없이 투입 가능한 사람 크기 폼팩터를 채택했습니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "BELLO는 기존 작업대·공정 환경의 큰 변경 없이 투입 가능한 사람 크기 폼팩터를 채택했습니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "시장 성장 동력": {
       "category": "시장성",
       "weight": 5,
-      "grade": null,
-      "score": null,
-      "reason": "로봇·휴머노이드 도입을 뒷받침하는 산업 수요, 인력 부족, 시장 성장 데이터를 보여주는 외부 근거 등 MOTOMIND의 시장 성장 동력이 실제로 기술된 자료가 현 검증 목록에 없다.",
-      "evidence": []
+      "grade": 3,
+      "score": 3.75,
+      "reason": "글로벌/국내 로봇 산업, 제조 자동화 시장이 공식 산업통계·IFR·Goldman Sachs 등에서 큰 폭 성장(설치 대수, 서비스로봇 출하량 두 자릿수 성장)하는 추세가 반복 보고됨. 전 분야로의 산업 확대 및 수요 증대 지표는 명확함.",
+      "evidence": [
+        {
+          "claim": "ifr.org 자료의 원문 인용(발표 내용): 「Global Sales of Professional Service Robots Surge 24%\n117,000 Transport and logistics’ robots lead as top application\nFrankfurt, Sep 30, 2026 — Global shipments of professional service robots increased by 24% to\nalmost 250,000 units in 2025, highlighting a successful shift to commercial automation. These\nfindings are presented in the World Robotics 2026 Service Robots report by the IFR.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-9096787e9f6ca5c7",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Global Sales of Professional Service Robots Surge 24%\n117,000 Transport and logistics’ robots lead as top application\nFrankfurt, Sep 30, 2026 — Global shipments of professional service robots increased by 24% to\nalmost 250,000 units in 2025, highlighting a successful shift to commercial automation. These\nfindings are presented in the World Robotics 2026 Service Robots report by the IFR.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-9096787e9f6ca5c7",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Global Sales of Professional Service Robots Surge 24%\n117,000 Transport and logistics’ robots lead as top application\nFrankfurt, Sep 30, 2026 — Global shipments of professional service robots increased by 24% to\nalmost 250,000 units in 2025, highlighting a successful shift to commercial automation. These\nfindings are presented in the World Robotics 2026 Service Robots report by the IFR.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "ifr.org 자료의 원문 인용(발표 내용): 「May 10- May 13, 2027\nThe latest in robotics, machine vision, AI, motion control, and more\nautomatica\nJune 22- June 25, 2027\ntrade fair for smart automation and robotics\nPrevious\nNext\nWorld Robotics - Industrial Robots: Global Robot Demand in Factories Doubles Over 10 Years\nThe new World Robotics 2025 statistics on industrial robots showed 542,000 robots installed in\n2024 - more than double the number 10 years ago. Annual installations topped 500,000 units for\nthe fourth straight year. Asia accounted for 74% of new deployments in 2024, compared with 16%」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-9096787e9f6ca5c7",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "May 10- May 13, 2027\nThe latest in robotics, machine vision, AI, motion control, and more\nautomatica\nJune 22- June 25, 2027\ntrade fair for smart automation and robotics\nPrevious\nNext\nWorld Robotics - Industrial Robots: Global Robot Demand in Factories Doubles Over 10 Years\nThe new World Robotics 2025 statistics on industrial robots showed 542,000 robots installed in\n2024 - more than double the number 10 years ago. Annual installations topped 500,000 units for\nthe fourth straight year. Asia accounted for 74% of new deployments in 2024, compared with 16%",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-9096787e9f6ca5c7",
+            "page": 4
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "May 10- May 13, 2027\nThe latest in robotics, machine vision, AI, motion control, and more\nautomatica\nJune 22- June 25, 2027\ntrade fair for smart automation and robotics\nPrevious\nNext\nWorld Robotics - Industrial Robots: Global Robot Demand in Factories Doubles Over 10 Years\nThe new World Robotics 2025 statistics on industrial robots showed 542,000 robots installed in\n2024 - more than double the number 10 years ago. Annual installations topped 500,000 units for\nthe fourth straight year. Asia accounted for 74% of new deployments in 2024, compared with 16%",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.kiet.re.kr 자료의 원문 인용(발표 내용): 「보고서는 자율 제조를 위해서는 휴머노이드 등 AI 로봇이 비정형 업무를 맡는 ‘피지컬 AI 기반 제조 AX’가\n필수적이라고 지적하고, 우리나라가 강점을 지닌 ‘제조 특화 AI 행동 학습’을 출발점으로 자체 로봇 폼팩터\n와 핵심 부품으로 생태계를 넓혀 가야 한다고 강조했다.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-9f1ae40f666a51cc",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "보고서는 자율 제조를 위해서는 휴머노이드 등 AI 로봇이 비정형 업무를 맡는 ‘피지컬 AI 기반 제조 AX’가\n필수적이라고 지적하고, 우리나라가 강점을 지닌 ‘제조 특화 AI 행동 학습’을 출발점으로 자체 로봇 폼팩터\n와 핵심 부품으로 생태계를 넓혀 가야 한다고 강조했다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-9f1ae40f666a51cc",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "보고서는 자율 제조를 위해서는 휴머노이드 등 AI 로봇이 비정형 업무를 맡는 ‘피지컬 AI 기반 제조 AX’가\n필수적이라고 지적하고, 우리나라가 강점을 지닌 ‘제조 특화 AI 행동 학습’을 출발점으로 자체 로봇 폼팩터\n와 핵심 부품으로 생태계를 넓혀 가야 한다고 강조했다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.kiet.re.kr 자료의 원문 인용(발표 내용): 「제조 AX를 위한 피지컬 AI 생태계 발전 전략\n보고서는 자율 제조를 위해서는 휴머노이드 등 AI 로봇이 비정형 업무를 맡는 ‘피지컬 AI 기반 제조 AX’가\n필수적이라고 지적하고, 우리나라가 강점을 지닌 ‘제조 특화 AI 행동 학습’을 출발점으로 자체 로봇 폼팩터\n와 핵심 부품으로 생태계를 넓혀 가야 한다고 강조했다.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-9f1ae40f666a51cc",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "제조 AX를 위한 피지컬 AI 생태계 발전 전략\n보고서는 자율 제조를 위해서는 휴머노이드 등 AI 로봇이 비정형 업무를 맡는 ‘피지컬 AI 기반 제조 AX’가\n필수적이라고 지적하고, 우리나라가 강점을 지닌 ‘제조 특화 AI 행동 학습’을 출발점으로 자체 로봇 폼팩터\n와 핵심 부품으로 생태계를 넓혀 가야 한다고 강조했다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-9f1ae40f666a51cc",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "제조 AX를 위한 피지컬 AI 생태계 발전 전략\n보고서는 자율 제조를 위해서는 휴머노이드 등 AI 로봇이 비정형 업무를 맡는 ‘피지컬 AI 기반 제조 AX’가\n필수적이라고 지적하고, 우리나라가 강점을 지닌 ‘제조 특화 AI 행동 학습’을 출발점으로 자체 로봇 폼팩터\n와 핵심 부품으로 생태계를 넓혀 가야 한다고 강조했다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「Frankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.\n“Industrial automation is progressing at high speed,” says Jane Heffner, President of the International Federation of Robotics. “The new mark of five\nmillion robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,\nfollowed by Americas. Europe is moving ahead more slowly.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Frankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.\n“Industrial automation is progressing at high speed,” says Jane Heffner, President of the International Federation of Robotics. “The new mark of five\nmillion robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,\nfollowed by Americas. Europe is moving ahead more slowly.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Frankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.\n“Industrial automation is progressing at high speed,” says Jane Heffner, President of the International Federation of Robotics. “The new mark of five\nmillion robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,\nfollowed by Americas. Europe is moving ahead more slowly.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「1 – AI & Autonomy in Robotics\nRobots that use artificial intelligence to work independently are becoming more common. Main benefit of AI in this context is the increased autonomy\nof robots empowered by AI. Different types of AI drive this trend: Analytical AI helps to process large datasets, detect patterns, and provides actionable\ninsights. This enables them to autonomously anticipate failures before they occur in smart factories or path planning and resource allocation in logistics\nfor example.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "1 – AI & Autonomy in Robotics\nRobots that use artificial intelligence to work independently are becoming more common. Main benefit of AI in this context is the increased autonomy\nof robots empowered by AI. Different types of AI drive this trend: Analytical AI helps to process large datasets, detect patterns, and provides actionable\ninsights. This enables them to autonomously anticipate failures before they occur in smart factories or path planning and resource allocation in logistics\nfor example.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-02",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "1 – AI & Autonomy in Robotics\nRobots that use artificial intelligence to work independently are becoming more common. Main benefit of AI in this context is the increased autonomy\nof robots empowered by AI. Different types of AI drive this trend: Analytical AI helps to process large datasets, detect patterns, and provides actionable\ninsights. This enables them to autonomously anticipate failures before they occur in smart factories or path planning and resource allocation in logistics\nfor example.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "시장 진입·확장 가능성": {
       "category": "시장성",
       "weight": 5,
-      "grade": null,
-      "score": null,
-      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
-      "evidence": []
+      "grade": 1,
+      "score": 1.25,
+      "reason": "LG 슈퍼스타트 프로그램 등 대기업·기관과의 협업 기회, 상금 등 진입 시도는 인정되나, 실제 수주/납품/상용화된 산업·지역별 본격 확장 사례는 부족하며 영업적/산업적 본격 확장 검증 근거가 없음.",
+      "evidence": [
+        {
+          "claim": "연합뉴스(Yonhap News) 자료의 원문 인용(발표 내용): 「스 밋업존을 운영했으며, 현장에서 약 120건에 달하는 투자·협력 미팅이 성사됐다.\n3 [삶-특집] \"韓 현무 미사일 2\n000기로도 北 핵무기 1기 감\n또한 LG는 올해 처음으로 대학 창업팀을 위한 '루키 프로그램'을 신설했다.\n당 못한다\"\n투자·협력 유치를 위한 발표 후 현장 투표와 심사단 점수를 종합해 선발된 3개팀 'Pinta AI', '모토\n마인드', '포바디'에는 상금과 함께 중소벤처기업부 초기창업패키지 서류 면제와 LG 계열사와의\n협업 기회가 주어진다.」",
+          "criterion_id": "market_entry_expansion",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-05",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "스 밋업존을 운영했으며, 현장에서 약 120건에 달하는 투자·협력 미팅이 성사됐다.\n3 [삶-특집] \"韓 현무 미사일 2\n000기로도 北 핵무기 1기 감\n또한 LG는 올해 처음으로 대학 창업팀을 위한 '루키 프로그램'을 신설했다.\n당 못한다\"\n투자·협력 유치를 위한 발표 후 현장 투표와 심사단 점수를 종합해 선발된 3개팀 'Pinta AI', '모토\n마인드', '포바디'에는 상금과 함께 중소벤처기업부 초기창업패키지 서류 면제와 LG 계열사와의\n협업 기회가 주어진다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-05",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "스 밋업존을 운영했으며, 현장에서 약 120건에 달하는 투자·협력 미팅이 성사됐다.\n3 [삶-특집] \"韓 현무 미사일 2\n000기로도 北 핵무기 1기 감\n또한 LG는 올해 처음으로 대학 창업팀을 위한 '루키 프로그램'을 신설했다.\n당 못한다\"\n투자·협력 유치를 위한 발표 후 현장 투표와 심사단 점수를 종합해 선발된 3개팀 'Pinta AI', '모토\n마인드', '포바디'에는 상금과 함께 중소벤처기업부 초기창업패키지 서류 면제와 LG 계열사와의\n협업 기회가 주어진다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "랩인큐브(프레스나인 전재) 자료의 원문 인용(발표 내용): 「특히 올해는 대학 창업팀을 지원하는 ‘루키 프로그램’을 새롭게 도입했다. 서울대, 포스텍 등 주요 대학에서 추천받은 우\n수 팀들이 피칭 콘테스트를 펼쳤으며, 최종 선발된 3개 팀(Pinta AI, 모토마인드, 포바디)에게는 상금과 함께 LG 계열\n사 협업, ‘슈퍼스타트 인큐베이터’ 입주 등 파격적인 혜택이 제공된다. LG는 내년부터 이 프로그램을 더욱 확대해 청년」",
+          "criterion_id": "market_entry_expansion",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-06",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "특히 올해는 대학 창업팀을 지원하는 ‘루키 프로그램’을 새롭게 도입했다. 서울대, 포스텍 등 주요 대학에서 추천받은 우\n수 팀들이 피칭 콘테스트를 펼쳤으며, 최종 선발된 3개 팀(Pinta AI, 모토마인드, 포바디)에게는 상금과 함께 LG 계열\n사 협업, ‘슈퍼스타트 인큐베이터’ 입주 등 파격적인 혜택이 제공된다. LG는 내년부터 이 프로그램을 더욱 확대해 청년",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-06",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "특히 올해는 대학 창업팀을 지원하는 ‘루키 프로그램’을 새롭게 도입했다. 서울대, 포스텍 등 주요 대학에서 추천받은 우\n수 팀들이 피칭 콘테스트를 펼쳤으며, 최종 선발된 3개 팀(Pinta AI, 모토마인드, 포바디)에게는 상금과 함께 LG 계열\n사 협업, ‘슈퍼스타트 인큐베이터’ 입주 등 파격적인 혜택이 제공된다. LG는 내년부터 이 프로그램을 더욱 확대해 청년",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "핵심 작업 성능": {
       "category": "제품·기술력",
       "weight": 6,
       "grade": 1,
       "score": 1.5,
-      "reason": "BELLO의 설계 사양(양팔 14-DoF, 고반응성 팔, AI 플랫폼 등)과 데이터 기반 학습 개발 목표는 확인된다. 하지만 실제로 산업 현장 작업의 실측 성공률·속도·신뢰성 지표, 반복 테스트 실증 자료는 없다. 시제품 개발 목표 수준이다.",
+      "reason": "팔 구조, 페이로드, 설계 등 기술 사양은 명시됐고, 제한적 데모/납품 정보 있으나 작업별 실측 성공률·속도·환경 등 반복 정량 검증 및 다양한 현장 실적은 확인되지 않음.",
       "evidence": [
         {
-          "claim": "BELLO는 제조 현장 투입을 목표로 설계된 양팔 14-DoF 휴머노이드로, 저감속 기어비 기반 고반응성 팔과 내부 골격 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일 플랫폼에 통합하여 핵심 작업 수행을 지원한다.",
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「준야외 환경용 last-mile 로봇. 자체 흡착식 그리퍼로 최대 10kg 화물을 자동 적하합니다.\n출력 배터리 센서\n750 W 24V · 40 Ah 2D Lidar · 카메라\n무게 PAYLOAD (구동부) PAYLOAD (로봇팔)\n25 kg 80 kg 10 kg」",
           "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "준야외 환경용 last-mile 로봇. 자체 흡착식 그리퍼로 최대 10kg 화물을 자동 적하합니다.\n출력 배터리 센서\n750 W 24V · 40 Ah 2D Lidar · 카메라\n무게 PAYLOAD (구동부) PAYLOAD (로봇팔)\n25 kg 80 kg 10 kg",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "준야외 환경용 last-mile 로봇. 자체 흡착식 그리퍼로 최대 10kg 화물을 자동 적하합니다.\n출력 배터리 센서\n750 W 24V · 40 Ah 2D Lidar · 카메라\n무게 PAYLOAD (구동부) PAYLOAD (로봇팔)\n25 kg 80 kg 10 kg",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「실내 화물 운송용 로봇. 전동 클로즈 덱과 SAM 기반 객체 인식으로 층간 이동까지 지원합니다.\n출력 배터리 센서\n750 W 24V · 40 Ah 2D Lidar · 카메라\n무게 PAYLOAD (구동부) PAYLOAD (로봇팔)\n32 kg 80 kg 5 kg」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 5
+            }
+          ],
+          "source_bound_quote": "실내 화물 운송용 로봇. 전동 클로즈 덱과 SAM 기반 객체 인식으로 층간 이동까지 지원합니다.\n출력 배터리 센서\n750 W 24V · 40 Ah 2D Lidar · 카메라\n무게 PAYLOAD (구동부) PAYLOAD (로봇팔)\n32 kg 80 kg 5 kg",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 5
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "실내 화물 운송용 로봇. 전동 클로즈 덱과 SAM 기반 객체 인식으로 층간 이동까지 지원합니다.\n출력 배터리 센서\n750 W 24V · 40 Ah 2D Lidar · 카메라\n무게 PAYLOAD (구동부) PAYLOAD (로봇팔)\n32 kg 80 kg 5 kg",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「제조 현장 투입을 목표로 설계된 양팔 14-DoF(자유도) 휴머노이드. 저감속 기어비 기반 고반응성\n팔, 내부 골격(Endoskeleton) 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일\n플랫폼에 통합합니다.」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "MM-03",
               "page": 1
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "제조 현장 투입을 목표로 설계된 양팔 14-DoF(자유도) 휴머노이드. 저감속 기어비 기반 고반응성\n팔, 내부 골격(Endoskeleton) 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일\n플랫폼에 통합합니다.",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "MM-03",
             "page": 1
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "제조 현장 투입을 목표로 설계된 양팔 14-DoF(자유도) 휴머노이드. 저감속 기어비 기반 고반응성 팔, 내부 골격(Endoskeleton) 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일 플랫폼에 통합합니다.",
-          "evidence_reason": "원본 페이지에 주장의 모든 핵심 세부 사항(제조 현장 투입 목표, 양팔 14-DoF, 저감속 기어비 기반 고반응성 팔, 내부 골격 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅의 통합)이 명시되어 있습니다.",
+          "evidence_quote": "제조 현장 투입을 목표로 설계된 양팔 14-DoF(자유도) 휴머노이드. 저감속 기어비 기반 고반응성\n팔, 내부 골격(Endoskeleton) 구조, Jetson Orin AGX 기반 온디바이스 AI 컴퓨팅을 단일\n플랫폼에 통합합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         },
         {
-          "claim": "MOTOMIND는 데이터 기반 휴머노이드 학습을 목표로 하며, 균일한 양질의 학습 데이터를 확보하고 이를 모델 성능 향상에 환류하는 폐쇄 루프 구조로 개발을 진행 중이다.",
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「구조 PAYLOAD\n14 DoF 5 kg\n양팔 휴머노이드 팔 한쪽 당」",
           "criterion_id": "core_task_performance",
+          "status": "confirmed",
           "source_refs": [
             {
-              "doc_id": "MM-01",
+              "doc_id": "MM-03",
               "page": 2
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "구조 PAYLOAD\n14 DoF 5 kg\n양팔 휴머노이드 팔 한쪽 당",
+          "source_scope": "reported_fact",
           "source": {
-            "doc_id": "MM-01",
+            "doc_id": "MM-03",
             "page": 2
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "MOTOMIND는 균일한 양질의 학습 데이터를 확보하고, 이를 모델 성능 향상에 환류하는 폐쇄 루프 구조로 개발을 진행합니다.",
-          "evidence_reason": "원본 페이지는 MOTOMIND가 데이터 기반 휴머노이드 학습을 목표로 하며, 균일한 양질의 데이터를 확보하고 이를 폐쇄 루프 구조로 모델 성능에 환류하는 개발을 진행한다고 명시하고 있다. 모든 핵심 사실이 명확히 기술되어 있다.",
+          "evidence_quote": "구조 PAYLOAD\n14 DoF 5 kg\n양팔 휴머노이드 팔 한쪽 당",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「양팔 14-DoF 구조로 사람형 조립, 이송, 조작 작업을 수행합니다.\n02\nHuman-scale Form Factor\n기존 작업대와 공정 환경을 변경하지 않고 투입할 수 있습니다.」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-03",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "양팔 14-DoF 구조로 사람형 조립, 이송, 조작 작업을 수행합니다.\n02\nHuman-scale Form Factor\n기존 작업대와 공정 환경을 변경하지 않고 투입할 수 있습니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-03",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "양팔 14-DoF 구조로 사람형 조립, 이송, 조작 작업을 수행합니다.\n02\nHuman-scale Form Factor\n기존 작업대와 공정 환경을 변경하지 않고 투입할 수 있습니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "프레스 공정 차량 내장재 부착 자동화 데모\nBELLO와 자체 솔루션을 기반으로 부품 운반, 정렬, 용접, 검사 등 자동화 흐름을 시연하고 양해각서(MOU)\n를 체결했습니다.\n— 소재 공급 → 파트 로딩 → 정렬 → 용접 → 취출/언로딩 → 파트 운반\n— 차량 내장재 부착 공정 자동화 데모",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
@@ -356,49 +962,432 @@
     "현장 안정성·안전성": {
       "category": "제품·기술력",
       "weight": 5,
-      "grade": null,
-      "score": null,
-      "reason": "현장 반복성, 장애·안전 실증, 실제 가동 시간에 대한 구체 실험 결과, 고객 현장 자료 등은 근거에 없다.",
-      "evidence": []
+      "grade": 1,
+      "score": 1.25,
+      "reason": "Deployment Ready, 충돌 회피, 안전 인터록 등 내장 기능 및 데모 현장 언급은 있으나, 반복적 실현장 무중단 가동, 장애 발생률, 안전 사고 등 실사용 지표 및 외부 검증이 부족해 2 이상 부여 어려움.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「Deployment Ready\n센서, 제어기, AI 컴퓨팅을 단일 플랫폼으로 통합하여 외부 장치 없이 현장 실증이 가능합니다.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-03",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "Deployment Ready\n센서, 제어기, AI 컴퓨팅을 단일 플랫폼으로 통합하여 외부 장치 없이 현장 실증이 가능합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-03",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Deployment Ready\n센서, 제어기, AI 컴퓨팅을 단일 플랫폼으로 통합하여 외부 장치 없이 현장 실증이 가능합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「+깊이) 카메라로 작업 환경을 인식하고 충돌 위험\n구역을 회피합니다.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-03",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "+깊이) 카메라로 작업 환경을 인식하고 충돌 위험\n구역을 회피합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-03",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "+깊이) 카메라로 작업 환경을 인식하고 충돌 위험\n구역을 회피합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「안전 모니터링\nLidar / RGB-D 기반 충돌 회피, 토크 모니터링, 비상 정지 인터록을 기본 탑재해 별도 안전 시스템 추가 없이 운영합니다.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-03",
+              "page": 7
+            }
+          ],
+          "source_bound_quote": "안전 모니터링\nLidar / RGB-D 기반 충돌 회피, 토크 모니터링, 비상 정지 인터록을 기본 탑재해 별도 안전 시스템 추가 없이 운영합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-03",
+            "page": 7
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "안전 모니터링\nLidar / RGB-D 기반 충돌 회피, 토크 모니터링, 비상 정지 인터록을 기본 탑재해 별도 안전 시스템 추가 없이 운영합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "양산·유지보수 가능성": {
       "category": "제품·기술력",
       "weight": 4,
-      "grade": null,
-      "score": null,
-      "reason": "실제 생산, 제조 확장, 유지보수 체계를 보여주는 실적 근거(양산 라인 가동, 품질 검증, 유지관리 조직·계획 등)는 확인되지 않는다.",
-      "evidence": []
+      "grade": 1,
+      "score": 1.0,
+      "reason": "시제품, 시양산 단계, 자체 설비 및 보드 양산/개발 언급 등은 확인되나, 실제 양산 체계, 대량 생산/유지보수, 비용·품질·정비 체계의 반복적 운영 검증은 없음. 양산 목표/테스트베드 수준에 머뭄.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「3개 시설에서 시제품 제작과 시양산 검증, 통합 테스트를 수행합니다.\n총 38평\n포항 체인지업그라운드 본사\n3D 프린터 2기, 오실로스코프, DC 서플라이 등 시제품 제작 설비를 갖춘 본사입니다.」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "3개 시설에서 시제품 제작과 시양산 검증, 통합 테스트를 수행합니다.\n총 38평\n포항 체인지업그라운드 본사\n3D 프린터 2기, 오실로스코프, DC 서플라이 등 시제품 제작 설비를 갖춘 본사입니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "3개 시설에서 시제품 제작과 시양산 검증, 통합 테스트를 수행합니다.\n총 38평\n포항 체인지업그라운드 본사\n3D 프린터 2기, 오실로스코프, DC 서플라이 등 시제품 제작 설비를 갖춘 본사입니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「양산 검증 테스트베드\n양산 직전 제품의 검증, 통합 테스트, 데모 환경 구축에 사용됩니다.」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "양산 검증 테스트베드\n양산 직전 제품의 검증, 통합 테스트, 데모 환경 구축에 사용됩니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "양산 검증 테스트베드\n양산 직전 제품의 검증, 통합 테스트, 데모 환경 구축에 사용됩니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「BELLO 이전 자체 설계·운영한 모빌리티 로봇입니다.\nOUTDOOR DELIVERY\nOD-1\n4륜 독립조향 야외 딜리버리 로봇. 캠퍼스 규모 3D SLAM과 대형 화물 적재를 지원합니다.\n출력 배터리 센서」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "BELLO 이전 자체 설계·운영한 모빌리티 로봇입니다.\nOUTDOOR DELIVERY\nOD-1\n4륜 독립조향 야외 딜리버리 로봇. 캠퍼스 규모 3D SLAM과 대형 화물 적재를 지원합니다.\n출력 배터리 센서",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "BELLO 이전 자체 설계·운영한 모빌리티 로봇입니다.\nOUTDOOR DELIVERY\nOD-1\n4륜 독립조향 야외 딜리버리 로봇. 캠퍼스 규모 3D SLAM과 대형 화물 적재를 지원합니다.\n출력 배터리 센서",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「단일 로봇 운영부터 다중 로봇 관제까지를 자체 플랫폼으로 지원합니다.\n범용 컴퓨팅 보드\n모터 드라이버·IMU·기압계 등 주행 기반 센서를 단일 보드에 내재화한 자체 설계 컴퓨팅 보드. 워크로드에 맞춰\n컴퓨트 모듈만 교체해 시제품부터 양산까지 동일하게 운영합니다.\n40 / 67 / 100 TOPS 컴퓨트 모듈 선택 장착\nJetson Nano 소켓 보드 양산, AGX 소켓 보드 개발 중」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 6
+            }
+          ],
+          "source_bound_quote": "단일 로봇 운영부터 다중 로봇 관제까지를 자체 플랫폼으로 지원합니다.\n범용 컴퓨팅 보드\n모터 드라이버·IMU·기압계 등 주행 기반 센서를 단일 보드에 내재화한 자체 설계 컴퓨팅 보드. 워크로드에 맞춰\n컴퓨트 모듈만 교체해 시제품부터 양산까지 동일하게 운영합니다.\n40 / 67 / 100 TOPS 컴퓨트 모듈 선택 장착\nJetson Nano 소켓 보드 양산, AGX 소켓 보드 개발 중",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 6
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "단일 로봇 운영부터 다중 로봇 관제까지를 자체 플랫폼으로 지원합니다.\n범용 컴퓨팅 보드\n모터 드라이버·IMU·기압계 등 주행 기반 센서를 단일 보드에 내재화한 자체 설계 컴퓨팅 보드. 워크로드에 맞춰\n컴퓨트 모듈만 교체해 시제품부터 양산까지 동일하게 운영합니다.\n40 / 67 / 100 TOPS 컴퓨트 모듈 선택 장착\nJetson Nano 소켓 보드 양산, AGX 소켓 보드 개발 중",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「경로 자원 할당 알고리즘(MAPF)으로 복수의 로봇이 서로 다른 경로로 주행·회피하며 동시에 운용되도록\n관제합니다. 태스크 발행부터 완료까지 전 과정을 자동으로 오케스트레이션합니다.\n태스크 생성 → 할당 → 주행 → 완료 자동 오케스트레이션\n현장 AMR 중 최적의 로봇에 태스크 자동 할당」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 7
+            }
+          ],
+          "source_bound_quote": "경로 자원 할당 알고리즘(MAPF)으로 복수의 로봇이 서로 다른 경로로 주행·회피하며 동시에 운용되도록\n관제합니다. 태스크 발행부터 완료까지 전 과정을 자동으로 오케스트레이션합니다.\n태스크 생성 → 할당 → 주행 → 완료 자동 오케스트레이션\n현장 AMR 중 최적의 로봇에 태스크 자동 할당",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 7
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "경로 자원 할당 알고리즘(MAPF)으로 복수의 로봇이 서로 다른 경로로 주행·회피하며 동시에 운용되도록\n관제합니다. 태스크 발행부터 완료까지 전 과정을 자동으로 오케스트레이션합니다.\n태스크 생성 → 할당 → 주행 → 완료 자동 오케스트레이션\n현장 AMR 중 최적의 로봇에 태스크 자동 할당",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "VLA 연구 기관 양팔로봇 납품\nVLA 기반 가사 자동화를 연구하는 기관에, VLA 시스템과 자체 구동부·자율주행·학습 시스템을 통합한\n양팔로봇을 납품했습니다.\n— VLA 시스템 통합 양팔로봇 납품\n— 자체 구동부 + 자율주행 모듈 탑재\n— 학습 시스템 · 실행 데모까지 포함한 풀패키지",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "경쟁 제품 대비 고객 가치": {
       "category": "경쟁우위",
       "weight": 4,
-      "grade": null,
-      "score": null,
-      "reason": "경쟁사 또는 기존 방식과 BELLO의 도입 효과(비용/성능/효율 등) 비교, 고객 가치와 도입 편익의 객관적 입증 자료는 없다.",
-      "evidence": []
+      "grade": 1,
+      "score": 1.0,
+      "reason": "터치 UI, 조작 편의성 등 기술적 편의 요소와 사양 등 비교 표현은 있으나, 경쟁사 대비 정량 성능/비용·효과/고객 ROI·실제 대체성에 대한 독립적 비교 검증은 없음.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「터치스크린 조이스틱만으로 신규 맵을 생성하고 노드·엣지 경로를 직접 편집해, 전문 인력 없이도 누구나 로봇\n자율주행을 시작할 수 있는 도구입니다.\n터치 조이스틱 기반 직관적 맵 작성·경로 편집\n기존 맵 로드 + SLAM으로 손쉬운 맵 업데이트\n실시간 맵 조회로 빠르고 안정적인 로봇 설치」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 6
+            }
+          ],
+          "source_bound_quote": "터치스크린 조이스틱만으로 신규 맵을 생성하고 노드·엣지 경로를 직접 편집해, 전문 인력 없이도 누구나 로봇\n자율주행을 시작할 수 있는 도구입니다.\n터치 조이스틱 기반 직관적 맵 작성·경로 편집\n기존 맵 로드 + SLAM으로 손쉬운 맵 업데이트\n실시간 맵 조회로 빠르고 안정적인 로봇 설치",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 6
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "터치스크린 조이스틱만으로 신규 맵을 생성하고 노드·엣지 경로를 직접 편집해, 전문 인력 없이도 누구나 로봇\n자율주행을 시작할 수 있는 도구입니다.\n터치 조이스틱 기반 직관적 맵 작성·경로 편집\n기존 맵 로드 + SLAM으로 손쉬운 맵 업데이트\n실시간 맵 조회로 빠르고 안정적인 로봇 설치",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「14 DoF 5 kg\n양팔 휴머노이드 팔 한쪽 당」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-03",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "14 DoF 5 kg\n양팔 휴머노이드 팔 한쪽 당",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-03",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "14 DoF 5 kg\n양팔 휴머노이드 팔 한쪽 당",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "모방하기 어려운 자산": {
       "category": "경쟁우위",
       "weight": 3,
-      "grade": null,
-      "score": null,
-      "reason": "이 평가항목에 해당하는 검증 근거가 연결되지 않아 U입니다.",
-      "evidence": []
+      "grade": 1,
+      "score": 0.75,
+      "reason": "자체 개발 모듈, 데이터 수집 구조, 컨트롤러/컴퓨팅 설계 등은 명시되나, 특허·노하우·데이터셋과 같은 실질적 보호/모방 장벽, 법적 보호/차단 실적의 검증까지는 확인 불가. 계획/기술 내역 수준에 그침.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「휴머노이드 자동화의 성능은 학습 데이터 품질에 크게 좌우됩니다. MOTOMIND는 균일한 양질의 학습\n데이터를 확보하고, 이를 모델 성능 향상에 환류하는 폐쇄 루프 구조로 개발을 진행합니다.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-01",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "휴머노이드 자동화의 성능은 학습 데이터 품질에 크게 좌우됩니다. MOTOMIND는 균일한 양질의 학습\n데이터를 확보하고, 이를 모델 성능 향상에 환류하는 폐쇄 루프 구조로 개발을 진행합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-01",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "휴머노이드 자동화의 성능은 학습 데이터 품질에 크게 좌우됩니다. MOTOMIND는 균일한 양질의 학습\n데이터를 확보하고, 이를 모델 성능 향상에 환류하는 폐쇄 루프 구조로 개발을 진행합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "로봇 하드웨어, 임베디드 보드, 자율주행, 관제 소프트웨어, 공장 통합 등 로봇 도입에 필요한 전 레이어를\n자체 개발합니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「야외·실내 모빌리티부터 양팔 휴머노이드까지 자체 설계.\n— 4륜 독립조향 야외 딜리버리 로봇 (OD-1)\n— Last-mile 딜리버리 로봇 (ELLO · ELLY)\n— 양팔 14-DoF 휴머노이드 (BELLO)」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "야외·실내 모빌리티부터 양팔 휴머노이드까지 자체 설계.\n— 4륜 독립조향 야외 딜리버리 로봇 (OD-1)\n— Last-mile 딜리버리 로봇 (ELLO · ELLY)\n— 양팔 14-DoF 휴머노이드 (BELLO)",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "야외·실내 모빌리티부터 양팔 휴머노이드까지 자체 설계.\n— 4륜 독립조향 야외 딜리버리 로봇 (OD-1)\n— Last-mile 딜리버리 로봇 (ELLO · ELLY)\n— 양팔 14-DoF 휴머노이드 (BELLO)",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「모터드라이버, IMU, 기압계를 보드 레벨에서 통합한 일체형 컴퓨팅 모듈.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "모터드라이버, IMU, 기압계를 보드 레벨에서 통합한 일체형 컴퓨팅 모듈.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "모터드라이버, IMU, 기압계를 보드 레벨에서 통합한 일체형 컴퓨팅 모듈.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「— 40 / 67 / 100 TOPS 컴퓨팅 모듈 호환\n— Jetson nano 소켓 보드 개발 완료」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "— 40 / 67 / 100 TOPS 컴퓨팅 모듈 호환\n— Jetson nano 소켓 보드 개발 완료",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "— 40 / 67 / 100 TOPS 컴퓨팅 모듈 호환\n— Jetson nano 소켓 보드 개발 완료",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「실내·실외 환경에서 동작하는 SLAM 및 장애물 회피 자율주행 자체 개발.\n— 2D · 3D Lidar 기반 SLAM\n— 캠퍼스 규모 매핑 검증\n— 준야외 환경 주행 지원」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "실내·실외 환경에서 동작하는 SLAM 및 장애물 회피 자율주행 자체 개발.\n— 2D · 3D Lidar 기반 SLAM\n— 캠퍼스 규모 매핑 검증\n— 준야외 환경 주행 지원",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-02",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "실내·실외 환경에서 동작하는 SLAM 및 장애물 회피 자율주행 자체 개발.\n— 2D · 3D Lidar 기반 SLAM\n— 캠퍼스 규모 매핑 검증\n— 준야외 환경 주행 지원",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "고객 유지·전환 장벽": {
       "category": "경쟁우위",
       "weight": 3,
-      "grade": null,
-      "score": null,
-      "reason": "고객의 도입 후 지속 사용, 시스템 통합, 전환 비용 또는 락인(lock-in) 등의 실증 근거나 구체 확인 내용이 부재하다.",
-      "evidence": []
+      "grade": 1,
+      "score": 0.75,
+      "reason": "MES/IoT 연동 시스템, 관제 통합 등 업계 표준 솔루션 도입을 통한 진입장벽 요소 언급으나, 실제 고객의 이탈비용, 재계약·장기 사용 실적, 전환 방지 효과 등 근거는 찾지 못함.",
+      "evidence": [
+        {
+          "claim": "MOTOMIND (주식회사 모토마인드) 자료의 원문 인용(발표 내용): 「ETRI와 협업하여 다중 AMR(자율이동로봇)이 공장 내 MES(제조 실행 시스템)·IoT와 연동해 태스크를 자율 분배·\n실행하는 관제 시스템을 구축하고, 서로 다른 제조사의 AMR을 단일 관제 흐름으로 통합했습니다.\n— MES 태스크 발행 → 할당 → 주행 → 작업 → 완료 업로드 자동화\n— MAPF 알고리즘 기반 복수 로봇 동시 운용\n— 공장 자동문·버튼 Modbus TCP 연동\n— S/I/L사 등 다종 AMR 단일 관제 통합 및 현장별 UI 커스터마이즈」",
+          "criterion_id": "customer_retention_switching_barrier",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "MM-04",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "ETRI와 협업하여 다중 AMR(자율이동로봇)이 공장 내 MES(제조 실행 시스템)·IoT와 연동해 태스크를 자율 분배·\n실행하는 관제 시스템을 구축하고, 서로 다른 제조사의 AMR을 단일 관제 흐름으로 통합했습니다.\n— MES 태스크 발행 → 할당 → 주행 → 작업 → 완료 업로드 자동화\n— MAPF 알고리즘 기반 복수 로봇 동시 운용\n— 공장 자동문·버튼 Modbus TCP 연동\n— S/I/L사 등 다종 AMR 단일 관제 통합 및 현장별 UI 커스터마이즈",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "MM-04",
+            "page": 4
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "ETRI와 협업하여 다중 AMR(자율이동로봇)이 공장 내 MES(제조 실행 시스템)·IoT와 연동해 태스크를 자율 분배·\n실행하는 관제 시스템을 구축하고, 서로 다른 제조사의 AMR을 단일 관제 흐름으로 통합했습니다.\n— MES 태스크 발행 → 할당 → 주행 → 작업 → 완료 업로드 자동화\n— MAPF 알고리즘 기반 복수 로봇 동시 운용\n— 공장 자동문·버튼 Modbus TCP 연동\n— S/I/L사 등 다종 AMR 단일 관제 통합 및 현장별 UI 커스터마이즈",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "대기업 실제 지분·CVC 투자": {
       "category": "실적",
       "weight": 4,
       "grade": null,
       "score": null,
-      "reason": "MOU 체결 외에 대기업 또는 CVC의 실제 지분 투자, 투자의 주체·금액 등 거래 증거는 없다.",
+      "reason": "실제 지분투자는 확인 4점·부재 확인 0점·미확인 U만 허용합니다.",
       "evidence": []
     },
     "유상 매출·납품": {
@@ -406,7 +1395,7 @@
       "weight": 5,
       "grade": null,
       "score": null,
-      "reason": "유상 매출 실적, 고객 금액 지급, 상용 납품 등 확인 가능한 근거는 없다.",
+      "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
       "evidence": []
     },
     "대기업 계약·납품 단계": {
@@ -422,7 +1411,7 @@
       "weight": 5,
       "grade": null,
       "score": null,
-      "reason": "기존 고객의 유상 재구매, 공급 확대, 갱신 등의 근거와 검증은 없다.",
+      "reason": "동일 고객의 반복 재구매·확대(계약 갱신, 추가납품)에 대한 단일 근거도 확인되지 않음. 사전 계약, 시연/테스트 수준에 머물러 반복 상용화/재구매 데이터 없음.",
       "evidence": []
     },
     "기업가치의 합리성": {
@@ -454,55 +1443,43 @@
     "passed": true,
     "issues": [],
     "data_gaps": [
-      "작업별 현장 성공률, 반복성, 장애이력 등 실제 공정 도입 실증 자료",
-      "유상 매출 실적 및 납품 내역, 실제 고객 계약",
-      "동일 고객의 유상 갱신/재구매/납품 확대 기록",
-      "핵심 팀원의 세부 경력·사업화·운영 이력",
-      "양산 수율, 제조·서비스 확장성, 유지보수 비용 자료",
-      "시장 수요, 고객군 규모, 구매 필요성에 대한 근거 자료",
-      "실제 투자 조건(기업가치, 지분·권리 조건, 자금 사용 등의 최근 거래 정보)"
+      "유상 매출·납품: 유상 계약·인도·매출 인식 자료와 실제 고객 확인 필요",
+      "고객 재구매·확대: 동일 고객의 유상 갱신·재구매·도입 확대 확인 필요",
+      "관련 전문성: 창업자·핵심 인력의 직무 이력과 실제 제품 개발 실적 자료 필요",
+      "소통의 명확성과 신뢰성: 공시·발표 간 일치, 실제 목표 달성 증거 필요",
+      "현재 투자조건: 투자자 입력에 의한 기업가치·지분·자금 사용 계획 확인 필요"
     ],
     "rubric": {
       "groundedness": true,
       "neutrality": true,
       "bias_control": true,
-      "groundedness_reason": "보고서는 각 평가 항목별로 원문에서 명시된 사실과 일치하는 근거(E2, E3, E4, E5, E6 등)를 적시하여 해당되는 사실만 확정적으로 판정한다. 반면 실제 매출, 유상 납품, 시장 지표 등 미확인·미공개 항목은 'U' 등급과 함께 구체적으로 어떤 정보가 필요한지 명시하고 있다. 등급·점수 부여, 미확인(U) 구분, 투자조건 불입력 등은 모두 원문 자료의 범위 내에서 이루어져, 원문 내용 및 부재 자체를 정확하게 반영한다.",
-      "neutrality_reason": "회사의 기술·협력·운영 역량 등은 원문에서 확인 가능한 범위만을 정확히 기재했다. 시장성, 제품 성능, 실적 등은 미확인 사실을 '가능성 언급'이나 '강점 홍보'로 해석하지 않고, 확인된 사실·정보만 명확하게 구분하였다. 회사의 홍보 문구나 우수성 주장을 검증 사실로 확대하지 않고, '미확정(U)'으로 투자 판단을 유보하여 과장이나 일방적 해석 없이 중립성을 유지했다.",
-      "bias_control_reason": "대기업 지분, 매출, 재구매 등 핵심 실적과 투자조건이 부재할 경우 이를 곧바로 부정·부실로 단정하지 않고, 원문에 근거해 미확인(U) 처리를 하며, 의심이나 반증·불확실성 설명으로 논리를 전개했다. 회사측 주장에는 독립 검증의 부재, 공개 자료의 한계를 분명히 표기했다. 실적 부족과 미확정의 구분, 후속 확인 필요 항목 제시는 독립적 시각이 반영된 증거다.",
+      "groundedness_reason": "모든 평가 문단은 실제 증거(E8, E11, E12, E13, E14 등)에서 직접 인용한 내용이나, 근거에서 유도할 수 있는 조건부 해석(예: 반복 실적 부족·한계점 등)을 명확히 구분하여 언급하였다. 기업 외부의 독립적 검증은 정직하게 한계로 명시하고 자료 부족(U) 항목은 data_gaps로만 처리하였으며, 실제 유상 계약, 대량 납품, 반복 매출은 주장하지 않았다. 추론형 분석 문장도 모두 앞서 확인된 사실과 모순 없이, 추가적 검증 필요성과 불확실성을 적시하였다.",
+      "neutrality_reason": "홍보 또는 우월성 표현을 투자 근거로 직접 삼지 않고, '경쟁력 가능성', '확장 여지', '시장 진입 시도' 등으로 한정하였다. 기존 실적이나 성능의 한계를 여러 차례 언급했고, 반복 매출·고객 확대·핵심 기술의 검증된 경쟁 우위를 이미 달성한 사실로 확정하지 않았다. 판정 불가는 U로 표시하여 미확정 상태임을 명확히 했으므로, 기업이나 기술의 장점을 검증 불충분한 우월 주장으로 과장하거나 평가 결과에 부당 확대하지 않았다.",
+      "bias_control_reason": "회사 발표/내부 자료를 근거 삼아 서술할 때 이는 '회사 발표로 확인된다' 또는 '발표내용이며 독립 검증이 아니'라고 여러 차례 명시하였고, 평가지표 중 반복 매출·유상 계약·자산 보호(특허 등)·인력 경력은 모두 미확인(U)·한계항목으로 처리했다. 실제 대기업 지분투자·계약 실적·고객 반복 매출 등 근거가 발견되지 않은 항목에 대해서는 추가 자료 요청과 한계, 후속 실사 정보 수집 필요를 분리 언급했다. 내부 자료 주장만으로 외부 효과·시장 우위·성과를 사실로 단정하지 않았다.",
       "action": "rewrite",
       "issues": [],
       "data_gaps": [
-        "작업별 현장 성공률, 반복성, 장애이력 등 실제 공정 도입 실증 자료",
-        "유상 매출 실적 및 납품 내역, 실제 고객 계약",
-        "동일 고객의 유상 갱신/재구매/납품 확대 기록",
-        "핵심 팀원의 세부 경력·사업화·운영 이력",
-        "양산 수율, 제조·서비스 확장성, 유지보수 비용 자료",
-        "시장 수요, 고객군 규모, 구매 필요성에 대한 근거 자료",
-        "실제 투자 조건(기업가치, 지분·권리 조건, 자금 사용 등의 최근 거래 정보)"
-      ]
+        "유상 매출·납품: 유상 계약·인도·매출 인식 자료와 실제 고객 확인 필요",
+        "고객 재구매·확대: 동일 고객의 유상 갱신·재구매·도입 확대 확인 필요",
+        "관련 전문성: 창업자·핵심 인력의 직무 이력과 실제 제품 개발 실적 자료 필요",
+        "소통의 명확성과 신뢰성: 공시·발표 간 일치, 실제 목표 달성 증거 필요",
+        "현재 투자조건: 투자자 입력에 의한 기업가치·지분·자금 사용 계획 확인 필요"
+      ],
+      "company_report_reflection": []
     },
     "action": "rewrite",
     "method": "hybrid"
   },
-  "trace_id": "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
+  "trace_id": "d8719241-110f-4807-ac1e-64e636a86d80",
   "recheck_count": 3,
   "input_paths": {
-    "data_dir": "./rag/data",
-    "com_data_dir": "./com_data",
+    "data_dir": "rag/data",
+    "com_data_dir": "com_data",
     "index_dir": "./.cache/rag_index"
   },
   "index_info": {
-    "cache_hit": true,
-    "cache_status": "loaded",
-    "cache_path": "./.cache/rag_index/983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
-    "fingerprint": "983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
-    "model": "BAAI/bge-m3",
-    "documents": 22,
-    "pages": 106,
-    "chunk_size": 1000,
-    "chunk_overlap": 150,
-    "chunks": 154,
-    "dimensions": 1024
+    "initialized": false,
+    "mode": "resume_report"
   },
   "report_path": "./output/submission-live/motomind.pdf",
   "evaluation_criteria": {
@@ -565,32 +1542,25 @@
   },
   "selection_note": "원 배점 점수와 U·근거 비중을 함께 검토; 자동 순위·투자 선택 아님",
   "resume": {
-    "snapshot_path": "./output/submission-live/motomind.failed_state.json",
-    "resumed_from_trace_id": "38b1b545-4d50-45f1-b3d2-19dd555060de"
+    "snapshot_path": "./output/validated-final-run-20261016/motomind/motomind.state.json",
+    "resumed_from_trace_id": "df597150-6cb1-4ab0-8ff7-9ba942fb2707"
   },
   "tracing": {
     "requested": true,
     "key_present": true,
     "enabled": true,
     "project": "physical-ai-minimal-orchestration",
-    "root_run_id": "4aa3b6c8-1040-4b0f-85b5-ecca107f781a",
+    "root_run_id": "a6ed963b-9065-4b43-8c1e-f1d5fac54eef",
     "upload_verified": false
   },
   "metrics": {
-    "graph_elapsed_seconds": 19.013442,
+    "graph_elapsed_seconds": 19.536078,
     "nodes": [
       {
-        "node": "writer",
-        "run_id": "01a13476-9d2b-72a1-b106-11dab2e16a2f",
-        "round": 3,
-        "elapsed_seconds": 10.699438,
-        "status": "completed"
-      },
-      {
         "node": "report_evaluator",
-        "run_id": "01a13476-c6f7-7621-81e2-48fe08543e2f",
+        "run_id": "01a14339-2a11-7e43-9809-51a64cff3515",
         "round": 3,
-        "elapsed_seconds": 8.30876,
+        "elapsed_seconds": 19.526649,
         "status": "completed"
       }
     ],

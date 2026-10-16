@@ -231,7 +231,7 @@ class WebSourceReader:
         key = entry["doc_id"]
         if key not in self._memory:
             with pdfplumber.open(entry["source_path"]) as pdf:
-                self._memory[key] = [p.extract_text() or "" for p in pdf.pages]
+                self._memory[key] = [(p.extract_text() or "").replace('\x00', ' ') for p in pdf.pages]
         return [Document(page_content=text, metadata={
             "doc_id": key, "company": company, "file_path": entry["source_path"], "page": i,
             "source_kind": "web", "source_url": entry["source_url"], "accessed_at": entry["accessed_at"],

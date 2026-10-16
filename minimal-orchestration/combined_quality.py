@@ -5,7 +5,7 @@ from typing import Literal
 
 from legacy_adapter import REPORT_QUALITY_KEYS, QualityReview, request_report_verdict
 from report_language import report_language_issues, report_evidence_links, report_evidence_scope_issues
-from company_report_inputs import ReportParagraphReference, FinalParagraphReference
+from company_report_inputs import ReportParagraphReference, FinalParagraphReference, EvidenceReference
 
 
 class ReflectionEvidence(BaseModel):
@@ -16,6 +16,15 @@ class ReflectionEvidence(BaseModel):
     final_excerpt: str = Field(min_length=12)
 
 
+class MaterialFactReflection(BaseModel):
+    topic: Literal['teleoperation','data_platform','performance_requirement','failure_information']
+    source_evidence_id: EvidenceReference
+    final_paragraph_id: FinalParagraphReference
+    final_excerpt: str = Field(min_length=12,max_length=180)
+    preserved: bool
+    reason: str = Field(max_length=180)
+
+
 class CompanyReflection(BaseModel):
     company: Literal['MOTOMIND', 'ROBROS', 'Figure AI']
     analysis_preserved: bool
@@ -24,6 +33,7 @@ class CompanyReflection(BaseModel):
     reason: str
     missing_or_distorted: list[str] = Field(default_factory=list)
     preservation_evidence: list[ReflectionEvidence] = Field(default_factory=list, max_length=12)
+    required_fact_reflection: list[MaterialFactReflection] = Field(default_factory=list,max_length=4)
 
 
 class CombinedQualityReview(QualityReview):
@@ -32,6 +42,36 @@ class CombinedQualityReview(QualityReview):
 
 class CombinedRevision(BaseModel):
     markdown: str
+
+
+def material_fact_reflection_issues(payload,reflections):
+    """핵심 사실의 의미는 Judge, 회사·원문 ID·실제 발췌 연결은 코드가 검사한다."""
+    records={c['company']:c for c in payload.get('companies',[])}
+    reviews={r['company']:r for r in reflections}
+    paragraphs={p['paragraph_id']:p for p in report_evidence_links(payload.get('report',''),[])}
+    owners={r['company']:{p['paragraph_id'] for p in r['final_candidates']} for r in reflection_candidates(payload)}
+    content,proof=[],[]
+    plain=lambda x:' '.join(x.split())
+    for name,c in records.items():
+        entries=reviews.get(name,{}).get('required_fact_reflection',[])
+        if len({x['topic'] for x in entries})!=len(entries):
+            proof.append(f'기업 핵심 사실 — {name}: 같은 사실의 반영 판정이 중복됐습니다')
+        supplied={x['topic']:x for x in entries}
+        for fact in c.get('report_fact_contract',[]):
+            item=supplied.get(fact['topic'])
+            if item is None:
+                proof.append(f"기업 핵심 사실 — {name}/{fact['label']}: 반영 평가가 누락됐습니다")
+                continue
+            if item['preserved'] is not True:
+                content.append(f"기업 핵심 사실 — {name}/{fact['label']}: {item['reason']}")
+                continue
+            target=paragraphs.get(item['final_paragraph_id'])
+            expected=f"{c['prefix']}-{fact['evidence_id']}"
+            if (target is None or item['final_paragraph_id'] not in owners.get(name,set())
+                    or item['source_evidence_id']!=expected or expected not in target['evidence_ids']
+                    or plain(item['final_excerpt']) not in plain(target['text'])):
+                proof.append(f"기업 핵심 사실 — {name}/{fact['label']}: 실제 원문 ID·회사 구역·본문 발췌 연결이 일치하지 않습니다")
+    return content,proof
 
 
 def reflection_candidates(payload):
@@ -144,6 +184,8 @@ def evaluate_combined_quality(payload: dict) -> dict:
         '원본에 실제 동등 비교·독립 측정·제조 제로샷 근거가 없으면 반드시 결함으로 기록하세요. '
         '현재 문서가 이전 품질을 통과했더라도 정답으로 취급하지 않고 이러한 문장을 직접 검토하세요. '
         '기업의 사실·수치·협력 단계·비교 주장이 있는 문단은 report_evidence_links로 연결된 원본 페이지를 대조하세요. '
+        'assertion_pairs의 각 문단은 그 문단의 allowed_facts만으로도 지지돼야 합니다. 납품을 유상으로, '
+        '투자자 명단 전체를 대기업 계열 VC로, to deploy 계약 목적을 이미 배치한 성과로, 목표 수치를 달성으로 확대하면 실패입니다. '
         '이런 사실 문단은 다른 문단이나 REFERENCE에 관련 출처가 존재하는 것만으로 인용 연결을 통과시키지 마세요. '
         '최종 대상 제안 라벨과 최종 결론의 조건부 투자 문장은 외부 기업 사실이 아니라 '
         'portfolio_decision과 코드의 투자 조건 정책에서 파생한 심사 결정입니다. 두 결정 문장은 '
@@ -183,13 +225,29 @@ def evaluate_combined_quality(payload: dict) -> dict:
             '발췌문 두 개의 의미가 실제로 이어지는지도 평가합니다. 회사명과 일반적인 U목록만 겹치는 것은 충분하지 않습니다. '
             '부적절한 원보고서 과장을 원문 범위에 맞게 교정한 대응 문단도 허용하며, 없는 반영 증거를 만들지 마세요.'
         )
-    scope_issues = report_evidence_scope_issues(payload.get('report', ''), payload.get('source_contexts', []))
+    from report_assertions import assertion_pairs, assertion_scope_issues
+    evidence = {ref: claim for company in payload.get('companies', [])
+                for ref, claim in company.get('evidence', {}).items()}
+    scope_issues = (report_evidence_scope_issues(payload.get('report', ''), payload.get('source_contexts', []))
+                    + assertion_scope_issues(payload.get('report', ''), evidence))
     model_payload = {**payload, 'report_evidence_links': report_evidence_links(payload.get('report', ''), payload.get('source_contexts', [])),
                      'reflection_candidates': reflection_candidates(payload),
+                     'assertion_pairs': assertion_pairs(payload.get('report', ''), evidence),
                      'source_scope_issues_to_review': scope_issues}
-    # 기존 통과 판정은 새 Judge를 고정시키지 않도록 입력에서 제외한다.
+    instruction += ('\n각 회사 companies[].report_fact_contract의 모든 topic에 대해 required_fact_reflection을 작성하세요. '
+        '별칭·동의어가 달라도 실제 수단/목표/불리한 사실의 의미가 보존되었는지 판정합니다. '
+        '단순히 인용 ID를 붙였거나 일반적인 자산 미확인으로 대체한 경우 preserved=false입니다. '
+        '원문 목표를 달성 실적으로 바꾸거나 고장 정보를 숨겨도 false입니다. '
+        'source_evidence_id는 해당 회사 prefix와 계약 evidence_id를 연결한 실제 ID입니다. '
+        'final_paragraph_id와 final_excerpt는 같은 회사 reflection_candidates.final_candidates에서 고릅니다. '
+        '발췌문은 12~180자의 실제 연속 본문이며 그 문단에 해당 원문 ID가 실제로 인용되어야 합니다. '
+        '누락/왜곡이면 현재 문단을 선택하고 false 및 수정할 내용을 적습니다. 계약이 없는 회사는 빈 목록입니다.')
+    # 검증 사실은 assertion_pairs에 문단별로 연결했고 원본 페이지도 보존한다.
+    # 전체 evidence 사전을 다시 붙이면 미인용 사실까지 중복 전달된다.
+    # 기존 통과 판정 역시 새 Judge를 고정시키지 않도록 제외한다.
     if payload.get('companies'):
-        model_payload['companies'] = [{k: v for k, v in company.items() if k != 'source_report_evaluation'}
+        model_payload['companies'] = [{k: v for k, v in company.items()
+                                      if k not in {'source_report_evaluation', 'evidence'}}
                                       for company in payload['companies']]
     verdict = request_report_verdict(instruction, model_payload,
                                     review_schema=CombinedQualityReview if payload.get('company_reports') else QualityReview)
@@ -207,6 +265,9 @@ def evaluate_combined_quality(payload: dict) -> dict:
                 reflection_issues.append(f"기업보고서 반영 — {item['company']}: " +
                                          '; '.join(item['missing_or_distorted'] or [item['reason']]))
         proof_issues = reflection_evidence_issues(payload, reflection)
+        material_issues,material_proof_issues=material_fact_reflection_issues(payload,reflection)
+        reflection_issues.extend(material_issues)
+        proof_issues.extend(material_proof_issues)
     else:
         reflection_issues.append('기업보고서 전체 입력이 없어 최종 보고서의 반영 여부를 평가할 수 없습니다')
     language_issues = report_language_issues(payload.get('report', ''))

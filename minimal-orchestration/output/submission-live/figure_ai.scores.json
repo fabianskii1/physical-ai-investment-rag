@@ -2,17 +2,17 @@
   "company": "Figure AI",
   "mode": "live",
   "status": "partial",
-  "total_score": 13.75,
+  "total_score": 48.25,
   "score_scale": 100,
-  "scorable_weight": 15,
-  "unknown_weight": 85,
+  "scorable_weight": 66,
+  "unknown_weight": 34,
   "coverage": {
     "research_criteria": 18,
     "attempted_criteria": 18,
-    "supported_criteria": 5
+    "supported_criteria": 17
   },
   "investment_decision": "보류",
-  "decision_reason": "Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다. 또한 Helix 2.5 AI의 가정 내 제로샷 작업 수행 능력과 Figure 02의 1,250시간 이상 현장 가동에 따른 신뢰성 검증 등 핵심 제품 기술도 확인됩니다. 그러나 2024~2026년 매출 및 손익, 고객별 매출 구성, 계약 수주액·구체적 계약 조건, 제조원가 및 단위당 생산 비용, 반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아 투자 판단을 위한 충분한 근거가 부족합니다. 또한 휴머노이드 로봇 안전성 관련 소송 진행과 같은 법률적 위험 요인과, 시장 규모 및 성장 동력, 경쟁우위 비교 자료 등도 미확인 상태입니다. 따라서 추가 실사로 위 핵심 재무·사업 지표 및 리스크 해소가 필요하므로 현 시점에서 투자를 즉시 실행하기에는 근거가 불충분합니다.",
+  "decision_reason": "Figure AI는 미국 비상장 휴머노이드 로봇 개발사로, BMW 자동차 생산라인에서 11개월간 Figure 02 로봇을 실제 가동하여 30,000대 이상의 차량 생산에 기여한 공식 발표 자료가 존재합니다. 자체 생산시설 BotQ에서 Figure 03의 대량생산 체계를 구축하고 350대 이상 생산했으며, Catalyst Brands와의 상용 계약 발표도 이루어졌습니다. AI 기반 Helix 플랫폼과 대규모 데이터·GPU 인프라 투자 계획도 제시되어 기술력과 확장성을 일부 입증합니다. 다만, 공개된 자료는 주로 회사 자체 발표 또는 계약 발표 단계에 머무르고 있으며, 실질적 유상 매출, 반복 납품, 다수 고객에서의 실증, 장기 안전성 데이터, 법률적 위험 등은 미확인 상태입니다. 또한 창업자 및 팀의 구체적 기술 전문성, 고객 재구매·확대, 투자 조건 등 주요 실사 항목이 확인되지 않아, 현재 시점에서 즉각적인 투자 집행을 정당화하는 데는 한계가 있습니다. 추가적인 독립적 실증, 매출 실적 확인, 법률 안전성 검증, 투자 조건 상세 검토가 필요합니다.",
   "investment_case": {
     "action": "투자 보류",
     "rationale": "확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.",
@@ -21,25 +21,25 @@
       {
         "criterion": "대기업 실제 지분·CVC 투자",
         "grade": 4,
-        "fact": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+        "fact": "Figure AI 자료의 원문 인용(발표 내용): 「The round was led by Parkway Venture Capital with significant investment from Brookfield\nAsset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack\nGlobal, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.」",
         "evidence_ids": [
           "E1"
         ]
       },
       {
-        "criterion": "핵심 작업 성능",
-        "grade": 4,
-        "fact": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
+        "criterion": "제품화·사업 실행력",
+        "grade": 3,
+        "fact": "Figure AI 자료의 원문 인용(발표 내용): 「Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.」",
         "evidence_ids": [
-          "E6"
+          "E12"
         ]
       },
       {
-        "criterion": "현장 안정성·안전성",
+        "criterion": "실제 접근 가능한 시장",
         "grade": 3,
-        "fact": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+        "fact": "Figure AI 자료의 원문 인용(발표 내용): 「Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.」",
         "evidence_ids": [
-          "E8"
+          "E86"
         ]
       }
     ],
@@ -50,14 +50,14 @@
         "next_check": "유상 계약·인도·매출 인식 자료와 실제 고객 확인"
       },
       {
+        "criterion": "대기업 계약·납품 단계",
+        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
+        "next_check": "MOU·실증·유상 납품·확대 단계가 명시된 계약·고객 원문"
+      },
+      {
         "criterion": "고객 재구매·확대",
         "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
         "next_check": "동일 고객의 유상 갱신·재구매·도입 확대 확인 자료"
-      },
-      {
-        "criterion": "관련 전문성",
-        "reason": "현재 검증 근거로는 U이며 실제 실패·부재를 뜻하지 않음",
-        "next_check": "창업자·핵심 인력의 직무 이력과 관련 제품 개발 실적"
       }
     ],
     "required_conditions": [
@@ -96,7 +96,7 @@
       "current_terms_required": true,
       "confirmed_critical_zero_requires_hold": true
     },
-    "full_opinion_reason": "Figure AI는 Series C 단계에서 다수의 대기업 및 CVC 투자 유치를 통해 재무적 신뢰도를 확보하고 있으며, BMW 및 Catalyst Brands와의 상업 협력 사례와 자체 제조 시설 BotQ를 통한 양산 준비 등 기술력과 시장 진입 가능성을 보여주고 있습니다. 또한 Helix 2.5 AI의 가정 내 제로샷 작업 수행 능력과 Figure 02의 1,250시간 이상 현장 가동에 따른 신뢰성 검증 등 핵심 제품 기술도 확인됩니다. 그러나 2024~2026년 매출 및 손익, 고객별 매출 구성, 계약 수주액·구체적 계약 조건, 제조원가 및 단위당 생산 비용, 반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아 투자 판단을 위한 충분한 근거가 부족합니다. 또한 휴머노이드 로봇 안전성 관련 소송 진행과 같은 법률적 위험 요인과, 시장 규모 및 성장 동력, 경쟁우위 비교 자료 등도 미확인 상태입니다. 따라서 추가 실사로 위 핵심 재무·사업 지표 및 리스크 해소가 필요하므로 현 시점에서 투자를 즉시 실행하기에는 근거가 불충분합니다."
+    "full_opinion_reason": "Figure AI는 미국 비상장 휴머노이드 로봇 개발사로, BMW 자동차 생산라인에서 11개월간 Figure 02 로봇을 실제 가동하여 30,000대 이상의 차량 생산에 기여한 공식 발표 자료가 존재합니다. 자체 생산시설 BotQ에서 Figure 03의 대량생산 체계를 구축하고 350대 이상 생산했으며, Catalyst Brands와의 상용 계약 발표도 이루어졌습니다. AI 기반 Helix 플랫폼과 대규모 데이터·GPU 인프라 투자 계획도 제시되어 기술력과 확장성을 일부 입증합니다. 다만, 공개된 자료는 주로 회사 자체 발표 또는 계약 발표 단계에 머무르고 있으며, 실질적 유상 매출, 반복 납품, 다수 고객에서의 실증, 장기 안전성 데이터, 법률적 위험 등은 미확인 상태입니다. 또한 창업자 및 팀의 구체적 기술 전문성, 고객 재구매·확대, 투자 조건 등 주요 실사 항목이 확인되지 않아, 현재 시점에서 즉각적인 투자 집행을 정당화하는 데는 한계가 있습니다. 추가적인 독립적 실증, 매출 실적 확인, 법률 안전성 검증, 투자 조건 상세 검토가 필요합니다."
   },
   "decision_policy": {
     "method": "fixed_scorecard",
@@ -111,46 +111,36 @@
     "openai_model": "gpt-4.1-mini",
     "judge_model": "gpt-4.1",
     "evidence_model": "gpt-4.1",
-    "grader_model": "gpt-4.1"
+    "grader_model": "gpt-4.1",
+    "writer_model": "gpt-4.1",
+    "portfolio_model": "gpt-5.4"
   },
   "category_scores": {
     "창업자·핵심팀": {
       "weight": 20,
-      "earned_score": null,
-      "scorable_weight": 0,
-      "unknown_items": [
-        "관련 전문성",
-        "제품화·사업 실행력",
-        "팀 구성·운영 역량",
-        "소통의 명확성과 신뢰성"
-      ]
+      "earned_score": 12.25,
+      "scorable_weight": 20,
+      "unknown_items": []
     },
     "시장성": {
       "weight": 25,
-      "earned_score": null,
-      "scorable_weight": 0,
+      "earned_score": 16.25,
+      "scorable_weight": 20,
       "unknown_items": [
-        "실제 접근 가능한 시장",
-        "문제의 심각성과 구매 필요성",
-        "시장 성장 동력",
         "시장 진입·확장 가능성"
       ]
     },
     "제품·기술력": {
       "weight": 15,
-      "earned_score": 9.75,
-      "scorable_weight": 11,
-      "unknown_items": [
-        "양산·유지보수 가능성"
-      ]
+      "earned_score": 11.25,
+      "scorable_weight": 15,
+      "unknown_items": []
     },
     "경쟁우위": {
       "weight": 10,
-      "earned_score": null,
-      "scorable_weight": 0,
+      "earned_score": 4.5,
+      "scorable_weight": 7,
       "unknown_items": [
-        "경쟁 제품 대비 고객 가치",
-        "모방하기 어려운 자산",
         "고객 유지·전환 장벽"
       ]
     },
@@ -179,110 +169,940 @@
     "관련 전문성": {
       "category": "창업자·핵심팀",
       "weight": 6,
-      "grade": null,
-      "score": null,
-      "reason": "창업자와 핵심 인력의 경력, 전문성, 실제 수행 역할에 대해 확인 가능한 근거가 제공되지 않았다.",
-      "evidence": []
+      "grade": 2,
+      "score": 3.0,
+      "reason": "창업자 Brett Adcock의 Figure AI CEO, 주요 글로벌 파트너십 리더십, GPU/인프라 조달 및 대규모 계약 이력이 여러 회사 공식 발표로 확인된다. 그러나 로봇공학, AI 실무 경력 및 논문 등 창업자 및 팀 내 직무 기반 기술 전문성, 주요 인력의 실무 트랙레코드 등은 구체적 언급이 없다. 전략적 리더십 및 조직 운영은 확인되나, 해당 분야 실무 전문성은 제한적이다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「compute required to make this vision a reality.” said Brett Adcock, Founder and CEO,\nFigure.」",
+          "criterion_id": "founder_expertise",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-05",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "compute required to make this vision a reality.” said Brett Adcock, Founder and CEO,\nFigure.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-05",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "compute required to make this vision a reality.” said Brett Adcock, Founder and CEO,\nFigure.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Today we are announcing a partnership with Nscale to deploy the NVIDIA Vera Rubin\nplatform for up to 100,000 GPUs targeted for initial deployment starting the second half of」",
+          "criterion_id": "founder_expertise",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Today we are announcing a partnership with Nscale to deploy the NVIDIA Vera Rubin\nplatform for up to 100,000 GPUs targeted for initial deployment starting the second half of",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-05",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Today we are announcing a partnership with Nscale to deploy the NVIDIA Vera Rubin\nplatform for up to 100,000 GPUs targeted for initial deployment starting the second half of",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.press.bmwgroup.com 자료의 원문 인용(발표 내용): 「a flexible, reliable manufacturing workforce,” says Brett Adcock,」",
+          "criterion_id": "founder_expertise",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-a01f10a24149fd2b",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "a flexible, reliable manufacturing workforce,” says Brett Adcock,",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-a01f10a24149fd2b",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "a flexible, reliable manufacturing workforce,” says Brett Adcock,",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「this vision a reality.” said Brett Adcock, Founder and CEO, Figure.」",
+          "criterion_id": "founder_expertise",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-68ba598f5ceb484c",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "this vision a reality.” said Brett Adcock, Founder and CEO, Figure.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-68ba598f5ceb484c",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "this vision a reality.” said Brett Adcock, Founder and CEO, Figure.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "제품화·사업 실행력": {
       "category": "창업자·핵심팀",
       "weight": 6,
-      "grade": null,
-      "score": null,
-      "reason": "개발 결과를 제품이나 현장 도입으로 전환한 주요 이정표와 실제 사례에 대한 뚜렷한 근거가 없다. 상용계약 등은 일부 확인되나, 팀의 명확한 실행 이력 확인은 불가하다.",
-      "evidence": []
-    },
-    "팀 구성·운영 역량": {
-      "category": "창업자·핵심팀",
-      "weight": 5,
-      "grade": null,
-      "score": null,
-      "reason": "핵심 인력 구성, 제조·소프트웨어·사업 담당 역량 및 팀의 실제 운영 이력에 대한 근거는 찾을 수 없다.",
-      "evidence": []
-    },
-    "소통의 명확성과 신뢰성": {
-      "category": "창업자·핵심팀",
-      "weight": 3,
-      "grade": null,
-      "score": null,
-      "reason": "공식 설명의 명확성, 목표와 결과 구분에 대한 평가를 위한 객관적 근거 자료가 없다.",
-      "evidence": []
-    },
-    "실제 접근 가능한 시장": {
-      "category": "시장성",
-      "weight": 8,
-      "grade": null,
-      "score": null,
-      "reason": "접근 가능한 실제 고객군, 계약, 실증 시장 범위에 대한 수량적·구체적 근거는 미확인. 일부 상용 계약이 있지만 시장 전체 규모 등 단계적 정보 불충분.",
-      "evidence": []
-    },
-    "문제의 심각성과 구매 필요성": {
-      "category": "시장성",
-      "weight": 7,
-      "grade": null,
-      "score": null,
-      "reason": "고객의 비용/인력/생산 문제 및 유상 구매 필요성에 대한 구체적 데이터나 사례는 현재 근거에 포함되어 있지 않다.",
-      "evidence": []
-    },
-    "시장 성장 동력": {
-      "category": "시장성",
-      "weight": 5,
-      "grade": null,
-      "score": null,
-      "reason": "산업 수요, 인력 부족, 기술 변화, 검증 가능한 시장 성장 지표 등은 명시되지 않았다.",
-      "evidence": []
-    },
-    "시장 진입·확장 가능성": {
-      "category": "시장성",
-      "weight": 5,
-      "grade": null,
-      "score": null,
-      "reason": "실제 시장 진입 경로나 고객 확보 및 산업/지역 확장에 대한 구체적인 근거는 제시되지 않았다.",
-      "evidence": []
-    },
-    "핵심 작업 성능": {
-      "category": "제품·기술력",
-      "weight": 6,
-      "grade": 4,
-      "score": 6.0,
-      "reason": "Helix 2.5가 30곳 새로운 가정에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 사전 데이터 수집, 파인튜닝 없이 성공적으로 수행함이 직접 확인된다. Figure 03의 핸드 센서는 3g 압력 감지, 섬세하고 안정적인 파지를 자체 개발해 파지 신뢰성 및 제어 정밀성이 확인된다. 여러 환경에서 정량적 실측 성능 입증도 확인됨. 다만, 제조업 등 기타 산업군에 대한 반복 실측 수치는 확인 불가.",
+      "grade": 3,
+      "score": 4.5,
+      "reason": "Figure 02가 BMW 현장에 11개월간 실제 배치돼 반복 작업을 수행했고, Figure 03로의 고도화 및 BMW 외 Catalyst Brands와의 상업계약 발표까지 진행된 점이 다수 공식 발표 및 실제 작업 기록으로 명시되어 있음. 하지만 발표 이상 단계(확정된 매출, 반복 대량 납품, 다양한 산업 확대)는 자료상 명확히 확인되지 않는다.",
       "evidence": [
         {
-          "claim": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다.",
-          "criterion_id": "core_task_performance",
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
           "source_refs": [
             {
-              "doc_id": "WEB-d12ee081a0882850",
+              "doc_id": "FG-02",
               "page": 1
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.",
+          "source_scope": "reported_fact",
           "source": {
-            "doc_id": "WEB-d12ee081a0882850",
+            "doc_id": "FG-02",
             "page": 1
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "Helix 2.5 performs three long-horizon behaviors across 30 unseen homes, with no data collection, fine-tuning, or adaptation in those environments or manipulated objects.",
-          "evidence_reason": "원본 페이지에서는 Helix 2.5가 사전 데이터 수집, 파인튜닝, 적응 없이 30곳의 새로운 집에서 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 수행했다는 것이 명확하게 언급되고 있다. 이는 주장에 포함된 '30개의 미지의 가정 환경', '세 가지 장기 작업', '사전 데이터 수집 없이', '제로샷'이라는 각 요소를 모두 직접적으로 뒷받침한다.",
+          "evidence_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         },
         {
-          "claim": "Figure 03 로봇의 손은 내구성, 신뢰성, 고해상도 촉각 센서를 자체 개발하여 3그램의 미세 압력까지 감지하며, 이를 통해 섬세하고 안정적인 물체 파지가 가능하다.",
-          "criterion_id": "core_task_performance",
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Figure returns to the factory floor. Following the successful deployment of Figure 02 on the\nassembly line in 2025, our latest generation robot - Figure 03 - arrived in Hall 52, one of the\nassembly and logistics halls at BMW Group Plant Spartanburg.\nFigure 02 contributed to the assembly of 30,000 cars at BMW last year. Now, Figure has\ntransitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Figure returns to the factory floor. Following the successful deployment of Figure 02 on the\nassembly line in 2025, our latest generation robot - Figure 03 - arrived in Hall 52, one of the\nassembly and logistics halls at BMW Group Plant Spartanburg.\nFigure 02 contributed to the assembly of 30,000 cars at BMW last year. Now, Figure has\ntransitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Figure returns to the factory floor. Following the successful deployment of Figure 02 on the\nassembly line in 2025, our latest generation robot - Figure 03 - arrived in Hall 52, one of the\nassembly and logistics halls at BMW Group Plant Spartanburg.\nFigure 02 contributed to the assembly of 30,000 cars at BMW last year. Now, Figure has\ntransitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure\nhumanoids into their distribution and logistics network. The collaboration starts at\nCatalyst’s Reno, Nevada Distribution Logistics Center, focusing on automating physically\ndemanding tasks within the supply chain.\nCatalyst Brands - which operates iconic retail brands including JCPenney, Aéropostale, and\nBrooks Brothers - is in an ambitious expansion phase. Figure’s next-gen robots provide\nCatalyst with a flexible solution that can be deployed across a diverse, multi-brand portfolio\ninstantly. The partnership will establish the playbook for how AI-driven hardware can serve\nas a primary growth engine for modern holding companies.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure\nhumanoids into their distribution and logistics network. The collaboration starts at\nCatalyst’s Reno, Nevada Distribution Logistics Center, focusing on automating physically\ndemanding tasks within the supply chain.\nCatalyst Brands - which operates iconic retail brands including JCPenney, Aéropostale, and\nBrooks Brothers - is in an ambitious expansion phase. Figure’s next-gen robots provide\nCatalyst with a flexible solution that can be deployed across a diverse, multi-brand portfolio\ninstantly. The partnership will establish the playbook for how AI-driven hardware can serve\nas a primary growth engine for modern holding companies.",
+          "source_scope": "plan",
+          "source": {
+            "doc_id": "FG-04",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure\nhumanoids into their distribution and logistics network. The collaboration starts at\nCatalyst’s Reno, Nevada Distribution Logistics Center, focusing on automating physically\ndemanding tasks within the supply chain.\nCatalyst Brands - which operates iconic retail brands including JCPenney, Aéropostale, and\nBrooks Brothers - is in an ambitious expansion phase. Figure’s next-gen robots provide\nCatalyst with a flexible solution that can be deployed across a diverse, multi-brand portfolio\ninstantly. The partnership will establish the playbook for how AI-driven hardware can serve\nas a primary growth engine for modern holding companies.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Deployment at Scale: We are seamlessly integrating into Catalyst's distribution facility.\nHumanoids are the only form factor with this ability.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Deployment at Scale: We are seamlessly integrating into Catalyst's distribution facility.\nHumanoids are the only form factor with this ability.",
+          "source_scope": "plan",
+          "source": {
+            "doc_id": "FG-04",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Deployment at Scale: We are seamlessly integrating into Catalyst's distribution facility.\nHumanoids are the only form factor with this ability.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「Today we’re introducing Figure 03, our 3rd generation humanoid robot. Figure 03 is designed for\nHelix, the home, and the world at scale. Our goal is to deliver a truly general-purpose robot - one that\ncan perform human-like tasks and learn directly from people. To realize this vision, our engineering and\ndesign teams completed a ground-up hardware and software redesign to ship Figure 03 for:」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "WEB-524187fe83b05d5f",
               "page": 1
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "Today we’re introducing Figure 03, our 3rd generation humanoid robot. Figure 03 is designed for\nHelix, the home, and the world at scale. Our goal is to deliver a truly general-purpose robot - one that\ncan perform human-like tasks and learn directly from people. To realize this vision, our engineering and\ndesign teams completed a ground-up hardware and software redesign to ship Figure 03 for:",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "WEB-524187fe83b05d5f",
             "page": 1
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "This led to the internal development of our first-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and high-fidelity sensing. Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to register the weight of a paperclip resting on your finger. This precision enables Helix to distinguish between a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control over fragile, irregular, or moving objects.",
-          "evidence_reason": "원문은 Figure 03의 손(핀거팁) 센서가 내구성, 신뢰성, 고해상도 촉각(high-fidelity sensing), 3그램의 미세 압력 감지 능력을 Figure사 자체 개발로 달성했음을 명시하고 있다. 또한 이 촉각 정밀도가 섬세하고 안정적인 물체 파지(파지 안정성, 미끄러짐 직전 감지 및 정밀한 제어)를 가능하게 한다는 설명이 있다. 모든 핵심 세부 사실이 직접 뒷받침된다.",
+          "evidence_quote": "Today we’re introducing Figure 03, our 3rd generation humanoid robot. Figure 03 is designed for\nHelix, the home, and the world at scale. Our goal is to deliver a truly general-purpose robot - one that\ncan perform human-like tasks and learn directly from people. To realize this vision, our engineering and\ndesign teams completed a ground-up hardware and software redesign to ship Figure 03 for:",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "팀 구성·운영 역량": {
+      "category": "창업자·핵심팀",
+      "weight": 5,
+      "grade": 2,
+      "score": 2.5,
+      "reason": "세계적 로보틱스 팀 구성과 수십년(100년+) 누적 경험을 회사가 강조하고 있으나, 구성 인력별 실적, 역할 구분, 외부 검증된 실제 운영 이력 등 구체 자료는 확인되지 않는다. 전담 생산라인 운영 등 내부 제조·IT 인프라, 소프트웨어·하드웨어 개발·운영 팀이 존재하는 점은 인정된다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Figure has attracted the world’s leading robotics\nteam with over 100 years of combined AI &\nhumanoid experience.」",
+          "criterion_id": "team_operations",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-06",
+              "page": 5
+            }
+          ],
+          "source_bound_quote": "Figure has attracted the world’s leading robotics\nteam with over 100 years of combined AI &\nhumanoid experience.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-06",
+            "page": 5
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Figure has attracted the world’s leading robotics\nteam with over 100 years of combined AI &\nhumanoid experience.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「Ramping Robot Production\nBotQ has successfully transitioned from the prototype phase to the production phase with dedicated\nlines for all critical modules of the system. We have successfully demonstrated the one robot per hour\ncycle time needed for our Figure 03 production targets, but will continue to optimize from here. The\nscale up was made possible by developing efficient lines powered by custom built manufacturing\nexecution software running across over 150 networked workstations.」",
+          "criterion_id": "team_operations",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Ramping Robot Production\nBotQ has successfully transitioned from the prototype phase to the production phase with dedicated\nlines for all critical modules of the system. We have successfully demonstrated the one robot per hour\ncycle time needed for our Figure 03 production targets, but will continue to optimize from here. The\nscale up was made possible by developing efficient lines powered by custom built manufacturing\nexecution software running across over 150 networked workstations.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Ramping Robot Production\nBotQ has successfully transitioned from the prototype phase to the production phase with dedicated\nlines for all critical modules of the system. We have successfully demonstrated the one robot per hour\ncycle time needed for our Figure 03 production targets, but will continue to optimize from here. The\nscale up was made possible by developing efficient lines powered by custom built manufacturing\nexecution software running across over 150 networked workstations.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "소통의 명확성과 신뢰성": {
+      "category": "창업자·핵심팀",
+      "weight": 3,
+      "grade": 3,
+      "score": 2.25,
+      "reason": "공식 발표 문서는 지표(KPI), 반복 기간, 실패 요인 등 객관적 수치를 명확하게 제시하며, 다양한 제품 라인, 환경, 신기술 도입에 대한 과정을 분리·기재한다. 다만 모든 발표가 회사 자체 자료로, 외부 기관(고객사 등)의 독립적 검증 내용은 한정적이다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.\nBMW Deployment Highlights:\nRan 10-hour shift Monday-Friday\n90,000+ parts loaded\n1,250+ hours of runtime\nContributed to the production of 30,000+ X3 vehicles」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.\nBMW Deployment Highlights:\nRan 10-hour shift Monday-Friday\n90,000+ parts loaded\n1,250+ hours of runtime\nContributed to the production of 30,000+ X3 vehicles",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.\nBMW Deployment Highlights:\nRan 10-hour shift Monday-Friday\n90,000+ parts loaded\n1,250+ hours of runtime\nContributed to the production of 30,000+ X3 vehicles",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Cycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "Cycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Cycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Hardware Reliability and Learnings\nSix months of daily runtime yielded invaluable insights for our mechanical and reliability\nteams. Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures\nwhile generating critical data that informed the build procedures, component architecture,\nand mechanical design of Figure 03.」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 4
+            }
+          ],
+          "source_bound_quote": "Hardware Reliability and Learnings\nSix months of daily runtime yielded invaluable insights for our mechanical and reliability\nteams. Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures\nwhile generating critical data that informed the build procedures, component architecture,\nand mechanical design of Figure 03.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 4
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Hardware Reliability and Learnings\nSix months of daily runtime yielded invaluable insights for our mechanical and reliability\nteams. Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures\nwhile generating critical data that informed the build procedures, component architecture,\nand mechanical design of Figure 03.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「One learning that informed Figure 03 design was the robot’s forearm, our top hardware\nfailure point at BMW. The forearm is a challenging subsystem due to its tight packaging,\ndexterity requirements (three degrees of freedom), and thermal constraints. Figure 02’s\nforearm contained a microcontroller-based PCB that distributed communications between\nthe main computer and the wrist actuators.」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 5
+            }
+          ],
+          "source_bound_quote": "One learning that informed Figure 03 design was the robot’s forearm, our top hardware\nfailure point at BMW. The forearm is a challenging subsystem due to its tight packaging,\ndexterity requirements (three degrees of freedom), and thermal constraints. Figure 02’s\nforearm contained a microcontroller-based PCB that distributed communications between\nthe main computer and the wrist actuators.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 5
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "One learning that informed Figure 03 design was the robot’s forearm, our top hardware\nfailure point at BMW. The forearm is a challenging subsystem due to its tight packaging,\ndexterity requirements (three degrees of freedom), and thermal constraints. Figure 02’s\nforearm contained a microcontroller-based PCB that distributed communications between\nthe main computer and the wrist actuators.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「transitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "transitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "transitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "실제 접근 가능한 시장": {
+      "category": "시장성",
+      "weight": 8,
+      "grade": 3,
+      "score": 6.0,
+      "reason": "BMW, Catalyst Brands 등 실제 기업 현장 실증·계약 발표와 30,000대 이상 차량 생산·조립 11개월간 실행 사례가 있다. Catalyst Brands와는 상용계약(계약 발표) 단계로 실제 납품·확정 매출은 자료상 미확인이나, 복수 고객을 통한 접근 시장의 넓이가 일부 증명된다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Contributed to the production of 30,000+ X3 vehicles」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Contributed to the production of 30,000+ X3 vehicles",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Contributed to the production of 30,000+ X3 vehicles",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「assembly line in 2025, our latest generation robot - Figure 03 - arrived in Hall 52, one of the\nassembly and logistics halls at BMW Group Plant Spartanburg.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "assembly line in 2025, our latest generation robot - Figure 03 - arrived in Hall 52, one of the\nassembly and logistics halls at BMW Group Plant Spartanburg.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "assembly line in 2025, our latest generation robot - Figure 03 - arrived in Hall 52, one of the\nassembly and logistics halls at BMW Group Plant Spartanburg.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Figure 03 in a manufacturing environment: The first demonstration of Figure 03\nperforming a logistics workflow at BMW Group Plant Spartanburg.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Figure 03 in a manufacturing environment: The first demonstration of Figure 03\nperforming a logistics workflow at BMW Group Plant Spartanburg.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Figure 03 in a manufacturing environment: The first demonstration of Figure 03\nperforming a logistics workflow at BMW Group Plant Spartanburg.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure\nhumanoids into their distribution and logistics network. The collaboration starts at\nCatalyst’s Reno, Nevada Distribution Logistics Center, focusing on automating physically\ndemanding tasks within the supply chain.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure\nhumanoids into their distribution and logistics network. The collaboration starts at\nCatalyst’s Reno, Nevada Distribution Logistics Center, focusing on automating physically\ndemanding tasks within the supply chain.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-04",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure\nhumanoids into their distribution and logistics network. The collaboration starts at\nCatalyst’s Reno, Nevada Distribution Logistics Center, focusing on automating physically\ndemanding tasks within the supply chain.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure humanoids\ninto their distribution and logistics network. The collaboration starts at Catalyst’s Reno, Nevada\nDistribution Logistics Center, focusing on automating physically demanding tasks within the supply\nchain.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-0708b7e94d92fdac",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure humanoids\ninto their distribution and logistics network. The collaboration starts at Catalyst’s Reno, Nevada\nDistribution Logistics Center, focusing on automating physically demanding tasks within the supply\nchain.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-0708b7e94d92fdac",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Today we are announcing a commercial agreement with Catalyst Brands to deploy Figure humanoids\ninto their distribution and logistics network. The collaboration starts at Catalyst’s Reno, Nevada\nDistribution Logistics Center, focusing on automating physically demanding tasks within the supply\nchain.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "문제의 심각성과 구매 필요성": {
+      "category": "시장성",
+      "weight": 7,
+      "grade": 3,
+      "score": 5.25,
+      "reason": "자동차 공장의 반복적, 고강도 부품 적재(피킹·플레이스) 등 기존 작업의 인력투입·육체적 부담이 뚜렷하게 언급되고, BMW에서 실제 11개월간 대체·지원이 이뤄진 점이 확인된다. 고객사 발언 및 변환 필요성 강조, 해당 용도의 수요특정성도 제시되나, 금전적 가치·절대 구매 의무성까지는 단정되진 않는다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「fixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "fixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "fixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Conclusion\nFigure 02 was an unprecedented advancement in bringing humanoid robots from the lab to\nthe real world. Figure 02 taught us early lessons on what it takes to ship. Every hour on\nBMW’s line, every part loaded, and every intervention logged, shaped how we designed,\nvalidated, and built.」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 5
+            }
+          ],
+          "source_bound_quote": "Conclusion\nFigure 02 was an unprecedented advancement in bringing humanoid robots from the lab to\nthe real world. Figure 02 taught us early lessons on what it takes to ship. Every hour on\nBMW’s line, every part loaded, and every intervention logged, shaped how we designed,\nvalidated, and built.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 5
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Conclusion\nFigure 02 was an unprecedented advancement in bringing humanoid robots from the lab to\nthe real world. Figure 02 taught us early lessons on what it takes to ship. Every hour on\nBMW’s line, every part loaded, and every intervention logged, shaped how we designed,\nvalidated, and built.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「The humanoid form at work: Automating dynamic material manipulation that is\nstructurally infeasible to solve with traditional, fixed automation or six-axis robotic arm.」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "The humanoid form at work: Automating dynamic material manipulation that is\nstructurally infeasible to solve with traditional, fixed automation or six-axis robotic arm.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "The humanoid form at work: Automating dynamic material manipulation that is\nstructurally infeasible to solve with traditional, fixed automation or six-axis robotic arm.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「demonstrating that general-purpose physical AI can master the cognitive and dexterous\ntasks that have bottlenecked manufacturing logistics for generations.」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "demonstrating that general-purpose physical AI can master the cognitive and dexterous\ntasks that have bottlenecked manufacturing logistics for generations.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "demonstrating that general-purpose physical AI can master the cognitive and dexterous\ntasks that have bottlenecked manufacturing logistics for generations.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.press.bmwgroup.com 자료의 원문 인용(발표 내용): 「in logistics,” says Ulrich Wieland, Vice President of Production\nControl and Logistics, BMW Manufacturing.\n“Our 11-month deployment of Figure 02 proved that humanoids are no」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-a01f10a24149fd2b",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "in logistics,” says Ulrich Wieland, Vice President of Production\nControl and Logistics, BMW Manufacturing.\n“Our 11-month deployment of Figure 02 proved that humanoids are no",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-a01f10a24149fd2b",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "in logistics,” says Ulrich Wieland, Vice President of Production\nControl and Logistics, BMW Manufacturing.\n“Our 11-month deployment of Figure 02 proved that humanoids are no",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "시장 성장 동력": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": 4,
+      "score": 5.0,
+      "reason": "IFR·KIRIA 등 산업 내 전문기관의 보고로 글로벌 제조 현장의 로봇 배치 증가, 연간 5백만대 이상 운영, 연평균 9~27% 성장률, 인력난/AI 기술변화와 수요기업 다수 존재 등이 수치와 함께 명확히 검증된다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「“Humanoid robots extend physical AI into the world designed for people—opening a major\nnew industry,” said Jensen Huang, founder and CEO of NVIDIA. “Nscale and Figure have」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-05",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "“Humanoid robots extend physical AI into the world designed for people—opening a major\nnew industry,” said Jensen Huang, founder and CEO of NVIDIA. “Nscale and Figure have",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-05",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "“Humanoid robots extend physical AI into the world designed for people—opening a major\nnew industry,” said Jensen Huang, founder and CEO of NVIDIA. “Nscale and Figure have",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.press.bmwgroup.com 자료의 원문 인용(발표 내용): 「The use of humanoid robots is part of the BMW Group’s broader\nstrategy to expand its automation portfolio with Physical AI. Humanoid\nrobotics is a value-adding complement to existing automation. Its\npotential lies particularly in monotonous, ergonomically demanding, or\nsafety-critical activities. The aim is to protect and most effectively\nutilize employees while further improving workplaces.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-a01f10a24149fd2b",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "The use of humanoid robots is part of the BMW Group’s broader\nstrategy to expand its automation portfolio with Physical AI. Humanoid\nrobotics is a value-adding complement to existing automation. Its\npotential lies particularly in monotonous, ergonomically demanding, or\nsafety-critical activities. The aim is to protect and most effectively\nutilize employees while further improving workplaces.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-a01f10a24149fd2b",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "The use of humanoid robots is part of the BMW Group’s broader\nstrategy to expand its automation portfolio with Physical AI. Humanoid\nrobotics is a value-adding complement to existing automation. Its\npotential lies particularly in monotonous, ergonomically demanding, or\nsafety-critical activities. The aim is to protect and most effectively\nutilize employees while further improving workplaces.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「Five Million Robots now Operate in Factories Globally\nWorld Robotics 2026 Report by IFR released\nFrankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.\n“Industrial automation is progressing at high speed,” says Jane Heffner, President of the International Federation of Robotics. “The new mark of five\nmillion robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Five Million Robots now Operate in Factories Globally\nWorld Robotics 2026 Report by IFR released\nFrankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.\n“Industrial automation is progressing at high speed,” says Jane Heffner, President of the International Federation of Robotics. “The new mark of five\nmillion robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Five Million Robots now Operate in Factories Globally\nWorld Robotics 2026 Report by IFR released\nFrankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.\n“Industrial automation is progressing at high speed,” says Jane Heffner, President of the International Federation of Robotics. “The new mark of five\nmillion robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "한국로봇산업진흥원 (KIRIA) 자료의 원문 인용(발표 내용): 「로봇공정모델 실증을 통한 첨단제조로봇 활용기술 시장 확산으로 제조업 디지털전환 가속 및 로봇산업 경쟁력\n인증평가\n강화(제4차 지능형로봇 기본계획)」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "로봇공정모델 실증을 통한 첨단제조로봇 활용기술 시장 확산으로 제조업 디지털전환 가속 및 로봇산업 경쟁력\n인증평가\n강화(제4차 지능형로봇 기본계획)",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "로봇공정모델 실증을 통한 첨단제조로봇 활용기술 시장 확산으로 제조업 디지털전환 가속 및 로봇산업 경쟁력\n인증평가\n강화(제4차 지능형로봇 기본계획)",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "한국로봇산업진흥원 (KIRIA) 자료의 원문 인용(발표 내용): 「고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "한국로봇산업진흥원 (KIRIA) 자료의 원문 인용(발표 내용): 「수요기업\n제 관 역 내 업 요기관\n기 수요기」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "수요기업\n제 관 역 내 업 요기관\n기 수요기",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "수요기업\n제 관 역 내 업 요기관\n기 수요기",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
+    },
+    "시장 진입·확장 가능성": {
+      "category": "시장성",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "판정 이유가 인용 원문의 거래 단계·목표·투자자 확인 범위를 확대해 등급을 유보합니다. 확인된 원문 사실과 추가 검증이 필요합니다.",
+      "evidence": []
+    },
+    "핵심 작업 성능": {
+      "category": "제품·기술력",
+      "weight": 6,
+      "grade": 3,
+      "score": 4.5,
+      "reason": "BMW 생산라인에서 Figure 02가 11개월, 1,250+시간 가동, 90,000+회 작업 및 3만대 차량 조립 등 반복 작동이 있었음이 다양한 수치와 함께 제시된다(성능 KPI·정확도까지 포함). 다양한 환경·작업(피킹, 이송, 시퀀싱 등)에서 복합 과제 수행 사례도 일부 확인된다. 하지만 동일 성능의 다수 고객 재현 및 외부 정량 비교는 자료로 미확인됨.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Ran 10-hour shift Monday-Friday\n90,000+ parts loaded\n1,250+ hours of runtime\nContributed to the production of 30,000+ X3 vehicles\nEstimated 1.2+ million robot steps or 200+ miles」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Ran 10-hour shift Monday-Friday\n90,000+ parts loaded\n1,250+ hours of runtime\nContributed to the production of 30,000+ X3 vehicles\nEstimated 1.2+ million robot steps or 200+ miles",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Ran 10-hour shift Monday-Friday\n90,000+ parts loaded\n1,250+ hours of runtime\nContributed to the production of 30,000+ X3 vehicles\nEstimated 1.2+ million robot steps or 200+ miles",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「fixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "fixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "fixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Cycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "Cycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Cycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「complexity: the sequencing use case.」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "complexity: the sequencing use case.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "complexity: the sequencing use case.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「The task becomes especially challenging when manipulation and locomotion must happen\ntogether. Figure 03 must grasp parts with both hands while adjusting its foot placement,\nshifting its body to maintain reach and balance, and precisely placing each part into the\ncorrect slot. Helix 02 powers this loco-manipulation behavior through high-frequency\nvisual-motor control, continuously adapting Figure 03’s movements to spatial variation and\ncorrecting small errors as the task unfolds.」",
+          "criterion_id": "core_task_performance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "The task becomes especially challenging when manipulation and locomotion must happen\ntogether. Figure 03 must grasp parts with both hands while adjusting its foot placement,\nshifting its body to maintain reach and balance, and precisely placing each part into the\ncorrect slot. Helix 02 powers this loco-manipulation behavior through high-frequency\nvisual-motor control, continuously adapting Figure 03’s movements to spatial variation and\ncorrecting small errors as the task unfolds.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "The task becomes especially challenging when manipulation and locomotion must happen\ntogether. Figure 03 must grasp parts with both hands while adjusting its foot placement,\nshifting its body to maintain reach and balance, and precisely placing each part into the\ncorrect slot. Helix 02 powers this loco-manipulation behavior through high-frequency\nvisual-motor control, continuously adapting Figure 03’s movements to spatial variation and\ncorrecting small errors as the task unfolds.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
@@ -292,25 +1112,132 @@
       "weight": 5,
       "grade": 3,
       "score": 3.75,
-      "reason": "Figure 02가 1,250+ 시간 현장 가동, 최소한의 하드웨어 고장, 축적된 신뢰성 데이터 및 설계 개선에 대한 근거가 명시되어 있다. 실제 현장 조건에서 반복 작업의 신뢰성, 장애 검증 근거는 있으나 다양한 환경 및 장기 안전성 데이터는 제한적이다.",
+      "reason": "Figure 02의 1,250시간 누적 운전, 고장 빈도 최소화(회사 자체 보고), 주요 결함 부위(전완부 등) 한계와 개선 노력, 안전 강화(UN38.3 배터리 안전 등 인증) 등이 실제 반복 배치 및 운전 데이터를 근거로 제시된다. OTA 소프트웨어, 플릿 관리, 리콜·업데이트 체계, BMW 및 외부 산업 현장의 사전 적용과 수치가 있으나, 장기 실측/보험 내역, 실제 위험 사고 건수 등은 미흡하다.",
       "evidence": [
         {
-          "claim": "Figure 02 로봇은 1,250시간 이상의 현장 가동 동안 최소한의 하드웨어 고장을 기록했으며, 이를 통해 Figure 03 설계에 반영할 신뢰성 및 기계적 개선점을 도출했다.",
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Hardware Reliability and Learnings\nSix months of daily runtime yielded invaluable insights for our mechanical and reliability\nteams. Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures\nwhile generating critical data that informed the build procedures, component architecture,\nand mechanical design of Figure 03.」",
           "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "FG-02",
               "page": 4
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "Hardware Reliability and Learnings\nSix months of daily runtime yielded invaluable insights for our mechanical and reliability\nteams. Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures\nwhile generating critical data that informed the build procedures, component architecture,\nand mechanical design of Figure 03.",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "FG-02",
             "page": 4
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures while generating critical data that informed the build procedures, component architecture, and mechanical design of Figure 03.",
-          "evidence_reason": "원문에는 Figure 02가 1,250시간 이상의 현장 가동(operational hours) 동안 최소한의 하드웨어 고장만을 기록했고, 그 데이터를 Figure 03의 설계에 반영했다는 점이 명시되어 있다. 주장의 모든 핵심 사실이 직접적으로 확인된다.",
+          "evidence_quote": "Hardware Reliability and Learnings\nSix months of daily runtime yielded invaluable insights for our mechanical and reliability\nteams. Across 1,250+ operational hours, Figure 02 recorded minimal hardware failures\nwhile generating critical data that informed the build procedures, component architecture,\nand mechanical design of Figure 03.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「One learning that informed Figure 03 design was the robot’s forearm, our top hardware\nfailure point at BMW. The forearm is a challenging subsystem due to its tight packaging,\ndexterity requirements (three degrees of freedom), and thermal constraints. Figure 02’s\nforearm contained a microcontroller-based PCB that distributed communications between\nthe main computer and the wrist actuators.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 5
+            }
+          ],
+          "source_bound_quote": "One learning that informed Figure 03 design was the robot’s forearm, our top hardware\nfailure point at BMW. The forearm is a challenging subsystem due to its tight packaging,\ndexterity requirements (three degrees of freedom), and thermal constraints. Figure 02’s\nforearm contained a microcontroller-based PCB that distributed communications between\nthe main computer and the wrist actuators.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 5
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "One learning that informed Figure 03 design was the robot’s forearm, our top hardware\nfailure point at BMW. The forearm is a challenging subsystem due to its tight packaging,\ndexterity requirements (three degrees of freedom), and thermal constraints. Figure 02’s\nforearm contained a microcontroller-based PCB that distributed communications between\nthe main computer and the wrist actuators.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「environments. With this in mind, Figure 03 introduces several design improvements focused on safety.\nIt features strategically placed multi-density foam to protect against pinch points, and is covered in\nsoft textiles rather than hard machined parts. Figure 03 also has 9% less mass and significantly less\nvolume than Figure 02, making it easier to maneuver through household spaces.\nThe Figure 03 battery pushes the bounds for robot battery safety and incorporates multiple layers of\nprotection against abuse or malfunction, including safeguards at the Battery Management System\n(BMS), cell, interconnect, and pack levels. The battery has already achieved certification to the\nUN38.3 standard.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "environments. With this in mind, Figure 03 introduces several design improvements focused on safety.\nIt features strategically placed multi-density foam to protect against pinch points, and is covered in\nsoft textiles rather than hard machined parts. Figure 03 also has 9% less mass and significantly less\nvolume than Figure 02, making it easier to maneuver through household spaces.\nThe Figure 03 battery pushes the bounds for robot battery safety and incorporates multiple layers of\nprotection against abuse or malfunction, including safeguards at the Battery Management System\n(BMS), cell, interconnect, and pack levels. The battery has already achieved certification to the\nUN38.3 standard.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "environments. With this in mind, Figure 03 introduces several design improvements focused on safety.\nIt features strategically placed multi-density foam to protect against pinch points, and is covered in\nsoft textiles rather than hard machined parts. Figure 03 also has 9% less mass and significantly less\nvolume than Figure 02, making it easier to maneuver through household spaces.\nThe Figure 03 battery pushes the bounds for robot battery safety and incorporates multiple layers of\nprotection against abuse or malfunction, including safeguards at the Battery Management System\n(BMS), cell, interconnect, and pack levels. The battery has already achieved certification to the\nUN38.3 standard.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「Build Robust Diagnostics: We have implemented an advanced alert system and diagnostics for Failure\nAnalysis, allowing us to pinpoint the root cause of an issue in minutes.\nImplement Fallback Ladders: We have engineered software \"fallback ladders\" that allow a robot to\ngracefully degrade its performance or safely recover from a non-critical fault, keeping the use case\nrunning.\nSolve the Long Tail: Having already addressed the high-frequency hardware and software issues, our\nfocus has shifted to the \"long tail\" of edge-case failures - a stage of maturity that only comes with\nsignificant fleet hours.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Build Robust Diagnostics: We have implemented an advanced alert system and diagnostics for Failure\nAnalysis, allowing us to pinpoint the root cause of an issue in minutes.\nImplement Fallback Ladders: We have engineered software \"fallback ladders\" that allow a robot to\ngracefully degrade its performance or safely recover from a non-critical fault, keeping the use case\nrunning.\nSolve the Long Tail: Having already addressed the high-frequency hardware and software issues, our\nfocus has shifted to the \"long tail\" of edge-case failures - a stage of maturity that only comes with\nsignificant fleet hours.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Build Robust Diagnostics: We have implemented an advanced alert system and diagnostics for Failure\nAnalysis, allowing us to pinpoint the root cause of an issue in minutes.\nImplement Fallback Ladders: We have engineered software \"fallback ladders\" that allow a robot to\ngracefully degrade its performance or safely recover from a non-critical fault, keeping the use case\nrunning.\nSolve the Long Tail: Having already addressed the high-frequency hardware and software issues, our\nfocus has shifted to the \"long tail\" of edge-case failures - a stage of maturity that only comes with\nsignificant fleet hours.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「engineering team for hardware revisions. To manage this, we have established rigorous processes for\nfleet-wide upgrades and recall campaigns, ensuring every robot in the field stays current with our\nlatest engineering standards. We have also built a custom Fleet Management System that coordinates\nrobots autonomously across various use cases while tracking real-time health, location, and\noperational status. Combined with our Over-the-Air (OTA) software update infrastructure, we can\nnow deploy new behaviors and upgrades to the entire fleet simultaneously.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "engineering team for hardware revisions. To manage this, we have established rigorous processes for\nfleet-wide upgrades and recall campaigns, ensuring every robot in the field stays current with our\nlatest engineering standards. We have also built a custom Fleet Management System that coordinates\nrobots autonomously across various use cases while tracking real-time health, location, and\noperational status. Combined with our Over-the-Air (OTA) software update infrastructure, we can\nnow deploy new behaviors and upgrades to the entire fleet simultaneously.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "engineering team for hardware revisions. To manage this, we have established rigorous processes for\nfleet-wide upgrades and recall campaigns, ensuring every robot in the field stays current with our\nlatest engineering standards. We have also built a custom Fleet Management System that coordinates\nrobots autonomously across various use cases while tracking real-time health, location, and\noperational status. Combined with our Over-the-Air (OTA) software update infrastructure, we can\nnow deploy new behaviors and upgrades to the entire fleet simultaneously.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「The Figure 03 battery pushes the bounds for robot battery safety and incorporates multiple layers of\nprotection against abuse or malfunction, including safeguards at the Battery Management System\n(BMS), cell, interconnect, and pack levels. The battery has already achieved certification to the\nUN38.3 standard.」",
+          "criterion_id": "field_reliability_safety",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "The Figure 03 battery pushes the bounds for robot battery safety and incorporates multiple layers of\nprotection against abuse or malfunction, including safeguards at the Battery Management System\n(BMS), cell, interconnect, and pack levels. The battery has already achieved certification to the\nUN38.3 standard.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "The Figure 03 battery pushes the bounds for robot battery safety and incorporates multiple layers of\nprotection against abuse or malfunction, including safeguards at the Battery Management System\n(BMS), cell, interconnect, and pack levels. The battery has already achieved certification to the\nUN38.3 standard.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
@@ -318,33 +1245,414 @@
     "양산·유지보수 가능성": {
       "category": "제품·기술력",
       "weight": 4,
-      "grade": null,
-      "score": null,
-      "reason": "실제 생산 이력, 제조 확장, 비용 및 유지보수 체계에 대한 구체적 사례나 명확한 근거는 확인되지 않았다. 미래 계획·목표, 설계 등은 별개.",
-      "evidence": []
+      "grade": 3,
+      "score": 3.0,
+      "reason": "BotQ 전용 생산시설 가동, 실생산(350대 이상) 및 시간당 1대 생산, 수백개 공급망 관리, 자체 MES·EOL 등 품질관리 체계, 플릿 유지관리(OTA, 리콜 등), 수치 중심 내부 'mass production' 관련 절차가 자사 발표로 반복 확인된다. 실제 수주→납품→유지보수로 이어지는 완결적 고객 프로세스, 외부 검증된 다현장 운영 체계는 확인되지 않는다.",
+      "evidence": [
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「To scale Figure 03, Figure had to build an entirely new supply chain for an industry where one does\nnot currently exist. Figure chose to vertically integrate across many critical module builds including\nactuators, batteries, sensors, structures, and electronics, all of which were designed completely\nin-house. For individual components, Figure strategically identified and partnered with suppliers capable\nof meeting the required volumes, timelines, and strict quality standards demanded by the team. The」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "To scale Figure 03, Figure had to build an entirely new supply chain for an industry where one does\nnot currently exist. Figure chose to vertically integrate across many critical module builds including\nactuators, batteries, sensors, structures, and electronics, all of which were designed completely\nin-house. For individual components, Figure strategically identified and partnered with suppliers capable\nof meeting the required volumes, timelines, and strict quality standards demanded by the team. The",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "To scale Figure 03, Figure had to build an entirely new supply chain for an industry where one does\nnot currently exist. Figure chose to vertically integrate across many critical module builds including\nactuators, batteries, sensors, structures, and electronics, all of which were designed completely\nin-house. For individual components, Figure strategically identified and partnered with suppliers capable\nof meeting the required volumes, timelines, and strict quality standards demanded by the team. The",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「BotQ is Figure’s dedicated manufacturing facility designed to scale robot production. BotQ’s\nfirst-generation manufacturing line will initially be capable of producing up to 12,000 humanoid robots\nper year, with the goal of producing a total of 100,000 robots over the next four years. Instead of\nrelying on contract manufacturers, Figure brought production of its most critical systems in-house to\nmaintain tight control over quality, iteration, and speed. The facility is equipped with state-of-the-art\nsystems and digital integrations, anchored by our internally developed Manufacturing Execution\nSystem (MES). Every subassembly and final assembly passes through this line with full traceability,\nensuring quality, repeatability, and continuous improvement.」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "BotQ is Figure’s dedicated manufacturing facility designed to scale robot production. BotQ’s\nfirst-generation manufacturing line will initially be capable of producing up to 12,000 humanoid robots\nper year, with the goal of producing a total of 100,000 robots over the next four years. Instead of\nrelying on contract manufacturers, Figure brought production of its most critical systems in-house to\nmaintain tight control over quality, iteration, and speed. The facility is equipped with state-of-the-art\nsystems and digital integrations, anchored by our internally developed Manufacturing Execution\nSystem (MES). Every subassembly and final assembly passes through this line with full traceability,\nensuring quality, repeatability, and continuous improvement.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "BotQ is Figure’s dedicated manufacturing facility designed to scale robot production. BotQ’s\nfirst-generation manufacturing line will initially be capable of producing up to 12,000 humanoid robots\nper year, with the goal of producing a total of 100,000 robots over the next four years. Instead of\nrelying on contract manufacturers, Figure brought production of its most critical systems in-house to\nmaintain tight control over quality, iteration, and speed. The facility is equipped with state-of-the-art\nsystems and digital integrations, anchored by our internally developed Manufacturing Execution\nSystem (MES). Every subassembly and final assembly passes through this line with full traceability,\nensuring quality, repeatability, and continuous improvement.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「delivering over 350 of our third generation humanoid robots and increasing our production rate from 1\nFigure 03 per day to 1 per hour - a 24x throughput improvement in under 120 days.」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "delivering over 350 of our third generation humanoid robots and increasing our production rate from 1\nFigure 03 per day to 1 per hour - a 24x throughput improvement in under 120 days.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "delivering over 350 of our third generation humanoid robots and increasing our production rate from 1\nFigure 03 per day to 1 per hour - a 24x throughput improvement in under 120 days.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「Ramping Robot Production\nBotQ has successfully transitioned from the prototype phase to the production phase with dedicated\nlines for all critical modules of the system. We have successfully demonstrated the one robot per hour\ncycle time needed for our Figure 03 production targets, but will continue to optimize from here. The\nscale up was made possible by developing efficient lines powered by custom built manufacturing\nexecution software running across over 150 networked workstations.」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Ramping Robot Production\nBotQ has successfully transitioned from the prototype phase to the production phase with dedicated\nlines for all critical modules of the system. We have successfully demonstrated the one robot per hour\ncycle time needed for our Figure 03 production targets, but will continue to optimize from here. The\nscale up was made possible by developing efficient lines powered by custom built manufacturing\nexecution software running across over 150 networked workstations.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Ramping Robot Production\nBotQ has successfully transitioned from the prototype phase to the production phase with dedicated\nlines for all critical modules of the system. We have successfully demonstrated the one robot per hour\ncycle time needed for our Figure 03 production targets, but will continue to optimize from here. The\nscale up was made possible by developing efficient lines powered by custom built manufacturing\nexecution software running across over 150 networked workstations.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「We have also implemented sophisticated End-of-Line (EOL) and in-process testing, with each robot\nsubjected to over 80 functional verification tests before sign-off. This includes multi-limb stress testing\nand comprehensive \"burn-in\" sessions where robots perform full-body exercises such as squatting,\nshoulder presses, and jogging at cycle counts in the thousands to replicate real-world use and\neliminate early-cycle failures.」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "We have also implemented sophisticated End-of-Line (EOL) and in-process testing, with each robot\nsubjected to over 80 functional verification tests before sign-off. This includes multi-limb stress testing\nand comprehensive \"burn-in\" sessions where robots perform full-body exercises such as squatting,\nshoulder presses, and jogging at cycle counts in the thousands to replicate real-world use and\neliminate early-cycle failures.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "We have also implemented sophisticated End-of-Line (EOL) and in-process testing, with each robot\nsubjected to over 80 functional verification tests before sign-off. This includes multi-limb stress testing\nand comprehensive \"burn-in\" sessions where robots perform full-body exercises such as squatting,\nshoulder presses, and jogging at cycle counts in the thousands to replicate real-world use and\neliminate early-cycle failures.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「By overcoming the massive technical hurdles of high-volume manufacturing, Figure has unlocked a\nmajor catalyst for humanoid development: physical scale. Every robot that rolls off the BotQ line at\nour new hourly cadence is more than just a unit of hardware - it is a data-collection engine, a\ndevelopment tool, and a vessel for commercial deployment. With a fleet of this size, we are\naccumulating the \"know-how\" of real-world operations faster than anyone else in the space. By\nmastering the manufacturing, reliability, and orchestration of these robots today, we are ensuring that\nFigure possesses the data, the infrastructure, and the sheer volume required to lead the next era of\nrobotics.」",
+          "criterion_id": "mass_production_maintenance",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "By overcoming the massive technical hurdles of high-volume manufacturing, Figure has unlocked a\nmajor catalyst for humanoid development: physical scale. Every robot that rolls off the BotQ line at\nour new hourly cadence is more than just a unit of hardware - it is a data-collection engine, a\ndevelopment tool, and a vessel for commercial deployment. With a fleet of this size, we are\naccumulating the \"know-how\" of real-world operations faster than anyone else in the space. By\nmastering the manufacturing, reliability, and orchestration of these robots today, we are ensuring that\nFigure possesses the data, the infrastructure, and the sheer volume required to lead the next era of\nrobotics.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "By overcoming the massive technical hurdles of high-volume manufacturing, Figure has unlocked a\nmajor catalyst for humanoid development: physical scale. Every robot that rolls off the BotQ line at\nour new hourly cadence is more than just a unit of hardware - it is a data-collection engine, a\ndevelopment tool, and a vessel for commercial deployment. With a fleet of this size, we are\naccumulating the \"know-how\" of real-world operations faster than anyone else in the space. By\nmastering the manufacturing, reliability, and orchestration of these robots today, we are ensuring that\nFigure possesses the data, the infrastructure, and the sheer volume required to lead the next era of\nrobotics.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "경쟁 제품 대비 고객 가치": {
       "category": "경쟁우위",
       "weight": 4,
-      "grade": null,
-      "score": null,
-      "reason": "기존 방식이나 경쟁 제품과 비교한 고객 비용, 성능, 도입 효과 등 정량적 비교 근거가 확인되지 않는다.",
-      "evidence": []
+      "grade": 3,
+      "score": 3.0,
+      "reason": "기존 방식(사람/6축 암/고정설비) 대비 반복작업 성능·KPI 지표, 자동화 불가분야 대체, 품질·비용 저감, 구성 부품 전환·신속성, 유연 배치 등 다양한 상업적 활용성과 차별점이 자사 홍보자료 중심으로 서술된다. 외부 총비용(TCO)·성능 직접비교 데이터, 업계 제3자 비교 등은 나타나지 않는다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Today we’re excited to share our results of an 11 month Figure 02 robot deployment at\nBMW Group Plant Spartanburg. Within 6 months of bringing up Figure 02, we delivered\nrobots to the plant and began testing. Within 10 months, we launched full deployment on an\nactive assembly line at the plant, running every single working day.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Our first use case with BMW was sheet-metal loading, a classic pick-and-place task in\nautomotive manufacturing. An associate picks sheet-metal parts from racks or bins and\nplaces them on a welding fixture, after which six-axis industrial robots weld and feed the\nparts into the main line.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「To measure robot progress, we defined three critical KPIs:\nCycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-02",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "To measure robot progress, we defined three critical KPIs:\nCycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-02",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "To measure robot progress, we defined three critical KPIs:\nCycle time: Total time to complete one cycle, including the loading phase after the weld-\nfixture door opens. The requirement was 84 seconds total, 37 seconds load time.\nPlacement accuracy: Percentage of cycles where all three sheet-metal parts are\ncorrectly loaded. Our target was > 99% success per shift.\nInterventions: Number of times a human must pause or reset the robot. The goal was\nzero per shift.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Figure 02 contributed to the assembly of 30,000 cars at BMW last year. Now, Figure has\ntransitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-03",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Figure 02 contributed to the assembly of 30,000 cars at BMW last year. Now, Figure has\ntransitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-03",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Figure 02 contributed to the assembly of 30,000 cars at BMW last year. Now, Figure has\ntransitioned from classic pick-and-place sheet metal loading to an entirely new tier of\ncomplexity: the sequencing use case.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「Deployment at Scale: We are seamlessly integrating into Catalyst's distribution facility.\nHumanoids are the only form factor with this ability.\nWorkforce Modernization: By automating routine, repetitive tasks, we are enabling\nassociates to shift toward higher-value work.」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Deployment at Scale: We are seamlessly integrating into Catalyst's distribution facility.\nHumanoids are the only form factor with this ability.\nWorkforce Modernization: By automating routine, repetitive tasks, we are enabling\nassociates to shift toward higher-value work.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-04",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Deployment at Scale: We are seamlessly integrating into Catalyst's distribution facility.\nHumanoids are the only form factor with this ability.\nWorkforce Modernization: By automating routine, repetitive tasks, we are enabling\nassociates to shift toward higher-value work.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.press.bmwgroup.com 자료의 원문 인용(발표 내용): 「successful deployment with the humanoid robot Figure 02 at BMW Group\nPlant Spartanburg in the USA, the further-developed successor, Figure\n03, will now start at Spartanburg, working on complex sequencing\napplications in logistics.\n“Plant Spartanburg is the birthplace of humanoid robotics in BMW\nManufacturing’s operational day-to-day activities. Having already\nsuccessfully completed a pilot with Figure 02 in our body shop, we are\nnow looking forward to deploying Figure 03 for a sequencing use case\nin logistics,” says Ulrich Wieland, Vice President of Production\nControl and Logistics, BMW Manufacturing.\n“Our 11-month deployment of Figure 02 proved that humanoids are no」",
+          "criterion_id": "customer_value_vs_competitors",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-a01f10a24149fd2b",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "successful deployment with the humanoid robot Figure 02 at BMW Group\nPlant Spartanburg in the USA, the further-developed successor, Figure\n03, will now start at Spartanburg, working on complex sequencing\napplications in logistics.\n“Plant Spartanburg is the birthplace of humanoid robotics in BMW\nManufacturing’s operational day-to-day activities. Having already\nsuccessfully completed a pilot with Figure 02 in our body shop, we are\nnow looking forward to deploying Figure 03 for a sequencing use case\nin logistics,” says Ulrich Wieland, Vice President of Production\nControl and Logistics, BMW Manufacturing.\n“Our 11-month deployment of Figure 02 proved that humanoids are no",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-a01f10a24149fd2b",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "successful deployment with the humanoid robot Figure 02 at BMW Group\nPlant Spartanburg in the USA, the further-developed successor, Figure\n03, will now start at Spartanburg, working on complex sequencing\napplications in logistics.\n“Plant Spartanburg is the birthplace of humanoid robotics in BMW\nManufacturing’s operational day-to-day activities. Having already\nsuccessfully completed a pilot with Figure 02 in our body shop, we are\nnow looking forward to deploying Figure 03 for a sequencing use case\nin logistics,” says Ulrich Wieland, Vice President of Production\nControl and Logistics, BMW Manufacturing.\n“Our 11-month deployment of Figure 02 proved that humanoids are no",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "모방하기 어려운 자산": {
       "category": "경쟁우위",
       "weight": 3,
-      "grade": null,
-      "score": null,
-      "reason": "특허, 독자 기술, 데이터, 노하우 등 실제 모방 장벽을 뒷받침하는 자료는 확인되지 않았다. 자체 센서 개발 등은 별개이나, 모방불가성을 입증할 독점 사례 근거 부족.",
-      "evidence": []
+      "grade": 2,
+      "score": 1.5,
+      "reason": "사내 AI(Helix), 고유 물리제어, 내구 센서, 대량 실사용 데이터, 자체 MES·생산라인 등 독자적 기술·시스템·운영 데이터가 회사 자료로 반복 제시된다. 독점 특허, 데이터 독점범위, 외부 기관/시장 내 복제난이도 입증, 강력한 법적 모방 방지 등은 확인되지 않는다.",
+      "evidence": [
+        {
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「train Helix. Last week, we announced Index, Figure’s effort to build the most diverse\nhumanoid training dataset ever assembled, which is generating 35 minutes of data every\nsecond. But data alone cannot solve this problem. Scaling physical intelligence will require」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "train Helix. Last week, we announced Index, Figure’s effort to build the most diverse\nhumanoid training dataset ever assembled, which is generating 35 minutes of data every\nsecond. But data alone cannot solve this problem. Scaling physical intelligence will require",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-05",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "train Helix. Last week, we announced Index, Figure’s effort to build the most diverse\nhumanoid training dataset ever assembled, which is generating 35 minutes of data every\nsecond. But data alone cannot solve this problem. Scaling physical intelligence will require",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「and sizes. After surveying existing market options, Figure found that current tactile sensors had\ninherent limitations that could not withstand real-world use. This led to the internal development of our\nfirst-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and\nhigh-fidelity sensing.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "and sizes. After surveying existing market options, Figure found that current tactile sensors had\ninherent limitations that could not withstand real-world use. This led to the internal development of our\nfirst-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and\nhigh-fidelity sensing.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "and sizes. After surveying existing market options, Figure found that current tactile sensors had\ninherent limitations that could not withstand real-world use. This led to the internal development of our\nfirst-generation tactile sensor, guided by three principles: extreme durability, long-term reliability, and\nhigh-fidelity sensing.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「Helix: Figure 03 features a completely redesigned sensory suite and hand system which is\npurpose-built to enable Helix - Figure's proprietary vision-language-action AI.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Helix: Figure 03 features a completely redesigned sensory suite and hand system which is\npurpose-built to enable Helix - Figure's proprietary vision-language-action AI.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Helix: Figure 03 features a completely redesigned sensory suite and hand system which is\npurpose-built to enable Helix - Figure's proprietary vision-language-action AI.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「BotQ is Figure’s dedicated manufacturing facility designed to scale robot production. BotQ’s\nfirst-generation manufacturing line will initially be capable of producing up to 12,000 humanoid robots\nper year, with the goal of producing a total of 100,000 robots over the next four years. Instead of\nrelying on contract manufacturers, Figure brought production of its most critical systems in-house to\nmaintain tight control over quality, iteration, and speed. The facility is equipped with state-of-the-art\nsystems and digital integrations, anchored by our internally developed Manufacturing Execution\nSystem (MES). Every subassembly and final assembly passes through this line with full traceability,\nensuring quality, repeatability, and continuous improvement.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "BotQ is Figure’s dedicated manufacturing facility designed to scale robot production. BotQ’s\nfirst-generation manufacturing line will initially be capable of producing up to 12,000 humanoid robots\nper year, with the goal of producing a total of 100,000 robots over the next four years. Instead of\nrelying on contract manufacturers, Figure brought production of its most critical systems in-house to\nmaintain tight control over quality, iteration, and speed. The facility is equipped with state-of-the-art\nsystems and digital integrations, anchored by our internally developed Manufacturing Execution\nSystem (MES). Every subassembly and final assembly passes through this line with full traceability,\nensuring quality, repeatability, and continuous improvement.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 3
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "BotQ is Figure’s dedicated manufacturing facility designed to scale robot production. BotQ’s\nfirst-generation manufacturing line will initially be capable of producing up to 12,000 humanoid robots\nper year, with the goal of producing a total of 100,000 robots over the next four years. Instead of\nrelying on contract manufacturers, Figure brought production of its most critical systems in-house to\nmaintain tight control over quality, iteration, and speed. The facility is equipped with state-of-the-art\nsystems and digital integrations, anchored by our internally developed Manufacturing Execution\nSystem (MES). Every subassembly and final assembly passes through this line with full traceability,\nensuring quality, repeatability, and continuous improvement.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「robots autonomously across various use cases while tracking real-time health, location, and\noperational status. Combined with our Over-the-Air (OTA) software update infrastructure, we can\nnow deploy new behaviors and upgrades to the entire fleet simultaneously.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-5039e121e026686f",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "robots autonomously across various use cases while tracking real-time health, location, and\noperational status. Combined with our Over-the-Air (OTA) software update infrastructure, we can\nnow deploy new behaviors and upgrades to the entire fleet simultaneously.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-5039e121e026686f",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "robots autonomously across various use cases while tracking real-time health, location, and\noperational status. Combined with our Over-the-Air (OTA) software update infrastructure, we can\nnow deploy new behaviors and upgrades to the entire fleet simultaneously.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to\nregister the weight of a paperclip resting on your finger. This precision enables Helix to distinguish\nbetween a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control\nover fragile, irregular, or moving objects.」",
+          "criterion_id": "hard_to_copy_assets",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-524187fe83b05d5f",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to\nregister the weight of a paperclip resting on your finger. This precision enables Helix to distinguish\nbetween a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control\nover fragile, irregular, or moving objects.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-524187fe83b05d5f",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Each fingertip sensor can detect forces as small as three grams of pressure - sensitive enough to\nregister the weight of a paperclip resting on your finger. This precision enables Helix to distinguish\nbetween a secure grip and an impending slip before it occurs, allowing fine-grained, dexterous control\nover fragile, irregular, or moving objects.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "고객 유지·전환 장벽": {
       "category": "경쟁우위",
       "weight": 3,
       "grade": null,
       "score": null,
-      "reason": "고객의 유지, 시스템 통합, 전환 비용, 지속 사용을 보여주는 사례나 수치는 확인되지 않았다.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 대량 생산 전환으로 생산비 단가 하락, 자체 MES 기반 플릿 운영과 실시간 원격 유지보수, 내부 플릿IoT/OTA 네트워크, 대형 생산라인 연동 등 시스템/공정 통합 장점은 언급된다. 단, 고객 실사용 중 재계약/이탈 사례나 실제 전환 비용·시장 독점력 수치, API 등 외부 시스템·통합 장애 등은 입증되지 않는다.",
       "evidence": []
     },
     "대기업 실제 지분·CVC 투자": {
@@ -352,46 +1660,90 @@
       "weight": 4,
       "grade": 4,
       "score": 4.0,
-      "reason": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management 등 복수 대기업·CVC의 실제 지분투자(Series C)가 확인됐다. Nscale의 전략적 투자도 근거로 명시되어 있다.",
+      "reason": "NVIDIA, Intel, Qualcomm 등 글로벌 대기업 및 CVC가 Figure AI에 실제 투자했음이 회사 공식자료 및 외부 기사로 일관되게 반복 기재된다. 투입자, 거래명, 범위 등 일치하며, 실제 거래(지분 투자)를 뒷받침하는 원문이 명확하다.",
       "evidence": [
         {
-          "claim": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment.",
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「The round was led by Parkway Venture Capital with significant investment from Brookfield\nAsset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack\nGlobal, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.」",
           "criterion_id": "bigtech_equity_investment",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "FG-01",
               "page": 1
             }
           ],
-          "status": "confirmed",
-          "relation_type": "equity_investment",
+          "source_bound_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield\nAsset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack\nGlobal, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "FG-01",
             "page": 1
           },
           "analysis": "bigtech_analysis",
-          "evidence_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield Asset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
-          "evidence_reason": "원문은 NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, Brookfield Asset Management가 Figure의 Series C 펀딩 라운드에 significant investment를 했음을 명시하고 있다. 이는 실제로 이 회사들이 투자자로 참여했음을 의미한다.",
+          "evidence_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield\nAsset Management, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack\nGlobal, LG Technology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         },
         {
-          "claim": "Nscale made a strategic investment in Figure AI as part of their partnership agreement.",
+          "claim": "Figure AI 자료의 원문 인용(발표 내용): 「making a strategic investment in Figure, and the parties will also explore the potential to」",
           "criterion_id": "bigtech_equity_investment",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "FG-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "making a strategic investment in Figure, and the parties will also explore the potential to",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "FG-05",
+            "page": 1
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "making a strategic investment in Figure, and the parties will also explore the potential to",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「The round was led by Parkway Venture Capital with significant investment from Brookfield Asset\nManagement, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG\nTechnology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.」",
+          "criterion_id": "bigtech_equity_investment",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-364bccad851a980c",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield Asset\nManagement, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG\nTechnology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "WEB-364bccad851a980c",
+            "page": 1
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "The round was led by Parkway Venture Capital with significant investment from Brookfield Asset\nManagement, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, Tamarack Global, LG\nTechnology Ventures, Salesforce, T-Mobile Ventures, and Qualcomm Ventures.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "www.figure.ai 자료의 원문 인용(발표 내용): 「billion. As part of the agreement, Nscale is also making a strategic investment in Figure, and the」",
+          "criterion_id": "bigtech_equity_investment",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "WEB-68ba598f5ceb484c",
               "page": 1
             }
           ],
-          "status": "confirmed",
-          "relation_type": "equity_investment",
+          "source_bound_quote": "billion. As part of the agreement, Nscale is also making a strategic investment in Figure, and the",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "WEB-68ba598f5ceb484c",
             "page": 1
           },
           "analysis": "bigtech_analysis",
-          "evidence_quote": "As part of the agreement, Nscale is also making a strategic investment in Figure",
-          "evidence_reason": "The page explicitly states that, as part of the partnership agreement, Nscale is making a strategic investment in Figure. This directly supports the claim.",
+          "evidence_quote": "billion. As part of the agreement, Nscale is also making a strategic investment in Figure, and the",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
@@ -417,7 +1769,7 @@
       "weight": 5,
       "grade": null,
       "score": null,
-      "reason": "동일 고객의 유상 재구매, 계약 갱신, 납품 확대를 직접적으로 확인하는 자료는 없다.",
+      "reason": "동일 고객에 대한 반복 유상 매출 확대 또는 납품 갱신 사례, same_customer_repeat와 paid_expansion을 명시적으로 뒷받침하는 공식 자료나 거래 내역이 자료에 없다. 계약 혹은 1회 공급 수준 이상 확인 불가.",
       "evidence": []
     },
     "기업가치의 합리성": {
@@ -449,55 +1801,43 @@
     "passed": true,
     "issues": [],
     "data_gaps": [
-      "2024~2026년 고객별 매출, 계약 조건, 반복 구매 현황 및 생산/판매 실적 자료",
-      "각 투자자의 의결권, 지분율, 투자 조건 등 세부 투자 구조",
-      "초기 고객 획득 경로, 조달/인증, 확장 제약, 양산 수율/원가/공급망 등",
-      "반복적 유상 매출, 동일 고객의 유상 갱신/재구매/확대 확인 자료",
-      "핵심 인력 이력과 실제 제품화·사업 실행 이력 및 팀 운영 구조",
-      "목표 고객군별 구매 필요성, 경쟁 제품·비교 성능 자료",
-      "투자조건: 기업가치·지분/권리·자금 사용 계획"
+      "유상 매출 및 실제 고객 계약·납품 내역(단순 계약 발표/PoC 자료 이상 단계 증빙)",
+      "동일 고객 반복 갱신·재구매 증거(계약 갱신·납품 확대 자료)",
+      "다수 산업·고객에 대한 외부/공식 실증 데이터",
+      "창업자 및 팀의 개별 기술·학술·실적 증빙(논문, 특허 등 공개 자료)",
+      "투자 조건—현재 거래의 기업가치, 지분/권리, 투자금 사용 계획 및 근거"
     ],
     "rubric": {
       "groundedness": true,
       "neutrality": true,
       "bias_control": true,
-      "groundedness_reason": "보고서의 사실 주장, 점수 산정, 등급 근거, 최종 투자 제안 등은 모두 원문에서 실제로 확인된 증거만을 기반으로 했으며, 자료 부족(U)과 등급 기입 사유도 투명하게 구분표기했다. 핵심 성과(핵심 작업 성능, 현장 신뢰성, 대기업 지분투자 등)는 원문에서 직접 검증됐고, 미확인 항목은 '미확인=실패 아니다'는 점을 명시했다.",
-      "neutrality_reason": "Figure AI와 관련된 평가, 등급, 최종 의견에서 우월성·독점성·경쟁우위 등에 대한 주관적 확장이나 일방적 홍보 표현은 사용하지 않고, 객관적 사실 검증 결과와 자료 부족을 명확히 구분했다. 내부 혁신성·세계 최고 주장은 별도 증거 없이는 평가 점수·종합 의견에 반영하지 않았다.",
-      "bias_control_reason": "회사의 모든 주요 성과·계약·실행력에 대해 자체 발표만을 투자·매출·유상납품으로 확대 해석하지 않고, 자료 출처와 단계적 증거를 명확히 구분했다. 투자·계약·재구매 등 거래 단계는 독립 사실 근거와 일치 여부에 따라 U등급, partial 등을 부여하며, 확인된 사실만을 점수에 반영했다.",
+      "groundedness_reason": "보고서의 모든 핵심 사실 서술(예: BMW 공장 11개월간 Figure 02 배치, 3만대 이상 생산 기여, Catalyst Brands와의 상업 계약 발표, BotQ 생산라인 운영 등)은 실제 Figure AI의 보도자료(예: E12, E18, E19, E25, E31, E1) 또는 BMW 공식 보도 및 외부 기사 등 각 문단 명시된 근거의 원문에 직접 기술되어 있으며, 반복적으로 회사 발표나 계약 발표임을 분명히 구분하여 제시한다. 미확인은 U로 처리되어 평가 결론과 사실 배분에 문제가 없다. 유상 매출, 반복적 갱신 등은 별도 증거 없이는 등급 확대 없이 제한·미확인 항목 및 후속 데이터 필요로 솔직하게 평가되어 근거 위배가 없다.",
+      "neutrality_reason": "보고서 내 투자 포인트, 기술력, 시장확장성 등 임팩트 설명에서도 모든 기업 실적은 회사 발표 또는 계약 발표, 실제 작업사례의 객관적 한계와 제약을 구분했으며, '유상 매출·납품', '고객 재구매·확대', '대기업 계약 단계' 등은 실제 계약과 매출의 구체 증거 부족(미확인)을 분리 표기하고, 관련 결론을 단정적으로 확대하지 않고 있다. 또한 사내 홍보나 잠정적 강점도 제3자 객관화 없이 실제 실적으로 해석하지 않으며, 각 항목에서 제한점·불확실성을 반복적으로 기술한다.",
+      "bias_control_reason": "보고서는 Figure AI의 모든 중요한 사업·기술 이정표가 기업 자체 공식 발표임을 출처별·문단별로 명확히 적시하고 있다. 특히 주요 점수는 대기업 투자, 현장 배치, 생산 실적 등 원문에 공개된 범위 내로 제한되어 있고, 반복 매출·재구매·여러 현장 적용 등 독립 검증·확장성 평가는 미확인·제한적으로 제시한다. 외부 검증 자료 부족, 독립 실증 미확인, 제3자 객관 데이터 부재 등 확인되지 않은 영역은 별도 후속 확인 목록과 data_gaps로 남겨 현장 사실의 한계를 분명히 밝혀 실제 오독이나 과장된 확정적 해석을 최소화한다.",
       "action": "rewrite",
       "issues": [],
       "data_gaps": [
-        "2024~2026년 고객별 매출, 계약 조건, 반복 구매 현황 및 생산/판매 실적 자료",
-        "각 투자자의 의결권, 지분율, 투자 조건 등 세부 투자 구조",
-        "초기 고객 획득 경로, 조달/인증, 확장 제약, 양산 수율/원가/공급망 등",
-        "반복적 유상 매출, 동일 고객의 유상 갱신/재구매/확대 확인 자료",
-        "핵심 인력 이력과 실제 제품화·사업 실행 이력 및 팀 운영 구조",
-        "목표 고객군별 구매 필요성, 경쟁 제품·비교 성능 자료",
-        "투자조건: 기업가치·지분/권리·자금 사용 계획"
-      ]
+        "유상 매출 및 실제 고객 계약·납품 내역(단순 계약 발표/PoC 자료 이상 단계 증빙)",
+        "동일 고객 반복 갱신·재구매 증거(계약 갱신·납품 확대 자료)",
+        "다수 산업·고객에 대한 외부/공식 실증 데이터",
+        "창업자 및 팀의 개별 기술·학술·실적 증빙(논문, 특허 등 공개 자료)",
+        "투자 조건—현재 거래의 기업가치, 지분/권리, 투자금 사용 계획 및 근거"
+      ],
+      "company_report_reflection": []
     },
     "action": "rewrite",
     "method": "hybrid"
   },
-  "trace_id": "608c0606-f750-4557-b590-d444f651cb8f",
+  "trace_id": "221d2827-b743-4443-90fa-b96d34300831",
   "recheck_count": 3,
   "input_paths": {
-    "data_dir": "./rag/data",
-    "com_data_dir": "./com_data",
+    "data_dir": "rag/data",
+    "com_data_dir": "com_data",
     "index_dir": "./.cache/rag_index"
   },
   "index_info": {
-    "cache_hit": true,
-    "cache_status": "loaded",
-    "cache_path": "./.cache/rag_index/983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
-    "fingerprint": "983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
-    "model": "BAAI/bge-m3",
-    "documents": 22,
-    "pages": 106,
-    "chunk_size": 1000,
-    "chunk_overlap": 150,
-    "chunks": 154,
-    "dimensions": 1024
+    "initialized": false,
+    "mode": "resume_report"
   },
   "report_path": "./output/submission-live/figure_ai.pdf",
   "evaluation_criteria": {
@@ -560,32 +1900,60 @@
   },
   "selection_note": "원 배점 점수와 U·근거 비중을 함께 검토; 자동 순위·투자 선택 아님",
   "resume": {
-    "snapshot_path": "./output/submission-live/figure_ai.failed_state.json",
-    "resumed_from_trace_id": "d49f329e-eb6a-40ba-b829-58b2b9268eff"
+    "snapshot_path": "./output/validated-final-run-20261016/figure_ai/figure_ai.state.json",
+    "resumed_from_trace_id": "ebf04e44-0d49-43dd-b18a-ce9236d58f7b"
   },
   "tracing": {
     "requested": true,
     "key_present": true,
     "enabled": true,
     "project": "physical-ai-minimal-orchestration",
-    "root_run_id": "06039a36-524d-456f-8801-bbc3f2fd79d2",
+    "root_run_id": "11a56e6a-4b2e-455f-accb-c03d00e5e891",
     "upload_verified": false
   },
   "metrics": {
-    "graph_elapsed_seconds": 20.403898,
+    "graph_elapsed_seconds": 79.212494,
     "nodes": [
       {
-        "node": "writer",
-        "run_id": "01a13476-a914-7710-9942-8a58a088bc66",
+        "node": "report_evaluator",
+        "run_id": "01a14339-291e-7d02-b1f2-e42b2e548c34",
         "round": 3,
-        "elapsed_seconds": 12.684275,
+        "elapsed_seconds": 25.417503,
+        "status": "completed"
+      },
+      {
+        "node": "judgement",
+        "run_id": "01a14339-8c6b-7523-8b0c-46f5194f8135",
+        "round": 3,
+        "elapsed_seconds": 25.201071,
+        "status": "completed"
+      },
+      {
+        "node": "score_review",
+        "run_id": "01a14339-eeea-7981-aec4-a5bb759b9f07",
+        "round": 3,
+        "elapsed_seconds": 0.004892,
+        "status": "completed"
+      },
+      {
+        "node": "synthesizer",
+        "run_id": "01a14339-eef1-7f92-9bc5-4ed30b70dbc0",
+        "round": 3,
+        "elapsed_seconds": 0.004383,
+        "status": "completed"
+      },
+      {
+        "node": "writer",
+        "run_id": "01a14339-eef8-7bd0-80bd-95566964f913",
+        "round": 3,
+        "elapsed_seconds": 11.655148,
         "status": "completed"
       },
       {
         "node": "report_evaluator",
-        "run_id": "01a13476-daa1-7611-9195-c61d1311dc6e",
+        "run_id": "01a1433a-1c82-7773-8eb6-a68b67139c40",
         "round": 3,
-        "elapsed_seconds": 7.715126,
+        "elapsed_seconds": 16.788727,
         "status": "completed"
       }
     ],

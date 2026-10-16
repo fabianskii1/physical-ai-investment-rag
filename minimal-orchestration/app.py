@@ -202,7 +202,8 @@ def run(company: str = 'Figure AI', *, demo: bool = False, max_rechecks: int = 4
         output_dir: str | Path | None = None, env_file: str | None = None,
         com_data_dir: str | Path | None = None, data_dir: str | Path | None = None,
         index_dir: str | Path | None = None, _dependencies=None, _catalog=None,
-        _resume_state=None, _resume_path=None, _resume_metadata=None) -> dict:
+        _resume_state=None, _resume_path=None, _resume_metadata=None, _recover_worker_sources=False,
+        _regrade_only=False, _review_only=False) -> dict:
     if company not in COMPANIES:
         raise ValueError(f'지원하지 않는 기업: {company}')
     if demo and company != 'Figure AI':
@@ -232,15 +233,25 @@ def run(company: str = 'Figure AI', *, demo: bool = False, max_rechecks: int = 4
         state = deepcopy(_resume_state)
         provenance = {'snapshot_path': str(_resume_path) if _resume_path else None,
                       'resumed_from_trace_id': state['trace_id']}
-        state.update(trace_id=str(uuid4()), route='write', report_evaluation={})
+        state.update(trace_id=str(uuid4()), route='judge' if _regrade_only else 'write', report_evaluation={})
         state['decision_policy'] = {**state['decision_policy'], 'resume_report_only': True}
         # 종료된 조사 작업은 이력으로만 보존한다. 보고서 피드백이 S로 가더라도
         # 과거 워커 결과를 새 검증 snapshot에 다시 합류시키지 않는다.
         state['tasks'] = []
         # 자체 실패 기록의 검증 근거를 그대로 복구한다. 새 자료가 없는 보고서
         # 품질 반환에서 기존 원문 Judge를 다시 호출해 점수의 E-ID를 바꾸지 않는다.
-        state['research_result']['last_verified_signature'] = _verification_signature(
-            state, state['research_result'], state['document_catalog'])
+        if _recover_worker_sources:
+            for key in ('last_verified_signature','score_review_issues','report_revision_feedback'):
+                state['research_result'].pop(key,None)
+            state['investment_result'] = {}
+        else:
+            state['research_result']['last_verified_signature'] = _verification_signature(
+                state, state['research_result'], state['document_catalog'])
+        if _regrade_only:
+            state['investment_result'] = {}
+            state['report_draft'] = {}
+            state['report_section_lines'] = {}
+            state['research_result'].pop('score_review_issues',None)
         if state['status'] == 'quality_failed':
             state['status'] = 'partial'
     else:
@@ -263,7 +274,8 @@ def run(company: str = 'Figure AI', *, demo: bool = False, max_rechecks: int = 4
         # 반환 config의 checkpoint_id는 복구 직전 snapshot을 고정하므로 사용하지
         # 않는다. thread_id로 최신 checkpoint를 읽어 새 Writer 결과를 얻는다.
         with tracing_context(enabled=trace_settings['enabled'], project_name=trace_settings['project']):
-            graph.update_state(config, state, as_node='synthesizer')
+            graph.update_state(config, state, as_node='writer' if _review_only else
+                               'worker' if _recover_worker_sources else 'synthesizer')
     index_info = dict(getattr(deps, 'index_info', None) or
                       (_resume_metadata or {}).get('index_info') or
                       {'initialized': False, 'mode': 'resume_report' if provenance else ('demo' if demo else 'live')})
@@ -675,8 +687,9 @@ def _load_company_records(directory):
     records = []
     for company in COMPANIES:
         stem = company.lower().replace(' ', '_')
-        candidates = [path for path in (source / f'{stem}.state.json',
-                                       source / f'{stem}_draft.state.json') if path.is_file()]
+        folder=source/stem if (source/stem).is_dir() else source
+        candidates = [path for path in (folder / f'{stem}.state.json',
+                                       folder / f'{stem}_draft.state.json') if path.is_file()]
         if not candidates:
             raise FileNotFoundError(f'{company} 최종 State가 없습니다')
         latest = max(candidates, key=lambda path: (path.stat().st_mtime_ns, path.name == f'{stem}.state.json'))
@@ -687,13 +700,13 @@ def _load_company_records(directory):
         suffix = '_draft' if state.get('status') == 'quality_failed' else ''
         if latest.name != f'{stem}{suffix}.state.json':
             raise ValueError(f'{company}: State 파일명과 최종·초안 상태가 다릅니다')
-        scores_path = source / f'{stem}{suffix}.scores.json'
+        scores_path = folder / f'{stem}{suffix}.scores.json'
         scores = json.loads(scores_path.read_text(encoding='utf-8'))
         if scores.get('company') != company or scores.get('trace_id') != state.get('trace_id'):
             raise ValueError('State와 점수 파일의 기업·실행 ID가 다릅니다')
         record = {'state': state, 'scores': scores, 'scores_path': scores_path,
-                  'state_path': latest, 'pdf': source / f'{stem}{suffix}.pdf'}
-        markdown_path = source / f'{stem}{suffix}.md'
+                  'state_path': latest, 'pdf': folder / f'{stem}{suffix}.pdf'}
+        markdown_path = folder / f'{stem}{suffix}.md'
         if markdown_path.is_file():
             if markdown_path.read_text(encoding='utf-8') != state.get('final_report'):
                 raise ValueError(f'{company}: 기업 보고서 Markdown과 State final_report가 일치하지 않습니다')

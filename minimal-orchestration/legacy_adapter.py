@@ -56,7 +56,7 @@ class ReportVerdict(BaseModel):
     groundedness_reason: str
     neutrality_reason: str
     bias_control_reason: str
-    action: Literal["rewrite", "research"] = "rewrite"
+    action: Literal["rewrite", "research", "regrade"] = "rewrite"
     issues: list[str] = Field(description="실제 보고서 결함만. 세 품질 항목이 전부 true이면 빈 목록")
     data_gaps: list[str] = Field(default_factory=list,
         description="기업에 대한 미확인 자료와 실사 과제. 보고서가 이를 정직하게 설명했다면 품질 미달 사유가 아님")
@@ -174,6 +174,8 @@ def load_project_catalog(data_dir: str | Path | None = None) -> dict:
             "publisher": row.publisher, "published_at": row.published_at,
             "publication_date": row.published_at,
             "source_url": row.source_url,
+            'key_pages': row.key_pages, 'related_scorecard_items': row.related_scorecard_items,
+            'notes': row.notes,
         }
         for row in _catalog_records(data_dir)
     }
@@ -190,12 +192,16 @@ def _structured_request(schema, instruction: str, payload: dict):
         model = os.getenv('OPENAI_PORTFOLIO_MODEL') or base
     elif schema.__name__ == 'CompanyReportSynthesis':
         model = os.getenv('OPENAI_SYNTHESIS_MODEL') or os.getenv('OPENAI_WRITER_MODEL') or base
+    elif schema.__name__ == 'WorkerSourceReview':
+        model = os.getenv('OPENAI_EVIDENCE_MODEL') or base
     elif schema.__name__ == 'CombinedRevision':
         model = os.getenv('OPENAI_SYNTHESIS_MODEL') or os.getenv('OPENAI_WRITER_MODEL') or base
     else:
         model = base
     request_settings = {'reasoning': {'effort': 'medium' if schema.__name__ == 'CombinedQualityReview' else 'low'},
                         'timeout': 120} if model.startswith('gpt-5') else {}
+    if schema.__name__ == 'WorkerSourceReview':
+        request_settings['timeout'] = 180
     response = client.responses.parse(
         model=model,
         input=[{"role": "system", "content": instruction},
@@ -238,11 +244,15 @@ def request_report_verdict(instruction: str, payload: dict, *, review_schema=Qua
                       for finding in result.findings]
             flags = {key: not any(finding.criterion == key for finding in result.findings)
                      for key in REPORT_QUALITY_KEYS}
+            score_findings = [f for f in result.findings if re.match(
+                r'^- .+ \([0-4U];|^종합 의견의 이유:|^- 투자 검토 의견:',paragraphs[f.paragraph_id])]
+            action = ('regrade' if score_findings else
+                'research' if any(f.action == 'research' for f in result.findings) else 'rewrite')
             return ReportVerdict(**flags, issues=issues, data_gaps=result.data_gaps,
                 groundedness_reason=result.groundedness_reason, neutrality_reason=result.neutrality_reason,
                 bias_control_reason=result.bias_control_reason,
                 company_report_reflection=[value.model_dump() for value in getattr(result, 'company_report_reflection', [])],
-                action='research' if any(finding.action == 'research' for finding in result.findings) else 'rewrite')
+                action=action)
         # 주입된 이전 평가자를 쓰는 회귀/호환 경로도 상충 판정을 인정하지 않는다.
         all_passed = all(getattr(result, key) for key in REPORT_QUALITY_KEYS)
         if all_passed == (not result.issues):
@@ -293,6 +303,8 @@ def real_dependencies(com_data_dir: str | Path | None = None,
             "bigtech는 투자·관계·계약·납품, technology는 팀·성능·안전·양산·도메인 적용, "
             "market은 시장·고객·경쟁·이해관계자를 조사합니다. "
             "카탈로그·registered_links·company_research_input과 아직 부족한 항목을 보고 이번에 필요한 역할만 선택하세요. "
+            "현재 워커는 기업 PDF 전체 페이지를 읽으므로 선택한 역할 안의 미완료 항목은 가능한 한 한 작업에 묶으세요. "
+            "이미 완료된 항목은 제외하고 U를 양수로 만들기 위한 재호출은 하지 마세요. "
             "최초에도 세 역할을 모두 실행할 의무는 없으며, 원문 확보 가능성과 중요도에 따라 1~2개 역할·일부 항목을 먼저 조사할 수 있습니다. "
             "criteria에는 이번에 실제 조사할 evaluation_criteria의 영문 id 중 해당 워커가 담당하는 항목만 넣으세요. "
             "전체 자동 조사 18항목의 누락은 Synthesizer가 항목별 coverage로 확인해 후속 계획에 반환합니다. "
@@ -310,6 +322,12 @@ def real_dependencies(com_data_dir: str | Path | None = None,
         tasks = [task.model_dump() for task in result.tasks]
         # 항목명을 모델이 임의 생성하지 못하게 고정 registry로 정규화한다.
         for task in tasks:
+            registered = registry.get(state['company_info']['name'], {})
+            blocked = state['research_result'].get('source_access_errors', [])
+            rejected = [url for url in task['urls'] if url not in registered or any(url in error for error in blocked)]
+            if rejected:
+                task['rejected_urls'] = rejected
+            task['urls'] = [url for url in task['urls'] if url not in rejected]
             ids = [normalize_criterion(value) for value in task["criteria"]]
             task["criteria"] = list(dict.fromkeys(value for value in ids if value is not None
                 and CRITERIA_REGISTRY[value]["worker"] == task["worker"]))
@@ -319,44 +337,47 @@ def real_dependencies(com_data_dir: str | Path | None = None,
                     and CRITERIA_REGISTRY[normalize_criterion(value)]["worker"] == task["worker"]]
         # 선택하지 않은 역할과 항목은 coverage 미달로 남겨 Synthesizer가 후속
         # 계획에 반환한다. 여기서 작업을 추가하거나 선택한 항목을 확장하지 않는다.
-        return tasks
+        # 같은 역할을 나눈 계획은 한 작업으로 병합한다. ID 충돌 때문에 계획
+        # 전체를 버리고 재조사 예산을 소비하지 않는다.
+        merged = {}
+        for task in tasks:
+            role = task['worker']
+            if role not in merged:
+                merged[role] = {**task, 'id': role}
+            else:
+                old = merged[role]
+                old['query'] += ' / ' + task['query']
+                for key in ('criteria', 'urls'):
+                    old[key] = list(dict.fromkeys(old[key] + task[key]))
+        return list(merged.values())
 
     analyzers = {"bigtech": analyze_bigtech, "technology": analyze_technology, "market": analyze_market}
 
     def worker(task, state):
+        from task_evidence import TaskEvidenceCollector
+        from worker_policy import load_worker_policy
         company = state["company_info"]["name"]
         linked = reader.read(company, task.get("urls", []))
         selected = [normalize_criterion(value) for value in task.get("criteria", [])]
         selected = [value for value in selected if value and CRITERIA_REGISTRY[value]["worker"] == task["worker"]]
-
-        def task_search(scope, _previous_fixed_query, k):
-            # 기존 함수 안의 고정 질문을 새 Task 질문으로 교체한다.
-            # 넓은 질문 한 번으로 21항목을 채우지 못하므로, 계획된 항목별로 검색한다.
-            questions = [f"{company} {CRITERIA_REGISTRY[value]['label']}: "
-                         f"{CRITERIA_REGISTRY[value]['question']}. {task['query']}" for value in selected]
-            questions = questions or [task["query"]]
-            pdf_documents, seen = [], set()
-            for question in questions:
-                for doc in search(scope, question, k):
-                    key = (doc.metadata.get("doc_id"), doc.metadata.get("page"),
-                           doc.metadata.get("chunk_index"), doc.page_content)
-                    if key not in seen:
-                        seen.add(key)
-                        pdf_documents.append(doc)
-            return pdf_documents + (linked["documents"] if scope == company else [])
-
-        def task_llm(prompt):
-            context = json.dumps({"query": task["query"], "feedback": state["feedback"],
-                                  "target_criteria": [CRITERIA_REGISTRY[value] for value in selected]}, ensure_ascii=False)
-            return openai_llm(f"{prompt}\n\n이번 작업의 질문과 보완 요청:\n{context}\n"
-                             "각 대상 항목을 빠짐없이 조사하세요. 중요한 사실은 한 주장에 한 사실로 분리하고 "
-                             "회사 발표·고객 확인·실측 조건을 구별하세요. 사실마다 실제 근거 DOC와 원본 페이지를 붙이세요. "
-                             "근거가 없는 항목은 해당 analysis_type의 unverified로 이유를 남기세요. "
-                             "검색 근거 밖의 사실과 이미 작성된 기업 평점은 사용하지 마세요.")
-
-        claims = analyzers[task["worker"]](company, task_search, task_llm)
-        return {"claims": claims, "source_documents": linked["catalog"],
-                "link_errors": linked["errors"], "attempted_criteria": selected}
+        if not selected:
+            selected = criteria_for_worker(task['worker'])
+        collector = TaskEvidenceCollector(company, task, selected, state.get('document_catalog', {}), search,
+                                          full_company_review=True)
+        policy = load_worker_policy(task['worker'])
+        from source_worker import extract_source_facts
+        documents = collector.collect(company, 4) + linked['documents']
+        if task['worker'] == 'market':
+            documents += collector.collect('COMMON', 4)
+        extracted = extract_source_facts(company, task['worker'], selected, documents, policy, _structured_request,
+                                         query=task['query'], feedback=state['feedback'])
+        # 문맥 상한으로 원문이 탈락하면 완료로 인정하지 않는다.
+        if collector.audit['omitted_pages']:
+            for value in extracted['reviewed_criteria'].values():
+                value['source_review_complete'] = False
+        return {**extracted, "source_documents": linked["catalog"],
+                "link_errors": linked["errors"], "attempted_criteria": selected, 'retrieval_audit': collector.audit,
+                'worker_policy': {'path': policy['path'], 'sha256': policy['sha256']}}
 
     @lru_cache(maxsize=256)
     def cached_judge(claim, page_text):
@@ -386,7 +407,7 @@ def real_dependencies(com_data_dir: str | Path | None = None,
             "현재 투자조건이 없으면 즉시 투자 실행을 정당화하지 마세요."
         ), {"company": state["company_info"], "verified_claims": state.get("source_checked_claims", []),
             "score_details": graded["score_details"], "unknown_items": graded["unknown_items"],
-            "evidence_gaps": state.get("evidence_gaps", [])})
+            "evidence_gaps": state.get("evidence_gaps", []), 'review_feedback':state.get('feedback',[])})
         return {**graded, "investment_decision": opinion.decision,
                 "decision_reason": opinion.decision_reason,
                 "investment_case": build_investment_case(state, graded, opinion.model_dump())}
@@ -394,7 +415,7 @@ def real_dependencies(com_data_dir: str | Path | None = None,
     def writer(state):
         # 서술형 초안의 인용 형식 오류는 같은 검증 입력으로 한 번만 교정한다.
         # 근거·점수 자체는 다시 만들지 않으며 잘못된 인용을 임의로 인정하지 않는다.
-        revision = list(state["feedback"])
+        revision = list(state.get('report_evaluation',{}).get('issues') or state['feedback'])
         for attempt in range(2):
             try:
                 return report(state, writer=lambda payload: _openai_write({
@@ -407,7 +428,13 @@ def real_dependencies(com_data_dir: str | Path | None = None,
                                 "verified_evidence에 있는 E-ID만 사용하고 근거가 없으면 해당 목록은 비우세요.")
 
     def evaluator(state):
+        from report_assertions import assertion_pairs, assertion_scope_issues
         source_contexts = report_source_contexts(state)
+        evidence = {f'E{i}': c for i, c in enumerate(state.get('source_checked_claims', []), 1)}
+        wording_issues = assertion_scope_issues(state['final_report'], evidence)
+        if wording_issues:
+            return {'passed': False, 'action': 'rewrite', 'issues': wording_issues,
+                    'data_gaps': [], 'method': 'hybrid', 'deterministic_content_issues': wording_issues}
         deterministic_issues = []
         for criterion, detail in state.get('score_details', {}).items():
             if detail.get('grade') == 4 and re.search(r'최고점\s*(?:대신|미부여)|최고점을?\s*(?:주지|부여하지)', detail.get('reason', '')):
@@ -421,8 +448,20 @@ def real_dependencies(com_data_dir: str | Path | None = None,
             "neutrality: 홍보 표현을 우수성 입증으로 확대하지 않는가. "
             "bias_control: 회사 발표와 독립 확인의 차이·반증·불확실성을 설명하는가. "
             "평가 통과 조건은 groundedness·neutrality·bias_control 세 항목입니다. 관점 커버리지는 평가에서 제외합니다. "
+            "추론으로 표시한 조건부 해석은 연결된 사실과 모순되지 않고 한계가 설명되어 있으면 허용합니다. "
+            "현재 문장이 실제로 주장한 사실을 판정하세요. 독자가 다르게 오독할 가능성이 있다는 가정만으로 "
+            "새로운 부정 사실·완료 단정을 만들어 실패시키지 마세요. 단, 실제 문장의 거래 단계 확대는 차단합니다. "
+            "가능성·기반·후속 검토를 이미 달성한 실적으로 단정한 경우와 구분하세요. "
+            "배점표에 없는 반복 매출·정량 KPI를 모든 항목의 필수 조건으로 새로 적용하지 마세요. "
+            "제품화·사업 실행력의 과거 제품 운영 이력과 현재 휴머노이드의 유상 반복 매출은 다른 사실입니다. "
+            "동일 근거로 표현을 고칠 수 있으면 action=rewrite이며 새 조사로 보내지 마세요. "
             "source_contexts의 원본 페이지와 보고서의 사실 문장·등급 사유·최종 투자 제안을 직접 대조하세요. "
             "verified_claims도 이전 모델의 결과이므로 정답으로 간주하지 마세요. "
+            "assertion_pairs는 문단마다 실제 인용한 검증 사실만 연결합니다. 각 문단의 모든 기업 사실이 "
+            "그 문단의 allowed_facts 원문 인용에서 지지되는지 하나씩 확인하세요. 다른 문단의 근거로 면제하지 마세요. "
+            "납품에 유상이라는 말이 없으면 유상 납품으로, 투자자 명단을 모두 대기업 계열로, "
+            "to deploy 계약 목적을 현재 배치 완료로, requirement/목표 수치를 달성 성능으로 바꾸면 rewrite입니다. "
+            "원문 인용은 발표 내용이 실제로 적혀 있음을 뜻하며 해당 실적의 독립 검증을 뜻하지 않습니다. "
             "컴퓨팅·부품 구매는 평가 기업의 매출이나 로봇 납품 근거가 아니며, "
             "첫 계약·확대 가능성은 같은 고객의 실제 유상 갱신·재구매 증거가 아닙니다. "
             "회사 자체의 세계적·최고·경쟁우위 홍보를 비교 검증 사실로 표현하면 중립성과 근거성이 미달입니다. "
@@ -436,18 +475,26 @@ def real_dependencies(com_data_dir: str | Path | None = None,
             "action=research는 원문·채점·거래 단계가 잘못돼 재검증 또는 새 근거가 필요한 결함입니다."
         ), {
             "report": state["final_report"],
+            'assertion_pairs': assertion_pairs(state['final_report'], evidence),
             "verified_claims": state.get("source_checked_claims", []),
             "gaps": state.get("evidence_gaps", []),
             "catalog": state["document_catalog"],
             "score_details": state.get("score_details", {}),
+            'fixed_scorecard': SCORECARD,
+            'evaluation_criteria': registry_payload(),
             "criterion_coverage": state.get("coverage_by_criterion", {}),
             "source_contexts": source_contexts,
             "investment_case": state.get("investment_case", {}),
         })
         data = result.model_dump()
+        if (data['action'] == 'research' and state.get('source_checked_claims') and
+                all(c.get('source_bound_quote') for c in state['source_checked_claims'])):
+            # 현재 사실은 실제 원문 인용으로 고정되어 있다. 원문 밖의 본문
+            # 주장은 제거/교정하며 새로운 사실을 만들기 위해 워커를 부르지 않는다.
+            data['action'] = 'rewrite'
         passed = all(data[key] for key in REPORT_QUALITY_KEYS) and not result.issues
         return {"passed": passed, "issues": result.issues, "data_gaps": result.data_gaps,
-                "rubric": data, "action": result.action, "method": "hybrid"}
+                "rubric": data, "action": data['action'], "method": "hybrid"}
 
     return PipelineDependencies(planner, worker, evidence_checker,
                                 judge, writer, evaluator,

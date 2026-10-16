@@ -97,6 +97,7 @@ def evaluate_investment(state: dict, evaluator: Callable[[dict], dict]) -> dict:
     ready = state.get("evidence_status") == "scorable" and bool(evidence)
     by_name = {name: _unknown("검증된 근거가 없거나 판정이 누락되어 U입니다.") for name in CRITERIA}
     model_result = {}
+    assessment_rejections = {}
     if ready:
         catalog = state.get("document_catalog", {})
         if not isinstance(catalog, Mapping):
@@ -111,6 +112,7 @@ def evaluate_investment(state: dict, evaluator: Callable[[dict], dict]) -> dict:
                 for doc_id, document in catalog.items()
                 if isinstance(document, Mapping)},
             "manual_investment_terms": state.get("investment_terms"),
+            'grading_feedback': state.get('feedback', []),
         })
         if not isinstance(model_result, Mapping):
             model_result = {}
@@ -170,6 +172,14 @@ def evaluate_investment(state: dict, evaluator: Callable[[dict], dict]) -> dict:
                         "등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 "
                         "회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.")
                     continue
+            from report_assertions import assertion_scope_issues
+            reason_issues = assertion_scope_issues('판정 이유: ' + reason + ' ' +
+                ' '.join(f'[{ref}]' for ref in ids), evidence)
+            if reason_issues:
+                assessment_rejections[name] = {'grade':grade,'reason':reason,'evidence_ids':ids,'issues':reason_issues}
+                by_name[name] = _unknown('판정 이유가 인용 원문의 거래 단계·목표·투자자 확인 범위를 '
+                                        '확대해 등급을 유보합니다. 확인된 원문 사실과 추가 검증이 필요합니다.')
+                continue
             if name in TERM_CRITERIA:
                 manual_evidence = any(
                     evidence[ref].get("analysis") == "investment_terms"
@@ -206,4 +216,5 @@ def evaluate_investment(state: dict, evaluator: Callable[[dict], dict]) -> dict:
         "scorable_weight": scored["scorable_weight"], "unknown_weight": scored["unknown_weight"],
         "unknown_items": scored["unknown_items"],
         "investment_decision": decision, "decision_reason": reason.strip(),
+        'assessment_guard_rejections': assessment_rejections,
     }

@@ -30,6 +30,7 @@ def reflection(company):
         "reason": "확인 사실의 사업적 의미와 검증 범위, 보류·재검토 조건이 유지됐다.",
         "missing_or_distorted": [],
         'preservation_evidence': proofs,
+        'required_fact_reflection': [],
     }
 
 

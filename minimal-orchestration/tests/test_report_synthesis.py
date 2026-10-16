@@ -60,6 +60,24 @@ def test_writer_reads_full_company_reports_and_keeps_report_to_evidence_mapping(
     assert result['source_reports'][0]['report_sha256'] == inputs[0]['report_sha256']
 
 
+def test_duplicate_origin_ids_are_normalized_without_a_model_retry_or_content_change(records):
+    companies,inputs,synthesis=inputs_and_synthesis(records)
+    p=synthesis['companies'][0]['technology_and_execution']
+    original=p['text'];p['report_paragraph_ids']*=2
+    result=validate_report_synthesis(synthesis,inputs,companies)
+    assert result['companies'][0]['technology_and_execution']['text']==original
+    assert len(result['companies'][0]['technology_and_execution']['report_paragraph_ids'])==1
+
+
+def test_synthesis_cannot_replace_verified_data_platform_with_generic_unknown_assets(records):
+    companies,inputs,synthesis=inputs_and_synthesis(records)
+    companies[0]['state']['report_fact_contract']=[{'label':'데이터 라벨링 플랫폼','report_pattern':r'데이터\s*라벨링'}]
+    with pytest.raises(ValueError,match='데이터 라벨링'):
+        validate_report_synthesis(synthesis,inputs,companies)
+    synthesis['companies'][0]['technology_and_execution']['text']='회사 발표의 데이터 라벨링 수단을 확인했으나 보호 자산의 장벽은 별도 검증이 필요하다.'
+    validate_report_synthesis(synthesis,inputs,companies)
+
+
 @pytest.mark.parametrize('defect', ['foreign_paragraph', 'invented_ref', 'unlinked_ref', 'no_analysis', 'no_limitation', 'no_opinion', 'duplicate_company', 'stale_report'])
 def test_synthesis_cannot_drop_analysis_or_use_unconnected_sources(records, defect):
     companies, inputs, synthesis = inputs_and_synthesis(records)

@@ -9,6 +9,33 @@ from criteria_coverage import build_coverage, resolved_gaps
 ANALYSIS_KEYS = ("bigtech_analysis", "technology_analysis", "market_competition_analysis")
 
 
+def recover_worker_research(state: Mapping, evidence_checker) -> dict:
+    """확보된 워커 원출력 전체를 다시 검사한다. 검색·워커를 재호출하지 않는다.
+
+    로더 정규화 오류로 과거 탈락한 정확한 인용도 현재 원문에서 재검증한다.
+    이전 채점과 보고서는 폐기해야 하며, 원본 워커 이력은 그대로 남긴다.
+    """
+    research=deepcopy(state['research_result'])
+    payload={**deepcopy(dict(state)), **{k:research.get(k,{}) for k in ANALYSIS_KEYS}}
+    checked=evidence_checker(payload)
+    if not isinstance(checked, Mapping) or not isinstance(checked.get('source_checked_claims'),list):
+        raise ValueError('워커 원문 재검증 형식 오류')
+    research.update(deepcopy(dict(checked)))
+    research['evidence_gaps']=resolved_gaps(research,research['source_checked_claims'],checked['evidence_gaps'])
+    research.update(build_coverage(research,research['source_checked_claims'],state.get('investment_terms')))
+    for key in ('last_verified_signature','last_verified_round','last_verified_task_ids','score_review_issues',
+                'report_revision_feedback'):
+        research.pop(key,None)
+    research['worker_source_recovery']={'original_trace_id':state['trace_id'],
+        'worker_or_retrieval_executed':False,'new_web_collection_executed':False,
+        'input_worker_claims':sum(len(research.get(k,{}).get('claims',[])) for k in ANALYSIS_KEYS),
+        'previous_verified_claims':len(state['research_result'].get('source_checked_claims',[])),
+        'output_verified_claims':len(research['source_checked_claims']),
+        'previous_gap_count':len(state['research_result'].get('evidence_gaps',[])),
+        'investment_regrading_required':True,'report_regeneration_required':True}
+    return research
+
+
 def revalidate_saved_research(state: Mapping, evidence_checker) -> dict:
     """saved checked claims를 재검증하고 현재 E-ID에 맞는 조사·coverage 결과를 반환한다.
 

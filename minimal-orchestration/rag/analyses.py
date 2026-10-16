@@ -333,6 +333,8 @@ def analyze_bigtech(
 relation_type을 "unverified",
 status를 "unverified",
 source_refs를 빈 배열로 반환한다.
+미확인 항목도 각각 criterion_id를 bigtech_equity_investment, paid_sales_delivery,
+bigtech_contract_delivery_stage, customer_repurchase_expansion 중 해당 항목으로 지정한다.
 
 반드시 아래 형식의 JSON 배열만 반환한다.
 설명문, Markdown, 코드블록은 출력하지 않는다.
@@ -340,6 +342,7 @@ source_refs를 빈 배열로 반환한다.
 [
   {{
     "relation_type": "field_demo",
+    "criterion_id": "bigtech_contract_delivery_stage",
     "claim": "확인된 사실을 한 문장으로 작성",
     "source_refs": [
       {{
@@ -386,7 +389,12 @@ source_refs를 빈 배열로 반환한다.
             status = "unverified"
             valid_refs = []
 
-        for criterion_id in BIGTECH_CRITERION_MAP[relation_type]:
+        mapped = BIGTECH_CRITERION_MAP[relation_type]
+        if relation_type == 'unverified' and item.get('criterion_id') in {
+                'bigtech_equity_investment', 'paid_sales_delivery',
+                'bigtech_contract_delivery_stage', 'customer_repurchase_expansion'}:
+            mapped = (item['criterion_id'],)
+        for criterion_id in mapped:
             results.append(
                 {
                     "claim": claim,

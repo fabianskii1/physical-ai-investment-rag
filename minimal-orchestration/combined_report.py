@@ -192,22 +192,19 @@ def _reference_lines(companies, used) -> list[str]:
             quote = claim.get("evidence_quote")
             if not isinstance(quote, str) or not quote.strip():
                 raise ValueError(f"{company['company']}: 실제 검증 인용문이 없습니다")
-            groups.setdefault((doc_id, page), {"metadata": metadata, "claims": []})["claims"].append((namespaced, quote))
-        for (doc_id, page), group in groups.items():
+            group = groups.setdefault(doc_id, {'metadata': metadata, 'pages': {}})
+            group['pages'].setdefault(page, []).append(namespaced)
+        for doc_id, group in groups.items():
             metadata = group["metadata"]
-            ids = " ".join(f"[{ref}]" for ref, quote in group["claims"])
             title = metadata.get("title") or doc_id
             publisher = metadata.get("publisher") or "발행자 미확인"
             url = metadata.get("source_url")
             location = metadata.get("file_path") or metadata.get("source_path") or "원문 보관 위치 미확인"
             date = metadata.get("publication_date") or metadata.get("published_at") or "발행일 미확인"
-            lines.append(f"- {ids} {company['company']} | {title} — DOC {doc_id}, p.{page}; "
+            mapping = '; '.join(f"p.{page}: " + ' '.join(f'[{ref}]' for ref in refs)
+                                for page, refs in group['pages'].items())
+            lines.append(f"- {company['company']} | {title} — DOC {doc_id}; {mapping}; "
                          f"발행: {publisher}; 발행일: {date}; 원문: {url or location}")
-            quotes = {}
-            for ref, quote in group["claims"]:
-                quotes.setdefault(_plain(quote), []).append(ref)
-            for quote, refs in quotes.items():
-                lines.append("  인용 " + " ".join(f"[{ref}]" for ref in refs) + ": “" + _quote_excerpt(quote) + "”")
     return lines
 
 
@@ -542,6 +539,8 @@ def prepare_combined_report(records, *, portfolio_decision=None, report_synthesi
                "deterministic_checks": built["deterministic_checks"],
                "companies": [{"company": company["company"], "prefix": company["prefix"],
                    "score_details": company["details"], "investment_case": company["case"],
+                   'evidence': {f"{company['prefix']}-{ref}": claim for ref, claim in company['evidence'].items()},
+                   'report_fact_contract':company['state'].get('report_fact_contract',[]),
                    "source_report_evaluation": company["quality"], "source_status": company["status"],
                    "source_mode": company["mode"]} for company in built["companies"]]}
     return built, payload, original

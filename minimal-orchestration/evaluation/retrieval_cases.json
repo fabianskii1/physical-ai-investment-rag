@@ -1,0 +1,140 @@
+{
+  "scope": "수동 확인한 핵심 사실 15개 표본; 전체 사실 회수율·평가 정답셋이 아님",
+  "cases": [
+    {
+      "id": "MM-A",
+      "company": "MOTOMIND",
+      "criterion_id": "productization_execution",
+      "doc_id": "MM-04",
+      "page": 2,
+      "anchor": "프레스 공정 차량 내장재 부착 자동화 데모",
+      "expected_scope": "회사 자료의 프레스 공정 PoC 시연과 MOU. 독립 검증·유상 계약으로 확대하지 않는다."
+    },
+    {
+      "id": "MM-B",
+      "company": "MOTOMIND",
+      "criterion_id": "paid_sales_delivery",
+      "doc_id": "MM-04",
+      "page": 3,
+      "anchor": "VLA 연구 기관 양팔로봇 납품",
+      "expected_scope": "회사 자료의 연구기관 양팔로봇 납품 사례. 대금 수취·매출 금액이 확인됐다는 뜻은 아니다."
+    },
+    {
+      "id": "MM-C",
+      "company": "MOTOMIND",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "MM-04",
+      "page": 4,
+      "anchor": "ETRI와 협업하여",
+      "expected_scope": "ETRI와 다중 AMR 관제 시스템 구축·통합 사례. BELLO 현장 성능으로 전이하지 않는다."
+    },
+    {
+      "id": "MM-D",
+      "company": "MOTOMIND",
+      "criterion_id": "mass_production_maintenance",
+      "doc_id": "MM-02",
+      "page": 6,
+      "anchor": "Jetson Nano 소켓 보드 양산, AGX 소켓 보드 개발 중",
+      "expected_scope": "회사 발표의 Nano 소켓 보드 양산 및 AGX 개발 구분. BELLO 양산으로 확대하지 않는다."
+    },
+    {
+      "id": "MM-E",
+      "company": "MOTOMIND",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "MM-03",
+      "page": 5,
+      "anchor": "Teleoperation Assist System",
+      "expected_scope": "TAS를 통한 양팔 작업 데이터 수집 수단. 독립적 모방 장벽 입증과 구분한다."
+    },
+    {
+      "id": "RB-A",
+      "company": "ROBROS",
+      "criterion_id": "bigtech_equity_investment",
+      "doc_id": "RB-05",
+      "page": 1,
+      "anchor": "Stick Ventures, HB Investment, and Lotte Ventures",
+      "expected_scope": "기사에 명시된 투자자, 특히 Lotte Ventures 투자. 원문 줄바꿈만 복원해 읽는다."
+    },
+    {
+      "id": "RB-B",
+      "company": "ROBROS",
+      "criterion_id": "productization_execution",
+      "doc_id": "RB-02",
+      "page": 1,
+      "anchor": "빕스 누들셰프 운영",
+      "expected_scope": "과거 로봇카페와 빕스 누들셰프 운영 이력. 현재 휴머노이드 실증과 구분한다."
+    },
+    {
+      "id": "RB-C",
+      "company": "ROBROS",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "RB-04",
+      "page": 1,
+      "anchor": "강화학습 기반 운동지능",
+      "expected_scope": "회사 발표의 강화학습 기반 Motor Intelligence. About 페이지만으로 확대하지 않는다."
+    },
+    {
+      "id": "RB-D",
+      "company": "ROBROS",
+      "criterion_id": "hard_to_copy_assets",
+      "doc_id": "RB-03",
+      "page": 2,
+      "anchor": "데이터 라벨링 플랫폼",
+      "expected_scope": "Master Arm 또는 자체 에피소드 검수·데이터 라벨링 플랫폼의 구체적 수단."
+    },
+    {
+      "id": "RB-E",
+      "company": "ROBROS",
+      "criterion_id": "accessible_market",
+      "doc_id": "RB-06",
+      "page": 5,
+      "anchor": "Lotte Global Logistics",
+      "expected_scope": "기사의 Lotte Global Logistics·조선소 PoC 및 대학 공급 사례. 완료된 유상 확대와 구분한다."
+    },
+    {
+      "id": "FG-A",
+      "company": "Figure AI",
+      "criterion_id": "bigtech_equity_investment",
+      "doc_id": "FG-01",
+      "page": 1,
+      "anchor": "Brookfield Asset Management, NVIDIA",
+      "expected_scope": "공식 발표에 명시된 NVIDIA 등 투자자와 Series C 투자 유치. 매출로 바꾸지 않는다."
+    },
+    {
+      "id": "FG-B",
+      "company": "Figure AI",
+      "criterion_id": "productization_execution",
+      "doc_id": "FG-02",
+      "page": 1,
+      "anchor": "90,000+ parts loaded",
+      "expected_scope": "회사 발표의 F.02 BMW 11개월 배치·9만개 부품/3만대 생산 기여. F.03 성과로 바꾸지 않는다."
+    },
+    {
+      "id": "FG-C",
+      "company": "Figure AI",
+      "criterion_id": "core_task_performance",
+      "doc_id": "FG-02",
+      "page": 3,
+      "anchor": "The requirement was 84 seconds total, 37 seconds load time.",
+      "expected_scope": "84초/37초, 99% 등은 목표·요구조건이며 달성 수치로 바꾸지 않는다."
+    },
+    {
+      "id": "FG-D",
+      "company": "Figure AI",
+      "criterion_id": "field_reliability_safety",
+      "doc_id": "FG-02",
+      "page": 5,
+      "anchor": "forearm, our top hardware failure point",
+      "expected_scope": "BMW 현장에서 전완이 주요 하드웨어 고장 지점이었다는 불리한 정보와 개선 맥락."
+    },
+    {
+      "id": "FG-E",
+      "company": "Figure AI",
+      "criterion_id": "accessible_market",
+      "doc_id": "FG-04",
+      "page": 1,
+      "anchor": "commercial agreement with Catalyst Brands",
+      "expected_scope": "Catalyst Brands의 Reno 물류센터에서 시작하는 상업 계약 발표. 매출 인식·재구매와 구분한다."
+    }
+  ]
+}

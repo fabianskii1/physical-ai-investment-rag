@@ -2,44 +2,44 @@
   "company": "ROBROS",
   "mode": "live",
   "status": "partial",
-  "total_score": 14.5,
+  "total_score": 22.75,
   "score_scale": 100,
-  "scorable_weight": 17,
-  "unknown_weight": 83,
+  "scorable_weight": 33,
+  "unknown_weight": 67,
   "coverage": {
     "research_criteria": 18,
     "attempted_criteria": 18,
-    "supported_criteria": 3
+    "supported_criteria": 16
   },
   "investment_decision": "보류",
-  "decision_reason": "로브로스는 50명 이상의 자체 기술 기반 팀 운영 역량과 산업 현장의 로봇 수요라는 긍정적 시장 배경을 갖추고 있으나, 실제 고객 계약, 매출, 납품 실적, 대기업 투자 지분, 시장 진입 성과 및 재구매/확대 실적 등 주요 핵심 실적과 투자조건에 관한 확인 가능한 객관적 근거가 부족하다. 또한 기술성 측면에서 일부 AI 및 제어 기술 개발 사실이 있으나, 현장 실증 성능, 양산 및 유지보수 체계, 경쟁우위에 대한 비교우위 근거도 미흡하다. 따라서 현재 공개된 자료만으로는 투자 실행을 정당화하기 어려우며, 추가적인 원문 계약, 재무, 실증 데이터와 투자조건 검증이 필요한 상황이다.",
+  "decision_reason": "로브로스는 2020년 설립 이후 자체 개발 휴머노이드 로봇 IGRIS-C를 중심으로 제조, 물류, 반도체 등 다양한 산업 현장에 실증을 확대하며, 국내외 다수 프로젝트 선정 및 벤처투자 유치, 기술 역량과 독자적인 AI·하드웨어 개발 능력 등을 바탕으로 긍정적인 성장 잠재력을 보이고 있습니다. 다수 대학과 기업에서 PoC(개념 증명) 단계를 진행하며 제품 적용 사례가 존재하고, 시장 성장 환경 역시 양호하나, 반복적 대량 상용화 실적, 구체적인 매출 성장 및 현장 안정성에 대한 독립 검증된 데이터가 부족합니다. 또한, 조직 운영 체계 명확성, 투자조건, 장기 고객 확보 및 유지, 경쟁우위의 확실성 등 다수 핵심 항목이 확인되지 않아 현 시점에서 투자 판단을 내리기에는 불확실성이 큽니다. 따라서 추가적인 실증 데이터, 재무 및 계약 문서, 고객 확보 및 유지 실적, 운영 체계 검증 자료 확보 후 재검토가 필요합니다.",
   "investment_case": {
     "action": "투자 보류",
     "rationale": "확인된 투자 포인트가 있으나 현재의 위험·미확인 사항을 고려한 종합 의견은 보류다.",
     "model_opinion": "보류",
     "supporting_facts": [
       {
-        "criterion": "팀 구성·운영 역량",
+        "criterion": "제품화·사업 실행력",
         "grade": 2,
-        "fact": "로브로스는 50명 이상의 팀 규모를 갖추고 있으며, 하드웨어 설계부터 AI 지능까지 휴머노이드 개발 전 과정을 자체 기술로 수행하는 팀 운영 역량을 보유하고 있다.",
+        "fact": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「작은 설계와 실험에서 출발해,\n제품을 만들고 현장에 적용하며\n산업으로 확장 해왔습니다.」",
         "evidence_ids": [
-          "E1"
+          "E11"
         ]
       },
       {
-        "criterion": "문제의 심각성과 구매 필요성",
-        "grade": 4,
-        "fact": "제조업 등 산업 현장에서는 고강도·고위험 작업 대체와 인력난 해소를 위해 로봇 활용 확산이 필요하며, 이는 로봇공정모델 실증사업 등에서 지원되고 있다.",
+        "criterion": "소통의 명확성과 신뢰성",
+        "grade": 2,
+        "fact": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「No technical documents.」",
         "evidence_ids": [
-          "E3"
+          "E80"
         ]
       },
       {
-        "criterion": "시장 성장 동력",
-        "grade": 4,
-        "fact": "제조업의 공급망 회복력 강화와 고임금 국가 및 인력 부족 국가에서 제조 역량 구축이 자동화 기술 수요를 촉진하는 주요 요인이다.",
+        "criterion": "실제 접근 가능한 시장",
+        "grade": 2,
+        "fact": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「수서 ICT ∙ 동해휴게소\n무인 로봇 카페 운영\n2021\n화성휴게소 ∙ 장흥정남진휴게소\n무인 로봇 카페 운영」",
         "evidence_ids": [
-          "E5"
+          "E105"
         ]
       }
     ],
@@ -103,7 +103,7 @@
       "current_terms_required": true,
       "confirmed_critical_zero_requires_hold": true
     },
-    "full_opinion_reason": "로브로스는 50명 이상의 자체 기술 기반 팀 운영 역량과 산업 현장의 로봇 수요라는 긍정적 시장 배경을 갖추고 있으나, 실제 고객 계약, 매출, 납품 실적, 대기업 투자 지분, 시장 진입 성과 및 재구매/확대 실적 등 주요 핵심 실적과 투자조건에 관한 확인 가능한 객관적 근거가 부족하다. 또한 기술성 측면에서 일부 AI 및 제어 기술 개발 사실이 있으나, 현장 실증 성능, 양산 및 유지보수 체계, 경쟁우위에 대한 비교우위 근거도 미흡하다. 따라서 현재 공개된 자료만으로는 투자 실행을 정당화하기 어려우며, 추가적인 원문 계약, 재무, 실증 데이터와 투자조건 검증이 필요한 상황이다."
+    "full_opinion_reason": "로브로스는 2020년 설립 이후 자체 개발 휴머노이드 로봇 IGRIS-C를 중심으로 제조, 물류, 반도체 등 다양한 산업 현장에 실증을 확대하며, 국내외 다수 프로젝트 선정 및 벤처투자 유치, 기술 역량과 독자적인 AI·하드웨어 개발 능력 등을 바탕으로 긍정적인 성장 잠재력을 보이고 있습니다. 다수 대학과 기업에서 PoC(개념 증명) 단계를 진행하며 제품 적용 사례가 존재하고, 시장 성장 환경 역시 양호하나, 반복적 대량 상용화 실적, 구체적인 매출 성장 및 현장 안정성에 대한 독립 검증된 데이터가 부족합니다. 또한, 조직 운영 체계 명확성, 투자조건, 장기 고객 확보 및 유지, 경쟁우위의 확실성 등 다수 핵심 항목이 확인되지 않아 현 시점에서 투자 판단을 내리기에는 불확실성이 큽니다. 따라서 추가적인 실증 데이터, 재무 및 계약 문서, 고객 확보 및 유지 실적, 운영 체계 검증 자료 확보 후 재검토가 필요합니다."
   },
   "decision_policy": {
     "method": "fixed_scorecard",
@@ -118,25 +118,25 @@
     "openai_model": "gpt-4.1-mini",
     "judge_model": "gpt-4.1",
     "evidence_model": "gpt-4.1",
-    "grader_model": "gpt-4.1"
+    "grader_model": "gpt-4.1",
+    "writer_model": "gpt-4.1",
+    "portfolio_model": "gpt-5.4"
   },
   "category_scores": {
     "창업자·핵심팀": {
       "weight": 20,
-      "earned_score": 2.5,
-      "scorable_weight": 5,
+      "earned_score": 4.5,
+      "scorable_weight": 9,
       "unknown_items": [
         "관련 전문성",
-        "제품화·사업 실행력",
-        "소통의 명확성과 신뢰성"
+        "팀 구성·운영 역량"
       ]
     },
     "시장성": {
       "weight": 25,
-      "earned_score": 12.0,
-      "scorable_weight": 12,
+      "earned_score": 14.25,
+      "scorable_weight": 20,
       "unknown_items": [
-        "실제 접근 가능한 시장",
         "시장 진입·확장 가능성"
       ]
     },
@@ -162,10 +162,9 @@
     },
     "실적": {
       "weight": 20,
-      "earned_score": null,
-      "scorable_weight": 0,
+      "earned_score": 4.0,
+      "scorable_weight": 4,
       "unknown_items": [
-        "대기업 실제 지분·CVC 투자",
         "유상 매출·납품",
         "대기업 계약·납품 단계",
         "고객 재구매·확대"
@@ -188,123 +187,490 @@
       "weight": 6,
       "grade": null,
       "score": null,
-      "reason": "창업자 및 핵심 인력의 구체적인 직무 경력, 실제 수행 역할에 대한 확인된 근거가 제시되어 있지 않음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 노 승준이 창업자임은 확인되나, 경력·전문성·실제 역할에 대한 구체적 설명이나 외부 경력, 직무 내역에 대한 직접적 근거나 출처가 확인되지 않는다.",
       "evidence": []
     },
     "제품화·사업 실행력": {
       "category": "창업자·핵심팀",
       "weight": 6,
-      "grade": null,
-      "score": null,
-      "reason": "개발 결과를 실제로 제품화하여 현장에 도입하거나 사업적으로 실행한 구체적 이력, 달성 이정표 등에 대한 확인된 근거가 없음.",
-      "evidence": []
-    },
-    "팀 구성·운영 역량": {
-      "category": "창업자·핵심팀",
-      "weight": 5,
       "grade": 2,
-      "score": 2.5,
-      "reason": "회사 발표에 따르면 50명 이상의 규모와, 하드웨어 설계부터 AI 지능까지 전 과정을 자체 기술로 운영한다고 명시됨. 실제 구성과 팀 역량이 확인되지만, 외부 실적이나 독립 검증자료 없이 자체 설명 범위에 한함. 실제 다분야 전문가 역할 분장과 운영 이력에 대한 구체성은 불충분함.",
+      "score": 3.0,
+      "reason": "제품을 만들고 현장에 적용한 이력이 회사 발표로 확인되며, 로봇 카페/뷔페 공급 등 실제 현장 적용 및 복수 산업 실증 사업 입증, 발주처 실명을 포함한 납품 경력은 있으나, 반복적 대량 상용 배치 기록이나 타 기관/고객의 점진적 확장 근거, 외부 검증된 제품화 이정표(납품 확대나 장기 매출 등)는 확인되지 않는다.",
       "evidence": [
         {
-          "claim": "로브로스는 50명 이상의 팀 규모를 갖추고 있으며, 하드웨어 설계부터 AI 지능까지 휴머노이드 개발 전 과정을 자체 기술로 수행하는 팀 운영 역량을 보유하고 있다.",
-          "criterion_id": "team_operations",
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「작은 설계와 실험에서 출발해,\n제품을 만들고 현장에 적용하며\n산업으로 확장 해왔습니다.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
           "source_refs": [
             {
-              "doc_id": "RB-01",
+              "doc_id": "RB-02",
               "page": 1
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "작은 설계와 실험에서 출발해,\n제품을 만들고 현장에 적용하며\n산업으로 확장 해왔습니다.",
+          "source_scope": "reported_fact",
           "source": {
-            "doc_id": "RB-01",
+            "doc_id": "RB-02",
             "page": 1
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "50+ 팀 규모 우리는 로봇 하드웨어 설계부터 이동·조작을 위한 제어 기술, 스스로 판단하고 행동하는 VLA 기반 지능까지 휴머노이드 개발 전 과정을 자체 기술로 구축합니다.",
-          "evidence_reason": "원본 페이지는 로브로스가 50명 이상의 팀 규모임을 '50+ 팀 규모'로 명시적으로 표기하고, 하드웨어 설계부터 AI 지능까지 휴머노이드 개발 전 과정을 '자체 기술로 구축'한다고 밝히고 있다. 따라서 모든 핵심 원자 사실이 직접적으로 명시되어 있다.",
+          "evidence_quote": "작은 설계와 실험에서 출발해,\n제품을 만들고 현장에 적용하며\n산업으로 확장 해왔습니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         },
         {
-          "claim": "로브로스는 50명 이상의 팀 규모를 갖추고 있으며, 로봇 하드웨어 설계부터 AI 지능 개발까지 휴머노이드 개발 전 과정을 자체 기술로 수행한다.",
-          "criterion_id": "team_operations",
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「수서 ICT ∙ 동해휴게소\n무인 로봇 카페 운영\n2021\n화성휴게소 ∙ 장흥정남진휴게소\n무인 로봇 카페 운영\n2022\n판교점 ∙ 일산점 ∙ 도곡점 등\n빕스 누들셰프 운영」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
           "source_refs": [
             {
-              "doc_id": "RB-01",
+              "doc_id": "RB-02",
               "page": 1
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "수서 ICT ∙ 동해휴게소\n무인 로봇 카페 운영\n2021\n화성휴게소 ∙ 장흥정남진휴게소\n무인 로봇 카페 운영\n2022\n판교점 ∙ 일산점 ∙ 도곡점 등\n빕스 누들셰프 운영",
+          "source_scope": "reported_fact",
           "source": {
-            "doc_id": "RB-01",
+            "doc_id": "RB-02",
             "page": 1
           },
           "analysis": "technology_analysis",
-          "evidence_quote": "50+ 팀 규모 우리는 로봇 하드웨어 설계부터 이동·조작을 위한 제어 기술, 스스로 판단하고 행동하는 VLA 기반 지능까지 휴머노이드 개발 전 과정을 자체 기술로 구축합니다.",
-          "evidence_reason": "원본 페이지에는 '50+ 팀 규모'라는 표현과 함께, 로봇 하드웨어 설계부터 AI 기반 지능까지 휴머노이드 개발 전 과정을 '자체 기술로 구축합니다'라는 직접적 문구가 명시되어 있다. 주장에 포함된 주요 세부 사실(50명 이상의 팀, 하드웨어·소프트웨어 전 과정 자체 기술 수행)이 모두 직접적으로 언급되어 있으므로 supported로 판정된다.",
+          "evidence_quote": "수서 ICT ∙ 동해휴게소\n무인 로봇 카페 운영\n2021\n화성휴게소 ∙ 장흥정남진휴게소\n무인 로봇 카페 운영\n2022\n판교점 ∙ 일산점 ∙ 도곡점 등\n빕스 누들셰프 운영",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「IGRIS-A 릴리즈\nKRoC 2025\n로보틱스 컨퍼런스 참가\n서울 모빌리티쇼\n전시 참가」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "IGRIS-A 릴리즈\nKRoC 2025\n로보틱스 컨퍼런스 참가\n서울 모빌리티쇼\n전시 참가",
+          "source_scope": "plan",
+          "source": {
+            "doc_id": "RB-02",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "IGRIS-A 릴리즈\nKRoC 2025\n로보틱스 컨퍼런스 참가\n서울 모빌리티쇼\n전시 참가",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「IGRIS-C 릴리즈\nCoRL&Humanoids 2025\n글로벌 로봇공학 학회 참가\nAPEC 2025\n국제 전력전자 산업 전시 참가\niREX 2025\n국제 로봇 전시회 참가」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-02",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "IGRIS-C 릴리즈\nCoRL&Humanoids 2025\n글로벌 로봇공학 학회 참가\nAPEC 2025\n국제 전력전자 산업 전시 참가\niREX 2025\n국제 로봇 전시회 참가",
+          "source_scope": "plan",
+          "source": {
+            "doc_id": "RB-02",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "IGRIS-C 릴리즈\nCoRL&Humanoids 2025\n글로벌 로봇공학 학회 참가\nAPEC 2025\n국제 전력전자 산업 전시 참가\niREX 2025\n국제 로봇 전시회 참가",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Yonhap Infomax 자료의 원문 인용(발표 내용): 「Robros is expanding its demonstration scope across various industrial sites includi\nng manufacturing, logistics, and semiconductors by applying imitation learning-ba Finance\nsed autonomous task technology and reinforcement learning-based bipedal loco\nmotion and whole-body control technology to its self-developed humanoid IGRIS- financial sector\nC.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Robros is expanding its demonstration scope across various industrial sites includi\nng manufacturing, logistics, and semiconductors by applying imitation learning-ba Finance\nsed autonomous task technology and reinforcement learning-based bipedal loco\nmotion and whole-body control technology to its self-developed humanoid IGRIS- financial sector\nC.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-05",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Robros is expanding its demonstration scope across various industrial sites includi\nng manufacturing, logistics, and semiconductors by applying imitation learning-ba Finance\nsed autonomous task technology and reinforcement learning-based bipedal loco\nmotion and whole-body control technology to its self-developed humanoid IGRIS- financial sector\nC.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Yonhap Infomax 자료의 원문 인용(발표 내용): 「Recently, the company has been selected for the most projects in the humanoid d\nemonstration program promoted by the Korea Institute for Robot Industry Advanc\nement, expanding its presence in South Korea's humanoid market by simultaneou\nsly pursuing technology development and commercialization.」",
+          "criterion_id": "productization_execution",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Recently, the company has been selected for the most projects in the humanoid d\nemonstration program promoted by the Korea Institute for Robot Industry Advanc\nement, expanding its presence in South Korea's humanoid market by simultaneou\nsly pursuing technology development and commercialization.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-05",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Recently, the company has been selected for the most projects in the humanoid d\nemonstration program promoted by the Korea Institute for Robot Industry Advanc\nement, expanding its presence in South Korea's humanoid market by simultaneou\nsly pursuing technology development and commercialization.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
     },
+    "팀 구성·운영 역량": {
+      "category": "창업자·핵심팀",
+      "weight": 5,
+      "grade": null,
+      "score": null,
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 팀 규모(40명 이상), 자체 하드웨어/AI 개발, 비대기업/정부 산하가 아니며, 자체 기술·데이터·플랫폼 주장 및 VC 투자 유치는 확인되나, 명확한 팀원 직무별 경력·조직 체계·운영의 독립적 성과(제조/사업/정비 등 분업 실적)는 회사 발표/외부 기사로만 확인되어서, 반복적 사업 운영 및 생산/정비 운영 체계의 검증된 단계까지는 미달이다.",
+      "evidence": []
+    },
     "소통의 명확성과 신뢰성": {
       "category": "창업자·핵심팀",
       "weight": 3,
-      "grade": null,
-      "score": null,
-      "reason": "공식 설명의 명확성, 목표와 실제 결과 구분에 대한 구체적 근거가 확인되지 않음.",
-      "evidence": []
+      "grade": 2,
+      "score": 1.5,
+      "reason": "공식 홈페이지 등 오픈소스 및 SDK 문서에서 구체적인 요구사항, 설치법, 예시 제공 등 체계적 안내는 일부 존재하나, 기술문서 자체 미공개, 일부 안내 부재(회사 공식 발표) 등 정보 전달·명확성에서 한계가 명확히 적시됨. 홍보/소개 내용은 충실하나 기술 매뉴얼 대외 제공은 미흡하다.",
+      "evidence": [
+        {
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「No technical documents.」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "No technical documents.",
+          "source_scope": "limitation",
+          "source": {
+            "doc_id": "RB-04",
+            "page": 1
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "No technical documents.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "github.com 자료의 원문 인용(발표 내용): 「Requirements\nTool\nVersion\nOS\nLinux x86_64 (Ubuntu 24.04, ROS 2 Jazzy)\nCMake\n≥ 3.14\nCompiler\nC++17 (GCC 11+ / Clang 14+)\nPython\n3.12 (Python bindings + ROS 2 nodes)\nRuntime / build dependencies\nsudo apt install libssl-dev # required\nsudo apt install libglfw3-dev libgl1-mesa-dev # for the GUI examples\nsudo apt install libopencv-dev # for the sensor viewers\nThe sensor viewers (cyclonedds_sensor_viewer, ros_sensor_viewer, python/sensor_viewer.py)\nare the only things here that use OpenCV — the SDK library itself does not. Configure fails if it\nis missing, rather than quietly dropping the target; build everything else without it with:\ncmake -B build -S . -DIGRIS_C_BUILD_VIEWERS=OFF # cyclonedds/\ncolcon build --cmake-args -DIGRIS_C_BUILD_VIEWERS=OFF # ros2/\nLayout」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-1ef3bab6d9636571",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "Requirements\nTool\nVersion\nOS\nLinux x86_64 (Ubuntu 24.04, ROS 2 Jazzy)\nCMake\n≥ 3.14\nCompiler\nC++17 (GCC 11+ / Clang 14+)\nPython\n3.12 (Python bindings + ROS 2 nodes)\nRuntime / build dependencies\nsudo apt install libssl-dev # required\nsudo apt install libglfw3-dev libgl1-mesa-dev # for the GUI examples\nsudo apt install libopencv-dev # for the sensor viewers\nThe sensor viewers (cyclonedds_sensor_viewer, ros_sensor_viewer, python/sensor_viewer.py)\nare the only things here that use OpenCV — the SDK library itself does not. Configure fails if it\nis missing, rather than quietly dropping the target; build everything else without it with:\ncmake -B build -S . -DIGRIS_C_BUILD_VIEWERS=OFF # cyclonedds/\ncolcon build --cmake-args -DIGRIS_C_BUILD_VIEWERS=OFF # ros2/\nLayout",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "WEB-1ef3bab6d9636571",
+            "page": 2
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Requirements\nTool\nVersion\nOS\nLinux x86_64 (Ubuntu 24.04, ROS 2 Jazzy)\nCMake\n≥ 3.14\nCompiler\nC++17 (GCC 11+ / Clang 14+)\nPython\n3.12 (Python bindings + ROS 2 nodes)\nRuntime / build dependencies\nsudo apt install libssl-dev # required\nsudo apt install libglfw3-dev libgl1-mesa-dev # for the GUI examples\nsudo apt install libopencv-dev # for the sensor viewers\nThe sensor viewers (cyclonedds_sensor_viewer, ros_sensor_viewer, python/sensor_viewer.py)\nare the only things here that use OpenCV — the SDK library itself does not. Configure fails if it\nis missing, rather than quietly dropping the target; build everything else without it with:\ncmake -B build -S . -DIGRIS_C_BUILD_VIEWERS=OFF # cyclonedds/\ncolcon build --cmake-args -DIGRIS_C_BUILD_VIEWERS=OFF # ros2/\nLayout",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "github.com 자료의 원문 인용(발표 내용): 「Python wheel — reproducible env via pixi\n# Install pixi once: https://pixi.sh/latest/\ncd python\npixi install」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-1ef3bab6d9636571",
+              "page": 5
+            }
+          ],
+          "source_bound_quote": "Python wheel — reproducible env via pixi\n# Install pixi once: https://pixi.sh/latest/\ncd python\npixi install",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "WEB-1ef3bab6d9636571",
+            "page": 5
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Python wheel — reproducible env via pixi\n# Install pixi once: https://pixi.sh/latest/\ncd python\npixi install",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "github.com 자료의 원문 인용(발표 내용): 「Examples\nAll examples take the DDS domain id and robot namespace (C++/ROS 2 as args, Python via\n--domain-id /\n--namespace). Set CYCLONEDDS_URI first (see Connecting to the robot).\nEach row is a capability; the cell shows the example for that interface, or — if not provided.\nCapability」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-1ef3bab6d9636571",
+              "page": 6
+            }
+          ],
+          "source_bound_quote": "Examples\nAll examples take the DDS domain id and robot namespace (C++/ROS 2 as args, Python via\n--domain-id /\n--namespace). Set CYCLONEDDS_URI first (see Connecting to the robot).\nEach row is a capability; the cell shows the example for that interface, or — if not provided.\nCapability",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "WEB-1ef3bab6d9636571",
+            "page": 6
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Examples\nAll examples take the DDS domain id and robot namespace (C++/ROS 2 as args, Python via\n--domain-id /\n--namespace). Set CYCLONEDDS_URI first (see Connecting to the robot).\nEach row is a capability; the cell shows the example for that interface, or — if not provided.\nCapability",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "github.com 자료의 원문 인용(발표 내용): 「Low-level control\nStream targets on lowcmd (LowCmd) and read state on lowstate (LowState). MotorCmd carries\nq/dq/tau/kp/kd per joint (31 DOF, HYBRID mode); LowCmd.kinematic_modes[5] selects MS/PJS\nper\nparallel-link group. See the cyclonedds/ and python/ low-level examples.\nEnd effector (hand)\nA single DDS interface (handcmd / handstate / service/hand_init) drives whichever end effector」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-1ef3bab6d9636571",
+              "page": 8
+            }
+          ],
+          "source_bound_quote": "Low-level control\nStream targets on lowcmd (LowCmd) and read state on lowstate (LowState). MotorCmd carries\nq/dq/tau/kp/kd per joint (31 DOF, HYBRID mode); LowCmd.kinematic_modes[5] selects MS/PJS\nper\nparallel-link group. See the cyclonedds/ and python/ low-level examples.\nEnd effector (hand)\nA single DDS interface (handcmd / handstate / service/hand_init) drives whichever end effector",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "WEB-1ef3bab6d9636571",
+            "page": 8
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "Low-level control\nStream targets on lowcmd (LowCmd) and read state on lowstate (LowState). MotorCmd carries\nq/dq/tau/kp/kd per joint (31 DOF, HYBRID mode); LowCmd.kinematic_modes[5] selects MS/PJS\nper\nparallel-link group. See the cyclonedds/ and python/ low-level examples.\nEnd effector (hand)\nA single DDS interface (handcmd / handstate / service/hand_init) drives whichever end effector",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "github.com 자료의 원문 인용(발표 내용): 「the robot is built with — 5-finger hand (ids 11–16 right / 21–26 left), 1-DoF gripper, or magnet.\nHandCmd.motor_cmd[].q is normalized 0–1. Initialize via InitHand() (or a service/hand_init request).」",
+          "criterion_id": "communication_reliability",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "WEB-1ef3bab6d9636571",
+              "page": 9
+            }
+          ],
+          "source_bound_quote": "the robot is built with — 5-finger hand (ids 11–16 right / 21–26 left), 1-DoF gripper, or magnet.\nHandCmd.motor_cmd[].q is normalized 0–1. Initialize via InitHand() (or a service/hand_init request).",
+          "source_scope": "requirement",
+          "source": {
+            "doc_id": "WEB-1ef3bab6d9636571",
+            "page": 9
+          },
+          "analysis": "technology_analysis",
+          "evidence_quote": "the robot is built with — 5-finger hand (ids 11–16 right / 21–26 left), 1-DoF gripper, or magnet.\nHandCmd.motor_cmd[].q is normalized 0–1. Initialize via InitHand() (or a service/hand_init request).",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "실제 접근 가능한 시장": {
       "category": "시장성",
       "weight": 8,
-      "grade": null,
-      "score": null,
-      "reason": "실제 고객·계약·실증 등 접근 가능한 시장 범위를 명시적으로 뒷받침하는 자료가 제시되지 않음.",
-      "evidence": []
+      "grade": 2,
+      "score": 4.0,
+      "reason": "카페/뷔페 실납품, 물류·제조 현장 실증 및 복수 분야(연구, 교육, 물류, 제조) 고객 대상 접근 사례가 확인된다. 다만 이는 초기 제품 시범/제한적 현장 적용 중심이고, 광범위 정규 시장 진출·본격 배치나 반복적 유상 확대 등 심화 단계까지는 근거가 불충분하다.",
+      "evidence": [
+        {
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「수서 ICT ∙ 동해휴게소\n무인 로봇 카페 운영\n2021\n화성휴게소 ∙ 장흥정남진휴게소\n무인 로봇 카페 운영」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "수서 ICT ∙ 동해휴게소\n무인 로봇 카페 운영\n2021\n화성휴게소 ∙ 장흥정남진휴게소\n무인 로봇 카페 운영",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-02",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "수서 ICT ∙ 동해휴게소\n무인 로봇 카페 운영\n2021\n화성휴게소 ∙ 장흥정남진휴게소\n무인 로봇 카페 운영",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「판교점 ∙ 일산점 ∙ 도곡점 등\n빕스 누들셰프 운영」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-02",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "판교점 ∙ 일산점 ∙ 도곡점 등\n빕스 누들셰프 운영",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-02",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "판교점 ∙ 일산점 ∙ 도곡점 등\n빕스 누들셰프 운영",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "로브로스(Robros) 자료의 원문 인용(발표 내용): 「키 154cm, 무게 56kg 의 크기와 무게로 연구소, 학교, 사무실, 공장 등 좁은 공간에서도 안정적으로 작동합니다. AI 기반 제어 기술과 사람의 손과 유사한 양팔 작업\n능력, 직관적인 LED 인터페이스, 모바일 제어 앱까지 갖춰 연구용, 실증용, 교육용으로 모두 적합하며 Physical AI의 실질적 구현 플랫폼으로 설계 되었습니다.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-03",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "키 154cm, 무게 56kg 의 크기와 무게로 연구소, 학교, 사무실, 공장 등 좁은 공간에서도 안정적으로 작동합니다. AI 기반 제어 기술과 사람의 손과 유사한 양팔 작업\n능력, 직관적인 LED 인터페이스, 모바일 제어 앱까지 갖춰 연구용, 실증용, 교육용으로 모두 적합하며 Physical AI의 실질적 구현 플랫폼으로 설계 되었습니다.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-03",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "키 154cm, 무게 56kg 의 크기와 무게로 연구소, 학교, 사무실, 공장 등 좁은 공간에서도 안정적으로 작동합니다. AI 기반 제어 기술과 사람의 손과 유사한 양팔 작업\n능력, 직관적인 LED 인터페이스, 모바일 제어 앱까지 갖춰 연구용, 실증용, 교육용으로 모두 적합하며 Physical AI의 실질적 구현 플랫폼으로 설계 되었습니다.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Yonhap Infomax 자료의 원문 인용(발표 내용): 「Robros is expanding its demonstration scope across various industrial sites includi\nng manufacturing, logistics, and semiconductors by applying imitation learning-ba Finance\nsed autonomous task technology and reinforcement learning-based bipedal loco\nmotion and whole-body control technology to its self-developed humanoid IGRIS- financial sector\nC.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Robros is expanding its demonstration scope across various industrial sites includi\nng manufacturing, logistics, and semiconductors by applying imitation learning-ba Finance\nsed autonomous task technology and reinforcement learning-based bipedal loco\nmotion and whole-body control technology to its self-developed humanoid IGRIS- financial sector\nC.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-05",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Robros is expanding its demonstration scope across various industrial sites includi\nng manufacturing, logistics, and semiconductors by applying imitation learning-ba Finance\nsed autonomous task technology and reinforcement learning-based bipedal loco\nmotion and whole-body control technology to its self-developed humanoid IGRIS- financial sector\nC.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Yonhap Infomax 자료의 원문 인용(발표 내용): 「Recently, the company has been selected for the most projects in the humanoid d\nemonstration program promoted by the Korea Institute for Robot Industry Advanc\nement, expanding its presence in South Korea's humanoid market by simultaneou\nsly pursuing technology development and commercialization.」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Recently, the company has been selected for the most projects in the humanoid d\nemonstration program promoted by the Korea Institute for Robot Industry Advanc\nement, expanding its presence in South Korea's humanoid market by simultaneou\nsly pursuing technology development and commercialization.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-05",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Recently, the company has been selected for the most projects in the humanoid d\nemonstration program promoted by the Korea Institute for Robot Industry Advanc\nement, expanding its presence in South Korea's humanoid market by simultaneou\nsly pursuing technology development and commercialization.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Tech Times 자료의 원문 인용(발표 내용): 「Robros is currently conducting proof-of-concept evaluations at logistics companies including Lotte Global\nLogistics and at shipyard sites — confirming industrial applicability beyond laboratory conditions. IGRIS-C units have\nbeen supplied to Kwangwoon University, Kyung Hee University, and Sogang University for educational and\nresearch applications. The company has been selected for multiple projects under a humanoid demonstration\nprogram run by the Korea Institute for Robot Industry Advancement (KIRIA).」",
+          "criterion_id": "accessible_market",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-06",
+              "page": 5
+            }
+          ],
+          "source_bound_quote": "Robros is currently conducting proof-of-concept evaluations at logistics companies including Lotte Global\nLogistics and at shipyard sites — confirming industrial applicability beyond laboratory conditions. IGRIS-C units have\nbeen supplied to Kwangwoon University, Kyung Hee University, and Sogang University for educational and\nresearch applications. The company has been selected for multiple projects under a humanoid demonstration\nprogram run by the Korea Institute for Robot Industry Advancement (KIRIA).",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-06",
+            "page": 5
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Robros is currently conducting proof-of-concept evaluations at logistics companies including Lotte Global\nLogistics and at shipyard sites — confirming industrial applicability beyond laboratory conditions. IGRIS-C units have\nbeen supplied to Kwangwoon University, Kyung Hee University, and Sogang University for educational and\nresearch applications. The company has been selected for multiple projects under a humanoid demonstration\nprogram run by the Korea Institute for Robot Industry Advancement (KIRIA).",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "문제의 심각성과 구매 필요성": {
       "category": "시장성",
       "weight": 7,
-      "grade": 4,
-      "score": 7.0,
-      "reason": "제조업 등 현장에서 고강도·고위험 작업 대체, 인력난 해소 등 로봇 수요의 필요성을 KIRIA와 IFR 공식 보고자료에서 구체적으로 기술하였고, 실증 사업 등에서 이를 지원하고 있음을 명확히 언급함. 각종 산업 현장의 구매 필요성이 산업계 전반적으로 확인됨.",
+      "grade": 3,
+      "score": 5.25,
+      "reason": "글로벌 제조업과 한국 로봇 실증 현장에서 인력난, 고강도 작업 대체 필요성과 로봇 자동화 수요 및 설치비 지원이 산업별로 입증되어 있다. 실제 구매/설치 예산/지원정책 근거가 산업문서에서 확인된다.",
       "evidence": [
         {
-          "claim": "제조업 등 산업 현장에서는 고강도·고위험 작업 대체와 인력난 해소를 위해 로봇 활용 확산이 필요하며, 이는 로봇공정모델 실증사업 등에서 지원되고 있다.",
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「Employers around the world are struggling to find people with the specialized skills required. These unfilled jobs leave existing staff covering extra\nshifts, with rising stress and fatigue across all sectors. A key strategy for addressing this issue is to adopt robotics and automation. In this\ntransformation process, employers benefit from taking their human workforce on board. The close cooperation with employees in implementing robots」",
           "criterion_id": "customer_pain_purchase_need",
-          "source_refs": [
-            {
-              "doc_id": "CM-04",
-              "page": 1
-            }
-          ],
           "status": "confirmed",
-          "source": {
-            "doc_id": "CM-04",
-            "page": 1
-          },
-          "analysis": "market_competition_analysis",
-          "evidence_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든 로봇공정모델(167개)실증",
-          "evidence_reason": "원문에는 제조업 등 산업 현장에서 고강도·고위험 작업 대체와 인력난 해소를 위해 로봇 활용 확산이 필요하다고 명시되어 있으며, 실제로 '로봇공정모델 실증사업' 등에서 이를 지원하고 실증하고 있는 내용이 구체적으로 언급되어 있다. 주장의 모든 핵심 내용이 원문에 명시적으로 뒷받침된다.",
-          "all_core_facts_supported": true
-        },
-        {
-          "claim": "로봇 도입은 노동력 부족 문제 해결, 반복 작업 경감, 젊은 인력 유치 등 산업 현장의 심각한 문제를 완화하는 수단으로 인식되고 있다.",
-          "criterion_id": "customer_pain_purchase_need",
           "source_refs": [
             {
               "doc_id": "CM-02",
               "page": 2
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "Employers around the world are struggling to find people with the specialized skills required. These unfilled jobs leave existing staff covering extra\nshifts, with rising stress and fatigue across all sectors. A key strategy for addressing this issue is to adopt robotics and automation. In this\ntransformation process, employers benefit from taking their human workforce on board. The close cooperation with employees in implementing robots",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "CM-02",
             "page": 2
           },
           "analysis": "market_competition_analysis",
-          "evidence_quote": "The benefits that robots deliver, such as tackling labor shortages, taking away routine tasks or opening up new career opportunities, mean that they will be accepted as allies in the workplace. At the same time, robots are a way to make a workplace much more attractive to young people.",
-          "evidence_reason": "원본 페이지는 로봇 도입이 'labor shortages'(노동력 부족) 해소, 'taking away routine tasks'(반복 작업 경감), 'make a workplace much more attractive to young people'(젊은 인력 유치) 등 산업 현장의 주요 문제를 완화하는 수단으로 인식된다고 명시적으로 서술했다. 주장의 모든 핵심 사실이 직접적으로 뒷받침된다.",
+          "evidence_quote": "Employers around the world are struggling to find people with the specialized skills required. These unfilled jobs leave existing staff covering extra\nshifts, with rising stress and fatigue across all sectors. A key strategy for addressing this issue is to adopt robotics and automation. In this\ntransformation process, employers benefit from taking their human workforce on board. The close cooperation with employees in implementing robots",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "한국로봇산업진흥원 (KIRIA) 자료의 원문 인용(발표 내용): 「고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "고강도·고위험 작업 대체, 인력난 등 제조환경 개선을 위해 로봇 활용 확산이 필요한 제조업종을 대상으로 모든\n로봇공정모델(167개)실증",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "한국로봇산업진흥원 (KIRIA) 자료의 원문 인용(발표 내용): 「제조공장 내 로봇 설치비용(로봇 주변 설비 포함) 지원\n* 로봇공정모델을 활용한 로봇자동화 시스템 설치비용 일체」",
+          "criterion_id": "customer_pain_purchase_need",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-04",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "제조공장 내 로봇 설치비용(로봇 주변 설비 포함) 지원\n* 로봇공정모델을 활용한 로봇자동화 시스템 설치비용 일체",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-04",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "제조공장 내 로봇 설치비용(로봇 주변 설비 포함) 지원\n* 로봇공정모델을 활용한 로봇자동화 시스템 설치비용 일체",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
@@ -314,25 +680,132 @@
       "weight": 5,
       "grade": 4,
       "score": 5.0,
-      "reason": "제조업 공급망, 고임금/인력난 국가의 자동화 수요가 시장 성장의 주요 동력임을 IFR 등 공식 산업 보고서에서 뒷받침. 산업 정책 변화와 공급망 회복력 강화 등 계량적 수요 지표도 포함되어 있다.",
+      "reason": "글로벌, 한국, 아시아 시장의 산업용 로봇 수요, 인력난, 기술 확산, 장기적 시장 성장률(5년 내 2배↑ 등 국제통계), AI·로보틱스 트렌드 등 객관적 성장 동력 및 구조적 배경이 국제·국가 통계, 업계 보고서 등 다수 출처로 뒷받침되어 있다.",
       "evidence": [
         {
-          "claim": "제조업의 공급망 회복력 강화와 고임금 국가 및 인력 부족 국가에서 제조 역량 구축이 자동화 기술 수요를 촉진하는 주요 요인이다.",
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「Frankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.」",
           "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Frankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Frankfurt, Sep 24, 2026 — The global operational stock of industrial robots surged 9% to a record 5 million units in 2025. This was driven by\nan 11% jump in annual installations: Factories worldwide installed more than 600,000 new units over the year.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「million robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,\nfollowed by Americas. Europe is moving ahead more slowly.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "million robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,\nfollowed by Americas. Europe is moving ahead more slowly.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 1
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "million robots operational in factories worldwide is more than double the number seven years ago. The strongest growth is taking place in Asia,\nfollowed by Americas. Europe is moving ahead more slowly.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「The market in the Republic of Korea installed 30,000 units in 2025 – down 1%. Annual installations had been trending sideways of around 31,000\nunits since 2019. The country remained the fourth largest market worldwide. New investments from the automotive industry will come into effect in\n2027 and 2028. Demand for robots in Korea may break the established trend and grow in 2027.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 2
+            }
+          ],
+          "source_bound_quote": "The market in the Republic of Korea installed 30,000 units in 2025 – down 1%. Annual installations had been trending sideways of around 31,000\nunits since 2019. The country remained the fourth largest market worldwide. New investments from the automotive industry will come into effect in\n2027 and 2028. Demand for robots in Korea may break the established trend and grow in 2027.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 2
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "The market in the Republic of Korea installed 30,000 units in 2025 – down 1%. Annual installations had been trending sideways of around 31,000\nunits since 2019. The country remained the fourth largest market worldwide. New investments from the automotive industry will come into effect in\n2027 and 2028. Demand for robots in Korea may break the established trend and grow in 2027.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「Global robot demand is expected to continue its long-term growth trajectory. Installations are forecast to rise by 9% to 655,000 units in 2026 and reach\n806,000 units in 2029. Despite substantial regional differences, with countries such as China, the US, and India as strong growth markets, the global\noutlook remains positive.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
           "source_refs": [
             {
               "doc_id": "CM-01",
               "page": 3
             }
           ],
-          "status": "confirmed",
+          "source_bound_quote": "Global robot demand is expected to continue its long-term growth trajectory. Installations are forecast to rise by 9% to 655,000 units in 2026 and reach\n806,000 units in 2029. Despite substantial regional differences, with countries such as China, the US, and India as strong growth markets, the global\noutlook remains positive.",
+          "source_scope": "reported_fact",
           "source": {
             "doc_id": "CM-01",
             "page": 3
           },
           "analysis": "market_competition_analysis",
-          "evidence_quote": "The need for more resilient supply chains and recent developments of trade and industrial policy in several major economies are resulting in increasing relocation activity in the manufacturing industries. Building manufacturing capacity in high-wage economies and countries facing labor shortages will drive the demand for automation technology.",
-          "evidence_reason": "원문은 제조업의 공급망 회복력에 대한 필요와 고임금 국가 및 인력 부족 국가에서 제조 역량 구축이 자동화 기술(즉, 로봇 수요)을 촉진하는 주요 요인임을 명시적으로 언급하고 있다. 이는 주장의 모든 핵심 원자 사실이 직접적으로 뒷받침됨을 의미한다.",
+          "evidence_quote": "Global robot demand is expected to continue its long-term growth trajectory. Installations are forecast to rise by 9% to 655,000 units in 2026 and reach\n806,000 units in 2029. Despite substantial regional differences, with countries such as China, the US, and India as strong growth markets, the global\noutlook remains positive.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「relocation activity in the manufacturing industries. Building manufacturing capacity in high-wage economies and countries facing labor shortages will\ndrive the demand for automation technology. While this may shift the regional pattern of robot demand, there is no indication that the long-term growth」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "relocation activity in the manufacturing industries. Building manufacturing capacity in high-wage economies and countries facing labor shortages will\ndrive the demand for automation technology. While this may shift the regional pattern of robot demand, there is no indication that the long-term growth",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "relocation activity in the manufacturing industries. Building manufacturing capacity in high-wage economies and countries facing labor shortages will\ndrive the demand for automation technology. While this may shift the regional pattern of robot demand, there is no indication that the long-term growth",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "International Federation of Robotics (IFR) 자료의 원문 인용(발표 내용): 「Structural drivers such as demographic change will continue to support demand, while technological progress is expanding the range of\ntechnologically feasible and economically viable robot applications. In particular, advances in artificial intelligence, machine vision and sensing are\nincreasing robot capabilities, while easier programming and system integration are reducing deployment costs and opening automation to new\napplications and customer groups.」",
+          "criterion_id": "market_growth_drivers",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "CM-01",
+              "page": 3
+            }
+          ],
+          "source_bound_quote": "Structural drivers such as demographic change will continue to support demand, while technological progress is expanding the range of\ntechnologically feasible and economically viable robot applications. In particular, advances in artificial intelligence, machine vision and sensing are\nincreasing robot capabilities, while easier programming and system integration are reducing deployment costs and opening automation to new\napplications and customer groups.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "CM-01",
+            "page": 3
+          },
+          "analysis": "market_competition_analysis",
+          "evidence_quote": "Structural drivers such as demographic change will continue to support demand, while technological progress is expanding the range of\ntechnologically feasible and economically viable robot applications. In particular, advances in artificial intelligence, machine vision and sensing are\nincreasing robot capabilities, while easier programming and system integration are reducing deployment costs and opening automation to new\napplications and customer groups.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
           "all_core_facts_supported": true
         }
       ]
@@ -342,7 +815,7 @@
       "weight": 5,
       "grade": null,
       "score": null,
-      "reason": "실제 시장 진입 경로, 구체적 고객 확보나 산업·지역 확장 실적을 확인할 구체적 근거가 없음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 시제품·실증 확장, 과제 선정, 복수 산업·고객군 및 국내 확장 시도 등이 다수 기사·방문·공식 소개문으로 확인이나, 반복 구매·대규모 상용화·다수 지역(국/해외) 확대, 신규강 계약 등은 구체 배치 근거 없이 계획/도전 단계다.",
       "evidence": []
     },
     "핵심 작업 성능": {
@@ -350,7 +823,7 @@
       "weight": 6,
       "grade": null,
       "score": null,
-      "reason": "파지, 이동, 삽입 등 핵심 작업의 실측 성공률, 속도, 환경 조건 등 반복 검증된 성능 근거가 존재하지 않음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 하드웨어 사양(관절, 손, 모듈), AI·학습 형태, 동작 구조, 산업 실증 PoC 진행 및 제한 범위 실납품, 기술 구현 범위, 도입 확대 시도 등은 다수 출처로 확인됨. 그러나 반복 작업의 명확한 실측 성공률, 처리량, 환경별 수천/만회 반복 등급의 데이터는 제시되지 않아 정량적 또는 외부 현장 반복 실측 자료 등 상위 단계(3~4)를 충족하지 못함.",
       "evidence": []
     },
     "현장 안정성·안전성": {
@@ -358,7 +831,7 @@
       "weight": 5,
       "grade": null,
       "score": null,
-      "reason": "반복 작업 신뢰성, 가동시간, 장애/안전 검증 등 실제 현장 조건에서 실측된 자료가 없으므로 평가할 근거가 없음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 안전 기능, 유연제어, 충돌감지원, 현장 적합성, 실증 PoC, 공공 사업 및 다수 산업 도입 등 다수 근거가 있으나, 실제 장애·다운타임·결함·현장 반복 검증 등 가동률·고장률 중심의 정량 표준/인증 이력이나 고객/운영기관의 외부 독립 확인이 없다.",
       "evidence": []
     },
     "양산·유지보수 가능성": {
@@ -366,7 +839,7 @@
       "weight": 4,
       "grade": null,
       "score": null,
-      "reason": "실제 양산 이력, 제조 비용 기준, 정비·유지보수 체계가 실제 운영/납품 수준에서 증명된 근거가 없음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 대학 등 교육 및 실증 현장에 복수 납품 사실은 명확하나, 대량 양산, 표준화/원가 관리/현장 유지보수 체계, 외부 품질인증·반복적 정비 서비스의 독립 검증 근거 등은 확인되지 않는다.",
       "evidence": []
     },
     "경쟁 제품 대비 고객 가치": {
@@ -374,7 +847,7 @@
       "weight": 4,
       "grade": null,
       "score": null,
-      "reason": "기존 방식이나 경쟁 제품 대비 효과, 비용, 성능에 관한 비교 실적 자료가 없음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 홍보자료 및 기술사양·구조·제어방식 등에서 기존 제품과 차별화 주장, 경쟁사 비교, 공공포상 등은 존재하나, 실제 고객 성능/비용 비교, 도입효과 분석, 반복 현장 데이터 및 측정된 KPI 비교 등은 스펙·포지셔닝 중심에 머무른다.",
       "evidence": []
     },
     "모방하기 어려운 자산": {
@@ -382,7 +855,7 @@
       "weight": 3,
       "grade": null,
       "score": null,
-      "reason": "보호되는 독자 기술, 특허, 노하우 등 모방 장벽을 입증할 수 있는 구체적 근거가 제시되지 않음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 자체 하드웨어/SW/Ai/데이터 플랫폼 개발, 자체 라벨링·데이터 축적, 풀스택 내재화 및 독창성 언급, 글로벌 기술 경진 수상, VC와 대외 보도 등에서 일정 수준 모방 장벽 주장은 있으나, 등록 특허, 독점 데이터셋, 확실한 비공개 노하우·강제 라이선스 의무, 외부 기관의 모방 불가성 인정 등 결정적 요건은 미확인.",
       "evidence": []
     },
     "고객 유지·전환 장벽": {
@@ -390,23 +863,66 @@
       "weight": 3,
       "grade": null,
       "score": null,
-      "reason": "고객 유지, 시스템 통합, 전환 비용 등 고객 전환 장벽에 대한 실증 근거가 없음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 복수 산업 장르에 PoC, 공공 실증 사업화, 대학·공공기관 납품 및 과제 선정 등은 있으나, 유상 유지보수 계약, 장기 락인, 소프트웨어 종속, 시스템 통합·전환비의 구체성, 반복 재구매 등 실질적 장벽 사례는 미확인.",
       "evidence": []
     },
     "대기업 실제 지분·CVC 투자": {
       "category": "실적",
       "weight": 4,
-      "grade": null,
-      "score": null,
-      "reason": "대기업 또는 CVC의 실제 지분 투자가 이루어졌음을 확인할 객관적 거래 근거가 없음.",
-      "evidence": []
+      "grade": 4,
+      "score": 4.0,
+      "reason": "Lotte Ventures 등 복수 벤처케피털/대기업 CVC가 실제 투자자로 명확히 확인되고 다수 언론과 공식 기사 및 기업자료에 일치된다.",
+      "evidence": [
+        {
+          "claim": "Yonhap Infomax 자료의 원문 인용(발표 내용): 「Robros has benefited from venture capital support during its growth phase. Stick\nVentures, HB Investment, and Lotte Ventures have invested in and supported the c\nompany's growth.」",
+          "criterion_id": "bigtech_equity_investment",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-05",
+              "page": 1
+            }
+          ],
+          "source_bound_quote": "Robros has benefited from venture capital support during its growth phase. Stick\nVentures, HB Investment, and Lotte Ventures have invested in and supported the c\nompany's growth.",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-05",
+            "page": 1
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "Robros has benefited from venture capital support during its growth phase. Stick\nVentures, HB Investment, and Lotte Ventures have invested in and supported the c\nompany's growth.",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        },
+        {
+          "claim": "Tech Times 자료의 원문 인용(발표 내용): 「raised $10.6 million from investors including HB Investment, KB Investment, Lotte Ventures, and Mirae Asset Securities,」",
+          "criterion_id": "bigtech_equity_investment",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "doc_id": "RB-06",
+              "page": 6
+            }
+          ],
+          "source_bound_quote": "raised $10.6 million from investors including HB Investment, KB Investment, Lotte Ventures, and Mirae Asset Securities,",
+          "source_scope": "reported_fact",
+          "source": {
+            "doc_id": "RB-06",
+            "page": 6
+          },
+          "analysis": "bigtech_analysis",
+          "evidence_quote": "raised $10.6 million from investors including HB Investment, KB Investment, Lotte Ventures, and Mirae Asset Securities,",
+          "evidence_reason": "실제 원본 페이지의 연속 인용과 발행자 귀속이 일치함. 발표 내용이며 독립 검증을 뜻하지 않음",
+          "all_core_facts_supported": true
+        }
+      ]
     },
     "유상 매출·납품": {
       "category": "실적",
       "weight": 5,
       "grade": null,
       "score": null,
-      "reason": "유상 매출 실적, 상용 납품의 실제 거래 및 고객 지급 확인 근거가 없음.",
+      "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
       "evidence": []
     },
     "대기업 계약·납품 단계": {
@@ -414,7 +930,7 @@
       "weight": 6,
       "grade": null,
       "score": null,
-      "reason": "대기업과의 MOU, 현장 실증, 유상 납품 등 납품 단계 구분을 명확히 할 수 있는 원문 근거가 없음.",
+      "reason": "원문에서 대상 회사의 판매·공급 방향과 실제 거래 단계를 확인하지 못했거나 등급이 검증 단계와 일치하지 않아 U입니다. 구매·투자·계획·첫 계약은 회사 매출·유상 납품 확대·동일 고객 재구매로 바꾸어 평가하지 않습니다.",
       "evidence": []
     },
     "고객 재구매·확대": {
@@ -422,7 +938,7 @@
       "weight": 5,
       "grade": null,
       "score": null,
-      "reason": "기존 고객의 유상 재구매, 계약 갱신, 확대 실적이 원문으로 확인되지 않음.",
+      "reason": "평가항목의 의미 또는 선택한 등급 단계를 원문 근거가 지지하지 않아 U입니다. 기존 판정 사유: 공공 실증사업, 복수 기관/대학/실증과제 선정 내용은 있으나, 동일 고객의 유상 반복 재계약·추가 매출·납품 확대가 검증된 객관적 기록은 확인되지 않는다.",
       "evidence": []
     },
     "기업가치의 합리성": {
@@ -454,61 +970,51 @@
     "passed": true,
     "issues": [],
     "data_gaps": [
-      "창업자 및 핵심 인력의 구체적 경력과 실제 수행 역할",
-      "제품화·사업 실행에 관한 구체적 사례 및 매출 실적",
-      "핵심 작업(파지/이동/삽입 등)의 실측 성공률 및 반복 검증된 성능 자료",
-      "현장 안정성·신뢰성(장시간 테스트, 장애·안전 인증·운전 자료)",
-      "양산 이력·유지보수 체계·정비 비용 등 양산성 및 운영 자료",
-      "대기업 투자·지분 구조와 실제 지분 거래 자료",
-      "대기업 계약 및 유상 납품 단계 명기 자료",
-      "고객 재구매·유상 갱신·도입 확대 실적 원문",
-      "경쟁 제품 대비 비용·성능 비교 자료 및 핵심 특허·노하우·데이터 보유 근거",
-      "투자조건: 기업가치·지분/권리·자금 사용 계획"
+      "창업자 및 주요 팀원의 경력·전문성·실제 수행 역할(이력서 등 외부자료)",
+      "팀 구성·운영 역량(직무별 경력·운영 실적 관련 추가 문서)",
+      "시장 진입·확장 실증 사례(반복매출, 대규모 상용화, 확장 계약 등 객관적 근거)",
+      "핵심 작업 성능(동일 작업 반복 성공률·처리량, 외부 현장 독립 데이터)",
+      "현장 안정성·안전성(장시간 운전, 장애·고장·안전 사고/인증 등 실측검증 자료)",
+      "양산·유지보수 가능성(대량 생산, 품질인증, 유지보수 체계의 외부 검증 수치)",
+      "경쟁력 실증 및 비교(고객 비용/성능/도입효과의 정량 비교 데이터)",
+      "고객 재구매·확대(동일 고객의 유상 반복구매·재계약 공식 근거)",
+      "현재 거래의 기업가치, 지분·권리 조건, 투자금 사용 계획(사람 입력 필요)"
     ],
     "rubric": {
       "groundedness": true,
       "neutrality": true,
       "bias_control": true,
-      "groundedness_reason": "모든 확인된 사실(예: 팀 규모, 자체 기술 수행, 산업 현장의 로봇 활용 필요성, 시장 성장 동력 등)이 실제 검증된 원문 근거(회사 공식 소개자료, KIRIA/IFR 등 산업 공식 보고서)에 명시적으로 근거한 것으로 확인된다. 투자 유보 사유, U(자료 미확인) 표기, 각 항목별 한계 및 추가 자료 요청 등도 부실 근거의 우회적 대체나 허위 사실로 언급하지 않고 명확히 자료 미확인 또는 확인 불가 상태로 구분하여 기재했다. 등급 산정과 배점 집계, 제안 의견도 자료에서 유도한 사실에 기반해 이루어졌다.",
-      "neutrality_reason": "보고서는 로브로스의 장점(팀 역량, 시장 니즈 등)뿐 아니라, 미확인된 핵심 실적·투자조건·경쟁 우위·현장 성능 등 한계사항을 반복 강조하고 등급을 U로 표시하며, 긍정적 설명을 '투자 추천' 결론으로 확대하지 않았다. 회사의 발표 내용과 산업 공식 통계, 보고서에 명시된 한계점을 명확히 분리해 기술하여 홍보적 표현을 극복 사실로 취급하지 않고, 제3자 검증 및 객관적 근거 부족은 반드시 후속 확인 사실로 구분한다. 장점과 한계, 확인·미확인 영역을 균형있게 서술했다.",
-      "bias_control_reason": "자체 설명, 회사 발표와 객관적 산업 데이터(KIRIA/IFR 등), 외부 실적 부재, 독립적 검증의 한계 및 향후 요구 자료 등 모두 분리하여 객관적으로 기술하였다. 회사 자료에만 근거한 경우에는 그 자체 제한성을 반복 명기하였으며, 자료 미확인을 곧 성과 부재로 판단하지도 않으며 그 미확인은 실제 실패가 아님을 여러 차례 명시했다. 반증 자료, 비판적 검증 기준(예: 유상 매출, 재구매, 대기업 납품, 실증 데이터 등)이 결여된 점을 숨기지 않고 전면적으로 공개했다.",
+      "groundedness_reason": "모든 평가 항목과 각 문단의 기업 사실, 등급 산정 및 결론, 그리고 판정 사유가 해당 문단의 allowed_facts와 실제 원문 페이지에서 확인된 인용 사실에 의해 직접적으로 지지되고 있다. 보고서 내 반복 매출, 정량 KPI, 거래단계 확대 속성의 임의 단정이나 과장도 허용 범위 내 제한적 추론(실증이 반복적 유상 납품, 반복매출 실적으로 단정되지 않음)으로 일관되게 구분하고, 'U' 표시는 실제 미확인임을 투명하게 기록한다.",
+      "neutrality_reason": "경쟁력, 수상 실적, 시장 접근 등 모든 설명에서 홍보적 언어(예: 우수성·확실성 단정)를 실적·기술·계획 또는 가능성 수준에 따라 명확히 구분하여 기술하고 있다. 자료 미확인은 실제 부재·실패 주장으로 변환하지 않고, ‘경쟁력’, ‘차별성’ 등도 실측/반복/확장 근거 없는 경우 직접 단정하지 않음. 자체 발표 및 언론 발표 내용은 독립 검증과 구분해 설명하며, 조건부 추론은 한계와 후속 확인 필요성을 명확하게 병기하고 있다.",
+      "bias_control_reason": "대부분의 주요 실적·성과·특허 등 기업 발표임을 정확히 명기하고, 외부 독립 검증이 없거나 반복/장기 매출·배치·고객 유지·시장 확대 등 평가 항목이 자료로 미확인된 경우 이를 ‘U’로 투명하게 표기하고, 필요한 추가자료와 한계를 후속 확인 안내로 정직하게 기재한다. 대기업·투자자·계약 단계 역시 원문 근거와 등급 부합 여부를 명확히 구분하고, 미확정 투자조건이나 미확인 매출, 반복 실적을 임의로 확대하지 않는다.",
       "action": "rewrite",
       "issues": [],
       "data_gaps": [
-        "창업자 및 핵심 인력의 구체적 경력과 실제 수행 역할",
-        "제품화·사업 실행에 관한 구체적 사례 및 매출 실적",
-        "핵심 작업(파지/이동/삽입 등)의 실측 성공률 및 반복 검증된 성능 자료",
-        "현장 안정성·신뢰성(장시간 테스트, 장애·안전 인증·운전 자료)",
-        "양산 이력·유지보수 체계·정비 비용 등 양산성 및 운영 자료",
-        "대기업 투자·지분 구조와 실제 지분 거래 자료",
-        "대기업 계약 및 유상 납품 단계 명기 자료",
-        "고객 재구매·유상 갱신·도입 확대 실적 원문",
-        "경쟁 제품 대비 비용·성능 비교 자료 및 핵심 특허·노하우·데이터 보유 근거",
-        "투자조건: 기업가치·지분/권리·자금 사용 계획"
-      ]
+        "창업자 및 주요 팀원의 경력·전문성·실제 수행 역할(이력서 등 외부자료)",
+        "팀 구성·운영 역량(직무별 경력·운영 실적 관련 추가 문서)",
+        "시장 진입·확장 실증 사례(반복매출, 대규모 상용화, 확장 계약 등 객관적 근거)",
+        "핵심 작업 성능(동일 작업 반복 성공률·처리량, 외부 현장 독립 데이터)",
+        "현장 안정성·안전성(장시간 운전, 장애·고장·안전 사고/인증 등 실측검증 자료)",
+        "양산·유지보수 가능성(대량 생산, 품질인증, 유지보수 체계의 외부 검증 수치)",
+        "경쟁력 실증 및 비교(고객 비용/성능/도입효과의 정량 비교 데이터)",
+        "고객 재구매·확대(동일 고객의 유상 반복구매·재계약 공식 근거)",
+        "현재 거래의 기업가치, 지분·권리 조건, 투자금 사용 계획(사람 입력 필요)"
+      ],
+      "company_report_reflection": []
     },
     "action": "rewrite",
     "method": "hybrid"
   },
-  "trace_id": "8a8412a2-846a-4bdc-97cf-564cc585edd4",
+  "trace_id": "2a281139-daf2-4d0c-85ba-5475bdf94985",
   "recheck_count": 3,
   "input_paths": {
-    "data_dir": "./rag/data",
-    "com_data_dir": "./com_data",
+    "data_dir": "rag/data",
+    "com_data_dir": "com_data",
     "index_dir": "./.cache/rag_index"
   },
   "index_info": {
-    "cache_hit": true,
-    "cache_status": "loaded",
-    "cache_path": "./.cache/rag_index/983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
-    "fingerprint": "983002ce4d625c0999ddc32506dd8030e0801bd492543ee79a999d837167b125",
-    "model": "BAAI/bge-m3",
-    "documents": 22,
-    "pages": 106,
-    "chunk_size": 1000,
-    "chunk_overlap": 150,
-    "chunks": 154,
-    "dimensions": 1024
+    "initialized": false,
+    "mode": "resume_report"
   },
   "report_path": "./output/submission-live/robros.pdf",
   "evaluation_criteria": {
@@ -572,31 +1078,24 @@
   "selection_note": "원 배점 점수와 U·근거 비중을 함께 검토; 자동 순위·투자 선택 아님",
   "resume": {
     "snapshot_path": "./output/submission-live/robros.state.json",
-    "resumed_from_trace_id": "36404e6c-02c0-494f-8bb9-b14c798a0d91"
+    "resumed_from_trace_id": "d280eba5-65e0-4b00-815b-49d7c2b82182"
   },
   "tracing": {
     "requested": true,
     "key_present": true,
     "enabled": true,
     "project": "physical-ai-minimal-orchestration",
-    "root_run_id": "a058c052-ca40-4cc0-9857-fc6a9ed95843",
+    "root_run_id": "cce75e2b-3ded-4705-8b4b-dce710cb7815",
     "upload_verified": false
   },
   "metrics": {
-    "graph_elapsed_seconds": 32.353427,
+    "graph_elapsed_seconds": 49.482144,
     "nodes": [
       {
-        "node": "writer",
-        "run_id": "01a13473-e615-7cd1-b18f-17ed7eb2d240",
-        "round": 3,
-        "elapsed_seconds": 19.610768,
-        "status": "completed"
-      },
-      {
         "node": "report_evaluator",
-        "run_id": "01a13474-32b5-7672-9be5-449d1c01cf1d",
+        "run_id": "01a1433f-9edb-7851-a61b-e95a8cdb4717",
         "round": 3,
-        "elapsed_seconds": 12.732224,
+        "elapsed_seconds": 49.439659,
         "status": "completed"
       }
     ],
