@@ -38,12 +38,12 @@ def inputs_and_synthesis(records):
         narratives.append({'company': report['company'],
             'business_context': paragraph('fact', '제조 현장용 제품을 개발한다.', [report['prefix']+'-E1']),
             'market_and_team': paragraph('analysis', '개발 계획을 고객 실증으로 전환할 필요가 있다.', [report['prefix']+'-E1']),
-            'technology_and_execution': paragraph('analysis', '개발과 실제 납품의 차이를 구별한다.'),
-            'risks_and_conditions': paragraph('limitation', '유상납품과 반복 성능은 확인이 필요하다.'),
-            'individual_opinion': paragraph('opinion', '현재 투자 의견은 보류이며 실사 후 재검토한다.')})
+            'technology_and_execution': paragraph('analysis', '개발과 실제 납품의 차이를 구별한다.', [report['prefix']+'-E1']),
+            'risks_and_conditions': paragraph('limitation', '유상납품과 반복 성능은 확인이 필요하다.', [report['prefix']+'-E1']),
+            'individual_opinion': paragraph('opinion', '현재 투자 의견은 보류이며 실사 후 재검토한다.', [report['prefix']+'-E1'])})
     shared = {'text': '세 기업의 개발 계획과 실제 사업화 성과를 구분하여 투자 조건을 심사한다.',
               'report_paragraph_ids': [report['paragraphs'][1]['paragraph_id'] for report in inputs],
-              'evidence_ids': []}
+              'evidence_ids': [report['prefix']+'-E1' for report in inputs]}
     synthesis = {'companies': narratives, 'executive_summary': deepcopy(shared),
                  'cross_company_comparison': [deepcopy(shared), deepcopy(shared)]}
     return companies, inputs, synthesis
@@ -101,8 +101,9 @@ def test_portfolio_receives_company_report_analysis_instead_of_only_three_facts(
     payloads = []
     selected = select_portfolio_investment(records, report_inputs=inputs, report_synthesis=synthesis,
         judge=lambda payload: payloads.append(payload) or portfolio(action='조건부 투자'))
-    assert payloads[0]['company_reports'] is inputs
-    assert payloads[0]['report_synthesis'] is synthesis
+    assert payloads[0]['company_reports'] == inputs
+    assert payloads[0]['report_synthesis']['companies'] == synthesis['companies']
+    assert payloads[0]['report_synthesis']['source_reports']
     assert selected['selected_company'] == 'Figure AI'
 
 

@@ -230,6 +230,10 @@ def _validated_portfolio(portfolio_decision, companies) -> dict | None:
     if not isinstance(ids, list) or any(not isinstance(ref, str) or ref not in known for ref in ids):
         raise ValueError("최종 투자 제안에 등록되지 않은 회사별 근거 ID가 있습니다")
     result["evidence_ids"] = list(dict.fromkeys(ids))
+    comparison_ids = result.get('comparison_evidence_ids', [])
+    if not isinstance(comparison_ids, list) or any(not isinstance(ref, str) or ref not in known for ref in comparison_ids):
+        raise ValueError('최종 비교 이유에 등록되지 않은 회사별 근거 ID가 있습니다')
+    result['comparison_evidence_ids'] = list(dict.fromkeys(comparison_ids))
     conditions = result.get("required_conditions", [])
     if not isinstance(conditions, list) or any(not isinstance(value, (str, Mapping)) for value in conditions):
         raise ValueError("최종 투자 제안의 확인 조건은 목록이어야 합니다")
@@ -356,11 +360,14 @@ def build_combined_report(records, portfolio_decision=None, report_synthesis=Non
             proposals_text.append(value['text'] + ' ' + ' '.join(f'[{ref}]' for ref in value['evidence_ids']))
     if portfolio:
         used.update(portfolio["evidence_ids"])
+        used.update(portfolio['comparison_evidence_ids'])
+        reason_refs = list(dict.fromkeys(portfolio['evidence_ids'] + portfolio['comparison_evidence_ids']))
         proposals_text.extend([
             f"### 최종 투자 대상: {portfolio.get('selected_company') or '선정 유보'} — {portfolio['action']}",
             "투자·보류 이유: " + _plain(portfolio["reason"]) + " " +
-            " ".join(f"[{ref}]" for ref in portfolio["evidence_ids"]),
-            "다른 기업과 비교한 선택 이유: " + _plain(portfolio["comparison_reason"]),
+            " ".join(f"[{ref}]" for ref in reason_refs),
+            "다른 기업과 비교한 선택 이유: " + _plain(portfolio["comparison_reason"]) + ' ' +
+            ' '.join(f'[{ref}]' for ref in portfolio['comparison_evidence_ids']),
         ])
         if portfolio.get("policy_adjustment"):
             proposals_text.append(portfolio["policy_adjustment"])
@@ -507,6 +514,9 @@ def _evaluate_combined_payload(quality_evaluator, payload) -> dict:
     if quality_evaluator is None:
         return {"passed": False, "issues": ["통합 보고서의 원문 기반 내용 품질 평가를 아직 실행하지 않았습니다"],
                 "method": "deterministic_only", "action": "review"}
+    if not payload.get('deterministic_checks', {}).get('company_reports_synthesized'):
+        return {'passed': False, 'issues': ['기업별 완성 보고서의 report_synthesis가 없어 최종 보고서로 발행할 수 없습니다'],
+                'method': 'input_validation', 'action': 'review'}
     evaluation = quality_evaluator(deepcopy(payload))
     if not isinstance(evaluation, Mapping) or type(evaluation.get("passed")) is not bool:
         raise ValueError("통합 보고서 품질 평가 형식이 올바르지 않습니다")
@@ -519,7 +529,8 @@ def _evaluate_combined_payload(quality_evaluator, payload) -> dict:
 
 
 def save_combined_report(records, output_dir, max_pages=10, quality_evaluator=None, portfolio_decision=None,
-                         quality_reviser=None, max_rewrites=2, report_synthesis=None, initial_report=None) -> dict:
+                         quality_reviser=None, max_rewrites=2, report_synthesis=None, initial_report=None,
+                         input_manifest=None) -> dict:
     """통합 보고서를 원문·내용·A4 규격으로 검사하고 단일 PDF와 기록 파일로 저장한다."""
     if type(max_rewrites) is not int or not 0 <= max_rewrites <= 2:
         raise ValueError("통합 보고서 수정 예산은 0~2 정수여야 합니다")
@@ -569,12 +580,18 @@ def save_combined_report(records, output_dir, max_pages=10, quality_evaluator=No
                                "action": evaluation.get("action")})
     stop_reason = ("passed" if evaluation.get("passed") else
                    "new_evidence_required" if evaluation.get("action") == "research" else
+                   "quality_review_required" if evaluation.get('action') == 'review' else
                    "rewrite_budget_exhausted" if rewrite_count >= max_rewrites else
                    "quality_reviser_unavailable")
     if not built["deterministic_checks"]["source_reports_quality_passed"]:
         evaluation = {**evaluation, "passed": False, "issues": list(evaluation.get("issues", [])) + [
             "기업별 품질 미달·미평가 또는 데모 결과가 포함되어 최종 통과 상태로 사용할 수 없습니다"]}
         stop_reason = "source_quality_failed"
+    if not built['deterministic_checks']['company_reports_synthesized']:
+        issue = '기업별 완성 보고서의 report_synthesis가 없어 최종 보고서로 발행할 수 없습니다'
+        evaluation = {**evaluation, 'passed': False, 'action': 'review',
+                      'issues': list(dict.fromkeys([*evaluation.get('issues', []), issue]))}
+        stop_reason = 'company_report_synthesis_missing'
     passed = evaluation.get("passed") is True and not evaluation.get("issues")
     status = "completed" if passed else "quality_failed"
     stem = "final_investment_report" + ("" if passed else "_draft")
@@ -591,6 +608,7 @@ def save_combined_report(records, output_dir, max_pages=10, quality_evaluator=No
         staged.replace(pdf_path)
     markdown_path.write_text(built["markdown"], encoding="utf-8")
     snapshot = {"status": status, "companies": built["comparison"], "used_evidence_ids": built["used_evidence_ids"],
+                'input_manifest': input_manifest,
                 "markdown_sha256": sha256(built['markdown'].encode('utf-8')).hexdigest(),
                 "source_score_details": {item['company']: item['details'] for item in built['companies']},
                 "deterministic_checks": built["deterministic_checks"], "report_evaluation": evaluation,

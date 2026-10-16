@@ -53,7 +53,40 @@
     "RB-E4",
     "RB-E5"
   ],
-  "markdown_sha256": "e796aac3c8a707062e9b35655120f61fb4f060ccb7150eed0ff6d6a6492ef090",
+  "input_manifest": {
+    "path": "output/submission-live/combined_report_inputs.json",
+    "sha256": "b0f331117ceeea5bd0477a364b24e3d53d8ade07513775a93cb6e028e0022563",
+    "report_body_key": "company_reports[].report_markdown",
+    "companies": [
+      {
+        "company": "MOTOMIND",
+        "trace_id": "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
+        "report_sha256": "dd1405dca420e30e1aae475571169e8d9d7a3b232591429ba14c91181d2f60a7",
+        "body_characters": 9076,
+        "paragraph_count": 76,
+        "source_page_count": 4
+      },
+      {
+        "company": "ROBROS",
+        "trace_id": "8a8412a2-846a-4bdc-97cf-564cc585edd4",
+        "report_sha256": "25e4f372eeacbfde2e56a5c016e78ab354c6992de17f1e88122a63d4cdc5ed45",
+        "body_characters": 9900,
+        "paragraph_count": 86,
+        "source_page_count": 4
+      },
+      {
+        "company": "Figure AI",
+        "trace_id": "608c0606-f750-4557-b590-d444f651cb8f",
+        "report_sha256": "3e1653e4e478cfc079e410f211eee431d9010dc6c162e02756702ed0f3cddfad",
+        "body_characters": 11429,
+        "paragraph_count": 81,
+        "source_page_count": 7
+      }
+    ],
+    "original_sha256": "0b8d2333e6cecfc7b05701204c45bf916af3ed95be44972d3ba701359b062783",
+    "normalization_note": "제출 경로 정규화 후 실제 입력 파일 바이트로 SHA256 재계산"
+  },
+  "markdown_sha256": "b4f4f7fca2858fce0db5a62c272980b14c72aab16fbdeaf061367314a28c55be",
   "source_score_details": {
     "MOTOMIND": {
       "관련 전문성": {
@@ -877,33 +910,33 @@
     "passed": true,
     "issues": [],
     "data_gaps": [
-      "MOTOMIND: MOU 이후 PoC·유상 계약·인도·매출 인식 및 동일 고객 재구매 자료",
-      "MOTOMIND: 장시간 운전, 장애율, 안전 시험, 양산·유지보수 체계 자료",
-      "ROBROS: 핵심 작업의 독립 성능 검증 자료(성공률·처리량·지연·반복성)",
-      "ROBROS: 실제 고객 계약·유상 매출·납품·확대 도입 자료",
-      "ROBROS: 핵심 인력 경력, 역할 분담, 제품화 실행 이력 자료",
-      "Figure AI: 유상 계약·인도·매출 인식 및 동일 고객 재구매·확대 도입 자료",
-      "Figure AI: BMW 등 제조·물류 맥락에서 현재 판매 대상 모델의 성공률·처리량·장애율·안전 시험·장시간 운영 자료",
-      "Figure AI: 현재 거래의 기업가치·지분·권리 조건·자금 사용 계획 자료"
+      "MOTOMIND: MOU 이후 PoC·실증·유상 납품 여부를 보여주는 고객 원문, 매출 인식 자료, 동일 고객 재구매 자료",
+      "MOTOMIND: BELLO의 실제 공정 성공률·반복성·장시간 운전·안전 시험·양산/유지보수 자료",
+      "ROBROS: 파지·이동·삽입 등 핵심 작업의 동일 조건 성능 검증, 장시간 현장 운영·안전 기록, 양산/정비 체계 자료",
+      "ROBROS: 실제 고객 계약·유상 매출·납품·확대 도입 자료와 초기 고객 획득 경로",
+      "ROBROS: 창업자·핵심 인력 이력, 역할 분장, 제품화 실행 이력",
+      "Figure AI: 고객별 유상 계약·인도·매출 인식 자료와 동일 고객 재구매·확대 자료",
+      "Figure AI: 제조·물류 현장 성능을 Figure 02와 Figure 03으로 구분한 성공률·처리량·다운타임·장애·안전 로그",
+      "Figure AI: 현재 거래의 기업가치 산정 근거, 지분·권리 조건, 자금 사용 계획, 양산 원가·유지보수 자료"
     ],
     "rubric": {
       "groundedness": true,
       "neutrality": true,
       "bias_control": true,
-      "groundedness_reason": "최종 보고서의 사실 문단은 대체로 연결된 원문 페이지 범위 안에서 보수적으로 서술되어 있습니다. MOTOMIND는 LG사이언스파크와의 관계를 MOU 단계로만 다루고 유상 납품으로 확대 해석하지 않았고, ROBROS는 산업 수요 자료를 회사의 고객 전환으로 오인하지 않았으며, Figure AI는 BMW 현장 시연·Brookfield 포트폴리오사와의 상업 계약·Series C/Nscale 투자·Figure 02의 1,250시간 운영을 각각 구분해 사용했습니다. 또한 가정 제로샷 성능을 제조 성능으로 일반화하지 말아야 한다는 점, Figure 02 운영자료를 Figure 03의 현재 검증으로 바꿔 읽지 말아야 한다는 점도 명시되어 있어 원문 범위를 넘는 핵심 왜곡이 보이지 않습니다.",
-      "neutrality_reason": "최종 보고서는 회사 홍보성 표현과 검증자의 판단을 대체로 분리했습니다. ROBROS는 '회사가 발표했다'고 귀속했고, Figure AI에 대해서도 투자자 신뢰·사업화 신호를 긍정적으로 적으면서 곧바로 유상 매출·재구매·시장 확대의 미확인을 병기했습니다. MOTOMIND 역시 MOU와 설계 역량의 의미를 인정하되 상용화 검증 부족으로 보류 의견을 유지했습니다. 최종 조건부 투자 제안도 외부 기업 사실처럼 단정하지 않고, 확인된 사실과 미확인 조건을 함께 둔 심사 결론으로 제시됩니다.",
-      "bias_control_reason": "보고서는 세 회사 모두에 대해 U를 0이나 실패로 취급하지 않는다는 원칙을 유지했고, 총점만으로 투자 대상을 고르지 않는다고 명시했습니다. Figure AI를 우선 실사 후보로 선택하면서도 그 근거를 검증된 투자·시연·상업 계약·운영자료에 한정하고, 동시에 유상 매출·재구매·거래조건·산업 현장 성능 검증을 필수 조건으로 걸어 편향을 통제했습니다. MOTOMIND와 ROBROS도 긍정 신호와 미확인 사업화 공백을 함께 제시해 회사 발표를 곧바로 투자 정당화로 연결하지 않았습니다.",
+      "groundedness_reason": "최종 보고서는 핵심 사실·단계 구분을 대체로 원문 범위 안에서 유지했다. MOTOMIND는 LG사이언스파크 MOU를 납품·지분투자·재구매로 확장하지 않았고, ROBROS는 산업 수요 자료를 자사 고객 전환이나 현장 성능으로 바꾸지 않았으며, Figure AI는 BMW 현장 시연·Brookfield 포트폴리오사와의 상업 계약·대기업/CVC 지분투자를 유상 매출·재구매로 혼동하지 않았다. 또한 가정용 Helix 2.5 제로샷 결과를 제조 성능으로 확대하지 않았고, Figure 02의 1,250시간 운영을 Figure 03의 완전한 제조 검증으로 치환하지 않았다. 최종 조건부 투자 문장도 portfolio_decision의 대상·action·필수조건과 정합적이다.",
+      "neutrality_reason": "보고서는 회사 발표와 검증자의 해석을 대체로 분리했다. Figure AI 최종 선택 사유는 P107에서 '회사 발표 기준으로'라고 출처 성격을 밝히고, 세 회사 모두 기업별 현재 의견은 P69·P81·P93에서 '투자 보류'로 유지했다. 각 회사의 긍정 신호 옆에 유상 매출, 재구매, 팀 이력, 안전·양산 자료의 미확인을 병기해 홍보성 문구를 검증 결론으로 단정하지 않았다.",
+      "bias_control_reason": "보고서는 점수 총합만으로 선택하지 않는다고 P97에서 명시하고, 실제로 Figure AI 최종 제안도 검증된 긍정 사실과 함께 유상 매출·재구매·거래조건·공장별 성능 검증을 필수조건으로 묶어 제시했다. MOTOMIND와 ROBROS도 자료 미확인을 열위로 단정하지 않고 U와 실사 조건으로 남겼다. 회사 자료 비중이 큰 영역에서도 반증·불확실성·단계 차이를 함께 설명해 편향 통제가 적절했다.",
       "action": "rewrite",
       "issues": [],
       "data_gaps": [
-        "MOTOMIND: MOU 이후 PoC·유상 계약·인도·매출 인식 및 동일 고객 재구매 자료",
-        "MOTOMIND: 장시간 운전, 장애율, 안전 시험, 양산·유지보수 체계 자료",
-        "ROBROS: 핵심 작업의 독립 성능 검증 자료(성공률·처리량·지연·반복성)",
-        "ROBROS: 실제 고객 계약·유상 매출·납품·확대 도입 자료",
-        "ROBROS: 핵심 인력 경력, 역할 분담, 제품화 실행 이력 자료",
-        "Figure AI: 유상 계약·인도·매출 인식 및 동일 고객 재구매·확대 도입 자료",
-        "Figure AI: BMW 등 제조·물류 맥락에서 현재 판매 대상 모델의 성공률·처리량·장애율·안전 시험·장시간 운영 자료",
-        "Figure AI: 현재 거래의 기업가치·지분·권리 조건·자금 사용 계획 자료"
+        "MOTOMIND: MOU 이후 PoC·실증·유상 납품 여부를 보여주는 고객 원문, 매출 인식 자료, 동일 고객 재구매 자료",
+        "MOTOMIND: BELLO의 실제 공정 성공률·반복성·장시간 운전·안전 시험·양산/유지보수 자료",
+        "ROBROS: 파지·이동·삽입 등 핵심 작업의 동일 조건 성능 검증, 장시간 현장 운영·안전 기록, 양산/정비 체계 자료",
+        "ROBROS: 실제 고객 계약·유상 매출·납품·확대 도입 자료와 초기 고객 획득 경로",
+        "ROBROS: 창업자·핵심 인력 이력, 역할 분장, 제품화 실행 이력",
+        "Figure AI: 고객별 유상 계약·인도·매출 인식 자료와 동일 고객 재구매·확대 자료",
+        "Figure AI: 제조·물류 현장 성능을 Figure 02와 Figure 03으로 구분한 성공률·처리량·다운타임·장애·안전 로그",
+        "Figure AI: 현재 거래의 기업가치 산정 근거, 지분·권리 조건, 자금 사용 계획, 양산 원가·유지보수 자료"
       ],
       "company_report_reflection": [
         {
@@ -911,24 +944,93 @@
           "analysis_preserved": true,
           "limitations_preserved": true,
           "individual_opinion_preserved": true,
-          "reason": "최종 보고서는 MOTOMIND를 설계·초기 협력 단계로 유지했고, LG사이언스파크 MOU를 유상 납품이나 고객 전환으로 해석하지 않았습니다. BELLO의 제조지향 설계와 데이터 폐쇄루프 설명은 반영하되, 현장 성능·안전성·유상 매출·재구매 부재로 투자 보류라는 개별 의견도 그대로 유지했습니다.",
-          "missing_or_distorted": []
+          "reason": "최종 보고서는 MOTOMIND를 설계·초기 협력 단계로 유지했고, MOU와 제품 설계는 반영하되 이를 유상 고객 전환으로 과장하지 않았다. 원보고서의 핵심 한계와 보류 의견도 그대로 유지됐다.",
+          "missing_or_distorted": [],
+          "preservation_evidence": [
+            {
+              "aspect": "analysis",
+              "source_paragraph_id": "MM-P027",
+              "source_excerpt": "특정 제조 환경의 주요 작업에 대응하는 첨단 로봇 설계 기술을 자체 플랫폼에 적용하겠다는 계획이 확인된다.",
+              "final_paragraph_id": "P65",
+              "final_excerpt": "BELLO의 14-DoF 양팔, 고반응성 팔, 온디바이스 AI와 데이터 환류형 학습 구조는 설계 방향을 보여준다."
+            },
+            {
+              "aspect": "limitations",
+              "source_paragraph_id": "MM-P014",
+              "source_excerpt": "실제 매출, 공동 납품, 지분 투자 등 구체적 실적과 사업 발현 단계에는 아직 도달하지 못했다.",
+              "final_paragraph_id": "P67",
+              "final_excerpt": "MOU는 납품이나 지분투자를 뜻하지 않고, 자료 미확인은 실패 증거도 아니다."
+            },
+            {
+              "aspect": "individual_opinion",
+              "source_paragraph_id": "MM-P064",
+              "source_excerpt": "상용화 및 시장 확대 가능성에 대한 검증 자료가 미흡하여 투자를 즉시 추진하기에는 불확실성이 크다.",
+              "final_paragraph_id": "P69",
+              "final_excerpt": "유상 매출·대기업 투자·고객 재구매·현장 실증과 안정성 시험이 확인되지 않아 기술 계획을 상용화 역량으로 연결하기엔 근거가 부족"
+            }
+          ]
         },
         {
           "company": "ROBROS",
           "analysis_preserved": true,
           "limitations_preserved": true,
           "individual_opinion_preserved": true,
-          "reason": "최종 보고서는 ROBROS의 강점으로 50명 이상 팀과 하드웨어~VLA까지의 자체 구축 주장, 그리고 산업 수요 배경을 반영했습니다. 동시에 산업 수요/IFR/KIRIA 자료가 곧 고객 전환은 아니라는 원보고서의 해석과, 핵심 작업 성능·유상 매출·고객 확대 미확인에 따른 투자 보류 의견을 유지했습니다. 원보고서의 근거 불충분한 강화학습 과장은 최종 보고서에서 제거되어 오히려 교정되었습니다.",
-          "missing_or_distorted": []
+          "reason": "최종 보고서는 ROBROS의 50명+ 팀과 자체 개발 역량, 외부 산업 수요 배경을 유지하면서도 이를 자사 고객 전환이나 현장 성숙도로 비약하지 않았다. 원보고서의 '긍정적 배경이 있으나 실행 증거 부족'이라는 구조가 보존됐다.",
+          "missing_or_distorted": [],
+          "preservation_evidence": [
+            {
+              "aspect": "analysis",
+              "source_paragraph_id": "RB-P009",
+              "source_excerpt": "이러한 팀 운영 역량은 제품 개발의 내재화가 가능하며, 신속한 기술 개선과 사업화를 위한 기반이 될 수 있다.",
+              "final_paragraph_id": "P75",
+              "final_excerpt": "50명 이상 팀은 분명한 개발 기반이지만, 창업자와 핵심 인력의 경력, 역할 분장, 외부 검증 실적은 현재 자료에서 확인되지 않는다."
+            },
+            {
+              "aspect": "limitations",
+              "source_paragraph_id": "RB-P014",
+              "source_excerpt": "독립 실증, 매출 실적, 고객 계약 등 외부 검증 가능한 사업 실행력 증거가 아직 부재하다.",
+              "final_paragraph_id": "P79",
+              "final_excerpt": "대기업 투자·계약·재구매를 뒷받침하는 원문도 부족해 사업화 속도는 보수적으로 봐야 한다."
+            },
+            {
+              "aspect": "individual_opinion",
+              "source_paragraph_id": "RB-P074",
+              "source_excerpt": "실제 고객 계약, 매출, 납품 실적, 대기업 투자 지분, 시장 진입 성과 및 재구매/확대 실적 등 주요 핵심 실적",
+              "final_paragraph_id": "P81",
+              "final_excerpt": "실제 고객 계약·매출·납품, 핵심 작업 성능, 현장 안정성, 투자조건을 확인할 객관 자료가 부족해 공개 자료만으로는 투자 실행을 정당화하기 어렵다"
+            }
+          ]
         },
         {
           "company": "Figure AI",
           "analysis_preserved": true,
           "limitations_preserved": true,
           "individual_opinion_preserved": true,
-          "reason": "최종 보고서는 Figure AI의 투자 유치, BMW 시연, Catalyst 상업 계약, Figure 02 운영자료를 반영하면서도 이를 유상 재구매나 대량 납품으로 비약하지 않았습니다. 또한 가정 제로샷 성능과 산업 현장 성능을 분리해야 한다는 점, Figure 02의 1,250시간을 Figure 03의 현재 검증으로 바꿔 읽지 말아야 한다는 점, 그리고 개별 기업 의견이 여전히 투자 보류라는 점을 충실히 유지했습니다.",
-          "missing_or_distorted": []
+          "reason": "최종 보고서는 Figure AI의 강한 기술·사업화 신호를 유지하되, 원보고서보다 더 엄격하게 범위를 한정했다. 가정 제로샷을 제조 성능으로 확대하지 않았고, Figure 02 운영과 Figure 03 현재 검증 범위를 구분했으며, 개별 회사 의견은 여전히 보류로 남겼다.",
+          "missing_or_distorted": [],
+          "preservation_evidence": [
+            {
+              "aspect": "analysis",
+              "source_paragraph_id": "FG-P033",
+              "source_excerpt": "현장 장시간 운용 테스트를 통한 초기 하드웨어 신뢰성이 검증되어 미래 상용화, 유지보수 체계 구축에 기반이 될 수 있습니다.",
+              "final_paragraph_id": "P89",
+              "final_excerpt": "Figure 02의 1,250시간 운용은 하드웨어 신뢰성의 초기 근거다."
+            },
+            {
+              "aspect": "limitations",
+              "source_paragraph_id": "FG-P029",
+              "source_excerpt": "일부 생활환경에서의 반복 성능은 입증됐으나, 제조·물류 등 각 산업별 검증 데이터는 제한적입니다.",
+              "final_paragraph_id": "P89",
+              "final_excerpt": "가정 작업 성공을 제조·물류 성능으로 확대할 수 없고, Figure 02 운영을 Figure 03의 완전한 현장 검증으로도 바꿀 수 없다."
+            },
+            {
+              "aspect": "individual_opinion",
+              "source_paragraph_id": "FG-P070",
+              "source_excerpt": "반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아",
+              "final_paragraph_id": "P93",
+              "final_excerpt": "2024~2026년 매출·고객별 계약 조건·반복 유상 매출·재구매·투자조건이 확인되지 않아 즉시 투자 실행 근거는 아직 불충분"
+            }
+          ]
         }
       ]
     },
@@ -938,27 +1040,97 @@
         "analysis_preserved": true,
         "limitations_preserved": true,
         "individual_opinion_preserved": true,
-        "reason": "최종 보고서는 MOTOMIND를 설계·초기 협력 단계로 유지했고, LG사이언스파크 MOU를 유상 납품이나 고객 전환으로 해석하지 않았습니다. BELLO의 제조지향 설계와 데이터 폐쇄루프 설명은 반영하되, 현장 성능·안전성·유상 매출·재구매 부재로 투자 보류라는 개별 의견도 그대로 유지했습니다.",
-        "missing_or_distorted": []
+        "reason": "최종 보고서는 MOTOMIND를 설계·초기 협력 단계로 유지했고, MOU와 제품 설계는 반영하되 이를 유상 고객 전환으로 과장하지 않았다. 원보고서의 핵심 한계와 보류 의견도 그대로 유지됐다.",
+        "missing_or_distorted": [],
+        "preservation_evidence": [
+          {
+            "aspect": "analysis",
+            "source_paragraph_id": "MM-P027",
+            "source_excerpt": "특정 제조 환경의 주요 작업에 대응하는 첨단 로봇 설계 기술을 자체 플랫폼에 적용하겠다는 계획이 확인된다.",
+            "final_paragraph_id": "P65",
+            "final_excerpt": "BELLO의 14-DoF 양팔, 고반응성 팔, 온디바이스 AI와 데이터 환류형 학습 구조는 설계 방향을 보여준다."
+          },
+          {
+            "aspect": "limitations",
+            "source_paragraph_id": "MM-P014",
+            "source_excerpt": "실제 매출, 공동 납품, 지분 투자 등 구체적 실적과 사업 발현 단계에는 아직 도달하지 못했다.",
+            "final_paragraph_id": "P67",
+            "final_excerpt": "MOU는 납품이나 지분투자를 뜻하지 않고, 자료 미확인은 실패 증거도 아니다."
+          },
+          {
+            "aspect": "individual_opinion",
+            "source_paragraph_id": "MM-P064",
+            "source_excerpt": "상용화 및 시장 확대 가능성에 대한 검증 자료가 미흡하여 투자를 즉시 추진하기에는 불확실성이 크다.",
+            "final_paragraph_id": "P69",
+            "final_excerpt": "유상 매출·대기업 투자·고객 재구매·현장 실증과 안정성 시험이 확인되지 않아 기술 계획을 상용화 역량으로 연결하기엔 근거가 부족"
+          }
+        ]
       },
       {
         "company": "ROBROS",
         "analysis_preserved": true,
         "limitations_preserved": true,
         "individual_opinion_preserved": true,
-        "reason": "최종 보고서는 ROBROS의 강점으로 50명 이상 팀과 하드웨어~VLA까지의 자체 구축 주장, 그리고 산업 수요 배경을 반영했습니다. 동시에 산업 수요/IFR/KIRIA 자료가 곧 고객 전환은 아니라는 원보고서의 해석과, 핵심 작업 성능·유상 매출·고객 확대 미확인에 따른 투자 보류 의견을 유지했습니다. 원보고서의 근거 불충분한 강화학습 과장은 최종 보고서에서 제거되어 오히려 교정되었습니다.",
-        "missing_or_distorted": []
+        "reason": "최종 보고서는 ROBROS의 50명+ 팀과 자체 개발 역량, 외부 산업 수요 배경을 유지하면서도 이를 자사 고객 전환이나 현장 성숙도로 비약하지 않았다. 원보고서의 '긍정적 배경이 있으나 실행 증거 부족'이라는 구조가 보존됐다.",
+        "missing_or_distorted": [],
+        "preservation_evidence": [
+          {
+            "aspect": "analysis",
+            "source_paragraph_id": "RB-P009",
+            "source_excerpt": "이러한 팀 운영 역량은 제품 개발의 내재화가 가능하며, 신속한 기술 개선과 사업화를 위한 기반이 될 수 있다.",
+            "final_paragraph_id": "P75",
+            "final_excerpt": "50명 이상 팀은 분명한 개발 기반이지만, 창업자와 핵심 인력의 경력, 역할 분장, 외부 검증 실적은 현재 자료에서 확인되지 않는다."
+          },
+          {
+            "aspect": "limitations",
+            "source_paragraph_id": "RB-P014",
+            "source_excerpt": "독립 실증, 매출 실적, 고객 계약 등 외부 검증 가능한 사업 실행력 증거가 아직 부재하다.",
+            "final_paragraph_id": "P79",
+            "final_excerpt": "대기업 투자·계약·재구매를 뒷받침하는 원문도 부족해 사업화 속도는 보수적으로 봐야 한다."
+          },
+          {
+            "aspect": "individual_opinion",
+            "source_paragraph_id": "RB-P074",
+            "source_excerpt": "실제 고객 계약, 매출, 납품 실적, 대기업 투자 지분, 시장 진입 성과 및 재구매/확대 실적 등 주요 핵심 실적",
+            "final_paragraph_id": "P81",
+            "final_excerpt": "실제 고객 계약·매출·납품, 핵심 작업 성능, 현장 안정성, 투자조건을 확인할 객관 자료가 부족해 공개 자료만으로는 투자 실행을 정당화하기 어렵다"
+          }
+        ]
       },
       {
         "company": "Figure AI",
         "analysis_preserved": true,
         "limitations_preserved": true,
         "individual_opinion_preserved": true,
-        "reason": "최종 보고서는 Figure AI의 투자 유치, BMW 시연, Catalyst 상업 계약, Figure 02 운영자료를 반영하면서도 이를 유상 재구매나 대량 납품으로 비약하지 않았습니다. 또한 가정 제로샷 성능과 산업 현장 성능을 분리해야 한다는 점, Figure 02의 1,250시간을 Figure 03의 현재 검증으로 바꿔 읽지 말아야 한다는 점, 그리고 개별 기업 의견이 여전히 투자 보류라는 점을 충실히 유지했습니다.",
-        "missing_or_distorted": []
+        "reason": "최종 보고서는 Figure AI의 강한 기술·사업화 신호를 유지하되, 원보고서보다 더 엄격하게 범위를 한정했다. 가정 제로샷을 제조 성능으로 확대하지 않았고, Figure 02 운영과 Figure 03 현재 검증 범위를 구분했으며, 개별 회사 의견은 여전히 보류로 남겼다.",
+        "missing_or_distorted": [],
+        "preservation_evidence": [
+          {
+            "aspect": "analysis",
+            "source_paragraph_id": "FG-P033",
+            "source_excerpt": "현장 장시간 운용 테스트를 통한 초기 하드웨어 신뢰성이 검증되어 미래 상용화, 유지보수 체계 구축에 기반이 될 수 있습니다.",
+            "final_paragraph_id": "P89",
+            "final_excerpt": "Figure 02의 1,250시간 운용은 하드웨어 신뢰성의 초기 근거다."
+          },
+          {
+            "aspect": "limitations",
+            "source_paragraph_id": "FG-P029",
+            "source_excerpt": "일부 생활환경에서의 반복 성능은 입증됐으나, 제조·물류 등 각 산업별 검증 데이터는 제한적입니다.",
+            "final_paragraph_id": "P89",
+            "final_excerpt": "가정 작업 성공을 제조·물류 성능으로 확대할 수 없고, Figure 02 운영을 Figure 03의 완전한 현장 검증으로도 바꿀 수 없다."
+          },
+          {
+            "aspect": "individual_opinion",
+            "source_paragraph_id": "FG-P070",
+            "source_excerpt": "반복적인 유상 매출 및 고객 재구매, 투자 조건(지분 및 자금 사용 계획)과 같은 필수 사업 실적 및 재무 지표가 공개되지 않아",
+            "final_paragraph_id": "P93",
+            "final_excerpt": "2024~2026년 매출·고객별 계약 조건·반복 유상 매출·재구매·투자조건이 확인되지 않아 즉시 투자 실행 근거는 아직 불충분"
+          }
+        ]
       }
     ],
     "deterministic_content_issues": [],
+    "judge_evidence_issues": [],
     "action": "rewrite",
     "method": "hybrid"
   },
@@ -1593,18 +1765,27 @@
   "portfolio_decision": {
     "selected_company": "Figure AI",
     "action": "조건부 투자",
-    "reason": "현재 확인 자료 범위에서 Figure AI는 실제 지분투자, BMW 공장 내 제조물류 시연, Brookfield 포트폴리오사와의 상업 계약, 1,250시간 이상 운영 학습까지 가장 넓은 사업화 맥락이 연결된다. 다만 유상 매출·재구매와 거래조건은 아직 U이므로, 그 공백을 실사로 메운 뒤 투자하는 후보로 선정한다.",
-    "comparison_reason": "MOTOMIND는 제조 투입 목표 설계와 LG사이언스파크 MOU까지는 확인되지만 현장 성능·유상 납품·재구매 자료가 아직 없다. ROBROS는 50명 이상 팀과 산업 수요 근거는 의미 있으나, 현재 공개 자료만으로는 핵심 작업 성능과 고객 전환의 검증 범위가 Figure AI보다 좁아 즉시 우선 선정하지 않는다.",
+    "reason": "Figure AI는 회사 발표 기준으로 BMW 공장 물류 시연과 Brookfield 포트폴리오사와의 상업 계약, 복수 대기업·CVC의 실제 지분투자까지 확인돼 세 후보 중 고객 접점과 사업화 맥락이 가장 앞서 있다. 또한 Helix 2.5의 제로샷 작업과 Figure 02의 1,250시간 운영 자료가 기술 성숙 신호를 주지만, 유상 매출·재구매·거래조건은 아직 U이므로 조건 충족 후 투자 대상으로 본다.",
+    "comparison_reason": "MOTOMIND는 제조 투입 목표 설계와 LG사이언스파크 MOU가 확인되지만 현장 성능·안전·유상 납품이 대부분 미확인인 초기 단계다. ROBROS는 50명 이상 팀과 시장 수요 배경은 긍정적이나 핵심 작업 성능, 현장 운영, 고객 계약 전환 자료가 부족해, 현재 공개 범위에서는 Figure AI보다 제조·물류 현장 맥락의 검증 폭이 좁다.",
     "evidence_ids": [
       "FG-E1",
-      "FG-E2",
       "FG-E3",
       "FG-E4",
-      "FG-E5",
+      "FG-E6",
+      "FG-E8"
+    ],
+    "comparison_evidence_ids": [
+      "MM-E1",
+      "MM-E3",
+      "RB-E1",
+      "RB-E3",
+      "FG-E1",
+      "FG-E3",
+      "FG-E4",
       "FG-E8"
     ],
     "required_conditions": [
-      "BMW 등 제조·물류 맥락에서 Figure 03 또는 현재 판매 대상 모델의 작업 성공률, 처리량, 장애율, 안전 시험과 장시간 운영 자료를 받아 가정 제로샷 성능과 산업 현장 성능을 분리해 검증해야 한다.",
+      "제조·물류 현장 기준의 작업 성공률, 처리량, 다운타임, 장애·안전 사고, 운영 시간 로그를 Figure 02와 Figure 03으로 구분해 받아야 하며, 가정 제로샷 결과를 공장 성능으로 확대하지 않도록 현장별 성능 범위를 명확히 검증해야 한다.",
       "현재 거래의 기업가치·지분 및 권리 조건·자금 사용 계획을 확인한다",
       "유상 매출·납품: 유상 계약·인도·매출 인식 자료와 실제 고객 확인",
       "고객 재구매·확대: 동일 고객의 유상 갱신·재구매·도입 확대 확인 자료",
@@ -1616,10 +1797,6 @@
         "fact": "NVIDIA, Intel Capital, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures, and Brookfield Asset Management participated as investors in Figure AI's Series C funding round, indicating actual equity or CVC investment."
       },
       {
-        "evidence_id": "FG-E2",
-        "fact": "Nscale made a strategic investment in Figure AI as part of their partnership agreement."
-      },
-      {
         "evidence_id": "FG-E3",
         "fact": "Figure AI demonstrated the use of its humanoid robot Figure 03 enabled by Helix 02 at BMW Group Plant Spartanburg to master cognitive and dexterous manufacturing logistics tasks."
       },
@@ -1628,8 +1805,8 @@
         "fact": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment."
       },
       {
-        "evidence_id": "FG-E5",
-        "fact": "Figure AI has a commercial agreement with a portfolio company of Brookfield Asset Management, marking a commercial bridge and reflecting strategic ecosystem alignment."
+        "evidence_id": "FG-E6",
+        "fact": "Helix 2.5 AI는 30개의 미지의 가정 환경에서 사전 데이터 수집 없이 세 가지 장기 작업(거실 정리, 수건 접기, 침대 정리)을 제로샷으로 수행하는 능력을 보였다."
       },
       {
         "evidence_id": "FG-E8",
@@ -1652,60 +1829,85 @@
   },
   "report_synthesis": {
     "executive_summary": {
-      "text": "세 회사 모두 휴머노이드의 방향성은 보이지만 사업화 단계는 크게 다르다. Figure AI는 투자·현장운영·상업 계약 신호가 있고, ROBROS는 팀과 시장 배경 중심이며, MOTOMIND는 설계·초기 협력 단계다. 다만 세 곳 모두 유상 매출, 재구매, 투자조건 확인자료가 부족해 현 판단은 보류다.",
+      "text": "세 회사 모두 투자 의견은 보류다. Figure AI는 투자·현장 시연·상업 계약까지 가장 앞서지만 유상 매출과 반복 구매 확인이 부족하고, ROBROS와 MOTOMIND는 팀·설계 신호는 있으나 고객 전환과 현장 반복 운영 자료가 더 필요하다.",
       "report_paragraph_ids": [
-        "MM-P005",
         "MM-P064",
-        "RB-P005",
         "RB-P074",
-        "FG-P005",
         "FG-P070"
       ],
-      "evidence_ids": []
+      "evidence_ids": [
+        "MM-E1",
+        "MM-E3",
+        "RB-E1",
+        "RB-E3",
+        "FG-E1",
+        "FG-E3",
+        "FG-E4"
+      ]
     },
     "companies": [
       {
         "company": "MOTOMIND",
         "business_context": {
-          "text": "MOTOMIND는 2026년 설립 후 제조 현장 투입을 목표로 양팔 휴머노이드 BELLO와 TAS를 개발하고 LG사이언스파크와 MOU를 맺었다. 다만 MOU는 공동 연구·기술 교류 기반일 뿐 유상 납품이나 고객 전환 증거는 아니어서, 이후 PoC와 계약 자료를 확인해야 한다.",
+          "text": "MOTOMIND는 2026년 설립 뒤 포항 본사·광명 연구소에서 양팔 휴머노이드 BELLO와 텔레오퍼레이션 보조 TAS를 개발한다. BELLO는 제조 현장 투입 목표 설계와 LG사이언스파크 MOU가 확인되지만, 현재 자료는 초기 협력 신호와 제품 구상까지를 보여주며 특정 고객 작업의 유상 전환은 확인되지 않는다.",
           "report_paragraph_ids": [
             "MM-P008",
             "MM-P012",
+            "MM-P026",
+            "MM-P009",
             "MM-P013",
+            "MM-P027",
+            "MM-P010",
             "MM-P014",
-            "MM-P015",
-            "MM-P065"
+            "MM-P028"
           ],
           "evidence_ids": [
+            "MM-E1",
             "MM-E2",
+            "MM-E3",
             "MM-E4",
-            "MM-E6",
-            "MM-E1"
+            "MM-E5",
+            "MM-E6"
           ]
         },
         "market_and_team": {
-          "text": "포항 본사와 광명 연구소를 둔 6인 조직이라는 사실은 초기 개발 전담체계의 존재를 보여주지만, 핵심 인력의 역할·경력과 실제 고객 전환은 현재 자료에서 확인되지 않는다. 따라서 팀의 실행력 평가는 제한적이며, 상세 이력과 고객 확보 경로 실사가 선행돼야 한다.",
+          "text": "직원 6명과 두 거점 운영은 초기 개발 조직의 실체를 보여주지만, 팀별 역할·이전 제품화 경험·고객 획득 이력은 현재 자료에서 확인되지 않는다. 따라서 팀 존재는 확인되나 제조·물류 고객으로의 전환 근거는 약하고, 핵심 인력 이력과 첫 고객 확보 경로가 실사 핵심이다.",
           "report_paragraph_ids": [
             "MM-P017",
             "MM-P018",
             "MM-P019",
             "MM-P020",
+            "MM-P021",
+            "MM-P022",
+            "MM-P023",
             "MM-P024",
-            "MM-P025"
+            "MM-P025",
+            "MM-P042",
+            "MM-P044",
+            "MM-P046",
+            "MM-P047",
+            "MM-P049"
           ],
           "evidence_ids": [
             "MM-E2",
+            "MM-E4",
             "MM-E6"
           ]
         },
         "technology_and_execution": {
-          "text": "BELLO는 14-DoF 양팔, 고반응성 팔, 내부 골격, Jetson Orin AGX와 데이터 폐쇄루프 학습을 결합한 설계다. 그러나 이는 제조 작업을 겨냥한 설계 설명에 가깝고, 반복 성공률·신뢰성·현장 투입 결과는 현재 자료에서 확인되지 않아 시제품 수준 해석이 타당하다.",
+          "text": "BELLO의 14-DoF 양팔, 고반응성 팔, 온디바이스 AI와 데이터 환류형 학습 구조는 설계 방향을 보여준다. 다만 보고서는 이를 시제품 개발 목표 수준으로 해석하며, 공정 성공률·반복성·안전성·양산 체계는 확인자료가 부족하다. 실제 공정 투입 기록이 성숙도 판단을 바꿀 자료다.",
           "report_paragraph_ids": [
             "MM-P026",
             "MM-P027",
             "MM-P028",
             "MM-P029",
-            "MM-P050"
+            "MM-P032",
+            "MM-P033",
+            "MM-P034",
+            "MM-P035",
+            "MM-P050",
+            "MM-P051",
+            "MM-P052"
           ],
           "evidence_ids": [
             "MM-E3",
@@ -1713,68 +1915,117 @@
           ]
         },
         "risks_and_conditions": {
-          "text": "판단을 바꿀 핵심은 유상 계약과 인도, 장시간 운전 및 안전 시험, 동일 고객의 재구매다. 현재 자료 미확인은 실패의 증거가 아니지만, 양산·유지보수와 시장 진입 경로도 확인자료가 부족해 투자 판단을 앞당기기 어렵다.",
+          "text": "투자 판단을 바꿀 핵심은 유상 계약·인도·매출 인식, 장시간 운전과 장애·안전 시험, 고객 재구매 자료다. MOU는 납품이나 지분투자를 뜻하지 않고, 자료 미확인은 실패 증거도 아니다. 그래서 시장 진입·확장성과 유지보수 가능성은 추가 원문 없이는 올려 해석하기 어렵다.",
           "report_paragraph_ids": [
-            "MM-P034",
-            "MM-P035",
+            "MM-P014",
+            "MM-P015",
             "MM-P036",
             "MM-P037",
             "MM-P038",
-            "MM-P039"
+            "MM-P039",
+            "MM-P057",
+            "MM-P058",
+            "MM-P059",
+            "MM-P068",
+            "MM-P069",
+            "MM-P070",
+            "MM-P071",
+            "MM-P072",
+            "MM-P073",
+            "MM-P074"
           ],
-          "evidence_ids": []
+          "evidence_ids": [
+            "MM-E1",
+            "MM-E3"
+          ]
         },
         "individual_opinion": {
-          "text": "현재 의견은 투자 보류다. 설계 역량과 LG사이언스파크 MOU는 의미가 있지만, 매출·유상 판매·대기업 투자·현장 실증과 안정성 자료가 부족해 상용화 검증이 아직 부족하다는 판단이며, 핵심 사업 자료 확보 후 재검토가 적절하다.",
+          "text": "현재 의견은 투자 보류다. 설립, 팀 운영, BELLO·TAS 개발과 LG사이언스파크 MOU는 확인되지만, 유상 매출·대기업 투자·고객 재구매·현장 실증과 안정성 시험이 확인되지 않아 기술 계획을 상용화 역량으로 연결하기엔 근거가 부족하다는 판단이다.",
           "report_paragraph_ids": [
             "MM-P005",
             "MM-P063",
-            "MM-P064"
+            "MM-P064",
+            "MM-P008",
+            "MM-P012",
+            "MM-P017",
+            "MM-P026",
+            "MM-P050",
+            "MM-P069"
           ],
-          "evidence_ids": []
+          "evidence_ids": [
+            "MM-E1",
+            "MM-E2",
+            "MM-E3",
+            "MM-E4",
+            "MM-E6"
+          ]
         }
       },
       {
         "company": "ROBROS",
         "business_context": {
-          "text": "ROBROS는 50명 이상 팀이 하드웨어 설계부터 제어, VLA 기반 지능까지 휴머노이드 개발 전 과정을 자체 기술로 구축한다고 회사가 발표했다. 제조 현장의 인력난과 위험작업 대체 수요는 분명하지만, 그 산업 수요가 곧바로 이 회사의 고객 전환을 뜻하지는 않는다.",
+          "text": "ROBROS는 50명 이상 조직을 바탕으로 하드웨어 설계, 이동·조작 제어, VLA 기반 지능까지 휴머노이드 개발 전 과정을 자체 기술로 구축한다고 밝혔다. 산업 현장의 고위험·인력난 수요와는 맞물리지만, 현재 자료는 회사 역량 설명과 시장 배경 중심이며 특정 고객 작업·계약 전환은 확인되지 않는다.",
           "report_paragraph_ids": [
             "RB-P008",
             "RB-P012",
             "RB-P016",
+            "RB-P020",
+            "RB-P032",
+            "RB-P009",
+            "RB-P013",
             "RB-P017",
+            "RB-P021",
             "RB-P018"
           ],
           "evidence_ids": [
             "RB-E1",
             "RB-E2",
-            "RB-E3"
+            "RB-E3",
+            "RB-E4",
+            "RB-E5"
           ]
         },
         "market_and_team": {
-          "text": "큰 팀 규모와 내재화 범위는 제품화 추진의 기반으로 읽히지만, 구성원의 전문 경력과 역할 분담은 현재 자료에서 확인되지 않는다. 시장 쪽도 공공 실증과 IFR 수요 자료는 강하나, ROBROS의 실제 진입 경로·고객 계약·확대 실적은 확인자료가 부족하다.",
+          "text": "50명 이상 팀은 분명한 개발 기반이지만, 창업자와 핵심 인력의 경력, 역할 분장, 외부 검증 실적은 현재 자료에서 확인되지 않는다. 반면 제조업 자동화 수요와 공급망 재편은 외부 자료로 확인돼 시장 배경은 우호적이다. 다만 산업 수요가 곧 ROBROS의 고객 전환 증거는 아니다.",
           "report_paragraph_ids": [
             "RB-P020",
             "RB-P021",
             "RB-P022",
             "RB-P023",
+            "RB-P024",
+            "RB-P025",
+            "RB-P026",
+            "RB-P027",
+            "RB-P052",
+            "RB-P054",
             "RB-P056",
+            "RB-P057",
+            "RB-P058",
             "RB-P059"
           ],
           "evidence_ids": [
             "RB-E1",
-            "RB-E2"
+            "RB-E2",
+            "RB-E3",
+            "RB-E4",
+            "RB-E5"
           ]
         },
         "technology_and_execution": {
-          "text": "강화학습 기반 운동지능과 VLA 기반 AI 지능의 자체 개발 주장은 기술 방향성으로는 유의미하다. 그러나 핵심 작업의 실측 성공률, 현장 반복성, 양산·유지보수 근거는 현재 자료에서 확인되지 않아, 설계·개발 역량과 실제 산업 운영 성숙도를 구분해 봐야 한다.",
+          "text": "보고서가 확인한 것은 이동·조작 제어와 VLA 기반 지능의 내재화 주장이다. 그러나 파지·이동·삽입의 성공률, 현장 가동시간, 양산·정비 체계는 확인자료가 부족해 설계·개발 역량과 반복 운영 성숙도를 구분해야 한다. 독립 성능 검증과 현장 데이터가 있어야 실행력 판단이 가능하다.",
           "report_paragraph_ids": [
             "RB-P032",
             "RB-P033",
             "RB-P034",
+            "RB-P035",
             "RB-P038",
             "RB-P039",
-            "RB-P060"
+            "RB-P040",
+            "RB-P041",
+            "RB-P053",
+            "RB-P060",
+            "RB-P061",
+            "RB-P062"
           ],
           "evidence_ids": [
             "RB-E1",
@@ -1782,37 +2033,97 @@
           ]
         },
         "risks_and_conditions": {
-          "text": "투자 판단을 바꾸려면 독립 성능 검증, 장시간 안전 운전 기록, 유상 매출과 납품, 대기업 계약 단계 구분 자료가 필요하다. 현재 미확인은 역량 부재의 단정 근거는 아니지만, 시장 배경만으로 사업화 속도를 추정하기에는 확인자료가 부족하다.",
+          "text": "판단을 바꿀 자료는 동일 작업 조건의 독립 성능 검증, 장시간 운전과 안전 기록, 유상 계약·납품·매출 인식, 초기 고객 확보 경로다. 현재 자료 미확인은 역량 부재의 단정 근거가 아니지만, 대기업 투자·계약·재구매를 뒷받침하는 원문도 부족해 사업화 속도는 보수적으로 봐야 한다.",
           "report_paragraph_ids": [
             "RB-P014",
             "RB-P015",
             "RB-P028",
+            "RB-P029",
             "RB-P030",
             "RB-P031",
-            "RB-P078"
+            "RB-P046",
+            "RB-P047",
+            "RB-P048",
+            "RB-P049",
+            "RB-P067",
+            "RB-P068",
+            "RB-P069",
+            "RB-P078",
+            "RB-P079",
+            "RB-P080"
           ],
-          "evidence_ids": []
+          "evidence_ids": [
+            "RB-E1",
+            "RB-E3",
+            "RB-E5"
+          ]
         },
         "individual_opinion": {
-          "text": "현재 의견은 투자 보류다. 팀 규모와 산업 수요 배경은 긍정적이지만, 실제 고객 계약·매출·납품·재구매와 현장 성능 자료가 부족해 공개 자료만으로 투자 실행을 정당화하기 어렵다는 판단이다. 원문 계약과 실증 데이터 확인이 선행돼야 한다.",
+          "text": "현재 의견은 투자 보류다. 50명 이상 팀과 자체 기술 기반 개발, 그리고 제조업 자동화 수요라는 배경은 긍정적이지만, 실제 고객 계약·매출·납품, 핵심 작업 성능, 현장 안정성, 투자조건을 확인할 객관 자료가 부족해 공개 자료만으로는 투자 실행을 정당화하기 어렵다는 판단이다.",
           "report_paragraph_ids": [
             "RB-P005",
             "RB-P073",
-            "RB-P074"
+            "RB-P074",
+            "RB-P008",
+            "RB-P016",
+            "RB-P020",
+            "RB-P032",
+            "RB-P057",
+            "RB-P058"
           ],
-          "evidence_ids": []
+          "evidence_ids": [
+            "RB-E1",
+            "RB-E2",
+            "RB-E3",
+            "RB-E4",
+            "RB-E5"
+          ]
         }
       },
       {
         "company": "Figure AI",
         "business_context": {
-          "text": "Figure AI는 Helix 기반 범용 휴머노이드를 개발하며 BMW 현장 시연과 Brookfield 포트폴리오 회사 Catalyst Brands와의 상업 계약을 공개했다. 이는 제조·물류 진입 신호지만, 상업 계약이 곧 반복 매출이나 대량 납품으로 확인된 것은 아니라 추가 검증이 필요하다.",
+          "text": "Figure AI는 Helix 기반 범용 휴머노이드를 개발하며 BMW 공장 물류 작업 시연과 Brookfield 포트폴리오사와의 상업 계약을 확인했다. 시장 접근은 세 회사 중 가장 앞서지만, 현 단계 자료는 시연·상업 브리지·투자 유치까지를 보여줄 뿐 유상 매출 규모와 반복 구매는 현재 확인되지 않는다.",
           "report_paragraph_ids": [
             "FG-P008",
+            "FG-P012",
+            "FG-P016",
+            "FG-P027",
+            "FG-P032",
+            "FG-P009",
+            "FG-P017",
+            "FG-P010",
+            "FG-P018"
+          ],
+          "evidence_ids": [
+            "FG-E1",
+            "FG-E2",
+            "FG-E3",
+            "FG-E4",
+            "FG-E5",
+            "FG-E6",
+            "FG-E7",
+            "FG-E8"
+          ]
+        },
+        "market_and_team": {
+          "text": "BMW 현장 시연과 Catalyst 계약은 고객 접점의 구체성을 높이고, Series C와 Nscale 전략투자는 생태계 신뢰 신호다. 그러나 팀 구성·핵심 인력 전문성, 고객 확대 수량, 재계약 여부, 투자 세부 조건은 현재 자료에서 확인되지 않는다. 따라서 진입 신호는 강하지만 확장성은 추가 실사가 필요하다.",
+          "report_paragraph_ids": [
+            "FG-P012",
+            "FG-P013",
             "FG-P016",
             "FG-P017",
             "FG-P018",
-            "FG-P064"
+            "FG-P019",
+            "FG-P021",
+            "FG-P022",
+            "FG-P023",
+            "FG-P024",
+            "FG-P025",
+            "FG-P026",
+            "FG-P052",
+            "FG-P055",
+            "FG-P062"
           ],
           "evidence_ids": [
             "FG-E1",
@@ -1822,30 +2133,23 @@
             "FG-E5"
           ]
         },
-        "market_and_team": {
-          "text": "Series C에 다수 CVC와 대기업 투자가 확인돼 생태계 신뢰도는 높다. 반면 팀 구성·운영 역량, 실제 접근 가능한 시장 규모, 고객 확대 여부는 현재 자료에서 확인되지 않는다. 따라서 투자자 신뢰와 고객 확장을 동일시하지 말고 계약 수량과 재계약 자료를 따로 봐야 한다.",
-          "report_paragraph_ids": [
-            "FG-P012",
-            "FG-P013",
-            "FG-P014",
-            "FG-P021",
-            "FG-P024",
-            "FG-P062"
-          ],
-          "evidence_ids": [
-            "FG-E1",
-            "FG-E2"
-          ]
-        },
         "technology_and_execution": {
-          "text": "Helix 2.5의 30개 미지 가정 제로샷 작업과 Figure 03 손의 3그램 촉각 센서는 강한 기술 신호다. 다만 가정 작업 성공을 제조·물류 성능으로 확대할 수 없고, 1,250시간 운영은 Figure 02 기준이어서 Figure 03의 현재 성능으로 바꿔 해석해선 안 된다.",
+          "text": "Helix 2.5의 30개 미지 가정 제로샷 작업과 Figure 03의 3g 촉각 센서는 범용 조작 성능을 보여주고, Figure 02의 1,250시간 운용은 하드웨어 신뢰성의 초기 근거다. 다만 가정 작업 성공을 제조·물류 성능으로 확대할 수 없고, Figure 02 운영을 Figure 03의 완전한 현장 검증으로도 바꿀 수 없다.",
           "report_paragraph_ids": [
             "FG-P027",
             "FG-P028",
             "FG-P029",
+            "FG-P030",
             "FG-P032",
             "FG-P033",
-            "FG-P056"
+            "FG-P034",
+            "FG-P035",
+            "FG-P036",
+            "FG-P037",
+            "FG-P038",
+            "FG-P056",
+            "FG-P057",
+            "FG-P058"
           ],
           "evidence_ids": [
             "FG-E6",
@@ -1854,61 +2158,105 @@
           ]
         },
         "risks_and_conditions": {
-          "text": "판단을 바꾸려면 유상 매출 인식, 고객별 계약 조건, 재구매와 확대 도입, 양산 원가와 유지보수 자료가 필요하다. 현장 운영과 투자 유치는 확인됐지만, 시장 진입·확장성과 고객 가치 비교는 현재 자료에서 확인되지 않아 추가 실사가 필수다.",
+          "text": "판단을 바꿀 핵심은 고객별 유상 매출, 계약 수량과 납품 실적, 재구매, 양산 원가와 유지보수 데이터, 팀 이력과 투자조건이다. 상업 계약과 현장 시연은 강한 신호지만, 현재 자료만으로 대기업 납품 확대나 고객 락인을 확정할 수 없어 사업화 속도와 수익성은 추가 검증이 필요하다.",
           "report_paragraph_ids": [
-            "FG-P034",
-            "FG-P035",
+            "FG-P014",
+            "FG-P015",
             "FG-P042",
+            "FG-P043",
             "FG-P044",
             "FG-P045",
-            "FG-P065"
+            "FG-P058",
+            "FG-P059",
+            "FG-P060",
+            "FG-P061",
+            "FG-P063",
+            "FG-P064",
+            "FG-P065",
+            "FG-P074",
+            "FG-P075",
+            "FG-P076"
           ],
-          "evidence_ids": []
+          "evidence_ids": [
+            "FG-E1",
+            "FG-E2",
+            "FG-E3",
+            "FG-E4",
+            "FG-E5",
+            "FG-E8"
+          ]
         },
         "individual_opinion": {
-          "text": "현재 의견은 투자 보류다. Figure AI는 세 회사 중 가장 앞선 사업화 신호를 보이지만, 매출·손익·고객별 매출 구성, 반복 유상 매출, 투자조건과 법률 리스크 자료가 부족해 즉시 투자 근거로는 충분하지 않다는 기존 판단을 유지한다.",
+          "text": "현재 의견은 투자 보류다. 대기업·CVC 지분투자, BMW 시연, Brookfield 생태계 내 상업 계약, Helix와 Figure 02/03의 기술 신호는 강하지만, 2024~2026년 매출·고객별 계약 조건·반복 유상 매출·재구매·투자조건이 확인되지 않아 즉시 투자 실행 근거는 아직 불충분하다는 판단이다.",
           "report_paragraph_ids": [
             "FG-P005",
             "FG-P069",
-            "FG-P070"
+            "FG-P070",
+            "FG-P008",
+            "FG-P012",
+            "FG-P016",
+            "FG-P027",
+            "FG-P032",
+            "FG-P062",
+            "FG-P063",
+            "FG-P065"
           ],
-          "evidence_ids": []
+          "evidence_ids": [
+            "FG-E1",
+            "FG-E2",
+            "FG-E3",
+            "FG-E4",
+            "FG-E5",
+            "FG-E6",
+            "FG-E7",
+            "FG-E8"
+          ]
         }
       }
     ],
     "cross_company_comparison": [
       {
-        "text": "제품과 고객 맥락은 뚜렷이 다르다. MOTOMIND는 제조 투입 목표의 초기 설계와 LG사이언스파크 MOU 단계, ROBROS는 대규모 자체 개발팀과 산업 수요 해석 단계, Figure AI는 BMW 시연과 상업 계약 공개 단계다. 따라서 세 회사를 같은 매출 성숙도로 놓고 비교하면 왜곡이 생긴다.",
+        "text": "제품과 고객 접점은 Figure AI가 BMW 제조 물류 시연과 상업 계약으로 가장 앞서고, MOTOMIND는 제조 투입 목표 설계와 MOU 단계, ROBROS는 자체 개발 역량과 산업 수요 배경 단계에 가깝다. 따라서 세 회사의 핵심 차이는 기술 아이디어보다 고객 전환과 현장 반복 운영의 입증 정도다.",
         "report_paragraph_ids": [
           "MM-P012",
           "MM-P026",
+          "RB-P008",
           "RB-P016",
-          "RB-P020",
+          "RB-P032",
           "FG-P016",
+          "FG-P027",
           "FG-P032"
         ],
         "evidence_ids": [
           "MM-E1",
           "MM-E3",
-          "RB-E3",
           "RB-E1",
-          "RB-E2",
+          "RB-E3",
           "FG-E3",
           "FG-E4",
-          "FG-E5"
+          "FG-E6",
+          "FG-E8"
         ]
       },
       {
-        "text": "투자 판단의 공통 제약도 유사하다. MOTOMIND와 ROBROS는 현장 성능과 매출 증거가 특히 얇고, Figure AI도 더 앞서 있지만 유상 매출·재구매·투자조건은 별도 확인이 필요하다. 결국 세 회사 모두 기술 시연, 시장 수요, 투자자 신호를 실제 고객 전환 데이터로 대체할 수 없다는 점이 핵심이다.",
+        "text": "세 회사 모두 현재 투자 판단은 보류지만 이유는 다르다. Figure AI는 검증 신호가 많아도 매출·재구매·조건 확인이 남아 있고, ROBROS와 MOTOMIND는 팀·설계·초기 협력은 보이나 핵심 작업 성능, 안전성, 유상 납품을 확인할 자료가 더 부족해 실사 우선순위가 더 기초적이다.",
         "report_paragraph_ids": [
-          "MM-P036",
-          "MM-P057",
+          "MM-P064",
+          "RB-P074",
+          "FG-P070",
+          "MM-P050",
           "RB-P060",
-          "RB-P067",
-          "FG-P063",
-          "FG-P065"
+          "FG-P063"
         ],
-        "evidence_ids": []
+        "evidence_ids": [
+          "MM-E3",
+          "MM-E4",
+          "RB-E1",
+          "RB-E5",
+          "FG-E1",
+          "FG-E6",
+          "FG-E8"
+        ]
       }
     ],
     "reflection_map": [
@@ -1918,16 +2266,84 @@
         "report_paragraph_ids": [
           "MM-P008",
           "MM-P012",
+          "MM-P026",
+          "MM-P009",
           "MM-P013",
+          "MM-P027",
+          "MM-P010",
           "MM-P014",
-          "MM-P015",
-          "MM-P065"
+          "MM-P028"
+        ],
+        "evidence_ids": [
+          "MM-E1",
+          "MM-E2",
+          "MM-E3",
+          "MM-E4",
+          "MM-E5",
+          "MM-E6"
+        ],
+        "evidence_report_paragraph_ids": {
+          "MM-E1": [
+            "MM-P012",
+            "MM-P013"
+          ],
+          "MM-E2": [
+            "MM-P008",
+            "MM-P009",
+            "MM-P017",
+            "MM-P018",
+            "MM-P044",
+            "MM-P066"
+          ],
+          "MM-E3": [
+            "MM-P026",
+            "MM-P027",
+            "MM-P050",
+            "MM-P067"
+          ],
+          "MM-E4": [
+            "MM-P008",
+            "MM-P009",
+            "MM-P042",
+            "MM-P065"
+          ],
+          "MM-E5": [
+            "MM-P026",
+            "MM-P027",
+            "MM-P050"
+          ],
+          "MM-E6": [
+            "MM-P008",
+            "MM-P009",
+            "MM-P017",
+            "MM-P018",
+            "MM-P044"
+          ]
+        }
+      },
+      {
+        "destination": "company:MOTOMIND:market_and_team",
+        "company": "MOTOMIND",
+        "report_paragraph_ids": [
+          "MM-P017",
+          "MM-P018",
+          "MM-P019",
+          "MM-P020",
+          "MM-P021",
+          "MM-P022",
+          "MM-P023",
+          "MM-P024",
+          "MM-P025",
+          "MM-P042",
+          "MM-P044",
+          "MM-P046",
+          "MM-P047",
+          "MM-P049"
         ],
         "evidence_ids": [
           "MM-E2",
           "MM-E4",
-          "MM-E6",
-          "MM-E1"
+          "MM-E6"
         ],
         "evidence_report_paragraph_ids": {
           "MM-E2": [
@@ -1950,43 +2366,6 @@
             "MM-P017",
             "MM-P018",
             "MM-P044"
-          ],
-          "MM-E1": [
-            "MM-P012",
-            "MM-P013"
-          ]
-        }
-      },
-      {
-        "destination": "company:MOTOMIND:market_and_team",
-        "company": "MOTOMIND",
-        "report_paragraph_ids": [
-          "MM-P017",
-          "MM-P018",
-          "MM-P019",
-          "MM-P020",
-          "MM-P024",
-          "MM-P025"
-        ],
-        "evidence_ids": [
-          "MM-E2",
-          "MM-E6"
-        ],
-        "evidence_report_paragraph_ids": {
-          "MM-E2": [
-            "MM-P008",
-            "MM-P009",
-            "MM-P017",
-            "MM-P018",
-            "MM-P044",
-            "MM-P066"
-          ],
-          "MM-E6": [
-            "MM-P008",
-            "MM-P009",
-            "MM-P017",
-            "MM-P018",
-            "MM-P044"
           ]
         }
       },
@@ -1998,7 +2377,13 @@
           "MM-P027",
           "MM-P028",
           "MM-P029",
-          "MM-P050"
+          "MM-P032",
+          "MM-P033",
+          "MM-P034",
+          "MM-P035",
+          "MM-P050",
+          "MM-P051",
+          "MM-P052"
         ],
         "evidence_ids": [
           "MM-E3",
@@ -2022,15 +2407,39 @@
         "destination": "company:MOTOMIND:risks_and_conditions",
         "company": "MOTOMIND",
         "report_paragraph_ids": [
-          "MM-P034",
-          "MM-P035",
+          "MM-P014",
+          "MM-P015",
           "MM-P036",
           "MM-P037",
           "MM-P038",
-          "MM-P039"
+          "MM-P039",
+          "MM-P057",
+          "MM-P058",
+          "MM-P059",
+          "MM-P068",
+          "MM-P069",
+          "MM-P070",
+          "MM-P071",
+          "MM-P072",
+          "MM-P073",
+          "MM-P074"
         ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
+        "evidence_ids": [
+          "MM-E1",
+          "MM-E3"
+        ],
+        "evidence_report_paragraph_ids": {
+          "MM-E1": [
+            "MM-P012",
+            "MM-P013"
+          ],
+          "MM-E3": [
+            "MM-P026",
+            "MM-P027",
+            "MM-P050",
+            "MM-P067"
+          ]
+        }
       },
       {
         "destination": "company:MOTOMIND:individual_opinion",
@@ -2038,10 +2447,54 @@
         "report_paragraph_ids": [
           "MM-P005",
           "MM-P063",
-          "MM-P064"
+          "MM-P064",
+          "MM-P008",
+          "MM-P012",
+          "MM-P017",
+          "MM-P026",
+          "MM-P050",
+          "MM-P069"
         ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
+        "evidence_ids": [
+          "MM-E1",
+          "MM-E2",
+          "MM-E3",
+          "MM-E4",
+          "MM-E6"
+        ],
+        "evidence_report_paragraph_ids": {
+          "MM-E1": [
+            "MM-P012",
+            "MM-P013"
+          ],
+          "MM-E2": [
+            "MM-P008",
+            "MM-P009",
+            "MM-P017",
+            "MM-P018",
+            "MM-P044",
+            "MM-P066"
+          ],
+          "MM-E3": [
+            "MM-P026",
+            "MM-P027",
+            "MM-P050",
+            "MM-P067"
+          ],
+          "MM-E4": [
+            "MM-P008",
+            "MM-P009",
+            "MM-P042",
+            "MM-P065"
+          ],
+          "MM-E6": [
+            "MM-P008",
+            "MM-P009",
+            "MM-P017",
+            "MM-P018",
+            "MM-P044"
+          ]
+        }
       },
       {
         "destination": "company:ROBROS:business_context",
@@ -2050,13 +2503,20 @@
           "RB-P008",
           "RB-P012",
           "RB-P016",
+          "RB-P020",
+          "RB-P032",
+          "RB-P009",
+          "RB-P013",
           "RB-P017",
+          "RB-P021",
           "RB-P018"
         ],
         "evidence_ids": [
           "RB-E1",
           "RB-E2",
-          "RB-E3"
+          "RB-E3",
+          "RB-E4",
+          "RB-E5"
         ],
         "evidence_report_paragraph_ids": {
           "RB-E1": [
@@ -2085,6 +2545,13 @@
             "RB-P017",
             "RB-P057",
             "RB-P076"
+          ],
+          "RB-E4": [
+            "RB-P057"
+          ],
+          "RB-E5": [
+            "RB-P058",
+            "RB-P077"
           ]
         }
       },
@@ -2096,12 +2563,23 @@
           "RB-P021",
           "RB-P022",
           "RB-P023",
+          "RB-P024",
+          "RB-P025",
+          "RB-P026",
+          "RB-P027",
+          "RB-P052",
+          "RB-P054",
           "RB-P056",
+          "RB-P057",
+          "RB-P058",
           "RB-P059"
         ],
         "evidence_ids": [
           "RB-E1",
-          "RB-E2"
+          "RB-E2",
+          "RB-E3",
+          "RB-E4",
+          "RB-E5"
         ],
         "evidence_report_paragraph_ids": {
           "RB-E1": [
@@ -2124,6 +2602,19 @@
             "RB-P032",
             "RB-P033",
             "RB-P054"
+          ],
+          "RB-E3": [
+            "RB-P016",
+            "RB-P017",
+            "RB-P057",
+            "RB-P076"
+          ],
+          "RB-E4": [
+            "RB-P057"
+          ],
+          "RB-E5": [
+            "RB-P058",
+            "RB-P077"
           ]
         }
       },
@@ -2134,9 +2625,15 @@
           "RB-P032",
           "RB-P033",
           "RB-P034",
+          "RB-P035",
           "RB-P038",
           "RB-P039",
-          "RB-P060"
+          "RB-P040",
+          "RB-P041",
+          "RB-P053",
+          "RB-P060",
+          "RB-P061",
+          "RB-P062"
         ],
         "evidence_ids": [
           "RB-E1",
@@ -2173,12 +2670,49 @@
           "RB-P014",
           "RB-P015",
           "RB-P028",
+          "RB-P029",
           "RB-P030",
           "RB-P031",
-          "RB-P078"
+          "RB-P046",
+          "RB-P047",
+          "RB-P048",
+          "RB-P049",
+          "RB-P067",
+          "RB-P068",
+          "RB-P069",
+          "RB-P078",
+          "RB-P079",
+          "RB-P080"
         ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
+        "evidence_ids": [
+          "RB-E1",
+          "RB-E3",
+          "RB-E5"
+        ],
+        "evidence_report_paragraph_ids": {
+          "RB-E1": [
+            "RB-P008",
+            "RB-P009",
+            "RB-P012",
+            "RB-P013",
+            "RB-P020",
+            "RB-P021",
+            "RB-P032",
+            "RB-P033",
+            "RB-P054",
+            "RB-P075"
+          ],
+          "RB-E3": [
+            "RB-P016",
+            "RB-P017",
+            "RB-P057",
+            "RB-P076"
+          ],
+          "RB-E5": [
+            "RB-P058",
+            "RB-P077"
+          ]
+        }
       },
       {
         "destination": "company:ROBROS:individual_opinion",
@@ -2186,20 +2720,154 @@
         "report_paragraph_ids": [
           "RB-P005",
           "RB-P073",
-          "RB-P074"
+          "RB-P074",
+          "RB-P008",
+          "RB-P016",
+          "RB-P020",
+          "RB-P032",
+          "RB-P057",
+          "RB-P058"
         ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
+        "evidence_ids": [
+          "RB-E1",
+          "RB-E2",
+          "RB-E3",
+          "RB-E4",
+          "RB-E5"
+        ],
+        "evidence_report_paragraph_ids": {
+          "RB-E1": [
+            "RB-P008",
+            "RB-P009",
+            "RB-P012",
+            "RB-P013",
+            "RB-P020",
+            "RB-P021",
+            "RB-P032",
+            "RB-P033",
+            "RB-P054",
+            "RB-P075"
+          ],
+          "RB-E2": [
+            "RB-P008",
+            "RB-P009",
+            "RB-P020",
+            "RB-P021",
+            "RB-P032",
+            "RB-P033",
+            "RB-P054"
+          ],
+          "RB-E3": [
+            "RB-P016",
+            "RB-P017",
+            "RB-P057",
+            "RB-P076"
+          ],
+          "RB-E4": [
+            "RB-P057"
+          ],
+          "RB-E5": [
+            "RB-P058",
+            "RB-P077"
+          ]
+        }
       },
       {
         "destination": "company:Figure AI:business_context",
         "company": "Figure AI",
         "report_paragraph_ids": [
           "FG-P008",
+          "FG-P012",
+          "FG-P016",
+          "FG-P027",
+          "FG-P032",
+          "FG-P009",
+          "FG-P017",
+          "FG-P010",
+          "FG-P018"
+        ],
+        "evidence_ids": [
+          "FG-E1",
+          "FG-E2",
+          "FG-E3",
+          "FG-E4",
+          "FG-E5",
+          "FG-E6",
+          "FG-E7",
+          "FG-E8"
+        ],
+        "evidence_report_paragraph_ids": {
+          "FG-E1": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062",
+            "FG-P071"
+          ],
+          "FG-E2": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062"
+          ],
+          "FG-E3": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E4": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E5": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E6": [
+            "FG-P027",
+            "FG-P028",
+            "FG-P056",
+            "FG-P072"
+          ],
+          "FG-E7": [
+            "FG-P027",
+            "FG-P028",
+            "FG-P056"
+          ],
+          "FG-E8": [
+            "FG-P032",
+            "FG-P033",
+            "FG-P057",
+            "FG-P073"
+          ]
+        }
+      },
+      {
+        "destination": "company:Figure AI:market_and_team",
+        "company": "Figure AI",
+        "report_paragraph_ids": [
+          "FG-P012",
+          "FG-P013",
           "FG-P016",
           "FG-P017",
           "FG-P018",
-          "FG-P064"
+          "FG-P019",
+          "FG-P021",
+          "FG-P022",
+          "FG-P023",
+          "FG-P024",
+          "FG-P025",
+          "FG-P026",
+          "FG-P052",
+          "FG-P055",
+          "FG-P062"
         ],
         "evidence_ids": [
           "FG-E1",
@@ -2245,48 +2913,23 @@
         }
       },
       {
-        "destination": "company:Figure AI:market_and_team",
-        "company": "Figure AI",
-        "report_paragraph_ids": [
-          "FG-P012",
-          "FG-P013",
-          "FG-P014",
-          "FG-P021",
-          "FG-P024",
-          "FG-P062"
-        ],
-        "evidence_ids": [
-          "FG-E1",
-          "FG-E2"
-        ],
-        "evidence_report_paragraph_ids": {
-          "FG-E1": [
-            "FG-P008",
-            "FG-P009",
-            "FG-P012",
-            "FG-P013",
-            "FG-P062",
-            "FG-P071"
-          ],
-          "FG-E2": [
-            "FG-P008",
-            "FG-P009",
-            "FG-P012",
-            "FG-P013",
-            "FG-P062"
-          ]
-        }
-      },
-      {
         "destination": "company:Figure AI:technology_and_execution",
         "company": "Figure AI",
         "report_paragraph_ids": [
           "FG-P027",
           "FG-P028",
           "FG-P029",
+          "FG-P030",
           "FG-P032",
           "FG-P033",
-          "FG-P056"
+          "FG-P034",
+          "FG-P035",
+          "FG-P036",
+          "FG-P037",
+          "FG-P038",
+          "FG-P056",
+          "FG-P057",
+          "FG-P058"
         ],
         "evidence_ids": [
           "FG-E6",
@@ -2317,99 +2960,46 @@
         "destination": "company:Figure AI:risks_and_conditions",
         "company": "Figure AI",
         "report_paragraph_ids": [
-          "FG-P034",
-          "FG-P035",
+          "FG-P014",
+          "FG-P015",
           "FG-P042",
+          "FG-P043",
           "FG-P044",
           "FG-P045",
-          "FG-P065"
-        ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
-      },
-      {
-        "destination": "company:Figure AI:individual_opinion",
-        "company": "Figure AI",
-        "report_paragraph_ids": [
-          "FG-P005",
-          "FG-P069",
-          "FG-P070"
-        ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
-      },
-      {
-        "destination": "summary",
-        "company": null,
-        "report_paragraph_ids": [
-          "MM-P005",
-          "MM-P064",
-          "RB-P005",
-          "RB-P074",
-          "FG-P005",
-          "FG-P070"
-        ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
-      },
-      {
-        "destination": "comparison:1",
-        "company": null,
-        "report_paragraph_ids": [
-          "MM-P012",
-          "MM-P026",
-          "RB-P016",
-          "RB-P020",
-          "FG-P016",
-          "FG-P032"
+          "FG-P058",
+          "FG-P059",
+          "FG-P060",
+          "FG-P061",
+          "FG-P063",
+          "FG-P064",
+          "FG-P065",
+          "FG-P074",
+          "FG-P075",
+          "FG-P076"
         ],
         "evidence_ids": [
-          "MM-E1",
-          "MM-E3",
-          "RB-E3",
-          "RB-E1",
-          "RB-E2",
+          "FG-E1",
+          "FG-E2",
           "FG-E3",
           "FG-E4",
-          "FG-E5"
+          "FG-E5",
+          "FG-E8"
         ],
         "evidence_report_paragraph_ids": {
-          "MM-E1": [
-            "MM-P012",
-            "MM-P013"
+          "FG-E1": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062",
+            "FG-P071"
           ],
-          "MM-E3": [
-            "MM-P026",
-            "MM-P027",
-            "MM-P050",
-            "MM-P067"
-          ],
-          "RB-E3": [
-            "RB-P016",
-            "RB-P017",
-            "RB-P057",
-            "RB-P076"
-          ],
-          "RB-E1": [
-            "RB-P008",
-            "RB-P009",
-            "RB-P012",
-            "RB-P013",
-            "RB-P020",
-            "RB-P021",
-            "RB-P032",
-            "RB-P033",
-            "RB-P054",
-            "RB-P075"
-          ],
-          "RB-E2": [
-            "RB-P008",
-            "RB-P009",
-            "RB-P020",
-            "RB-P021",
-            "RB-P032",
-            "RB-P033",
-            "RB-P054"
+          "FG-E2": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062"
           ],
           "FG-E3": [
             "FG-P008",
@@ -2428,6 +3018,237 @@
             "FG-P009",
             "FG-P016",
             "FG-P017"
+          ],
+          "FG-E8": [
+            "FG-P032",
+            "FG-P033",
+            "FG-P057",
+            "FG-P073"
+          ]
+        }
+      },
+      {
+        "destination": "company:Figure AI:individual_opinion",
+        "company": "Figure AI",
+        "report_paragraph_ids": [
+          "FG-P005",
+          "FG-P069",
+          "FG-P070",
+          "FG-P008",
+          "FG-P012",
+          "FG-P016",
+          "FG-P027",
+          "FG-P032",
+          "FG-P062",
+          "FG-P063",
+          "FG-P065"
+        ],
+        "evidence_ids": [
+          "FG-E1",
+          "FG-E2",
+          "FG-E3",
+          "FG-E4",
+          "FG-E5",
+          "FG-E6",
+          "FG-E7",
+          "FG-E8"
+        ],
+        "evidence_report_paragraph_ids": {
+          "FG-E1": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062",
+            "FG-P071"
+          ],
+          "FG-E2": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062"
+          ],
+          "FG-E3": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E4": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E5": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E6": [
+            "FG-P027",
+            "FG-P028",
+            "FG-P056",
+            "FG-P072"
+          ],
+          "FG-E7": [
+            "FG-P027",
+            "FG-P028",
+            "FG-P056"
+          ],
+          "FG-E8": [
+            "FG-P032",
+            "FG-P033",
+            "FG-P057",
+            "FG-P073"
+          ]
+        }
+      },
+      {
+        "destination": "summary",
+        "company": null,
+        "report_paragraph_ids": [
+          "MM-P064",
+          "RB-P074",
+          "FG-P070"
+        ],
+        "evidence_ids": [
+          "MM-E1",
+          "MM-E3",
+          "RB-E1",
+          "RB-E3",
+          "FG-E1",
+          "FG-E3",
+          "FG-E4"
+        ],
+        "evidence_report_paragraph_ids": {
+          "MM-E1": [
+            "MM-P012",
+            "MM-P013"
+          ],
+          "MM-E3": [
+            "MM-P026",
+            "MM-P027",
+            "MM-P050",
+            "MM-P067"
+          ],
+          "RB-E1": [
+            "RB-P008",
+            "RB-P009",
+            "RB-P012",
+            "RB-P013",
+            "RB-P020",
+            "RB-P021",
+            "RB-P032",
+            "RB-P033",
+            "RB-P054",
+            "RB-P075"
+          ],
+          "RB-E3": [
+            "RB-P016",
+            "RB-P017",
+            "RB-P057",
+            "RB-P076"
+          ],
+          "FG-E1": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062",
+            "FG-P071"
+          ],
+          "FG-E3": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E4": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ]
+        }
+      },
+      {
+        "destination": "comparison:1",
+        "company": null,
+        "report_paragraph_ids": [
+          "MM-P012",
+          "MM-P026",
+          "RB-P008",
+          "RB-P016",
+          "RB-P032",
+          "FG-P016",
+          "FG-P027",
+          "FG-P032"
+        ],
+        "evidence_ids": [
+          "MM-E1",
+          "MM-E3",
+          "RB-E1",
+          "RB-E3",
+          "FG-E3",
+          "FG-E4",
+          "FG-E6",
+          "FG-E8"
+        ],
+        "evidence_report_paragraph_ids": {
+          "MM-E1": [
+            "MM-P012",
+            "MM-P013"
+          ],
+          "MM-E3": [
+            "MM-P026",
+            "MM-P027",
+            "MM-P050",
+            "MM-P067"
+          ],
+          "RB-E1": [
+            "RB-P008",
+            "RB-P009",
+            "RB-P012",
+            "RB-P013",
+            "RB-P020",
+            "RB-P021",
+            "RB-P032",
+            "RB-P033",
+            "RB-P054",
+            "RB-P075"
+          ],
+          "RB-E3": [
+            "RB-P016",
+            "RB-P017",
+            "RB-P057",
+            "RB-P076"
+          ],
+          "FG-E3": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E4": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P016",
+            "FG-P017"
+          ],
+          "FG-E6": [
+            "FG-P027",
+            "FG-P028",
+            "FG-P056",
+            "FG-P072"
+          ],
+          "FG-E8": [
+            "FG-P032",
+            "FG-P033",
+            "FG-P057",
+            "FG-P073"
           ]
         }
       },
@@ -2435,15 +3256,72 @@
         "destination": "comparison:2",
         "company": null,
         "report_paragraph_ids": [
-          "MM-P036",
-          "MM-P057",
+          "MM-P064",
+          "RB-P074",
+          "FG-P070",
+          "MM-P050",
           "RB-P060",
-          "RB-P067",
-          "FG-P063",
-          "FG-P065"
+          "FG-P063"
         ],
-        "evidence_ids": [],
-        "evidence_report_paragraph_ids": {}
+        "evidence_ids": [
+          "MM-E3",
+          "MM-E4",
+          "RB-E1",
+          "RB-E5",
+          "FG-E1",
+          "FG-E6",
+          "FG-E8"
+        ],
+        "evidence_report_paragraph_ids": {
+          "MM-E3": [
+            "MM-P026",
+            "MM-P027",
+            "MM-P050",
+            "MM-P067"
+          ],
+          "MM-E4": [
+            "MM-P008",
+            "MM-P009",
+            "MM-P042",
+            "MM-P065"
+          ],
+          "RB-E1": [
+            "RB-P008",
+            "RB-P009",
+            "RB-P012",
+            "RB-P013",
+            "RB-P020",
+            "RB-P021",
+            "RB-P032",
+            "RB-P033",
+            "RB-P054",
+            "RB-P075"
+          ],
+          "RB-E5": [
+            "RB-P058",
+            "RB-P077"
+          ],
+          "FG-E1": [
+            "FG-P008",
+            "FG-P009",
+            "FG-P012",
+            "FG-P013",
+            "FG-P062",
+            "FG-P071"
+          ],
+          "FG-E6": [
+            "FG-P027",
+            "FG-P028",
+            "FG-P056",
+            "FG-P072"
+          ],
+          "FG-E8": [
+            "FG-P032",
+            "FG-P033",
+            "FG-P057",
+            "FG-P073"
+          ]
+        }
       }
     ],
     "source_reports": [
@@ -4326,5 +5204,16 @@
   "max_rewrites": 2,
   "rewrite_events": [],
   "quality_stop_reason": "passed",
-  "evaluation_method": "hybrid"
+  "evaluation_method": "hybrid",
+  "pdf_only_rerender": {
+    "reason": "본문 끝 인용만 다음 쪽으로 넘어가는 배치 방지",
+    "markdown_unchanged": true,
+    "markdown_sha256": "b4f4f7fca2858fce0db5a62c272980b14c72aab16fbdeaf061367314a28c55be",
+    "llm_reexecuted": false
+  },
+  "artifact_promotion": {
+    "source_directory": "./output/report-input-fix-20261016-v3",
+    "same_markdown": true,
+    "same_pdf": true
+  }
 }

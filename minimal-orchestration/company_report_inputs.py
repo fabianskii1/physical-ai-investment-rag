@@ -8,7 +8,15 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from hashlib import sha256
+from pathlib import Path
 import re
+from typing import Annotated
+from pydantic import StringConstraints
+
+
+ReportParagraphReference = Annotated[str, StringConstraints(pattern=r'^[A-Z][A-Z0-9_]*-P[0-9]{3,}$')]
+EvidenceReference = Annotated[str, StringConstraints(pattern=r'^[A-Z][A-Z0-9_]*-E[1-9][0-9]*$')]
+FinalParagraphReference = Annotated[str, StringConstraints(pattern=r'^P[1-9][0-9]*$')]
 
 
 _EVIDENCE_ID = re.compile(r"E[1-9]\d*\Z")
@@ -168,6 +176,13 @@ def build_company_report_inputs(companies: list[dict]) -> list[dict]:
         report = state.get("final_report") if isinstance(state, Mapping) else None
         if not isinstance(report, str) or not report.strip():
             raise ValueError(f"{company}: 실제 기업별 final_report 본문이 없습니다")
+        # 출력된 Markdown과 State가 서로 다르면 임의로 한쪽을 선택하지 않는다.
+        # MD만 수정하고 예전 State를 합성하는 경우를 모델 호출 전에 드러낸다.
+        artifact = record.get('record', {}).get('markdown')
+        if artifact is not None:
+            artifact = Path(artifact)
+            if not artifact.is_file() or artifact.read_text(encoding='utf-8') != report:
+                raise ValueError(f"{company}: 기업 보고서 Markdown과 State final_report가 일치하지 않습니다")
         evidence = record.get("evidence")
         if not isinstance(evidence, Mapping) or any(not isinstance(ref, str) or not _EVIDENCE_ID.fullmatch(ref) for ref in evidence):
             raise ValueError(f"{company}: 등록된 근거 ID 목록 형식이 올바르지 않습니다")
@@ -179,3 +194,17 @@ def build_company_report_inputs(companies: list[dict]) -> list[dict]:
                         "report_sha256": sha256(report.encode("utf-8")).hexdigest(),
                         "report_markdown": report, "paragraphs": paragraphs})
     return results
+
+
+def validate_company_report_inputs(companies: list[dict], supplied=None) -> list[dict]:
+    """모든 최종 에이전트가 같은 원보고서·키·문단을 받는지 확인한다.
+
+    caller가 건넨 SHA만 믿지 않고 State와 다시 대조한다. 잘못된 report 키,
+    빈 목록, 오래된 본문과 바뀐 문단 인덱스는 요약으로 대체하지 않는다.
+    """
+    expected = build_company_report_inputs(companies)
+    if supplied is None:
+        return expected
+    if not isinstance(supplied, list) or supplied != expected:
+        raise ValueError('기업 보고서 입력 계약 불일치: company_reports의 report_markdown·SHA256·문단을 현재 State와 대조하세요')
+    return expected

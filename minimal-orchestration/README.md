@@ -24,6 +24,7 @@ MOTOMIND·ROBROS·Figure AI의 제조·물류용 휴머노이드 사업화 가�
 - **고정 평가표:** [설계 PDF](evaluation/physical_ai_investment_design.pdf) 2~3쪽의 6영역·21항목·100점을 코드와 대조한다. 등급은 0~4 또는 U, 점수는 `배점 × 등급 ÷ 4`다. U를 0점으로 채우거나 100점으로 재환산하지 않는다.
 - **확증 편향 통제:** 출처 없는 주장·부분 입증을 제외하고 반증·U를 보존한다. 구매 계약을 매출로, 첫 협력을 재구매로 채점하지 않도록 거래 방향·단계·같은 고객을 검증한다.
 - **기업 보고서 합성:** 전체 본문·SHA256·문단 ID와 검증 State·원문을 `CompanyReportSynthesis`에 입력한다. 회사별 5필드와 비교 2문단을 작성하며, 분석을 가져온 문단과 실제 원문 인용이 등장한 문단을 `report_paragraph_ids`·`evidence_report_paragraph_ids`로 구분해 반영 맵에 보존한다.
+- **입력 계약:** `state.final_report` 전문을 `company_reports[].report_markdown`으로 전달한다. 기업·SHA256·문단 인덱스를 합성/선정 직전에 재대조하고 내보낸 `.md`가 State와 다르면 중단한다. 실제 입력 전문과 검증 원문은 `combined_report_inputs.json`에 보존한다.
 - **품질 평가:** 형식·점수·인용 검사와 원본 페이지를 읽는 LLM Judge를 결합한 **Hybrid** 방식. Groundedness·중립성·편향 통제 세 축만 평가하며 관점 커버리지는 제외한다. 표현 결함은 재작성, 근거·채점 결함은 재조사한다. 실행에서 품질 오분류와 작성 형식 실패를 확인해 작성·선정·검증 모델을 별도 설정했으며, 개선 효과는 미측정이다.
 - **최종 대상 선정:** `PortfolioDecision`이 같은 합성 분석과 원래 기업 보고서를 읽어 대상·비교 이유·필수 조건을 선정한다. 코드가 근거 연결·핵심 부정 사실·거래조건을 검사하며, 최고 총점 기업을 자동 선택하지 않는다.
 - **통합 보고서:** 점수표·U·REFERENCE는 코드가 고정하고 기업별 해석·한계·현재 의견을 합성 본문으로 반영한다. 길이·문장 완결성 검사와 `report_language.py`가 명백한 절단·자료 부재 단정·독립 입증 과장을 거절한다. 실제 문단의 인용↔원문 페이지를 대조하는 검사로 RL·MOU 목적·IFR 수요·공공 실증의 알려진 범위 오류를 차단하며, 원문·검증 State를 우선해 교정한다.
@@ -31,6 +32,10 @@ MOTOMIND·ROBROS·Figure AI의 제조·물류용 휴머노이드 사업화 가�
 Judge의 `findings`는 `{criterion, basis, paragraph_id, defect, action}`으로 실제 보고서 문단에 결함을 연결한다. 같은 축의 결함이 있으면 코드가 그 축을 실패로 판정하고, 통과 여부와 `issues`를 이 목록에서 계산해 중복 판정의 모순을 방지한다. 단순 자료 부재·U는 `data_gaps`이며 품질 실패 사유가 아니다.
 
 통합 Judge는 같은 호출에서 핵심 3축과 별도로 세 기업의 분석·한계·개별 의견 반영 여부를 검사한다. 이는 관점 커버리지가 아니라 입력 보고서의 실제 종합 여부를 확인하는 검사다.
+
+반영 판정에는 원기업 문단·발췌와 최종 기업별 분석 구역의 문단·발췌를 `preservation_evidence`로 함께 제출한다. 코드는 실제 ID·회사·문단 종류·두 발췌의 일치를 확인하고 Judge는 의미의 보존을 판정한다. 부울·ID만으로 통과시키지 않으며, `report_synthesis` 없는 이전 결합 경로는 초안으로만 저장한다. 추가 Judge 호출은 없다.
+
+선정 근거 `evidence_ids`와 기업 간 비교 근거 `comparison_evidence_ids`를 분리해 실제 비교 문단에 연결한다. 요약·기업별 의견·비교의 인용 누락은 합성 단계에서 거절한다. [입력 계약·실제 결함·검증 방법](docs/final_report_inputs.md)에 재현 절차를 정리했다.
 
 거래조건 미확인은 조건부 투자로 제한하고, 핵심 근거가 부족하면 선정을 보류한다. 선정 시 최종 보고서에 “필수조건을 충족하면 선정 기업에 투자한다”는 결론과 조건을 연결한다. 보고서는 코드가 생성하는 투자 심사 자료이며 실제 거래 실행을 자동 결정하지 않는다.
 
@@ -141,13 +146,16 @@ cp .env.example .env                         # .env가 없을 때만
 ```bash
 .venv/bin/python app.py --combine-reports output  # 저장된 3기업 결과로 최종 선정·통합만 실행
 .venv/bin/python app.py --combine-reports output --reuse-analysis output/combined_analysis.json
+.venv/bin/python app.py --check-combine-inputs output/submission-live --output-dir output/input-check
 ```
+
+`--check-combine-inputs`는 API·검색·임베딩 없이 실제 기업 본문·키·해시와 현재 PDF의 원문 인용을 검사한다. 입력 JSON에는 세 보고서 전문·문단·검증 사실·21항목 점수·원문 페이지가 저장되며, 실제 생성도 같은 입력 준비 함수를 사용한다. 기업 보고서 `.md`만 수정했다면 이전 State로 조용히 합성하지 않고 불일치를 알린다.
 
 `--reuse-analysis`는 원보고서 SHA·기업 trace/상태·21항목 점수/사유·검증 주장·원문 페이지/출처가 같은 저장 합성·선정만 재사용하며 품질은 항상 새로 평가한다. `combined_analysis.json`은 품질·PDF 출력 전에 저장해 실패 복구 시 두 분석 모델을 다시 호출하지 않는다. 조건과 이전 형식의 제한은 [제출 재현 안내](SUBMISSION.md)를 따른다.
 
 기본 실행의 최종 제출물은 `output/final_investment_report.pdf` 한 파일이다. A4·20mm 여백·전체 최대 10쪽 안에 3기업의 21항목 비교, 기업별 근거·위험, 최종 선택/보류·필요 조건과 출처를 담는다. 같은 이름의 Markdown·JSON은 검토용이며, 품질·규격 미달 PDF는 최종본으로 발행하지 않는다.
 
-최신 실제 v10은 **하나의 A4 8쪽 보고서·Figure AI 조건부 투자**를 출력했다. 원문 검토를 마친 교정 본문과 동일하며, 검증된 합성·선정 재사용 후 새 Hybrid 평가에서 핵심 3축과 세 기업 분석·한계·개별 의견 반영이 모두 통과했다. 해당 실행의 수정은 0회이며, 최신 회귀 검사는 **428개 + 하위 테스트 22개 통과**다.
+2026-10-16 실제 실행은 **세 기업 보고서 전문·검증 원문 15쪽을 읽어 새로 합성·선정한 A4 8쪽 보고서·Figure AI 조건부 투자**를 출력했다. 핵심 3축과 세 기업 분석·한계·개별 의견 반영이 모두 통과했으며, 원기업↔최종 문단·발췌 증거 9개를 코드로 대조했다. 이 실행의 재작성은 0회, 최신 회귀 검사는 **469개 + 하위 테스트 22개 통과**다.
 
 현재 검증 파일: [최종 PDF](output/submission-live/final_investment_report.pdf) · [본문](output/submission-live/final_investment_report.md) · [점수·반영 맵·품질 JSON](output/submission-live/final_investment_report.json).
 
@@ -163,7 +171,7 @@ cp .env.example .env                         # .env가 없을 때만
 
 ![실제 최종 선정: Figure AI 조건부 투자와 원문 근거·코드 보호 조건](docs/traces/02_final_investment_decision.png)
 
-[실제 실행·캡처 기록](docs/traces/README.md): 01은 기업별 계획·재조사, 02~[03](docs/traces/03_final_quality.png)은 합성 전 결과다. [04 — 미달·재작성 루프](docs/traces/04_feedback_loop.png)는 중간 품질 실패·재작성 2회 진입, [05 — 최신 품질 통과](docs/traces/05_current_final_quality.png)는 검증된 분석 재사용 후 새 Judge의 3축 통과를 보여 준다.
+[실제 실행·캡처 기록](docs/traces/README.md): 01은 기업별 계획·재조사, 02~[03](docs/traces/03_final_quality.png)은 합성 전 결과다. [04 — 미달·재작성 루프](docs/traces/04_feedback_loop.png)는 중간 품질 실패·재작성 2회 진입, [05 — 10월 13일 품질 통과](docs/traces/05_current_final_quality.png)는 당시 검증된 분석 재사용 후 새 Judge의 3축 통과를 보여 준다. 10월 16일 최신 실행은 [실제 trace JSON](output/submission-live/final_report.trace.json)과 최종 품질 JSON에서 확인한다.
 
 ## Contributors
 

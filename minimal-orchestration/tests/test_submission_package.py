@@ -11,7 +11,23 @@ import pytest
 from pypdf import PdfWriter
 
 from scripts.package_submission import (ARCHIVE_ROOT, COMPANY_STEMS, FINAL_FILES, ROOT_FILES, SubmissionError,
-                                        build_submission, verify_archive)
+                                        build_submission, verify_archive, prepare_payloads, candidate_files)
+
+
+def test_portable_input_manifest_matches_normalized_input_bytes(tmp_path):
+    source_tree(tmp_path)
+    name = 'output/submission-live/combined_report_inputs.json'
+    original = json.dumps({'source_path': str(tmp_path / 'rag/data/raw/company/source.pdf')})
+    write(tmp_path, name, original)
+    metadata = json.loads((tmp_path / FINAL_FILES[2]).read_text())
+    original_hash = sha256(original.encode()).hexdigest()
+    metadata['input_manifest'] = {'path': str(tmp_path / name), 'sha256': original_hash}
+    write(tmp_path, FINAL_FILES[2], json.dumps(metadata))
+    payloads, _ = prepare_payloads(tmp_path, candidate_files(tmp_path), ())
+    reference = json.loads(payloads[FINAL_FILES[2]])['input_manifest']
+    assert reference['sha256'] == sha256(payloads[name]).hexdigest()
+    assert reference['original_sha256'] == original_hash
+    assert reference['path'] == name
 
 
 def write(root, name, value):

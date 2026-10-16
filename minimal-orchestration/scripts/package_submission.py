@@ -30,7 +30,7 @@ ARCHIVE_ROOT = 'physical_ai_orchestration'
 NEUTRAL_FILENAME = 'physical_ai_orchestration_submission.zip'
 LEGACY_REPOSITORY = 'https://github.com/fabianskii1/physical-ai-investment-rag'
 ROOT_FILES = (
-    'README.md', 'SUBMISSION.md', 'requirements.txt', 'requirements-rag.txt', '.env.example', '.gitignore',
+    'README.md', 'SUBMISSION.md', 'requirements.txt', 'requirements-rag.txt', 'pytest.ini', '.env.example', '.gitignore',
     'app.py', 'agent_pipeline.py', 'state_schema.py', 'legacy_adapter.py', 'criteria_registry.py',
     'criteria_coverage.py', 'investment_evaluation.py', 'investment_case.py', 'combined_report.py', 'combined_quality.py',
     'company_brief.py', 'portfolio_decision.py', 'company_report_inputs.py', 'report_synthesis.py', 'report_language.py',
@@ -86,6 +86,8 @@ def candidate_files(root: Path) -> list[str]:
     files.update(COMPANY_FILES)
     # 최신 공식 실행 폴더의 명시된 보조 결과만 함께 보존한다.
     for pattern in ('output/submission-live/final_report.trace.json',
+                    'output/submission-live/combined_report_inputs.json',
+                    'output/submission-live/combined_analysis.json',
                     'output/submission-live/company_comparison.*', 'output/submission-live/web_sources/*.pdf',
                     'output/submission-live/web_sources/manifest.json'):
         files.update(path.relative_to(root).as_posix() for path in root.glob(pattern) if path.is_file())
@@ -176,6 +178,26 @@ def prepare_payloads(root: Path, files: list[str], secrets: tuple[bytes, ...]) -
         if any(secret in data for secret in secrets):
             raise SubmissionError(f'정리 후 비밀값이 남아 있습니다: {relative}')
         payloads[relative] = data
+    # 입력 JSON도 경로를 정규화하므로 전송본의 실제 바이트 해시를 연결한다.
+    # 원래 실행 해시는 별도로 남겨 생성 입력과 제출본을 구분한다.
+    for relative in list(payloads):
+        if not relative.endswith('.json'):
+            continue
+        snapshot = json.loads(payloads[relative])
+        manifest = snapshot.get('input_manifest') if isinstance(snapshot, dict) else None
+        if not isinstance(manifest, dict):
+            continue
+        target = by_basename.get(PurePosixPath(manifest.get('path', '')).name)
+        if target not in payloads:
+            raise SubmissionError(f'최종 입력 JSON이 제출 묶음에 없습니다: {relative}')
+        digest = sha256(payloads[target]).hexdigest()
+        if digest != manifest.get('sha256'):
+            manifest['original_sha256'] = manifest.get('original_sha256') or manifest.get('sha256')
+            manifest['normalization_note'] = '제출 경로 정규화 후 실제 입력 파일 바이트로 SHA256 재계산'
+        manifest.update(path=target, sha256=digest)
+        payloads[relative] = json.dumps(snapshot, ensure_ascii=False, indent=2).encode('utf-8')
+        if relative not in transformed:
+            transformed.append(relative)
     return payloads, transformed
 
 

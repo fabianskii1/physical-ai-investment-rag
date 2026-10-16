@@ -41,6 +41,14 @@ def write_cache(path, cached):
     path.write_text(json.dumps(cached, ensure_ascii=False), encoding="utf-8")
 
 
+def test_selection_without_cross_company_source_field_requires_regeneration(records, analysis_cache):
+    path, cached, _ = analysis_cache
+    cached['portfolio_decision'].pop('comparison_evidence_ids')
+    write_cache(path, cached)
+    with pytest.raises(ValueError, match='comparison_evidence_ids'):
+        app._load_combined_analysis(path, records)
+
+
 def test_valid_reuse_returns_only_revalidated_synthesis_and_portfolio_without_model_call(
     records, analysis_cache, monkeypatch
 ):

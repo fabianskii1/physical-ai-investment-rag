@@ -77,6 +77,9 @@ def render_report(markdown: str, target: str | Path, max_pages: int = 10) -> Pat
             textColor=navy if key in ("title", "section", "subheading") else colors.HexColor("#263442"),
             alignment=TA_CENTER if key == "title" else 0,
             keepWithNext=key in ("section", "subheading"))
+    # 인용 ID만 다음 쪽 첫 줄로 떨어지는 한 줄짜리 문단 조각을 막는다.
+    styles['body'].allowWidows = 0
+    styles['body'].allowOrphans = 0
     styles["bullet"] = ParagraphStyle("bullet", parent=styles["body"], leftIndent=9, firstLineIndent=-9)
     styles["score_label"] = ParagraphStyle("score_label", parent=styles["body"], leading=13,
                                            spaceAfter=0, textColor=navy)

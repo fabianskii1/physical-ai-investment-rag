@@ -5,6 +5,15 @@ from typing import Literal
 
 from legacy_adapter import REPORT_QUALITY_KEYS, QualityReview, request_report_verdict
 from report_language import report_language_issues, report_evidence_links, report_evidence_scope_issues
+from company_report_inputs import ReportParagraphReference, FinalParagraphReference
+
+
+class ReflectionEvidence(BaseModel):
+    aspect: Literal['analysis', 'limitations', 'individual_opinion']
+    source_paragraph_id: ReportParagraphReference
+    source_excerpt: str = Field(min_length=12)
+    final_paragraph_id: FinalParagraphReference
+    final_excerpt: str = Field(min_length=12)
 
 
 class CompanyReflection(BaseModel):
@@ -14,6 +23,7 @@ class CompanyReflection(BaseModel):
     individual_opinion_preserved: bool
     reason: str
     missing_or_distorted: list[str] = Field(default_factory=list)
+    preservation_evidence: list[ReflectionEvidence] = Field(default_factory=list, max_length=12)
 
 
 class CombinedQualityReview(QualityReview):
@@ -22,6 +32,51 @@ class CombinedQualityReview(QualityReview):
 
 class CombinedRevision(BaseModel):
     markdown: str
+
+
+def reflection_evidence_issues(payload, reflections):
+    """반영=true를 원보고서와 최종 본문의 실제 두 문단·발췌로 대조한다.
+
+    의미의 보존 여부는 Judge가 판단하고, 코드는 회사·종류·ID와 실제 인용을
+    검증한다. ID 존재나 부울 값만으로 보고서 반영을 인정하지 않는다.
+    """
+    import re
+    plain = lambda text: ' '.join(text.split())
+    originals = {item['company']: {p['paragraph_id']: p for p in item.get('paragraphs', [])}
+                 for item in payload.get('company_reports', [])}
+    final = {p['paragraph_id']: p for p in report_evidence_links(payload.get('report', ''), [])}
+    owners, owner = {}, None
+    for number, line in enumerate(payload.get('report', '').splitlines(), 1):
+        if line.startswith('## '):
+            owner = None
+        if line.startswith('### '):
+            owner = next((name for name in originals if re.match(r'^### ' + re.escape(name) + r'\s+—', line)), None)
+        owners[f'P{number}'] = owner
+    kinds = {'analysis': {'analysis'}, 'limitations': {'limitation', 'follow_up'},
+             'individual_opinion': {'opinion'}}
+    issues = []
+    for item in reflections:
+        company = item['company']
+        supported = set()
+        for proof in item.get('preservation_evidence', []):
+            source = originals.get(company, {}).get(proof.get('source_paragraph_id'))
+            target = final.get(proof.get('final_paragraph_id'))
+            aspect = proof.get('aspect')
+            if (source is None or target is None or aspect not in kinds
+                    or source['kind'] not in kinds[aspect]
+                    or owners.get(proof.get('final_paragraph_id')) != company
+                    or len(plain(proof.get('source_excerpt', ''))) < 12
+                    or len(plain(proof.get('final_excerpt', ''))) < 12
+                    or plain(proof['source_excerpt']) not in plain(source['text'])
+                    or plain(proof['final_excerpt']) not in plain(target['text'])):
+                issues.append(f'기업보고서 반영 — {company}: {aspect}의 원문↔최종 본문 반영 증거가 일치하지 않습니다')
+                continue
+            supported.add(aspect)
+        for aspect, flag in (('analysis', 'analysis_preserved'), ('limitations', 'limitations_preserved'),
+                             ('individual_opinion', 'individual_opinion_preserved')):
+            if item.get(flag) is True and aspect not in supported:
+                issues.append(f'기업보고서 반영 — {company}: {aspect} 통과 판정에 실제 원문↔최종 문단·발췌가 필요합니다')
+    return list(dict.fromkeys(issues))
 
 
 @traceable(name='combined_report_rewrite')
@@ -92,6 +147,13 @@ def evaluate_combined_quality(payload: dict) -> dict:
             '원보고서의 근거 없는 소송/수치/양산 주장을 제외하거나 독립입증 과장을 자사 발표에 귀속시킨 것은 올바른 교정이며 누락 실패가 아닙니다. '
             '원보고서보다 원문 검증 결과를 우선하며 U는 실제 경쟁 열위로 단정하지 마세요. '
             '각 false에는 missing_or_distorted로 실제 빠지거나 왜곡된 분석을 적어 재작성할 수 있게 하세요.'
+            '\n각 회사의 preservation_evidence에는 analysis·limitations·individual_opinion 각각의 반영 증거를 기록합니다. '
+            'source_paragraph_id는 해당 회사 company_reports.paragraphs의 실제 ID, source_excerpt는 그 문단의 12자 이상 연속 발췌입니다. '
+            'final_paragraph_id는 report_evidence_links의 실제 P번호, final_excerpt는 최종 보고서의 해당 문단 12자 이상 연속 발췌입니다. '
+            '최종 발췌는 해당 회사의 ## 3 기업별 분석 구역 안에 있어야 하며 제목·점수·REFERENCE만으로 반영을 입증하지 않습니다. '
+            'analysis는 kind=analysis, limitations는 limitation/follow_up, individual_opinion은 opinion 원문을 선택합니다. '
+            '발췌문 두 개의 의미가 실제로 이어지는지도 평가합니다. 회사명과 일반적인 U목록만 겹치는 것은 충분하지 않습니다. '
+            '부적절한 원보고서 과장을 원문 범위에 맞게 교정한 대응 문단도 허용하며, 없는 반영 증거를 만들지 마세요.'
         )
     scope_issues = report_evidence_scope_issues(payload.get('report', ''), payload.get('source_contexts', []))
     model_payload = {**payload, 'report_evidence_links': report_evidence_links(payload.get('report', ''), payload.get('source_contexts', [])),
@@ -105,6 +167,7 @@ def evaluate_combined_quality(payload: dict) -> dict:
     rubric = verdict.model_dump()
     reflection = verdict.company_report_reflection
     reflection_issues = []
+    proof_issues = []
     if payload.get('company_reports'):
         expected = {item['company'] for item in payload['company_reports']}
         if len(reflection) != len(expected) or {item['company'] for item in reflection} != expected:
@@ -114,11 +177,18 @@ def evaluate_combined_quality(payload: dict) -> dict:
                     or item['missing_or_distorted']):
                 reflection_issues.append(f"기업보고서 반영 — {item['company']}: " +
                                          '; '.join(item['missing_or_distorted'] or [item['reason']]))
+        proof_issues = reflection_evidence_issues(payload, reflection)
+    else:
+        reflection_issues.append('기업보고서 전체 입력이 없어 최종 보고서의 반영 여부를 평가할 수 없습니다')
     language_issues = report_language_issues(payload.get('report', ''))
-    issues = list(verdict.issues) + reflection_issues + language_issues + scope_issues
+    issues = list(verdict.issues) + reflection_issues + language_issues + scope_issues + proof_issues
+    action = 'rewrite' if (scope_issues or language_issues) and verdict.action != 'research' else verdict.action
+    if proof_issues and not (verdict.issues or reflection_issues or language_issues or scope_issues):
+        # Judge의 잘못된 ID/발췌를 보고서 결함으로 간주해 Writer를 다시 부르지 않는다.
+        action = 'review'
     return {'passed': all(rubric[key] for key in REPORT_QUALITY_KEYS) and not issues,
             'issues': issues, 'data_gaps': verdict.data_gaps, 'rubric': rubric,
             'company_report_reflection': reflection,
             'deterministic_content_issues': language_issues + scope_issues,
-            'action': 'rewrite' if (scope_issues or language_issues) and verdict.action != 'research' else verdict.action,
+            'judge_evidence_issues': proof_issues, 'action': action,
             'method': 'hybrid'}

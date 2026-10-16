@@ -65,7 +65,13 @@ def portfolio(company="Figure AI", action="투자", ids=None):
             "reason": "검증된 제품 개발 근거를 후보 검토 사유로 사용한다.",
             "comparison_reason": "각 기업의 확인 근거와 사업화 한계를 함께 검토했다. 총점 자동 순위는 사용하지 않았다.",
             "evidence_ids": ids if ids is not None else ["FG-E1"],
+            'comparison_evidence_ids': ['MM-E1', 'RB-E1', 'FG-E1'],
             "required_conditions": ["현재 거래의 가치·지분권리·자금 사용 조건을 실사한다."]}
+
+
+def synthesis_for(records):
+    from test_report_synthesis import inputs_and_synthesis
+    return inputs_and_synthesis(records)[2]
 
 
 def test_all_three_companies_and_all_21_items_have_namespaced_references(records):
@@ -160,7 +166,8 @@ def test_actual_single_pdf_includes_three_company_matrix_and_fits_ten_a4_pages(r
         captured.update(payload)
         return {"passed": True, "issues": [], "method": "hybrid"}
 
-    output = save_combined_report(records, tmp_path, quality_evaluator=evaluate, portfolio_decision=portfolio())
+    output = save_combined_report(records, tmp_path, quality_evaluator=evaluate, portfolio_decision=portfolio(),
+                                  report_synthesis=synthesis_for(records))
     assert output["status"] == "completed"
     assert 5 <= output["pdf_checks"]["pages"] <= 10
     assert all(output["pdf_checks"][key] for key in ("all_a4", "within_page_limit", "text_within_margins"))
@@ -193,16 +200,17 @@ def test_combined_content_failure_rewrites_with_same_scores_and_sources_then_pas
     def revise(payload, evaluation):
         revisions.append(deepcopy(payload))
         assert evaluation["passed"] is False
-        return payload["report"].replace("공개 문서가", "공식 공개 문서는")
+        return payload["report"].replace("고객 실증으로 전환", "고객의 현장 실증으로 전환")
 
     output = save_combined_report(records, tmp_path, quality_evaluator=evaluate,
-                                  quality_reviser=revise, portfolio_decision=portfolio())
+                                  quality_reviser=revise, portfolio_decision=portfolio(),
+                                  report_synthesis=synthesis_for(records))
     assert output["status"] == "completed"
     assert output["rewrite_count"] == 1
     assert len(evaluations) == 2 and len(revisions) == 1
     assert evaluations[0]["source_contexts"] == evaluations[1]["source_contexts"]
     assert evaluations[0]["comparison"] == evaluations[1]["comparison"]
-    assert "공식 공개 문서는" in output["markdown"].read_text()
+    assert "고객의 현장 실증으로 전환" in output["markdown"].read_text()
     snapshot = json.loads(output["json"].read_text())
     assert snapshot["rewrite_count"] == 1 and snapshot["max_rewrites"] == 2
     assert snapshot["rewrite_events"][0]["accepted"] is True
@@ -211,6 +219,7 @@ def test_combined_content_failure_rewrites_with_same_scores_and_sources_then_pas
 def test_already_passed_combined_report_skips_revision_callback(records, tmp_path):
     output = save_combined_report(records, tmp_path,
         quality_evaluator=lambda _: {"passed": True, "issues": []},
+        report_synthesis=synthesis_for(records),
         quality_reviser=lambda *_: pytest.fail("통과한 보고서의 추가 Writer 호출 금지"))
     assert output["rewrite_count"] == 0
     assert output["quality_stop_reason"] == "passed"
@@ -227,7 +236,8 @@ def test_combined_rewrite_budget_is_separate_and_bounded(records, tmp_path):
         revisions.append(payload)
         return payload["report"].replace("## 4 — 최종 투자 제안", "자료의 검증 범위를 명확히 구분한다.\n\n## 4 — 최종 투자 제안")
 
-    output = save_combined_report(records, tmp_path, quality_evaluator=evaluate, quality_reviser=revise)
+    output = save_combined_report(records, tmp_path, quality_evaluator=evaluate, quality_reviser=revise,
+                                  report_synthesis=synthesis_for(records))
     assert output["status"] == "quality_failed"
     assert len(revisions) == output["rewrite_count"] == 2
     assert len(evaluations) == 3
@@ -238,6 +248,7 @@ def test_combined_rewrite_budget_is_separate_and_bounded(records, tmp_path):
 def test_new_evidence_failure_preserves_draft_without_source_research_or_writer(records, tmp_path):
     output = save_combined_report(records, tmp_path,
         quality_evaluator=lambda _: {"passed": False, "issues": ["추가 원문 필요"], "action": "research"},
+        report_synthesis=synthesis_for(records),
         quality_reviser=lambda *_: pytest.fail("research 요구를 같은 자료의 Writer로 우회하면 안 됨"))
     assert output["status"] == "quality_failed"
     assert output["rewrite_count"] == 0
@@ -246,7 +257,8 @@ def test_new_evidence_failure_preserves_draft_without_source_research_or_writer(
 
 @pytest.mark.parametrize("unsafe", ["score", "citation", "reference", "decision"])
 def test_unsafe_revision_cannot_change_scores_citations_sources_or_official_decision(records, tmp_path, unsafe):
-    original = build_combined_report(records, portfolio_decision=portfolio())["markdown"]
+    synthesis = synthesis_for(records)
+    original = build_combined_report(records, portfolio_decision=portfolio(), report_synthesis=synthesis)["markdown"]
 
     def revise(payload, evaluation):
         if unsafe == "score":
@@ -259,7 +271,7 @@ def test_unsafe_revision_cannot_change_scores_citations_sources_or_official_deci
 
     output = save_combined_report(records, tmp_path,
         quality_evaluator=lambda _: {"passed": False, "issues": ["출처 귀속 결함"], "action": "rewrite"},
-        quality_reviser=revise, max_rewrites=1, portfolio_decision=portfolio())
+        quality_reviser=revise, max_rewrites=1, portfolio_decision=portfolio(), report_synthesis=synthesis)
     assert output["status"] == "quality_failed"
     assert output["rewrite_count"] == 1
     assert output["rewrite_events"][0]["accepted"] is False
@@ -268,15 +280,16 @@ def test_unsafe_revision_cannot_change_scores_citations_sources_or_official_deci
 
 
 def test_revision_exception_keeps_last_safe_report_as_draft(records, tmp_path):
+    synthesis = synthesis_for(records)
     def fail_revision(*_):
         raise RuntimeError("mock writer failure")
 
     output = save_combined_report(records, tmp_path,
         quality_evaluator=lambda _: {"passed": False, "issues": ["표현 결함"], "action": "rewrite"},
-        quality_reviser=fail_revision, max_rewrites=1)
+        quality_reviser=fail_revision, max_rewrites=1, report_synthesis=synthesis)
     assert output["status"] == "quality_failed"
     assert output["rewrite_events"][0]["failure_type"] == "RuntimeError"
-    assert output["markdown"].read_text() == build_combined_report(records)["markdown"]
+    assert output["markdown"].read_text() == build_combined_report(records, report_synthesis=synthesis)["markdown"]
 
 
 def test_unchanged_revision_does_not_resample_judge_until_it_passes(records, tmp_path):
@@ -287,6 +300,7 @@ def test_unchanged_revision_does_not_resample_judge_until_it_passes(records, tmp
         return {"passed": False, "issues": ["표현 결함"], "action": "rewrite"}
 
     output = save_combined_report(records, tmp_path, quality_evaluator=evaluate,
+                                  report_synthesis=synthesis_for(records),
                                   quality_reviser=lambda payload, _: payload["report"])
     assert len(evaluations) == 1
     assert output["rewrite_count"] == 2

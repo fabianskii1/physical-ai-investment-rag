@@ -11,7 +11,7 @@ from copy import deepcopy
 from langsmith import traceable
 from pydantic import BaseModel, Field
 
-from company_report_inputs import build_company_report_inputs
+from company_report_inputs import validate_company_report_inputs, EvidenceReference, ReportParagraphReference
 from legacy_adapter import _structured_request
 from report_language import report_language_issues, report_evidence_scope_issues
 
@@ -19,8 +19,8 @@ from report_language import report_language_issues, report_evidence_scope_issues
 class SynthesisParagraph(BaseModel):
     # JSON 디코더의 maxLength로 문장이 강제 절단되지 않게 길이는 아래에서 검사한다.
     text: str = Field(min_length=1)
-    report_paragraph_ids: list[str] = Field(min_length=1, max_length=6)
-    evidence_ids: list[str] = Field(default_factory=list, max_length=8)
+    report_paragraph_ids: list[ReportParagraphReference] = Field(min_length=1, max_length=16)
+    evidence_ids: list[EvidenceReference] = Field(default_factory=list, max_length=8)
 
 
 class CompanyNarrative(BaseModel):
@@ -45,6 +45,7 @@ NARRATIVE_LABELS = ('사업·고객 맥락', '시장·팀 분석', '기술·사�
 
 def validate_report_synthesis(synthesis, report_inputs, companies) -> dict:
     """다른 회사 문단·새 인용·부분 회사 요약·출처 없는 분석을 거절한다."""
+    report_inputs = validate_company_report_inputs(companies, report_inputs)
     sources = [{key: item[key] for key in ('company', 'trace_id', 'report_sha256')} for item in report_inputs]
     if isinstance(synthesis, dict) and 'source_reports' in synthesis and synthesis['source_reports'] != sources:
         raise ValueError('종합 분석의 원본 기업보고서 본문이 변경되어 다시 종합해야 합니다')
@@ -73,6 +74,10 @@ def validate_report_synthesis(synthesis, report_inputs, companies) -> dict:
         if company and any(paragraphs[ref][0]['company'] != company for ref in ids):
             issues.append(f'{destination}: 다른 기업의 보고서 문단을 연결할 수 없습니다')
         refs = value.evidence_ids
+        expected_prefixes = {item['prefix'] for item in companies if item['evidence']
+                             and (company is None or item['company'] == company)}
+        if {ref.split('-', 1)[0] for ref in refs} != expected_prefixes:
+            issues.append(f'{destination}: 분석·현재 의견·요약·비교의 사실에 해당 기업별 원문 evidence_ids를 연결하세요')
         if any(ref not in known for ref in refs):
             issues.append(f'{destination}: 등록되지 않은 원문 근거: {refs}')
         # 분석을 가져온 문단과 원문 인용이 등장한 문단은 별개일 수 있다.
@@ -130,7 +135,7 @@ def validate_report_synthesis(synthesis, report_inputs, companies) -> dict:
 @traceable(name='company_report_synthesis')
 def synthesize_company_reports(companies, *, source_contexts, report_inputs=None, writer=None) -> dict:
     """완성된 기업 보고서를 한 번 읽어 투자 비교에 필요한 분석을 압축한다."""
-    inputs = report_inputs if report_inputs is not None else build_company_report_inputs(companies)
+    inputs = validate_company_report_inputs(companies, report_inputs)
     requirements = [{'company': item['company'],
         'required_fact_paragraph_ids': [p['paragraph_id'] for p in item['paragraphs'] if p['kind'] == 'fact' and p['evidence_ids']],
         'analysis_paragraph_ids': [p['paragraph_id'] for p in item['paragraphs'] if p['kind'] == 'analysis'],
@@ -148,7 +153,8 @@ def synthesize_company_reports(companies, *, source_contexts, report_inputs=None
         '기업 보고서의 사업·제품·고객 맥락, 시장·팀, 기술·사업화, 분석의 한계, 현재 투자 의견을 실제로 읽고 '
         '제조·물류 휴머노이드 투자 목적에 맞게 종합합니다. 긍정 사실 세 개나 점수표만 다시 나열하지 마세요. '
         '각 기업의 다섯 필드에는 원보고서의 사실→분석/해석→한계→실사 연결이 살아 있어야 합니다. '
-        '각 text는 100~200자 안팎의 완결된 한국어 문단으로 작성하고 가장 중요한 구체적 맥락을 유지합니다. '
+        '기업별 각 text는 180~240자 안팎의 완결된 한국어 문단, 다섯 문단 합계 1200자 이하로 작성합니다. '
+        '원보고서의 구체적인 제품·고객·실증 범위와 그로부터 나온 투자 판단을 유지합니다. '
         '모든 text는 마침표로 끝나는 짧은 완결 문장이어야 합니다. 길이 상한에 걸려 문장을 절단하지 마세요. '
         '기업별 kind=fact 문단을 다섯 필드에 모두 연결하고 중요 제품·협력·고객·실증 단계의 의미를 유지하세요. '
         'report_requirements의 required_fact_paragraph_ids를 모두 연결하고, 각 회사 analysis_paragraph_ids에서 '
@@ -157,6 +163,11 @@ def synthesize_company_reports(companies, *, source_contexts, report_inputs=None
         'technology_and_execution은 설계·시연·실제 반복 운영을 구별한 성숙도 해석, risks_and_conditions는 판단을 바꿀 자료, '
         'individual_opinion은 현재 기업 보고서가 투자 보류/검토를 판단한 이유입니다. 개별 의견을 투자 승인으로 바꾸지 마세요. '
         '모든 문단에 실제 입력 paragraph_id를 report_paragraph_ids로 연결하고 사실에는 실제 기업본문에 등장하는 원문 evidence_ids를 연결하세요. '
+        'report_paragraph_ids는 최대16개의 독립된 ID 문자열 배열입니다. 여러 ID를 쉼표/따옴표로 한 문자열에 이어 붙이지 마세요. '
+        '다섯 기업별 필드 전부에 해당 회사의 실제 evidence_ids를 적습니다. 특히 individual_opinion에서 제품·팀·계약·실증을 '
+        '이유로 재서술할 때 그 사실의 출처를 생략하지 마세요. 판단 제약 자체를 입증할 새 사실은 만들지 않습니다. '
+        'executive_summary와 비교 두 문단에도 세 기업 각각 최소 한 개씩 실제 원문 evidence_ids를 연결합니다. '
+        '원기업 보고서의 개발·시제품 단계 해석을 임의로 시제품 이전이나 현장 검증 완료로 낮추거나 높이지 마세요. '
         'analysis 문단과 limitation/follow_up 문단, 현재 투자 opinion 문단을 실제로 사용해야 합니다. '
         '본문에 인용 ID를 직접 쓰지 않고 evidence_ids 필드만 사용합니다. '
         'executive_summary는 세 기업의 서로 다른 사업화 단계와 공통 판단 제약을 200자 이내로 압축합니다. '

@@ -1,5 +1,5 @@
 {
-  "root_run_id": "01a134e2-45e8-75d3-b50c-b2246ae727ad",
+  "root_run_id": "01a1425a-12f2-7ac3-8b8d-d5ea844c617c",
   "company_trace_ids": [
     "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
     "8a8412a2-846a-4bdc-97cf-564cc585edd4",
@@ -7,13 +7,15 @@
   ],
   "project": "physical-ai-minimal-orchestration",
   "status": "completed",
-  "analysis_reused": true,
-  "reused_analysis_source": "final_investment_report_draft.json",
+  "analysis_reused": false,
+  "reused_analysis_source": null,
   "stages": [
-    "validated_combined_analysis_reuse",
+    "company_report_synthesis",
+    "portfolio_investment_decision",
     "combined_report_evaluator",
     "a4_pdf_validation"
   ],
   "upload_verified": true,
-  "source_artifact_directory": "report-reflection-v10"
+  "start_time": "2026-10-16T01:36:01.778161+00:00",
+  "end_time": "2026-10-16T01:38:21.476897+00:00"
 }

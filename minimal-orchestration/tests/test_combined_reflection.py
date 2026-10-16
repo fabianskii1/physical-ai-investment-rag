@@ -14,6 +14,14 @@ COMPANIES = ("MOTOMIND", "ROBROS", "Figure AI")
 
 
 def reflection(company):
+    original = next(item for item in payload()['company_reports'] if item['company'] == company)
+    links = combined_quality.report_evidence_links(payload()['report'], [])
+    proofs = []
+    for aspect, paragraph in zip(('analysis', 'limitations', 'individual_opinion'), original['paragraphs']):
+        target = next(link for link in links if link['text'] == paragraph['text'])
+        proofs.append({'aspect': aspect, 'source_paragraph_id': paragraph['paragraph_id'],
+                       'source_excerpt': paragraph['text'], 'final_paragraph_id': target['paragraph_id'],
+                       'final_excerpt': target['text']})
     return {
         "company": company,
         "analysis_preserved": True,
@@ -21,16 +29,24 @@ def reflection(company):
         "individual_opinion_preserved": True,
         "reason": "확인 사실의 사업적 의미와 검증 범위, 보류·재검토 조건이 유지됐다.",
         "missing_or_distorted": [],
+        'preservation_evidence': proofs,
     }
 
 
 def payload():
+    reports = []
+    body = ['# 최종 보고서', '## 3 — 기업별 투자 근거와 위험']
+    for company, prefix in zip(COMPANIES, ('MM', 'RB', 'FG')):
+        paragraphs = [
+            {'paragraph_id': prefix+'-P001', 'kind': 'analysis', 'text': f'{company}의 시제품 개발을 고객 실증으로 전환해야 유상납품 가능성을 평가할 수 있다.'},
+            {'paragraph_id': prefix+'-P002', 'kind': 'limitation', 'text': f'{company}의 실제 고객 유상납품과 반복 작업 성능은 현재 확인자료가 부족하다.'},
+            {'paragraph_id': prefix+'-P003', 'kind': 'opinion', 'text': f'{company}의 현재 투자 의견은 보류이며 고객 실증과 거래조건 확보 후 재검토한다.'},
+        ]
+        reports.append({'company': company, 'paragraphs': paragraphs})
+        body += ['### '+company+' — 투자 보류', *(p['text'] for p in paragraphs)]
     return {
-        "report": "# 최종 보고서\n각 기업의 현재 의견은 보류이며 Figure AI를 조건부 검토한다.",
-        "company_reports": [
-            {"company": company, "report": "확인 사실 → 해석 → 한계 → 투자 전 확인 조건"}
-            for company in COMPANIES
-        ],
+        'report': '\n\n'.join(body),
+        'company_reports': reports,
         "report_synthesis": {"comparison": "실증 근거의 범위와 미확인 사업 조건을 비교했다."},
         "source_contexts": [{"page_text": "회사가 발표한 실증 자료"}],
     }
@@ -160,7 +176,8 @@ def test_combined_without_company_inputs_uses_default_quality_schema(monkeypatch
 
     result = combined_quality.evaluate_combined_quality({"report": "기존 통합 보고서"})
 
-    assert result["passed"] is True
+    assert result["passed"] is False
+    assert '기업보고서 전체 입력' in result['issues'][0]
     assert result["company_report_reflection"] == []
     assert request.call_args.args[0] is legacy_adapter.QualityReview
 

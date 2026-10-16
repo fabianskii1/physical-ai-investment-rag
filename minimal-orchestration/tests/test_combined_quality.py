@@ -2,13 +2,15 @@ from unittest.mock import patch
 
 from combined_quality import evaluate_combined_quality
 from legacy_adapter import ReportVerdict
+from test_combined_reflection import payload as full_payload, reflection, COMPANIES
 
 
 def test_combined_quality_requires_all_three_content_criteria_and_no_issues():
     values = {'groundedness': True, 'neutrality': True, 'bias_control': True,
               'groundedness_reason': '원문 일치', 'neutrality_reason': '회사 발표 구분',
               'bias_control_reason': '미확인 공개', 'issues': []}
-    payload = {'report': '3기업 통합', 'source_contexts': [{'page_text': '실제 원문'}]}
+    values['company_report_reflection'] = [reflection(company) for company in COMPANIES]
+    payload = full_payload()
     with patch('combined_quality.request_report_verdict', return_value=ReportVerdict(**values)) as judge:
         result = evaluate_combined_quality(payload)
     assert result['passed'] is True and result['method'] == 'hybrid'

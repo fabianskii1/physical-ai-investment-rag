@@ -562,6 +562,8 @@ def _load_combined_analysis(path, records, source_contexts=None):
     synthesis, portfolio = cached.get('report_synthesis'), cached.get('portfolio_decision')
     if not isinstance(synthesis, dict) or not synthesis.get('source_reports') or not isinstance(portfolio, dict):
         raise ValueError('분석 재사용에 원기업 보고서 해시와 투자 선정 결과가 필요합니다')
+    if portfolio.get('action') != '투자 보류' and not portfolio.get('comparison_evidence_ids'):
+        raise ValueError('comparison_evidence_ids가 없는 이전 분석은 기업 비교 근거를 다시 선정해야 합니다')
     built = build_combined_report(records, report_synthesis=synthesis, portfolio_decision=portfolio)
     if cached.get('companies') != built['comparison']:
         raise ValueError('원기업 점수·조사 상태·실행 ID가 변경되어 분석을 다시 생성해야 합니다')
@@ -596,21 +598,14 @@ def _load_combined_analysis(path, records, source_contexts=None):
 
 @traceable(name='physical-ai-final-investment-report')
 def _generate_combined(records, directory, reuse_analysis=None):
-    from combined_report import build_combined_report, combined_source_contexts, save_combined_report
+    from combined_report import build_combined_report, save_combined_report
     from combined_quality import evaluate_combined_quality, revise_combined_quality
     from portfolio_decision import select_portfolio_investment
     from company_brief import save_company_brief
-    from combined_report import _normalise_records
-    from company_report_inputs import build_company_report_inputs
     from report_synthesis import synthesize_company_reports
-    preliminary = build_combined_report(records)
+    companies, report_inputs, contexts, input_manifest = _prepare_combined_inputs(records, directory)
     for record in records:
         record['brief'] = save_company_brief(record, directory)
-    companies = _normalise_records(records)
-    report_inputs = build_company_report_inputs(companies)
-    # 성적에 쓰인 세 사실 외에도 기업보고서의 제품·고객 맥락에 쓰인 검증 근거를 읽는다.
-    all_references = ' '.join(f"[{company['prefix']}-{ref}]" for company in companies for ref in company['evidence'])
-    contexts = combined_source_contexts(records, all_references)
     if reuse_analysis:
         synthesis, portfolio = _load_combined_analysis(reuse_analysis, records, source_contexts=contexts)
     else:
@@ -623,6 +618,7 @@ def _generate_combined(records, directory, reuse_analysis=None):
         'status': 'analysis_ready', 'companies': validated['comparison'],
         'source_score_details': {item['company']: item['details'] for item in validated['companies']},
         'deterministic_checks': validated['deterministic_checks'], 'source_contexts': contexts,
+        'input_manifest': input_manifest,
         'company_reports': validated['company_report_inputs'],
         'report_synthesis': validated['report_synthesis'], 'portfolio_decision': validated['portfolio_decision']})
     initial_report = None
@@ -638,7 +634,7 @@ def _generate_combined(records, directory, reuse_analysis=None):
                                   quality_evaluator=evaluate_combined_quality,
                                   portfolio_decision=portfolio,
                                   quality_reviser=revise_combined_quality, report_synthesis=synthesis,
-                                  initial_report=initial_report)
+                                  initial_report=initial_report, input_manifest=input_manifest)
     result['analysis_reused'] = bool(reuse_analysis)
     root = get_current_run_tree()
     if root is not None:
@@ -653,29 +649,80 @@ def _generate_combined(records, directory, reuse_analysis=None):
     return result
 
 
-def combine_reports(directory, *, output_dir=None, env_file=None, reuse_analysis=None):
-    """저장된 최종 State로 통합 작성·원문 품질 검사만 실행한다. 재조사·채점은 하지 않는다."""
-    verify_scorecard_reference()
-    load_dotenv(env_file or ROOT / '.env')
+def _load_company_records(directory):
+    """회사별 State·점수·내보낸 본문을 같은 파일 묶음에서만 읽는다."""
     source = Path(directory).expanduser().resolve()
     records = []
     for company in COMPANIES:
         stem = company.lower().replace(' ', '_')
-        candidates = list(source.glob(f'{stem}*.state.json'))
+        candidates = [path for path in (source / f'{stem}.state.json',
+                                       source / f'{stem}_draft.state.json') if path.is_file()]
         if not candidates:
             raise FileNotFoundError(f'{company} 최종 State가 없습니다')
-        latest = max(candidates, key=lambda path: path.stat().st_mtime_ns)
+        latest = max(candidates, key=lambda path: (path.stat().st_mtime_ns, path.name == f'{stem}.state.json'))
         wrapper = json.loads(latest.read_text(encoding='utf-8'))
         state = wrapper.get('state', {})
         if state.get('company_info', {}).get('name') != company or wrapper.get('mode') != 'live':
             raise ValueError('통합 보고서는 기업명이 일치하는 실제 실행 State만 사용합니다')
         suffix = '_draft' if state.get('status') == 'quality_failed' else ''
+        if latest.name != f'{stem}{suffix}.state.json':
+            raise ValueError(f'{company}: State 파일명과 최종·초안 상태가 다릅니다')
         scores_path = source / f'{stem}{suffix}.scores.json'
         scores = json.loads(scores_path.read_text(encoding='utf-8'))
         if scores.get('company') != company or scores.get('trace_id') != state.get('trace_id'):
             raise ValueError('State와 점수 파일의 기업·실행 ID가 다릅니다')
-        records.append({'state': state, 'scores': scores, 'scores_path': scores_path,
-                        'state_path': latest, 'pdf': source / f'{stem}{suffix}.pdf'})
+        record = {'state': state, 'scores': scores, 'scores_path': scores_path,
+                  'state_path': latest, 'pdf': source / f'{stem}{suffix}.pdf'}
+        markdown_path = source / f'{stem}{suffix}.md'
+        if markdown_path.is_file():
+            if markdown_path.read_text(encoding='utf-8') != state.get('final_report'):
+                raise ValueError(f'{company}: 기업 보고서 Markdown과 State final_report가 일치하지 않습니다')
+            record['markdown'] = markdown_path
+        records.append(record)
+    return records
+
+
+def _prepare_combined_inputs(records, directory):
+    """추가 LLM 없이 실제 최종 입력 전문을 저장하고 회사별 키·해시를 노출한다."""
+    from company_report_inputs import build_company_report_inputs
+    from combined_report import _normalise_records, combined_source_contexts
+    companies = _normalise_records(records)
+    reports = build_company_report_inputs(companies)
+    references = ' '.join(f"[{item['prefix']}-{ref}]" for item in companies for ref in item['evidence'])
+    contexts = combined_source_contexts(records, references)
+    payload = {'schema_version': 1, 'report_body_key': 'company_reports[].report_markdown',
+               'canonical_body_source': 'state.final_report', 'company_reports': reports,
+               'source_contexts': contexts,
+               'verified_results': [{'company': item['company'], 'score_details': item['details'],
+                   'verified_evidence': {f"{item['prefix']}-{ref}": claim for ref, claim in item['evidence'].items()},
+                   'individual_case': item['case']} for item in companies]}
+    directory = Path(directory).expanduser().resolve()
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / 'combined_report_inputs.json'
+    _write_json(path, payload)
+    summary = [{'company': report['company'], 'trace_id': report['trace_id'],
+                'report_sha256': report['report_sha256'], 'body_characters': len(report['report_markdown']),
+                'paragraph_count': len(report['paragraphs']),
+                'source_page_count': sum(c['company'] == report['company'] for c in contexts)} for report in reports]
+    manifest = {'path': str(path), 'sha256': sha256(path.read_bytes()).hexdigest(),
+                'report_body_key': payload['report_body_key'], 'companies': summary}
+    print('최종 입력: 기업 보고서 전문 3개 + 검증 원문 ' + str(len(contexts)) + '쪽 → ' + str(path), flush=True)
+    return companies, reports, contexts, manifest
+
+
+def inspect_combined_inputs(directory, *, output_dir=None):
+    """모델·검색·임베딩 없이 실제 합성 입력과 원문 연결을 점검한다."""
+    verify_scorecard_reference()
+    records = _load_company_records(directory)
+    return _prepare_combined_inputs(records, output_dir or directory)[3]
+
+
+def combine_reports(directory, *, output_dir=None, env_file=None, reuse_analysis=None):
+    """저장된 최종 State로 통합 작성·원문 품질 검사만 실행한다. 재조사·채점은 하지 않는다."""
+    verify_scorecard_reference()
+    load_dotenv(env_file or ROOT / '.env')
+    source = Path(directory).expanduser().resolve()
+    records = _load_company_records(source)
     return _combine_results(records, Path(output_dir).expanduser().resolve() if output_dir else source,
                             reuse_analysis=reuse_analysis)
 
@@ -768,18 +815,28 @@ def main():
     parser.add_argument('--resume-report', help='품질 통과 PDF 출력 실패 또는 조사 종료 후 보고서 실패를 저장한 failed_state.json')
     parser.add_argument('--refresh-comparison', metavar='DIR', help='기존 live 점수·PDF로 기업 비교표만 갱신')
     parser.add_argument('--combine-reports', metavar='DIR', help='저장된 세 기업 State로 하나의 최대 10쪽 보고서 생성·원문 품질 평가')
+    parser.add_argument('--check-combine-inputs', metavar='DIR', help='API 없이 기업 보고서 전문·키·해시·실제 근거 페이지를 점검하고 combined_report_inputs.json 저장')
     parser.add_argument('--reuse-analysis', metavar='JSON', help='--combine-reports에서 같은 기업보고서·점수의 저장 종합/선정 분석만 재사용하고 품질은 다시 평가')
     parser.add_argument('--review-report', metavar='STATE', help='저장된 실제 보고서 State의 원문 품질만 재평가 (조사·채점·재작성 없음)')
     parser.add_argument('--revalidate-report', metavar='STATE', help='저장된 검증 사실을 원문 재검증·재채점하고 보고서만 다시 생성 (새 워커 조사 없음)')
     parser.add_argument('--check-criteria', action='store_true', help='설계 PDF 2~3쪽과 코드의 21항목 배점·U 규칙 대조 (API 없음)')
     parser.add_argument('--check-tracing', action='store_true', help='LangSmith 설정·프로젝트·키 유무만 확인 (API 없음, 키 값 미출력)')
     args = parser.parse_args()
+    if args.check_combine_inputs and any((args.combine_reports, args.reuse_analysis, args.check_tracing,
+            args.check_criteria, args.resume_report, args.refresh_comparison, args.review_report,
+            args.revalidate_report, args.demo, args.company)):
+        parser.error('--check-combine-inputs는 다른 실행·검사 옵션과 함께 사용할 수 없습니다')
     if args.reuse_analysis and not args.combine_reports:
         parser.error('--reuse-analysis는 --combine-reports DIR과 함께 사용해야 합니다')
     if args.demo and args.company is None:
         args.company = 'Figure AI'
     options = {name: getattr(args, name) for name in ('max_rechecks', 'output_dir', 'env_file', 'com_data_dir', 'data_dir', 'index_dir')}
-    if args.check_tracing:
+    if args.check_combine_inputs:
+        manifest = inspect_combined_inputs(args.check_combine_inputs, output_dir=args.output_dir)
+        for company in manifest['companies']:
+            print(f"{company['company']}: 본문 {company['body_characters']}자, {company['paragraph_count']}문단, "
+                  f"원문 {company['source_page_count']}쪽, SHA256 {company['report_sha256']}")
+    elif args.check_tracing:
         if args.check_criteria or args.resume_report or args.refresh_comparison or args.combine_reports or args.review_report or args.revalidate_report or args.demo:
             parser.error('--check-tracing은 보고서 생성·복구·평가 기준 검사 옵션과 함께 사용할 수 없습니다')
         load_dotenv(args.env_file or ROOT / '.env')

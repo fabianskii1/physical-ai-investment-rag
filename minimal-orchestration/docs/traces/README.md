@@ -1,6 +1,6 @@
 # 실제 LangSmith 캡처 기록
 
-**PNG 1~3은 기업 보고서 합성 단계 추가 전의 실행 기록이다.** 02~03의 8쪽·Figure AI 조건부 선정·품질 통과는 당시 결과이며, 새 합성 코드의 출력·반영 검사·통과를 입증하지 않는다. PNG 04는 실제 중간 실패·수정 루프, PNG 05는 최신 교정 본문의 새 품질 통과다.
+**PNG 1~3은 기업 보고서 합성 단계 추가 전의 실행 기록이다.** 02~03의 8쪽·Figure AI 조건부 선정·품질 통과는 당시 결과이며, 새 합성 코드의 출력·반영 검사·통과를 입증하지 않는다. PNG 04는 실제 중간 실패·수정 루프, PNG 05는 10월 13일 교정 본문의 품질 통과다. 10월 16일 최신 입력 계약·반영 증거 검증은 아래 06의 실제 SDK/JSON 기록으로 확인한다.
 
 ## 01 — ROBROS 조사 계획·병렬 워커·재계획
 
@@ -47,7 +47,7 @@
 - 캡처 원본 JPEG 저장 시각: **2026-10-13 10:39:04 UTC**. PNG 포맷 변환 저장 시각: **2026-10-13 10:39:18 UTC** (파일 수정시각 기준).
 - 실제 UI 캡처의 JPEG→PNG 포맷만 변환했으며 크롭·화면 재생성·픽셀 편집은 하지 않았다.
 
-## 05 — 최신 통합 품질 통과
+## 05 — 2026-10-13 통합 품질 통과
 
 ![최신 교정 보고서의 실제 Hybrid 품질 통과](05_current_final_quality.png)
 
@@ -57,4 +57,11 @@
 - Output의 `passed=true`, `groundedness=true`, `neutrality=true`, `bias_control=true`, `issues=[]`와 세 기업 반영 판정 목록을 확인한다. `action=rewrite`는 미달 시의 반환 유형이며 이 통과 실행의 재작성은 **0회**다.
 - 캡처 시각: **2026-10-13 10:58:55.214378 UTC**. CUA가 실제 LangSmith 화면에서 받은 JPEG를 PNG로 포맷만 변환했으며 크롭·화면 재생성·픽셀 편집은 하지 않았다. 정확한 URL/run/시각은 [캡처 메타데이터](current_captures.json)에 보존한다.
 
-현재 [최종 PDF](../../output/submission-live/final_investment_report.pdf)·[품질 JSON](../../output/submission-live/final_investment_report.json)은 이 v10의 검증 본문을 공식 경로에 보존한 결과다. JSON의 `completed`, 핵심 3축·세 기업 반영 통과, `pages=8`, A4·20mm 여백·쪽 수 상한, `rewrite_count=0`을 확인했다. 8쪽 규격은 JSON/PDF로 검증하며 이 화면에 쪽 수가 표시된 것으로 설명하지 않는다.
+[최종 PDF](../../output/submission-live/final_investment_report.pdf)·[품질 JSON](../../output/submission-live/final_investment_report.json) 링크는 현재 최신 결과를 가리키므로 v10 PNG와 동일한 본문으로 해석하지 않는다. 이전 v10은 로컬 `output/report-reflection-v10/`에 보존했다. 당시에도 A4·20mm·8쪽과 수정 0회를 JSON/PDF로 확인했으며, 화면에 쪽 수가 표시된 것으로 설명하지 않는다.
+
+## 06 — 2026-10-16 입력 계약·반영 증거 검증
+
+- [실제 LangSmith root](https://smith.langchain.com/o/c01772ab-a5d3-4d57-b4bf-cd70e6172036/a/physical-ai-minimal-orchestration/projects/p/4372ac10-81d3-4df7-a361-99ae41aeff48/trace/01a1425a-12f2-7ac3-8b8d-d5ea844c617c/run/01a1425a-12f2-7ac3-8b8d-d5ea844c617c?scroll_to=output) · [SDK 확인 trace](../../output/submission-live/final_report.trace.json)
+- [실제 입력 전문](../../output/submission-live/combined_report_inputs.json) · [품질·원기업↔최종 문단 증거](../../output/submission-live/final_investment_report.json)
+- 전문 3개·검증 원문 15쪽 → 새 합성 → 최종 선정 → Hybrid 품질 통과. 재작성 0회, 반영 증거 9개, 전체 8쪽 A4·20mm.
+- 이 항목은 SDK/JSON 증거이며 새 PNG 캡처로 표시하지 않는다. 기존 PNG는 당시 화면을 보존한다.
