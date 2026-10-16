@@ -35,7 +35,7 @@ Judge의 `findings`는 `{criterion, basis, paragraph_id, defect, action}`으로 
 
 반영 판정에는 원기업 문단·발췌와 최종 기업별 분석 구역의 문단·발췌를 `preservation_evidence`로 함께 제출한다. 코드는 실제 ID·회사·문단 종류·두 발췌의 일치를 확인하고 Judge는 의미의 보존을 판정한다. 부울·ID만으로 통과시키지 않으며, `report_synthesis` 없는 이전 결합 경로는 초안으로만 저장한다. 추가 Judge 호출은 없다.
 
-선정 근거 `evidence_ids`와 기업 간 비교 근거 `comparison_evidence_ids`를 분리해 실제 비교 문단에 연결한다. 요약·기업별 의견·비교의 인용 누락은 합성 단계에서 거절한다. [입력 계약·실제 결함·검증 방법](docs/final_report_inputs.md)에 재현 절차를 정리했다.
+선정 근거 `evidence_ids`와 기업 간 비교 근거 `comparison_evidence_ids`를 분리해 실제 비교 문단에 연결한다. 요약·기업별 의견·비교의 인용 누락은 합성 단계에서 거절한다. [입력 계약](docs/final_report_inputs.md)과 [최종 그래프·피드백·복구](docs/final_report_graph.md)에 검증 방법을 정리했다.
 
 거래조건 미확인은 조건부 투자로 제한하고, 핵심 근거가 부족하면 선정을 보류한다. 선정 시 최종 보고서에 “필수조건을 충족하면 선정 기업에 투자한다”는 결론과 조건을 연결한다. 보고서는 코드가 생성하는 투자 심사 자료이며 실제 거래 실행을 자동 결정하지 않는다.
 
@@ -66,9 +66,10 @@ Judge의 `findings`는 `{criterion, basis, paragraph_id, defect, action}`으로 
 | Synthesizer | 병렬 결과 병합, 원문 검증, 미달·무진전 판정 |
 | Investment Judge / Case | 21항목 등급 검증·점수 계산, 근거에 연결된 최종 투자 제안 |
 | Writer / Evaluator | 보고서 작성 후 세 품질 기준 검사; 재작성·재조사·종료 분기 |
-| CompanyReportSynthesis | 실제 기업 보고서 전체·문단·원문을 읽어 5필드 분석·비교 2문단 합성 |
-| PortfolioDecision | 3기업 검증 결과로 최종 대상·투자/조건부 투자/보류 선정; 총점 자동선택 금지 |
-| Combined Report / Quality | 고정 점수표·합성 본문·선정 결론 통합, 원문 품질·기업 분석 반영 검사 |
+| Report Synthesis 노드 | 실제 기업 보고서 전문·문단·검증 원문으로 5필드 분석·비교 합성 |
+| Portfolio Decision 노드 | 앞선 보고서·합성·근거로 대상·조건 선정; 총점 자동선택 금지 |
+| Final Orchestrator / Quality / Rewrite | 품질 판정에 따라 통과·수정·초안 종료 분기; 수정 후 재평가, 최대 2회 |
+| Compose / Publish 노드 | 점수표·합성·선정 통합, A4·여백·쪽수 검사 후 저장 |
 
 워커는 결과만 반환하며 공용 계획·예산을 변경하거나 서로 직접 통신하지 않는다.
 
@@ -79,10 +80,10 @@ Judge의 `findings`는 `{criterion, basis, paragraph_id, defect, action}`으로 
 | 제어 vs 페이로드 | 계획·route·feedback·예산과 research·investment·report 분리 |
 | 관측성 위치 | State에 현재 부족 사유·시도·종료 사유, 외부 JSON/LangSmith에 노드 기록 |
 | 지속성 비용 | PDF·벡터는 파일/캐시, 유한 라운드 결과만 누적; 전체 State 바이트 상한은 없음 |
-| 상관 | `trace_id` ↔ checkpoint `thread_id`; 실제 graph run UUID도 기록 |
+| 상관 | 기업·최종 `trace_id` ↔ checkpoint `thread_id`; 실제 graph run UUID도 기록 |
 | 재개/복구 | 조사 종료 후 Writer→Evaluator 복구; 품질 통과 후 PDF만 실패하면 모델 없이 재렌더링 |
 | 동시 처리 | `라운드:작업ID` reducer 병합·충돌 검출; 카탈로그 병합은 Synthesizer만 수행 |
-| 종료 보장 | 추가 조사 3~5회(기본 4), 무진전 2회 중단, 보고서 재작성 최대 2회, recursion 100 |
+| 종료 보장 | 추가 조사 3~5회(기본 4), 무진전 2회 중단, 보고서 재작성 최대 2회; 기업 recursion 100, 최종 단계 32/recursion 40 |
 
 `completed`는 조사·품질 통과, `partial`은 U/조사 한계가 남은 품질 통과 보고서, `quality_failed`는 품질 미달 초안이다. U와 보고서 품질 실패는 별개다. 전체 실행 시간·비용 상한과 DB 기반 지속 복구는 추가 구현 대상이다.
 
@@ -92,11 +93,13 @@ Judge의 `findings`는 `{criterion, basis, paragraph_id, defect, action}`으로 
 
 [SVG 원본](docs/architecture.svg) · 재생성: `.venv/bin/python scripts/render_architecture.py --require-integrated-batch`
 
-상단은 실제 기업별 StateGraph, 하단은 `app.py`의 3기업 배치·최종 대상 선정·통합 보고서 처리다. 하단 함수를 추가 LangGraph 노드로 표시하지 않으며, 이 구조 이미지는 실제 LangSmith 실행 화면과 별개다.
+상단은 기업별 조사 StateGraph, 하단은 **최종 종합·선정·품질 루프를 실행하는 실제 StateGraph**다. `app.py`는 기업 산출물을 전달하고 실행 기록을 수집한다. 두 그래프는 기업별 State·보고서·검증 근거로 연결되며, 구조 이미지는 실제 LangSmith 실행 화면과 별개다.
 
 표현·중립성 문제는 근거와 점수를 유지하는 재작성 루프에서 처리하고, 새 근거가 필요한 문제만 조사 루프로 돌린다. 성공 결과와 같은 원문의 검증을 재사용하고, 완전 반복 작업·무진전 재조사를 중단해 피드백 과정의 불필요한 호출을 줄이도록 설계했다. 실제 Supervisor 구현과의 비교 실험 및 비용 절감률은 측정하지 않았다.
 
-통합 품질 평가도 `rewrite`이면 원문·점수·인용·선정 조건을 보존하는 `quality_reviser`로 최대 두 번 재작성·재평가하고, `research` 또는 예산 소진이면 미달 초안을 보존한다.
+최종 그래프는 `입력 준비 → 보고서 종합 → 투자 선정 → 본문 조립 → 품질 평가 → Final Orchestrator → PDF 출력`으로 실행한다. `rewrite`는 **수정 노드 → 품질 평가**로 최대 두 번 되돌린다. 합성·선정은 다시 호출하지 않는다. 점수·출처·공식 결론을 바꾼 수정과 무수정 반환은 거절하고 Judge도 다시 호출하지 않는다. `research`는 조사 요청 JSON과 초안을 남기며, `review`·예산 소진도 초안으로 종료한다. Final Orchestrator의 분기는 코드로 처리해 추가 LLM 호출이 없다.
+
+`FinalReportState`는 기업별 원본 산출물과 합성·선정·본문을 제어 필드와 분리한다. 최종 그래프는 직렬 쓰기라 reducer가 필요 없고 수정 2회·단계 32·recursion 40으로 종료를 제한한다. `InMemorySaver`와 저장 분석으로 복구하며, 실행 노드·조건 분기·원기업 trace ID는 `final_report.trace.json`·`final_report.graph.json`에 기록한다.
 
 새 통합 경로는 검색·임베딩·재채점 없이 합성 LLM 기본 1회를 추가하며, 연결 형식 오류 시 1회만 교정한다. 같은 품질 Judge 호출에 반영 검사를 포함한다. 합성·품질 미달·재작성과 동일 입력 분석 재사용을 실제 실행에서 확인했다. 비용·품질 개선률은 미측정이다.
 
@@ -104,7 +107,8 @@ Judge의 `findings`는 `{criterion, basis, paragraph_id, defect, action}`으로 
 
 ```text
 app.py                    실행·배치·복구·LangSmith 설정·산출물 저장
-agent_pipeline.py         계획·배분·합류·품질 루프
+agent_pipeline.py         기업별 계획·배분·합류·품질 루프
+final_report_pipeline.py  최종 종합·선정·품질·수정·출력 StateGraph
 state_schema.py           공유 State·병렬 reducer
 legacy_adapter.py         기존 RAG 연결·계획/보고서 Judge
 criteria_registry.py      평가항목·담당 워커 매핑
@@ -155,7 +159,7 @@ cp .env.example .env                         # .env가 없을 때만
 
 기본 실행의 최종 제출물은 `output/final_investment_report.pdf` 한 파일이다. A4·20mm 여백·전체 최대 10쪽 안에 3기업의 21항목 비교, 기업별 근거·위험, 최종 선택/보류·필요 조건과 출처를 담는다. 같은 이름의 Markdown·JSON은 검토용이며, 품질·규격 미달 PDF는 최종본으로 발행하지 않는다.
 
-2026-10-16 실제 실행은 **세 기업 보고서 전문·검증 원문 15쪽을 읽어 새로 합성·선정한 A4 8쪽 보고서·Figure AI 조건부 투자**를 출력했다. 핵심 3축과 세 기업 분석·한계·개별 의견 반영이 모두 통과했으며, 원기업↔최종 문단·발췌 증거 9개를 코드로 대조했다. 이 실행의 재작성은 0회, 최신 회귀 검사는 **469개 + 하위 테스트 22개 통과**다.
+2026-10-16 실제 그래프에서 **새 종합·선정 → 품질 미달 → 본문 수정 1회 → 재평가**를 확인했다. Judge의 문단 유형 혼동을 막는 입력 보강 후 같은 분석·교정 본문을 재사용해 **A4 8쪽·Figure AI 조건부 투자·품질 통과**로 출력했다. 원기업 분석·한계·의견의 반영 증거 9개와 기존 점수 보존을 검증했으며, 회귀 검사 **477개 + 하위 테스트 22개 통과**다. [실제 실행 감사 기록](output/submission-live/final_report.execution_audit.json)에 두 실행의 노드와 피드백을 보존했다.
 
 현재 검증 파일: [최종 PDF](output/submission-live/final_investment_report.pdf) · [본문](output/submission-live/final_investment_report.md) · [점수·반영 맵·품질 JSON](output/submission-live/final_investment_report.json).
 

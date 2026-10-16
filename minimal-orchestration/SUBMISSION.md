@@ -2,13 +2,21 @@
 
 최종 제출 보고서는 [final_investment_report.pdf](output/submission-live/final_investment_report.pdf) 한 파일입니다. 세 기업의 공통 21항목 비교, 근거·위험, 최종 투자 검토 의견과 필요한 조건을 담으며 전체가 A4 최대 10쪽이어야 합니다. 같은 이름의 [Markdown](output/submission-live/final_investment_report.md)·[JSON](output/submission-live/final_investment_report.json)과 기업별 점수·실행 trace는 검토용 보조 자료입니다.
 
-기업별 `motomind_brief`, `robros_brief`, `figure_ai_brief` PDF는 각 A4 한 쪽의 검토용 중간 산출물입니다. 최종 코드는 `.state.json`에 보존된 **기업별 완성 보고서 전체**·검증 State·점수를 실제로 읽습니다. `company_report_inputs.py`가 전체 본문·SHA256·문단 ID를 만들고, `report_synthesis.py`가 기업별 5필드 분석과 비교 2문단을 합성합니다. 같은 합성과 원보고서를 최종 선정 에이전트에 전달한 뒤 고정 점수표·출처와 합성 본문을 결합합니다. 원래 상세 PDF 경로는 metadata로 남기며 ZIP에서는 제외합니다. `MANIFEST.json`에 최종 보고서·한 쪽 요약·State와 제외된 상세 보고서의 경로 맵이 있습니다.
+기업별 `motomind_brief`, `robros_brief`, `figure_ai_brief` PDF는 각 A4 한 쪽의 검토용 중간 산출물입니다. 최종 코드는 `.state.json`에 보존된 **기업별 완성 보고서 전체**·검증 State·점수를 실제로 읽습니다. `company_report_inputs.py`가 전체 본문·SHA256·문단 ID를 만들고, `report_synthesis.py`가 기업별 5필드 분석과 비교 2문단을 합성합니다. 같은 합성과 원보고서를 최종 선정 노드에 전달한 뒤 고정 점수표·출처와 합성 본문을 결합합니다. 이 과정과 품질 평가·수정·PDF 출력은 모두 `final_report_pipeline.py`의 실제 StateGraph 노드입니다. 원래 상세 PDF 경로는 metadata로 남기며 ZIP에서는 제외합니다. `MANIFEST.json`에 최종 보고서·한 쪽 요약·State와 제외된 상세 보고서의 경로 맵이 있습니다.
 
 원보고서 문단 ID↔합성 본문↔원문 E-ID의 반영 맵을 기록합니다. 분석 출처 `report_paragraph_ids`와 실제 원문 인용 위치 `evidence_report_paragraph_ids`는 별도로 대조합니다. 원보고서의 과장은 검증 State·원문을 우선해 교정하며, 같은 품질 Judge 호출에서 핵심 3축과 별도로 분석·한계·현재 기업 의견의 반영 여부를 검사합니다. 길이·문장 완결성 검사와 `report_language.py`가 명백한 절단·자료 부재 단정·독립 입증 과장을 거절합니다. 실제 본문 문단의 인용↔원문 페이지를 대조해 RL·MOU 목적·IFR 수요·공공 실증의 알려진 범위 오류를 검사합니다. 이 검사는 제한된 오류 유형을 다루며 LLM Judge와 독립 원문 검토를 함께 사용합니다. 관점 커버리지는 평가에서 제외합니다.
 
-**2026-10-16 실제 실행은 세 기업 보고서 전문과 검증 원문 15쪽을 읽어 새 합성·선정 후 A4 8쪽 보고서를 출력했습니다.** 핵심 3축과 세 기업 분석·한계·개별 의견 반영이 모두 통과했고, 원기업↔최종 문단·발췌 증거 9개를 코드로 검증했습니다. `issues=[]`, `analysis_reused=false`, `rewrite_count=0`입니다. 실제 root run은 `01a1425a-12f2-7ac3-8b8d-d5ea844c617c`이며 SDK로 완료·오류 없음·업로드를 확인했습니다. 본문을 바꾸지 않고 인용만 다음 쪽에 떨어지는 배치를 고친 PDF 렌더링 기록은 `pdf_only_rerender`에 남깁니다. 최신 회귀 검사는 **469개 테스트와 22개 하위 테스트 통과**입니다. PNG 1~3은 합성 전 기록, PNG 04는 중간 실패, PNG 05는 10월 13일 v10 통과이며 이번 최신 실행의 캡처로 사용하지 않습니다.
+**2026-10-16 실제 StateGraph 실행을 완료했습니다.** 첫 실행은 보고서 전문 3개·검증 원문 15쪽으로 새 합성·선정을 각 1회 수행했고, 요약·비교의 계약 인용 누락을 품질 노드가 찾아 본문을 1회 수정했습니다. 재평가에서 내용 3축은 통과했으나 Judge가 ROBROS limitations 증거로 kind=analysis 문단을 선택해 코드가 초안으로 종료했습니다. 잘못된 proof를 통과시키지 않았습니다.
+
+회사·검사 항목별 허용 문단 후보를 Judge 입력에 추가한 뒤, 같은 합성·선정·수정 본문을 검증해 재사용했습니다. 최신 root `01a1428a-1fc3-70a2-9cd4-b3c284078368`은 **A4 8쪽·동일 20mm 여백·Figure AI 조건부 투자·핵심 3축 및 기업 반영 통과**입니다. `issues=[]`, 반영 증거 9개, 최종 재검증 실행은 `analysis_reused=true`, `rewrite_count=0`이며 두 실행을 합쳐 본문 수정은 1회입니다. 처음부터 새로 합성한 것처럼 표시하지 않습니다. 두 root의 완료·오류 없음·실제 노드 순서를 SDK로 대조한 [실행 감사 기록](output/submission-live/final_report.execution_audit.json)을 보존합니다. 최신 회귀 검사는 **477개 + 하위 테스트 22개 통과**입니다. 기존 PNG 01~05는 과거 실행이며 이번 그래프 실행 캡처로 사용하지 않습니다.
 
 `docs/architecture.png` 또는 `.svg`에는 구현 구조도를, `docs/traces/*.png`에는 실제 LangSmith 실행 화면을 보관합니다. 예시 화면과 로컬 trace JSON을 실제 LangSmith PNG 대신 사용하지 않습니다. 패키지 검사는 파일·품질 통과 기록·규격·해시를 확인하며 PNG의 실행 진위는 자동 판별하지 않습니다.
+
+## 최종 보고서 그래프
+
+`prepare_final_inputs → report_synthesis → portfolio_decision → compose_final_report → final_quality → final_orchestrator → publish_final_report`를 실행합니다. 기업별 그래프의 보고서 전문·검증 근거·점수를 입력받습니다. Final Orchestrator는 추가 LLM 없이 품질 결과를 라우팅하며 `rewrite → final_rewrite → final_quality`를 최대 2회 수행합니다. 재작성 중 합성·선정·기업 조사·채점은 반복하지 않습니다. 무수정·점수/출처/공식 결론 변경은 거절하고 같은 문서를 Judge에 재제출하지 않습니다.
+
+새 원문이 필요한 `research`는 초안과 `final_report.research_request.json`을 남깁니다. 평가 검토 `review`·예산 소진도 초안으로 종료합니다. 실제 그래프 노드·조건 간선은 `final_report.graph.json`, 실행 순서·시간·상관 ID는 `final_report.trace.json`에 저장합니다. 프로세스 내 PDF 실패 노드 재개는 체크포인트 테스트로 확인하며, 프로세스 재시작 뒤에는 `combined_analysis.json` 재사용으로 품질부터 복구할 수 있습니다. 일반 DB 기반 영구 체크포인트는 미지원입니다.
 
 ## 최종 입력 점검
 

@@ -61,7 +61,14 @@
 
 ## 06 — 2026-10-16 입력 계약·반영 증거 검증
 
-- [실제 LangSmith root](https://smith.langchain.com/o/c01772ab-a5d3-4d57-b4bf-cd70e6172036/a/physical-ai-minimal-orchestration/projects/p/4372ac10-81d3-4df7-a361-99ae41aeff48/trace/01a1425a-12f2-7ac3-8b8d-d5ea844c617c/run/01a1425a-12f2-7ac3-8b8d-d5ea844c617c?scroll_to=output) · [SDK 확인 trace](../../output/submission-live/final_report.trace.json)
-- [실제 입력 전문](../../output/submission-live/combined_report_inputs.json) · [품질·원기업↔최종 문단 증거](../../output/submission-live/final_investment_report.json)
+- [실제 LangSmith root](https://smith.langchain.com/o/c01772ab-a5d3-4d57-b4bf-cd70e6172036/a/physical-ai-minimal-orchestration/projects/p/4372ac10-81d3-4df7-a361-99ae41aeff48/trace/01a1425a-12f2-7ac3-8b8d-d5ea844c617c/run/01a1425a-12f2-7ac3-8b8d-d5ea844c617c?scroll_to=output) · 그래프 통합 전 기록
+- 당시 산출물은 로컬 `output/report-input-fix-20261016-v3/`에 보존한다. 공식 제출 폴더는 아래 07의 최신 그래프 결과로 갱신했다.
 - 전문 3개·검증 원문 15쪽 → 새 합성 → 최종 선정 → Hybrid 품질 통과. 재작성 0회, 반영 증거 9개, 전체 8쪽 A4·20mm.
 - 이 항목은 SDK/JSON 증거이며 새 PNG 캡처로 표시하지 않는다. 기존 PNG는 당시 화면을 보존한다.
+
+## 07 — 최종 StateGraph와 실제 피드백 실행
+
+- [새 합성·선정·수정 루프](https://smith.langchain.com/o/c01772ab-a5d3-4d57-b4bf-cd70e6172036/a/physical-ai-minimal-orchestration/projects/p/4372ac10-81d3-4df7-a361-99ae41aeff48/trace/01a14284-4c1f-7013-a4dd-08bda5cb25ba/run/01a14284-4c1f-7013-a4dd-08bda5cb25ba): 10노드, 내용 인용 결함 수정 1회 후 Judge 문단 유형 오류로 초안 종료.
+- [같은 분석·교정 본문 검증 후 최종 통과](https://smith.langchain.com/o/c01772ab-a5d3-4d57-b4bf-cd70e6172036/a/physical-ai-minimal-orchestration/projects/p/4372ac10-81d3-4df7-a361-99ae41aeff48/trace/01a1428a-1fc3-70a2-9cd4-b3c284078368/run/01a1428a-1fc3-70a2-9cd4-b3c284078368): 6노드, 94.35초, A4 8쪽, 반영 증거 9개, 품질 통과.
+- [실제 실행 감사 기록](../../output/submission-live/final_report.execution_audit.json)에서 두 실행의 SDK 완료/오류 상태·실제 노드 ID·첫 품질 피드백을 확인한다. [실행 순서](../../output/submission-live/final_report.trace.json)와 [컴파일 그래프](../../output/submission-live/final_report.graph.json)도 보존한다.
+- 이 기록은 실제 API/SDK 실행 증거다. 새 화면 PNG라고 표시하지 않으며 기존 PNG 01~05와 구분한다.

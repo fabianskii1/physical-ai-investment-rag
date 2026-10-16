@@ -31,7 +31,7 @@ NEUTRAL_FILENAME = 'physical_ai_orchestration_submission.zip'
 LEGACY_REPOSITORY = 'https://github.com/fabianskii1/physical-ai-investment-rag'
 ROOT_FILES = (
     'README.md', 'SUBMISSION.md', 'requirements.txt', 'requirements-rag.txt', 'pytest.ini', '.env.example', '.gitignore',
-    'app.py', 'agent_pipeline.py', 'state_schema.py', 'legacy_adapter.py', 'criteria_registry.py',
+    'app.py', 'agent_pipeline.py', 'final_report_pipeline.py', 'state_schema.py', 'legacy_adapter.py', 'criteria_registry.py',
     'criteria_coverage.py', 'investment_evaluation.py', 'investment_case.py', 'combined_report.py', 'combined_quality.py',
     'company_brief.py', 'portfolio_decision.py', 'company_report_inputs.py', 'report_synthesis.py', 'report_language.py',
     'saved_revalidation.py',
@@ -86,6 +86,8 @@ def candidate_files(root: Path) -> list[str]:
     files.update(COMPANY_FILES)
     # 최신 공식 실행 폴더의 명시된 보조 결과만 함께 보존한다.
     for pattern in ('output/submission-live/final_report.trace.json',
+                    'output/submission-live/final_report.graph.json',
+                    'output/submission-live/final_report.execution_audit.json',
                     'output/submission-live/combined_report_inputs.json',
                     'output/submission-live/combined_analysis.json',
                     'output/submission-live/company_comparison.*', 'output/submission-live/web_sources/*.pdf',

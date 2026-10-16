@@ -14,6 +14,42 @@ from typing import Annotated, Any, Literal, NotRequired, TypedDict
 WorkerRole = Literal["bigtech", "technology", "market"]
 
 
+class FinalReportState(TypedDict, total=False):
+    """기업별 확정 산출물을 소비하는 최종 보고서 그래프의 상태.
+
+    제어 필드는 mode/route/예산/현재 평가이며 페이로드는 기업 State·보고서·검증
+    원문·합성·선정·본문이다. 이 그래프는 직렬 작성이므로 reducer가 필요 없다.
+    PDF/벡터 바이트는 저장하지 않으며 node_history는 최대 32개로 제한한다.
+    """
+    trace_id: str
+    analysis_mode: Literal['fresh', 'reuse', 'provided']
+    reuse_analysis_path: str | None
+    analysis_reused: bool
+    output_dir: str
+    max_pages: int
+    max_rewrites: int
+    rewrite_count: int
+    step_count: int
+    max_steps: int
+    route: Literal['rewrite', 'publish']
+    revision_accepted: bool
+    node_history: list[str]
+    rewrite_events: list[dict[str, Any]]
+    records: list[dict[str, Any]]
+    companies: list[dict[str, Any]]
+    company_reports: list[dict[str, Any]]
+    source_contexts: list[dict[str, Any]]
+    input_manifest: dict[str, Any] | None
+    report_synthesis: dict[str, Any] | None
+    portfolio_decision: dict[str, Any] | None
+    initial_report: str | None
+    original_report: str
+    built: dict[str, Any]
+    quality_payload: dict[str, Any]
+    report_evaluation: dict[str, Any]
+    result: dict[str, Any]
+
+
 class ResearchTask(TypedDict):
     """오케스트레이터가 워커에게 보내는 구조화된 작업 하나."""
 

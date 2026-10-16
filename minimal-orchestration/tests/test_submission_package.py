@@ -132,7 +132,7 @@ def test_allowlist_hashes_and_path_normalization_do_not_modify_source(tmp_path):
         assert not any(name.endswith('/.env') or '/.cache/' in name or '/live_reports/' in name or '_draft.' in name for name in names)
         assert all(f'{ARCHIVE_ROOT}/output/submission-live/{stem}.state.json' in names for stem in COMPANY_STEMS)
         assert all(f'{ARCHIVE_ROOT}/output/submission-live/{stem}_brief.pdf' in names for stem in COMPANY_STEMS)
-        assert all(f'{ARCHIVE_ROOT}/{name}' in names for name in ('company_report_inputs.py', 'report_synthesis.py'))
+        assert all(f'{ARCHIVE_ROOT}/{name}' in names for name in ('company_report_inputs.py', 'report_synthesis.py', 'final_report_pipeline.py'))
         packaged_app = archive.read(f'{ARCHIVE_ROOT}/app.py').decode()
         assert "os.getenv('ORIGINAL_RAG_PROJECT', str(ROOT / 'rag'))" in packaged_app
         assert 'private-person' not in packaged_app

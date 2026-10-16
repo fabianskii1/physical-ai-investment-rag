@@ -598,54 +598,74 @@ def _load_combined_analysis(path, records, source_contexts=None):
 
 @traceable(name='physical-ai-final-investment-report')
 def _generate_combined(records, directory, reuse_analysis=None):
-    from combined_report import build_combined_report, save_combined_report
+    """기업 산출물을 최종 StateGraph에 전달하고 실행 기록만 수집한다."""
     from combined_quality import evaluate_combined_quality, revise_combined_quality
     from portfolio_decision import select_portfolio_investment
     from company_brief import save_company_brief
     from report_synthesis import synthesize_company_reports
-    companies, report_inputs, contexts, input_manifest = _prepare_combined_inputs(records, directory)
-    for record in records:
-        record['brief'] = save_company_brief(record, directory)
-    if reuse_analysis:
-        synthesis, portfolio = _load_combined_analysis(reuse_analysis, records, source_contexts=contexts)
-    else:
-        synthesis = synthesize_company_reports(companies, source_contexts=contexts, report_inputs=report_inputs)
-        portfolio = select_portfolio_investment(records, source_contexts=contexts,
-                                              report_inputs=report_inputs, report_synthesis=synthesis)
-    validated = build_combined_report(records, report_synthesis=synthesis, portfolio_decision=portfolio)
-    # 품질·PDF 단계가 실패해도 같은 분석을 다시 호출하지 않고 복구할 수 있게 저장한다.
-    _write_json(Path(directory) / 'combined_analysis.json', {
-        'status': 'analysis_ready', 'companies': validated['comparison'],
-        'source_score_details': {item['company']: item['details'] for item in validated['companies']},
-        'deterministic_checks': validated['deterministic_checks'], 'source_contexts': contexts,
-        'input_manifest': input_manifest,
-        'company_reports': validated['company_report_inputs'],
-        'report_synthesis': validated['report_synthesis'], 'portfolio_decision': validated['portfolio_decision']})
-    initial_report = None
-    if reuse_analysis:
-        cached_path = Path(reuse_analysis).expanduser().resolve()
-        reviewed_markdown = cached_path.with_suffix('.md')
-        if reviewed_markdown.is_file():
-            initial_report = reviewed_markdown.read_text(encoding='utf-8')
-            cached = json.loads(cached_path.read_text(encoding='utf-8'))
-            if cached.get('markdown_sha256') and cached['markdown_sha256'] != sha256(initial_report.encode('utf-8')).hexdigest():
-                raise ValueError('저장된 최종 Markdown 본문 해시가 일치하지 않습니다')
-    result = save_combined_report(records, directory, max_pages=10,
-                                  quality_evaluator=evaluate_combined_quality,
-                                  portfolio_decision=portfolio,
-                                  quality_reviser=revise_combined_quality, report_synthesis=synthesis,
-                                  initial_report=initial_report, input_manifest=input_manifest)
-    result['analysis_reused'] = bool(reuse_analysis)
+    from final_report_pipeline import build_final_report_graph, FinalReportDependencies, initial_final_state
+
+    def prepare_inputs(company_records, target):
+        prepared = _prepare_combined_inputs(company_records, target)
+        for record in company_records:
+            save_company_brief(record, target)
+        return prepared
+
+    deps = FinalReportDependencies(prepare_inputs=prepare_inputs, synthesize=synthesize_company_reports,
+        select=select_portfolio_investment, load_analysis=_load_combined_analysis,
+        evaluate=evaluate_combined_quality, revise=revise_combined_quality, write_json=_write_json)
+    graph = build_final_report_graph(deps, checkpointer=InMemorySaver())
+    graph_run_id = uuid4()
+    state = initial_final_state(records, directory, analysis_mode='reuse' if reuse_analysis else 'fresh',
+                                reuse_analysis_path=reuse_analysis, trace_id=str(graph_run_id))
+    metrics = ExecutionMetrics(graph_run_id)
+    config = {'configurable': {'thread_id': str(graph_run_id)}, 'run_id': graph_run_id,
+              'run_name': 'final-investment-orchestration', 'recursion_limit': 40,
+              'callbacks': [metrics], 'metadata': {'workflow': 'final_report', 'company_count': len(records)}}
+    events, started = [], perf_counter()
+    directory = Path(directory).expanduser().resolve()
+    directory.mkdir(parents=True, exist_ok=True)
+    try:
+        for update in graph.stream(state, config, stream_mode='updates'):
+            for node, change in update.items():
+                event = {'node': node, 'step': change.get('step_count')}
+                for key in ('route', 'rewrite_count', 'revision_accepted'):
+                    if key in change:
+                        event[key] = change[key]
+                if 'report_evaluation' in change:
+                    event['quality_passed'] = change['report_evaluation'].get('passed')
+                    event['quality_action'] = change['report_evaluation'].get('action')
+                events.append(event)
+                print(f"최종 그래프: {node}" + (f" → {event['quality_action']}" if event.get('quality_action') else ''), flush=True)
+        final = graph.get_state(config).values
+    except Exception as error:
+        checkpoint = graph.get_state(config)
+        _write_json(directory / 'final_report.failed_state.json', {
+            'error_type': type(error).__name__, 'graph_run_id': str(graph_run_id),
+            'next_nodes': list(checkpoint.next), 'events': events,
+            'state': json.loads(json.dumps(dict(checkpoint.values), ensure_ascii=False, default=str)),
+            'resume_note': 'combined_analysis.json이 있으면 --reuse-analysis로 분석을 보존하고 품질부터 재실행할 수 있습니다.'})
+        raise
+    result = final['result']
     root = get_current_run_tree()
-    if root is not None:
-        _write_json(Path(directory) / 'final_report.trace.json', {
-            'root_run_id': str(root.id), 'company_trace_ids': [r['state']['trace_id'] for r in records],
-            'project': tracing_settings()['project'], 'status': result['status'],
-            'analysis_reused': bool(reuse_analysis),
-            'reused_analysis_source': Path(reuse_analysis).name if reuse_analysis else None,
-            'stages': (['validated_combined_analysis_reuse'] if reuse_analysis else
-                       ['company_report_synthesis', 'portfolio_investment_decision']) +
-                      ['combined_report_evaluator', 'a4_pdf_validation']})
+    trace = {'root_run_id': str(root.id) if root is not None else None,
+             'graph_run_id': str(graph_run_id), 'engine': 'langgraph',
+             'company_trace_ids': [r['state']['trace_id'] for r in records],
+             'project': tracing_settings()['project'], 'status': result['status'],
+             'analysis_reused': bool(reuse_analysis),
+             'reused_analysis_source': Path(reuse_analysis).name if reuse_analysis else None,
+             'stages': final['node_history'], 'events': events,
+             'input_manifest': final['input_manifest'],
+             'metrics': metrics.snapshot(perf_counter() - started)}
+    _write_json(directory / 'final_report.trace.json', trace)
+    _write_json(directory / 'final_report.graph.json', {
+        'engine': 'langgraph', 'graph_run_id': str(graph_run_id),
+        'nodes': list(graph.get_graph().nodes),
+        'edges': [{'source': edge.source, 'target': edge.target, 'conditional': edge.conditional}
+                  for edge in graph.get_graph().edges], 'executed_nodes': final['node_history'],
+        'rewrite_count': final['rewrite_count'], 'max_rewrites': final['max_rewrites'],
+        'step_count': final['step_count'], 'max_steps': final['max_steps'],
+        'status': result['status'], 'quality_stop_reason': result['quality_stop_reason']})
     return result
 
 

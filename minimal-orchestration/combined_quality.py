@@ -34,6 +34,31 @@ class CombinedRevision(BaseModel):
     markdown: str
 
 
+def reflection_candidates(payload):
+    """Judge가 다른 종류/회사의 문단을 고르지 않도록 허용 증거를 명시한다.
+
+    의미 대응은 Judge가 판단한다. 이 목록은 통과 증거를 자동 생성하지 않는다.
+    """
+    import re
+    kinds = {'analysis': {'analysis'}, 'limitations': {'limitation', 'follow_up'},
+             'individual_opinion': {'opinion'}}
+    reports = payload.get('company_reports', [])
+    targets = {r['company']: [] for r in reports}
+    owner = None
+    for number, line in enumerate(payload.get('report', '').splitlines(), 1):
+        if line.startswith('## '):
+            owner = None
+        if line.startswith('### '):
+            owner = next((name for name in targets if re.match(r'^### ' + re.escape(name) + r'\s+—', line)), None)
+        if owner and line.strip() and not line.startswith('#'):
+            targets[owner].append({'paragraph_id': f'P{number}', 'text': line.strip()})
+    return [{'company': report['company'],
+             'source_candidates': {aspect: [{'paragraph_id': p['paragraph_id'], 'kind': p['kind'], 'text': p['text']}
+                    for p in report.get('paragraphs', []) if p['kind'] in allowed]
+                    for aspect, allowed in kinds.items()},
+             'final_candidates': targets[report['company']]} for report in reports]
+
+
 def reflection_evidence_issues(payload, reflections):
     """반영=true를 원보고서와 최종 본문의 실제 두 문단·발췌로 대조한다.
 
@@ -152,11 +177,15 @@ def evaluate_combined_quality(payload: dict) -> dict:
             'final_paragraph_id는 report_evidence_links의 실제 P번호, final_excerpt는 최종 보고서의 해당 문단 12자 이상 연속 발췌입니다. '
             '최종 발췌는 해당 회사의 ## 3 기업별 분석 구역 안에 있어야 하며 제목·점수·REFERENCE만으로 반영을 입증하지 않습니다. '
             'analysis는 kind=analysis, limitations는 limitation/follow_up, individual_opinion은 opinion 원문을 선택합니다. '
+            'reflection_candidates의 해당 회사·aspect source_candidates에서만 source_paragraph_id와 연속 발췌를 선택하세요. '
+            '한계를 설명하는 문장이어도 kind=analysis인 점수 사유 문단을 limitations 증거로 선택하지 마세요. '
+            'final_paragraph_id와 발췌는 같은 회사 final_candidates에서 고릅니다. '
             '발췌문 두 개의 의미가 실제로 이어지는지도 평가합니다. 회사명과 일반적인 U목록만 겹치는 것은 충분하지 않습니다. '
             '부적절한 원보고서 과장을 원문 범위에 맞게 교정한 대응 문단도 허용하며, 없는 반영 증거를 만들지 마세요.'
         )
     scope_issues = report_evidence_scope_issues(payload.get('report', ''), payload.get('source_contexts', []))
     model_payload = {**payload, 'report_evidence_links': report_evidence_links(payload.get('report', ''), payload.get('source_contexts', [])),
+                     'reflection_candidates': reflection_candidates(payload),
                      'source_scope_issues_to_review': scope_issues}
     # 기존 통과 판정은 새 Judge를 고정시키지 않도록 입력에서 제외한다.
     if payload.get('companies'):

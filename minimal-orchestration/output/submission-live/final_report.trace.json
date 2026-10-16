@@ -1,5 +1,7 @@
 {
-  "root_run_id": "01a1425a-12f2-7ac3-8b8d-d5ea844c617c",
+  "root_run_id": "01a1428a-1fc3-70a2-9cd4-b3c284078368",
+  "graph_run_id": "6db67dfa-c6d0-4491-b2ae-d4bdebb2312c",
+  "engine": "langgraph",
   "company_trace_ids": [
     "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
     "8a8412a2-846a-4bdc-97cf-564cc585edd4",
@@ -7,15 +9,127 @@
   ],
   "project": "physical-ai-minimal-orchestration",
   "status": "completed",
-  "analysis_reused": false,
-  "reused_analysis_source": null,
+  "analysis_reused": true,
+  "reused_analysis_source": "final_investment_report_draft.json",
   "stages": [
-    "company_report_synthesis",
-    "portfolio_investment_decision",
-    "combined_report_evaluator",
-    "a4_pdf_validation"
+    "prepare_final_inputs",
+    "reuse_final_analysis",
+    "compose_final_report",
+    "final_quality",
+    "final_orchestrator",
+    "publish_final_report"
   ],
-  "upload_verified": true,
-  "start_time": "2026-10-16T01:36:01.778161+00:00",
-  "end_time": "2026-10-16T01:38:21.476897+00:00"
+  "events": [
+    {
+      "node": "prepare_final_inputs",
+      "step": 1
+    },
+    {
+      "node": "reuse_final_analysis",
+      "step": 2
+    },
+    {
+      "node": "compose_final_report",
+      "step": 3
+    },
+    {
+      "node": "final_quality",
+      "step": 4,
+      "quality_passed": true,
+      "quality_action": "rewrite"
+    },
+    {
+      "node": "final_orchestrator",
+      "step": 5,
+      "route": "publish"
+    },
+    {
+      "node": "publish_final_report",
+      "step": 6
+    }
+  ],
+  "input_manifest": {
+    "path": "output/submission-live/combined_report_inputs.json",
+    "sha256": "b0f331117ceeea5bd0477a364b24e3d53d8ade07513775a93cb6e028e0022563",
+    "report_body_key": "company_reports[].report_markdown",
+    "companies": [
+      {
+        "company": "MOTOMIND",
+        "trace_id": "bc84edb5-0068-4553-ad54-e58e20d1a0c6",
+        "report_sha256": "dd1405dca420e30e1aae475571169e8d9d7a3b232591429ba14c91181d2f60a7",
+        "body_characters": 9076,
+        "paragraph_count": 76,
+        "source_page_count": 4
+      },
+      {
+        "company": "ROBROS",
+        "trace_id": "8a8412a2-846a-4bdc-97cf-564cc585edd4",
+        "report_sha256": "25e4f372eeacbfde2e56a5c016e78ab354c6992de17f1e88122a63d4cdc5ed45",
+        "body_characters": 9900,
+        "paragraph_count": 86,
+        "source_page_count": 4
+      },
+      {
+        "company": "Figure AI",
+        "trace_id": "608c0606-f750-4557-b590-d444f651cb8f",
+        "report_sha256": "3e1653e4e478cfc079e410f211eee431d9010dc6c162e02756702ed0f3cddfad",
+        "body_characters": 11429,
+        "paragraph_count": 81,
+        "source_page_count": 7
+      }
+    ],
+    "original_sha256": "0b8d2333e6cecfc7b05701204c45bf916af3ed95be44972d3ba701359b062783",
+    "normalization_note": "제출 경로 정규화 후 실제 입력 파일 바이트로 SHA256 재계산"
+  },
+  "metrics": {
+    "graph_elapsed_seconds": 94.351014,
+    "nodes": [
+      {
+        "node": "prepare_final_inputs",
+        "run_id": "01a1428a-1ff0-7082-b649-cc1943cbbdfd",
+        "round": null,
+        "elapsed_seconds": 2.0648,
+        "status": "completed"
+      },
+      {
+        "node": "reuse_final_analysis",
+        "run_id": "01a1428a-2803-7b83-a6a0-36cbe5b49eaa",
+        "round": null,
+        "elapsed_seconds": 0.010263,
+        "status": "completed"
+      },
+      {
+        "node": "compose_final_report",
+        "run_id": "01a1428a-280f-7341-8c76-787e3b46e222",
+        "round": null,
+        "elapsed_seconds": 1.964448,
+        "status": "completed"
+      },
+      {
+        "node": "final_quality",
+        "run_id": "01a1428a-2fbe-7b72-b63f-6ebd66aa8568",
+        "round": null,
+        "elapsed_seconds": 89.886682,
+        "status": "completed"
+      },
+      {
+        "node": "final_orchestrator",
+        "run_id": "01a1428b-8ee5-7e10-ac9f-ac76931df70b",
+        "round": null,
+        "elapsed_seconds": 0.015707,
+        "status": "completed"
+      },
+      {
+        "node": "publish_final_report",
+        "run_id": "01a1428b-8efa-79a0-872c-0796dab065fb",
+        "round": null,
+        "elapsed_seconds": 0.366685,
+        "status": "completed"
+      }
+    ],
+    "observed_model_usage": {},
+    "token_usage_scope": "LangChain AIMessage usage callbacks only; direct OpenAI Responses calls are excluded",
+    "total_token_usage": null,
+    "total_cost": null
+  }
 }

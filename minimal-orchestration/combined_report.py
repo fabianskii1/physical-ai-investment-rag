@@ -528,14 +528,8 @@ def _evaluate_combined_payload(quality_evaluator, payload) -> dict:
     return result
 
 
-def save_combined_report(records, output_dir, max_pages=10, quality_evaluator=None, portfolio_decision=None,
-                         quality_reviser=None, max_rewrites=2, report_synthesis=None, initial_report=None,
-                         input_manifest=None) -> dict:
-    """통합 보고서를 원문·내용·A4 규격으로 검사하고 단일 PDF와 기록 파일로 저장한다."""
-    if type(max_rewrites) is not int or not 0 <= max_rewrites <= 2:
-        raise ValueError("통합 보고서 수정 예산은 0~2 정수여야 합니다")
-    if quality_reviser is not None and not callable(quality_reviser):
-        raise ValueError("통합 보고서 수정 함수는 호출 가능해야 합니다")
+def prepare_combined_report(records, *, portfolio_decision=None, report_synthesis=None, initial_report=None):
+    """본문·원문·고정 점수 검사를 수행한다. 모델 호출·품질 루프·출력은 별도 노드다."""
     built = build_combined_report(records, portfolio_decision=portfolio_decision, report_synthesis=report_synthesis)
     original = built["markdown"]
     if initial_report is not None:
@@ -550,34 +544,14 @@ def save_combined_report(records, output_dir, max_pages=10, quality_evaluator=No
                    "score_details": company["details"], "investment_case": company["case"],
                    "source_report_evaluation": company["quality"], "source_status": company["status"],
                    "source_mode": company["mode"]} for company in built["companies"]]}
-    evaluation = _evaluate_combined_payload(quality_evaluator, payload)
-    rewrite_count, rewrite_events = 0, []
-    while (not evaluation.get("passed") and evaluation.get("action") == "rewrite"
-           and quality_reviser is not None and quality_evaluator is not None and rewrite_count < max_rewrites
-           and built["deterministic_checks"]["source_reports_quality_passed"]):
-        rewrite_count += 1
-        try:
-            proposal = quality_reviser(deepcopy(payload), deepcopy(evaluation))
-            if proposal == payload["report"]:
-                raise ValueError("품질 미달 보고서에 실제 수정이 없어 같은 문서를 다시 판정하지 않습니다")
-            revised = _validate_combined_revision(original, proposal)
-        except Exception as error:
-            # 안전하지 않은 수정은 사용하지 않는다. 이전 Markdown과 점수를 보존하고
-            # 한도 내에서 같은 자료로 교정하거나 마지막 안전한 초안으로 종료한다.
-            message = str(error) if isinstance(error, ValueError) else f"보고서 수정 함수 실패: {type(error).__name__}"
-            issues = list(evaluation.get("issues", []))
-            if message not in issues:
-                issues.append(message)
-            evaluation = {**evaluation, "passed": False, "action": "rewrite", "issues": issues}
-            rewrite_events.append({"attempt": rewrite_count, "accepted": False,
-                                   "failure_type": type(error).__name__, "issue": message})
-            continue
-        payload["report"] = revised
-        built["markdown"] = revised
-        evaluation = _evaluate_combined_payload(quality_evaluator, payload)
-        rewrite_events.append({"attempt": rewrite_count, "accepted": True,
-                               "quality_passed": evaluation.get("passed"),
-                               "action": evaluation.get("action")})
+    return built, payload, original
+
+
+def publish_combined_report(built, payload, evaluation, output_dir, *, max_pages=10, max_rewrites=2,
+                            rewrite_count=0, rewrite_events=None, input_manifest=None, quality_evaluator=None,
+                            graph_execution=None) -> dict:
+    """그래프에서 평가한 본문을 A4 검사 후 저장한다. 모델을 호출하지 않는다."""
+    rewrite_events = rewrite_events or []
     stop_reason = ("passed" if evaluation.get("passed") else
                    "new_evidence_required" if evaluation.get("action") == "research" else
                    "quality_review_required" if evaluation.get('action') == 'review' else
@@ -613,14 +587,27 @@ def save_combined_report(records, output_dir, max_pages=10, quality_evaluator=No
                 "source_score_details": {item['company']: item['details'] for item in built['companies']},
                 "deterministic_checks": built["deterministic_checks"], "report_evaluation": evaluation,
                 "pdf_checks": checks, "report_path": str(pdf_path),
-                "source_contexts": contexts, "portfolio_decision": built["portfolio_decision"],
+                "source_contexts": payload['source_contexts'], "portfolio_decision": built["portfolio_decision"],
                 "report_synthesis": built['report_synthesis'], "company_reports": built['company_report_inputs'],
                 "rewrite_count": rewrite_count, "max_rewrites": max_rewrites,
                 "rewrite_events": rewrite_events, "quality_stop_reason": stop_reason,
-                "evaluation_method": "hybrid" if quality_evaluator else "deterministic_only"}
+                "evaluation_method": "hybrid" if quality_evaluator else "deterministic_only",
+                "graph_execution": graph_execution}
     json_path.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8")
     return {"markdown": markdown_path, "pdf": pdf_path, "scores_path": json_path, "json": json_path,
             "status": status, "pdf_checks": checks, "report_evaluation": evaluation,
             "rewrite_count": rewrite_count, "max_rewrites": max_rewrites,
             "rewrite_events": rewrite_events, "quality_stop_reason": stop_reason,
             "comparison": built["comparison"], "deterministic_checks": built["deterministic_checks"]}
+
+
+def save_combined_report(records, output_dir, max_pages=10, quality_evaluator=None, portfolio_decision=None,
+                         quality_reviser=None, max_rewrites=2, report_synthesis=None, initial_report=None,
+                         input_manifest=None) -> dict:
+    """기존 API도 같은 LangGraph의 조립→평가→수정→출력 노드를 사용한다."""
+    from final_report_pipeline import build_final_report_graph, FinalReportDependencies, initial_final_state
+    graph = build_final_report_graph(FinalReportDependencies(evaluate=quality_evaluator, revise=quality_reviser))
+    state = initial_final_state(records, output_dir, analysis_mode='provided', max_pages=max_pages,
+        max_rewrites=max_rewrites, report_synthesis=report_synthesis, portfolio_decision=portfolio_decision,
+        initial_report=initial_report, input_manifest=input_manifest)
+    return graph.invoke(state, {'recursion_limit': 40})['result']

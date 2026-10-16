@@ -108,6 +108,35 @@ def test_all_company_reflections_and_core_checks_pass_together(monkeypatch):
     assert request.call_args.args[0] is combined_quality.CombinedQualityReview
 
 
+def test_judge_receives_kind_scoped_candidates_and_only_own_company_final_section(monkeypatch):
+    original = payload()
+    original['company_reports'][1]['paragraphs'].append({
+        'paragraph_id': 'RB-P060', 'kind': 'analysis', 'text': '점수 사유의 U 설명은 한계처럼 읽혀도 분석 유형 문단이다.'})
+    original['report'] += '\n\n## 5 — REFERENCE\n\nROBROS의 출처 목록은 반영 증거의 최종 문단이 아니다.'
+    request = Mock(return_value=review())
+    monkeypatch.setattr(legacy_adapter, '_structured_request', request)
+    result = combined_quality.evaluate_combined_quality(original)
+    assert result['passed']
+    model_payload = request.call_args.args[2]
+    robros = next(c for c in model_payload['reflection_candidates'] if c['company'] == 'ROBROS')
+    assert 'RB-P060' in {p['paragraph_id'] for p in robros['source_candidates']['analysis']}
+    assert 'RB-P060' not in {p['paragraph_id'] for p in robros['source_candidates']['limitations']}
+    assert all('MOTOMIND' not in p['text'] and 'Figure AI' not in p['text'] and '출처 목록' not in p['text']
+               for p in robros['final_candidates'])
+
+
+def test_candidates_do_not_allow_analysis_kind_as_limitations_proof(monkeypatch):
+    originals = payload()
+    reflections = [reflection(company) for company in COMPANIES]
+    robros = reflections[1]
+    wrong = originals['company_reports'][1]['paragraphs'][0]
+    robros['preservation_evidence'][1].update(source_paragraph_id=wrong['paragraph_id'], source_excerpt=wrong['text'])
+    monkeypatch.setattr(legacy_adapter, '_structured_request', Mock(return_value=review(reflections)))
+    result = combined_quality.evaluate_combined_quality(originals)
+    assert result['passed'] is False and result['action'] == 'review'
+    assert result['judge_evidence_issues'] and not result['deterministic_content_issues']
+
+
 @pytest.mark.parametrize(
     "reflections",
     (

@@ -1,0 +1,103 @@
+{
+  "engine": "langgraph",
+  "graph_run_id": "6db67dfa-c6d0-4491-b2ae-d4bdebb2312c",
+  "nodes": [
+    "__start__",
+    "prepare_final_inputs",
+    "report_synthesis",
+    "portfolio_decision",
+    "reuse_final_analysis",
+    "compose_final_report",
+    "final_quality",
+    "final_orchestrator",
+    "final_rewrite",
+    "publish_final_report",
+    "__end__"
+  ],
+  "edges": [
+    {
+      "source": "__start__",
+      "target": "prepare_final_inputs",
+      "conditional": false
+    },
+    {
+      "source": "compose_final_report",
+      "target": "final_quality",
+      "conditional": false
+    },
+    {
+      "source": "final_orchestrator",
+      "target": "final_rewrite",
+      "conditional": true
+    },
+    {
+      "source": "final_orchestrator",
+      "target": "publish_final_report",
+      "conditional": true
+    },
+    {
+      "source": "final_quality",
+      "target": "final_orchestrator",
+      "conditional": false
+    },
+    {
+      "source": "final_rewrite",
+      "target": "final_orchestrator",
+      "conditional": true
+    },
+    {
+      "source": "final_rewrite",
+      "target": "final_quality",
+      "conditional": true
+    },
+    {
+      "source": "portfolio_decision",
+      "target": "compose_final_report",
+      "conditional": false
+    },
+    {
+      "source": "prepare_final_inputs",
+      "target": "compose_final_report",
+      "conditional": true
+    },
+    {
+      "source": "prepare_final_inputs",
+      "target": "report_synthesis",
+      "conditional": true
+    },
+    {
+      "source": "prepare_final_inputs",
+      "target": "reuse_final_analysis",
+      "conditional": true
+    },
+    {
+      "source": "report_synthesis",
+      "target": "portfolio_decision",
+      "conditional": false
+    },
+    {
+      "source": "reuse_final_analysis",
+      "target": "compose_final_report",
+      "conditional": false
+    },
+    {
+      "source": "publish_final_report",
+      "target": "__end__",
+      "conditional": false
+    }
+  ],
+  "executed_nodes": [
+    "prepare_final_inputs",
+    "reuse_final_analysis",
+    "compose_final_report",
+    "final_quality",
+    "final_orchestrator",
+    "publish_final_report"
+  ],
+  "rewrite_count": 0,
+  "max_rewrites": 2,
+  "step_count": 6,
+  "max_steps": 32,
+  "status": "completed",
+  "quality_stop_reason": "passed"
+}

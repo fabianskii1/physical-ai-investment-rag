@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Draw the implementation architecture as SVG and PNG without model/API calls.
 
-The upper panel describes agent_pipeline.py's StateGraph. The lower panel shows
-the separate app.py batch integration, not additional LangGraph node executions.
+The upper panel describes agent_pipeline.py's company StateGraph. The lower panel
+shows final_report_pipeline.py's final-report StateGraph, including quality feedback.
 Source contracts are checked before rendering; this diagram is not a live trace.
 """
 
@@ -19,7 +19,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WIDTH, HEIGHT = 2500, 2390
+WIDTH, HEIGHT = 2500, 2850
 NAVY, BLUE, MUTED = "#14243A", "#1D4ED8", "#52627A"
 BORDER, LIGHT, ORANGE = "#CAD5E4", "#F3F7FD", "#B45309"
 TEAL, GREEN = "#0F766E", "#EAF7F3"
@@ -43,18 +43,22 @@ def check_source_contract() -> tuple[str, bool]:
     if not {("worker", "synthesizer"), ("judgement", "score_review"), ("writer", "report_evaluator")} <= routes:
         raise RuntimeError("StateGraph routes changed; update this source diagram")
     app_source = (ROOT / "app.py").read_text(encoding="utf-8")
-    batch_ready = all((ROOT / name).is_file() for name in
-                      ("portfolio_decision.py", "combined_report.py", "combined_quality.py",
-                       "company_report_inputs.py", "report_synthesis.py"))
-    batch_ready = batch_ready and all(name in app_source for name in
-                                     ("save_combined_report", "select_portfolio_investment", "evaluate_combined_quality",
-                                      "quality_reviser=revise_combined_quality", "build_company_report_inputs",
-                                      "synthesize_company_reports", "report_inputs=report_inputs", "report_synthesis=synthesis"))
-    sources = [source, app_source]
-    for name in ("company_report_inputs.py", "report_synthesis.py", "combined_quality.py"):
-        path = ROOT / name
-        if path.is_file():
-            sources.append(path.read_text(encoding="utf-8"))
+    final_source = (ROOT / 'final_report_pipeline.py').read_text(encoding='utf-8')
+    final_tree = ast.parse(final_source)
+    final_nodes = {node.elts[0].value for node in ast.walk(final_tree)
+                   if isinstance(node, ast.Tuple) and len(node.elts) == 2
+                   and isinstance(node.elts[0], ast.Constant) and isinstance(node.elts[0].value, str)
+                   and isinstance(node.elts[1], ast.Name)}
+    expected_final = {'prepare_final_inputs', 'report_synthesis', 'portfolio_decision', 'reuse_final_analysis',
+                      'compose_final_report', 'final_quality', 'final_orchestrator', 'final_rewrite', 'publish_final_report'}
+    if final_nodes != expected_final:
+        raise RuntimeError('Final StateGraph nodes changed; update the architecture layout')
+    batch_ready = all(name in app_source for name in ('build_final_report_graph', 'graph.stream',
+                      'synthesize=synthesize_company_reports', 'select=select_portfolio_investment',
+                      'evaluate=evaluate_combined_quality', 'revise=revise_combined_quality'))
+    sources = [source, app_source, final_source]
+    for name in ('company_report_inputs.py', 'report_synthesis.py', 'combined_quality.py'):
+        sources.append((ROOT / name).read_text(encoding='utf-8'))
     return hashlib.sha256("\n".join(sources).encode()).hexdigest()[:12], batch_ready
 
 
@@ -197,37 +201,44 @@ def render(output_dir: Path, font_path: Path, *, require_batch=False):
     d.text(1225, 1287, "Research: 3–5 rechecks  |  Stop: 2 no-progress rounds*  |  Rewrite: ≤2  |  Unknown stays U", 26, MUTED)
     d.text(110, 1320, "* 초기 미선택 역할의 조사 기회 보존 · 품질 실패는 초안으로 종료", 22, MUTED, center=False)
 
-    d.rect((60, 1410, 2380, 870), "white")
-    d.text(100, 1450, "02  REPORT SYNTHESIS / FINAL SELECTION", 32, BLUE, bold=True, center=False)
-    badge = "app.py batch code · not extra LangGraph nodes" if batch_ready else "batch output contract · integration pending"
+    d.rect((60, 1410, 2380, 1320), 'white')
+    d.text(100, 1450, '02  FINAL REPORT STATEGRAPH', 32, BLUE, bold=True, center=False)
+    badge = 'final_report_pipeline.py · actual LangGraph nodes' if batch_ready else 'graph integration pending'
     d.text(1430, 1450, badge, 25, MUTED, center=False)
     d.arrow([(1940, 1200), (1940, 1235), (2415, 1235), (2415, 1490), (410, 1490), (410, 1530)], TEAL)
-    d.label(2300, 1375, "all: 3 states", 24, TEAL)
-    d.node((130, 1530, 560, 150), "3 Reports + State", ["Full text + SHA256 + paragraph IDs", "문단·원문 E-ID·21항목 점수·U"], fill=GREEN, stroke=TEAL, title_size=32)
+    d.label(2300, 1375, 'all: 3 states', 24, TEAL)
+    d.node((130, 1530, 560, 150), 'Prepare Final Inputs', ['Full reports + SHA256 + paragraph IDs', '기업 보고서·검증 원문·21항목 점수'], fill=GREEN, stroke=TEAL, title_size=32)
     d.arrow([(690, 1605), (840, 1605)])
-    d.label(765, 1575, "+1 LLM", 22)
-    d.node((840, 1530, 620, 150), "ReportSynthesis Agent", ["5 fields/company + 2 comparison paragraphs", "문단↔분석↔원문 맵 · 원문 우선"], stroke=BLUE, title_size=33)
+    d.label(765, 1575, 'fresh', 22)
+    d.node((840, 1530, 620, 150), 'Report Synthesis', ['5 fields/company + comparison paragraphs', '보고서 전문·원문 검증 근거로 합성'], stroke=BLUE, title_size=33)
     d.arrow([(1460, 1605), (1630, 1605)])
-    d.node((1630, 1530, 620, 150), "PortfolioDecision Agent", ["Original reports + shared synthesis", "선정기업·비교 이유·투자조건 / 코드 검사"], stroke=BLUE, title_size=33)
+    d.node((1630, 1530, 620, 150), 'Portfolio Decision', ['Original reports + shared synthesis', '대상·비교 근거·조건 / 코드 검사'], stroke=BLUE, title_size=33)
     d.arrow([(1940, 1680), (1940, 1810)])
-    d.label(2110, 1745, "same analysis", 23)
-    d.node((1630, 1810, 620, 150), "Combined Report", ["Fixed scores / U / references", "합성 본문·선정 결론 / revise callback"], stroke=BLUE)
+    d.node((1630, 1810, 620, 150), 'Compose Final Report', ['Fixed scores / U / references', '합성·선정 결과 조립 / 분석 checkpoint'], stroke=BLUE, title_size=32)
     d.arrow([(1630, 1885), (1460, 1885)])
-    d.node((840, 1810, 620, 150), "Combined Quality", ["Core 3 + company-report reflection", "같은 Judge: 분석·한계·현재 의견 반영"], fill=GREEN, stroke=TEAL)
+    d.node((840, 1810, 620, 150), 'Final Quality', ['Groundedness / neutrality / bias control', '세 기업 분석·한계·개별 의견 반영'], fill=GREEN, stroke=TEAL)
     d.arrow([(840, 1885), (690, 1885)], TEAL)
-    d.label(765, 1855, "pass", 23, TEAL)
-    d.rect((130, 1810, 560, 150), NAVY, NAVY)
-    d.text(410, 1846, "One Final PDF", 36, "white", bold=True)
-    d.text(410, 1890, "A4 · 20 mm · ≤10 pages TOTAL", 25, "white")
-    d.text(410, 1922, "final_investment_report.pdf", 23, "#C8D8ED")
-    d.arrow([(1320, 1960), (1320, 2020), (2350, 2020), (2350, 1885), (2250, 1885)], ORANGE, True)
-    d.label(1860, 2020, "rewrite ≤2 / same inputs", 25, ORANGE)
-    d.text(1850, 2058, "quality_reviser → Combined Report", 23, ORANGE)
-    d.arrow([(1150, 1960), (1150, 2080)], ORANGE, True)
-    d.label(980, 2020, "research / exhausted", 23, ORANGE)
-    d.node((840, 2080, 620, 130), "Quality Failed Draft", ["새 근거 필요·한도 소진 시 미달 내용 보존", "최종 제출본으로 발행하지 않음"], fill="#FFF7ED", stroke=ORANGE, title_size=32)
-    d.text(110, 2245, "Normal path: +1 synthesis LLM  |  No new RAG / regrading  |  View coverage excluded", 26, MUTED, center=False)
-    d.text(95, 2330, f"Source code: {source_id}  ·  scripts/render_architecture.py  ·  implementation architecture, not a LangSmith trace", 24, MUTED, center=False)
+    d.node((130, 1810, 560, 150), 'Final Orchestrator', ['Code routing / zero extra LLM calls', '통과·수정·근거 필요·예산 종료'], stroke=BLUE, title_size=32)
+    d.arrow([(250, 1960), (250, 2160)], TEAL)
+    d.label(310, 2050, 'pass', 24, TEAL)
+    d.node((130, 2160, 560, 150), 'Publish Final Report', ['A4 / equal 20 mm / ≤10 pages', 'PDF 검사 후 최종본 또는 초안 저장'], fill=GREEN, stroke=TEAL, title_size=32)
+    d.arrow([(570, 1960), (570, 2070), (800, 2070), (800, 2235), (840, 2235)], ORANGE, True)
+    d.label(710, 2040, 'rewrite ≤2', 24, ORANGE)
+    d.node((840, 2160, 620, 150), 'Final Rewrite', ['Same reports / evidence / scores / decision', '피드백만 수정 / 점수·출처·조건 보호'], stroke=ORANGE, title_size=33)
+    d.arrow([(1300, 2160), (1300, 1960)], ORANGE, True)
+    d.label(1430, 2050, 'accepted → rejudge', 23, ORANGE)
+    d.arrow([(1000, 2160), (1000, 2115), (410, 2115), (410, 1960)], MUTED, True, width=3)
+    d.label(1090, 2100, 'invalid → route only', 22, MUTED)
+    d.node((1630, 2160, 620, 150), 'Reuse Final Analysis', ['Optional: same report / score / source hashes', '검증된 합성·선정만 재사용 / 품질 재평가'], stroke=BORDER, title_size=32)
+    d.arrow([(410, 1680), (410, 1730), (2330, 1730), (2330, 2235), (2250, 2235)], MUTED, True, width=3)
+    d.label(1200, 1730, '--reuse-analysis only', 22, MUTED)
+    d.arrow([(1940, 2160), (1940, 1960)], MUTED, True, width=3)
+    d.text(130, 2390, 'Research / review / exhausted → last safe draft; never promote failed quality.', 28, ORANGE, center=False)
+    d.text(130, 2440, 'New evidence required → research_request.json; no blind repeated research.', 26, MUTED, center=False)
+    d.text(130, 2530, 'Normal path: 7 nodes  |  Rewrite ≤2  |  Step cap 32  |  No new RAG / regrading', 28, MUTED, center=False)
+    d.text(130, 2580, 'InMemorySaver + graph run ID + node trace + persisted combined_analysis.json', 27, MUTED, center=False)
+    d.text(130, 2660, 'Source architecture; actual runtime evidence is saved separately in LangSmith / trace JSON.', 25, MUTED, center=False)
+    d.text(95, 2785, f'Source code: {source_id}  ·  scripts/render_architecture.py  ·  implementation architecture, not a LangSmith trace', 24, MUTED, center=False)
     return d.save(output_dir)
 
 

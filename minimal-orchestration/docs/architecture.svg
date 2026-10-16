@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2390" viewBox="0 0 2500 2390" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2850" viewBox="0 0 2500 2850" role="img">
 <title>Physical AI investment orchestration architecture</title>
 <desc>Source architecture: company StateGraph followed by full company-report inputs, report synthesis, shared-analysis portfolio selection, fixed-score rendering and core quality plus report-reflection evaluation. This is not an execution trace.</desc>
-<rect width="2500" height="2390" fill="white"/>
+<rect width="2500" height="2850" fill="white"/>
 <text x="90" y="65" fill="#14243A" font-family="Arial, sans-serif" font-size="57" font-weight="700" text-anchor="start" dominant-baseline="central">Physical AI Investment Orchestration</text>
 <text x="90" y="123" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="32" font-weight="400" text-anchor="start" dominant-baseline="central">기업별 근거 조사 → 최종 투자 대상 선정 → 하나의 통합 보고서</text>
 <rect x="60" y="180" width="2380" height="1160" rx="18" fill="white" stroke="#CAD5E4" stroke-width="3"/>
@@ -86,66 +86,87 @@
 <rect x="105" y="1265" width="2240" height="44" rx="10" fill="#F3F7FD" stroke="#F3F7FD" stroke-width="1"/>
 <text x="1225" y="1287" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="26" font-weight="400" text-anchor="middle" dominant-baseline="central">Research: 3–5 rechecks  |  Stop: 2 no-progress rounds*  |  Rewrite: ≤2  |  Unknown stays U</text>
 <text x="110" y="1320" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">* 초기 미선택 역할의 조사 기회 보존 · 품질 실패는 초안으로 종료</text>
-<rect x="60" y="1410" width="2380" height="870" rx="18" fill="white" stroke="#CAD5E4" stroke-width="3"/>
-<text x="100" y="1450" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="start" dominant-baseline="central">02  REPORT SYNTHESIS / FINAL SELECTION</text>
-<text x="1430" y="1450" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="start" dominant-baseline="central">app.py batch code · not extra LangGraph nodes</text>
+<rect x="60" y="1410" width="2380" height="1320" rx="18" fill="white" stroke="#CAD5E4" stroke-width="3"/>
+<text x="100" y="1450" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="start" dominant-baseline="central">02  FINAL REPORT STATEGRAPH</text>
+<text x="1430" y="1450" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="start" dominant-baseline="central">final_report_pipeline.py · actual LangGraph nodes</text>
 <polyline points="1940,1200 1940,1235 2415,1235 2415,1490 410,1490 410,1530" fill="none" stroke="#0F766E" stroke-width="4" stroke-linejoin="round"/>
 <polygon points="410,1530 419.0,1512.0 401.0,1512.0" fill="#0F766E"/>
 <rect x="2219.5" y="1355" width="161" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
 <text x="2300" y="1375" fill="#0F766E" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="middle" dominant-baseline="central">all: 3 states</text>
 <rect x="130" y="1530" width="560" height="150" rx="18" fill="#EAF7F3" stroke="#0F766E" stroke-width="3"/>
-<text x="410.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">3 Reports + State</text>
-<text x="410.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Full text + SHA256 + paragraph IDs</text>
-<text x="410.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">문단·원문 E-ID·21항목 점수·U</text>
+<text x="410.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">Prepare Final Inputs</text>
+<text x="410.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Full reports + SHA256 + paragraph IDs</text>
+<text x="410.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">기업 보고서·검증 원문·21항목 점수</text>
 <polyline points="690,1605 840,1605" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
 <polygon points="840,1605 822.0,1596.0 822.0,1614.0" fill="#14243A"/>
-<rect x="710.5" y="1555" width="109" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
-<text x="765" y="1575" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">+1 LLM</text>
+<rect x="726.5" y="1555" width="77" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="765" y="1575" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">fresh</text>
 <rect x="840" y="1530" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
-<text x="1150.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">ReportSynthesis Agent</text>
-<text x="1150.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">5 fields/company + 2 comparison paragraphs</text>
-<text x="1150.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">문단↔분석↔원문 맵 · 원문 우선</text>
+<text x="1150.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">Report Synthesis</text>
+<text x="1150.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">5 fields/company + comparison paragraphs</text>
+<text x="1150.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">보고서 전문·원문 검증 근거로 합성</text>
 <polyline points="1460,1605 1630,1605" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
 <polygon points="1630,1605 1612.0,1596.0 1612.0,1614.0" fill="#14243A"/>
 <rect x="1630" y="1530" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
-<text x="1940.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">PortfolioDecision Agent</text>
+<text x="1940.0" y="1566" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">Portfolio Decision</text>
 <text x="1940.0" y="1610" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Original reports + shared synthesis</text>
-<text x="1940.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">선정기업·비교 이유·투자조건 / 코드 검사</text>
+<text x="1940.0" y="1642" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">대상·비교 근거·조건 / 코드 검사</text>
 <polyline points="1940,1680 1940,1810" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
 <polygon points="1940,1810 1949.0,1792.0 1931.0,1792.0" fill="#14243A"/>
-<rect x="2022.5" y="1725" width="175" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
-<text x="2110" y="1745" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">same analysis</text>
 <rect x="1630" y="1810" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
-<text x="1940.0" y="1846" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Combined Report</text>
+<text x="1940.0" y="1846" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">Compose Final Report</text>
 <text x="1940.0" y="1890" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Fixed scores / U / references</text>
-<text x="1940.0" y="1922" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">합성 본문·선정 결론 / revise callback</text>
+<text x="1940.0" y="1922" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">합성·선정 결과 조립 / 분석 checkpoint</text>
 <polyline points="1630,1885 1460,1885" fill="none" stroke="#14243A" stroke-width="4" stroke-linejoin="round"/>
 <polygon points="1460,1885 1478.0,1894.0 1478.0,1876.0" fill="#14243A"/>
 <rect x="840" y="1810" width="620" height="150" rx="18" fill="#EAF7F3" stroke="#0F766E" stroke-width="3"/>
-<text x="1150.0" y="1846" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Combined Quality</text>
-<text x="1150.0" y="1890" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Core 3 + company-report reflection</text>
-<text x="1150.0" y="1922" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">같은 Judge: 분석·한계·현재 의견 반영</text>
+<text x="1150.0" y="1846" fill="#14243A" font-family="Arial, sans-serif" font-size="35" font-weight="700" text-anchor="middle" dominant-baseline="central">Final Quality</text>
+<text x="1150.0" y="1890" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">Groundedness / neutrality / bias control</text>
+<text x="1150.0" y="1922" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">세 기업 분석·한계·개별 의견 반영</text>
 <polyline points="840,1885 690,1885" fill="none" stroke="#0F766E" stroke-width="4" stroke-linejoin="round"/>
 <polygon points="690,1885 708.0,1894.0 708.0,1876.0" fill="#0F766E"/>
-<rect x="727.0" y="1835" width="76" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
-<text x="765" y="1855" fill="#0F766E" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">pass</text>
-<rect x="130" y="1810" width="560" height="150" rx="18" fill="#14243A" stroke="#14243A" stroke-width="3"/>
-<text x="410" y="1846" fill="white" font-family="Arial, sans-serif" font-size="36" font-weight="700" text-anchor="middle" dominant-baseline="central">One Final PDF</text>
-<text x="410" y="1890" fill="white" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">A4 · 20 mm · ≤10 pages TOTAL</text>
-<text x="410" y="1922" fill="#C8D8ED" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">final_investment_report.pdf</text>
-<polyline points="1320,1960 1320,2020 2350,2020 2350,1885 2250,1885" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
-<polygon points="2250,1885 2268.0,1894.0 2268.0,1876.0" fill="#B45309"/>
-<rect x="1698.0" y="2000" width="324" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
-<text x="1860" y="2020" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">rewrite ≤2 / same inputs</text>
-<text x="1850" y="2058" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">quality_reviser → Combined Report</text>
-<polyline points="1150,1960 1150,2080" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
-<polygon points="1150,2080 1159.0,2062.0 1141.0,2062.0" fill="#B45309"/>
-<rect x="854.0" y="2000" width="252" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
-<text x="980" y="2020" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">research / exhausted</text>
-<rect x="840" y="2080" width="620" height="130" rx="18" fill="#FFF7ED" stroke="#B45309" stroke-width="3"/>
-<text x="1150.0" y="2116" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">Quality Failed Draft</text>
-<text x="1150.0" y="2160" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">새 근거 필요·한도 소진 시 미달 내용 보존</text>
-<text x="1150.0" y="2192" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">최종 제출본으로 발행하지 않음</text>
-<text x="110" y="2245" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="26" font-weight="400" text-anchor="start" dominant-baseline="central">Normal path: +1 synthesis LLM  |  No new RAG / regrading  |  View coverage excluded</text>
-<text x="95" y="2330" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="start" dominant-baseline="central">Source code: 4cc0d4b57c0c  ·  scripts/render_architecture.py  ·  implementation architecture, not a LangSmith trace</text>
+<rect x="130" y="1810" width="560" height="150" rx="18" fill="#F3F7FD" stroke="#1D4ED8" stroke-width="3"/>
+<text x="410.0" y="1846" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">Final Orchestrator</text>
+<text x="410.0" y="1890" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">Code routing / zero extra LLM calls</text>
+<text x="410.0" y="1922" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">통과·수정·근거 필요·예산 종료</text>
+<polyline points="250,1960 250,2160" fill="none" stroke="#0F766E" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="250,2160 259.0,2142.0 241.0,2142.0" fill="#0F766E"/>
+<rect x="270.5" y="2030" width="79" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="310" y="2050" fill="#0F766E" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="middle" dominant-baseline="central">pass</text>
+<rect x="130" y="2160" width="560" height="150" rx="18" fill="#EAF7F3" stroke="#0F766E" stroke-width="3"/>
+<text x="410.0" y="2196" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">Publish Final Report</text>
+<text x="410.0" y="2240" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">A4 / equal 20 mm / ≤10 pages</text>
+<text x="410.0" y="2272" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">PDF 검사 후 최종본 또는 초안 저장</text>
+<polyline points="570,1960 570,2070 800,2070 800,2235 840,2235" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="840,2235 822.0,2226.0 822.0,2244.0" fill="#B45309"/>
+<rect x="635.0" y="2020" width="150" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="710" y="2040" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="middle" dominant-baseline="central">rewrite ≤2</text>
+<rect x="840" y="2160" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#B45309" stroke-width="3"/>
+<text x="1150.0" y="2196" fill="#14243A" font-family="Arial, sans-serif" font-size="33" font-weight="700" text-anchor="middle" dominant-baseline="central">Final Rewrite</text>
+<text x="1150.0" y="2240" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">Same reports / evidence / scores / decision</text>
+<text x="1150.0" y="2272" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">피드백만 수정 / 점수·출처·조건 보호</text>
+<polyline points="1300,2160 1300,1960" fill="none" stroke="#B45309" stroke-width="4" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="1300,1960 1291.0,1978.0 1309.0,1978.0" fill="#B45309"/>
+<rect x="1310.5" y="2030" width="239" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1430" y="2050" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400" text-anchor="middle" dominant-baseline="central">accepted → rejudge</text>
+<polyline points="1000,2160 1000,2115 410,2115 410,1960" fill="none" stroke="#52627A" stroke-width="3" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="410,1960 401.0,1978.0 419.0,1978.0" fill="#52627A"/>
+<rect x="977.5" y="2080" width="225" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1090" y="2100" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">invalid → route only</text>
+<rect x="1630" y="2160" width="620" height="150" rx="18" fill="#F3F7FD" stroke="#CAD5E4" stroke-width="3"/>
+<text x="1940.0" y="2196" fill="#14243A" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" dominant-baseline="central">Reuse Final Analysis</text>
+<text x="1940.0" y="2240" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">Optional: same report / score / source hashes</text>
+<text x="1940.0" y="2272" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="middle" dominant-baseline="central">검증된 합성·선정만 재사용 / 품질 재평가</text>
+<polyline points="410,1680 410,1730 2330,1730 2330,2235 2250,2235" fill="none" stroke="#52627A" stroke-width="3" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="2250,2235 2268.0,2244.0 2268.0,2226.0" fill="#52627A"/>
+<rect x="1079.0" y="1710" width="242" height="40" rx="7" fill="white" stroke="white" stroke-width="1"/>
+<text x="1200" y="1730" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400" text-anchor="middle" dominant-baseline="central">--reuse-analysis only</text>
+<polyline points="1940,2160 1940,1960" fill="none" stroke="#52627A" stroke-width="3" stroke-linejoin="round" stroke-dasharray="14 10"/>
+<polygon points="1940,1960 1931.0,1978.0 1949.0,1978.0" fill="#52627A"/>
+<text x="130" y="2390" fill="#B45309" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="28" font-weight="400" text-anchor="start" dominant-baseline="central">Research / review / exhausted → last safe draft; never promote failed quality.</text>
+<text x="130" y="2440" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="26" font-weight="400" text-anchor="start" dominant-baseline="central">New evidence required → research_request.json; no blind repeated research.</text>
+<text x="130" y="2530" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="28" font-weight="400" text-anchor="start" dominant-baseline="central">Normal path: 7 nodes  |  Rewrite ≤2  |  Step cap 32  |  No new RAG / regrading</text>
+<text x="130" y="2580" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="27" font-weight="400" text-anchor="start" dominant-baseline="central">InMemorySaver + graph run ID + node trace + persisted combined_analysis.json</text>
+<text x="130" y="2660" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="400" text-anchor="start" dominant-baseline="central">Source architecture; actual runtime evidence is saved separately in LangSmith / trace JSON.</text>
+<text x="95" y="2785" fill="#52627A" font-family="AppleGothic, NanumGothic, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400" text-anchor="start" dominant-baseline="central">Source code: f91e25ff0cd0  ·  scripts/render_architecture.py  ·  implementation architecture, not a LangSmith trace</text>
 </svg>
